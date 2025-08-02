@@ -1,0 +1,45 @@
+[
+  {
+    "timestamp": "2025-08-02 03:00:02,000",
+    "type": "user",
+    "text": "Job chahiye, hain ka?"
+  },
+  {
+    "timestamp": "2025-08-02 03:00:02,100",
+    "type": "ai_chunk",
+    "text": "Haan ji, sahi ba."
+  },
+  {
+    "timestamp": "2025-08-02 03:00:03,000",
+    "type": "ai_final",
+    "text": "Haan ji, sahi ba. Verma ji aap jaisan ke liye Khelo India stadium aur local opportunity laawat hain.",
+    "sentiment": "positive"
+  },
+  {
+    "timestamp": "2025-08-02 03:00:05,500",
+    "type": "user",
+    "text": "Kaisan apply kare hain?"
+  },
+  {
+    "timestamp": "2025-08-02 03:00:06,200",
+    "type": "ai_final",
+    "text": "Application process bada simple hai. Aap online portal pe ja kar apan details submit kar sakte hain. Documents bhi upload karna padega.",
+    "sentiment": "neutral"
+  },
+  {
+    "timestamp": "2025-08-02 03:00:08,000",
+    "type": "user",
+    "text": "Konsi documents lagega?"
+  },
+  {
+    "timestamp": "2025-08-02 03:00:08,300",
+    "type": "ai_chunk",
+    "text": "Aadhar card, education certificate..."
+  },
+  {
+    "timestamp": "2025-08-02 03:00:09,100",
+    "type": "ai_final",
+    "text": "Aadhar card, education certificate, aur experience letter lagega. Age limit bhi hai - 18 se 35 tak.",
+    "sentiment": "neutral"
+  }
+]
