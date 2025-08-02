@@ -114,7 +114,7 @@ export const Dashboard = () => {
             transition={{ duration: 0.5 }}
           >
             <div>
-              <h1 className="text-3xl font-bold gradient-text">Call Analytics Dashboard</h1>
+              <h1 className="text-3xl font-bold gradient-text">TranzMit Engineering</h1>
               <p className="text-muted-foreground mt-1">Real-time AI conversation insights</p>
             </div>
             
@@ -171,111 +171,114 @@ export const Dashboard = () => {
             />
           </div>
 
-          {/* Main Content Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 h-[600px]">
-            {/* Latency Gauge */}
-            <div className="lg:col-span-1">
-              <LatencyGauge latency={currentLatency} />
-            </div>
-
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Transcript Feed */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 h-[calc(100vh-300px)]">
               <TranscriptFeed messages={displayedMessages} isLive={true} />
             </div>
+
+            {/* Right Column */}
+            <div className="lg:col-span-1 space-y-6">
+              <LatencyGauge latency={currentLatency} />
+              <motion.div
+                className="glass rounded-2xl p-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+              >
+                <h3 className="text-lg font-semibold mb-4 gradient-text">Call Summary</h3>
+                <div className="space-y-3 text-sm">
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Duration:</span>
+                    <span>00:02:17</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Agent:</span>
+                    <span>AI Assistant</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Purpose:</span>
+                    <span>Job Inquiry</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Resolution:</span>
+                    <span className="text-green-success">In Progress</span>
+                  </div>
+                </div>
+              </motion.div>
+              <motion.div
+                className="glass rounded-2xl p-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.7 }}
+              >
+                <h3 className="text-lg font-semibold mb-4 gradient-text">Performance</h3>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">Response Quality</span>
+                    <div className="flex gap-1">
+                      {[1, 2, 3, 4, 5].map((i) => (
+                        <div
+                          key={i}
+                          className={`w-2 h-2 rounded-full ${
+                            i <= 4 ? 'bg-green-success' : 'bg-muted'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">Comprehension</span>
+                    <div className="flex gap-1">
+                      {[1, 2, 3, 4, 5].map((i) => (
+                        <div
+                          key={i}
+                          className={`w-2 h-2 rounded-full ${
+                            i <= 5 ? 'bg-green-success' : 'bg-muted'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">Speed</span>
+                    <div className="flex gap-1">
+                      {[1, 2, 3, 4, 5].map((i) => (
+                        <div
+                          key={i}
+                          className={`w-2 h-2 rounded-full ${
+                            i <= 3 ? 'bg-orange-warning' : 'bg-muted'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+              <motion.div
+                className="glass rounded-2xl p-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+              >
+                <h3 className="text-lg font-semibold mb-4 gradient-text">Next Actions</h3>
+                <div className="space-y-3 text-sm">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-purple-glow" />
+                    <span>Follow up with documents</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-cyan-accent" />
+                    <span>Schedule application review</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-green-success" />
+                    <span>Send confirmation email</span>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </div>
-
-          {/* Additional Info Panel */}
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-          >
-            <div className="glass rounded-2xl p-6">
-              <h3 className="text-lg font-semibold mb-4 gradient-text">Call Summary</h3>
-              <div className="space-y-3 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Duration:</span>
-                  <span>00:02:17</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Agent:</span>
-                  <span>AI Assistant</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Purpose:</span>
-                  <span>Job Inquiry</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Resolution:</span>
-                  <span className="text-green-success">In Progress</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="glass rounded-2xl p-6">
-              <h3 className="text-lg font-semibold mb-4 gradient-text">Performance</h3>
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-muted-foreground">Response Quality</span>
-                  <div className="flex gap-1">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <div
-                        key={i}
-                        className={`w-2 h-2 rounded-full ${
-                          i <= 4 ? 'bg-green-success' : 'bg-muted'
-                        }`}
-                      />
-                    ))}
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-muted-foreground">Comprehension</span>
-                  <div className="flex gap-1">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <div
-                        key={i}
-                        className={`w-2 h-2 rounded-full ${
-                          i <= 5 ? 'bg-green-success' : 'bg-muted'
-                        }`}
-                      />
-                    ))}
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-muted-foreground">Speed</span>
-                  <div className="flex gap-1">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <div
-                        key={i}
-                        className={`w-2 h-2 rounded-full ${
-                          i <= 3 ? 'bg-orange-warning' : 'bg-muted'
-                        }`}
-                      />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="glass rounded-2xl p-6">
-              <h3 className="text-lg font-semibold mb-4 gradient-text">Next Actions</h3>
-              <div className="space-y-3 text-sm">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-purple-glow" />
-                  <span>Follow up with documents</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-cyan-accent" />
-                  <span>Schedule application review</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-green-success" />
-                  <span>Send confirmation email</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
         </motion.main>
       </div>
     </div>
