@@ -21,7 +21,6 @@ interface SidebarProps {
 const navItems = [
   { icon: Home, label: 'Dashboard', path: '/' },
   { icon: BarChart3, label: 'Call Analytics', path: '/call-analytics' },
-  { icon: MessageSquare, label: 'Conversations', path: '/conversations' },
   { icon: Settings, label: 'Settings', path: '/settings' },
 ];
 
@@ -61,7 +60,7 @@ export const Sidebar = ({ collapsed, onToggle }: SidebarProps) => {
               exit={{ opacity: 0, x: -10 }}
               transition={{ delay: 0.1 }}
             >
-              <h1 className="text-xl font-bold gradient-text">AI Insight</h1>
+              <h1 className="text-xl font-bold gradient-text">TranzMit Engineering</h1>
               <p className="text-xs text-muted-foreground">Call Analytics</p>
             </motion.div>
           )}
