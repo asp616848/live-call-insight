@@ -8,8 +8,10 @@ import {
   Activity,
   ChevronLeft,
   ChevronRight,
-  Sparkles
+  Sparkles,
+  Home
 } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 interface SidebarProps {
   collapsed: boolean;
@@ -17,14 +19,16 @@ interface SidebarProps {
 }
 
 const navItems = [
-  { icon: BarChart3, label: 'Dashboard', active: true },
-  { icon: Phone, label: 'Call Analytics', active: false },
-  { icon: MessageSquare, label: 'Conversations', active: false },
-  { icon: Activity, label: 'Live Metrics', active: false },
-  { icon: Settings, label: 'Settings', active: false },
+  { icon: Home, label: 'Dashboard', path: '/' },
+  { icon: BarChart3, label: 'Call Analytics', path: '/call-analytics' },
+  { icon: MessageSquare, label: 'Conversations', path: '/conversations' },
+  { icon: Settings, label: 'Settings', path: '/settings' },
 ];
 
 export const Sidebar = ({ collapsed, onToggle }: SidebarProps) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  
   return (
     <motion.div
       className="relative h-screen glass border-r border-border/30 flex flex-col"
@@ -66,51 +70,56 @@ export const Sidebar = ({ collapsed, onToggle }: SidebarProps) => {
 
       {/* Navigation */}
       <nav className="flex-1 p-4 space-y-2">
-        {navItems.map((item, index) => (
-          <motion.button
-            key={item.label}
-            className={`w-full flex items-center gap-3 px-3 py-3 rounded-xl transition-all group relative overflow-hidden ${
-              item.active 
-                ? 'bg-primary/20 text-primary border border-primary/30' 
-                : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
-            }`}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: index * 0.1 }}
-          >
-            {item.active && (
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-purple-glow/10 to-cyan-accent/10"
-                layoutId="activeTab"
-                transition={{ duration: 0.3 }}
-              />
-            )}
-            
-            <item.icon className="w-5 h-5 flex-shrink-0" />
-            
-            {!collapsed && (
-              <motion.span
-                className="font-medium"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
-              >
-                {item.label}
-              </motion.span>
-            )}
+        {navItems.map((item, index) => {
+          const isActive = location.pathname === item.path;
+          
+          return (
+            <motion.button
+              key={item.label}
+              onClick={() => navigate(item.path)}
+              className={`w-full flex items-center gap-3 px-3 py-3 rounded-xl transition-all group relative overflow-hidden ${
+                isActive 
+                  ? 'bg-primary/20 text-primary border border-primary/30' 
+                  : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
+              }`}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: index * 0.1 }}
+            >
+              {isActive && (
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-purple-glow/10 to-cyan-accent/10"
+                  layoutId="activeTab"
+                  transition={{ duration: 0.3 }}
+                />
+              )}
+              
+              <item.icon className="w-5 h-5 flex-shrink-0" />
+              
+              {!collapsed && (
+                <motion.span
+                  className="font-medium"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  {item.label}
+                </motion.span>
+              )}
 
-            {item.active && !collapsed && (
-              <motion.div
-                className="ml-auto w-2 h-2 rounded-full bg-primary"
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 0.3 }}
-              />
-            )}
-          </motion.button>
-        ))}
+              {isActive && !collapsed && (
+                <motion.div
+                  className="ml-auto w-2 h-2 rounded-full bg-primary"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.3 }}
+                />
+              )}
+            </motion.button>
+          );
+        })}
       </nav>
 
       {/* Toggle Button */}
