@@ -61,7 +61,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// AI Dashboard Custom Colors
+				'purple-glow': 'hsl(var(--purple-glow))',
+				'cyan-accent': 'hsl(var(--cyan-accent))',
+				'green-success': 'hsl(var(--green-success))',
+				'orange-warning': 'hsl(var(--orange-warning))',
+				'red-danger': 'hsl(var(--red-danger))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
