@@ -106,7 +106,7 @@ export default function CallAnalytics() {
 
 	return (
 		<div className="flex min-h-screen bg-background">
-      <CustomCursor/>
+        <CustomCursor/>
 			<Sidebar
 				collapsed={sidebarCollapsed}
 				onToggle={() => setSidebarCollapsed(!sidebarCollapsed)}

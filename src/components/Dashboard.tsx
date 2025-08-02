@@ -8,83 +8,61 @@ import { LatencyGauge } from './LatencyGauge';
 import { TranscriptFeed } from './TranscriptFeed';
 import { MetricsCard } from './MetricsCard';
 
-// Mock data for the demo
-const mockMessages = [
-  {
-    timestamp: "2025-08-02 03:00:02,000",
-    type: "user" as const,
-    text: "Job chahiye, hain ka?"
-  },
-  {
-    timestamp: "2025-08-02 03:00:02,100", 
-    type: "ai_chunk" as const,
-    text: "Haan ji, sahi ba."
-  },
-  {
-    timestamp: "2025-08-02 03:00:03,000",
-    type: "ai_final" as const,
-    text: "Haan ji, sahi ba. Verma ji aap jaisan ke liye Khelo India stadium aur local opportunity laawat hain.",
-    sentiment: "positive" as const
-  },
-  {
-    timestamp: "2025-08-02 03:00:05,500",
-    type: "user" as const,
-    text: "Kaisan apply kare hain?"
-  },
-  {
-    timestamp: "2025-08-02 03:00:06,200",
-    type: "ai_final" as const,
-    text: "Application process bada simple hai. Aap online portal pe ja kar apan details submit kar sakte hain. Documents bhi upload karna padega.",
-    sentiment: "neutral" as const
-  },
-  {
-    timestamp: "2025-08-02 03:00:08,000",
-    type: "user" as const,
-    text: "Konsi documents lagega?"
-  },
-  {
-    timestamp: "2025-08-02 03:00:08,300",
-    type: "ai_chunk" as const,
-    text: "Aadhar card, education certificate..."
-  },
-  {
-    timestamp: "2025-08-02 03:00:09,100",
-    type: "ai_final" as const,
-    text: "Aadhar card, education certificate, aur experience letter lagega. Age limit bhi hai - 18 se 35 tak.",
-    sentiment: "neutral" as const
+async function fetchMessages() {
+  try {
+    const response = await fetch('/call.json');
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    console.log("Messages loaded:", data);
+    return data;
+  } catch (error) {
+    console.error("Failed to fetch messages:", error);
+    return [];
   }
-];
+}
+
+
 
 export const Dashboard = () => {
+
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [currentLatency, setCurrentLatency] = useState(340);
-  const [displayedMessages, setDisplayedMessages] = useState(mockMessages.slice(0, 3));
+  const [allMessages, setAllMessages] = useState([]);
+  const [displayedMessages, setDisplayedMessages] = useState([]);
+
+  // Load from JSON on mount
+  useEffect(() => {
+    fetchMessages().then((data) => {
+      setAllMessages(data);
+      setDisplayedMessages(data.slice(0, 3));
+    });
+  }, []);
 
   // Simulate real-time data updates
   useEffect(() => {
     const interval = setInterval(() => {
-      // Update latency with some variation
       setCurrentLatency(prev => {
         const variation = (Math.random() - 0.5) * 100;
         return Math.max(200, Math.min(2000, prev + variation));
       });
     }, 2000);
 
-    // Simulate new messages
     const messageInterval = setInterval(() => {
-      if (displayedMessages.length < mockMessages.length) {
-        setDisplayedMessages(prev => [
-          ...prev,
-          mockMessages[prev.length]
-        ]);
-      }
+      setDisplayedMessages(prev => {
+        if (allMessages.length > prev.length) {
+          return [...prev, allMessages[prev.length]];
+        }
+        return prev;
+      });
     }, 5000);
 
     return () => {
       clearInterval(interval);
       clearInterval(messageInterval);
     };
-  }, [displayedMessages.length]);
+  }, [allMessages]);
 
   return (
     <div className="min-h-screen bg-background overflow-hidden">
