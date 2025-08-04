@@ -3,10 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { User, Bot, Clock, Smile, Frown, Meh } from 'lucide-react';
 
 interface Message {
-  timestamp: string;
-  type: 'user' | 'ai_chunk' | 'ai_final';
+  speaker: 'user' | 'ai';
   text: string;
-  sentiment?: 'positive' | 'neutral' | 'negative' | 'confusion';
+  timestamp: string;
 }
 
 interface TranscriptFeedProps {
@@ -24,7 +23,10 @@ const getSentimentIcon = (sentiment?: string) => {
 };
 
 const formatTimestamp = (timestamp: string) => {
-  const date = new Date(timestamp.replace(',', '.'));
+  if (!timestamp) return "00:00:00.000";
+  const date = new Date(timestamp);
+  if (isNaN(date.getTime())) return "00:00:00.000";
+  
   const timeString = date.toLocaleTimeString('en-US', { 
     hour12: false, 
     hour: '2-digit', 
@@ -109,9 +111,7 @@ export const TranscriptFeed = ({ messages, isLive = true }: TranscriptFeedProps)
       >
         <AnimatePresence>
           {displayedMessages.map((message, index) => {
-            const isUser = message.type === 'user';
-            const isChunk = message.type === 'ai_chunk';
-            const sentiment = getSentimentIcon(message.sentiment);
+            const isUser = message.speaker === 'user';
             
             return (
               <motion.div
@@ -153,11 +153,6 @@ export const TranscriptFeed = ({ messages, isLive = true }: TranscriptFeedProps)
                     <span className="text-xs text-muted-foreground">
                       {formatTimestamp(message.timestamp)}
                     </span>
-                    {isChunk && (
-                      <span className="text-xs px-1.5 py-0.5 rounded bg-orange-warning/20 text-orange-warning">
-                        partial
-                      </span>
-                    )}
                   </div>
 
                   {/* Message Bubble */}
@@ -180,32 +175,17 @@ export const TranscriptFeed = ({ messages, isLive = true }: TranscriptFeedProps)
                     <p className="text-sm relative z-10 leading-relaxed">
                       {message.text}
                     </p>
-
-                    {/* Sentiment indicator for AI messages */}
-                    {!isUser && message.sentiment && (
-                      <motion.div
-                        className="flex items-center gap-2 mt-3 pt-3 border-t border-border/30"
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.5 }}
-                      >
-                        <sentiment.icon className={`w-4 h-4 ${sentiment.color}`} />
-                        <span className={`text-xs ${sentiment.color}`}>
-                          {sentiment.label}
-                        </span>
-                      </motion.div>
-                    )}
                   </motion.div>
                 </div>
               </motion.div>
             );
           })}
         </AnimatePresence>
-
+      </div>
         {/* Typing indicator for live updates */}
         {isLive && (
           <motion.div
-            className="flex gap-3"
+            className="flex gap-3 mt-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
@@ -234,26 +214,25 @@ export const TranscriptFeed = ({ messages, isLive = true }: TranscriptFeedProps)
             </div>
           </motion.div>
         )}
-      </div>
 
-      {/* Auto-scroll indicator */}
-      {!isAutoScroll && (
-        <motion.button
-          className="absolute bottom-20 right-6 p-2 rounded-full bg-primary/20 text-primary border border-primary/30 text-xs"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={() => {
-            setIsAutoScroll(true);
-            if (scrollRef.current) {
-              scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
-            }
-          }}
-        >
-          ↓ Jump to bottom
-        </motion.button>
-      )}
-    </motion.div>
+        {/* Auto-scroll indicator */}
+        {!isAutoScroll && (
+          <motion.button
+            className="absolute bottom-20 right-6 p-2 rounded-full bg-primary/20 text-primary border border-primary/30 text-xs"
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => {
+              setIsAutoScroll(true);
+              if (scrollRef.current) {
+                scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+              }
+            }}
+          >
+            ↓ Jump to bottom
+          </motion.button>
+        )}
+      </motion.div>
   );
 };

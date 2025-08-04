@@ -1,0 +1,4 @@
+Flask==2.3.3
+boto3==1.34.96      # Optional if using AWS SDK
+python-dotenv==1.0.1  # If you're using environment variables for config
+flask-cors
