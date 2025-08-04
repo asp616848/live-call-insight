@@ -1,35 +1,22 @@
-import { useState, useEffect } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts';
 import { motion } from 'framer-motion';
 
 const COLORS = ['#8884d8', '#82ca9d', '#ffc658', '#ff8042', '#0088FE'];
 
-async function fetchTopConcerns() {
-  try {
-    const response = await fetch('http://127.0.0.1:5000/top_concerns');
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const data = await response.json();
-    console.log("Top concerns data loaded:", data);
-    return data;
-  } catch (error) {
-    console.error("Failed to fetch top concerns:", error);
-    return [];
-  }
+interface Concern {
+  name: string;
+  value: number;
 }
 
-export const ConcernsPieChart = () => {
-  const [concerns, setConcerns] = useState([]);
+interface ConcernsPieChartProps {
+  concerns: Concern[];
+}
 
-  useEffect(() => {
-    fetchTopConcerns().then(setConcerns);
-  }, []);
-
+export const ConcernsPieChart = ({ concerns }: ConcernsPieChartProps) => {
   if (!concerns || concerns.length === 0) {
     return (
       <div className="glass rounded-2xl p-4 flex items-center justify-center h-full">
-        <p className="text-muted-foreground">Loading concerns data...</p>
+        <p className="text-muted-foreground">No concerns data available.</p>
       </div>
     );
   }
@@ -41,7 +28,7 @@ export const ConcernsPieChart = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.5 }}
     >
-      <h3 className="text-lg font-semibold mb-2 gradient-text text-center">Top 3 Concerns</h3>
+      <h3 className="text-lg font-semibold mb-2 gradient-text text-center">Top Concerns</h3>
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie
