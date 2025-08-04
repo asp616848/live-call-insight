@@ -17,6 +17,7 @@ interface Conversation {
     duration_seconds: number;
     average_ai_response_latency: number;
     sentiment: 'positive' | 'neutral' | 'negative';
+    sentiment_score: number;
     concerns: string[];
     overview: string;
     user_tone: string;
@@ -27,36 +28,23 @@ interface Conversation {
   }[];
 }
 
-// API fetch function
-async function fetchRecentConversations(): Promise<Conversation[]> {
-  try {
-    const response = await fetch('http://127.0.0.1:5000/logs');
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    return await response.json();
-  } catch (error) {
-    console.error("Failed to fetch recent conversations:", error);
-    throw error;
-  }
+interface RecentConversationsProps {
+  conversations: Conversation[];
 }
 
-export const RecentConversations = () => {
-  const [conversations, setConversations] = useState<Conversation[]>([]);
+export const RecentConversations = ({ conversations }: RecentConversationsProps) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetchRecentConversations()
-      .then(data => {
-        setConversations(data);
-        setLoading(false);
-      })
-      .catch(() => {
-        setError('Failed to load conversations. Is the backend server running?');
-        setLoading(false);
-      });
-  }, []);
+    if (conversations && conversations.length > 0) {
+      setLoading(false);
+    } else {
+      // Optional: handle case where conversations are not passed or empty
+      setLoading(false);
+      setError("No conversations available.");
+    }
+  }, [conversations]);
 
   const getSentimentBadgeVariant = (sentiment: 'positive' | 'neutral' | 'negative') => {
     switch (sentiment) {

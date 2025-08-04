@@ -152,7 +152,7 @@ export const Dashboard = () => {
                 <TranscriptFeed messages={displayedMessages} isLive={true} />
               </div>
               <div className="flex-grow-[2] h-0">
-                <ConcernsPieChart concerns={dashboardData.concerns} />
+                <ConcernsPieChart concerns={dashboardData.metrics.concerns} />
               </div>
             </div>
             
@@ -184,7 +184,7 @@ export const Dashboard = () => {
                 </div>
               </motion.div>
               <div className="flex-shrink-0 h-1/3">
-                <RecentConversations />
+                <RecentConversations conversations={dashboardData.recent_conversations} />
               </div>
             </div>
           </div>
