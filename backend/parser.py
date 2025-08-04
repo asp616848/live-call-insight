@@ -5,6 +5,7 @@ from datetime import datetime
 from statistics import mean
 from dotenv import load_dotenv
 import google.generativeai as genai
+import glob
 
 load_dotenv()
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
@@ -133,6 +134,25 @@ Example:
         "summary": summary,
         "conversation": sentences
     }
+
+def get_last_n_conversations(n=10):
+    convo_dir = os.path.join(os.path.dirname(__file__), "convoJson")
+    files = sorted(
+        glob.glob(os.path.join(convo_dir, "*.json")),
+        key=os.path.getmtime,
+        reverse=True
+    )[:n]
+
+    recent_logs = []
+    for file_path in files:
+        with open(file_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            recent_logs.append({
+                "summary": data.get("summary"),
+                "conversation": data.get("conversation")[-6:]  # optional: last 6 turns
+            })
+    return recent_logs
+
 
 def parse_all_logs():
     input_folder = os.path.join(os.path.dirname(__file__), "processed_logs")
