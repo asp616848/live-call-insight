@@ -19,7 +19,7 @@ export default function Settings() {
   const [showS3Secret, setShowS3Secret] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
   const [testConnection, setTestConnection] = useState(false);
-  const [isWorkInProgress, setIsWorkInProgress] = useState(true);
+  const [isWorkInProgress, setIsWorkInProgress] = useState(false);
   
   const [settings, setSettings] = useState({
     // Agent Configuration
