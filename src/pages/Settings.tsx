@@ -19,6 +19,7 @@ export default function Settings() {
   const [showS3Secret, setShowS3Secret] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
   const [testConnection, setTestConnection] = useState(false);
+  const [isWorkInProgress, setIsWorkInProgress] = useState(true);
   
   const [settings, setSettings] = useState({
     // Agent Configuration
@@ -61,9 +62,28 @@ export default function Settings() {
     { name: "Orange", value: "orange", color: "bg-orange-500" }
   ];
 
+  if (isWorkInProgress) {
+    return (
+      <div className="flex flex-col items-center justify-center h-[calc(100vh-200px)]">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center"
+        >
+          <Bot className="h-16 w-16 mx-auto text-primary mb-4" />
+          <h1 className="text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+            Work in Progress
+          </h1>
+          <p className="text-muted-foreground mt-2">
+            This settings page is currently under construction.
+          </p>
+        </motion.div>
+      </div>
+    );
+  }
+
   return (
     <>
-      <div>Work in Progress</div>
       <div className="max-w-4xl mx-auto">
         <Tabs defaultValue="agent" className="space-y-6">
           <TabsList className="grid w-full grid-cols-4">
