@@ -2,6 +2,8 @@ import os
 import json
 import glob
 from statistics import mean
+import google.generativeai as genai
+import re
 
 def get_dashboard_with_latest_convo():
     convo_dir = os.path.join(os.path.dirname(__file__), "convoJson")
@@ -66,7 +68,70 @@ def get_dashboard_with_latest_convo():
 
     return dashboard_data
 
+def get_top_concerns():
+    """
+    Analyzes all conversation summaries to find the top 3 concerns.
+    """
+    convo_dir = os.path.join(os.path.dirname(__file__), "convoJson")
+    files = glob.glob(os.path.join(convo_dir, "*.json"))
+
+    if not files:
+        return []
+
+    all_concerns = []
+    for file_path in files:
+        with open(file_path, "r", encoding="utf-8") as f:
+            try:
+                data = json.load(f)
+                if "summary" in data and "concerns" in data["summary"]:
+                    all_concerns.extend(data["summary"]["concerns"])
+            except json.JSONDecodeError:
+                print(f"Warning: Could not decode JSON from {file_path}")
+                continue
+    
+    if not all_concerns:
+        return []
+
+    # Configure the Gemini API
+    # Make sure to set your GOOGLE_API_KEY environment variable
+    try:
+        genai.configure(api_key=os.environ["GEMINI_API_KEY"])
+        model = genai.GenerativeModel('gemini-1.5-flash')
+    except Exception as e:
+        print(f"Error configuring Gemini API: {e}")
+        return [{"error": "Gemini API not configured"}]
+
+    prompt = f"""
+    From the following list of concerns, identify the top 3 most frequent or significant themes.
+    Return your answer as a JSON object where keys are the concern and values are their counts.
+    Do not use markdown formatting.
+
+    Concerns list: {json.dumps(all_concerns)}
+    """
+
+    try:
+        response = model.generate_content(prompt)
+        
+        # Clean the response to extract the JSON part
+        text_response = response.text
+        # Use regex to find the JSON block
+        json_match = re.search(r'\{.*\}', text_response, re.DOTALL)
+        if json_match:
+            json_str = json_match.group(0)
+            top_concerns = json.loads(json_str)
+            # Format for the chart: [{ name: "concern", value: count }]
+            return [{"name": k, "value": v} for k, v in top_concerns.items()]
+        else:
+            return [{"error": "Could not parse Gemini response"}]
+
+    except Exception as e:
+        print(f"Error calling Gemini API: {e}")
+        return [{"error": "Failed to get insights from Gemini"}]
+
+
 if __name__ == '__main__':
     # For testing the function
     dashboard_data = get_dashboard_with_latest_convo()
     print(json.dumps(dashboard_data, indent=2))
+    top_concerns = get_top_concerns()
+    print(json.dumps(top_concerns, indent=2))
