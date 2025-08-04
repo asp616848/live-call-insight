@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+let idCounter = 0;
 
 export const CustomCursor = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -8,11 +9,11 @@ export const CustomCursor = () => {
   useEffect(() => {
     const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
-      
-      // Add trail
+
+      // Use guaranteed unique ID
       setTrails(prev => [
-        ...prev.slice(-8), // Keep last 8 trails
-        { x: e.clientX, y: e.clientY, id: Date.now() }
+        ...prev.slice(-8),
+        { x: e.clientX, y: e.clientY, id: ++idCounter }
       ]);
     };
 

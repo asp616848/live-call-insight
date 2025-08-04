@@ -1,0 +1,71 @@
+[22:15:44] AI (chunk): Namaskar Didi,
+[22:15:45] AI (chunk): hum
+[22:15:45] AI (chunk): bolat
+[22:15:45] AI (chunk): bani
+[22:15:45] AI (chunk): Sunita
+[22:15:45] AI (chunk): Devi,
+[22:15:46] AI (chunk): Rajesh
+[22:15:46] AI (chunk): Verma
+[22:15:46] AI (chunk): ji
+[22:15:46] AI (chunk): ke
+[22:15:46] AI (chunk): taraf
+[22:15:46] AI (chunk): se.
+[22:15:47] AI (chunk): Ka haal ba?
+[22:15:55] User: Kaun Sunita? Humke kuch yaad nai.
+[22:15:58] AI (chunk): Hum
+[22:15:58] AI (chunk): ek
+[22:15:58] AI (chunk): chatbot
+[22:15:58] AI (chunk): bani
+[22:15:58] AI (chunk): jo
+[22:15:58] AI (chunk): Bhojpuri
+[22:15:58] AI (chunk): mein
+[22:15:58] AI (chunk): sahayata
+[22:15:58] AI (chunk): kare
+[22:15:59] AI (chunk): ke liye
+[22:15:59] AI (chunk): tayaar
+[22:15:59] AI (chunk): bani.
+[22:16:00] AI (chunk): Verma
+[22:16:00] AI (chunk): ji
+[22:16:00] AI (chunk): aapke
+[22:16:00] AI (chunk): naam
+[22:16:00] AI (chunk): de
+[22:16:00] AI (chunk): ke
+[22:16:00] AI (chunk): bolaile.
+[22:16:04] User: Hmm... theek ba. Baat bolo.
+[22:16:06] AI (chunk): Aap
+[22:16:06] AI (chunk): ka
+[22:16:06] AI (chunk): mobile
+[22:16:06] AI (chunk): recharge
+[22:16:06] AI (chunk): kal
+[22:16:06] AI (chunk): expire
+[22:16:06] AI (chunk): ho jayi.
+[22:16:07] AI (chunk): Hum
+[22:16:07] AI (chunk): sochli
+[22:16:07] AI (chunk): remind
+[22:16:07] AI (chunk): kara di.
+[22:16:08] AI (chunk): Kaa
+[22:16:08] AI (chunk): hum
+[22:16:08] AI (chunk): plan
+[22:16:08] AI (chunk): ke
+[22:16:08] AI (chunk): vikalp
+[22:16:08] AI (chunk): batai?
+[22:16:12] User: Haan thik ba, 1 GB per day ka plan batao.
+[22:16:15] AI (chunk): 1 GB/day
+[22:16:15] AI (chunk): ke
+[22:16:15] AI (chunk): 28 din
+[22:16:15] AI (chunk): ke
+[22:16:15] AI (chunk): plan
+[22:16:15] AI (chunk): ₹209
+[22:16:15] AI (chunk): ke
+[22:16:15] AI (chunk): baa.
+[22:16:16] AI (chunk): Recharge
+[22:16:16] AI (chunk): link
+[22:16:16] AI (chunk): bheji?
+[22:16:19] User: Bhej do.
+[22:16:21] AI (chunk): Thik baa.
+[22:16:21] AI (chunk): Link
+[22:16:21] AI (chunk): bhej
+[22:16:21] AI (chunk): dihal
+[22:16:21] AI (chunk): jaayi
+[22:16:22] AI (chunk): SMS
+[22:16:22] AI (chunk): par.
