@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Clock, MessageCircle, Activity, Users, TrendingUp } from 'lucide-react';
+import { Phone, Clock, MessageCircle, TrendingUp } from 'lucide-react';
 import { CustomCursor } from './CustomCursor';
 import { BackgroundAnimation } from './BackgroundAnimation';
 import { LatencyGauge } from './LatencyGauge';
 import { TranscriptFeed } from './TranscriptFeed';
 import { MetricsCard } from './MetricsCard';
 import { RecentConversations } from './RecentConversations';
+import { ConcernsPieChart } from './ConcernsPieChart';
 
 async function fetchDashboardData() {
   try {
@@ -131,7 +132,7 @@ export const Dashboard = () => {
             <MetricsCard
               title="Latest Convo Length"
               value={dashboardData.latest_conversation?.length || 0}
-              subtitle="In latest call"
+              subtitle="[Number of exchanges]"
               icon={MessageCircle}
               trend="up"
               color="green"
@@ -149,18 +150,23 @@ export const Dashboard = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 h-[calc(100vh-250px)]">
-            {/* Transcript Feed */}
-            <div className="lg:col-span-2 h-full">
-              <TranscriptFeed messages={displayedMessages} isLive={true} />
+            {/* Left Column */}
+            <div className="lg:col-span-2 flex flex-col gap-6">
+              <div className="flex-grow-[3] h-0">
+                <TranscriptFeed messages={displayedMessages} isLive={true} />
+              </div>
+              <div className="flex-grow-[2] h-0">
+                <ConcernsPieChart />
+              </div>
             </div>
-
+            
             {/* Right Column */}
             <div className="lg:col-span-1 space-y-6 h-full flex flex-col">
-              <div className="flex-grow">
+              <div className="flex-grow-0">
                 <LatencyGauge latency={currentLatency} />
               </div>
               <motion.div
-                className="glass rounded-2xl p-6"
+                className="glass rounded-2xl p-6 flex-grow"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
@@ -181,7 +187,9 @@ export const Dashboard = () => {
                   </div>
                 </div>
               </motion.div>
-              <RecentConversations />
+              <div className="flex-shrink-0 h-1/3">
+                <RecentConversations />
+              </div>
             </div>
           </div>
         </motion.main>
