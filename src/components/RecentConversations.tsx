@@ -17,6 +17,7 @@ interface Conversation {
     duration_seconds: number;
     average_ai_response_latency: number;
     sentiment: 'positive' | 'neutral' | 'negative';
+    sentiment_score: number;
     concerns: string[];
     overview: string;
     user_tone: string;
@@ -27,36 +28,23 @@ interface Conversation {
   }[];
 }
 
-// API fetch function
-async function fetchRecentConversations(): Promise<Conversation[]> {
-  try {
-    const response = await fetch('http://127.0.0.1:5000/logs');
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    return await response.json();
-  } catch (error) {
-    console.error("Failed to fetch recent conversations:", error);
-    throw error;
-  }
+interface RecentConversationsProps {
+  conversations: Conversation[];
 }
 
-export const RecentConversations = () => {
-  const [conversations, setConversations] = useState<Conversation[]>([]);
+export const RecentConversations = ({ conversations }: RecentConversationsProps) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetchRecentConversations()
-      .then(data => {
-        setConversations(data);
-        setLoading(false);
-      })
-      .catch(() => {
-        setError('Failed to load conversations. Is the backend server running?');
-        setLoading(false);
-      });
-  }, []);
+    if (conversations && conversations.length > 0) {
+      setLoading(false);
+    } else {
+      // Optional: handle case where conversations are not passed or empty
+      setLoading(false);
+      setError("No conversations available.");
+    }
+  }, [conversations]);
 
   const getSentimentBadgeVariant = (sentiment: 'positive' | 'neutral' | 'negative') => {
     switch (sentiment) {
@@ -111,13 +99,13 @@ export const RecentConversations = () => {
               </div>
               <div className="mt-3 text-xs text-muted-foreground space-y-1">
                 <div className="flex justify-between">
-                  <span>Duration: <strong>{Math.round(convo.summary.duration_seconds)}s</strong></span>
-                  <span>Latency: <strong>{Math.round(convo.summary.average_ai_response_latency * 1000)}ms</strong></span>
+                  <span>Duration: <strong>{convo.summary.duration_seconds ? `${Math.round(convo.summary.duration_seconds)}s` : 'N/A'}</strong></span>
+                  <span>Latency: <strong>{convo.summary.average_ai_response_latency ? `${Math.round(convo.summary.average_ai_response_latency * 1000)}ms` : 'N/A'}</strong></span>
                 </div>
                 <div>
                   <span>Tone: <strong className="capitalize">{convo.summary.user_tone}</strong></span>
                 </div>
-                {convo.summary.concerns.length > 0 && (
+                {convo.summary.concerns && convo.summary.concerns.length > 0 && (
                   <div>
                     <span>Concerns: <strong className="capitalize">{convo.summary.concerns.join(', ')}</strong></span>
                   </div>

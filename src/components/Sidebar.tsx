@@ -1,17 +1,14 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { 
   BarChart3, 
-  Phone, 
-  MessageSquare, 
   Settings, 
-  Activity,
   ChevronLeft,
   ChevronRight,
   Sparkles,
-  Home
+  Home,
+  Globe
 } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 interface SidebarProps {
   collapsed: boolean;
@@ -21,6 +18,7 @@ interface SidebarProps {
 const navItems = [
   { icon: Home, label: 'Dashboard', path: '/' },
   { icon: BarChart3, label: 'Call Analytics', path: '/call-analytics' },
+  { icon: Globe, label: 'Geo-Analytics', path: '/geo-analytics' },
   { icon: Settings, label: 'Settings', path: '/settings' },
 ];
 

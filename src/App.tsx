@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import Index from "./pages/Index";
 import CallAnalytics from "./pages/CallAnalytics";
+import GeoAnalytics from "./pages/GeoAnalytics";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -23,6 +24,7 @@ const App = () => (
             <Route element={<Layout />}>
               <Route path="/" element={<Index />} />
               <Route path="/call-analytics" element={<CallAnalytics />} />
+              <Route path="/geo-analytics" element={<GeoAnalytics />} />
               <Route path="/settings" element={<Settings />} />
             </Route>
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

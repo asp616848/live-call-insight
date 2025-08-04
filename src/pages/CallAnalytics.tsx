@@ -302,7 +302,7 @@ export default function CallAnalytics() {
 													<div className="flex justify-between">
 														<span className="text-muted-foreground">Concerns:</span>
 														<span className="font-medium capitalize">
-															{selectedCall.summary.concerns.join(', ')}
+															{selectedCall.summary.concerns?.join(', ') || 'None'}
 														</span>
 													</div>
 													<div className="flex justify-between">
@@ -317,7 +317,7 @@ export default function CallAnalytics() {
 
 												<div className="flex flex-col items-center">
 													<h3 className="text-sm font-medium mb-4">Avg. Latency</h3>
-													<LatencyGauge latency={Math.round(selectedCall.summary.average_ai_response_latency * 1000)} />
+													<LatencyGauge latency={selectedCall.summary.average_ai_response_latency ? Math.round(selectedCall.summary.average_ai_response_latency * 1000) : 0} />
 												</div>
 											</div>
 										</TabsContent>
