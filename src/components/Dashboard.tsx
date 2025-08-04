@@ -59,10 +59,12 @@ export const Dashboard = () => {
   const [dashboardData, setDashboardData] = useState<any>(hardcodedData);
   const [displayedMessages, setDisplayedMessages] = useState<any[]>([]);
 
+
   useEffect(() => {
     if (dashboardData) {
       setDisplayedMessages(dashboardData.latest_conversation);
     }
+
   }, [dashboardData]);
 
   if (!dashboardData) {
@@ -162,7 +164,7 @@ export const Dashboard = () => {
                 <TranscriptFeed messages={displayedMessages} isLive={true} />
               </div>
               <div className="flex-grow-[2] h-0">
-                <ConcernsPieChart />
+                <ConcernsPieChart concerns={dashboardData.metrics.concerns} />
               </div>
             </div>
             
@@ -194,7 +196,7 @@ export const Dashboard = () => {
                 </div>
               </motion.div>
               <div className="flex-shrink-0 h-1/3">
-                <RecentConversations />
+                <RecentConversations conversations={dashboardData.recent_conversations} />
               </div>
             </div>
           </div>
