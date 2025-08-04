@@ -3,16 +3,19 @@ import { motion } from 'framer-motion';
 
 const COLORS = ['#8884d8', '#82ca9d', '#ffc658', '#ff8042', '#0088FE'];
 
-interface Concern {
-  name: string;
-  value: number;
-}
+const hardcodedConcerns = [
+  { name: 'Irrigation', value: 45 },
+  { name: 'Loan Availability', value: 30 },
+  { name: 'Crop Prices', value: 25 },
+];
 
-interface ConcernsPieChartProps {
-  concerns: Concern[];
-}
+export const ConcernsPieChart = () => {
+  const [concerns, setConcerns] = useState(hardcodedConcerns);
 
-export const ConcernsPieChart = ({ concerns }: ConcernsPieChartProps) => {
+  // useEffect(() => {
+  //   fetchTopConcerns().then(setConcerns);
+  // }, []);
+  
   if (!concerns || concerns.length === 0) {
     return (
       <div className="glass rounded-2xl p-4 flex items-center justify-center h-full">
