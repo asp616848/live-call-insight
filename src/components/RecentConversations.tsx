@@ -111,13 +111,13 @@ export const RecentConversations = () => {
               </div>
               <div className="mt-3 text-xs text-muted-foreground space-y-1">
                 <div className="flex justify-between">
-                  <span>Duration: <strong>{Math.round(convo.summary.duration_seconds)}s</strong></span>
-                  <span>Latency: <strong>{Math.round(convo.summary.average_ai_response_latency * 1000)}ms</strong></span>
+                  <span>Duration: <strong>{convo.summary.duration_seconds ? `${Math.round(convo.summary.duration_seconds)}s` : 'N/A'}</strong></span>
+                  <span>Latency: <strong>{convo.summary.average_ai_response_latency ? `${Math.round(convo.summary.average_ai_response_latency * 1000)}ms` : 'N/A'}</strong></span>
                 </div>
                 <div>
                   <span>Tone: <strong className="capitalize">{convo.summary.user_tone}</strong></span>
                 </div>
-                {convo.summary.concerns.length > 0 && (
+                {convo.summary.concerns && convo.summary.concerns.length > 0 && (
                   <div>
                     <span>Concerns: <strong className="capitalize">{convo.summary.concerns.join(', ')}</strong></span>
                   </div>
