@@ -6,7 +6,7 @@ const COLORS = ['#8884d8', '#82ca9d', '#ffc658', '#ff8042', '#0088FE'];
 
 async function fetchTopConcerns() {
   try {
-    const response = await fetch('http://127.0.0.1:5000/top_concerns');
+    const response = await fetch('https://live-call-insight.onrender.com/top_concerns');
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
