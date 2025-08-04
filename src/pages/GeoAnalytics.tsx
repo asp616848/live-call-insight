@@ -78,7 +78,7 @@ export default function GeoAnalytics() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <StatCard title="High Concern Districts" value="3" icon={AlertTriangle} color="bg-red-500" />
         <StatCard title="Avg. Sentiment Trend" value="+1.2%" icon={TrendingUp} color="bg-green-500" />
-        <StatCard title="Total Calls Analyzed" value="1,482" icon={Users} color="bg-blue-500" />
+        <StatCard title="Total Calls Analyzed" value="31,456" icon={Users} color="bg-blue-500" />
       </div>
 
       {/* Main Content */}
