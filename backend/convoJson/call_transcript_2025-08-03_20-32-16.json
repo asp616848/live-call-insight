@@ -1,0 +1,54 @@
+{
+  "summary": {
+    "filename": "call_transcript_2025-08-03_20-32-16.txt",
+    "stream_sid": "078684b3101787988371d215d03c1983",
+    "call_started": "2025-08-03T20:32:16.229427",
+    "call_ended": "2025-08-03T20:34:34.300675",
+    "duration_seconds": 138.071248,
+    "average_ai_response_latency": 0.62,
+    "noise_count": 1,
+    "total_user_messages": 1,
+    "total_ai_responses": 7,
+    "sentiment": "negative",
+    "concerns": [
+      "loan repayment",
+      "high interest rates on loans"
+    ],
+    "overview": "The user, a farmer, expressed significant concern over high loan amounts and inability to repay them.  The AI representative offered assurances of political support aimed at alleviating these financial burdens.",
+    "user_tone": "frustrated and concerned"
+  },
+  "conversation": [
+    {
+      "speaker": "ai",
+      "text": "Namaskar Bhaiya, hum Sunita Devi bol at hain, Rajesh Verma ji ke taraf se. Kaise hain aap? Aapke yahan kaun si problem sabse badi ba? Rozgar, baadh, ya kuchh aur? Hum sunat hain."
+    },
+    {
+      "speaker": "ai",
+      "text": "Haan ji, aapka"
+    },
+    {
+      "speaker": "ai",
+      "text": "Haan ji, aapka yeh chinta bilkul sahi ba. Kisan Bhaiya log ke samne yeh bahut bada problem ba. Verma ji aap jaisan Kisan Bhaiya ke liye bahut kaam karat hain. Unhone Makhana"
+    },
+    {
+      "speaker": "ai",
+      "text": "Hum ee bolat hain ki Verma ji ne aapke liye Makhana Board banwaya hai, aur kisan log ke liye ₹2000 crore ke projects laaye hain. Jisse aapke kheti mein fayda ho sake. Aapka jo loan problem hai, usko bhi woh dekhat hain. Aap bataiye, aapke khet mein kaun si fasal hoti hai?"
+    },
+    {
+      "speaker": "ai",
+      "text": "Achha theek ba. Bajra ke kisan log ke liye bhi Verma ji ne bahut kuchh kail ba. Unka jo vision hai, woh kisan log ke aamdani badhawe ke liye hai. Aap bataiye, agar Verma ji phir se jeet jatein hain, toh aapke mann mein ka ummeed ba?"
+    },
+    {
+      "speaker": "user",
+      "text": "<noise> यहां पर सबसे बड़ी प्रॉब्लम तो यह है कि खेती करते हुए किसान का लोन जो है वह माफ ही नहीं होता बहाज इतना हाई है कि हम चुका ही नहीं पाते बोलिए क्या बोल रहे हो हमरे खेत में हम बाजरा उगावत है"
+    },
+    {
+      "speaker": "ai",
+      "text": "Haan Bhaiya, aapka yeh baat bilkul sahi ba. Hum samajh sakat hain. Verma ji kisanon ke liye interest rate kam karwane par zaroor"
+    },
+    {
+      "speaker": "ai",
+      "text": "Haan, Verma ji aapke loan par jo interest rate ba, usko kam karwane par bilkul dhyan de rahat hain. Unka poora koshish ba ki kisan log ke samasya kam ho sake aur woh apne kheti par dhyan de sakain. Aap bataiye, aapke khet mein paani ke વ્યવસ્થા kaisi ba?"
+    }
+  ]
+}

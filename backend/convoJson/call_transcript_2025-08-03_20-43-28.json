@@ -1,0 +1,46 @@
+{
+  "summary": {
+    "filename": "call_transcript_2025-08-03_20-43-28.txt",
+    "stream_sid": "eb4349819c5079c4dc265495b0bf1983",
+    "call_started": "2025-08-03T20:43:28.136136",
+    "call_ended": "2025-08-03T20:44:11.748815",
+    "duration_seconds": 43.612679,
+    "average_ai_response_latency": 0.84,
+    "noise_count": 0,
+    "total_user_messages": 3,
+    "total_ai_responses": 3,
+    "sentiment": "negative",
+    "concerns": [
+      "financial difficulties",
+      "lack of government support for farmers"
+    ],
+    "overview": "The user, a farmer, expressed significant worry and distress, questioning the government's assistance. The AI attempted to acknowledge the user's concerns.",
+    "user_tone": "distressed and urgent"
+  },
+  "conversation": [
+    {
+      "speaker": "user",
+      "text": "Hello."
+    },
+    {
+      "speaker": "ai",
+      "text": "Namaskar Bhaiya, hum Sunita Devi bolat hain, Rajesh Verma ji ke taraf se. Kaise hain aap? Hum aapke chinta ke baare mein jaanana chahat hain, aapke yahan sabse badi samasya ka baa?"
+    },
+    {
+      "speaker": "user",
+      "text": "चिंताएंतोकाफीहैआपयहबताइएकिराजीवजीहमलोगकिसानलोगके लिएक्याकररहे हैंहमबड़ेहीदिक्कत में हैं"
+    },
+    {
+      "speaker": "ai",
+      "text": "Hum aapke dikkat ke baare mein"
+    },
+    {
+      "speaker": "user",
+      "text": "Yeah."
+    },
+    {
+      "speaker": "ai",
+      "text": "samajh sakte hain, Bhaiya. Aap kisan hain ka? Hum sunat"
+    }
+  ]
+}
