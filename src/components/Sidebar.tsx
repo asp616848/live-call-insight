@@ -9,7 +9,8 @@ import {
   ChevronLeft,
   ChevronRight,
   Sparkles,
-  Home
+  Home,
+  Globe
 } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -21,6 +22,7 @@ interface SidebarProps {
 const navItems = [
   { icon: Home, label: 'Dashboard', path: '/' },
   { icon: BarChart3, label: 'Call Analytics', path: '/call-analytics' },
+  { icon: Globe, label: 'Geo-Analytics', path: '/geo-analytics' },
   { icon: Settings, label: 'Settings', path: '/settings' },
 ];
 
