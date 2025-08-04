@@ -135,18 +135,22 @@ Example:
     }
 
 def parse_all_logs():
-    input_folder = "./processed_logs"
-    output_folder = "./convoJson"
+    input_folder = os.path.join(os.path.dirname(__file__), "processed_logs")
+    output_folder = os.path.join(os.path.dirname(__file__), "convoJson")
     os.makedirs(output_folder, exist_ok=True)
 
     for fname in os.listdir(input_folder):
         if fname.endswith(".txt"):
-            full_path = os.path.join(input_folder, fname)
-            parsed_json = parse_log_file(full_path)
-
             json_path = os.path.join(output_folder, fname.replace(".txt", ".json"))
-            with open(json_path, "w", encoding="utf-8") as f:
-                json.dump(parsed_json, f, indent=2, ensure_ascii=False)
+            if not os.path.exists(json_path):
+                print(f"Parsing {fname}...")
+                full_path = os.path.join(input_folder, fname)
+                parsed_json = parse_log_file(full_path)
+
+                with open(json_path, "w", encoding="utf-8") as f:
+                    json.dump(parsed_json, f, indent=2, ensure_ascii=False)
+            else:
+                print(f"Skipping {fname}, JSON already exists.")
 
 if __name__ == "__main__":
     parse_all_logs()
