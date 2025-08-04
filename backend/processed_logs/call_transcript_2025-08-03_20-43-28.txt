@@ -1,0 +1,83 @@
+Call started at: 2025-08-03T20:43:28.136136
+Stream SID: eb4349819c5079c4dc265495b0bf1983
+
+[20:43:30] User: Hello.
+[20:43:30] AI (chunk): Namaskar Bhaiya,
+[20:43:31] AI (chunk):  hum
+[20:43:32] AI (chunk):  Sunita
+[20:43:32] AI (chunk):  Devi
+[20:43:32] AI (chunk):  bolat
+[20:43:32] AI (chunk):  hain,
+[20:43:33] AI (chunk):  Rajesh
+[20:43:33] AI (chunk):  Verma
+[20:43:33] AI (chunk):  ji
+[20:43:33] AI (chunk):  ke
+[20:43:33] AI (chunk):  taraf
+[20:43:33] AI (chunk):  se.
+[20:43:35] AI (chunk):  Kaise
+[20:43:35] AI (chunk):  hain
+[20:43:35] AI (chunk):  aap?
+[20:43:36] AI (chunk):  Hum
+[20:43:36] AI (chunk):  aapke
+[20:43:36] AI (chunk):  chinta
+[20:43:36] AI (chunk):  ke baare
+[20:43:36] AI (chunk):  mein
+[20:43:37] AI (chunk):  jaanana
+[20:43:39] AI (chunk):  chahat
+[20:43:39] AI (chunk):  hain,
+[20:43:39] AI (chunk):  aapke
+[20:43:39] AI (chunk):  yahan
+[20:43:39] AI (chunk):  sabse
+[20:43:39] AI (chunk):  badi
+[20:43:39] AI (chunk):  samasya
+[20:43:39] AI (chunk):  ka
+[20:43:39] AI (chunk):  baa?
+[20:43:46] User: चि
+[20:43:47] User: ंता
+[20:43:47] User: एं
+[20:43:47] User: तो
+[20:43:47] User: का
+[20:43:47] User: फी
+[20:43:47] User: है
+[20:43:48] User: आप
+[20:43:48] User: यह
+[20:43:48] User: बता
+[20:43:48] User: इ
+[20:43:49] User: ए
+[20:43:50] User: कि
+[20:43:51] User: राज
+[20:43:51] User: ी
+[20:43:52] User: व
+[20:43:52] User: जी
+[20:43:52] User: हम
+[20:43:52] User: लोग
+[20:43:52] User: कि
+[20:43:53] User: सान
+[20:43:53] User: लोग
+[20:43:53] User: के लिए
+[20:43:53] User: क्या
+[20:43:53] User: कर
+[20:43:54] User: रहे हैं
+[20:43:54] User: हम
+[20:43:54] User: ब
+[20:43:54] User: ड़े
+[20:43:54] User: ही
+[20:43:55] User: दि
+[20:43:55] User: क्कत में हैं
+[20:43:56] AI (chunk): Hum aapke
+[20:43:56] AI (chunk):  dikkat
+[20:43:56] AI (chunk):  ke
+[20:43:56] AI (chunk):  baare
+[20:43:56] AI (chunk):  mein
+[20:44:03] User: Yeah.
+[20:44:04] AI (chunk): samajh sakte
+[20:44:04] AI (chunk):  hain,
+[20:44:04] AI (chunk):  Bhaiya.
+[20:44:05] AI (chunk):  Aap
+[20:44:05] AI (chunk):  kisan
+[20:44:05] AI (chunk):  hain
+[20:44:06] AI (chunk):  ka?
+[20:44:06] AI (chunk):  Hum
+[20:44:06] AI (chunk):  sunat
+
+Call ended at: 2025-08-03T20:44:11.748815

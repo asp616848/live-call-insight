@@ -6,59 +6,73 @@ import { BackgroundAnimation } from './BackgroundAnimation';
 import { LatencyGauge } from './LatencyGauge';
 import { TranscriptFeed } from './TranscriptFeed';
 import { MetricsCard } from './MetricsCard';
+import { RecentConversations } from './RecentConversations';
 
-async function fetchMessages() {
+async function fetchDashboardData() {
   try {
-    const response = await fetch('/call.json');
+    const response = await fetch('http://127.0.0.1:5000/dashboard_with_convo');
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const data = await response.json();
-    console.log("Messages loaded:", data);
+    console.log("Dashboard data loaded:", data);
     return data;
   } catch (error) {
-    console.error("Failed to fetch messages:", error);
-    return [];
+    console.error("Failed to fetch dashboard data:", error);
+    return null;
   }
 }
 
 export const Dashboard = () => {
-
-  const [currentLatency, setCurrentLatency] = useState(340);
-  const [allMessages, setAllMessages] = useState([]);
+  const [dashboardData, setDashboardData] = useState<any>(null);
   const [displayedMessages, setDisplayedMessages] = useState([]);
 
-  // Load from JSON on mount
   useEffect(() => {
-    fetchMessages().then((data) => {
-      setAllMessages(data);
-      setDisplayedMessages(data.slice(0, 3));
+    fetchDashboardData().then((data) => {
+      if (data) {
+        setDashboardData(data);
+        setDisplayedMessages(data.latest_conversation.slice(0, 3));
+      }
     });
   }, []);
 
-  // Simulate real-time data updates
+  // Simulate real-time data updates for transcript
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentLatency(prev => {
-        const variation = (Math.random() - 0.5) * 100;
-        return Math.max(200, Math.min(2000, prev + variation));
-      });
-    }, 2000);
+    if (!dashboardData) return;
 
     const messageInterval = setInterval(() => {
       setDisplayedMessages(prev => {
-        if (allMessages.length > prev.length) {
-          return [...prev, allMessages[prev.length]];
+        if (dashboardData.latest_conversation.length > prev.length) {
+          return [...prev, dashboardData.latest_conversation[prev.length]];
+        }
+        // Optional: loop the conversation for demo purposes
+        if (dashboardData.latest_conversation.length === prev.length) {
+            return dashboardData.latest_conversation.slice(0, 3);
         }
         return prev;
       });
     }, 5000);
 
     return () => {
-      clearInterval(interval);
       clearInterval(messageInterval);
     };
-  }, [allMessages]);
+  }, [dashboardData]);
+
+  if (!dashboardData) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-lg text-muted-foreground">Loading dashboard...</p>
+          <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-primary mt-4 mx-auto"></div>
+        </div>
+      </div>
+    );
+  }
+
+  const { metrics } = dashboardData;
+  const currentLatency = metrics.average_ai_response_latency ? Math.round(metrics.average_ai_response_latency * 1000) : 0;
+  const sentiment = metrics.latest_call_summary.sentiment;
+
 
   return (
     <div className="min-h-screen bg-background overflow-hidden">
@@ -97,55 +111,54 @@ export const Dashboard = () => {
           {/* Metrics Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <MetricsCard
-              title="Active Calls"
-              value="1"
-              subtitle="Currently in progress"
+              title="Total Calls"
+              value={metrics.total_calls}
+              subtitle="All processed calls"
               icon={Phone}
-              trend="neutral"
+              trend="up"
               color="purple"
               delay={0.1}
             />
             <MetricsCard
-              title="Avg. Response Time"
-              value={`${Math.round(currentLatency)}ms`}
-              subtitle="Last 5 minutes"
+              title="Avg. Call Duration"
+              value={`${Math.round(metrics.average_call_duration)}s`}
+              subtitle="Across all calls"
               icon={Clock}
-              trend={currentLatency < 500 ? 'up' : currentLatency > 1000 ? 'down' : 'neutral'}
-              trendValue={currentLatency < 500 ? '12% faster' : currentLatency > 1000 ? '8% slower' : 'stable'}
+              trend="neutral"
               color="cyan"
               delay={0.2}
             />
             <MetricsCard
-              title="Messages"
-              value={displayedMessages.length}
-              subtitle="Total exchanged"
+              title="Latest Convo Length"
+              value={dashboardData.latest_conversation?.length || 0}
+              subtitle="In latest call"
               icon={MessageCircle}
               trend="up"
-              trendValue="+3 new"
               color="green"
               delay={0.3}
             />
             <MetricsCard
               title="Sentiment Score"
-              value="8.4/10"
-              subtitle="Overall positive"
+              value={metrics.latest_call_summary.sentiment_score?.toFixed(1)}
+              subtitle="From 0 to 10"
               icon={TrendingUp}
               trend="up"
-              trendValue="+0.3 today"
               color="orange"
               delay={0.4}
             />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 h-[calc(100vh-250px)]">
             {/* Transcript Feed */}
-            <div className="lg:col-span-2 h-[calc(100vh-300px)]">
+            <div className="lg:col-span-2 h-full">
               <TranscriptFeed messages={displayedMessages} isLive={true} />
             </div>
 
             {/* Right Column */}
-            <div className="lg:col-span-1 space-y-6">
-              <LatencyGauge latency={currentLatency} />
+            <div className="lg:col-span-1 space-y-6 h-full flex flex-col">
+              <div className="flex-grow">
+                <LatencyGauge latency={currentLatency} />
+              </div>
               <motion.div
                 className="glass rounded-2xl p-6"
                 initial={{ opacity: 0, y: 20 }}
@@ -156,7 +169,7 @@ export const Dashboard = () => {
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Duration:</span>
-                    <span>00:02:17</span>
+                    <span>{metrics.latest_call_summary.duration_seconds ? `${Math.round(metrics.latest_call_summary.duration_seconds)}s` : 'N/A'}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Agent:</span>
@@ -164,81 +177,11 @@ export const Dashboard = () => {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Purpose:</span>
-                    <span>Job Inquiry</span>
+                    <span className="text-right">{metrics.latest_call_summary.overview}</span>
                   </div>
                 </div>
               </motion.div>
-              <motion.div
-                className="glass rounded-2xl p-6"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.7 }}
-              >
-                <h3 className="text-lg font-semibold mb-4 gradient-text">Performance</h3>
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Response Quality</span>
-                    <div className="flex gap-1">
-                      {[1, 2, 3, 4, 5].map((i) => (
-                        <div
-                          key={i}
-                          className={`w-2 h-2 rounded-full ${
-                            i <= 4 ? 'bg-green-success' : 'bg-muted'
-                          }`}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Comprehension</span>
-                    <div className="flex gap-1">
-                      {[1, 2, 3, 4, 5].map((i) => (
-                        <div
-                          key={i}
-                          className={`w-2 h-2 rounded-full ${
-                            i <= 5 ? 'bg-green-success' : 'bg-muted'
-                          }`}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Speed</span>
-                    <div className="flex gap-1">
-                      {[1, 2, 3, 4, 5].map((i) => (
-                        <div
-                          key={i}
-                          className={`w-2 h-2 rounded-full ${
-                            i <= 3 ? 'bg-orange-warning' : 'bg-muted'
-                          }`}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-              {/* <motion.div
-                className="glass rounded-2xl p-6"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.8 }}
-              >
-                <h3 className="text-lg font-semibold mb-4 gradient-text">Next Actions</h3>
-                <div className="space-y-3 text-sm">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-purple-glow" />
-                    <span>Follow up with documents</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-cyan-accent" />
-                    <span>Schedule application review</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-green-success" />
-                    <span>Send confirmation email</span>
-                  </div>
-                </div>
-              </motion.div> */}
+              <RecentConversations />
             </div>
           </div>
         </motion.main>
