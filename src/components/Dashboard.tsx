@@ -6,59 +6,72 @@ import { BackgroundAnimation } from './BackgroundAnimation';
 import { LatencyGauge } from './LatencyGauge';
 import { TranscriptFeed } from './TranscriptFeed';
 import { MetricsCard } from './MetricsCard';
+import { RecentConversations } from './RecentConversations';
 
-async function fetchMessages() {
+async function fetchDashboardData() {
   try {
-    const response = await fetch('/call.json');
+    const response = await fetch('http://127.0.0.1:5000/dashboard_with_convo');
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const data = await response.json();
-    console.log("Messages loaded:", data);
+    console.log("Dashboard data loaded:", data);
     return data;
   } catch (error) {
-    console.error("Failed to fetch messages:", error);
-    return [];
+    console.error("Failed to fetch dashboard data:", error);
+    return null;
   }
 }
 
 export const Dashboard = () => {
-
-  const [currentLatency, setCurrentLatency] = useState(340);
-  const [allMessages, setAllMessages] = useState([]);
+  const [dashboardData, setDashboardData] = useState<any>(null);
   const [displayedMessages, setDisplayedMessages] = useState([]);
 
-  // Load from JSON on mount
   useEffect(() => {
-    fetchMessages().then((data) => {
-      setAllMessages(data);
-      setDisplayedMessages(data.slice(0, 3));
+    fetchDashboardData().then((data) => {
+      if (data) {
+        setDashboardData(data);
+        setDisplayedMessages(data.conversation.slice(0, 3));
+      }
     });
   }, []);
 
-  // Simulate real-time data updates
+  // Simulate real-time data updates for transcript
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentLatency(prev => {
-        const variation = (Math.random() - 0.5) * 100;
-        return Math.max(200, Math.min(2000, prev + variation));
-      });
-    }, 2000);
+    if (!dashboardData) return;
 
     const messageInterval = setInterval(() => {
       setDisplayedMessages(prev => {
-        if (allMessages.length > prev.length) {
-          return [...prev, allMessages[prev.length]];
+        if (dashboardData.conversation.length > prev.length) {
+          return [...prev, dashboardData.conversation[prev.length]];
+        }
+        // Optional: loop the conversation for demo purposes
+        if (dashboardData.conversation.length === prev.length) {
+            return dashboardData.conversation.slice(0, 3);
         }
         return prev;
       });
     }, 5000);
 
     return () => {
-      clearInterval(interval);
       clearInterval(messageInterval);
     };
-  }, [allMessages]);
+  }, [dashboardData]);
+
+  if (!dashboardData) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-lg text-muted-foreground">Loading dashboard...</p>
+          <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-primary mt-4 mx-auto"></div>
+        </div>
+      </div>
+    );
+  }
+
+  const { summary } = dashboardData;
+  const currentLatency = summary.average_ai_response_latency * 1000;
+
 
   return (
     <div className="min-h-screen bg-background overflow-hidden">
