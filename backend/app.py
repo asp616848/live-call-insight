@@ -3,10 +3,11 @@ from flask import Flask, jsonify
 from s3_downloader import download_logs
 from parser import parse_all_logs, get_last_n_conversations
 from dashboard import get_dashboard_with_latest_convo
+from flask_cors import CORS 
 
 app = Flask(__name__)
 
-
+CORS(app)
 # api endpoints
 
 @app.route('/logs', methods=['GET'])

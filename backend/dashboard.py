@@ -1,64 +1,73 @@
 import os
 import json
+import glob
+from statistics import mean
 
 def get_dashboard_with_latest_convo():
-    import glob
-
-    json_folder = os.path.join(os.path.dirname(__file__), "convoJson")
-    files = sorted(glob.glob(os.path.join(json_folder, "*.json")), key=os.path.getmtime, reverse=True)
+    convo_dir = os.path.join(os.path.dirname(__file__), "convoJson")
+    files = glob.glob(os.path.join(convo_dir, "*.json"))
 
     if not files:
-        return {"error": "No conversations found."}
+        return {
+            "metrics": {
+                "total_calls": 0,
+                "average_call_duration": 0,
+                "average_sentiment_score": 0,
+                "average_ai_response_latency": 0,
+            },
+            "latest_conversation": None
+        }
 
-    total_duration = 0
-    total_latency = 0
-    total_calls = 0
-    sentiments = {"positive": 0, "neutral": 0, "negative": 0}
-    sentiment_score_total = 0
-    sentiment_score_map = {"positive": 1, "neutral": 0.5, "negative": 0}
+    # Sort files by modification time to find the latest one
+    latest_file = max(files, key=os.path.getmtime)
 
-    latest_data = None
-
+    all_summaries = []
     for file_path in files:
         with open(file_path, "r", encoding="utf-8") as f:
-            data = json.load(f)
+            try:
+                data = json.load(f)
+                if "summary" in data:
+                    all_summaries.append(data["summary"])
+            except json.JSONDecodeError:
+                print(f"Warning: Could not decode JSON from {file_path}")
+                continue
 
-        summary = data.get("summary", {})
-        sentiment = summary.get("sentiment")
-        duration = summary.get("duration_seconds") or 0
-        latency = summary.get("average_ai_response_latency") or 0
+    # Calculate aggregate metrics
+    total_calls = len(all_summaries)
+    
+    durations = [s.get("duration_seconds") for s in all_summaries if s.get("duration_seconds") is not None]
+    average_call_duration = mean(durations) if durations else 0
 
-        if sentiment in sentiments:
-            sentiments[sentiment] += 1
-            sentiment_score_total += sentiment_score_map[sentiment]
+    sentiment_map = {"positive": 1, "neutral": 0, "negative": -1}
+    sentiments = [sentiment_map.get(s.get("sentiment", "neutral").lower()) for s in all_summaries]
+    average_sentiment_score = mean(sentiments) if sentiments else 0
 
-        total_duration += duration
-        total_latency += latency
-        total_calls += 1
+    latencies = [s.get("average_ai_response_latency") for s in all_summaries if s.get("average_ai_response_latency") is not None]
+    average_ai_response_latency = mean(latencies) if latencies else 0
 
-        if not latest_data:
-            latest_data = data  # full JSON of latest conversation
+    # Load latest conversation details
+    with open(latest_file, "r", encoding="utf-8") as f:
+        latest_data = json.load(f)
 
+    # The summary in the metrics is an aggregation, but we also pass the specific summary of the latest call
     latest_summary = latest_data.get("summary", {})
-    latest_messages = latest_data.get("messages", [])
-
-    avg_sentiment_score = round((sentiment_score_total / total_calls) * 10, 1) if total_calls else None
-    avg_latency = round(total_latency / total_calls, 2) if total_calls else None
-
-    return {
+    
+    # Combine aggregated metrics with the latest conversation data
+    dashboard_data = {
         "metrics": {
             "total_calls": total_calls,
-            "average_response_latency_ms": int(avg_latency * 1000) if avg_latency else None,
-            "average_sentiment_score_10": avg_sentiment_score,
-            "sentiment_breakdown": sentiments,
-            "latest_call_summary": {
-                "duration": f"{int(latest_summary['duration_seconds']//60):02}:{int(latest_summary['duration_seconds']%60):02}" if latest_summary else None,
-                "agent": "AI Assistant",
-                "purpose": latest_summary.get("overview", "Unknown"),
-                "sentiment": latest_summary.get("sentiment", "neutral"),
-                "user_tone": latest_summary.get("user_tone", ""),
-                "concerns": latest_summary.get("concerns", []),
-            }
+            "average_call_duration": round(average_call_duration, 2),
+            "average_sentiment_score": round(average_sentiment_score, 2),
+            "average_ai_response_latency": round(average_ai_response_latency, 2),
+            # Also include latest call specific summary metrics if needed on dashboard cards
+            **latest_summary 
         },
-        "latest_conversation": latest_messages
+        "latest_conversation": latest_data.get("conversation")
     }
+
+    return dashboard_data
+
+if __name__ == '__main__':
+    # For testing the function
+    dashboard_data = get_dashboard_with_latest_convo()
+    print(json.dumps(dashboard_data, indent=2))

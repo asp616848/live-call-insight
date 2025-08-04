@@ -36,17 +36,24 @@ def parse_log_file(filepath):
         match = re.match(r"\[(\d{2}:\d{2}:\d{2})\] (.+?): (.+)", line)
         if match:
             timestamp_str, speaker_type, text = match.groups()
+            # Combine with call_start date to form a full timestamp
+            full_timestamp_str = f"{call_start.split('T')[0]}T{timestamp_str}"
+            
             timestamp = datetime.strptime(timestamp_str, "%H:%M:%S")
 
             if "AI (chunk)" in speaker_type:
                 if current_user_sentence:
-                    sentences.append({"speaker": "user", "text": "".join(current_user_sentence)})
+                    sentences.append({"speaker": "user", "text": "".join(current_user_sentence), "timestamp": last_user_timestamp})
                     current_user_sentence = []
 
                 if last_timestamp and (timestamp - last_timestamp).seconds > 2:
                     if current_ai_sentence:
-                        sentences.append({"speaker": "ai", "text": " ".join(current_ai_sentence)})
+                        sentences.append({"speaker": "ai", "text": " ".join(current_ai_sentence), "timestamp": last_ai_timestamp})
                         current_ai_sentence = []
+                
+                if not current_ai_sentence:
+                    last_ai_timestamp = full_timestamp_str
+
                 current_ai_sentence.append(text.strip())
                 if last_timestamp:
                     latencies.append((timestamp - last_timestamp).total_seconds())
@@ -54,18 +61,22 @@ def parse_log_file(filepath):
 
             elif "User" in speaker_type:
                 if current_ai_sentence:
-                    sentences.append({"speaker": "ai", "text": " ".join(current_ai_sentence)})
+                    sentences.append({"speaker": "ai", "text": " ".join(current_ai_sentence), "timestamp": last_ai_timestamp})
                     current_ai_sentence = []
 
                 user_text = text.strip()
                 if "<noise>" in user_text.lower():
                     noise_count += 1
+                
+                if not current_user_sentence:
+                    last_user_timestamp = full_timestamp_str
+                
                 current_user_sentence.append(user_text)
 
     if current_ai_sentence:
-        sentences.append({"speaker": "ai", "text": " ".join(current_ai_sentence)})
+        sentences.append({"speaker": "ai", "text": " ".join(current_ai_sentence), "timestamp": last_ai_timestamp})
     if current_user_sentence:
-        sentences.append({"speaker": "user", "text": "".join(current_user_sentence)})
+        sentences.append({"speaker": "user", "text": "".join(current_user_sentence), "timestamp": last_user_timestamp})
 
     # Metrics
     start_dt = datetime.fromisoformat(call_start) if call_start else None

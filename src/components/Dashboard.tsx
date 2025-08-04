@@ -31,7 +31,7 @@ export const Dashboard = () => {
     fetchDashboardData().then((data) => {
       if (data) {
         setDashboardData(data);
-        setDisplayedMessages(data.conversation.slice(0, 3));
+        setDisplayedMessages(data.latest_conversation.slice(0, 3));
       }
     });
   }, []);
@@ -42,12 +42,12 @@ export const Dashboard = () => {
 
     const messageInterval = setInterval(() => {
       setDisplayedMessages(prev => {
-        if (dashboardData.conversation.length > prev.length) {
-          return [...prev, dashboardData.conversation[prev.length]];
+        if (dashboardData.latest_conversation.length > prev.length) {
+          return [...prev, dashboardData.latest_conversation[prev.length]];
         }
         // Optional: loop the conversation for demo purposes
-        if (dashboardData.conversation.length === prev.length) {
-            return dashboardData.conversation.slice(0, 3);
+        if (dashboardData.latest_conversation.length === prev.length) {
+            return dashboardData.latest_conversation.slice(0, 3);
         }
         return prev;
       });
@@ -69,8 +69,9 @@ export const Dashboard = () => {
     );
   }
 
-  const { summary } = dashboardData;
-  const currentLatency = summary.average_ai_response_latency * 1000;
+  const { metrics } = dashboardData;
+  const currentLatency = metrics.average_response_latency_ms || 0;
+  const sentiment = metrics.latest_call_summary.sentiment;
 
 
   return (
@@ -140,8 +141,8 @@ export const Dashboard = () => {
             />
             <MetricsCard
               title="Sentiment Score"
-              value="8.4/10"
-              subtitle="Overall positive"
+              value={sentiment}
+              subtitle="Latest call"
               icon={TrendingUp}
               trend="up"
               trendValue="+0.3 today"
@@ -150,14 +151,14 @@ export const Dashboard = () => {
             />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 h-[calc(100vh-250px)]">
             {/* Transcript Feed */}
-            <div className="lg:col-span-2 h-[calc(100vh-300px)]">
+            <div className="lg:col-span-2 h-full">
               <TranscriptFeed messages={displayedMessages} isLive={true} />
             </div>
 
             {/* Right Column */}
-            <div className="lg:col-span-1 space-y-6">
+            <div className="lg:col-span-1 space-y-6 h-full flex flex-col">
               <LatencyGauge latency={currentLatency} />
               <motion.div
                 className="glass rounded-2xl p-6"
@@ -169,89 +170,19 @@ export const Dashboard = () => {
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Duration:</span>
-                    <span>00:02:17</span>
+                    <span>{metrics.latest_call_summary.duration}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Agent:</span>
-                    <span>AI Assistant</span>
+                    <span>{metrics.latest_call_summary.agent}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Purpose:</span>
-                    <span>Job Inquiry</span>
+                    <span className="text-right">{metrics.latest_call_summary.purpose}</span>
                   </div>
                 </div>
               </motion.div>
-              <motion.div
-                className="glass rounded-2xl p-6"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.7 }}
-              >
-                <h3 className="text-lg font-semibold mb-4 gradient-text">Performance</h3>
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Response Quality</span>
-                    <div className="flex gap-1">
-                      {[1, 2, 3, 4, 5].map((i) => (
-                        <div
-                          key={i}
-                          className={`w-2 h-2 rounded-full ${
-                            i <= 4 ? 'bg-green-success' : 'bg-muted'
-                          }`}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Comprehension</span>
-                    <div className="flex gap-1">
-                      {[1, 2, 3, 4, 5].map((i) => (
-                        <div
-                          key={i}
-                          className={`w-2 h-2 rounded-full ${
-                            i <= 5 ? 'bg-green-success' : 'bg-muted'
-                          }`}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Speed</span>
-                    <div className="flex gap-1">
-                      {[1, 2, 3, 4, 5].map((i) => (
-                        <div
-                          key={i}
-                          className={`w-2 h-2 rounded-full ${
-                            i <= 3 ? 'bg-orange-warning' : 'bg-muted'
-                          }`}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-              {/* <motion.div
-                className="glass rounded-2xl p-6"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.8 }}
-              >
-                <h3 className="text-lg font-semibold mb-4 gradient-text">Next Actions</h3>
-                <div className="space-y-3 text-sm">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-purple-glow" />
-                    <span>Follow up with documents</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-cyan-accent" />
-                    <span>Schedule application review</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-green-success" />
-                    <span>Send confirmation email</span>
-                  </div>
-                </div>
-              </motion.div> */}
+              <RecentConversations />
             </div>
           </div>
         </motion.main>
