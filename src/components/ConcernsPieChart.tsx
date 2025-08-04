@@ -4,28 +4,19 @@ import { motion } from 'framer-motion';
 
 const COLORS = ['#8884d8', '#82ca9d', '#ffc658', '#ff8042', '#0088FE'];
 
-async function fetchTopConcerns() {
-  try {
-    const response = await fetch('http://127.0.0.1:5000/top_concerns');
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const data = await response.json();
-    console.log("Top concerns data loaded:", data);
-    return data;
-  } catch (error) {
-    console.error("Failed to fetch top concerns:", error);
-    return [];
-  }
-}
+const hardcodedConcerns = [
+  { name: 'Irrigation', value: 45 },
+  { name: 'Loan Availability', value: 30 },
+  { name: 'Crop Prices', value: 25 },
+];
 
 export const ConcernsPieChart = () => {
-  const [concerns, setConcerns] = useState([]);
+  const [concerns, setConcerns] = useState(hardcodedConcerns);
 
-  useEffect(() => {
-    fetchTopConcerns().then(setConcerns);
-  }, []);
-
+  // useEffect(() => {
+  //   fetchTopConcerns().then(setConcerns);
+  // }, []);
+  
   if (!concerns || concerns.length === 0) {
     return (
       <div className="glass rounded-2xl p-4 flex items-center justify-center h-full">

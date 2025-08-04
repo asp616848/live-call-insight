@@ -9,33 +9,61 @@ import { MetricsCard } from './MetricsCard';
 import { RecentConversations } from './RecentConversations';
 import { ConcernsPieChart } from './ConcernsPieChart';
 
-async function fetchDashboardData() {
-  try {
-    const response = await fetch('http://127.0.0.1:5000/dashboard_with_convo');
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+const hardcodedData = {
+  metrics: {
+    total_calls: 33147, // 125,
+    average_call_duration: 242, // 85,
+    average_ai_response_latency: 0.45,
+    latest_call_summary: {
+      sentiment: 'Concerned',
+      sentiment_score: 7.4, // 4.2,
+      duration_seconds: 123,
+      overview: 'Discussing farmer issues with irrigation and seeking solutions.',
+    },
+  },
+  latest_conversation: [
+    {
+      "speaker": "user",
+      "text": "Hello.",
+      "timestamp": "2025-08-03T20:43:30"
+    },
+    {
+      "speaker": "ai",
+      "text": "Namaskar Bhaiya, hum Sunita Devi bolat hain, Rajesh Verma ji ke taraf se. Kaise hain aap? Hum aapke chinta ke baare mein jaanana chahat hain, aapke yahan sabse badi samasya ka baa?",
+      "timestamp": "2025-08-03T20:43:30"
+    },
+    {
+      "speaker": "user",
+      "text": "चिंताएँ तो काफी हैं, आप यह बताइए कि राजीव जी, हम लोग किसान लोगों के लिए क्या कर रहे हैं? हम बड़े ही दिक्कत में हैं।",
+      "timestamp": "2025-08-03T20:43:46"
+    },
+    {
+      "speaker": "ai",
+      "text": "Hum aapke dikkat ke baare mein samajh sakte hain, Bhaiya. Aap kisan hain ka? Hum sun rahe hain ki sinchai ki samasya hai.",
+      "timestamp": "2025-08-03T20:43:56"
+    },
+    {
+      "speaker": "user",
+      "text": "Yes, I am a farmer. The biggest problem is the irrigation system. We don't get enough water for our crops.",
+      "timestamp": "2025-08-03T20:44:15"
+    },
+    {
+      "speaker": "ai",
+      "text": "I understand. Rajesh Verma ji has started a new program for water conservation and better irrigation. We can provide you with details.",
+      "timestamp": "2025-08-03T20:44:25"
     }
-    const data = await response.json();
-    console.log("Dashboard data loaded:", data);
-    return data;
-  } catch (error) {
-    console.error("Failed to fetch dashboard data:", error);
-    return null;
-  }
-}
+  ]
+};
 
 export const Dashboard = () => {
-  const [dashboardData, setDashboardData] = useState<any>(null);
-  const [displayedMessages, setDisplayedMessages] = useState([]);
+  const [dashboardData, setDashboardData] = useState<any>(hardcodedData);
+  const [displayedMessages, setDisplayedMessages] = useState<any[]>([]);
 
   useEffect(() => {
-    fetchDashboardData().then((data) => {
-      if (data) {
-        setDashboardData(data);
-        setDisplayedMessages(data.latest_conversation.slice(0, 3));
-      }
-    });
-  }, []);
+    if (dashboardData) {
+      setDisplayedMessages(dashboardData.latest_conversation.slice(0, 3));
+    }
+  }, [dashboardData]);
 
   // Simulate real-time data updates for transcript
   useEffect(() => {
@@ -46,13 +74,12 @@ export const Dashboard = () => {
         if (dashboardData.latest_conversation.length > prev.length) {
           return [...prev, dashboardData.latest_conversation[prev.length]];
         }
-        // Optional: loop the conversation for demo purposes
-        if (dashboardData.latest_conversation.length === prev.length) {
-            return dashboardData.latest_conversation.slice(0, 3);
-        }
+        
+        // All messages displayed, so we stop the interval.
+        clearInterval(messageInterval);
         return prev;
       });
-    }, 5000);
+    }, 2000); // Reduced interval for quicker display
 
     return () => {
       clearInterval(messageInterval);
