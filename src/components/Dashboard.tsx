@@ -11,7 +11,7 @@ import { ConcernsPieChart } from './ConcernsPieChart';
 
 async function fetchDashboardData() {
   try {
-    const response = await fetch('https://live-call-insight.onrender.com/dashboard_with_convo');
+    const response = await fetch('http://127.0.0.1:5000/dashboard_with_convo');
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -32,31 +32,27 @@ export const Dashboard = () => {
     fetchDashboardData().then((data) => {
       if (data) {
         setDashboardData(data);
-        setDisplayedMessages(data.latest_conversation.slice(0, 3));
       }
     });
   }, []);
 
   // Simulate real-time data updates for transcript
   useEffect(() => {
-    if (!dashboardData) return;
+    if (!dashboardData?.latest_conversation) return;
 
-    const messageInterval = setInterval(() => {
+    setDisplayedMessages([]); // Start with a clean slate for the animation
+
+    const intervalId = setInterval(() => {
       setDisplayedMessages(prev => {
-        if (dashboardData.latest_conversation.length > prev.length) {
+        if (prev.length < dashboardData.latest_conversation.length) {
           return [...prev, dashboardData.latest_conversation[prev.length]];
         }
-        // Optional: loop the conversation for demo purposes
-        if (dashboardData.latest_conversation.length === prev.length) {
-            return dashboardData.latest_conversation.slice(0, 3);
-        }
+        clearInterval(intervalId); // All messages displayed, stop interval
         return prev;
       });
-    }, 5000);
+    }, 2500); // Interval for messages to appear
 
-    return () => {
-      clearInterval(messageInterval);
-    };
+    return () => clearInterval(intervalId); // Cleanup on unmount
   }, [dashboardData]);
 
   if (!dashboardData) {
@@ -156,7 +152,7 @@ export const Dashboard = () => {
                 <TranscriptFeed messages={displayedMessages} isLive={true} />
               </div>
               <div className="flex-grow-[2] h-0">
-                <ConcernsPieChart />
+                <ConcernsPieChart concerns={dashboardData.concerns} />
               </div>
             </div>
             
