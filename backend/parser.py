@@ -10,28 +10,6 @@ import glob
 load_dotenv()
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
-def correct_grammar_with_gemini(text):
-    """Uses Gemini to correct grammar and add punctuation to a sentence."""
-    if not text.strip():
-        return ""
-    
-    model = genai.GenerativeModel("gemini-1.5-flash")
-    prompt = f"""
-Please correct the grammar and add punctuation to the following text, which is a transcription of spoken language. The language is likely a mix of Hindi and English (Hinglish). Preserve the original words and meaning as much as possible. Return only the corrected text.
-
-Original text:
-"{text}"
-
-Corrected text:
-"""
-    try:
-        response = model.generate_content(prompt)
-        return response.text.strip()
-    except Exception as e:
-        print(f"Gemini grammar correction failed: {e}")
-        return text # Fallback to original text
-
-
 def parse_log_file(filepath):
     with open(filepath, "r", encoding="utf-8") as f:
         lines = f.readlines()
@@ -65,9 +43,7 @@ def parse_log_file(filepath):
 
             if "AI (chunk)" in speaker_type:
                 if current_user_sentence:
-                    raw_text = " ".join(current_user_sentence)
-                    corrected_text = correct_grammar_with_gemini(raw_text)
-                    sentences.append({"speaker": "user", "text": corrected_text, "timestamp": last_user_timestamp})
+                    sentences.append({"speaker": "user", "text": "".join(current_user_sentence), "timestamp": last_user_timestamp})
                     current_user_sentence = []
 
                 if last_timestamp and (timestamp - last_timestamp).seconds > 2:
@@ -100,9 +76,7 @@ def parse_log_file(filepath):
     if current_ai_sentence:
         sentences.append({"speaker": "ai", "text": " ".join(current_ai_sentence), "timestamp": last_ai_timestamp})
     if current_user_sentence:
-        raw_text = " ".join(current_user_sentence)
-        corrected_text = correct_grammar_with_gemini(raw_text)
-        sentences.append({"speaker": "user", "text": corrected_text, "timestamp": last_user_timestamp})
+        sentences.append({"speaker": "user", "text": "".join(current_user_sentence), "timestamp": last_user_timestamp})
 
     # Metrics
     start_dt = datetime.fromisoformat(call_start) if call_start else None
