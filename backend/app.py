@@ -4,16 +4,10 @@ from s3_downloader import download_logs
 from parser import parse_all_logs, get_last_n_conversations
 from dashboard import get_dashboard_with_latest_convo, get_top_concerns
 from flask_cors import CORS 
-import os
 
 app = Flask(__name__)
 
-CORS(app, resources={r"/*": {"origins": [
-    "http://localhost:8080", # For local development
-    "http://127.0.0.1:8080", # For local development
-    "https://live-call-insight.vercel.app" # Your production frontend
-]}})
-
+CORS(app)
 # api endpoints
 
 @app.route('/logs', methods=['GET'])
@@ -31,7 +25,5 @@ def dashboard_and_transcript():
 def top_concerns():
     return jsonify(get_top_concerns())
 
-
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))  # Render sets PORT env var
-    app.run(host="0.0.0.0", port=port, debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)

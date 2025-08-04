@@ -54,7 +54,7 @@ export default function CallAnalytics() {
 	useEffect(() => {
 		async function fetchCalls() {
 			try {
-				const response = await fetch('https://live-call-insight.onrender.com/logs');
+				const response = await fetch('http://127.0.0.1:5000/logs');
 				if (!response.ok) {
 					throw new Error('Network response was not ok');
 				}
