@@ -61,29 +61,8 @@ export const Dashboard = () => {
 
   useEffect(() => {
     if (dashboardData) {
-      setDisplayedMessages(dashboardData.latest_conversation.slice(0, 3));
+      setDisplayedMessages(dashboardData.latest_conversation);
     }
-  }, [dashboardData]);
-
-  // Simulate real-time data updates for transcript
-  useEffect(() => {
-    if (!dashboardData) return;
-
-    const messageInterval = setInterval(() => {
-      setDisplayedMessages(prev => {
-        if (dashboardData.latest_conversation.length > prev.length) {
-          return [...prev, dashboardData.latest_conversation[prev.length]];
-        }
-        
-        // All messages displayed, so we stop the interval.
-        clearInterval(messageInterval);
-        return prev;
-      });
-    }, 2000); // Reduced interval for quicker display
-
-    return () => {
-      clearInterval(messageInterval);
-    };
   }, [dashboardData]);
 
   if (!dashboardData) {
