@@ -2,7 +2,7 @@
 from flask import Flask, jsonify
 from s3_downloader import download_logs
 from parser import parse_all_logs, get_last_n_conversations
-from dashboard import get_dashboard_with_latest_convo
+from dashboard import get_dashboard_with_latest_convo, get_top_concerns
 from flask_cors import CORS 
 
 app = Flask(__name__)
@@ -21,6 +21,9 @@ def get_logs():
 def dashboard_and_transcript():
     return jsonify(get_dashboard_with_latest_convo())
 
+@app.route('/top_concerns', methods=['GET'])
+def top_concerns():
+    return jsonify(get_top_concerns())
 
 if __name__ == '__main__':
     app.run(debug=True)
