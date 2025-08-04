@@ -11,7 +11,7 @@ import { ConcernsPieChart } from './ConcernsPieChart';
 
 async function fetchDashboardData() {
   try {
-    const response = await fetch('http://127.0.0.1:5000/dashboard_with_convo');
+    const response = await fetch('https://live-call-insight.onrender.com/dashboard_with_convo');
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
