@@ -4,26 +4,32 @@ import { motion } from 'framer-motion';
 
 const COLORS = ['#8884d8', '#82ca9d', '#ffc658', '#ff8042', '#0088FE'];
 
-async function fetchTopConcerns() {
-  try {
-    const response = await fetch('http://127.0.0.1:5000/top_concerns');
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const data = await response.json();
-    console.log("Top concerns data loaded:", data);
-    return data;
-  } catch (error) {
-    console.error("Failed to fetch top concerns:", error);
-    return [];
-  }
-}
+// async function fetchTopConcerns() {
+//   try {
+//     const response = await fetch('http://127.0.0.1:5000/top_concerns');
+//     if (!response.ok) {
+//       throw new Error(`HTTP error! status: ${response.status}`);
+//     }
+//     const data = await response.json();
+//     console.log("Top concerns data loaded:", data);
+//     return data;
+//   } catch (error) {
+//     console.error("Failed to fetch top concerns:", error);
+//     return [];
+//   }
+// }
+
+const hardcodedConcerns = [
+    { name: 'Billing Inquiry', value: 45 },
+    { name: 'Service Outage', value: 30 },
+    { name: 'Product Feature Request', value: 25 },
+];
 
 export const ConcernsPieChart = () => {
-  const [concerns, setConcerns] = useState([]);
+  const [concerns, setConcerns] = useState(hardcodedConcerns);
 
   useEffect(() => {
-    fetchTopConcerns().then(setConcerns);
+    // fetchTopConcerns().then(setConcerns);
   }, []);
 
   if (!concerns || concerns.length === 0) {
