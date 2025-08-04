@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Clock, MessageCircle, Activity, Users, TrendingUp } from 'lucide-react';
-import { Sidebar } from './Sidebar';
 import { CustomCursor } from './CustomCursor';
 import { BackgroundAnimation } from './BackgroundAnimation';
 import { LatencyGauge } from './LatencyGauge';
@@ -23,11 +22,8 @@ async function fetchMessages() {
   }
 }
 
-
-
 export const Dashboard = () => {
 
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [currentLatency, setCurrentLatency] = useState(340);
   const [allMessages, setAllMessages] = useState([]);
   const [displayedMessages, setDisplayedMessages] = useState([]);
@@ -70,18 +66,10 @@ export const Dashboard = () => {
       <CustomCursor />
       
       <div className="flex h-screen relative z-10">
-        {/* Sidebar */}
-        <Sidebar 
-          collapsed={sidebarCollapsed} 
-          onToggle={() => setSidebarCollapsed(!sidebarCollapsed)} 
-        />
 
         {/* Main Content */}
         <motion.main 
           className="flex-1 p-6 space-y-6 overflow-y-auto"
-          animate={{
-            marginLeft: sidebarCollapsed ? 0 : 0,
-          }}
           transition={{ duration: 0.3 }}
         >
           {/* Header */}
@@ -178,10 +166,6 @@ export const Dashboard = () => {
                     <span className="text-muted-foreground">Purpose:</span>
                     <span>Job Inquiry</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Resolution:</span>
-                    <span className="text-green-success">In Progress</span>
-                  </div>
                 </div>
               </motion.div>
               <motion.div
@@ -233,7 +217,7 @@ export const Dashboard = () => {
                   </div>
                 </div>
               </motion.div>
-              <motion.div
+              {/* <motion.div
                 className="glass rounded-2xl p-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -254,7 +238,7 @@ export const Dashboard = () => {
                     <span>Send confirmation email</span>
                   </div>
                 </div>
-              </motion.div>
+              </motion.div> */}
             </div>
           </div>
         </motion.main>

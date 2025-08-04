@@ -8,7 +8,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { LatencyGauge } from "@/components/LatencyGauge";
-import { Sidebar } from "@/components/Sidebar";
 import { CustomCursor } from "@/components/CustomCursor";
 
 const calls = [
@@ -76,7 +75,6 @@ const conversation = [
 export default function CallAnalytics() {
 	const [selectedCall, setSelectedCall] = useState(calls[0]);
 	const [isPlaying, setIsPlaying] = useState(false);
-	const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
 	const getStatusColor = (status: string) => {
 		switch (status) {
@@ -107,10 +105,6 @@ export default function CallAnalytics() {
 	return (
 		<div className="flex min-h-screen bg-background">
         <CustomCursor/>
-			<Sidebar
-				collapsed={sidebarCollapsed}
-				onToggle={() => setSidebarCollapsed(!sidebarCollapsed)}
-			/>
 			<main className="flex-1 p-6 space-y-6 overflow-y-auto">
 				{/* Header with Filters */}
 				<motion.div
