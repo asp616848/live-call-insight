@@ -8,7 +8,6 @@ import os
 
 app = Flask(__name__)
 
-CORS(app)
 CORS(app, resources={r"/*": {"origins": ["https://live-call-insight.vercel.app/"]}})
 
 # api endpoints
