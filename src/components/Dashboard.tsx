@@ -59,10 +59,6 @@ export const Dashboard = () => {
   const [dashboardData, setDashboardData] = useState<any>(hardcodedData);
   const [displayedMessages, setDisplayedMessages] = useState<any[]>([]);
 
-  useEffect(() => {
-    if (dashboardData) {
-      setDisplayedMessages(dashboardData.latest_conversation);
-    }
   }, [dashboardData]);
 
   if (!dashboardData) {
