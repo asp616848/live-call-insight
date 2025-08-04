@@ -96,6 +96,8 @@ with the following keys only:
 - concerns: list of user’s main social or emotional concerns
 - overview: a short summary of the call in 2-3 sentences
 - user_tone: description of the tone or urgency in the user's queries
+- emotion: a single word describing the user's primary emotion (e.g., 'anxious', 'relieved', 'confused')
+- sentiment_score: a numerical score from 0 (very negative) to 10 (very positive)
 
 Conversation:
 {conversation_text}
@@ -107,7 +109,9 @@ Example:
   "sentiment": "neutral",
   "concerns": ["loan repayment", "crop loss"],
   "overview": "User discussed loan difficulties and crop failures...",
-  "user_tone": "frustrated but hopeful"
+  "user_tone": "frustrated but hopeful",
+  "emotion": "anxious",
+  "sentiment_score": 2.5
 }}
 """
 

@@ -63,17 +63,7 @@ export default function Settings() {
 
   return (
     <>
-      <motion.div 
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="mb-6"
-      >
-        <h1 className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">
-          Settings
-        </h1>
-        <p className="text-muted-foreground">Configure your AI assistant and platform preferences</p>
-      </motion.div>
-
+      <div>Work in Progress</div>
       <div className="max-w-4xl mx-auto">
         <Tabs defaultValue="agent" className="space-y-6">
           <TabsList className="grid w-full grid-cols-4">

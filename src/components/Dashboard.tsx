@@ -70,7 +70,7 @@ export const Dashboard = () => {
   }
 
   const { metrics } = dashboardData;
-  const currentLatency = metrics.average_response_latency_ms || 0;
+  const currentLatency = metrics.average_ai_response_latency ? Math.round(metrics.average_ai_response_latency * 1000) : 0;
   const sentiment = metrics.latest_call_summary.sentiment;
 
 
@@ -111,41 +111,38 @@ export const Dashboard = () => {
           {/* Metrics Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <MetricsCard
-              title="Active Calls"
-              value="1"
-              subtitle="Currently in progress"
+              title="Total Calls"
+              value={metrics.total_calls}
+              subtitle="All processed calls"
               icon={Phone}
-              trend="neutral"
+              trend="up"
               color="purple"
               delay={0.1}
             />
             <MetricsCard
-              title="Avg. Response Time"
-              value={`${Math.round(currentLatency)}ms`}
-              subtitle="Last 5 minutes"
+              title="Avg. Call Duration"
+              value={`${Math.round(metrics.average_call_duration)}s`}
+              subtitle="Across all calls"
               icon={Clock}
-              trend={currentLatency < 500 ? 'up' : currentLatency > 1000 ? 'down' : 'neutral'}
-              trendValue={currentLatency < 500 ? '12% faster' : currentLatency > 1000 ? '8% slower' : 'stable'}
+              trend="neutral"
               color="cyan"
               delay={0.2}
             />
             <MetricsCard
-              title="Messages"
-              value={displayedMessages.length}
-              subtitle="Total exchanged"
+              title="Latest Convo Length"
+              value={dashboardData.latest_conversation?.length || 0}
+              subtitle="In latest call"
               icon={MessageCircle}
               trend="up"
-              trendValue="+3 new"
               color="green"
               delay={0.3}
             />
             <MetricsCard
               title="Sentiment Score"
-              value={sentiment}
-              subtitle="Latest call"
+              value={metrics.latest_call_summary.sentiment_score?.toFixed(1)}
+              subtitle="From 0 to 10"
               icon={TrendingUp}
               trend="up"
-              trendValue="+0.3 today"
               color="orange"
               delay={0.4}
             />
@@ -159,7 +156,9 @@ export const Dashboard = () => {
 
             {/* Right Column */}
             <div className="lg:col-span-1 space-y-6 h-full flex flex-col">
-              <LatencyGauge latency={currentLatency} />
+              <div className="flex-grow">
+                <LatencyGauge latency={currentLatency} />
+              </div>
               <motion.div
                 className="glass rounded-2xl p-6"
                 initial={{ opacity: 0, y: 20 }}
@@ -170,15 +169,15 @@ export const Dashboard = () => {
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Duration:</span>
-                    <span>{metrics.latest_call_summary.duration}</span>
+                    <span>{metrics.latest_call_summary.duration_seconds ? `${Math.round(metrics.latest_call_summary.duration_seconds)}s` : 'N/A'}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Agent:</span>
-                    <span>{metrics.latest_call_summary.agent}</span>
+                    <span>AI Assistant</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Purpose:</span>
-                    <span className="text-right">{metrics.latest_call_summary.purpose}</span>
+                    <span className="text-right">{metrics.latest_call_summary.overview}</span>
                   </div>
                 </div>
               </motion.div>

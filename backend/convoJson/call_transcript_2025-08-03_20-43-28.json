@@ -14,33 +14,41 @@
       "financial difficulties",
       "lack of government support for farmers"
     ],
-    "overview": "The user, a farmer, expressed significant worry and distress, questioning the government's assistance. The AI attempted to acknowledge the user's concerns.",
-    "user_tone": "distressed and urgent"
+    "overview": "The user, a farmer, expressed significant worry about their financial situation and sought information about government aid for farmers. The AI attempted to acknowledge their concerns.",
+    "user_tone": "distressed and urgent",
+    "emotion": "anxious",
+    "sentiment_score": 2
   },
   "conversation": [
     {
       "speaker": "user",
-      "text": "Hello."
+      "text": "Hello.",
+      "timestamp": "2025-08-03T20:43:30"
     },
     {
       "speaker": "ai",
-      "text": "Namaskar Bhaiya, hum Sunita Devi bolat hain, Rajesh Verma ji ke taraf se. Kaise hain aap? Hum aapke chinta ke baare mein jaanana chahat hain, aapke yahan sabse badi samasya ka baa?"
+      "text": "Namaskar Bhaiya, hum Sunita Devi bolat hain, Rajesh Verma ji ke taraf se. Kaise hain aap? Hum aapke chinta ke baare mein jaanana chahat hain, aapke yahan sabse badi samasya ka baa?",
+      "timestamp": "2025-08-03T20:43:30"
     },
     {
       "speaker": "user",
-      "text": "चिंताएंतोकाफीहैआपयहबताइएकिराजीवजीहमलोगकिसानलोगके लिएक्याकररहे हैंहमबड़ेहीदिक्कत में हैं"
+      "text": "चिंताएंतोकाफीहैआपयहबताइएकिराजीवजीहमलोगकिसानलोगके लिएक्याकररहे हैंहमबड़ेहीदिक्कत में हैं",
+      "timestamp": "2025-08-03T20:43:46"
     },
     {
       "speaker": "ai",
-      "text": "Hum aapke dikkat ke baare mein"
+      "text": "Hum aapke dikkat ke baare mein",
+      "timestamp": "2025-08-03T20:43:56"
     },
     {
       "speaker": "user",
-      "text": "Yeah."
+      "text": "Yeah.",
+      "timestamp": "2025-08-03T20:44:03"
     },
     {
       "speaker": "ai",
-      "text": "samajh sakte hain, Bhaiya. Aap kisan hain ka? Hum sunat"
+      "text": "samajh sakte hain, Bhaiya. Aap kisan hain ka? Hum sunat",
+      "timestamp": "2025-08-03T20:44:04"
     }
   ]
 }

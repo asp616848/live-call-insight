@@ -59,8 +59,7 @@ def get_dashboard_with_latest_convo():
             "average_call_duration": round(average_call_duration, 2),
             "average_sentiment_score": round(average_sentiment_score, 2),
             "average_ai_response_latency": round(average_ai_response_latency, 2),
-            # Also include latest call specific summary metrics if needed on dashboard cards
-            **latest_summary 
+            "latest_call_summary": latest_summary 
         },
         "latest_conversation": latest_data.get("conversation")
     }
