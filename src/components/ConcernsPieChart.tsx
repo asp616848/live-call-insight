@@ -60,7 +60,7 @@ export const ConcernsPieChart = () => {
             ))}
           </Pie>
           <Tooltip 
-             contentStyle={{
+            contentStyle={{
               background: 'rgba(30, 41, 59, 0.8)',
               borderColor: 'rgba(255, 255, 255, 0.2)',
               borderRadius: '0.5rem',

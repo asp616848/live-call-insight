@@ -80,7 +80,7 @@ export const Dashboard = () => {
       <BackgroundAnimation />
       <CustomCursor />
       
-      <div className="flex h-screen relative z-10">
+      <div className="flex h-screen relative z-10 pb-16">
 
         {/* Main Content */}
         <motion.main 
