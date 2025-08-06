@@ -11,7 +11,7 @@ import { ConcernsPieChart } from './ConcernsPieChart';
 
 async function fetchDashboardData() {
   try {
-    const response = await fetch('https://live-call-insight.onrender.com/dashboard_with_convo');
+    const response = await fetch('http://127.0.0.1:5000/dashboard_with_convo');
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -72,7 +72,7 @@ export const Dashboard = () => {
 
   const { metrics } = dashboardData;
   const currentLatency = metrics.average_ai_response_latency ? Math.round(metrics.average_ai_response_latency * 1000) : 0;
-  const sentiment = metrics.latest_call_summary.sentiment;
+  // const sentiment = metrics.latest_call_summary.sentiment;
 
 
   return (
@@ -140,7 +140,7 @@ export const Dashboard = () => {
             />
             <MetricsCard
               title="Sentiment Score"
-              value={metrics.latest_call_summary.sentiment_score?.toFixed(1)}
+              value={metrics.average_sentiment_score?.toFixed(1)}
               subtitle="From 0 to 10"
               icon={TrendingUp}
               trend="up"
@@ -175,7 +175,7 @@ export const Dashboard = () => {
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Duration:</span>
-                    <span>{metrics.latest_call_summary.duration_seconds ? `${Math.round(metrics.latest_call_summary.duration_seconds)}s` : 'N/A'}</span>
+                    <span>{metrics.average_call_duration ? `${Math.round(metrics.latest_call_summary.duration_seconds)}s` : 'N/A'}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Agent:</span>
@@ -183,7 +183,7 @@ export const Dashboard = () => {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Purpose:</span>
-                    <span className="text-right">{metrics.latest_call_summary.overview}</span>
+                    <span className="text-right">{metrics.latest_call_summary}</span>
                   </div>
                 </div>
               </motion.div>

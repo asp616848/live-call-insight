@@ -72,11 +72,25 @@ def parse_log_file(filepath):
                     last_user_timestamp = full_timestamp_str
                 
                 current_user_sentence.append(user_text)
-
+    gemini_model = genai.GenerativeModel("gemini-1.5-flash")
+    
+    def strip_basic_markdown(text):
+        text = re.sub(r'```[\s\S]*?```', '', text)  # Remove code blocks
+        text = re.sub(r'`[^`]+`', '', text)  # Remove inline code
+        text = re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', text)  # Remove links
+        text = re.sub(r'\*\*([^*]+)\*\*', r'\1', text)  # Remove bold
+        text = re.sub(r'\*([^*]+)\*', r'\1', text)  # Remove italic
+        text = re.sub(r'^[#>]+\s*', '', text, flags=re.MULTILINE)  # Remove headers/quotes
+        return text.strip()
+    
+    
     if current_ai_sentence:
         sentences.append({"speaker": "ai", "text": " ".join(current_ai_sentence), "timestamp": last_ai_timestamp})
+    
+    user_text = gemini_model.generate_content(f"fix grammar in the hindi text and return just the text without any formatting or explanation: {''.join(current_user_sentence)}")
+    cleaned_user_text = strip_basic_markdown(user_text)
     if current_user_sentence:
-        sentences.append({"speaker": "user", "text": "".join(current_user_sentence), "timestamp": last_user_timestamp})
+        sentences.append({"speaker": "user", "text": cleaned_user_text, "timestamp": last_user_timestamp})
 
     # Metrics
     start_dt = datetime.fromisoformat(call_start) if call_start else None
@@ -87,33 +101,33 @@ def parse_log_file(filepath):
     conversation_text = "\n".join(f"{s['speaker']}: {s['text']}" for s in sentences)
 
     # Gemini API call for analysis
-    gemini_model = genai.GenerativeModel("gemini-1.5-flash")
+    
     prompt = f"""
-You are analyzing a human-AI phone conversation.
-Given the conversation below, return the analysis in JSON format
-with the following keys only:
-- sentiment: one of ["positive", "neutral", "negative"]
-- concerns: list of user’s main social or emotional concerns
-- overview: a short summary of the call in 2-3 sentences
-- user_tone: description of the tone or urgency in the user's queries
-- emotion: a single word describing the user's primary emotion (e.g., 'anxious', 'relieved', 'confused')
-- sentiment_score: a numerical score from 0 (very negative) to 10 (very positive)
+    You are analyzing a human-AI phone conversation.
+    Given the conversation below, return the analysis in JSON format
+    with the following keys only:
+    - sentiment: one of ["positive", "neutral", "negative"]
+    - concerns: list of user’s main social or emotional concerns
+    - overview: a short summary of the call in 2-3 sentences
+    - user_tone: description of the tone or urgency in the user's queries
+    - emotion: a single word describing the user's primary emotion (e.g., 'anxious', 'relieved', 'confused')
+    - sentiment_score: a numerical score from 0 (very negative) to 10 (very positive)
 
-Conversation:
-{conversation_text}
+    Conversation:
+    {conversation_text}
 
-Respond ONLY with valid JSON. Do not wrap the response in markdown or extra explanation.
+    Respond ONLY with valid JSON. Do not wrap the response in markdown or extra explanation.
 
-Example:
-{{
-  "sentiment": "neutral",
-  "concerns": ["loan repayment", "crop loss"],
-  "overview": "User discussed loan difficulties and crop failures...",
-  "user_tone": "frustrated but hopeful",
-  "emotion": "anxious",
-  "sentiment_score": 2.5
-}}
-"""
+    Example:
+    {{
+    "sentiment": "neutral",
+    "concerns": ["loan repayment", "crop loss"],
+    "overview": "User discussed loan difficulties and crop failures...",
+    "user_tone": "frustrated but hopeful",
+    "emotion": "anxious",
+    "sentiment_score": 2.5
+    }}
+    """
 
     try:
         response = gemini_model.generate_content(prompt)
