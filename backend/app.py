@@ -19,6 +19,8 @@ def get_logs():
 
 @app.route('/dashboard_with_convo', methods=['GET'])
 def dashboard_and_transcript():
+    download_logs()          # incase it ain't cached
+    parse_all_logs()         
     return jsonify(get_dashboard_with_latest_convo())
 
 @app.route('/top_concerns', methods=['GET'])

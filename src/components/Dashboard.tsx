@@ -48,13 +48,11 @@ export const Dashboard = () => {
         if (dashboardData.latest_conversation.length > prev.length) {
           return [...prev, dashboardData.latest_conversation[prev.length]];
         }
-        // Optional: loop the conversation for demo purposes
-        if (dashboardData.latest_conversation.length === prev.length) {
-            return dashboardData.latest_conversation.slice(0, 3);
-        }
+        // Stop the interval when all messages are displayed
+        clearInterval(messageInterval);
         return prev;
       });
-    }, 5000);
+    }, 2000);
 
     return () => {
       clearInterval(messageInterval);

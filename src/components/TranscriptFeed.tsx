@@ -38,27 +38,14 @@ const formatTimestamp = (timestamp: string) => {
 };
 
 export const TranscriptFeed = ({ messages, isLive = true }: TranscriptFeedProps) => {
-  const [displayedMessages, setDisplayedMessages] = useState<Message[]>([]);
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isAutoScroll, setIsAutoScroll] = useState(true);
-
-  useEffect(() => {
-    if (messages.length > displayedMessages.length) {
-      const newMessages = messages.slice(displayedMessages.length);
-      
-      newMessages.forEach((message, index) => {
-        setTimeout(() => {
-          setDisplayedMessages(prev => [...prev, message]);
-        }, index * 300); // Stagger message appearance
-      });
-    }
-  }, [messages, displayedMessages.length]);
 
   useEffect(() => {
     if (isAutoScroll && scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
-  }, [displayedMessages, isAutoScroll]);
+  }, [messages, isAutoScroll]);
 
   const handleScroll = () => {
     if (scrollRef.current) {
@@ -109,23 +96,14 @@ export const TranscriptFeed = ({ messages, isLive = true }: TranscriptFeedProps)
         onScroll={handleScroll}
         style={{ scrollBehavior: isAutoScroll ? 'smooth' : 'auto' }}
       >
-        <AnimatePresence>
-          {displayedMessages.map((message, index) => {
-            const isUser = message.speaker === 'user';
-            
-            return (
-              <motion.div
-                key={`${message.timestamp}-${index}`}
-                className={`flex gap-3 ${isUser ? 'flex-row' : 'flex-row'}`}
-                initial={{ opacity: 0, y: 20, scale: 0.95 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ 
-                  duration: 0.4, 
-                  ease: "easeOut",
-                  delay: 0.1 
-                }}
-              >
+        {messages.map((message, index) => {
+          const isUser = message.speaker === 'user';
+          
+          return (
+            <div
+              key={`${message.timestamp}-${index}`}
+              className={`flex gap-3 ${isUser ? 'flex-row' : 'flex-row'}`}
+            >
                 {/* Avatar */}
                 <motion.div
                   className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center ${
@@ -177,11 +155,10 @@ export const TranscriptFeed = ({ messages, isLive = true }: TranscriptFeedProps)
                     </p>
                   </motion.div>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
-        </AnimatePresence>
-      </div>
+        </div>
         {/* Typing indicator for live updates */}
         {isLive && (
           <motion.div
