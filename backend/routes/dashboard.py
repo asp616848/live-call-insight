@@ -6,7 +6,7 @@ import google.generativeai as genai
 import re
 
 def get_dashboard_with_latest_convo():
-    convo_dir = os.path.join(os.path.dirname(__file__), "convoJson")
+    convo_dir = os.path.join(os.path.dirname(__file__), "../convoJson")
     files = glob.glob(os.path.join(convo_dir, "*.json"))
 
     if not files:
@@ -73,7 +73,7 @@ def get_top_concerns():
     """
     Analyzes all conversation summaries to find the top 3 concerns.
     """
-    convo_dir = os.path.join(os.path.dirname(__file__), "convoJson")
+    convo_dir = os.path.join(os.path.dirname(__file__), "../convoJson")
     files = glob.glob(os.path.join(convo_dir, "*.json"))
 
     if not files:

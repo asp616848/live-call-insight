@@ -5,7 +5,8 @@ import {
   ChevronRight,
   Sparkles,
   Home,
-  Globe
+  Globe,
+  FileText
 } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -19,6 +20,7 @@ const navItems = [
   { icon: Home, label: 'Dashboard', path: '/' },
   { icon: BarChart3, label: 'Call Analytics', path: '/call-analytics' },
   { icon: Globe, label: 'Geo-Analytics', path: '/geo-analytics' },
+  { icon: FileText, label: 'LangExtract', path: '/lang-extract' },
   { icon: Settings, label: 'Settings', path: '/settings' },
 ];
 

@@ -165,7 +165,7 @@ def parse_log_file(filepath):
     }
 
 def get_last_n_conversations(n=10):
-    convo_dir = os.path.join(os.path.dirname(__file__), "convoJson")
+    convo_dir = os.path.join(os.path.dirname(__file__), "../convoJson")
     files = sorted(
         glob.glob(os.path.join(convo_dir, "*.json")),
         key=os.path.getmtime,
@@ -184,8 +184,8 @@ def get_last_n_conversations(n=10):
 
 
 def parse_all_logs():
-    input_folder = os.path.join(os.path.dirname(__file__), "processed_logs")
-    output_folder = os.path.join(os.path.dirname(__file__), "convoJson")
+    input_folder = os.path.join(os.path.dirname(__file__), "../processed_logs")
+    output_folder = os.path.join(os.path.dirname(__file__), "../convoJson")
     os.makedirs(output_folder, exist_ok=True)
 
     for fname in os.listdir(input_folder):

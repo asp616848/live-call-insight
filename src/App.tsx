@@ -10,6 +10,7 @@ import GeoAnalytics from "./pages/GeoAnalytics";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import LangExtractPage from "./pages/LangExtract";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
               <Route path="/call-analytics" element={<CallAnalytics />} />
               <Route path="/geo-analytics" element={<GeoAnalytics />} />
               <Route path="/settings" element={<Settings />} />
+              <Route path="/lang-extract" element={<LangExtractPage />} />
             </Route>
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

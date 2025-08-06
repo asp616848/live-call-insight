@@ -1,0 +1,267 @@
+import { useState, useEffect } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { Badge } from "@/components/ui/badge";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Skeleton } from "@/components/ui/skeleton";
+
+const LangExtractPage = () => {
+  const [transcripts, setTranscripts] = useState<string[]>([]);
+  const [selectedTranscript, setSelectedTranscript] = useState<string | null>(
+    null
+  );
+  const [analysis, setAnalysis] = useState<any>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchTranscripts = async () => {
+      try {
+        const response = await fetch("http://127.0.0.1:5000/list_transcripts");
+        if (!response.ok) {
+          throw new Error("Failed to fetch transcripts");
+        }
+        const data = await response.json();
+        setTranscripts(data);
+        if (data.length > 0) {
+          setSelectedTranscript(data[0]);
+        }
+      } catch (err) {
+        setError(err.message);
+      }
+    };
+    fetchTranscripts();
+  }, []);
+
+  useEffect(() => {
+    if (selectedTranscript) {
+      const fetchAnalysis = async () => {
+        setLoading(true);
+        setError(null);
+        setAnalysis(null);
+        try {
+          const response = await fetch(
+            `http://127.0.0.1:5000/analyze/${selectedTranscript}`
+          );
+          if (!response.ok) {
+            const errData = await response.json();
+            throw new Error(errData.error || "Failed to fetch analysis");
+          }
+          const data = await response.json();
+          setAnalysis(data);
+        } catch (err) {
+          setError(err.message);
+        } finally {
+          setLoading(false);
+        }
+      };
+      fetchAnalysis();
+    }
+  }, [selectedTranscript]);
+
+  const getBadgeVariant = (category) => {
+    switch (category) {
+      case "concern":
+        return "destructive";
+      case "action_item":
+        return "secondary";
+      case "emotion":
+        return "outline";
+      default:
+        return "default";
+    }
+  };
+
+  return (
+    <div className="container mx-auto p-4 md:p-6 lg:p-8">
+      <header className="mb-6">
+        <h1 className="text-3xl font-bold tracking-tight">
+          Conversation Analysis with LangExtract
+        </h1>
+        <p className="text-muted-foreground">
+          Select a call transcript to view its detailed analysis.
+        </p>
+      </header>
+
+      <div className="grid gap-8 md:grid-cols-3">
+        <div className="md:col-span-1">
+          <Card>
+            <CardHeader>
+              <CardTitle>Select Transcript</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <Select
+                onValueChange={setSelectedTranscript}
+                value={selectedTranscript || ""}
+              >
+                <SelectTrigger>
+                  <SelectValue placeholder="Select a file..." />
+                </SelectTrigger>
+                <SelectContent>
+                  {transcripts.map((t) => (
+                    <SelectItem key={t} value={t}>
+                      {t}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </CardContent>
+          </Card>
+
+          {loading && (
+            <Card className="mt-4">
+              <CardHeader>
+                <CardTitle>Metrics</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <Skeleton className="h-4 w-3/4" />
+                <Skeleton className="h-4 w-1/2" />
+                <Skeleton className="h-4 w-2/3" />
+                <Skeleton className="h-4 w-3/4" />
+              </CardContent>
+            </Card>
+          )}
+
+          {analysis?.analysis?.metrics && !loading && (
+            <Card className="mt-4">
+              <CardHeader>
+                <CardTitle>Call Metrics</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex justify-between">
+                    <span>Duration:</span>
+                    <strong>
+                      {analysis.analysis.metrics.duration_seconds?.toFixed(2)}s
+                    </strong>
+                  </li>
+                  <li className="flex justify-between">
+                    <span>Avg. AI Latency:</span>
+                    <strong>
+                      {analysis.analysis.metrics.average_ai_response_latency?.toFixed(
+                        2
+                      )}
+                      s
+                    </strong>
+                  </li>
+                  <li className="flex justify-between">
+                    <span>Noise Events:</span>
+                    <strong>{analysis.analysis.metrics.noise_count}</strong>
+                  </li>
+                  <li className="flex justify-between">
+                    <span>User Messages:</span>
+                    <strong>
+                      {analysis.analysis.metrics.total_user_messages}
+                    </strong>
+                  </li>
+                  <li className="flex justify-between">
+                    <span>AI Responses:</span>
+                    <strong>
+                      {analysis.analysis.metrics.total_ai_responses}
+                    </strong>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          )}
+        </div>
+
+        <div className="md:col-span-2">
+          <Card>
+            <CardHeader>
+              <CardTitle>Analysis & Visualization</CardTitle>
+              <CardDescription>
+                Extracted entities and raw transcript visualization.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              {error && <p className="text-red-500">{error}</p>}
+              {loading && (
+                <div className="space-y-4">
+                  <Skeleton className="h-8 w-full" />
+                  <Skeleton className="h-24 w-full" />
+                  <Skeleton className="h-32 w-full" />
+                </div>
+              )}
+
+              {analysis && !loading && (
+                <div className="grid gap-6">
+                  <div>
+                    <h3 className="font-semibold mb-2">Extracted Entities</h3>
+                    <ScrollArea className="h-72 w-full rounded-md border">
+                      <Table>
+                        <TableHeader>
+                          <TableRow>
+                            <TableHead>Category</TableHead>
+                            <TableHead>Text</TableHead>
+                            <TableHead>Attributes</TableHead>
+                          </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                          {analysis.analysis.extractions.map((ext, i) => (
+                            <TableRow key={i}>
+                              <TableCell>
+                                <Badge variant={getBadgeVariant(ext.extraction_class)}>
+                                  {ext.extraction_class}
+                                </Badge>
+                              </TableCell>
+                              <TableCell>{ext.extraction_text}</TableCell>
+                              <TableCell>
+                                <pre className="text-xs bg-muted p-2 rounded-md">
+                                  {JSON.stringify(ext.attributes, null, 2)}
+                                </pre>
+                              </TableCell>
+                            </TableRow>
+                          ))}
+                        </TableBody>
+                      </Table>
+                    </ScrollArea>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-2">
+                      Transcript Visualization
+                    </h3>
+                    <ScrollArea className="h-96 w-full rounded-md border">
+                      {analysis.visualization ? (
+                        <iframe
+                          srcDoc={analysis.visualization}
+                          className="w-full h-full"
+                          style={{ minHeight: "400px" }}
+                          title="Transcript Visualization"
+                        />
+                      ) : (
+                        <p>No visualization available.</p>
+                      )}
+                    </ScrollArea>
+                  </div>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default LangExtractPage;
