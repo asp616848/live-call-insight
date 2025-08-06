@@ -142,7 +142,7 @@ const LangExtractPage = () => {
             </Card>
           )}
 
-          {analysis?.analysis?.metrics && !loading && (
+          {analysis?.metrics && !loading && (
             <Card className="mt-4">
               <CardHeader>
                 <CardTitle>Call Metrics</CardTitle>
@@ -152,33 +152,26 @@ const LangExtractPage = () => {
                   <li className="flex justify-between">
                     <span>Duration:</span>
                     <strong>
-                      {analysis.analysis.metrics.duration_seconds?.toFixed(2)}s
+                      {analysis.metrics.duration_seconds?.toFixed(2)}s
                     </strong>
                   </li>
                   <li className="flex justify-between">
                     <span>Avg. AI Latency:</span>
                     <strong>
-                      {analysis.analysis.metrics.average_ai_response_latency?.toFixed(
-                        2
-                      )}
-                      s
+                      {analysis.metrics.average_ai_latency?.toFixed(2)}s
                     </strong>
                   </li>
                   <li className="flex justify-between">
                     <span>Noise Events:</span>
-                    <strong>{analysis.analysis.metrics.noise_count}</strong>
+                    <strong>{analysis.metrics.noise_count}</strong>
                   </li>
                   <li className="flex justify-between">
-                    <span>User Messages:</span>
-                    <strong>
-                      {analysis.analysis.metrics.total_user_messages}
-                    </strong>
+                    <span>User Turns:</span>
+                    <strong>{analysis.metrics.total_user_turns}</strong>
                   </li>
                   <li className="flex justify-between">
-                    <span>AI Responses:</span>
-                    <strong>
-                      {analysis.analysis.metrics.total_ai_responses}
-                    </strong>
+                    <span>AI Turns:</span>
+                    <strong>{analysis.metrics.total_ai_turns}</strong>
                   </li>
                 </ul>
               </CardContent>
@@ -218,7 +211,7 @@ const LangExtractPage = () => {
                           </TableRow>
                         </TableHeader>
                         <TableBody>
-                          {analysis.analysis.extractions.map((ext, i) => (
+                          {analysis.extractions.map((ext, i) => (
                             <TableRow key={i}>
                               <TableCell>
                                 <Badge variant={getBadgeVariant(ext.extraction_class)}>
@@ -242,9 +235,9 @@ const LangExtractPage = () => {
                       Transcript Visualization
                     </h3>
                     <ScrollArea className="h-96 w-full rounded-md border">
-                      {analysis.visualization ? (
+                      {analysis.visualization_html ? (
                         <iframe
-                          srcDoc={analysis.visualization}
+                          srcDoc={analysis.visualization_html}
                           className="w-full h-full"
                           style={{ minHeight: "400px" }}
                           title="Transcript Visualization"
