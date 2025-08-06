@@ -16,8 +16,9 @@ def get_dashboard_with_latest_convo():
                 "average_call_duration": 0,
                 "average_sentiment_score": 0,
                 "average_ai_response_latency": 0,
+                "latest_call_summary": {}
             },
-            "latest_conversation": None
+            "latest_conversation": []
         }
 
     # Sort files by modification time to find the latest one
@@ -63,7 +64,7 @@ def get_dashboard_with_latest_convo():
             "average_ai_response_latency": round(average_ai_response_latency, 2),
             "latest_call_summary": latest_summary 
         },
-        "latest_conversation": latest_data.get("conversation")
+        "latest_conversation": latest_data.get("conversation", [])
     }
 
     return dashboard_data

@@ -14,9 +14,34 @@ def parse_log_file(filepath):
     with open(filepath, "r", encoding="utf-8") as f:
         lines = f.readlines()
 
+    gemini_model = genai.GenerativeModel("gemini-1.5-flash")
+
+    def strip_basic_markdown(text):
+        text = re.sub(r'```[\s\S]*?```', '', text)
+        text = re.sub(r'`[^`]+`', '', text)
+        text = re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', text)
+        text = re.sub(r'\*\*([^*]+)\*\*', r'\1', text)
+        text = re.sub(r'\*([^*]+)\*', r'\1', text)
+        text = re.sub(r'^[#>]+\s*', '', text, flags=re.MULTILINE)
+        return text.strip()
+
+    def process_user_sentence(user_sentence_parts, timestamp):
+        if not user_sentence_parts:
+            return None
+        raw_text = "".join(user_sentence_parts)
+        try:
+            response = gemini_model.generate_content(f"fix grammar in the hindi text and return just the text without any formatting or explanation: {raw_text}")
+            cleaned_text = strip_basic_markdown(response.text)
+            return {"speaker": "user", "text": cleaned_text, "timestamp": timestamp}
+        except Exception as e:
+            print(f"Error during Gemini grammar correction: {e}")
+            # Fallback to raw text if API fails
+            return {"speaker": "user", "text": raw_text, "timestamp": timestamp}
+
     call_start, call_end, stream_sid = None, None, None
     sentences = []
     current_ai_sentence, current_user_sentence = [], []
+    last_ai_timestamp, last_user_timestamp = None, None
     last_timestamp, latencies = None, []
     noise_count = 0
 
@@ -36,14 +61,14 @@ def parse_log_file(filepath):
         match = re.match(r"\[(\d{2}:\d{2}:\d{2})\] (.+?): (.+)", line)
         if match:
             timestamp_str, speaker_type, text = match.groups()
-            # Combine with call_start date to form a full timestamp
             full_timestamp_str = f"{call_start.split('T')[0]}T{timestamp_str}"
-            
             timestamp = datetime.strptime(timestamp_str, "%H:%M:%S")
 
             if "AI (chunk)" in speaker_type:
                 if current_user_sentence:
-                    sentences.append({"speaker": "user", "text": "".join(current_user_sentence), "timestamp": last_user_timestamp})
+                    processed_sentence = process_user_sentence(current_user_sentence, last_user_timestamp)
+                    if processed_sentence:
+                        sentences.append(processed_sentence)
                     current_user_sentence = []
 
                 if last_timestamp and (timestamp - last_timestamp).seconds > 2:
@@ -72,25 +97,15 @@ def parse_log_file(filepath):
                     last_user_timestamp = full_timestamp_str
                 
                 current_user_sentence.append(user_text)
-    gemini_model = genai.GenerativeModel("gemini-1.5-flash")
     
-    def strip_basic_markdown(text):
-        text = re.sub(r'```[\s\S]*?```', '', text)  # Remove code blocks
-        text = re.sub(r'`[^`]+`', '', text)  # Remove inline code
-        text = re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', text)  # Remove links
-        text = re.sub(r'\*\*([^*]+)\*\*', r'\1', text)  # Remove bold
-        text = re.sub(r'\*([^*]+)\*', r'\1', text)  # Remove italic
-        text = re.sub(r'^[#>]+\s*', '', text, flags=re.MULTILINE)  # Remove headers/quotes
-        return text.strip()
-    
-    
+    # Append any remaining sentences after the loop
     if current_ai_sentence:
         sentences.append({"speaker": "ai", "text": " ".join(current_ai_sentence), "timestamp": last_ai_timestamp})
     
-    user_text = gemini_model.generate_content(f"fix grammar in the hindi text and return just the text without any formatting or explanation: {''.join(current_user_sentence)}")
-    cleaned_user_text = strip_basic_markdown(user_text)
     if current_user_sentence:
-        sentences.append({"speaker": "user", "text": cleaned_user_text, "timestamp": last_user_timestamp})
+        processed_sentence = process_user_sentence(current_user_sentence, last_user_timestamp)
+        if processed_sentence:
+            sentences.append(processed_sentence)
 
     # Metrics
     start_dt = datetime.fromisoformat(call_start) if call_start else None
