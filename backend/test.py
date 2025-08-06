@@ -48,3 +48,8 @@ result = lx.extract(
     model_id="gemini-2.5-flash",
     api_key=gemini_key
 )
+
+# lx.io.save_annotated_documents([result], output_name="extraction_results.jsonl")
+html_content = lx.visualize(result)
+with open("visualization.html", "w") as f:
+    f.write(html_content)
