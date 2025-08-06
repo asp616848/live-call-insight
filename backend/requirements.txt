@@ -5,3 +5,4 @@ flask-cors
 
 requests==2.28.2  # Add requests to interact with Gemini API
 generativeai  # Add the Google Generative AI library
+Flask-Cors

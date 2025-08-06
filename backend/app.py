@@ -6,8 +6,8 @@ from dashboard import get_dashboard_with_latest_convo, get_top_concerns
 from flask_cors import CORS 
 
 app = Flask(__name__)
+CORS(app)  # This will enable CORS for all routes
 
-CORS(app)
 # api endpoints
 
 @app.route('/logs', methods=['GET'])

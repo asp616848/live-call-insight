@@ -32,7 +32,9 @@ export const Dashboard = () => {
     fetchDashboardData().then((data) => {
       if (data) {
         setDashboardData(data);
-        setDisplayedMessages(data.latest_conversation.slice(0, 3));
+        if (data.latest_conversation && Array.isArray(data.latest_conversation)) {
+          setDisplayedMessages(data.latest_conversation.slice(0, 3));
+        }
       }
     });
   }, []);
@@ -183,7 +185,7 @@ export const Dashboard = () => {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Purpose:</span>
-                    <span className="text-right">{metrics.latest_call_summary}</span>
+                    <span className="text-right">{metrics.latest_call_summary?.overview}</span>
                   </div>
                 </div>
               </motion.div>
