@@ -97,7 +97,7 @@ def get_top_concerns():
     # Make sure to set your GOOGLE_API_KEY environment variable
     try:
         genai.configure(api_key=os.environ["GEMINI_API_KEY"])
-        model = genai.GenerativeModel('gemini-1.5-flash')
+        model = genai.GenerativeModel('gemini-2.5-flash-lite')
     except Exception as e:
         print(f"Error configuring Gemini API: {e}")
         return [{"error": "Gemini API not configured"}]
@@ -115,6 +115,7 @@ def get_top_concerns():
         
         # Clean the response to extract the JSON part
         text_response = response.text
+        print(text_response)
         # Use regex to find the JSON block
         json_match = re.search(r'\{.*\}', text_response, re.DOTALL)
         if json_match:

@@ -11,18 +11,19 @@
     "total_ai_responses": 3,
     "sentiment": "negative",
     "concerns": [
-      "financial difficulties",
-      "government aid for farmers"
+      "economic hardship",
+      "farmer welfare",
+      "lack of support"
     ],
-    "overview": "The user expressed significant worry about their financial situation and inquired about government assistance for farmers. The AI attempted to offer support but the conversation was cut short.",
-    "user_tone": "worried and urgent",
-    "emotion": "anxious",
-    "sentiment_score": 3
+    "overview": "The user, identifying as a farmer, expresses profound difficulties and seeks information on assistance for farmers. The AI acknowledges the user's struggles and clarifies if they are indeed a farmer.",
+    "user_tone": "burdened and direct, with a sense of urgency",
+    "emotion": "distressed",
+    "sentiment_score": 2.0
   },
   "conversation": [
     {
       "speaker": "user",
-      "text": "नमस्ते।",
+      "text": "Hello.",
       "timestamp": "2025-08-03T20:43:30"
     },
     {
@@ -32,7 +33,7 @@
     },
     {
       "speaker": "user",
-      "text": "चिंता तो काफी है। आप यह बताइए कि राजीव जी हम लोगों किसानों के लिए क्या कर रहे हैं? हम बड़ी ही दिक्कत में हैं।",
+      "text": "चिंताएंतोकाफीहैआपयहबताइएकिराजीवजीहमलोगकिसानलोगके लिएक्याकररहे हैंहमबड़ेहीदिक्कत में हैं",
       "timestamp": "2025-08-03T20:43:46"
     },
     {
@@ -42,7 +43,7 @@
     },
     {
       "speaker": "user",
-      "text": "हाँ।",
+      "text": "Yeah.",
       "timestamp": "2025-08-03T20:44:03"
     },
     {

@@ -72,7 +72,7 @@ def parse_log_file(filepath):
                     last_user_timestamp = full_timestamp_str
                 
                 current_user_sentence.append(user_text)
-    gemini_model = genai.GenerativeModel("gemini-1.5-flash")
+    gemini_model = genai.GenerativeModel("gemini-2.5-flash")
     
     def strip_basic_markdown(text):
         text = re.sub(r'```[\s\S]*?```', '', text)  # Remove code blocks
@@ -90,7 +90,6 @@ def parse_log_file(filepath):
     if current_user_sentence:
         user_text_response = gemini_model.generate_content(f"fix grammar in the hindi text and return just the text without any formatting or explanation: {''.join(current_user_sentence)}")
         cleaned_user_text = strip_basic_markdown(user_text_response.text)
-        print("YOHO "+ cleaned_user_text)
         sentences.append({"speaker": "user", "text": cleaned_user_text, "timestamp": last_user_timestamp})
 
     # Metrics
