@@ -14,7 +14,7 @@
       "financial difficulties",
       "government aid for farmers"
     ],
-    "overview": "The user expressed significant worry about their financial situation and inquired about government assistance programs for farmers. The AI attempted to understand the user's concerns.",
+    "overview": "The user expressed significant worry about their financial situation and inquired about government assistance for farmers. The AI attempted to offer support but the conversation was cut short.",
     "user_tone": "worried and urgent",
     "emotion": "anxious",
     "sentiment_score": 3
@@ -32,7 +32,7 @@
     },
     {
       "speaker": "user",
-      "text": "चिंता तो काफी है। आप यह बताइए कि राजीव जी हम लोग किसानों के लिए क्या कर रहे हैं? हम बड़ी ही दिक्कत में हैं।",
+      "text": "चिंता तो काफी है। आप यह बताइए कि राजीव जी हम लोगों किसानों के लिए क्या कर रहे हैं? हम बड़ी ही दिक्कत में हैं।",
       "timestamp": "2025-08-03T20:43:46"
     },
     {
