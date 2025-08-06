@@ -104,7 +104,7 @@
     <div id="attributesContainer"></div>
   </div>
   <div class="lx-text-window" id="textWindow">
-    <span class="lx-highlight lx-current-highlight" data-idx="0" style="background-color:#D2E3FC;">Lady Juliet</span> gazed longingly at the stars, <span class="lx-highlight" data-idx="1" style="background-color:#C8E6C9;">her heart aching</span> <span class="lx-highlight" data-idx="2" style="background-color:#FEF0C3;">for Romeo</span>
+    <span class="lx-highlight lx-current-highlight" data-idx="0" style="background-color:#D2E3FC;">Lady Juliet</span> gazed <span class="lx-highlight" data-idx="1" style="background-color:#C8E6C9;">longingly</span> at the stars, <span class="lx-highlight" data-idx="2" style="background-color:#C8E6C9;">her heart aching</span> <span class="lx-highlight" data-idx="3" style="background-color:#FEF0C3;">for Romeo</span>
   </div>
   <div class="lx-controls">
     <div class="lx-button-row">
@@ -114,11 +114,11 @@
     </div>
     <div class="lx-progress-container">
       <input type="range" id="progressSlider" class="lx-progress-slider"
-              min="0" max="2" value="0"
-              onchange="jumpToExtraction(this.value)">
+             min="0" max="3" value="0"
+             onchange="jumpToExtraction(this.value)">
     </div>
     <div class="lx-status-text">
-      Entity <span id="entityInfo">1/3</span> |
+      Entity <span id="entityInfo">1/4</span> |
       Pos <span id="posInfo">[0-11]</span>
     </div>
   </div>
@@ -126,7 +126,7 @@
 
 <script>
   (function() {
-    const extractions = [{"index": 0, "class": "character", "text": "Lady Juliet", "color": "#D2E3FC", "startPos": 0, "endPos": 11, "beforeText": "", "extractionText": "Lady Juliet", "afterText": " gazed longingly at the stars, her heart aching for Romeo", "attributesHtml": "<div><strong>class:</strong> character</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotional_state</span>: <span class=\"lx-attr-value\">longing</span>}</div>"}, {"index": 1, "class": "emotion", "text": "her heart aching", "color": "#C8E6C9", "startPos": 42, "endPos": 58, "beforeText": "Lady Juliet gazed longingly at the stars, ", "extractionText": "her heart aching", "afterText": " for Romeo", "attributesHtml": "<div><strong>class:</strong> emotion</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">feeling</span>: <span class=\"lx-attr-value\">painful longing</span>}</div>"}, {"index": 2, "class": "relationship", "text": "for Romeo", "color": "#FEF0C3", "startPos": 59, "endPos": 68, "beforeText": "Lady Juliet gazed longingly at the stars, her heart aching ", "extractionText": "for Romeo", "afterText": "", "attributesHtml": "<div><strong>class:</strong> relationship</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">romantic affection</span>}</div>"}];
+    const extractions = [{"index": 0, "class": "character", "text": "Lady Juliet", "color": "#D2E3FC", "startPos": 0, "endPos": 11, "beforeText": "", "extractionText": "Lady Juliet", "afterText": " gazed longingly at the stars, her heart aching for Romeo", "attributesHtml": "<div><strong>class:</strong> character</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotional_state</span>: <span class=\"lx-attr-value\">longing and sorrowful</span>}</div>"}, {"index": 1, "class": "emotion", "text": "longingly", "color": "#C8E6C9", "startPos": 18, "endPos": 27, "beforeText": "Lady Juliet gazed ", "extractionText": "longingly", "afterText": " at the stars, her heart aching for Romeo", "attributesHtml": "<div><strong>class:</strong> emotion</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">feeling</span>: <span class=\"lx-attr-value\">yearning desire</span>}</div>"}, {"index": 2, "class": "emotion", "text": "her heart aching", "color": "#C8E6C9", "startPos": 42, "endPos": 58, "beforeText": "Lady Juliet gazed longingly at the stars, ", "extractionText": "her heart aching", "afterText": " for Romeo", "attributesHtml": "<div><strong>class:</strong> emotion</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">feeling</span>: <span class=\"lx-attr-value\">deep sorrow</span>}</div>"}, {"index": 3, "class": "relationship", "text": "for Romeo", "color": "#FEF0C3", "startPos": 59, "endPos": 68, "beforeText": "Lady Juliet gazed longingly at the stars, her heart aching ", "extractionText": "for Romeo", "afterText": "", "attributesHtml": "<div><strong>class:</strong> relationship</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">romantic connection</span>}</div>"}];
     let currentIndex = 0;
     let isPlaying = false;
     let animationInterval = null;

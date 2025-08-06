@@ -43,6 +43,7 @@ input_text = (
 )
 result = lx.extract(
     text_or_documents=input_text,
+    extraction_passes=3,
     prompt_description=prompt,
     examples=examples,
     model_id="gemini-2.5-flash",
