@@ -16,10 +16,10 @@ import { AuthProvider } from "./contexts/AuthContext";
 import LangExtractPage from "./pages/LangExtract";
 
 const queryClient = new QueryClient();
-console.log(import.meta.env.GOOGLE_CLIENT_ID)
+console.log(import.meta.env.VITE_GOOGLE_CLIENT_ID)
 const App = () => (
   <ThemeProvider>
-    <GoogleOAuthProvider clientId={import.meta.env.GOOGLE_CLIENT_ID || "YOUR_GOOGLE_CLIENT_ID"}>
+    <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID || "YOUR_GOOGLE_CLIENT_ID"}>
       <AuthProvider>
         <QueryClientProvider client={queryClient}>
           <TooltipProvider>
