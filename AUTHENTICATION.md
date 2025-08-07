@@ -20,7 +20,7 @@ This project now includes Google OAuth authentication with a beautiful UI integr
 
 1. Update the `.env` file with your Google Client ID:
    ```
-   GOOGLE_CLIENT_ID=your_actual_google_client_id_here
+   VITE_GOOGLE_CLIENT_ID=your_actual_google_client_id_here
    ```
 
 ### 3. Features
