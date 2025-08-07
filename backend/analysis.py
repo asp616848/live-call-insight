@@ -1,6 +1,5 @@
 import os
 import re
-import json
 import textwrap
 from datetime import datetime
 from statistics import mean
@@ -78,13 +77,16 @@ def parse_and_compute_metrics(lines):
     return sentences, metrics, call_start, call_end
 
 def analyze_conversation_with_langextract(filepath):
+    import json
+    
     with open(filepath, "r", encoding="utf-8") as f:
-        lines = f.readlines()
+        data = json.load(f)
 
-    sentences, metrics, call_start, call_end = parse_and_compute_metrics(lines)
+    conversation = data.get("conversation", [])
+    summary_metrics = data.get("summary", {})
 
     # assemble transcript text for LangExtract
-    transcript = "\n".join(f"{s['speaker']}: {s['text']}" for s in sentences)
+    transcript = "\n".join(f"{s.get('speaker', '')}: {s.get('text', '')}" for s in conversation)
 
     prompt = textwrap.dedent("""
     From the transcript, extract in order:
@@ -137,7 +139,7 @@ def analyze_conversation_with_langextract(filepath):
     html = lx.visualize(result)   # OK to keep as HTML string
 
     return {
-        "metrics": {**metrics, "call_started": call_start, "call_ended": call_end},
+        "metrics": summary_metrics,
         "extractions": extractions,
         "visualization_html": html
     }
