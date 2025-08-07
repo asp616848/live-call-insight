@@ -6,6 +6,8 @@ from routes.dashboard import get_dashboard_with_latest_convo, get_top_concerns
 from analysis import analyze_conversation_with_langextract
 import os
 from flask_cors import CORS 
+import json
+from datetime import datetime
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})  # This will enable CORS for all routes
@@ -52,6 +54,34 @@ def analyze_transcript(filename):
         return jsonify(analysis_result), 500
         
     return jsonify(analysis_result)
+
+@app.route('/update-last-seen', methods=['POST'])
+def update_last_seen():
+    data = request.get_json()
+    email = data.get('email')
+    if not email:
+        return jsonify({"error": "Email is required"}), 400
+
+    last_seen_path = os.path.join(os.path.dirname(__file__), '..', 'public', 'last-seen.json')
+    
+    try:
+        with open(last_seen_path, 'r+') as f:
+            try:
+                last_seen_data = json.load(f)
+            except json.JSONDecodeError:
+                last_seen_data = {}
+            
+            last_seen_data[email] = datetime.now().isoformat()
+            
+            f.seek(0)
+            json.dump(last_seen_data, f, indent=2)
+            f.truncate()
+
+        return jsonify({"success": True}), 200
+    except FileNotFoundError:
+        return jsonify({"error": "last-seen.json not found"}), 404
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 
 if __name__ == '__main__':

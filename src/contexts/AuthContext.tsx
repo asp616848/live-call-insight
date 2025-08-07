@@ -11,7 +11,7 @@ interface User {
 interface AuthContextType {
   user: User | null;
   isAuthenticated: boolean;
-  login: (credentialResponse: CredentialResponse) => void;
+  login: (credentialResponse: CredentialResponse) => Promise<void>;
   logout: () => void;
   loading: boolean;
 }
@@ -35,19 +35,34 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Check if user is stored in localStorage on app start
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
-      setUser(JSON.parse(storedUser));
+      const userData: User = JSON.parse(storedUser);
+      setUser(userData);
+      fetch('http://localhost:5000/update-last-seen', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: userData.email }),
+      });
     }
     setLoading(false);
   }, []);
 
-  const login = (credentialResponse: CredentialResponse) => {
+  const login = async (credentialResponse: CredentialResponse) => {
     if (credentialResponse.credential) {
-      // Decode JWT token to get user info
       const payload = JSON.parse(atob(credentialResponse.credential.split('.')[1]));
+      const email = payload.email;
+
+      const response = await fetch('/allowed-users.json');
+      const allowedUsersData = await response.json();
       
+      if (!allowedUsersData.users.includes(email)) {
+        logout();
+        throw new Error("User not authorized.");
+      }
+
       const userData: User = {
         id: payload.sub,
         name: payload.name,
@@ -57,6 +72,14 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
       setUser(userData);
       localStorage.setItem('user', JSON.stringify(userData));
+
+      await fetch('http://localhost:5000/update-last-seen', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: userData.email }),
+      });
     }
   };
 
