@@ -108,6 +108,7 @@ def analyze_conversation_with_langextract(filepath):
                 lx.data.Extraction("concern", "किसान का लोन जो है वह माफ ही नहीं होता"),
                 lx.data.Extraction("concern", "बहाज इतना हाई है कि हम चुका ही नहीं पाते"),
                 lx.data.Extraction("action_item", "₹2000 crore ke projects laaye hain")
+                # solution item
             ]
         )
     ]
