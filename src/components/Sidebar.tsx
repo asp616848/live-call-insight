@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { GoogleLoginButton } from './GoogleLoginButton';
 
 interface SidebarProps {
   collapsed: boolean;
@@ -120,6 +121,11 @@ export const Sidebar = ({ collapsed, onToggle }: SidebarProps) => {
           );
         })}
       </nav>
+
+      {/* Google Login Section */}
+      <div className="p-4 border-t border-border/30">
+        <GoogleLoginButton collapsed={collapsed} />
+      </div>
 
       {/* Toggle Button */}
       <div className="p-4 border-t border-border/30">
