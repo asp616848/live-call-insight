@@ -9,13 +9,15 @@ export function Layout() {
 
   return (
     <ProtectedRoute>
-      <div className="flex min-h-screen bg-background">
+      {/* Full viewport height; hide global overflow, let main scroll */}
+      <div className="flex h-screen w-screen bg-background overflow-hidden">
         <CustomCursor />
         <Sidebar
           collapsed={sidebarCollapsed}
           onToggle={() => setSidebarCollapsed(!sidebarCollapsed)}
         />
-        <main className="flex-1 p-6 overflow-y-auto h-full">
+        {/* Scroll only the right content */}
+        <main className="flex-1 h-full overflow-y-auto p-6">
           <Outlet />
         </main>
       </div>
