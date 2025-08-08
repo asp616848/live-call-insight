@@ -1,8 +1,6 @@
 import os
-import re
+import json
 import textwrap
-from datetime import datetime
-from statistics import mean
 import langextract as lx
 from dotenv import load_dotenv
 
@@ -11,119 +9,82 @@ API_KEY = os.getenv("GEMINI_API_KEY")
 if not API_KEY:
     raise ValueError("GEMINI_API_KEY missing")
 
-def parse_and_compute_metrics(lines):
-    call_start = call_end = None
-    sentences = []
-    current = {"speaker": None, "text": [], "timestamp": None}
-    last_ts = None
-    latencies = []
-    noise_count = 0
-
-    for line in lines:
-        line = line.strip()
-        if line.startswith("Call started at:"):
-            call_start = line.split("Call started at:")[1].strip()
-            continue
-        if line.startswith("Call ended at:"):
-            call_end = line.split("Call ended at:")[1].strip()
-            continue
-
-        m = re.match(r"\[(\d{2}:\d{2}:\d{2})\] (.+?): (.+)", line)
-        if not m:
-            continue
-
-        ts_str, speaker_tag, text = m.groups()
-        ts = datetime.strptime(ts_str, "%H:%M:%S")
-        full_ts = f"{call_start.split('T')[0]}T{ts_str}"
-        role = "ai" if "AI (chunk)" in speaker_tag else "user"
-
-        if current["speaker"] != role and current["speaker"]:
-            sentences.append({
-                "speaker": current["speaker"],
-                "text": " ".join(current["text"]).strip(),
-                "timestamp": current["timestamp"]
-            })
-            current = {"speaker": role, "text": [], "timestamp": full_ts}
-        elif not current["text"]:
-            current["timestamp"] = full_ts
-
-        current["speaker"] = role
-        current["text"].append(text.strip())
-
-        if role == "ai":
-            if last_ts:
-                latencies.append((ts - last_ts).total_seconds())
-            last_ts = ts
-        else:
-            if "<noise>" in text.lower():
-                noise_count += 1
-
-    if current["text"]:
-        sentences.append({
-            "speaker": current["speaker"],
-            "text": " ".join(current["text"]).strip(),
-            "timestamp": current["timestamp"]
-        })
-
-    metrics = {}
-    if call_start and call_end:
-        metrics["duration_seconds"] = (datetime.fromisoformat(call_end) -
-                                       datetime.fromisoformat(call_start)).total_seconds()
-    metrics["average_ai_latency"] = round(mean(latencies), 2) if latencies else None
-    metrics["noise_count"] = noise_count
-    metrics["total_user_turns"] = sum(1 for s in sentences if s["speaker"] == "user")
-    metrics["total_ai_turns"] = sum(1 for s in sentences if s["speaker"] == "ai")
-
-    return sentences, metrics, call_start, call_end
-
 def analyze_conversation_with_langextract(filepath):
-    import json
-    
+    """
+    Analyze conversation JSON file using LangExtract to extract concerns, 
+    action items, and emotions with proper attributes.
+    """
     with open(filepath, "r", encoding="utf-8") as f:
         data = json.load(f)
 
     conversation = data.get("conversation", [])
     summary_metrics = data.get("summary", {})
 
-    # assemble transcript text for LangExtract
-    transcript = "\n".join(f"{s.get('speaker', '')}: {s.get('text', '')}" for s in conversation)
+    # Extract only user messages for analysis (concerns come from users)
+    user_messages = [msg for msg in conversation if msg.get("speaker") == "user"]
+    ai_messages = [msg for msg in conversation if msg.get("speaker") == "ai"]
+    
+    # Combine all conversation text for context
+    full_transcript = "\n".join(
+        f"{msg.get('speaker', '').upper()}: {msg.get('text', '')}" 
+        for msg in conversation
+    )
 
+    # Define extraction prompt
     prompt = textwrap.dedent("""
-    From the transcript, extract in order:
-    - concern: user-mentioned issues.
-    - action_item: AI’s follow-up actions; include "policy" or "amount" if present.
-    - emotion: exact words showing the user's primary emotion.
-    Use exact extraction spans without paraphrasing or overlap.
-    Provide contextual attributes like topic or amount.
+    From the conversation transcript, extract in order of appearance:
+    - concern: user-mentioned problems, issues, or complaints
+    - action_item: AI's promises, solutions, or policy mentions (include amounts/numbers)
+    - emotion: exact words/phrases showing the user's emotional state
+    Use exact text spans without paraphrasing. Provide meaningful attributes for context.
     """)
 
+    # Create examples based on the provided format
     examples = [
         lx.data.ExampleData(
             text=(
-                "User: किसान का लोन जो है वह माफ ही नहीं होता "
+                "USER: सबसे बड़ी प्रॉब्लम तो यह है कि खेती करते हुए किसान का लोन जो है वह माफ ही नहीं होता "
                 "बहाज इतना हाई है कि हम चुका ही नहीं पाते\n"
-                "AI (chunk): ₹2000 crore ke projects laaye hain"
+                "AI: ₹2000 crore ke projects laaye hain कि कisan log के लिए"
             ),
             extractions=[
-                lx.data.Extraction("concern", "किसान का लोन जो है वह माफ ही नहीं होता"),
-                lx.data.Extraction("concern", "बहाज इतना हाई है कि हम चुका ही नहीं पाते"),
-                lx.data.Extraction("action_item", "₹2000 crore ke projects laaye hain")
-                # solution item
+                lx.data.Extraction(
+                    extraction_class="concern",
+                    extraction_text="किसान का लोन जो है वह माफ ही नहीं होता",
+                    attributes={"type": "loan forgiveness", "severity": "high", "domain": "agriculture"}
+                ),
+                lx.data.Extraction(
+                    extraction_class="concern", 
+                    extraction_text="बहाज इतना हाई है कि हम चुका ही नहीं पाते",
+                    attributes={"type": "loan repayment", "severity": "high", "domain": "agriculture"}
+                ),
+                lx.data.Extraction(
+                    extraction_class="action_item",
+                    extraction_text="₹2000 crore ke projects laaye hain",
+                    attributes={"type": "policy", "amount": "₹2000 crore", "beneficiary": "farmers"}
+                ),
+                lx.data.Extraction(
+                    extraction_class="emotion",
+                    extraction_text="सबसे बड़ी प्रॉब्लम",
+                    attributes={"feeling": "distress", "intensity": "high"}
+                )
             ]
         )
     ]
 
+    # Run LangExtract analysis
     result = lx.extract(
-        text_or_documents=transcript,
+        text_or_documents=full_transcript,
         prompt_description=prompt,
         examples=examples,
-        model_id="gemini-2.5-flash",
+        model_id="gemini-2.5-flash-lite",
         extraction_passes=2,
         max_workers=4,
         max_char_buffer=800
     )
 
     def serialize(obj):
+        """Serialize extraction objects to JSON-compatible format"""
         import enum
         if isinstance(obj, enum.Enum):
             return obj.name
@@ -136,11 +97,20 @@ def analyze_conversation_with_langextract(filepath):
         else:
             return obj
 
+    # Serialize extractions
     extractions = [serialize(ext) for ext in result.extractions]
-    html = lx.visualize(result)   # OK to keep as HTML string
+    
+    # Generate visualization HTML
+    visualization_html = lx.visualize(result)
 
     return {
         "metrics": summary_metrics,
         "extractions": extractions,
-        "visualization_html": html
+        "visualization_html": visualization_html,
+        "conversation_summary": {
+            "total_messages": len(conversation),
+            "user_messages": len(user_messages), 
+            "ai_messages": len(ai_messages),
+            "extracted_entities": len(extractions)
+        }
     }
