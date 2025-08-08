@@ -93,7 +93,8 @@ const LangExtractPage = () => {
   };
 
   return (
-    <div className="container mx-auto p-4 md:p-6 lg:p-8">
+    <div className="container min-h-screen overflow-auto p-4 pb-32 md:p-6 lg:p-8">
+
       <header className="mb-6">
         <h1 className="text-3xl font-bold tracking-tight">
           Conversation Analysis with LangExtract
