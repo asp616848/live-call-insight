@@ -3,6 +3,7 @@ import json
 import textwrap
 import langextract as lx
 from dotenv import load_dotenv
+from langextract.data import align_extractions_with_text
 
 load_dotenv()
 API_KEY = os.getenv("GEMINI_API_KEY")
@@ -78,9 +79,9 @@ def analyze_conversation_with_langextract(filepath):
         prompt_description=prompt,
         examples=examples,
         model_id="gemini-2.5-flash-lite",
-        extraction_passes=2,
-        max_workers=4,
-        max_char_buffer=800
+        # extraction_passes=2,
+        # max_workers=4,
+        # max_char_buffer=800
     )
 
     def serialize(obj):
@@ -99,10 +100,19 @@ def analyze_conversation_with_langextract(filepath):
 
     # Serialize extractions
     extractions = [serialize(ext) for ext in result.extractions]
+    # Save the results to a JSONL file in a known absolute path
     
-    # Generate visualization HTML
-    visualization_html = lx.visualize(result)
+    result = align_extractions_with_text(result)
+    output_jsonl_path = os.path.abspath("extraction_results.jsonl")
+    lx.io.save_annotated_documents([result], output_name=output_jsonl_path)
 
+    # Generate the interactive visualization from the saved file
+    visualization_html = lx.visualize(output_jsonl_path)
+
+    # Save visualization HTML
+    output_html_path = os.path.abspath("visualization.html")
+    with open(output_html_path, "w", encoding="utf-8") as f:
+        f.write(visualization_html)
     return {
         "metrics": summary_metrics,
         "extractions": extractions,
