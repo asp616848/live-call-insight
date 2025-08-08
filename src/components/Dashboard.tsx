@@ -81,7 +81,6 @@ export const Dashboard = () => {
       <CustomCursor />
       
       <div className="flex h-screen relative z-10 pb-16">
-
         {/* Main Content */}
         <motion.main 
           className="flex-1 p-6 space-y-6 overflow-y-auto"

@@ -93,9 +93,8 @@ const LangExtractPage = () => {
   };
 
   return (
-    <div className="container min-h-screen overflow-auto p-4 pb-32 md:p-6 lg:p-8">
-
-      <header className="mb-6">
+    <div className="min-h-screen bg-background overflow-hidden">
+      <header className="shrink-0 px-4 pb-2 pt-4 md:px-6 lg:px-8 bg-background z-10">
         <h1 className="text-3xl font-bold tracking-tight">
           Conversation Analysis with LangExtract
         </h1>
@@ -103,9 +102,8 @@ const LangExtractPage = () => {
           Select a call transcript to view its detailed analysis.
         </p>
       </header>
-
-      <div className="grid gap-8 md:grid-cols-3">
-        <div className="md:col-span-1">
+      <div className="flex-1 flex gap-8 px-4 pb-32 md:px-6 lg:px-8 overflow-hidden">
+        <div className="md:w-1/3 w-full h-full overflow-auto pr-2">
           <Card>
             <CardHeader>
               <CardTitle>Select Transcript</CardTitle>
@@ -180,7 +178,7 @@ const LangExtractPage = () => {
           )}
         </div>
 
-        <div className="md:col-span-2">
+        <div className="md:w-2/3 w-full h-full overflow-auto">
           <Card>
             <CardHeader>
               <CardTitle>Analysis & Visualization</CardTitle>
