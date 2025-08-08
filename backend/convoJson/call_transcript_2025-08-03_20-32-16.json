@@ -11,13 +11,14 @@
     "total_ai_responses": 7,
     "sentiment": "negative",
     "concerns": [
-      "high interest rates on agricultural loans",
-      "difficulty in loan repayment"
+      "loan burden",
+      "high interest rates",
+      "farmer financial hardship"
     ],
-    "overview": "The AI, representing a political figure, inquired about the user's biggest problems. The user immediately highlighted the critical issue of high-interest agricultural loans that they find impossible to repay, while also mentioning they cultivate millet. The AI acknowledged this concern and reassured the user about efforts to address loan interest rates.",
-    "user_tone": "direct and burdened, with an underlying urgency",
+    "overview": "The user expresses significant distress regarding farmers' inability to repay loans due to high interest rates, highlighting it as the most critical problem in their area. They also state that they grow bajra in their fields.",
+    "user_tone": "Frustrated and direct, conveying a sense of urgency about their financial difficulties.",
     "emotion": "distressed",
-    "sentiment_score": 2.5
+    "sentiment_score": 2
   },
   "conversation": [
     {
@@ -47,7 +48,7 @@
     },
     {
       "speaker": "user",
-      "text": "<noise> यहां पर सबसे बड़ी प्रॉब्लम तो यह है कि खेती करते हुए किसान का लोन जो है वह माफ ही नहीं होता बहाज इतना हाई है कि हम चुका ही नहीं पाते बोलिए क्या बोल रहे हो हमरे खेत में हम बाजरा उगावत है",
+      "text": "यहां पर सबसे बड़ी प्रॉब्लम तो यह है कि खेती करने वाले किसानों का कर्ज़ माफ ही नहीं होता है। ब्याज इतना ज़्यादा है कि हम चुका ही नहीं पाते। बोलिए, क्या बोल रहे हो? हमारे खेत में हम बाजरा उगाते हैं।",
       "timestamp": "2025-08-03T20:33:59"
     },
     {
