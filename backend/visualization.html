@@ -97,4 +97,98 @@
 .lx-gif-optimized .lx-text-window { font-size: 16px; line-height: 1.8; }
 .lx-gif-optimized .lx-attributes-panel { font-size: 15px; }
 .lx-gif-optimized .lx-current-highlight { text-decoration-thickness: 4px; }
-</style><div class="lx-animated-wrapper"><p>No valid extractions to animate.</p></div>
+</style>
+    <div class="lx-animated-wrapper lx-gif-optimized">
+      <div class="lx-attributes-panel">
+        <div class="lx-legend">Highlights Legend: <span class="lx-label" style="background-color:#D2E3FC;">action_item</span> <span class="lx-label" style="background-color:#C8E6C9;">concern</span></div>
+        <div id="attributesContainer"></div>
+      </div>
+      <div class="lx-text-window" id="textWindow">
+        USER: नमस्ते।
+AI: Namaskar Bhaiya, hum Sunita Devi bolat hain, Rajesh Verma ji ke taraf se. Kaise hain aap? Hum aapke chinta ke baare mein jaanana chahat hain, aapke yahan sabse badi samasya ka baa?
+USER: <span class="lx-highlight lx-current-highlight" data-idx="0" style="background-color:#C8E6C9;">चिंताएं तो काफी</span> हैं। आप यह बताइए कि राजीव जी, <span class="lx-highlight" data-idx="1" style="background-color:#D2E3FC;">हम किसानों के लिए क्या कर रहे</span> <span class="lx-highlight" data-idx="2" style="background-color:#C8E6C9;">हैं? हम बड़े ही दिक्कत में</span> हैं।
+AI: Hum aapke dikkat ke baare mein
+USER: Yeah.
+AI: samajh sakte hain, Bhaiya. Aap kisan hain ka? Hum sunat
+      </div>
+      <div class="lx-controls">
+        <div class="lx-button-row">
+          <button class="lx-control-btn" onclick="playPause()">▶️ Play</button>
+          <button class="lx-control-btn" onclick="prevExtraction()">⏮ Previous</button>
+          <button class="lx-control-btn" onclick="nextExtraction()">⏭ Next</button>
+        </div>
+        <div class="lx-progress-container">
+          <input type="range" id="progressSlider" class="lx-progress-slider"
+                 min="0" max="2" value="0"
+                 onchange="jumpToExtraction(this.value)">
+        </div>
+        <div class="lx-status-text">
+          Entity <span id="entityInfo">1/3</span> |
+          Pos <span id="posInfo">[205-220]</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function() {
+        const extractions = [{"index": 0, "class": "concern", "text": "\u091a\u093f\u0902\u0924\u093e\u090f\u0902 \u0924\u094b \u0915\u093e\u092b\u0940 \u0939\u0948\u0902", "color": "#C8E6C9", "startPos": 205, "endPos": 220, "beforeText": "t hain, Rajesh Verma ji ke taraf se. Kaise hain aap? Hum aapke chinta ke baare mein jaanana chahat hain, aapke yahan sabse badi samasya ka baa?\nUSER: ", "extractionText": "\u091a\u093f\u0902\u0924\u093e\u090f\u0902 \u0924\u094b \u0915\u093e\u092b\u0940", "afterText": " \u0939\u0948\u0902\u0964 \u0906\u092a \u092f\u0939 \u092c\u0924\u093e\u0907\u090f \u0915\u093f \u0930\u093e\u091c\u0940\u0935 \u091c\u0940, \u0939\u092e \u0915\u093f\u0938\u093e\u0928\u094b\u0902 \u0915\u0947 \u0932\u093f\u090f \u0915\u094d\u092f\u093e \u0915\u0930 \u0930\u0939\u0947 \u0939\u0948\u0902? \u0939\u092e \u092c\u0921\u093c\u0947 \u0939\u0940 \u0926\u093f\u0915\u094d\u0915\u0924 \u092e\u0947\u0902 \u0939\u0948\u0902\u0964\nAI: Hum aapke dikkat ke baare mein\nUSER: Yeah.\nAI: samajh", "attributesHtml": "<div><strong>class:</strong> concern</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">general</span>, <span class=\"lx-attr-key\">severity</span>: <span class=\"lx-attr-value\">high</span>, <span class=\"lx-attr-key\">domain</span>: <span class=\"lx-attr-value\">agriculture</span>}</div>"}, {"index": 1, "class": "action_item", "text": "\u0939\u092e \u0915\u093f\u0938\u093e\u0928\u094b\u0902 \u0915\u0947 \u0932\u093f\u090f \u0915\u094d\u092f\u093e \u0915\u0930 \u0930\u0939\u0947 \u0939\u0948\u0902", "color": "#D2E3FC", "startPos": 251, "endPos": 280, "beforeText": "n aap? Hum aapke chinta ke baare mein jaanana chahat hain, aapke yahan sabse badi samasya ka baa?\nUSER: \u091a\u093f\u0902\u0924\u093e\u090f\u0902 \u0924\u094b \u0915\u093e\u092b\u0940 \u0939\u0948\u0902\u0964 \u0906\u092a \u092f\u0939 \u092c\u0924\u093e\u0907\u090f \u0915\u093f \u0930\u093e\u091c\u0940\u0935 \u091c\u0940, ", "extractionText": "\u0939\u092e \u0915\u093f\u0938\u093e\u0928\u094b\u0902 \u0915\u0947 \u0932\u093f\u090f \u0915\u094d\u092f\u093e \u0915\u0930 \u0930\u0939\u0947", "afterText": " \u0939\u0948\u0902? \u0939\u092e \u092c\u0921\u093c\u0947 \u0939\u0940 \u0926\u093f\u0915\u094d\u0915\u0924 \u092e\u0947\u0902 \u0939\u0948\u0902\u0964\nAI: Hum aapke dikkat ke baare mein\nUSER: Yeah.\nAI: samajh sakte hain, Bhaiya. Aap kisan hain ka? Hum sunat", "attributesHtml": "<div><strong>class:</strong> action_item</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">inquiry</span>, <span class=\"lx-attr-key\">beneficiary</span>: <span class=\"lx-attr-value\">farmers</span>}</div>"}, {"index": 2, "class": "concern", "text": "\u0939\u092e \u092c\u0921\u093c\u0947 \u0939\u0940 \u0926\u093f\u0915\u094d\u0915\u0924 \u092e\u0947\u0902 \u0939\u0948\u0902", "color": "#C8E6C9", "startPos": 281, "endPos": 307, "beforeText": "re mein jaanana chahat hain, aapke yahan sabse badi samasya ka baa?\nUSER: \u091a\u093f\u0902\u0924\u093e\u090f\u0902 \u0924\u094b \u0915\u093e\u092b\u0940 \u0939\u0948\u0902\u0964 \u0906\u092a \u092f\u0939 \u092c\u0924\u093e\u0907\u090f \u0915\u093f \u0930\u093e\u091c\u0940\u0935 \u091c\u0940, \u0939\u092e \u0915\u093f\u0938\u093e\u0928\u094b\u0902 \u0915\u0947 \u0932\u093f\u090f \u0915\u094d\u092f\u093e \u0915\u0930 \u0930\u0939\u0947 ", "extractionText": "\u0939\u0948\u0902? \u0939\u092e \u092c\u0921\u093c\u0947 \u0939\u0940 \u0926\u093f\u0915\u094d\u0915\u0924 \u092e\u0947\u0902", "afterText": " \u0939\u0948\u0902\u0964\nAI: Hum aapke dikkat ke baare mein\nUSER: Yeah.\nAI: samajh sakte hain, Bhaiya. Aap kisan hain ka? Hum sunat", "attributesHtml": "<div><strong>class:</strong> concern</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">type</span>: <span class=\"lx-attr-value\">hardship</span>, <span class=\"lx-attr-key\">severity</span>: <span class=\"lx-attr-value\">high</span>, <span class=\"lx-attr-key\">domain</span>: <span class=\"lx-attr-value\">agriculture</span>}</div>"}];
+        let currentIndex = 0;
+        let isPlaying = false;
+        let animationInterval = null;
+        let animationSpeed = 1.0;
+
+        function updateDisplay() {
+          const extraction = extractions[currentIndex];
+          if (!extraction) return;
+
+          document.getElementById('attributesContainer').innerHTML = extraction.attributesHtml;
+          document.getElementById('entityInfo').textContent = (currentIndex + 1) + '/' + extractions.length;
+          document.getElementById('posInfo').textContent = '[' + extraction.startPos + '-' + extraction.endPos + ']';
+          document.getElementById('progressSlider').value = currentIndex;
+
+          const playBtn = document.querySelector('.lx-control-btn');
+          if (playBtn) playBtn.textContent = isPlaying ? '⏸ Pause' : '▶️ Play';
+
+          const prevHighlight = document.querySelector('.lx-text-window .lx-current-highlight');
+          if (prevHighlight) prevHighlight.classList.remove('lx-current-highlight');
+          const currentSpan = document.querySelector('.lx-text-window span[data-idx="' + currentIndex + '"]');
+          if (currentSpan) {
+            currentSpan.classList.add('lx-current-highlight');
+            currentSpan.scrollIntoView({block: 'center', behavior: 'smooth'});
+          }
+        }
+
+        function nextExtraction() {
+          currentIndex = (currentIndex + 1) % extractions.length;
+          updateDisplay();
+        }
+
+        function prevExtraction() {
+          currentIndex = (currentIndex - 1 + extractions.length) % extractions.length;
+          updateDisplay();
+        }
+
+        function jumpToExtraction(index) {
+          currentIndex = parseInt(index);
+          updateDisplay();
+        }
+
+        function playPause() {
+          if (isPlaying) {
+            clearInterval(animationInterval);
+            isPlaying = false;
+          } else {
+            animationInterval = setInterval(nextExtraction, animationSpeed * 1000);
+            isPlaying = true;
+          }
+          updateDisplay();
+        }
+
+        window.playPause = playPause;
+        window.nextExtraction = nextExtraction;
+        window.prevExtraction = prevExtraction;
+        window.jumpToExtraction = jumpToExtraction;
+
+        updateDisplay();
+      })();
+    </script>

@@ -10,7 +10,18 @@ import glob
 load_dotenv()
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
+def strip_basic_markdown(text):
+        text = re.sub(r'```[\s\S]*?```', '', text)  # Remove code blocks
+        text = re.sub(r'`[^`]+`', '', text)  # Remove inline code
+        text = re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', text)  # Remove links
+        text = re.sub(r'\*\*([^*]+)\*\*', r'\1', text)  # Remove bold
+        text = re.sub(r'\*([^*]+)\*', r'\1', text)  # Remove italic
+        text = re.sub(r'^[#>]+\s*', '', text, flags=re.MULTILINE)  # Remove headers/quotes
+        return text.strip()
+    
 def parse_log_file(filepath):
+    gemini_model = genai.GenerativeModel("gemini-2.5-flash")
+    
     with open(filepath, "r", encoding="utf-8") as f:
         lines = f.readlines()
 
@@ -38,19 +49,24 @@ def parse_log_file(filepath):
             timestamp_str, speaker_type, text = match.groups()
             # Combine with call_start date to form a full timestamp
             full_timestamp_str = f"{call_start.split('T')[0]}T{timestamp_str}"
-            
+
             timestamp = datetime.strptime(timestamp_str, "%H:%M:%S")
 
             if "AI (chunk)" in speaker_type:
                 if current_user_sentence:
-                    sentences.append({"speaker": "user", "text": "".join(current_user_sentence), "timestamp": last_user_timestamp})
+                    # Apply grammar correction to every user message before appending
+                    user_text_raw = "".join(current_user_sentence)
+                    user_text_response = gemini_model.generate_content(f"fix grammar and punctuations in the hindi text and return just the text without any formatting or explanation: {user_text_raw}")
+                    cleaned_user_text = strip_basic_markdown(user_text_response.text)
+                    print("USER FIXED" + cleaned_user_text)
+                    sentences.append({"speaker": "user", "text": cleaned_user_text, "timestamp": last_user_timestamp})
                     current_user_sentence = []
 
                 if last_timestamp and (timestamp - last_timestamp).seconds > 2:
                     if current_ai_sentence:
                         sentences.append({"speaker": "ai", "text": " ".join(current_ai_sentence), "timestamp": last_ai_timestamp})
                         current_ai_sentence = []
-                
+
                 if not current_ai_sentence:
                     last_ai_timestamp = full_timestamp_str
 
@@ -67,29 +83,23 @@ def parse_log_file(filepath):
                 user_text = text.strip()
                 if "<noise>" in user_text.lower():
                     noise_count += 1
-                
+
                 if not current_user_sentence:
                     last_user_timestamp = full_timestamp_str
-                
+
                 current_user_sentence.append(user_text)
-    gemini_model = genai.GenerativeModel("gemini-2.5-flash")
     
-    def strip_basic_markdown(text):
-        text = re.sub(r'```[\s\S]*?```', '', text)  # Remove code blocks
-        text = re.sub(r'`[^`]+`', '', text)  # Remove inline code
-        text = re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', text)  # Remove links
-        text = re.sub(r'\*\*([^*]+)\*\*', r'\1', text)  # Remove bold
-        text = re.sub(r'\*([^*]+)\*', r'\1', text)  # Remove italic
-        text = re.sub(r'^[#>]+\s*', '', text, flags=re.MULTILINE)  # Remove headers/quotes
-        return text.strip()
+    
     
     
     if current_ai_sentence:
         sentences.append({"speaker": "ai", "text": " ".join(current_ai_sentence), "timestamp": last_ai_timestamp})
-    
+
     if current_user_sentence:
-        user_text_response = gemini_model.generate_content(f"fix grammar in the hindi text and return just the text without any formatting or explanation: {''.join(current_user_sentence)}")
+        user_text_raw = "".join(current_user_sentence)
+        user_text_response = gemini_model.generate_content(f"fix grammar and punctuations in the hindi text and return just the text without any formatting or explanation: {user_text_raw}")
         cleaned_user_text = strip_basic_markdown(user_text_response.text)
+        print("USER FIXED" + cleaned_user_text)
         sentences.append({"speaker": "user", "text": cleaned_user_text, "timestamp": last_user_timestamp})
 
     # Metrics
