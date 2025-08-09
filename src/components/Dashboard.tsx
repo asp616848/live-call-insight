@@ -15,8 +15,14 @@ async function fetchDashboardData() {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-  ]
-};
+    const data = await response.json();
+    console.log("Dashboard data loaded:", data);
+    return data;
+  } catch (error) {
+    console.error("Failed to fetch dashboard data:", error);
+    return null;
+  }
+}
 
 export const Dashboard = () => {
   const [dashboardData, setDashboardData] = useState<any>(null);
@@ -33,6 +39,7 @@ export const Dashboard = () => {
     });
   }, []);
 
+  // Simulate real-time data updates for transcript
   useEffect(() => {
     if (!dashboardData) return;
 
