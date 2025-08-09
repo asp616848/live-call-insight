@@ -7,13 +7,13 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import { Layout } from "./components/Layout";
 import Index from "./pages/Index";
 import CallAnalytics from "./pages/CallAnalytics";
-import GeoAnalytics from "./pages/GeoAnalytics";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { AuthProvider } from "./contexts/AuthContext";
 import LangExtractPage from "./pages/LangExtract";
+
 
 const queryClient = new QueryClient();
 console.log(import.meta.env.VITE_GOOGLE_CLIENT_ID)
