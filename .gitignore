@@ -31,3 +31,6 @@ dist-ssr
 *.sw?
 backend/venv
 client_secret_961618724749-ru1asekt7q7lm3q6jdq0gjhsnh9a9fnu.apps.googleusercontent.com.json
+backend/.env
+/backend/__pycache__
+backend.zip
