@@ -11,18 +11,18 @@
     "total_ai_responses": 3,
     "sentiment": "negative",
     "concerns": [
-      "financial difficulties",
-      "lack of government support for farmers"
+      "difficulties faced by farmers",
+      "lack of support/action for farmers"
     ],
-    "overview": "The user, a farmer, expressed significant worry about their financial situation and sought information about government aid for farmers. The AI attempted to acknowledge their concerns.",
+    "overview": "The user, identifying as a farmer, expresses significant difficulties and asks what specific actions are being taken by 'Rajiv ji' to support farmers. The user indicates they are facing many concerns and are in great trouble.",
     "user_tone": "distressed and urgent",
-    "emotion": "anxious",
-    "sentiment_score": 2
+    "emotion": "distressed",
+    "sentiment_score": 2.5
   },
   "conversation": [
     {
       "speaker": "user",
-      "text": "Hello.",
+      "text": "नमस्ते।",
       "timestamp": "2025-08-03T20:43:30"
     },
     {
@@ -32,7 +32,7 @@
     },
     {
       "speaker": "user",
-      "text": "चिंताएंतोकाफीहैआपयहबताइएकिराजीवजीहमलोगकिसानलोगके लिएक्याकररहे हैंहमबड़ेहीदिक्कत में हैं",
+      "text": "चिंताएं तो काफी हैं। आप यह बताइए कि राजीव जी, हम किसानों के लिए क्या कर रहे हैं? हम बड़े ही दिक्कत में हैं।",
       "timestamp": "2025-08-03T20:43:46"
     },
     {

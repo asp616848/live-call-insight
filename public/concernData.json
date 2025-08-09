@@ -1,0 +1,22 @@
+{
+  "Patna": {
+    "concern": "Loan Repayment",
+    "level": "High"
+  },
+  "Muzaffarpur": {
+    "concern": "Irrigation",
+    "level": "High"
+  },
+  "Gaya": {
+    "concern": "Crop Prices",
+    "level": "Medium"
+  },
+  "Darbhanga": {
+    "concern": "Electricity",
+    "level": "Medium"
+  },
+  "Bhagalpur": {
+    "concern": "Fertilizer Costs",
+    "level": "Low"
+  }
+}

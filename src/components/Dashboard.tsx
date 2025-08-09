@@ -9,60 +9,47 @@ import { MetricsCard } from './MetricsCard';
 import { RecentConversations } from './RecentConversations';
 import { ConcernsPieChart } from './ConcernsPieChart';
 
-const hardcodedData = {
-  metrics: {
-    total_calls: 33147, // 125,
-    average_call_duration: 242, // 85,
-    average_ai_response_latency: 0.45,
-    latest_call_summary: {
-      sentiment: 'Concerned',
-      sentiment_score: 7.4, // 4.2,
-      duration_seconds: 123,
-      overview: 'Discussing farmer issues with irrigation and seeking solutions.',
-    },
-  },
-  latest_conversation: [
-    {
-      "speaker": "user",
-      "text": "Hello.",
-      "timestamp": "2025-08-03T20:43:30"
-    },
-    {
-      "speaker": "ai",
-      "text": "Namaskar Bhaiya, hum Sunita Devi bolat hain, Rajesh Verma ji ke taraf se. Kaise hain aap? Hum aapke chinta ke baare mein jaanana chahat hain, aapke yahan sabse badi samasya ka baa?",
-      "timestamp": "2025-08-03T20:43:30"
-    },
-    {
-      "speaker": "user",
-      "text": "चिंताएँ तो काफी हैं, आप यह बताइए कि राजीव जी, हम लोग किसान लोगों के लिए क्या कर रहे हैं? हम बड़े ही दिक्कत में हैं।",
-      "timestamp": "2025-08-03T20:43:46"
-    },
-    {
-      "speaker": "ai",
-      "text": "Hum aapke dikkat ke baare mein samajh sakte hain, Bhaiya. Aap kisan hain ka? Hum sun rahe hain ki sinchai ki samasya hai.",
-      "timestamp": "2025-08-03T20:43:56"
-    },
-    {
-      "speaker": "user",
-      "text": "Yes, I am a farmer. The biggest problem is the irrigation system. We don't get enough water for our crops.",
-      "timestamp": "2025-08-03T20:44:15"
-    },
-    {
-      "speaker": "ai",
-      "text": "I understand. Rajesh Verma ji has started a new program for water conservation and better irrigation. We can provide you with details.",
-      "timestamp": "2025-08-03T20:44:25"
+async function fetchDashboardData() {
+  try {
+    const response = await fetch('http://127.0.0.1:5000/dashboard_with_convo');
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
   ]
 };
 
 export const Dashboard = () => {
-  const [dashboardData, setDashboardData] = useState<any>(hardcodedData);
-  const [displayedMessages, setDisplayedMessages] = useState<any[]>([]);
+  const [dashboardData, setDashboardData] = useState<any>(null);
+  const [displayedMessages, setDisplayedMessages] = useState([]);
 
   useEffect(() => {
-    if (dashboardData) {
-      setDisplayedMessages(dashboardData.latest_conversation);
-    }
+    fetchDashboardData().then((data) => {
+      if (data) {
+        setDashboardData(data);
+        if (data.latest_conversation && Array.isArray(data.latest_conversation)) {
+          setDisplayedMessages(data.latest_conversation.slice(0, 3));
+        }
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!dashboardData) return;
+
+    const messageInterval = setInterval(() => {
+      setDisplayedMessages(prev => {
+        if (dashboardData.latest_conversation.length > prev.length) {
+          return [...prev, dashboardData.latest_conversation[prev.length]];
+        }
+        // Stop the interval when all messages are displayed
+        clearInterval(messageInterval);
+        return prev;
+      });
+    }, 2000);
+
+    return () => {
+      clearInterval(messageInterval);
+    };
   }, [dashboardData]);
 
   if (!dashboardData) {
@@ -78,7 +65,7 @@ export const Dashboard = () => {
 
   const { metrics } = dashboardData;
   const currentLatency = metrics.average_ai_response_latency ? Math.round(metrics.average_ai_response_latency * 1000) : 0;
-  const sentiment = metrics.latest_call_summary.sentiment;
+  // const sentiment = metrics.latest_call_summary.sentiment;
 
 
   return (
@@ -86,8 +73,7 @@ export const Dashboard = () => {
       <BackgroundAnimation />
       <CustomCursor />
       
-      <div className="flex h-screen relative z-10">
-
+      <div className="flex h-screen relative z-10 pb-16">
         {/* Main Content */}
         <motion.main 
           className="flex-1 p-6 space-y-6 overflow-y-auto"
@@ -146,7 +132,7 @@ export const Dashboard = () => {
             />
             <MetricsCard
               title="Sentiment Score"
-              value={metrics.latest_call_summary.sentiment_score?.toFixed(1)}
+              value={metrics.average_sentiment_score?.toFixed(1)}
               subtitle="From 0 to 10"
               icon={TrendingUp}
               trend="up"
@@ -181,7 +167,7 @@ export const Dashboard = () => {
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Duration:</span>
-                    <span>{metrics.latest_call_summary.duration_seconds ? `${Math.round(metrics.latest_call_summary.duration_seconds)}s` : 'N/A'}</span>
+                    <span>{metrics.average_call_duration ? `${Math.round(metrics.latest_call_summary.duration_seconds)}s` : 'N/A'}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Agent:</span>
@@ -189,7 +175,7 @@ export const Dashboard = () => {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Purpose:</span>
-                    <span className="text-right">{metrics.latest_call_summary.overview}</span>
+                    <span className="text-right">{metrics.latest_call_summary?.overview}</span>
                   </div>
                 </div>
               </motion.div>
