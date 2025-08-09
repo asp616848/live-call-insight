@@ -63,7 +63,7 @@ export default function GeoAnalytics() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="p-6 h-full flex flex-col gap-6"
+      className="p-6 flex flex-col gap-6" // removed h-full so page can grow and allow scrolling
     >
       {/* Header */}
       <div className="flex items-center gap-3">
