@@ -56,7 +56,7 @@ def parse_log_file(filepath):
                 if current_user_sentence:
                     # Apply grammar correction to every user message before appending
                     user_text_raw = "".join(current_user_sentence)
-                    user_text_response = gemini_model.generate_content(f"fix grammar and punctuations in the hindi text and then convert it to latin hindi, and then return just the text without any formatting or explanation: {user_text_raw}")
+                    user_text_response = gemini_model.generate_content(f"Fix grammar and punctuations in the hindi text and then convert it to latin hindi, and then return just the text without any formatting or explanation: {user_text_raw}")
                     cleaned_user_text = strip_basic_markdown(user_text_response.text)
                     print("USER FIXED" + cleaned_user_text)
                     sentences.append({"speaker": "user", "text": cleaned_user_text, "timestamp": last_user_timestamp})
