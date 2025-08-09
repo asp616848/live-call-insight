@@ -1,11 +1,6 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { 
   BarChart3, 
-  Phone, 
-  MessageSquare, 
   Settings, 
-  Activity,
   ChevronLeft,
   ChevronRight,
   Sparkles,
@@ -16,7 +11,6 @@ import {
 import { useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { GoogleLoginButton } from './GoogleLoginButton';
-
 
 interface SidebarProps {
   collapsed: boolean;
