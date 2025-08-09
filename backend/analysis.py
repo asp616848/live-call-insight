@@ -44,19 +44,19 @@ def analyze_conversation_with_langextract(filepath):
         # ORIGINAL SHORT EXAMPLE (kept)
         lx.data.ExampleData(
             text=(
-                "USER: सबसे बड़ी प्रॉब्लम तो यह है कि खेती करते हुए किसान का लोन जो है वह माफ ही नहीं होता \n"
-                "USER: बहाज इतना हाई है कि हम चुका ही नहीं पाते\n"
-                "AI: ₹2000 crore ke projects laaye hain कि कisan log के लिए"
+                "USER: sabse badi problem to yah hai ki kheti karte hue kisan ka loan jo hai vah maaf hi nahi hota \n"
+                "USER: byaaj itna high hai ki hum chuka hi nahi paate\n"
+                "AI: ₹2000 crore ke projects laaye hain ki kisan log ke liye"
             ),
             extractions=[
                 lx.data.Extraction(
                     extraction_class="concern",
-                    extraction_text="किसान का लोन जो है वह माफ ही नहीं होता",
+                    extraction_text="kisan ka loan jo hai vah maaf hi nahi hota",
                     attributes={"type": "loan forgiveness", "severity": "high", "domain": "agriculture"}
                 ),
                 lx.data.Extraction(
                     extraction_class="concern",
-                    extraction_text="बहाज इतना हाई है कि हम चुका ही नहीं पाते",
+                    extraction_text="byaaj itna high hai ki hum chuka hi nahi paate",
                     attributes={"type": "loan repayment", "severity": "high", "domain": "agriculture"}
                 ),
                 lx.data.Extraction(
@@ -66,7 +66,7 @@ def analyze_conversation_with_langextract(filepath):
                 ),
                 lx.data.Extraction(
                     extraction_class="emotion",
-                    extraction_text="सबसे बड़ी प्रॉब्लम",
+                    extraction_text="sabse badi problem",
                     attributes={"feeling": "distress", "intensity": "high"}
                 )
             ]
@@ -74,46 +74,46 @@ def analyze_conversation_with_langextract(filepath):
         # LONG AGRICULTURE + IRRIGATION
         lx.data.ExampleData(
             text=(
-                "USER: पिछले तीन साल से नहर में पानी ही नहीं आया, फसल बार-बार सूख जाती है।\n"
-                "USER: बोरवेल का खर्च उठा नहीं पाते, डीज़ल इतना महँगा है।\n"
-                "AI: इस सीज़न 18 नई माइक्रो-इरिगेशन स्कीम sanction हुई हैं जिनमें ₹75 crore allocate हुआ है।\n"
-                "AI: साथ ही solar pump subsidy 60% तक बढ़ाई जाएगी।\n"
-                "USER: हम लोग तो बिलकुल हताश हो गए हैं।"
+                "USER: pichle teen saal se nahar mein paani hi nahi aaya, fasal baar-baar sukh jaati hai.\n"
+                "USER: borewell ka kharcha utha nahi paate, diesel itna mehnga hai.\n"
+                "AI: is season 18 nayi micro-irrigation scheme sanction hui hain jinmein ₹75 crore allocate hua hai.\n"
+                "AI: saath hi solar pump subsidy 60% tak badhayi jaayegi.\n"
+                "USER: hum log to bilkul hatash ho gaye hain."
             ),
             extractions=[
                 lx.data.Extraction(
                     extraction_class="concern",
-                    extraction_text="नहर में पानी ही नहीं आया",
+                    extraction_text="nahar mein paani hi nahi aaya",
                     attributes={"type": "irrigation failure", "duration": "3 years", "impact": "crop loss"}
                 ),
                 lx.data.Extraction(
                     extraction_class="concern",
-                    extraction_text="फसल बार-बार सूख जाती है",
+                    extraction_text="fasal baar-baar sukh jaati hai",
                     attributes={"type": "crop damage", "frequency": "repeated", "severity": "high"}
                 ),
                 lx.data.Extraction(
                     extraction_class="concern",
-                    extraction_text="बोरवेल का खर्च उठा नहीं पाते",
+                    extraction_text="borewell ka kharcha utha nahi paate",
                     attributes={"type": "input affordability", "resource": "borewell", "cause": "high cost"}
                 ),
                 lx.data.Extraction(
                     extraction_class="concern",
-                    extraction_text="डीज़ल इतना महँगा है",
+                    extraction_text="diesel itna mehnga hai",
                     attributes={"type": "fuel cost", "currency_context": "INR", "effect": "irrigation limitation"}
                 ),
                 lx.data.Extraction(
                     extraction_class="action_item",
-                    extraction_text="18 नई माइक्रो-इरिगेशन स्कीम sanction हुई हैं",
+                    extraction_text="18 nayi micro-irrigation scheme sanction hui hain",
                     attributes={"type": "irrigation scheme", "count": 18, "funding": "₹75 crore"}
                 ),
                 lx.data.Extraction(
                     extraction_class="action_item",
-                    extraction_text="solar pump subsidy 60% तक बढ़ाई जाएगी",
+                    extraction_text="solar pump subsidy 60% tak badhayi jaayegi",
                     attributes={"type": "subsidy", "rate": "60%", "beneficiary": "farmers"}
                 ),
                 lx.data.Extraction(
                     extraction_class="emotion",
-                    extraction_text="हम लोग तो बिलकुल हताश हो गए हैं",
+                    extraction_text="hum log to bilkul hatash ho gaye hain",
                     attributes={"feeling": "hopelessness", "intensity": "high"}
                 )
             ]
@@ -121,35 +121,35 @@ def analyze_conversation_with_langextract(filepath):
         # HEALTH + ACCESS
         lx.data.ExampleData(
             text=(
-                "USER: हमारे गांव के प्राथमिक स्वास्थ्य केंद्र में डॉक्टर हफ्तों नहीं आता।\n"
-                "USER: दवाइयाँ भी ज़्यादातर आउट ऑफ स्टॉक रहती हैं।\n"
-                "AI: अगले quarter में 12 नए डॉक्टर पोस्ट होंगे और essential medicines का buffer stock 3x किया जाएगा।\n"
-                "USER: लोग डरते हैं कि emergency में कौन मदद करेगा।"
+                "USER: hamare gaon ke prathamik swasthya kendra mein doctor hafton nahi aata.\n"
+                "USER: dawaiyan bhi zyadatar out of stock rehti hain.\n"
+                "AI: agle quarter mein 12 naye doctor post honge aur essential medicines ka buffer stock 3x kiya jaayega.\n"
+                "USER: log darte hain ki emergency mein kaun madad karega."
             ),
             extractions=[
                 lx.data.Extraction(
                     extraction_class="concern",
-                    extraction_text="डॉक्टर हफ्तों नहीं आता",
+                    extraction_text="doctor hafton nahi aata",
                     attributes={"type": "staff absenteeism", "facility": "primary health center", "frequency": "weeks"}
                 ),
                 lx.data.Extraction(
                     extraction_class="concern",
-                    extraction_text="दवाइयाँ भी ज़्यादातर आउट ऑफ स्टॉक रहती हैं",
+                    extraction_text="dawaiyan bhi zyadatar out of stock rehti hain",
                     attributes={"type": "medicine shortage", "availability": "low", "impact": "treatment delay"}
                 ),
                 lx.data.Extraction(
                     extraction_class="action_item",
-                    extraction_text="12 नए डॉक्टर पोस्ट होंगे",
+                    extraction_text="12 naye doctor post honge",
                     attributes={"type": "staff deployment", "count": 12, "timeline": "next quarter"}
                 ),
                 lx.data.Extraction(
                     extraction_class="action_item",
-                    extraction_text="buffer stock 3x किया जाएगा",
+                    extraction_text="buffer stock 3x kiya jaayega",
                     attributes={"type": "inventory increase", "multiplier": "3x", "category": "essential medicines"}
                 ),
                 lx.data.Extraction(
                     extraction_class="emotion",
-                    extraction_text="लोग डरते हैं",
+                    extraction_text="log darte hain",
                     attributes={"feeling": "fear", "context": "medical emergency"}
                 )
             ]
@@ -157,35 +157,35 @@ def analyze_conversation_with_langextract(filepath):
         # EDUCATION + INFRASTRUCTURE
         lx.data.ExampleData(
             text=(
-                "USER: स्कूल में अभी भी टीन की छत है जो हर बारिश में टपकती है।\n"
-                "USER: बच्चे भीगते हैं और कई बार क्लास बंद करनी पड़ती है।\n"
-                "AI: 45 classroom renovation tender issue हुआ है और ₹9 crore allocate हो चुका है।\n"
-                "AI: साथ ही स्मार्ट बोर्ड की pilot 6 classrooms में शुरू होगी।"
+                "USER: school mein abhi bhi tin ki chhat hai jo har baarish mein tapakti hai.\n"
+                "USER: bacche bheegte hain aur kai baar class band karni padti hai.\n"
+                "AI: 45 classroom renovation tender issue hua hai aur ₹9 crore allocate ho chuka hai.\n"
+                "AI: saath hi smart board ki pilot 6 classrooms mein shuru hogi."
             ),
             extractions=[
                 lx.data.Extraction(
                     extraction_class="concern",
-                    extraction_text="टीन की छत है जो हर बारिश में टपकती है",
+                    extraction_text="tin ki chhat hai jo har baarish mein tapakti hai",
                     attributes={"type": "infrastructure decay", "problem": "leaking roof", "frequency": "every rain"}
                 ),
                 lx.data.Extraction(
                     extraction_class="concern",
-                    extraction_text="बच्चे भीगते हैं",
+                    extraction_text="bacche bheegte hain",
                     attributes={"type": "student discomfort", "impact": "health risk", "age_group": "school children"}
                 ),
                 lx.data.Extraction(
                     extraction_class="concern",
-                    extraction_text="क्लास बंद करनी पड़ती है",
+                    extraction_text="class band karni padti hai",
                     attributes={"type": "instruction disruption", "effect": "lost learning time"}
                 ),
                 lx.data.Extraction(
                     extraction_class="action_item",
-                    extraction_text="45 classroom renovation tender issue हुआ है",
+                    extraction_text="45 classroom renovation tender issue hua hai",
                     attributes={"type": "renovation", "count": 45, "budget": "₹9 crore"}
                 ),
                 lx.data.Extraction(
                     extraction_class="action_item",
-                    extraction_text="स्मार्ट बोर्ड की pilot 6 classrooms में शुरू होगी",
+                    extraction_text="smart board ki pilot 6 classrooms mein shuru hogi",
                     attributes={"type": "technology pilot", "count": 6, "equipment": "smart board"}
                 )
             ]
@@ -193,40 +193,40 @@ def analyze_conversation_with_langextract(filepath):
         # ROADS + TRANSPORT
         lx.data.ExampleData(
             text=(
-                "USER: मुख्य सड़क पर इतने गड्ढे हैं कि एम्बुलेंस भी फँस जाती है।\n"
-                "USER: पिछले साल भी शिकायत की थी कोई आया ही नहीं।\n"
-                "AI: इस महीने ड्रोन सर्वे पूरा हो जाएगा और 32 km stretch का रेसर्फेसिंग order हो चुका है।\n"
-                "USER: लोग नाराज़ हैं अब।"
+                "USER: mukhya sadak par itne gaddhe hain ki ambulance bhi phas jaati hai.\n"
+                "USER: pichle saal bhi shikayat ki thi koi aaya hi nahi.\n"
+                "AI: is mahine drone survey pura ho jaayega aur 32 km stretch ka resurfacing order ho chuka hai.\n"
+                "USER: log naraaz hain ab."
             ),
             extractions=[
                 lx.data.Extraction(
                     extraction_class="concern",
-                    extraction_text="मुख्य सड़क पर इतने गड्ढे हैं",
+                    extraction_text="mukhya sadak par itne gaddhe hain",
                     attributes={"type": "road potholes", "severity": "high", "impact": "vehicle delay"}
                 ),
                 lx.data.Extraction(
                     extraction_class="concern",
-                    extraction_text="एम्बुलेंस भी फँस जाती है",
+                    extraction_text="ambulance bhi phas jaati hai",
                     attributes={"type": "emergency obstruction", "service": "ambulance", "risk": "health"}
                 ),
                 lx.data.Extraction(
                     extraction_class="concern",
-                    extraction_text="पिछले साल भी शिकायत की थी कोई आया ही नहीं",
+                    extraction_text="pichle saal bhi shikayat ki thi koi aaya hi nahi",
                     attributes={"type": "unaddressed complaint", "duration": "1 year", "response": "none"}
                 ),
                 lx.data.Extraction(
                     extraction_class="action_item",
-                    extraction_text="ड्रोन सर्वे पूरा हो जाएगा",
+                    extraction_text="drone survey pura ho jaayega",
                     attributes={"type": "survey", "method": "drone", "timeline": "this month"}
                 ),
                 lx.data.Extraction(
                     extraction_class="action_item",
-                    extraction_text="32 km stretch का रेसर्फेसिंग order हो चुका है",
+                    extraction_text="32 km stretch ka resurfacing order ho chuka hai",
                     attributes={"type": "road resurfacing", "length": "32 km", "status": "ordered"}
                 ),
                 lx.data.Extraction(
                     extraction_class="emotion",
-                    extraction_text="लोग नाराज़ हैं",
+                    extraction_text="log naraaz hain",
                     attributes={"feeling": "anger", "intensity": "medium"}
                 )
             ]
@@ -234,40 +234,40 @@ def analyze_conversation_with_langextract(filepath):
         # WATER + DRINKING SUPPLY
         lx.data.ExampleData(
             text=(
-                "USER: पीने के पानी में बदबू आती है और पीला रंग होता है।\n"
-                "USER: बच्चों को पेट दर्द की शिकायत बढ़ गई है।\n"
-                "AI: हम तीन नए filtration unit लगा रहे हैं और पुराने पाइप 5 km तक बदलेंगे।\n"
-                "AI: Water quality weekly testing भी शुरू होगी।"
+                "USER: peene ke paani mein badbu aati hai aur peela rang hota hai.\n"
+                "USER: bacchon ko pet dard ki shikayat badh gayi hai.\n"
+                "AI: hum teen naye filtration unit laga rahe hain aur purane pipe 5 km tak badalenge.\n"
+                "AI: Water quality weekly testing bhi shuru hogi."
             ),
             extractions=[
                 lx.data.Extraction(
                     extraction_class="concern",
-                    extraction_text="पीने के पानी में बदबू आती है",
+                    extraction_text="peene ke paani mein badbu aati hai",
                     attributes={"type": "water contamination", "symptom": "odor", "use": "drinking"}
                 ),
                 lx.data.Extraction(
                     extraction_class="concern",
-                    extraction_text="पीला रंग होता है",
+                    extraction_text="peela rang hota hai",
                     attributes={"type": "water discoloration", "color": "yellow", "indicator": "possible iron"}
                 ),
                 lx.data.Extraction(
                     extraction_class="concern",
-                    extraction_text="बच्चों को पेट दर्द की शिकायत बढ़ गई है",
+                    extraction_text="bacchon ko pet dard ki shikayat badh gayi hai",
                     attributes={"type": "health issue", "group": "children", "symptom": "stomach pain"}
                 ),
                 lx.data.Extraction(
                     extraction_class="action_item",
-                    extraction_text="तीन नए filtration unit लगा रहे हैं",
+                    extraction_text="teen naye filtration unit laga rahe hain",
                     attributes={"type": "infrastructure install", "count": 3, "purpose": "filtration"}
                 ),
                 lx.data.Extraction(
                     extraction_class="action_item",
-                    extraction_text="पुराने पाइप 5 km तक बदलेंगे",
+                    extraction_text="purane pipe 5 km tak badalenge",
                     attributes={"type": "pipe replacement", "length": "5 km", "status": "planned"}
                 ),
                 lx.data.Extraction(
                     extraction_class="action_item",
-                    extraction_text="Water quality weekly testing भी शुरू होगी",
+                    extraction_text="Water quality weekly testing bhi shuru hogi",
                     attributes={"type": "monitoring", "frequency": "weekly", "target": "water quality"}
                 )
             ]
@@ -275,35 +275,35 @@ def analyze_conversation_with_langextract(filepath):
         # CORRUPTION + ADMIN
         lx.data.ExampleData(
             text=(
-                "USER: राशन कार्ड अपडेट कराने के लिए बाबू ने 500 रुपये मांगे।\n"
-                "USER: बिना पैसे के फाइल आगे बढ़ती ही नहीं।\n"
-                "AI: हम एक हेल्पलाइन लाँच कर रहे हैं और सभी आवेदन ऑनलाइन ट्रैक होंगे।\n"
-                "AI: Corruption complaints को 72 घंटे में प्राथमिक जाँच होगी।"
+                "USER: ration card update karaane ke liye babu ne 500 rupaye maange.\n"
+                "USER: bina paise ke file aage badhti hi nahi.\n"
+                "AI: hum ek helpline launch kar rahe hain aur sabhi aavedan online track honge.\n"
+                "AI: Corruption complaints ko 72 ghante mein prathamik jaanch hogi."
             ),
             extractions=[
                 lx.data.Extraction(
                     extraction_class="concern",
-                    extraction_text="राशन कार्ड अपडेट कराने के लिए बाबू ने 500 रुपये मांगे",
+                    extraction_text="ration card update karaane ke liye babu ne 500 rupaye maange",
                     attributes={"type": "bribe demand", "amount": "500", "currency": "INR"}
                 ),
                 lx.data.Extraction(
                     extraction_class="concern",
-                    extraction_text="बिना पैसे के फाइल आगे बढ़ती ही नहीं",
+                    extraction_text="bina paise ke file aage badhti hi nahi",
                     attributes={"type": "process blockage", "cause": "bribe refusal", "impact": "delay"}
                 ),
                 lx.data.Extraction(
                     extraction_class="action_item",
-                    extraction_text="एक हेल्पलाइन लाँच कर रहे हैं",
+                    extraction_text="ek helpline launch kar rahe hain",
                     attributes={"type": "grievance mechanism", "channel": "helpline", "status": "launching"}
                 ),
                 lx.data.Extraction(
                     extraction_class="action_item",
-                    extraction_text="आवेदन ऑनलाइन ट्रैक होंगे",
+                    extraction_text="aavedan online track honge",
                     attributes={"type": "process digitization", "benefit": "transparency", "scope": "all applications"}
                 ),
                 lx.data.Extraction(
                     extraction_class="action_item",
-                    extraction_text="Corruption complaints को 72 घंटे में प्राथमिक जाँच होगी",
+                    extraction_text="Corruption complaints ko 72 ghante mein prathamik jaanch hogi",
                     attributes={"type": "investigation SLA", "sla_hours": 72, "category": "corruption"}
                 )
             ]
@@ -311,35 +311,35 @@ def analyze_conversation_with_langextract(filepath):
         # INSURANCE + COMPENSATION
         lx.data.ExampleData(
             text=(
-                "USER: फसल बीमा का क्लेम डाले छह महीने हो गए कोई स्टेटस नहीं।\n"
-                "USER: तूफान में पूरा चना गिर गया था।\n"
-                "AI: 11,200 लंबित क्लेम हम इस महीने के अंत तक सेटल करेंगे और SMS अलर्ट enable होंगे।\n"
-                "USER: अब विश्वास ही नहीं रहा सिस्टम पर।"
+                "USER: fasal bima ka claim daale cheh mahine ho gaye koi status nahi.\n"
+                "USER: toofan mein pura chana gir gaya tha.\n"
+                "AI: 11,200 lambit claim hum is mahine ke ant tak settle karenge aur SMS alert enable honge.\n"
+                "USER: ab vishwas hi nahi raha system par."
             ),
             extractions=[
                 lx.data.Extraction(
                     extraction_class="concern",
-                    extraction_text="फसल बीमा का क्लेम डाले छह महीने हो गए कोई स्टेटस नहीं",
+                    extraction_text="fasal bima ka claim daale cheh mahine ho gaye koi status nahi",
                     attributes={"type": "insurance delay", "duration": "6 months", "status": "no update"}
                 ),
                 lx.data.Extraction(
                     extraction_class="concern",
-                    extraction_text="तूफान में पूरा चना गिर गया था",
-                    attributes={"type": "storm damage", "crop": "चना", "loss_extent": "total"}
+                    extraction_text="toofan mein pura chana gir gaya tha",
+                    attributes={"type": "storm damage", "crop": "chana", "loss_extent": "total"}
                 ),
                 lx.data.Extraction(
                     extraction_class="action_item",
-                    extraction_text="11,200 लंबित क्लेम हम इस महीने के अंत तक सेटल करेंगे",
+                    extraction_text="11,200 lambit claim hum is mahine ke ant tak settle karenge",
                     attributes={"type": "claim settlement", "count": 11200, "timeline": "month end"}
                 ),
                 lx.data.Extraction(
                     extraction_class="action_item",
-                    extraction_text="SMS अलर्ट enable होंगे",
+                    extraction_text="SMS alert enable honge",
                     attributes={"type": "status notification", "channel": "SMS", "benefit": "transparency"}
                 ),
                 lx.data.Extraction(
                     extraction_class="emotion",
-                    extraction_text="विश्वास ही नहीं रहा",
+                    extraction_text="vishwas hi nahi raha",
                     attributes={"feeling": "loss of trust", "intensity": "high"}
                 )
             ]
@@ -347,40 +347,40 @@ def analyze_conversation_with_langextract(filepath):
         # FERTILIZER SHORTAGE
         lx.data.ExampleData(
             text=(
-                "USER: खाद लेने सुबह चार बजे लाइन में लगते हैं फिर भी दो बोरी से ज्यादा नहीं देते।\n"
-                "USER: ब्लैक में लोग महँगा बेच रहे हैं।\n"
-                "AI: अगले हफ्ते 600 टन अतिरिक्त urea unload होगा और biometric वितरण लागू होगा।\n"
-                "USER: किसान बहुत परेशान हैं अभी।"
+                "USER: khaad lene subah chaar baje line mein lagte hain phir bhi do bori se zyada nahi dete.\n"
+                "USER: black mein log mehnga bech rahe hain.\n"
+                "AI: agle hafte 600 ton atirikt urea unload hoga aur biometric vitaran laagu hoga.\n"
+                "USER: kisan bahut pareshan hain abhi."
             ),
             extractions=[
                 lx.data.Extraction(
                     extraction_class="concern",
-                    extraction_text="सुबह चार बजे लाइन में लगते हैं",
+                    extraction_text="subah chaar baje line mein lagte hain",
                     attributes={"type": "long queues", "time": "4 AM", "resource": "fertilizer"}
                 ),
                 lx.data.Extraction(
                     extraction_class="concern",
-                    extraction_text="दो बोरी से ज्यादा नहीं देते",
+                    extraction_text="do bori se zyada nahi dete",
                     attributes={"type": "quota restriction", "quantity_limit": "2 bags"}
                 ),
                 lx.data.Extraction(
                     extraction_class="concern",
-                    extraction_text="ब्लैक में लोग महँगा बेच रहे हैं",
+                    extraction_text="black mein log mehnga bech rahe hain",
                     attributes={"type": "black market", "pricing": "inflated", "commodity": "fertilizer"}
                 ),
                 lx.data.Extraction(
                     extraction_class="action_item",
-                    extraction_text="600 टन अतिरिक्त urea unload होगा",
+                    extraction_text="600 ton atirikt urea unload hoga",
                     attributes={"type": "supply augmentation", "amount": "600 ton", "timeline": "next week"}
                 ),
                 lx.data.Extraction(
                     extraction_class="action_item",
-                    extraction_text="biometric वितरण लागू होगा",
+                    extraction_text="biometric vitaran laagu hoga",
                     attributes={"type": "distribution control", "method": "biometric", "goal": "leakage prevention"}
                 ),
                 lx.data.Extraction(
                     extraction_class="emotion",
-                    extraction_text="किसान बहुत परेशान हैं",
+                    extraction_text="kisan bahut pareshan hain",
                     attributes={"feeling": "distress", "group": "farmers", "intensity": "high"}
                 )
             ]
