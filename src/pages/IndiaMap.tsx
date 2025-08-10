@@ -111,8 +111,6 @@ export default function IndiaMap() {
   const [stateGeoUrl, setStateGeoUrl] = useState<string | null>(null);
   const [stateCenter, setStateCenter] = useState<[number, number] | null>(null);
   const [stateZoom, setStateZoom] = useState<number>(2);
-  // Add: independent zoom for India map and disable scroll-zoom interaction
-  const [indiaZoom, setIndiaZoom] = useState<number>(1);
 
   useEffect(() => {
     if (!selectedState) {
@@ -161,39 +159,28 @@ export default function IndiaMap() {
           projectionConfig={{ scale: 1000, center: [78.9629, 22.5937] }}
           width={900}
           height={600}
-          preserveAspectRatio="xMidYMid slice"
           style={{ width: '100%', height: '100%' }}
         >
-          <ZoomableGroup
-            key={`india-${indiaZoom.toFixed(2)}`}
-            center={[78.9629, 22.5937]}
-            zoom={indiaZoom}
-            minZoom={0.8}
-            maxZoom={12}
-            // Disable all user-driven zoom/pan (wheel, drag, dblclick)
-            filterZoomEvent={() => false}
-          >
-            <Geographies geography={geoUrl}>
-              {({ geographies }) =>
-                geographies.map((geo) => {
-                  const name = getStateName(geo.properties as any);
-                  return (
-                    <Geography
-                      key={geo.rsmKey}
-                      geography={geo}
-                      onMouseEnter={() => setHoverInfo({ name })}
-                      onMouseLeave={() => setHoverInfo(null)}
-                      style={{
-                        default: { fill: '#94a3b8', outline: 'none' },
-                        hover: { fill: '#6366f1', outline: 'none' },
-                        pressed: { fill: '#4338ca', outline: 'none' },
-                      }}
-                    />
-                  );
-                })
-              }
-            </Geographies>
-          </ZoomableGroup>
+          <Geographies geography={geoUrl}>
+            {({ geographies }) =>
+              geographies.map((geo) => {
+                const name = getStateName(geo.properties as any);
+                return (
+                  <Geography
+                    key={geo.rsmKey}
+                    geography={geo}
+                    onMouseEnter={() => setHoverInfo({ name })}
+                    onMouseLeave={() => setHoverInfo(null)}
+                    style={{
+                      default: { fill: '#94a3b8', outline: 'none' },
+                      hover: { fill: '#6366f1', outline: 'none' },
+                      pressed: { fill: '#4338ca', outline: 'none' },
+                    }}
+                  />
+                );
+              })
+            }
+          </Geographies>
         </ComposableMap>
 
         {hoverInfo && (
@@ -201,21 +188,6 @@ export default function IndiaMap() {
             <strong>{hoverInfo.name}</strong>
           </div>
         )}
-
-        {/* Zoom slider for India map */}
-        <div className="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-background/70 backdrop-blur-md border border-border/50 rounded px-2 py-3 flex items-center justify-center">
-          <input
-            aria-label="Zoom India map"
-            type="range"
-            min={0.8}
-            max={12}
-            step={0.1}
-            value={indiaZoom}
-            onChange={(e) => setIndiaZoom(Number(e.target.value))}
-            onInput={(e) => setIndiaZoom(Number((e.target as HTMLInputElement).value))}
-            className="[writing-mode:bt-lr] rotate-180 h-36 w-4 accent-primary"
-          />
-        </div>
       </div>
 
       {/* State selector and map */}
@@ -245,17 +217,9 @@ export default function IndiaMap() {
               projection="geoMercator"
               width={900}
               height={500}
-              preserveAspectRatio="xMidYMid slice"
               style={{ width: '100%', height: '100%' }}
             >
-              <ZoomableGroup
-                key={`state-${selectedState}-${stateZoom.toFixed(2)}`}
-                center={stateCenter}
-                zoom={stateZoom}
-                minZoom={0.8}
-                maxZoom={20}
-                filterZoomEvent={() => false}
-              >
+              <ZoomableGroup center={stateCenter} zoom={stateZoom}>
                 <Geographies geography={stateGeoUrl}>
                   {({ geographies }) =>
                     geographies.map((geo) => (
@@ -273,22 +237,6 @@ export default function IndiaMap() {
                 </Geographies>
               </ZoomableGroup>
             </ComposableMap>
-
-            {/* Zoom slider for State map */}
-            <div className="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-background/70 backdrop-blur-md border border-border/50 rounded px-2 py-3 flex items-center justify-center">
-              <input
-                aria-label="Zoom state map"
-                type="range"
-                min={0.8}
-                max={20}
-                step={0.1}
-                value={stateZoom}
-                onChange={(e) => setStateZoom(Number(e.target.value))}
-                onInput={(e) => setStateZoom(Number((e.target as HTMLInputElement).value))}
-                className="[writing-mode:bt-lr] rotate-180 h-36 w-4 accent-primary"
-              />
-            </div>
-
             <div className="absolute top-4 left-4 bg-background/80 backdrop-blur-md shadow-md rounded px-3 py-2 text-sm border border-border/50">
               <strong>{STATE_OPTIONS.find((o) => o.value === selectedState)?.label}</strong>
             </div>
