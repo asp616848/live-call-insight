@@ -15,45 +15,8 @@ function getStateName(props: Record<string, any> = {}) {
   );
 }
 
-// State options mapped to files under public/states
-const STATE_OPTIONS: { value: string; label: string; file: string }[] = [
-  { value: 'andamannicobarislands', label: 'Andaman & Nicobar Islands', file: '/states/andamannicobarislands.json' },
-  { value: 'andhrapradesh', label: 'Andhra Pradesh', file: '/states/andhrapradesh.json' },
-  { value: 'arunachalpradesh', label: 'Arunachal Pradesh', file: '/states/arunachalpradesh.json' },
-  { value: 'assam', label: 'Assam', file: '/states/assam.json' },
-  { value: 'bihar', label: 'Bihar', file: '/states/bihar.json' },
-  { value: 'chandigarh', label: 'Chandigarh', file: '/states/chandigarh.json' },
-  { value: 'chhattisgarh', label: 'Chhattisgarh', file: '/states/chhattisgarh.json' },
-  { value: 'delhi', label: 'Delhi', file: '/states/delhi.json' },
-  { value: 'dnh-and-dd', label: 'Dadra & Nagar Haveli and Daman & Diu', file: '/states/dnh-and-dd.json' },
-  { value: 'goa', label: 'Goa', file: '/states/goa.json' },
-  { value: 'gujarat', label: 'Gujarat', file: '/states/gujarat.json' },
-  { value: 'haryana', label: 'Haryana', file: '/states/haryana.json' },
-  { value: 'himachalpradesh', label: 'Himachal Pradesh', file: '/states/himachalpradesh.json' },
-  { value: 'jammukashmir', label: 'Jammu & Kashmir', file: '/states/jammukashmir.json' },
-  { value: 'jharkhand', label: 'Jharkhand', file: '/states/jharkhand.json' },
-  { value: 'karnataka', label: 'Karnataka', file: '/states/karnataka.json' },
-  { value: 'kerala', label: 'Kerala', file: '/states/kerala.json' },
-  { value: 'ladakh', label: 'Ladakh', file: '/states/ladakh.json' },
-  { value: 'lakshadweep', label: 'Lakshadweep', file: '/states/lakshadweep.json' },
-  { value: 'madhyapradesh', label: 'Madhya Pradesh', file: '/states/madhyapradesh.json' },
-  { value: 'maharashtra', label: 'Maharashtra', file: '/states/maharashtra.json' },
-  { value: 'manipur', label: 'Manipur', file: '/states/manipur.json' },
-  { value: 'meghalaya', label: 'Meghalaya', file: '/states/meghalaya.json' },
-  { value: 'mizoram', label: 'Mizoram', file: '/states/mizoram.json' },
-  { value: 'nagaland', label: 'Nagaland', file: '/states/nagaland.json' },
-  { value: 'odisha', label: 'Odisha', file: '/states/odisha.json' },
-  { value: 'puducherry', label: 'Puducherry', file: '/states/puducherry.json' },
-  { value: 'punjab', label: 'Punjab', file: '/states/punjab.json' },
-  { value: 'rajasthan', label: 'Rajasthan', file: '/states/rajasthan.json' },
-  { value: 'sikkim', label: 'Sikkim', file: '/states/sikkim.json' },
-  { value: 'tamilnadu', label: 'Tamil Nadu', file: '/states/tamilnadu.json' },
-  { value: 'telangana', label: 'Telangana', file: '/states/telangana.json' },
-  { value: 'tripura', label: 'Tripura', file: '/states/tripura.json' },
-  { value: 'uttarakhand', label: 'Uttarakhand', file: '/states/uttarakhand.json' },
-  { value: 'uttarpradesh', label: 'Uttar Pradesh', file: '/states/uttarpradesh.json' },
-  { value: 'westbengal', label: 'West Bengal', file: '/states/westbengal.json' },
-];
+// Load state options from public/state-options.json at runtime
+type StateOption = { value: string; label: string; file: string };
 
 function traverseCoords(coords: any, cb: (pt: [number, number]) => void) {
   if (!coords) return;
@@ -111,6 +74,15 @@ export default function IndiaMap() {
   const [stateGeoUrl, setStateGeoUrl] = useState<string | null>(null);
   const [stateCenter, setStateCenter] = useState<[number, number] | null>(null);
   const [stateZoom, setStateZoom] = useState<number>(2);
+  const [stateOptions, setStateOptions] = useState<StateOption[]>([]);
+
+  // Fetch options from public folder
+  useEffect(() => {
+    fetch('/state-options.json')
+      .then((r) => r.json())
+      .then((opts: StateOption[]) => setStateOptions(opts))
+      .catch(() => setStateOptions([]));
+  }, []);
 
   useEffect(() => {
     if (!selectedState) {
@@ -119,7 +91,7 @@ export default function IndiaMap() {
       setStateZoom(2);
       return;
     }
-    const opt = STATE_OPTIONS.find((o) => o.value === selectedState);
+    const opt = stateOptions.find((o) => o.value === selectedState);
     if (!opt) return;
     setStateGeoUrl(opt.file);
     fetch(opt.file)
@@ -134,7 +106,7 @@ export default function IndiaMap() {
         setStateCenter([78.9629, 22.5937]);
         setStateZoom(4);
       });
-  }, [selectedState]);
+  }, [selectedState, stateOptions]);
 
   return (
     <motion.div
@@ -203,7 +175,7 @@ export default function IndiaMap() {
             onChange={(e) => setSelectedState(e.target.value)}
           >
             <option value="">Select a state/UT…</option>
-            {STATE_OPTIONS.map((opt) => (
+            {stateOptions.map((opt) => (
               <option key={opt.value} value={opt.value}>
                 {opt.label}
               </option>
@@ -238,7 +210,7 @@ export default function IndiaMap() {
               </ZoomableGroup>
             </ComposableMap>
             <div className="absolute top-4 left-4 bg-background/80 backdrop-blur-md shadow-md rounded px-3 py-2 text-sm border border-border/50">
-              <strong>{STATE_OPTIONS.find((o) => o.value === selectedState)?.label}</strong>
+              <strong>{stateOptions.find((o) => o.value === selectedState)?.label}</strong>
             </div>
           </div>
         )}
