@@ -58,7 +58,7 @@ def parse_log_file(filepath):
                     user_text_raw = "".join(current_user_sentence)
                     user_text_response = gemini_model.generate_content(f"Fix grammar and punctuations in the hindi text and then convert it to latin hindi, and then return just the text without any formatting or explanation: {user_text_raw}")
                     cleaned_user_text = strip_basic_markdown(user_text_response.text)
-                    print("USER FIXED" + cleaned_user_text)
+                    print(cleaned_user_text)
                     sentences.append({"speaker": "user", "text": cleaned_user_text, "timestamp": last_user_timestamp})
                     current_user_sentence = []
 
@@ -99,7 +99,7 @@ def parse_log_file(filepath):
         user_text_raw = "".join(current_user_sentence)
         user_text_response = gemini_model.generate_content(f"fix grammar and punctuations in the hindi text and return just the text without any formatting or explanation: {user_text_raw}")
         cleaned_user_text = strip_basic_markdown(user_text_response.text)
-        print("USER FIXED" + cleaned_user_text)
+        print(cleaned_user_text)
         sentences.append({"speaker": "user", "text": cleaned_user_text, "timestamp": last_user_timestamp})
 
     # Metrics

@@ -14,6 +14,7 @@ import Login from "./pages/Login";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { AuthProvider } from "./contexts/AuthContext";
 import LangExtractPage from "./pages/LangExtract";
+import IndiaMap from "./pages/IndiaMap";
 
 const queryClient = new QueryClient();
 console.log(import.meta.env.VITE_GOOGLE_CLIENT_ID)
@@ -34,6 +35,7 @@ const App = () => (
                   <Route path="/geo-analytics" element={<GeoAnalytics />} />
                   <Route path="/settings" element={<Settings />} />
                   <Route path="/lang-extract" element={<LangExtractPage />} />
+                  <Route path="/india-map" element={<IndiaMap />} />
                 </Route>
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
