@@ -1,12 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { GoogleLogin } from '@react-oauth/google';
 import { motion } from 'framer-motion';
 import { LogIn, LogOut, User } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
+import { UserRound } from "lucide-react";
 
 interface GoogleLoginButtonProps {
   collapsed?: boolean;
 }
+
+// Avatar component with error handling
+const Avatar: React.FC<{ src?: string; name?: string; size?: 'small' | 'normal' }> = ({ 
+  src, 
+  name, 
+  size = 'normal' 
+}) => {
+  const [imgError, setImgError] = useState(false);
+  const sizeClasses = size === 'small' ? 'w-6 h-6' : 'w-8 h-8';
+  const iconSize = size === 'small' ? 'w-3 h-3' : 'w-5 h-5';
+
+  return src && !imgError ? (
+    <img
+      src={src}
+      alt={name ?? "User avatar"}
+      onError={() => setImgError(true)}
+      className={`${sizeClasses} rounded-full border-2 border-primary/30 object-cover`}
+    />
+  ) : (
+    <div className={`${sizeClasses} rounded-full border-2 border-primary/30 bg-primary/10 flex items-center justify-center`}>
+      <UserRound className={`${iconSize} text-primary`} />
+    </div>
+  );
+};
 
 export const GoogleLoginButton: React.FC<GoogleLoginButtonProps> = ({ collapsed = false }) => {
   const { user, isAuthenticated, login, logout } = useAuth();
@@ -22,17 +47,7 @@ export const GoogleLoginButton: React.FC<GoogleLoginButtonProps> = ({ collapsed 
         {!collapsed ? (
           <div className="flex items-center gap-3">
             <div className="relative">
-              {user.picture ? (
-                <img
-                  src={user.picture}
-                  alt={user.name}
-                  className="w-8 h-8 rounded-full border-2 border-primary/30"
-                />
-              ) : (
-                <div className="w-8 h-8 rounded-full border-2 border-primary/30 bg-primary/10 flex items-center justify-center">
-                  <User className="w-4 h-4 text-primary" />
-                </div>
-              )}
+              <Avatar src={user.picture} name={user.name} />
               <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-background"></div>
             </div>
             <div className="flex-1 min-w-0">
@@ -52,17 +67,7 @@ export const GoogleLoginButton: React.FC<GoogleLoginButtonProps> = ({ collapsed 
         ) : (
           <div className="flex flex-col items-center gap-2">
             <div className="relative">
-              {user.picture ? (
-                <img
-                  src={user.picture}
-                  alt={user.name}
-                  className="w-8 h-8 rounded-full border-2 border-primary/30"
-                />
-              ) : (
-                <div className="w-8 h-8 rounded-full border-2 border-primary/30 bg-primary/10 flex items-center justify-center">
-                  <User className="w-4 h-4 text-primary" />
-                </div>
-              )}
+              <Avatar src={user.picture} name={user.name} />
               <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-background"></div>
             </div>
             <motion.button
