@@ -5,6 +5,7 @@ import { GoogleLoginButton } from '@/components/GoogleLoginButton';
 import { useAuth } from '@/contexts/AuthContext';
 import { Navigate } from 'react-router-dom';
 import { CustomCursor } from '@/components/CustomCursor';
+import { FloatingThemeToggle } from '@/components/FloatingThemeToggle';
 
 const LoginPage = () => {
   const { isAuthenticated, loading } = useAuth();
@@ -24,6 +25,7 @@ const LoginPage = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background/90 to-background relative overflow-hidden">
         <CustomCursor/>
+        <FloatingThemeToggle />
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-glow/10 rounded-full blur-3xl animate-pulse"></div>

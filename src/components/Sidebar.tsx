@@ -12,6 +12,7 @@ import {
 import { useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { GoogleLoginButton } from './GoogleLoginButton';
+import { ThemeToggle } from './ThemeToggle';
 
 interface SidebarProps {
   collapsed: boolean;
@@ -122,6 +123,11 @@ export const Sidebar = ({ collapsed, onToggle }: SidebarProps) => {
             </motion.button>
           );
         })}
+        
+        {/* Theme Toggle in Navigation */}
+        <div className="pt-2 border-t border-border/20 mt-4">
+          <ThemeToggle collapsed={collapsed} />
+        </div>
       </nav>
 
       {/* Google Login Section */}
