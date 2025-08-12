@@ -1,6 +1,7 @@
 import os
 import json
 import textwrap
+import hashlib
 import langextract as lx
 from dotenv import load_dotenv
 
@@ -9,11 +10,133 @@ API_KEY = os.getenv("GEMINI_API_KEY")
 if not API_KEY:
     raise ValueError("GEMINI_API_KEY missing")
 
+def get_cache_key(filepath):
+    """Generate a unique cache key based on file content and modification time"""
+    try:
+        # Get file modification time and content hash
+        mtime = os.path.getmtime(filepath)
+        with open(filepath, 'rb') as f:
+            content_hash = hashlib.md5(f.read()).hexdigest()
+        
+        # Create cache key from filename, mtime, and content hash
+        filename = os.path.basename(filepath)
+        cache_key = f"{filename}_{mtime}_{content_hash}"
+        return cache_key
+    except Exception as e:
+        print(f"Error generating cache key: {e}")
+        return None
+
+def get_cache_dir():
+    """Get or create the cache directory"""
+    cache_dir = os.path.join(os.path.dirname(__file__), "langextract_cache")
+    os.makedirs(cache_dir, exist_ok=True)
+    return cache_dir
+
+def load_from_cache(cache_key):
+    """Load analysis results from cache if available"""
+    if not cache_key:
+        return None
+    
+    cache_dir = get_cache_dir()
+    cache_file = os.path.join(cache_dir, cache_key, "analysis_result.json")
+    
+    try:
+        if os.path.exists(cache_file):
+            with open(cache_file, 'r', encoding='utf-8') as f:
+                cached_data = json.load(f)
+            
+            # Load the visualization HTML separately
+            html_file = os.path.join(cache_dir, cache_key, "visualization.html")
+            if os.path.exists(html_file):
+                with open(html_file, 'r', encoding='utf-8') as f:
+                    cached_data["visualization_html"] = f.read()
+            
+            print(f"Loaded analysis from cache: {cache_key}")
+            return cached_data
+    except Exception as e:
+        print(f"Error loading from cache: {e}")
+    
+    return None
+
+def save_to_cache(cache_key, analysis_result):
+    """Save analysis results to cache"""
+    if not cache_key:
+        return
+    
+    cache_dir = get_cache_dir()
+    call_cache_dir = os.path.join(cache_dir, cache_key)
+    os.makedirs(call_cache_dir, exist_ok=True)
+    
+    try:
+        # Save the main analysis data (without HTML to avoid JSON issues)
+        cache_data = analysis_result.copy()
+        visualization_html = cache_data.pop("visualization_html", "")
+        
+        cache_file = os.path.join(call_cache_dir, "analysis_result.json")
+        with open(cache_file, 'w', encoding='utf-8') as f:
+            json.dump(cache_data, f, indent=2, ensure_ascii=False)
+        
+        # Save visualization HTML separately
+        if visualization_html:
+            html_file = os.path.join(call_cache_dir, "visualization.html")
+            with open(html_file, 'w', encoding='utf-8') as f:
+                f.write(visualization_html)
+        
+        # Also save the extraction files in the cache directory
+        extraction_file = os.path.join(call_cache_dir, "extraction_results.jsonl")
+        if os.path.exists("extraction_results.jsonl"):
+            import shutil
+            shutil.copy2("extraction_results.jsonl", extraction_file)
+        
+        print(f"Saved analysis to cache: {cache_key}")
+    except Exception as e:
+        print(f"Error saving to cache: {e}")
+
+def clean_cache(max_age_days=7):
+    """Clean up cache entries older than max_age_days"""
+    import time
+    import shutil
+    
+    cache_dir = get_cache_dir()
+    current_time = time.time()
+    max_age_seconds = max_age_days * 24 * 60 * 60
+    
+    try:
+        for cache_entry in os.listdir(cache_dir):
+            cache_path = os.path.join(cache_dir, cache_entry)
+            if os.path.isdir(cache_path):
+                # Check the age of the cache directory
+                cache_age = current_time - os.path.getctime(cache_path)
+                if cache_age > max_age_seconds:
+                    shutil.rmtree(cache_path)
+                    print(f"Removed old cache entry: {cache_entry}")
+    except Exception as e:
+        print(f"Error cleaning cache: {e}")
+
+def list_cache_entries():
+    """List all cache entries for debugging"""
+    cache_dir = get_cache_dir()
+    try:
+        entries = [d for d in os.listdir(cache_dir) if os.path.isdir(os.path.join(cache_dir, d))]
+        return sorted(entries)
+    except Exception as e:
+        print(f"Error listing cache entries: {e}")
+        return []
+
 def analyze_conversation_with_langextract(filepath):
     """
     Analyze conversation JSON file using LangExtract to extract concerns, 
     action items, and emotions with proper attributes.
+    Uses caching to avoid re-analyzing unchanged files.
     """
+    # Check cache first
+    cache_key = get_cache_key(filepath)
+    cached_result = load_from_cache(cache_key)
+    if cached_result:
+        return cached_result
+    
+    print(f"Processing new analysis for: {os.path.basename(filepath)}")
+    
     with open(filepath, "r", encoding="utf-8") as f:
         data = json.load(f)
     
@@ -426,7 +549,9 @@ def analyze_conversation_with_langextract(filepath):
     output_html_path = os.path.abspath("visualization.html")
     with open(output_html_path, "w", encoding="utf-8") as f:
         f.write(visualization_html)
-    return {
+    
+    # Prepare the result
+    analysis_result = {
         "metrics": summary_metrics,
         "extractions": extractions,
         "visualization_html": visualization_html,
@@ -437,3 +562,8 @@ def analyze_conversation_with_langextract(filepath):
             "extracted_entities": len(extractions)
         }
     }
+    
+    # Save to cache before returning
+    save_to_cache(cache_key, analysis_result)
+    
+    return analysis_result
