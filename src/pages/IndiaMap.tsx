@@ -16,6 +16,22 @@ function getStateName(props: Record<string, any> = {}) {
   );
 }
 
+function getDistrictName(props: Record<string, any> = {}) {
+  return (
+    props.Dist_Name ||
+    props.DISTRICT ||
+    props.District ||
+    props.district ||
+    props.DistName ||
+    props.Dist ||
+    props.NAME_2 ||
+    props.NAME2 ||
+    props.NAME ||
+    props.name ||
+    'Unknown district'
+  );
+}
+
 // Load state options from public/state-options.json at runtime
 type StateOption = { value: string; label: string; file: string };
 
@@ -135,6 +151,7 @@ export default function IndiaMap() {
   const [stateCenter, setStateCenter] = useState<[number, number] | null>(null);
   const [stateZoom, setStateZoom] = useState<number>(2);
   const [stateOptions, setStateOptions] = useState<StateOption[]>([]);
+  const [stateHoverInfo, setStateHoverInfo] = useState<{ name: string } | null>(null);
 
   // Track the actual container size to compute an exact fit
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -288,6 +305,8 @@ export default function IndiaMap() {
                       <Geography
                         key={geo.rsmKey}
                         geography={geo}
+                        onMouseEnter={() => setStateHoverInfo({ name: getDistrictName(geo.properties as any) })}
+                        onMouseLeave={() => setStateHoverInfo(null)}
                         style={{
                           default: { fill: '#94a3b8', outline: 'none' },
                           hover: { fill: '#6366f1', outline: 'none' },
@@ -302,6 +321,11 @@ export default function IndiaMap() {
             <div className="absolute top-4 left-4 bg-background/80 backdrop-blur-md shadow-md rounded px-3 py-2 text-sm border border-border/50">
               <strong>{filteredOptions.find((o) => o.value === selectedState)?.label}</strong>
             </div>
+            {stateHoverInfo && (
+              <div className="absolute top-4 right-4 bg-background/80 backdrop-blur-md shadow-md rounded px-3 py-2 text-sm border border-border/50">
+                <strong>{stateHoverInfo.name}</strong>
+              </div>
+            )}
           </div>
         )}
       </div>
