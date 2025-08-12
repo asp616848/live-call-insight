@@ -1,18 +1,23 @@
 import { GoogleLogin, CredentialResponse } from "@react-oauth/google";
 import { useAuth } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { useToast } from "@/hooks/use-toast";
 
 const LoginPage = () => {
-  const { login } = useAuth();
+  const { login, isAuthenticated } = useAuth();
   const navigate = useNavigate();
+  const { toast } = useToast();
+
+  // Navigate to dashboard if already authenticated
+  if (isAuthenticated) {
+    navigate("/");
+    return null;
+  }
 
   const handleLogin = async (credentialResponse: CredentialResponse) => {
-    try {
-      await login(credentialResponse);
+    const success = await login(credentialResponse);
+    if (success) {
       navigate("/");
-    } catch (error) {
-      console.error(error);
-      alert((error as Error).message);
     }
   };
 
@@ -23,7 +28,11 @@ const LoginPage = () => {
         <GoogleLogin
           onSuccess={handleLogin}
           onError={() => {
-            console.log("Login Failed");
+            toast({
+              variant: "destructive",
+              title: "Authentication Error",
+              description: "Failed to authenticate with Google. Please try again.",
+            });
           }}
         />
       </div>
