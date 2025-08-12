@@ -8,11 +8,60 @@ import os
 from flask_cors import CORS 
 import json
 from datetime import datetime
+from routes.district_stats import bp_district_stats
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})  # This will enable CORS for all routes
+app.register_blueprint(bp_district_stats)
+
+# Generate state-level aggregated data from district data
+def generate_state_stats():
+    data_path = os.path.join(os.path.dirname(__file__), 'district_stats.json')
+    
+    try:
+        with open(data_path, 'r') as f:
+            district_data = json.load(f)
+        
+        state_stats = {}
+        
+        for state_name, districts in district_data.items():
+            if isinstance(districts, dict) and districts:
+                # Calculate total calls for the state
+                total_calls = sum(district.get('calls', 0) for district in districts.values())
+                
+                # Aggregate all concerns across districts
+                all_concerns = []
+                for district in districts.values():
+                    if 'top_concerns' in district:
+                        all_concerns.extend(district['top_concerns'])
+                
+                # Count concern frequency and get top concerns
+                concern_counts = {}
+                for concern in all_concerns:
+                    concern_counts[concern] = concern_counts.get(concern, 0) + 1
+                
+                # Get top 5 most common concerns
+                top_concerns = sorted(concern_counts.items(), key=lambda x: x[1], reverse=True)[:5]
+                top_concerns = [concern for concern, count in top_concerns]
+                
+                state_stats[state_name] = {
+                    'calls': total_calls,
+                    'top_concerns': top_concerns
+                }
+        
+        return state_stats
+    
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        print(f"Error generating state stats: {e}")
+        return {}
 
 # api endpoints
+
+@app.route('/state_stats', methods=['GET'])
+def get_state_stats():
+    """Get aggregated state-level statistics"""
+    state_stats = generate_state_stats()
+    return jsonify({"states": state_stats})
 
 @app.route('/logs', methods=['GET'])
 def get_logs():
