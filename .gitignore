@@ -35,3 +35,5 @@ backend/.env
 /backend/__pycache__
 backend.zip
 backend/.env
+/backend/langextract_cache
+/backend/__pycache__
