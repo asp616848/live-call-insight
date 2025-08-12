@@ -3,7 +3,7 @@ from flask import Flask, jsonify, request
 from routes.s3_downloader import download_logs
 from routes.parser import parse_all_logs, get_last_n_conversations
 from routes.dashboard import get_dashboard_with_latest_convo, get_top_concerns
-from analysis import analyze_conversation_with_langextract
+from analysis import analyze_conversation_with_langextract, clean_cache, list_cache_entries
 import os
 from flask_cors import CORS 
 import json
@@ -129,6 +129,42 @@ def update_last_seen():
         return jsonify({"success": True}), 200
     except FileNotFoundError:
         return jsonify({"error": "last-seen.json not found"}), 404
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/cache/status', methods=['GET'])
+def cache_status():
+    """Get cache status and list of cached entries"""
+    try:
+        cache_entries = list_cache_entries()
+        cache_dir = os.path.join(os.path.dirname(__file__), "langextract_cache")
+        cache_size = 0
+        
+        # Calculate total cache size
+        for entry in cache_entries:
+            entry_path = os.path.join(cache_dir, entry)
+            for root, dirs, files in os.walk(entry_path):
+                for file in files:
+                    file_path = os.path.join(root, file)
+                    if os.path.exists(file_path):
+                        cache_size += os.path.getsize(file_path)
+        
+        return jsonify({
+            "cache_entries": len(cache_entries),
+            "cache_size_mb": round(cache_size / (1024 * 1024), 2),
+            "entries": cache_entries
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/cache/clean', methods=['POST'])
+def clean_cache_endpoint():
+    """Clean old cache entries"""
+    try:
+        data = request.get_json() or {}
+        max_age_days = data.get('max_age_days', 7)
+        clean_cache(max_age_days)
+        return jsonify({"success": True, "message": f"Cache cleaned for entries older than {max_age_days} days"})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
