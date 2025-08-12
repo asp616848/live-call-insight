@@ -145,7 +145,7 @@ function computeFitForState(
 }
 
 export default function IndiaMap() {
-  const [hoverInfo, setHoverInfo] = useState<{ name: string } | null>(null);
+  const [hoverInfo, setHoverInfo] = useState<{ name: string; x: number; y: number } | null>(null);
   const [selectedState, setSelectedState] = useState<string>('');
   const [stateGeoUrl, setStateGeoUrl] = useState<string | null>(null);
   const [stateCenter, setStateCenter] = useState<[number, number] | null>(null);
@@ -155,8 +155,10 @@ export default function IndiaMap() {
   const [districtStats, setDistrictStats] = useState<Record<string, { calls: number; top_concerns: string[] }>>({});
   const [stateStats, setStateStats] = useState<Record<string, { calls: number; top_concerns: string[] }>>({});
 
-  // Track the actual container size to compute an exact fit
+  // Ref for state (drilldown) map sizing
   const containerRef = useRef<HTMLDivElement | null>(null);
+  // Ref for main India map container (for cursor-relative tooltip positioning)
+  const mainMapRef = useRef<HTMLDivElement | null>(null);
   const [mapSize, setMapSize] = useState<{ width: number; height: number }>({ width: 900, height: 500 });
 
   // Map main India map state names to our backend API state names
@@ -327,33 +329,48 @@ export default function IndiaMap() {
     if (!hoverInfo) return null;
     const normalizedStateName = stateNameMapping[hoverInfo.name];
     const stats = normalizedStateName ? stateStats[normalizedStateName] : null;
-    
+
+    // Position tooltip near cursor with small offset; pointer-events none so it doesn't flicker.
+    const offset = 18;
+    const x = hoverInfo.x + offset;
+    const y = hoverInfo.y + offset;
+
     return (
-      <div className="absolute top-4 left-4 w-72 bg-background/80 backdrop-blur-xl border border-border/50 rounded-xl shadow-lg p-4 text-sm space-y-3 animate-in fade-in zoom-in">
-        <div className="flex items-center justify-between">
-          <h3 className="font-semibold text-base">{hoverInfo.name}</h3>
-          {stats ? (
-            <span className="px-2 py-0.5 text-xs rounded-md bg-primary/10 text-primary font-medium">{stats.calls} calls</span>
-          ) : (
-            <span className="px-2 py-0.5 text-xs rounded-md bg-muted text-muted-foreground">No data</span>
-          )}
-        </div>
-        {stats && (
-          <div>
-            <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Top concerns</p>
-            <ul className="flex flex-col gap-1">
-              {stats.top_concerns.slice(0,3).map((c,i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary/60"></span>
-                  <span className="text-foreground/90">{c}</span>
-                </li>
-              ))}
-            </ul>
+      <div
+        className="absolute z-20 min-w-56 max-w-72 animate-in fade-in zoom-in pointer-events-none"
+        style={{ left: x, top: y }}
+      >
+        <div className="relative rounded-2xl border border-white/10 bg-gradient-to-br from-background/70 via-background/50 to-background/30 backdrop-blur-xl shadow-xl p-4 text-sm text-foreground/90 ring-1 ring-black/5">
+          <div className="absolute inset-0 rounded-2xl bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.08),transparent_60%)]" />
+          <div className="relative flex items-center justify-between mb-2">
+            <h3 className="font-semibold text-base tracking-tight drop-shadow-sm">{hoverInfo.name}</h3>
+            {stats ? (
+              <span className="px-2 py-0.5 text-xs rounded-md bg-primary/15 text-primary font-medium shadow-inner">
+                {stats.calls} calls
+              </span>
+            ) : (
+              <span className="px-2 py-0.5 text-xs rounded-md bg-muted text-muted-foreground">No data</span>
+            )}
           </div>
-        )}
-        {!stats && (
-          <p className="text-muted-foreground text-xs">Data coming soon for this state.</p>
-        )}
+          {stats && (
+            <div className="relative">
+              <p className="text-[11px] uppercase tracking-wide text-muted-foreground mb-1 font-medium">Top concerns</p>
+              <ul className="flex flex-col gap-1">
+                {stats.top_concerns.slice(0,3).map((c,i) => (
+                  <li key={i} className="flex items-start gap-2 text-xs">
+                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary/60 shadow" />
+                    <span className="text-foreground/90 leading-relaxed">{c}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {!stats && (
+            <p className="text-muted-foreground/80 text-xs leading-relaxed">Data coming soon for this state.</p>
+          )}
+          {/* Soft edge glow */}
+          <div className="pointer-events-none absolute -inset-px rounded-2xl bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-70" />
+        </div>
       </div>
     );
   }
@@ -378,7 +395,7 @@ export default function IndiaMap() {
       </div>
 
       {/* Map */}
-      <div className="w-full h-[600px] glass rounded-2xl overflow-hidden relative">
+      <div ref={mainMapRef} className="w-full h-[600px] glass rounded-2xl overflow-hidden relative">
         <ComposableMap
           projection="geoMercator"
           projectionConfig={{ scale: 1000, center: [78.9629, 22.5937] }}
@@ -394,7 +411,16 @@ export default function IndiaMap() {
                   <Geography
                     key={geo.rsmKey}
                     geography={geo}
-                    onMouseEnter={() => setHoverInfo({ name })}
+                    onMouseEnter={(e) => {
+                      const rect = mainMapRef.current?.getBoundingClientRect();
+                      if (!rect) return;
+                      setHoverInfo({ name, x: e.clientX - rect.left, y: e.clientY - rect.top });
+                    }}
+                    onMouseMove={(e) => {
+                      const rect = mainMapRef.current?.getBoundingClientRect();
+                      if (!rect) return;
+                      setHoverInfo((prev) => (prev ? { ...prev, x: e.clientX - rect.left, y: e.clientY - rect.top } : prev));
+                    }}
                     onMouseLeave={() => setHoverInfo(null)}
                     style={{
                       default: { fill: '#94a3b8', outline: 'none' },
