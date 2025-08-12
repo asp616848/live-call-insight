@@ -1,17 +1,18 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { CredentialResponse } from '@react-oauth/google';
+import { toast } from '@/hooks/use-toast';
 
 interface User {
   id: string;
   name: string;
   email: string;
-  picture: string;
+  picture?: string;
 }
 
 interface AuthContextType {
   user: User | null;
   isAuthenticated: boolean;
-  login: (credentialResponse: CredentialResponse) => Promise<void>;
+  login: (credentialResponse: CredentialResponse) => Promise<boolean>;
   logout: () => void;
   loading: boolean;
 }
@@ -50,36 +51,58 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     setLoading(false);
   }, []);
 
-  const login = async (credentialResponse: CredentialResponse) => {
-    if (credentialResponse.credential) {
-      const payload = JSON.parse(atob(credentialResponse.credential.split('.')[1]));
-      const email = payload.email;
+  const login = async (credentialResponse: CredentialResponse): Promise<boolean> => {
+    try {
+      if (credentialResponse.credential) {
+        const payload = JSON.parse(atob(credentialResponse.credential.split('.')[1]));
+        const email = payload.email;
 
-      const response = await fetch('/allowed-users.json');
-      const allowedUsersData = await response.json();
-      
-      if (!allowedUsersData.users.includes(email)) {
-        logout();
-        throw new Error("User not authorized.");
+        const response = await fetch('/allowed-users.json');
+        const allowedUsersData = await response.json();
+        
+        if (!allowedUsersData.users.includes(email)) {
+          logout();
+          toast({
+            variant: "destructive",
+            title: "Access Denied",
+            description: "You are not authorized to access these services. Please contact your administrator.",
+          });
+          return false;
+        }
+
+        const userData: User = {
+          id: payload.sub,
+          name: payload.name,
+          email: payload.email,
+          picture: payload.picture,
+        };
+
+        setUser(userData);
+        localStorage.setItem('user', JSON.stringify(userData));
+
+        await fetch('http://localhost:5000/update-last-seen', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email: userData.email }),
+        });
+
+        toast({
+          title: "Welcome!",
+          description: `Successfully logged in as ${userData.name}`,
+        });
+        return true;
       }
-
-      const userData: User = {
-        id: payload.sub,
-        name: payload.name,
-        email: payload.email,
-        picture: payload.picture,
-      };
-
-      setUser(userData);
-      localStorage.setItem('user', JSON.stringify(userData));
-
-      await fetch('http://localhost:5000/update-last-seen', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email: userData.email }),
+      return false;
+    } catch (error) {
+      console.error('Login error:', error);
+      toast({
+        variant: "destructive",
+        title: "Login Failed",
+        description: "An error occurred during login. Please try again.",
       });
+      return false;
     }
   };
 
