@@ -151,7 +151,7 @@ export default function IndiaMap() {
   const [stateCenter, setStateCenter] = useState<[number, number] | null>(null);
   const [stateZoom, setStateZoom] = useState<number>(2);
   const [stateOptions, setStateOptions] = useState<StateOption[]>([]);
-  const [stateHoverInfo, setStateHoverInfo] = useState<{ name: string } | null>(null);
+  const [stateHoverInfo, setStateHoverInfo] = useState<{ name: string; x: number; y: number } | null>(null);
   const [districtStats, setDistrictStats] = useState<Record<string, { calls: number; top_concerns: string[] }>>({});
   const [stateStats, setStateStats] = useState<Record<string, { calls: number; top_concerns: string[] }>>({});
 
@@ -294,33 +294,44 @@ export default function IndiaMap() {
   function renderDistrictTooltip() {
     if (!stateHoverInfo) return null;
     const stats = districtStats[stateHoverInfo.name];
-    console.log(stats)
+    const offset = 16;
+    const rect = containerRef.current?.getBoundingClientRect();
+    const maxX = (rect?.width || 0) - 10;
+    const maxY = (rect?.height || 0) - 10;
+    const x = Math.min(stateHoverInfo.x + offset, maxX);
+    const y = Math.min(stateHoverInfo.y + offset, maxY);
     return (
-      <div className="absolute top-4 right-4 w-72 bg-background/80 backdrop-blur-xl border border-border/50 rounded-xl shadow-lg p-4 text-sm space-y-3 animate-in fade-in zoom-in">
-        <div className="flex items-center justify-between">
-          <h3 className="font-semibold text-base">{stateHoverInfo.name}</h3>
-          {stats ? (
-            <span className="px-2 py-0.5 text-xs rounded-md bg-primary/10 text-primary font-medium">{stats.calls} calls</span>
-          ) : (
-            <span className="px-2 py-0.5 text-xs rounded-md bg-muted text-muted-foreground">No data</span>
-          )}
-        </div>
-        {stats && (
-          <div>
-            <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Top concerns</p>
-            <ul className="flex flex-col gap-1">
-              {stats.top_concerns.slice(0,3).map((c,i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary/60"></span>
-                  <span className="text-foreground/90">{c}</span>
-                </li>
-              ))}
-            </ul>
+      <div className="absolute z-30 pointer-events-none" style={{ left: x, top: y }}>
+        <div className="relative min-w-52 max-w-72 rounded-xl border border-primary/30 bg-gradient-to-br from-primary/15 via-background/60 to-background/30 backdrop-blur-md shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_4px_24px_-4px_rgba(0,0,0,0.4),0_0_12px_-2px_rgba(var(--primary-rgb,99,102,241),0.6)] px-4 py-3 text-xs text-foreground/90">
+          <div className="absolute inset-0 rounded-xl bg-[radial-gradient(circle_at_75%_20%,rgba(255,255,255,0.12),transparent_60%)]" />
+          <div className="relative flex items-center justify-between mb-1.5">
+            <h3 className="font-semibold text-sm tracking-tight drop-shadow-sm">{stateHoverInfo.name}</h3>
+            {stats ? (
+              <span className="px-2 py-0.5 text-[10px] rounded-md bg-primary/25 text-primary-foreground/90 font-medium shadow-inner ring-1 ring-primary/40">
+                {stats.calls} calls
+              </span>
+            ) : (
+              <span className="px-2 py-0.5 text-[10px] rounded-md bg-muted/60 text-muted-foreground">No data</span>
+            )}
           </div>
-        )}
-        {!stats && (
-          <p className="text-muted-foreground text-xs">Data coming soon for this district.</p>
-        )}
+          {stats && (
+            <div className="relative">
+              <p className="text-[10px] uppercase tracking-wide text-muted-foreground/80 mb-1 font-medium">Top concerns</p>
+              <ul className="flex flex-col gap-1.5">
+                {stats.top_concerns.slice(0,3).map((c,i) => (
+                  <li key={i} className="flex items-start gap-2 leading-snug">
+                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_6px_-1px_rgba(var(--primary-rgb,99,102,241),0.9)]" />
+                    <span className="text-foreground/90">{c}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {!stats && (
+            <p className="text-muted-foreground/70 text-[11px] leading-relaxed">Data coming soon for this district.</p>
+          )}
+          <div className="pointer-events-none absolute -inset-px rounded-xl bg-gradient-to-br from-primary/40 via-transparent to-transparent opacity-70 mix-blend-overlay" />
+        </div>
       </div>
     );
   }
@@ -329,47 +340,43 @@ export default function IndiaMap() {
     if (!hoverInfo) return null;
     const normalizedStateName = stateNameMapping[hoverInfo.name];
     const stats = normalizedStateName ? stateStats[normalizedStateName] : null;
-
-    // Position tooltip near cursor with small offset; pointer-events none so it doesn't flicker.
-    const offset = 18;
-    const x = hoverInfo.x + offset;
-    const y = hoverInfo.y + offset;
-
+    const offset = 16;
+    const rect = mainMapRef.current?.getBoundingClientRect();
+    const maxX = (rect?.width || 0) - 10;
+    const maxY = (rect?.height || 0) - 10;
+    const x = Math.min(hoverInfo.x + offset, maxX);
+    const y = Math.min(hoverInfo.y + offset, maxY);
     return (
-      <div
-        className="absolute z-20 min-w-56 max-w-72 animate-in fade-in zoom-in pointer-events-none"
-        style={{ left: x, top: y }}
-      >
-        <div className="relative rounded-2xl border border-white/10 bg-gradient-to-br from-background/70 via-background/50 to-background/30 backdrop-blur-xl shadow-xl p-4 text-sm text-foreground/90 ring-1 ring-black/5">
-          <div className="absolute inset-0 rounded-2xl bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.08),transparent_60%)]" />
+      <div className="absolute z-20 pointer-events-none" style={{ left: x, top: y }}>
+        <div className="relative min-w-56 max-w-72 rounded-xl border border-primary/30 bg-gradient-to-br from-primary/15 via-background/60 to-background/30 backdrop-blur-md shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_4px_24px_-4px_rgba(0,0,0,0.4),0_0_12px_-2px_rgba(var(--primary-rgb,99,102,241),0.6)] p-4 text-sm text-foreground/90">
+          <div className="absolute inset-0 rounded-xl bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.10),transparent_65%)]" />
           <div className="relative flex items-center justify-between mb-2">
             <h3 className="font-semibold text-base tracking-tight drop-shadow-sm">{hoverInfo.name}</h3>
             {stats ? (
-              <span className="px-2 py-0.5 text-xs rounded-md bg-primary/15 text-primary font-medium shadow-inner">
+              <span className="px-2 py-0.5 text-[11px] rounded-md bg-primary/25 text-primary-foreground/90 font-medium shadow-inner ring-1 ring-primary/40">
                 {stats.calls} calls
               </span>
             ) : (
-              <span className="px-2 py-0.5 text-xs rounded-md bg-muted text-muted-foreground">No data</span>
+              <span className="px-2 py-0.5 text-[11px] rounded-md bg-muted/60 text-muted-foreground">No data</span>
             )}
           </div>
           {stats && (
             <div className="relative">
-              <p className="text-[11px] uppercase tracking-wide text-muted-foreground mb-1 font-medium">Top concerns</p>
+              <p className="text-[10px] uppercase tracking-wide text-muted-foreground/80 mb-1 font-medium">Top concerns</p>
               <ul className="flex flex-col gap-1">
                 {stats.top_concerns.slice(0,3).map((c,i) => (
-                  <li key={i} className="flex items-start gap-2 text-xs">
-                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary/60 shadow" />
-                    <span className="text-foreground/90 leading-relaxed">{c}</span>
+                  <li key={i} className="flex items-start gap-2 text-xs leading-snug">
+                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_6px_-1px_rgba(var(--primary-rgb,99,102,241),0.9)]" />
+                    <span className="text-foreground/90">{c}</span>
                   </li>
                 ))}
               </ul>
             </div>
           )}
           {!stats && (
-            <p className="text-muted-foreground/80 text-xs leading-relaxed">Data coming soon for this state.</p>
+            <p className="text-muted-foreground/70 text-[11px] leading-relaxed">Data coming soon for this state.</p>
           )}
-          {/* Soft edge glow */}
-          <div className="pointer-events-none absolute -inset-px rounded-2xl bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-70" />
+          <div className="pointer-events-none absolute -inset-px rounded-xl bg-gradient-to-br from-primary/40 via-transparent to-transparent opacity-70 mix-blend-overlay" />
         </div>
       </div>
     );
@@ -470,29 +477,39 @@ export default function IndiaMap() {
               <ZoomableGroup center={stateCenter} zoom={stateZoom} minZoom={stateZoom} maxZoom={Math.max(stateZoom, 12)}>
                 <Geographies geography={stateGeoUrl}>
                   {({ geographies }) =>
-                    geographies.map((geo) => (
-                      <Geography
-                        key={geo.rsmKey}
-                        geography={geo}
-                        onMouseEnter={() => setStateHoverInfo({ name: getDistrictName(geo.properties as any) })}
-                        onMouseLeave={() => setStateHoverInfo(null)}
-                        style={{
-                          default: { fill: '#94a3b8', outline: 'none' },
-                          hover: { fill: '#6366f1', outline: 'none' },
-                          pressed: { fill: '#4338ca', outline: 'none' },
-                        }}
-                      />
-                    ))
+                    geographies.map((geo) => {
+                      const name = getDistrictName(geo.properties as any);
+                      return (
+                        <Geography
+                          key={geo.rsmKey}
+                          geography={geo}
+                          onMouseEnter={(e) => {
+                            const rect = containerRef.current?.getBoundingClientRect();
+                            if (!rect) return;
+                            setStateHoverInfo({ name, x: e.clientX - rect.left, y: e.clientY - rect.top });
+                          }}
+                          onMouseMove={(e) => {
+                            const rect = containerRef.current?.getBoundingClientRect();
+                            if (!rect) return;
+                            setStateHoverInfo(prev => prev ? { ...prev, x: e.clientX - rect.left, y: e.clientY - rect.top } : prev);
+                          }}
+                          onMouseLeave={() => setStateHoverInfo(null)}
+                          style={{
+                            default: { fill: '#94a3b8', outline: 'none' },
+                            hover: { fill: '#6366f1', outline: 'none' },
+                            pressed: { fill: '#4338ca', outline: 'none' },
+                          }}
+                        />
+                      );
+                    })
                   }
                 </Geographies>
               </ZoomableGroup>
             </ComposableMap>
-            <div className="absolute top-4 left-4 bg-background/80 backdrop-blur-md shadow-md rounded px-3 py-2 text-sm border border-border/50">
+            <div className="absolute top-4 left-4 bg-background/70 backdrop-blur-md shadow-md rounded px-3 py-2 text-sm border border-primary/30">
               <strong>{filteredOptions.find((o) => o.value === selectedState)?.label}</strong>
             </div>
-            {stateHoverInfo && (
-              renderDistrictTooltip()
-            )}
+            {stateHoverInfo && renderDistrictTooltip()}
           </div>
         )}
       </div>
