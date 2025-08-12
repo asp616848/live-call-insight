@@ -153,10 +153,50 @@ export default function IndiaMap() {
   const [stateOptions, setStateOptions] = useState<StateOption[]>([]);
   const [stateHoverInfo, setStateHoverInfo] = useState<{ name: string } | null>(null);
   const [districtStats, setDistrictStats] = useState<Record<string, { calls: number; top_concerns: string[] }>>({});
+  const [stateStats, setStateStats] = useState<Record<string, { calls: number; top_concerns: string[] }>>({});
 
   // Track the actual container size to compute an exact fit
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [mapSize, setMapSize] = useState<{ width: number; height: number }>({ width: 900, height: 500 });
+
+  // Map main India map state names to our backend API state names
+  const stateNameMapping: Record<string, string> = {
+    'Andaman and Nicobar': 'andaman and nicobar islands',
+    'Andhra Pradesh': 'andhra pradesh',
+    'Arunachal Pradesh': 'arunachal pradesh',
+    'Assam': 'assam',
+    'Bihar': 'bihar',
+    'Chandigarh': 'chandigarh',
+    'Chhattisgarh': 'chhattisgarh',
+    'Dadra and Nagar Haveli': 'dadra and nagar haveli',
+    'Daman and Diu': 'daman and diu',
+    'Delhi': 'delhi',
+    'Goa': 'goa',
+    'Gujarat': 'gujarat',
+    'Haryana': 'haryana',
+    'Himachal Pradesh': 'himachal pradesh',
+    'Jammu and Kashmir': 'jammu and kashmir',
+    'Jharkhand': 'jharkhand',
+    'Karnataka': 'karnataka',
+    'Kerala': 'kerala',
+    'Lakshadweep': 'lakshadweep',
+    'Madhya Pradesh': 'madhya pradesh',
+    'Maharashtra': 'maharashtra',
+    'Manipur': 'manipur',
+    'Meghalaya': 'meghalaya',
+    'Mizoram': 'mizoram',
+    'Nagaland': 'nagaland',
+    'Orissa': 'odisha',
+    'Puducherry': 'puducherry',
+    'Punjab': 'punjab',
+    'Rajasthan': 'rajasthan',
+    'Sikkim': 'sikkim',
+    'Tamil Nadu': 'tamil nadu',
+    'Tripura': 'tripura',
+    'Uttaranchal': 'uttarakhand',
+    'Uttar Pradesh': 'uttar pradesh',
+    'West Bengal': 'west bengal'
+  };
 
   useEffect(() => {
     const updateSize = () => {
@@ -170,6 +210,17 @@ export default function IndiaMap() {
     updateSize();
     window.addEventListener('resize', updateSize);
     return () => window.removeEventListener('resize', updateSize);
+  }, []);
+
+  // Fetch state-level aggregated stats for main India map
+  useEffect(() => {
+    fetch('http://localhost:5000/state_stats')
+      .then(r => r.json())
+      .then(res => {
+        if (res && res.states) setStateStats(res.states);
+        else setStateStats({});
+      })
+      .catch(() => setStateStats({}));
   }, []);
 
   // Fetch options from public folder
@@ -228,7 +279,7 @@ export default function IndiaMap() {
       tamilnadu: 'tamil nadu'
     };
     const stateQuery = apiStateMap[selectedState] || selectedState;
-    fetch(`/district_stats?state=${encodeURIComponent(stateQuery)}`)
+    fetch(`http://localhost:5000/district_stats?state=${encodeURIComponent(stateQuery)}`)
       .then(r => r.json())
       .then(res => {
         if (res && res.districts) setDistrictStats(res.districts);
@@ -267,6 +318,41 @@ export default function IndiaMap() {
         )}
         {!stats && (
           <p className="text-muted-foreground text-xs">Data coming soon for this district.</p>
+        )}
+      </div>
+    );
+  }
+
+  function renderStateTooltip() {
+    if (!hoverInfo) return null;
+    const normalizedStateName = stateNameMapping[hoverInfo.name];
+    const stats = normalizedStateName ? stateStats[normalizedStateName] : null;
+    
+    return (
+      <div className="absolute top-4 left-4 w-72 bg-background/80 backdrop-blur-xl border border-border/50 rounded-xl shadow-lg p-4 text-sm space-y-3 animate-in fade-in zoom-in">
+        <div className="flex items-center justify-between">
+          <h3 className="font-semibold text-base">{hoverInfo.name}</h3>
+          {stats ? (
+            <span className="px-2 py-0.5 text-xs rounded-md bg-primary/10 text-primary font-medium">{stats.calls} calls</span>
+          ) : (
+            <span className="px-2 py-0.5 text-xs rounded-md bg-muted text-muted-foreground">No data</span>
+          )}
+        </div>
+        {stats && (
+          <div>
+            <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Top concerns</p>
+            <ul className="flex flex-col gap-1">
+              {stats.top_concerns.slice(0,3).map((c,i) => (
+                <li key={i} className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary/60"></span>
+                  <span className="text-foreground/90">{c}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {!stats && (
+          <p className="text-muted-foreground text-xs">Data coming soon for this state.</p>
         )}
       </div>
     );
@@ -322,11 +408,7 @@ export default function IndiaMap() {
           </Geographies>
         </ComposableMap>
 
-        {hoverInfo && (
-          <div className="absolute top-4 left-4 bg-background/80 backdrop-blur-md shadow-md rounded px-3 py-2 text-sm border border-border/50">
-            <strong>{hoverInfo.name}</strong>
-          </div>
-        )}
+        {hoverInfo && renderStateTooltip()}
       </div>
 
       {/* State selector and map */}
