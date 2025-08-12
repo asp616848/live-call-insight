@@ -152,6 +152,7 @@ export default function IndiaMap() {
   const [stateZoom, setStateZoom] = useState<number>(2);
   const [stateOptions, setStateOptions] = useState<StateOption[]>([]);
   const [stateHoverInfo, setStateHoverInfo] = useState<{ name: string } | null>(null);
+  const [districtStats, setDistrictStats] = useState<Record<string, { calls: number; top_concerns: string[] }>>({});
 
   // Track the actual container size to compute an exact fit
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -210,6 +211,66 @@ export default function IndiaMap() {
         setStateZoom(4);
       });
   }, [selectedState, mapSize.width, mapSize.height]);
+
+  // fetch district stats when state changes
+  useEffect(() => {
+    if (!selectedState) {
+      setDistrictStats({});
+      return;
+    }
+    // map selectedState to API expected naming
+    const apiStateMap: Record<string, string> = {
+      andhrapradesh: 'andhra pradesh',
+      arunachalpradesh: 'arunachal pradesh',
+      madhyapradesh: 'madhya pradesh',
+      uttarpradesh: 'uttar pradesh',
+      jammukashmir: 'jammu and kashmir',
+      tamilnadu: 'tamil nadu'
+    };
+    const stateQuery = apiStateMap[selectedState] || selectedState;
+    fetch(`/district_stats?state=${encodeURIComponent(stateQuery)}`)
+      .then(r => r.json())
+      .then(res => {
+        if (res && res.districts) setDistrictStats(res.districts);
+        else setDistrictStats({});
+      })
+      .catch(() => setDistrictStats({}));
+  }, [selectedState]);
+
+
+  function renderDistrictTooltip() {
+    if (!stateHoverInfo) return null;
+    const stats = districtStats[stateHoverInfo.name];
+    console.log(stats)
+    return (
+      <div className="absolute top-4 right-4 w-72 bg-background/80 backdrop-blur-xl border border-border/50 rounded-xl shadow-lg p-4 text-sm space-y-3 animate-in fade-in zoom-in">
+        <div className="flex items-center justify-between">
+          <h3 className="font-semibold text-base">{stateHoverInfo.name}</h3>
+          {stats ? (
+            <span className="px-2 py-0.5 text-xs rounded-md bg-primary/10 text-primary font-medium">{stats.calls} calls</span>
+          ) : (
+            <span className="px-2 py-0.5 text-xs rounded-md bg-muted text-muted-foreground">No data</span>
+          )}
+        </div>
+        {stats && (
+          <div>
+            <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Top concerns</p>
+            <ul className="flex flex-col gap-1">
+              {stats.top_concerns.slice(0,3).map((c,i) => (
+                <li key={i} className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary/60"></span>
+                  <span className="text-foreground/90">{c}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {!stats && (
+          <p className="text-muted-foreground text-xs">Data coming soon for this district.</p>
+        )}
+      </div>
+    );
+  }
 
   // filter options to those we actually have GeoJSON for
   const filteredOptions = stateOptions.filter((o) => !!GEOJSON_STATE_FILES[o.value]);
@@ -322,9 +383,7 @@ export default function IndiaMap() {
               <strong>{filteredOptions.find((o) => o.value === selectedState)?.label}</strong>
             </div>
             {stateHoverInfo && (
-              <div className="absolute top-4 right-4 bg-background/80 backdrop-blur-md shadow-md rounded px-3 py-2 text-sm border border-border/50">
-                <strong>{stateHoverInfo.name}</strong>
-              </div>
+              renderDistrictTooltip()
             )}
           </div>
         )}
