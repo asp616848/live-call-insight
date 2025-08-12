@@ -8,9 +8,11 @@ import os
 from flask_cors import CORS 
 import json
 from datetime import datetime
+from routes.district_stats import bp_district_stats
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})  # This will enable CORS for all routes
+app.register_blueprint(bp_district_stats)
 
 # api endpoints
 
