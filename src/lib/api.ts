@@ -25,5 +25,24 @@ export function apiUrl(path: string) {
 }
 
 export function apiFetch(input: string, init?: RequestInit) {
-  return fetch(apiUrl(input), init);
+  const headers = new Headers(init?.headers as HeadersInit);
+  // Prevent ngrok browser warning page (which is HTML) from being returned
+  headers.set('ngrok-skip-browser-warning', 'true');
+  // Prefer JSON responses
+  if (!headers.has('Accept')) headers.set('Accept', 'application/json');
+  return fetch(apiUrl(input), { ...init, headers });
+}
+
+export async function apiJson<T = any>(input: string, init?: RequestInit): Promise<T> {
+  const res = await apiFetch(input, init);
+  const contentType = res.headers.get('content-type') || '';
+  const text = await res.text();
+  if (!res.ok) {
+    throw new Error(`HTTP ${res.status} ${res.statusText}: ${text.slice(0, 200)}`);
+  }
+  try {
+    return JSON.parse(text) as T;
+  } catch (e) {
+    throw new Error(`Invalid JSON from ${apiUrl(input)} (content-type=${contentType}): ${text.slice(0, 200)}`);
+  }
 }

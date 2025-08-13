@@ -8,15 +8,11 @@ import { TranscriptFeed } from './TranscriptFeed';
 import { MetricsCard } from './MetricsCard';
 import { RecentConversations } from './RecentConversations';
 import { ConcernsPieChart } from './ConcernsPieChart';
-import { apiFetch } from '@/lib/api';
+import { apiJson } from '@/lib/api';
 
 async function fetchDashboardData() {
   try {
-    const response = await apiFetch('/dashboard_with_convo');
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const data = await response.json();
+    const data = await apiJson('/dashboard_with_convo');
     console.log("Dashboard data loaded:", data);
     return data;
   } catch (error) {
