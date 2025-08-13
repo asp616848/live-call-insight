@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Sector } from 'recharts';
 import { motion } from 'framer-motion';
 import { Skeleton } from './ui/skeleton';
+import { apiJson } from '@/lib/api';
 
 const COLORS = ['#8884d8', '#82ca9d', '#ffc658', '#ff8042', '#0088FE'];
 
@@ -53,12 +54,7 @@ const renderActiveShape = (props: any) => {
 
 async function fetchTopConcerns() {
   try {
-    const response = await fetch('http://127.0.0.1:5000/top_concerns');
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const data = await response.json();
-    return data;
+	return await apiJson('/top_concerns');
   } catch (error) {
     console.error("Failed to fetch top concerns:", error);
     return [];
