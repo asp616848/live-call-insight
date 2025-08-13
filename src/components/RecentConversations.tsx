@@ -6,6 +6,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Terminal } from 'lucide-react';
+import { apiFetch } from '@/lib/api';
 
 // Types based on the API response
 interface Conversation {
@@ -30,7 +31,7 @@ interface Conversation {
 // API fetch function
 async function fetchRecentConversations(): Promise<Conversation[]> {
   try {
-    const response = await fetch('http://127.0.0.1:5000/logs');
+    const response = await apiFetch('/logs');
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }

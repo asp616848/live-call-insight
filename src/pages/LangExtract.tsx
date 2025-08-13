@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { apiFetch } from '@/lib/api';
 import {
   Card,
   CardContent,
@@ -37,7 +38,7 @@ const LangExtractPage = () => {
   useEffect(() => {
     const fetchTranscripts = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:5000/list_transcripts");
+        const response = await apiFetch('/list_transcripts');
         if (!response.ok) {
           throw new Error("Failed to fetch transcripts");
         }
@@ -60,9 +61,7 @@ const LangExtractPage = () => {
         setError(null);
         setAnalysis(null);
         try {
-          const response = await fetch(
-            `http://127.0.0.1:5000/analyze/${selectedTranscript}`
-          );
+          const response = await apiFetch(`/analyze/${selectedTranscript}`);
           if (!response.ok) {
             const errData = await response.json();
             throw new Error(errData.error || "Failed to fetch analysis");
