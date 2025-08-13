@@ -3,6 +3,7 @@ import { ComposableMap, Geographies, Geography, ZoomableGroup } from 'react-simp
 import { motion } from 'framer-motion';
 import { Map as MapIcon } from 'lucide-react';
 import { geoMercator } from 'd3-geo';
+import { apiFetch, apiJson } from '@/lib/api';
 
 const geoUrl = '/Indian_States.geojson';
 
@@ -216,8 +217,7 @@ export default function IndiaMap() {
 
   // Fetch state-level aggregated stats for main India map
   useEffect(() => {
-    fetch('http://localhost:5000/state_stats')
-      .then(r => r.json())
+    apiJson('/state_stats')
       .then(res => {
         if (res && res.states) setStateStats(res.states);
         else setStateStats({});
@@ -281,8 +281,7 @@ export default function IndiaMap() {
       tamilnadu: 'tamil nadu'
     };
     const stateQuery = apiStateMap[selectedState] || selectedState;
-    fetch(`http://localhost:5000/district_stats?state=${encodeURIComponent(stateQuery)}`)
-      .then(r => r.json())
+    apiJson(`/district_stats?state=${encodeURIComponent(stateQuery)}`)
       .then(res => {
         if (res && res.districts) setDistrictStats(res.districts);
         else setDistrictStats({});

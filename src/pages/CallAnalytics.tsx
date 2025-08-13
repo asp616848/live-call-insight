@@ -13,6 +13,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Skeleton } from "@/components/ui/skeleton";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, ReferenceLine, Legend, Area, AreaChart } from 'recharts';
 import { Separator } from "@/components/ui/separator";
+import { apiFetch, apiJson } from '@/lib/api';
 
 // Types based on the API response
 interface Summary {
@@ -64,11 +65,7 @@ export default function CallAnalytics() {
 	useEffect(() => {
 		async function fetchCalls() {
 			try {
-				const response = await fetch('http://127.0.0.1:5000/logs');
-				if (!response.ok) {
-					throw new Error('Network response was not ok');
-				}
-				const data: Call[] = await response.json();
+				const data: Call[] = await apiJson('/logs');
 				setCalls(data);
 				if (data.length > 0) {
 					setSelectedCall(data[0]);
@@ -95,7 +92,7 @@ export default function CallAnalytics() {
 					setSentimentError('No filename for call');
 					return;
 				}
-				const res = await fetch(`http://127.0.0.1:5000/sentiment_flow/${filename}`);
+				const res = await apiFetch(`/sentiment_flow/${filename}`);
 				if(!res.ok) throw new Error('Failed to fetch sentiment flow');
 				const data = await res.json();
 				if(data.error) throw new Error(data.error);
