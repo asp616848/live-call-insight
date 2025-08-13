@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { CredentialResponse } from '@react-oauth/google';
 import { toast } from '@/hooks/use-toast';
+import { apiFetch } from '@/lib/api';
 
 interface User {
   id: string;
@@ -40,7 +41,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     if (storedUser) {
       const userData: User = JSON.parse(storedUser);
       setUser(userData);
-      fetch('http://localhost:5000/update-last-seen', {
+      apiFetch('/update-last-seen', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -80,7 +81,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         setUser(userData);
         localStorage.setItem('user', JSON.stringify(userData));
 
-        await fetch('http://localhost:5000/update-last-seen', {
+        await apiFetch('/update-last-seen', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
