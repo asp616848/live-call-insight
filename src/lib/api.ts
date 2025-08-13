@@ -16,7 +16,7 @@ export const API_BASE = (() => {
   }
 
   // Default for local dev
-  return 'https://f29eef39e5bc.ngrok-free.app';
+  return 'https://ba3cb4a06ab0.ngrok-free.app';
 })();
 
 export function apiUrl(path: string) {
