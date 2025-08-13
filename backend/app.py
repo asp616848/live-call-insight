@@ -9,6 +9,7 @@ from flask_cors import CORS
 import json
 from datetime import datetime
 from routes.district_stats import bp_district_stats
+from routes.sentiment_flow import get_sentiment_flow
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})  # This will enable CORS for all routes
@@ -167,6 +168,11 @@ def clean_cache_endpoint():
         return jsonify({"success": True, "message": f"Cache cleaned for entries older than {max_age_days} days"})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+@app.route('/sentiment_flow/<filename>', methods=['GET'])
+def sentiment_flow(filename):
+    """Return per-sentence sentiment scores for user and AI sentences (0-10)."""
+    return jsonify(get_sentiment_flow(filename))
 
 
 if __name__ == '__main__':
