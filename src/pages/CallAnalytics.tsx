@@ -59,6 +59,7 @@ export default function CallAnalytics() {
 	const [sentimentLoading, setSentimentLoading] = useState(false);
 	const [sentimentError, setSentimentError] = useState<string | null>(null);
 	const [sentimentView, setSentimentView] = useState<'both' | 'user' | 'ai'>('both');
+	const [rollingWindow, setRollingWindow] = useState(3);
 
 	useEffect(() => {
 		async function fetchCalls() {
@@ -123,8 +124,8 @@ export default function CallAnalytics() {
 
 	const computeRolling = (arr: SentimentPoint[], window=3) => arr.map((p,i) => ({...p, avg: +(arr.slice(Math.max(0,i-window+1), i+1).reduce((s,x)=>s+x.score,0)/Math.min(i+1,window)).toFixed(2)}));
 
-	const userSeries = sentimentFlow ? computeRolling(sentimentFlow.user) : [];
-	const aiSeries = sentimentFlow ? computeRolling(sentimentFlow.ai) : [];
+	const userSeries = sentimentFlow ? computeRolling(sentimentFlow.user, rollingWindow) : [];
+	const aiSeries = sentimentFlow ? computeRolling(sentimentFlow.ai, rollingWindow) : [];
 	const combinedLen = Math.max(userSeries.length, aiSeries.length);
 	const chartData = Array.from({length: combinedLen}).map((_,i)=>({
 		index: i+1,
@@ -409,11 +410,17 @@ export default function CallAnalytics() {
 															<div className="absolute inset-0 pointer-events-none [mask-image:radial-gradient(circle_at_50%_0%,white,transparent_70%)]">
 																<div className="absolute -top-1/2 left-1/2 -translate-x-1/2 h-[600px] w-[600px] rounded-full bg-primary/5 blur-3xl animate-pulse" />
 															</div>
-															<h3 className="text-sm font-medium mb-2 flex items-center gap-2">Sentiment Trajectory<span className="text-[10px] px-2 py-0.5 rounded-full bg-muted">Rolling window 3</span></h3>
-															<div className="flex items-center gap-2 mb-2">
+															<h3 className="text-sm font-medium mb-2 flex items-center gap-2">Sentiment Trajectory<span className="text-[10px] px-2 py-0.5 rounded-full bg-muted">Rolling window {rollingWindow}</span></h3>
+															<div className="flex flex-wrap items-center gap-2 mb-2">
 																<Button size="sm" variant={sentimentView==='both'? 'default':'outline'} onClick={()=>setSentimentView('both')}>Both</Button>
 																<Button size="sm" variant={sentimentView==='user'? 'default':'outline'} onClick={()=>setSentimentView('user')}>User</Button>
 																<Button size="sm" variant={sentimentView==='ai'? 'default':'outline'} onClick={()=>setSentimentView('ai')}>AI</Button>
+																<div className="ml-auto flex items-center gap-1 text-[11px]">
+																	<label htmlFor="rollWin" className="text-muted-foreground">Window</label>
+																	<select id="rollWin" value={rollingWindow} onChange={(e)=>setRollingWindow(parseInt(e.target.value))} className="bg-background border rounded px-1 py-1 text-xs focus:outline-none">
+																		{[1,2,3,4,5,6,7,8,9,10].map(v=> <option key={v} value={v}>{v}</option>)}
+																	</select>
+																</div>
 															</div>
 															<div className="flex-1 min-h-[240px]">
 																<ResponsiveContainer width="100%" height="100%">
