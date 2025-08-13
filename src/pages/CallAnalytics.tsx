@@ -13,7 +13,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Skeleton } from "@/components/ui/skeleton";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, ReferenceLine, Legend, Area, AreaChart } from 'recharts';
 import { Separator } from "@/components/ui/separator";
-import { apiFetch } from '@/lib/api';
+import { apiFetch, apiJson } from '@/lib/api';
 
 // Types based on the API response
 interface Summary {
@@ -65,11 +65,7 @@ export default function CallAnalytics() {
 	useEffect(() => {
 		async function fetchCalls() {
 			try {
-				const response = await apiFetch('/logs');
-				if (!response.ok) {
-					throw new Error('Network response was not ok');
-				}
-				const data: Call[] = await response.json();
+				const data: Call[] = await apiJson('/logs');
 				setCalls(data);
 				if (data.length > 0) {
 					setSelectedCall(data[0]);
