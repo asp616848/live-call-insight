@@ -11,6 +11,8 @@ import { LatencyGauge } from "@/components/LatencyGauge";
 import { CustomCursor } from "@/components/CustomCursor";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Skeleton } from "@/components/ui/skeleton";
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, ReferenceLine, Legend, Area, AreaChart } from 'recharts';
+import { Separator } from "@/components/ui/separator";
 
 // Types based on the API response
 interface Summary {
@@ -37,6 +39,9 @@ interface Call {
   conversation: ConversationMessage[];
 }
 
+interface SentimentPoint { index: number; score: number }
+interface SentimentFlow { user: SentimentPoint[]; ai: SentimentPoint[]; }
+
 const formatDuration = (seconds: number) => {
     if (seconds === null || seconds === undefined) return "N/A";
     const m = Math.floor(seconds / 60);
@@ -50,6 +55,11 @@ export default function CallAnalytics() {
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState<string | null>(null);
 	const [isPlaying, setIsPlaying] = useState(false);
+	const [sentimentFlow, setSentimentFlow] = useState<SentimentFlow | null>(null);
+	const [sentimentLoading, setSentimentLoading] = useState(false);
+	const [sentimentError, setSentimentError] = useState<string | null>(null);
+	const [sentimentView, setSentimentView] = useState<'both' | 'user' | 'ai'>('both');
+	const [rollingWindow, setRollingWindow] = useState(3);
 
 	useEffect(() => {
 		async function fetchCalls() {
@@ -72,6 +82,33 @@ export default function CallAnalytics() {
 		fetchCalls();
 	}, []);
 
+	useEffect(() => {
+		async function fetchSentiment() {
+			if(!selectedCall) return;
+			setSentimentLoading(true);
+			setSentimentError(null);
+			setSentimentFlow(null);
+			try {
+				// use filename from summary
+				const filename = selectedCall.summary.filename?.replace('.txt','.json') || selectedCall.summary.filename;
+				if(!filename){
+					setSentimentError('No filename for call');
+					return;
+				}
+				const res = await fetch(`http://127.0.0.1:5000/sentiment_flow/${filename}`);
+				if(!res.ok) throw new Error('Failed to fetch sentiment flow');
+				const data = await res.json();
+				if(data.error) throw new Error(data.error);
+				setSentimentFlow(data);
+			} catch(e:any){
+				setSentimentError(e.message || 'Failed to load sentiment flow');
+			} finally {
+				setSentimentLoading(false);
+			}
+		}
+		fetchSentiment();
+	}, [selectedCall]);
+
 	const getSentimentBadgeClass = (sentiment: string) => {
 		switch (sentiment) {
 			case "positive":
@@ -83,6 +120,36 @@ export default function CallAnalytics() {
 			default:
 				return "bg-muted/20 text-muted-foreground border-muted/30";
 		}
+	};
+
+	const computeRolling = (arr: SentimentPoint[], window=3) => arr.map((p,i) => ({...p, avg: +(arr.slice(Math.max(0,i-window+1), i+1).reduce((s,x)=>s+x.score,0)/Math.min(i+1,window)).toFixed(2)}));
+
+	const userSeries = sentimentFlow ? computeRolling(sentimentFlow.user, rollingWindow) : [];
+	const aiSeries = sentimentFlow ? computeRolling(sentimentFlow.ai, rollingWindow) : [];
+	const combinedLen = Math.max(userSeries.length, aiSeries.length);
+	const chartData = Array.from({length: combinedLen}).map((_,i)=>({
+		index: i+1,
+		user: userSeries[i]?.score ?? null,
+		userAvg: userSeries[i]?.avg ?? null,
+		ai: aiSeries[i]?.score ?? null,
+		aiAvg: aiSeries[i]?.avg ?? null
+	}));
+	const avgUser = userSeries.length? (userSeries.reduce((s,x)=>s+x.score,0)/userSeries.length).toFixed(2):'–';
+	const avgAI = aiSeries.length? (aiSeries.reduce((s,x)=>s+x.score,0)/aiSeries.length).toFixed(2):'–';
+
+	const customTooltip = ({active, payload, label}: any) => {
+		if(!active || !payload?.length) return null;
+		const u = payload.find((p:any)=>p.dataKey==='user');
+		const ua = payload.find((p:any)=>p.dataKey==='userAvg');
+		const a = payload.find((p:any)=>p.dataKey==='ai');
+		const aa = payload.find((p:any)=>p.dataKey==='aiAvg');
+		return (
+			<div className="rounded-md border bg-background/80 backdrop-blur px-3 py-2 shadow-md text-xs space-y-1">
+				<p className="font-medium">Turn #{label}</p>
+				{u && <p>User: <span className="font-semibold text-primary">{u.value?.toFixed?.(2) ?? u.value}</span> {ua && <span className="text-muted-foreground">(avg {ua.value?.toFixed?.(2)})</span>}</p>}
+				{a && <p>AI: <span className="font-semibold text-destructive">{a.value?.toFixed?.(2) ?? a.value}</span> {aa && <span className="text-muted-foreground">(avg {aa.value?.toFixed?.(2)})</span>}</p>}
+			</div>
+		);
 	};
 
 	return (
@@ -241,10 +308,11 @@ export default function CallAnalytics() {
 									</div>
 
 									<Tabs defaultValue="conversation" className="h-[calc(100%-100px)]">
-										<TabsList className="grid w-full grid-cols-3">
+										<TabsList className="grid w-full grid-cols-4">
 											<TabsTrigger value="conversation">Conversation</TabsTrigger>
 											<TabsTrigger value="metrics">Metrics</TabsTrigger>
 											<TabsTrigger value="waveform">Audio</TabsTrigger>
+											<TabsTrigger value="sentiment">Sentiment Flow</TabsTrigger>
 										</TabsList>
 
 										<TabsContent
@@ -329,6 +397,68 @@ export default function CallAnalytics() {
 														Audio waveform not available
 													</p>
 												</div>
+											</div>
+										</TabsContent>
+
+										<TabsContent value="sentiment" className="mt-4 h-[calc(100%-50px)]">
+											<div className="flex flex-col h-full gap-4">
+												{sentimentLoading && <div className="flex-1 flex items-center justify-center"><Skeleton className="w-full h-64"/></div>}
+												{sentimentError && !sentimentLoading && <Alert variant="destructive"><Terminal className='h-4 w-4'/><AlertTitle>Error</AlertTitle><AlertDescription>{sentimentError}</AlertDescription></Alert>}
+												{!sentimentLoading && !sentimentError && sentimentFlow && (
+													<div className="grid grid-cols-1 xl:grid-cols-4 gap-6 h-full">
+														<div className="xl:col-span-3 relative flex flex-col rounded-lg border p-4 overflow-hidden bg-gradient-to-b from-background to-background/60">
+															<div className="absolute inset-0 pointer-events-none [mask-image:radial-gradient(circle_at_50%_0%,white,transparent_70%)]">
+																<div className="absolute -top-1/2 left-1/2 -translate-x-1/2 h-[600px] w-[600px] rounded-full bg-primary/5 blur-3xl animate-pulse" />
+															</div>
+															<h3 className="text-sm font-medium mb-2 flex items-center gap-2">Sentiment Trajectory<span className="text-[10px] px-2 py-0.5 rounded-full bg-muted">Rolling window {rollingWindow}</span></h3>
+															<div className="flex flex-wrap items-center gap-2 mb-2">
+																<Button size="sm" variant={sentimentView==='both'? 'default':'outline'} onClick={()=>setSentimentView('both')}>Both</Button>
+																<Button size="sm" variant={sentimentView==='user'? 'default':'outline'} onClick={()=>setSentimentView('user')}>User</Button>
+																<Button size="sm" variant={sentimentView==='ai'? 'default':'outline'} onClick={()=>setSentimentView('ai')}>AI</Button>
+																<div className="ml-auto flex items-center gap-1 text-[11px]">
+																	<label htmlFor="rollWin" className="text-muted-foreground">Window</label>
+																	<select id="rollWin" value={rollingWindow} onChange={(e)=>setRollingWindow(parseInt(e.target.value))} className="bg-background border rounded px-1 py-1 text-xs focus:outline-none">
+																		{[1,2,3,4,5,6,7,8,9,10].map(v=> <option key={v} value={v}>{v}</option>)}
+																	</select>
+																</div>
+															</div>
+															<div className="flex-1 min-h-[240px]">
+																<ResponsiveContainer width="100%" height="100%">
+																	<LineChart data={chartData} margin={{left:0,right:12,top:10,bottom:4}}>
+																			<CartesianGrid strokeDasharray="3 3" strokeOpacity={0.2} />
+																			<XAxis dataKey="index" fontSize={10} stroke="hsl(var(--muted-foreground))" tickLine={false} axisLine={false} />
+																			<YAxis domain={[0,10]} fontSize={10} stroke="hsl(var(--muted-foreground))" tickLine={false} axisLine={false} />
+																			<Tooltip content={customTooltip} />
+																			<Legend wrapperStyle={{fontSize:'11px'}} />
+																			<ReferenceLine y={5} stroke="hsl(var(--border))" strokeDasharray="4 4" />
+																			{(sentimentView==='both' || sentimentView==='user') && <Line type="monotone" dataKey="user" name="User" stroke="hsl(var(--primary))" strokeWidth={2} dot={false} activeDot={{r:4}} />}
+																			{(sentimentView==='both' || sentimentView==='user') && <Line type="monotone" dataKey="userAvg" name="User Avg (roll)" stroke="hsl(var(--primary))" strokeDasharray="4 4" dot={false} />}
+																			{(sentimentView==='both' || sentimentView==='ai') && <Line type="monotone" dataKey="ai" name="AI" stroke="hsl(var(--destructive))" strokeWidth={2} dot={false} activeDot={{r:4}} />}
+																			{(sentimentView==='both' || sentimentView==='ai') && <Line type="monotone" dataKey="aiAvg" name="AI Avg (roll)" stroke="hsl(var(--destructive))" strokeDasharray="4 4" dot={false} />}
+																		</LineChart>
+																</ResponsiveContainer>
+															</div>
+														</div>
+														<div className="flex flex-col gap-4">
+															<Card className="p-4 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
+																<p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Avg User Sentiment</p>
+																<p className="text-3xl font-semibold bg-gradient-primary bg-clip-text text-transparent">{avgUser}</p>
+															</Card>
+															<Card className="p-4 bg-gradient-to-br from-destructive/10 to-destructive/5 border-destructive/20">
+																<p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Avg AI Sentiment</p>
+																<p className="text-3xl font-semibold text-destructive">{avgAI}</p>
+															</Card>
+															<Card className="p-4 bg-gradient-to-br from-secondary/10 to-secondary/5 border-secondary/20">
+																<p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">User Volatility</p>
+																<p className="text-xl font-medium">{userSeries.length? (Math.max(...userSeries.map(s=>s.score)) - Math.min(...userSeries.map(s=>s.score))).toFixed(2):'–'}</p>
+															</Card>
+															<Card className="p-4 bg-gradient-to-br from-accent/10 to-accent/5 border-accent/20">
+																<p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">AI Responsiveness Mood Shift</p>
+																<p className="text-xl font-medium">{aiSeries.length? (aiSeries[aiSeries.length-1].score - aiSeries[0].score).toFixed(2):'–'}</p>
+															</Card>
+														</div>
+													</div>
+												)}
 											</div>
 										</TabsContent>
 									</Tabs>
