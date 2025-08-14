@@ -12,7 +12,7 @@ from routes.district_stats import bp_district_stats
 from routes.sentiment_flow import get_sentiment_flow
 
 app = Flask(__name__)
-CORS(app)  # This will enable CORS for all routes
+CORS(app, resources={r"/*": {"origins": "*"}})  # This will enable CORS for all routes
 app.register_blueprint(bp_district_stats)
 
 # Generate state-level aggregated data from district data
