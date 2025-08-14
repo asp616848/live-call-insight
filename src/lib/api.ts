@@ -15,6 +15,14 @@ export const API_BASE = (() => {
     }
   }
 
+  // If deployed on Vercel, route via Vercel proxy (see vercel.json rewrites)
+  if (typeof window !== 'undefined') {
+    const host = (window.location.hostname || '').toLowerCase();
+    if (host.endsWith('.vercel.app') || host === 'live-call-insight.vercel.app') {
+      return '/api';
+    }
+  }
+
   // Default for local dev
   return 'http://15.206.28.101:5000';
 })();
