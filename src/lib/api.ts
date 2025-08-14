@@ -16,7 +16,7 @@ export const API_BASE = (() => {
   }
 
   // Default for local dev
-  return 'https://65e6a2845dd7.ngrok-free.app';
+  return 'http://15.206.28.101:5000';
 })();
 
 export function apiUrl(path: string) {
