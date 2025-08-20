@@ -1,0 +1,128 @@
+{
+  "summary": {
+    "filename": "call_transcript_1",
+    "stream_sid": "eb4349819c5079c4dc265495b0bf1983",
+    "call_started": "2025-08-03T00:00:00.000",
+    "call_ended": null,
+    "duration_seconds": null,
+    "average_ai_response_latency": 2.54,
+    "noise_count": 0,
+    "total_user_messages": 9,
+    "total_ai_responses": 12,
+    "sentiment": "neutral",
+    "concerns": [
+      "impatience with process speed"
+    ],
+    "overview": "The conversation is a loan application verification call where the AI asks the user to confirm personal details. The user complies with all requests, having initially asked the AI to speak quickly.",
+    "user_tone": "Initially urgent and direct, then cooperative and straightforward.",
+    "emotion": "impatient",
+    "sentiment_score": 5
+  },
+  "conversation": [
+    {
+      "speaker": "ai",
+      "text": "आपका लोन अप्लिकेशन पेंडिंग है, क्या हम जल्दी वेरिफिकेशन कर लेते हैं?",
+      "timestamp": "2025-08-03T00:00:00"
+    },
+    {
+      "speaker": "user",
+      "text": "Ekdam tezī se bolie, jo bhī āp boleṁ, pās-pās bolie.",
+      "timestamp": "2025-08-03T00:00:11"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, बिल्कुल. आप अपना पूरा नाम कन्फ़र्म कर सकते हैं?",
+      "timestamp": "2025-08-03T00:00:16"
+    },
+    {
+      "speaker": "user",
+      "text": "Rachit Gupta.",
+      "timestamp": "2025-08-03T00:00:21"
+    },
+    {
+      "speaker": "ai",
+      "text": "मैं स्पेल करती हूँ, R-A-C-H-I-T, G-U-P-T-A, सही है?",
+      "timestamp": "2025-08-03T00:00:22"
+    },
+    {
+      "speaker": "user",
+      "text": "Bilkul sahi hai.",
+      "timestamp": "2025-08-03T00:00:32"
+    },
+    {
+      "speaker": "ai",
+      "text": "ठीक है. आपकी डेट ऑफ बर्थ क्या है?",
+      "timestamp": "2025-08-03T00:00:33"
+    },
+    {
+      "speaker": "user",
+      "text": "Date of birth hai 20 December 2004.",
+      "timestamp": "2025-08-03T00:00:40"
+    },
+    {
+      "speaker": "ai",
+      "text": "2-0-1-2-2004,",
+      "timestamp": "2025-08-03T00:00:44"
+    },
+    {
+      "speaker": "ai",
+      "text": "सही है?",
+      "timestamp": "2025-08-03T00:00:47"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, आपका एप्लिकेशन नंबर क्या है?",
+      "timestamp": "2025-08-03T00:00:52"
+    },
+    {
+      "speaker": "user",
+      "text": "A-B-1-2-3-4-C-D",
+      "timestamp": "2025-08-03T00:00:58"
+    },
+    {
+      "speaker": "ai",
+      "text": "ठीक है.",
+      "timestamp": "2025-08-03T00:01:06"
+    },
+    {
+      "speaker": "ai",
+      "text": "आपका जेंडर क्या है?",
+      "timestamp": "2025-08-03T00:01:22"
+    },
+    {
+      "speaker": "user",
+      "text": "mel",
+      "timestamp": "2025-08-03T00:01:26"
+    },
+    {
+      "speaker": "ai",
+      "text": "ठीक है. मोबाइल नंबर कन्फ़र्म करें?",
+      "timestamp": "2025-08-03T00:01:30"
+    },
+    {
+      "speaker": "user",
+      "text": "nau aath nau teen ek aath chaar saat chaar do",
+      "timestamp": "2025-08-03T00:02:02"
+    },
+    {
+      "speaker": "ai",
+      "text": "ठीक है?",
+      "timestamp": "2025-08-03T00:02:34"
+    },
+    {
+      "speaker": "user",
+      "text": "ṭhīk hai.",
+      "timestamp": "2025-08-03T00:02:36"
+    },
+    {
+      "speaker": "ai",
+      "text": "आपकी ईमेल आईडी?",
+      "timestamp": "2025-08-03T00:02:38"
+    },
+    {
+      "speaker": "user",
+      "text": "2004.racgit.gupta@gmail.com",
+      "timestamp": "2025-08-03T00:02:42"
+    }
+  ]
+}

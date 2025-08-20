@@ -199,15 +199,25 @@ def parse_all_logs():
     os.makedirs(output_folder, exist_ok=True)
 
     for fname in os.listdir(input_folder):
-        if fname.endswith(".txt"):
-            json_path = os.path.join(output_folder, fname.replace(".txt", ".json"))
+        # Skip directories and hidden files
+        full_path = os.path.join(input_folder, fname)
+        if os.path.isfile(full_path) and not fname.startswith('.'):
+            # Generate JSON filename - if it has .txt extension, replace it, otherwise add .json
+            if fname.endswith(".txt"):
+                json_fname = fname.replace(".txt", ".json")
+            else:
+                json_fname = fname + ".json"
+            
+            json_path = os.path.join(output_folder, json_fname)
             if not os.path.exists(json_path):
                 print(f"Parsing {fname}...")
-                full_path = os.path.join(input_folder, fname)
-                parsed_json = parse_log_file(full_path)
-
-                with open(json_path, "w", encoding="utf-8") as f:
-                    json.dump(parsed_json, f, indent=2, ensure_ascii=False)
+                try:
+                    parsed_json = parse_log_file(full_path)
+                    with open(json_path, "w", encoding="utf-8") as f:
+                        json.dump(parsed_json, f, indent=2, ensure_ascii=False)
+                    print(f"Successfully parsed {fname} -> {json_fname}")
+                except Exception as e:
+                    print(f"Error parsing {fname}: {e}")
             else:
                 print(f"Skipping {fname}, JSON already exists.")
 

@@ -1,0 +1,141 @@
+{
+  "summary": {
+    "filename": "call_transcript_3",
+    "stream_sid": "eb4349819c5079c4dc265495b0bf1983",
+    "call_started": "2025-08-03T00:00:00.000",
+    "call_ended": "2025-08-03T00:02:56.000",
+    "duration_seconds": 176.0,
+    "average_ai_response_latency": 1.72,
+    "noise_count": 0,
+    "total_user_messages": 10,
+    "total_ai_responses": 14,
+    "sentiment": "neutral",
+    "concerns": [],
+    "overview": "The AI is conducting a verification call for a loan application, requesting personal details from the user. The user cooperates by providing their name, date of birth, PAN number, and gender. The call concludes with scheduling a callback time for further discussion.",
+    "user_tone": "Cooperative and direct, with an initial slight urgency to complete the verification.",
+    "emotion": "Calm",
+    "sentiment_score": 6
+  },
+  "conversation": [
+    {
+      "speaker": "ai",
+      "text": "हेलो, मैं Indify से. आपने loan application स्टार्ट किया था. दो मिनट लगेंगे, अभी ठीक है?",
+      "timestamp": "2025-08-03T00:00:00"
+    },
+    {
+      "speaker": "user",
+      "text": "Haan ji, bataiye.",
+      "timestamp": "2025-08-03T00:00:11"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, मैं सिर्फ़ verification के लिए कुछ details लूँगी, आप चाहें तो skip कर सकते हैं.",
+      "timestamp": "2025-08-03T00:00:14"
+    },
+    {
+      "speaker": "user",
+      "text": "Theek hai, jaldi karte hain.",
+      "timestamp": "2025-08-03T00:00:23"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, मैं जल्दी करती हूँ. आपका पूरा नाम, जैसा PAN पर है?",
+      "timestamp": "2025-08-03T00:00:26"
+    },
+    {
+      "speaker": "user",
+      "text": "Rachit Gupta",
+      "timestamp": "2025-08-03T00:00:34"
+    },
+    {
+      "speaker": "ai",
+      "text": "मैं स्पेल बैक कर देती हूँ, R-A-C-H-I-T,",
+      "timestamp": "2025-08-03T00:00:35"
+    },
+    {
+      "speaker": "ai",
+      "text": "G-U-P-T-A. सही है?",
+      "timestamp": "2025-08-03T00:00:42"
+    },
+    {
+      "speaker": "user",
+      "text": "Haan, ji, bilkul sahi hai.",
+      "timestamp": "2025-08-03T00:00:46"
+    },
+    {
+      "speaker": "ai",
+      "text": "आपकी date of birth, D-D-M-M-YYYY?",
+      "timestamp": "2025-08-03T00:00:48"
+    },
+    {
+      "speaker": "user",
+      "text": "20 disambar 2004.",
+      "timestamp": "2025-08-03T00:00:54"
+    },
+    {
+      "speaker": "ai",
+      "text": "आपने कहा, 20-12-2004, सही है?",
+      "timestamp": "2025-08-03T00:00:56"
+    },
+    {
+      "speaker": "user",
+      "text": "Haan ji, sahi hai.",
+      "timestamp": "2025-08-03T00:01:05"
+    },
+    {
+      "speaker": "ai",
+      "text": "आपका PAN number, please.",
+      "timestamp": "2025-08-03T00:01:08"
+    },
+    {
+      "speaker": "user",
+      "text": "1-2-3-4-5-6-7-A-B.",
+      "timestamp": "2025-08-03T00:01:31"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, 1-2-3-4-5-6-7-A-B.",
+      "timestamp": "2025-08-03T00:01:34"
+    },
+    {
+      "speaker": "ai",
+      "text": "आपका gender?",
+      "timestamp": "2025-08-03T00:01:47"
+    },
+    {
+      "speaker": "user",
+      "text": "purush",
+      "timestamp": "2025-08-03T00:01:55"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, ठीक है.",
+      "timestamp": "2025-08-03T00:01:56"
+    },
+    {
+      "speaker": "ai",
+      "text": "कॉल बैक के लिए कौन सा टाइम ठीक रहेगा?",
+      "timestamp": "2025-08-03T00:02:33"
+    },
+    {
+      "speaker": "user",
+      "text": "Aaj saadhe teen baje.",
+      "timestamp": "2025-08-03T00:02:37"
+    },
+    {
+      "speaker": "ai",
+      "text": "ठीक है, मैं 3:30 PM पर कॉल बैक शेड्यूल कर देती हूँ.",
+      "timestamp": "2025-08-03T00:02:39"
+    },
+    {
+      "speaker": "user",
+      "text": "dhanyavād.",
+      "timestamp": "2025-08-03T00:02:50"
+    },
+    {
+      "speaker": "ai",
+      "text": "हम आपसे 3:30 PM पर बात करेंगे.",
+      "timestamp": "2025-08-03T00:02:51"
+    }
+  ]
+}
