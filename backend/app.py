@@ -12,8 +12,22 @@ from routes.district_stats import bp_district_stats
 from routes.sentiment_flow import get_sentiment_flow
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}})  # This will enable CORS for all routes
+CORS(app, resources={
+    r"/*": {
+        "origins": "*",
+        "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        "allow_headers": ["Content-Type", "Authorization", "ngrok-skip-browser-warning", "Accept"]
+    }
+})
 app.register_blueprint(bp_district_stats)
+
+# Add explicit CORS headers to all responses
+@app.after_request
+def after_request(response):
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization,ngrok-skip-browser-warning,Accept')
+    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+    return response
 
 # Generate state-level aggregated data from district data
 def generate_state_stats():
@@ -176,4 +190,4 @@ def sentiment_flow(filename):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5001)

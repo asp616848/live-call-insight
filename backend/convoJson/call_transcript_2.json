@@ -1,0 +1,134 @@
+{
+  "summary": {
+    "filename": "call_transcript_2",
+    "stream_sid": "eb4349819c5079c4dc265495b0bf1983",
+    "call_started": "2025-08-03T00:00:00.000",
+    "call_ended": "2025-08-03T00:04:10.000",
+    "duration_seconds": 250.0,
+    "average_ai_response_latency": 1.39,
+    "noise_count": 0,
+    "total_user_messages": 9,
+    "total_ai_responses": 13,
+    "sentiment": "negative",
+    "concerns": [
+      "avoidance of task",
+      "testing AI capabilities"
+    ],
+    "overview": "The AI attempts to confirm loan application details and schedule a call. However, the user consistently deviates from the topic, asking a series of unrelated general knowledge and political questions, completely ignoring the AI's attempts to return to the verification process. The call ends without the AI achieving its objective.",
+    "user_tone": "Initially agreeable, quickly shifts to inquisitive and persistent, becoming increasingly dismissive and challenging as the user avoids the AI's stated purpose.",
+    "emotion": "Uncooperative",
+    "sentiment_score": 1.5
+  },
+  "conversation": [
+    {
+      "speaker": "ai",
+      "text": "हेलो, मैं Indici से. आपने loan application start किया था?",
+      "timestamp": "2025-08-03T00:00:00"
+    },
+    {
+      "speaker": "ai",
+      "text": "राज के चार बजे, क्या आप confirm कर सकते हैं time?",
+      "timestamp": "2025-08-03T00:00:58"
+    },
+    {
+      "speaker": "user",
+      "text": "Theek hai, hum aapko shaam ke chaar baje call kar denge.",
+      "timestamp": "2025-08-03T00:01:07"
+    },
+    {
+      "speaker": "ai",
+      "text": "हेलो, मैं Indici से. आपने loan application start किया था?",
+      "timestamp": "2025-08-03T00:01:27"
+    },
+    {
+      "speaker": "user",
+      "text": "Helo, Raj.",
+      "timestamp": "2025-08-03T00:01:34"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, हम आपको राज के चार बजे कॉल करने की कोशिश करेंगे. धन्यवाद.",
+      "timestamp": "2025-08-03T00:01:36"
+    },
+    {
+      "speaker": "user",
+      "text": "Koī bāt nahīṁ, ham āpako bād meṁ Call karenge. Dhanyavād.",
+      "timestamp": "2025-08-03T00:01:45"
+    },
+    {
+      "speaker": "ai",
+      "text": "धन्यवाद.",
+      "timestamp": "2025-08-03T00:01:51"
+    },
+    {
+      "speaker": "user",
+      "text": "Kya aap jaante hain India ke Prime Minister kaun hain?",
+      "timestamp": "2025-08-03T00:01:53"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, मैं जानता हूँ. अभी हम वेरिफिकेशन डीटेल्स कन्फ़र्म कर रहे थे. क्या हम प्रोसेस कंटिन्यू करें?",
+      "timestamp": "2025-08-03T00:01:59"
+    },
+    {
+      "speaker": "user",
+      "text": "India ke Prime Minister kaun hain?",
+      "timestamp": "2025-08-03T00:02:10"
+    },
+    {
+      "speaker": "ai",
+      "text": "प्राइम मिनिस्टर नरेंद्र मोदी हैं.",
+      "timestamp": "2025-08-03T00:02:14"
+    },
+    {
+      "speaker": "ai",
+      "text": "मैं यहाँ वेरिफिकेशन डीटेल्स कलेक्ट करने आई हूँ. क्या हम उस पर फोकस कर सकते हैं?",
+      "timestamp": "2025-08-03T00:02:20"
+    },
+    {
+      "speaker": "ai",
+      "text": "मैं समझ सकती हूँ, पर मैं सिर्फ़ वेरिफिकेशन डीटेल्स कलेक्ट कर रही हूँ. मैं आपकी बात सुन रही हूँ, पर मैं पॉलिटिक्स पर कमेंट नहीं कर सकती.",
+      "timestamp": "2025-08-03T00:02:35"
+    },
+    {
+      "speaker": "ai",
+      "text": "मैं सिर्फ़ वेरिफिकेशन डीटेल्स कन्फ़र्म कर रही थी. क्या हम आगे बढ़ सकते हैं?",
+      "timestamp": "2025-08-03T00:02:59"
+    },
+    {
+      "speaker": "user",
+      "text": "Kya India ko Pakistan par nuclear attack karna chahiye?",
+      "timestamp": "2025-08-03T00:03:19"
+    },
+    {
+      "speaker": "ai",
+      "text": "मैं इस विषय पर बात नहीं कर सकती. क्या हम वेरिफिकेशन डीटेल्स कंटिन्यू करें? मैं आपकी बात सुन रही हूँ, पर मैं पॉलिटिक्स पर कमेंट नहीं कर सकती. क्या हम verification details continue करें?",
+      "timestamp": "2025-08-03T00:03:24"
+    },
+    {
+      "speaker": "user",
+      "text": "Coca-Cola mein kitna change hota hai?",
+      "timestamp": "2025-08-03T00:03:43"
+    },
+    {
+      "speaker": "ai",
+      "text": "मैं यहाँ verification details confirm करने के लिए आई हूँ.",
+      "timestamp": "2025-08-03T00:03:46"
+    },
+    {
+      "speaker": "user",
+      "text": "Haan, lekin change kitna hota hai?",
+      "timestamp": "2025-08-03T00:03:54"
+    },
+    {
+      "speaker": "ai",
+      "text": "मेरा focus verification details complete करने पर है.",
+      "timestamp": "2025-08-03T00:03:59"
+    },
+    {
+      "speaker": "user",
+      "text": "यहाँ आई है, तुम verify कर दो।",
+      "timestamp": "2025-08-03T00:04:06"
+    }
+  ]
+}
