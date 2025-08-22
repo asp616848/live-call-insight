@@ -215,6 +215,24 @@ function fallbackDataCaptureMetrics(totalCalls = 50): DataCaptureMetrics {
   };
 }
 
+// Use demo metrics when computed values are extreme or sample size is tiny
+function maybeDemoMetrics(computed: DataCaptureMetrics, totalCalls: number): { metrics: DataCaptureMetrics; demo: boolean } {
+  const isTinySample = totalCalls <= 10;
+  const hasExtremes = [
+    computed.completionRate,
+    computed.fieldCaptureAccuracy,
+    computed.customerConfirmationRate,
+    computed.errorRetryRate,
+    computed.abandonmentRate,
+    computed.recontactRequiredRate,
+  ].some((v) => v === 0 || v === 100);
+
+  if (isTinySample || hasExtremes) {
+    return { metrics: fallbackDataCaptureMetrics(totalCalls || 50), demo: true };
+  }
+  return { metrics: computed, demo: false };
+}
+
 export const Dashboard = () => {
   const [dashboardData, setDashboardData] = useState<any>(null);
   const [displayedMessages, setDisplayedMessages] = useState([]);
@@ -242,8 +260,10 @@ export const Dashboard = () => {
           setIsDemoMetrics(true);
           setDataCaptureMetrics(fallbackDataCaptureMetrics(dashboardData?.metrics?.total_calls || 50));
         } else {
-          setIsDemoMetrics(false);
-          setDataCaptureMetrics(computed);
+          const total = list.length;
+          const { metrics: chosen, demo } = maybeDemoMetrics(computed, total);
+          setIsDemoMetrics(demo);
+          setDataCaptureMetrics(chosen);
         }
       })
       .catch((err) => {
