@@ -15,11 +15,25 @@ os.makedirs(CACHE_DIR, exist_ok=True)
 
 SENTIMENT_MODEL_NAME = "gemini-2.5-flash"
 
+# ...existing code...
 @lru_cache(maxsize=64)
 def _cached_sentiment_analysis(filename: str):
-    # Disk cache path (strip .json and make a .sentiment.json to avoid collisions)
-    safe_name = os.path.splitext(filename)[0] + ".sentiment.json"
-    disk_cache_path = os.path.join(CACHE_DIR, safe_name)
+    # Normalize filename to a convoJson json file name
+    try:
+        base = os.path.basename(filename or "").strip()
+        if base.endswith(".txt"):
+            base = base[:-4] + ".json"
+        elif not base.endswith(".json"):
+            base = base + ".json"
+        filename = base
+    except Exception:
+        pass
+
+    # existing disk cache lookup remains unchanged
+    # ...existing code...
+    filepath = os.path.join(CONVO_DIR, filename)
+    if not os.path.exists(filepath):
+        return {"error": "File not found"}
 
     def robustify(parsed_obj, user_sentences_local, ai_sentences_local):
         """Ensure both user & ai arrays exist, non-empty, and aligned in length.

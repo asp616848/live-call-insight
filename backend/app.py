@@ -12,11 +12,27 @@ from routes.district_stats import bp_district_stats
 from routes.sentiment_flow import get_sentiment_flow
 
 app = Flask(__name__)
+# app.py
+from flask import Flask, jsonify, request
+from routes.s3_downloader import download_logs
+from routes.parser import parse_all_logs, get_last_n_conversations
+from routes.dashboard import get_dashboard_with_latest_convo, get_top_concerns
+from analysis import analyze_conversation_with_langextract, clean_cache, list_cache_entries
+import os
+from flask_cors import CORS 
+import json
+from datetime import datetime
+from routes.district_stats import bp_district_stats
+from routes.sentiment_flow import get_sentiment_flow
+
+app = Flask(__name__)
+# Configure CORS with proper headers
 CORS(app, resources={
     r"/*": {
         "origins": "*",
+        "allow_headers": ["Content-Type", "Authorization", "ngrok-skip-browser-warning", "Accept"],
         "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-        "allow_headers": ["Content-Type", "Authorization", "ngrok-skip-browser-warning", "Accept"]
+        "supports_credentials": True
     }
 })
 app.register_blueprint(bp_district_stats)
@@ -71,6 +87,15 @@ def generate_state_stats():
         return {}
 
 # api endpoints
+
+@app.after_request
+def after_request(response):
+    """Ensure CORS headers are set on all responses"""
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization,ngrok-skip-browser-warning,Accept')
+    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+    response.headers.add('Access-Control-Allow-Credentials', 'true')
+    return response
 
 @app.route('/state_stats', methods=['GET'])
 def get_state_stats():
