@@ -178,11 +178,49 @@ function computeDataCaptureMetrics(calls: CallItem[]): DataCaptureMetrics {
   return { completionRate, fieldCaptureAccuracy, errorRetryRate, abandonmentRate, recontactRequiredRate, customerConfirmationRate };
 }
 
+// Fallback demo metrics (deterministic per day) for when backend data isn't available
+function seededFromString(seed: string) {
+  let h = 2166136261 >>> 0; // FNV-1a seed
+  for (let i = 0; i < seed.length; i++) {
+    h ^= seed.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return function rand(min = 0, max = 1) {
+    // xorshift
+    h ^= h << 13; h ^= h >>> 17; h ^= h << 5;
+    const u = ((h >>> 0) / 4294967295);
+    return min + (max - min) * u;
+  };
+}
+
+function fallbackDataCaptureMetrics(totalCalls = 50): DataCaptureMetrics {
+  const today = new Date();
+  const key = `${today.getUTCFullYear()}-${today.getUTCMonth()+1}-${today.getUTCDate()}`;
+  const rnd = seededFromString(`data-capture-${key}`);
+  const clamp = (n: number) => Math.max(0, Math.min(100, Math.round(n)));
+  // Plausible ranges (tweakable)
+  const completion = clamp(82 + rnd(-4, 6));
+  const acc = clamp(90 + rnd(-5, 7));
+  const retry = clamp(7 + rnd(-3, 5));
+  const abandon = clamp(5 + rnd(-2, 4));
+  const recontact = clamp(10 + rnd(-4, 6));
+  const confirm = clamp(85 + rnd(-6, 8));
+  return {
+    completionRate: completion,
+    fieldCaptureAccuracy: acc,
+    errorRetryRate: retry,
+    abandonmentRate: abandon,
+    recontactRequiredRate: recontact,
+    customerConfirmationRate: confirm,
+  };
+}
+
 export const Dashboard = () => {
   const [dashboardData, setDashboardData] = useState<any>(null);
   const [displayedMessages, setDisplayedMessages] = useState([]);
   const [calls, setCalls] = useState<CallItem[] | null>(null);
   const [dataCaptureMetrics, setDataCaptureMetrics] = useState<DataCaptureMetrics | null>(null);
+  const [isDemoMetrics, setIsDemoMetrics] = useState(false);
 
   useEffect(() => {
     // Load primary dashboard data
@@ -199,19 +237,20 @@ export const Dashboard = () => {
       .then((list) => {
         setCalls(list);
         const computed = computeDataCaptureMetrics(list || []);
-        setDataCaptureMetrics(computed);
+        const isEmpty = !list || list.length === 0;
+        if (isEmpty) {
+          setIsDemoMetrics(true);
+          setDataCaptureMetrics(fallbackDataCaptureMetrics(dashboardData?.metrics?.total_calls || 50));
+        } else {
+          setIsDemoMetrics(false);
+          setDataCaptureMetrics(computed);
+        }
       })
       .catch((err) => {
         console.warn('Failed to fetch /logs for data capture metrics (frontend-only):', err);
         setCalls([]);
-        setDataCaptureMetrics({
-          completionRate: 0,
-          fieldCaptureAccuracy: 0,
-          errorRetryRate: 0,
-          abandonmentRate: 0,
-          recontactRequiredRate: 0,
-          customerConfirmationRate: 0,
-        });
+        setIsDemoMetrics(true);
+        setDataCaptureMetrics(fallbackDataCaptureMetrics(dashboardData?.metrics?.total_calls || 50));
       });
   }, []);
 
@@ -326,12 +365,22 @@ export const Dashboard = () => {
 
           {/* Data Capture Metrics (frontend-derived) */}
           <div className="mt-2">
-            <h2 className="text-base font-semibold mb-3 text-muted-foreground">Data Capture Metrics</h2>
+            <div className="flex items-center gap-2 mb-3">
+              <h2 className="text-base font-semibold text-muted-foreground">Data Capture Metrics</h2>
+              {isDemoMetrics && (
+                <span className="text-[10px] px-2 py-0.5 rounded-full bg-muted text-muted-foreground border">Demo</span>
+              )}
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <MetricsCard
                 title="Completion Rate"
                 value={`${dataCaptureMetrics ? dataCaptureMetrics.completionRate : 0}%`}
-                subtitle="All required fields collected"
+                subtitle={(() => {
+                  const total = calls?.length || dashboardData?.metrics?.total_calls || 50;
+                  if (!dataCaptureMetrics) { return 'All required fields collected'; }
+                  const count = Math.round((dataCaptureMetrics.completionRate/100) * total);
+                  return `All required fields collected • ${count}/${total} calls`;
+                })()}
                 icon={CheckCircle2}
                 trend="up"
                 color="green"
@@ -340,7 +389,7 @@ export const Dashboard = () => {
               <MetricsCard
                 title="Field Capture Accuracy"
                 value={`${dataCaptureMetrics ? dataCaptureMetrics.fieldCaptureAccuracy : 0}%`}
-                subtitle="Validation via regex & heuristics"
+                subtitle="Validation via regex & heuristics (per field)"
                 icon={Percent}
                 trend="neutral"
                 color="cyan"
@@ -349,7 +398,12 @@ export const Dashboard = () => {
               <MetricsCard
                 title="Error / Retry Rate"
                 value={`${dataCaptureMetrics ? dataCaptureMetrics.errorRetryRate : 0}%`}
-                subtitle="Calls with repeat/invalid prompts"
+                subtitle={(() => {
+                  const total = calls?.length || dashboardData?.metrics?.total_calls || 50;
+                  if (!dataCaptureMetrics) { return 'Calls with repeat/invalid prompts'; }
+                  const count = Math.round((dataCaptureMetrics.errorRetryRate/100) * total);
+                  return `Calls with repeat/invalid prompts • ${count}/${total} calls`;
+                })()}
                 icon={RotateCcw}
                 trend="down"
                 color="orange"
@@ -358,7 +412,12 @@ export const Dashboard = () => {
               <MetricsCard
                 title="Abandonment Rate"
                 value={`${dataCaptureMetrics ? dataCaptureMetrics.abandonmentRate : 0}%`}
-                subtitle="Dropped before completion"
+                subtitle={(() => {
+                  const total = calls?.length || dashboardData?.metrics?.total_calls || 50;
+                  if (!dataCaptureMetrics) { return 'Dropped before completion'; }
+                  const count = Math.round((dataCaptureMetrics.abandonmentRate/100) * total);
+                  return `Dropped before completion • ${count}/${total} calls`;
+                })()}
                 icon={PhoneOff}
                 trend="down"
                 color="red"
@@ -367,7 +426,12 @@ export const Dashboard = () => {
               <MetricsCard
                 title="Re-contact Required"
                 value={`${dataCaptureMetrics ? dataCaptureMetrics.recontactRequiredRate : 0}%`}
-                subtitle="Incomplete or invalid details"
+                subtitle={(() => {
+                  const total = calls?.length || dashboardData?.metrics?.total_calls || 50;
+                  if (!dataCaptureMetrics) { return 'Incomplete or invalid details'; }
+                  const count = Math.round((dataCaptureMetrics.recontactRequiredRate/100) * total);
+                  return `Incomplete or invalid details • ${count}/${total} calls`;
+                })()}
                 icon={RefreshCw}
                 trend="down"
                 color="purple"
@@ -376,7 +440,12 @@ export const Dashboard = () => {
               <MetricsCard
                 title="Customer Confirmation"
                 value={`${dataCaptureMetrics ? dataCaptureMetrics.customerConfirmationRate : 0}%`}
-                subtitle="Confirmed recap without changes"
+                subtitle={(() => {
+                  const total = calls?.length || dashboardData?.metrics?.total_calls || 50;
+                  if (!dataCaptureMetrics) { return 'Confirmed recap without changes'; }
+                  const count = Math.round((dataCaptureMetrics.customerConfirmationRate/100) * total);
+                  return `Confirmed recap without changes • ${count}/${total} calls`;
+                })()}
                 icon={BadgeCheck}
                 trend="up"
                 color="green"
