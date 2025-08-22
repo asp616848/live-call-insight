@@ -22,9 +22,8 @@ export const API_BASE = (() => {
       return '/api';
     }
   }
-
   // Default for local dev
-  return 'http://15.206.28.101:5001';
+  return 'http://15.206.28.101:5000';
 })();
 
 export function apiUrl(path: string) {

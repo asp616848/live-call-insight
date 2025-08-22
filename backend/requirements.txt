@@ -4,6 +4,5 @@ python-dotenv==1.0.1  # If you're using environment variables for config
 flask-cors
 
 requests==2.28.2  # Add requests to interact with Gemini API
-googel-generativeai  # Add the Google Generative AI library
-Flask-Cors
+google-generativeai  # Add the Google Generative AI library
 langextract

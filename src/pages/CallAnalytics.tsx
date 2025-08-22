@@ -86,13 +86,16 @@ export default function CallAnalytics() {
 			setSentimentError(null);
 			setSentimentFlow(null);
 			try {
-				// use filename from summary
-				const filename = selectedCall.summary.filename?.replace('.txt','.json') || selectedCall.summary.filename;
-				if(!filename){
-					setSentimentError('No filename for call');
-					return;
-				}
-				const res = await apiFetch(`/sentiment_flow/${filename}`);
+				// Normalize to convoJson filename
+				const raw = selectedCall.summary.filename || '';
+				const base = (raw.split('/').pop() || raw).trim();
+				const jsonName = base.endsWith('.json')
+					? base
+					: base.endsWith('.txt')
+						? base.replace(/\.txt$/, '.json')
+						: `${base}.json`;
+
+				const res = await apiFetch(`/sentiment_flow/${encodeURIComponent(jsonName)}`);
 				if(!res.ok) throw new Error('Failed to fetch sentiment flow');
 				const data = await res.json();
 				if(data.error) throw new Error(data.error);
@@ -105,7 +108,7 @@ export default function CallAnalytics() {
 		}
 		fetchSentiment();
 	}, [selectedCall]);
-
+	
 	const getSentimentBadgeClass = (sentiment: string) => {
 		switch (sentiment) {
 			case "positive":

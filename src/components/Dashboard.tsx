@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Clock, MessageCircle, TrendingUp } from 'lucide-react';
+import { Phone, Clock, MessageCircle, TrendingUp, CheckCircle2, Percent, RotateCcw, PhoneOff, RefreshCw, BadgeCheck } from 'lucide-react';
 import { CustomCursor } from './CustomCursor';
 import { BackgroundAnimation } from './BackgroundAnimation';
 import { LatencyGauge } from './LatencyGauge';
@@ -21,11 +21,171 @@ async function fetchDashboardData() {
   }
 }
 
+// Types aligned with CallAnalytics for local-only computation
+interface Summary {
+  filename: string;
+  stream_sid: string;
+  call_started: string;
+  call_ended: string;
+  duration_seconds: number;
+  average_ai_response_latency: number;
+  sentiment: 'positive' | 'neutral' | 'negative';
+  concerns: string[];
+  overview: string;
+  user_tone: string;
+}
+
+interface ConversationMessage {
+  speaker: 'user' | 'ai';
+  text: string;
+  timestamp: string;
+}
+
+interface CallItem {
+  summary: Summary;
+  conversation: ConversationMessage[];
+}
+
+type DataCaptureMetrics = {
+  completionRate: number; // all required fields present
+  fieldCaptureAccuracy: number; // valid/captured across fields
+  errorRetryRate: number; // calls with retries
+  abandonmentRate: number; // calls ended before completion
+  recontactRequiredRate: number; // incomplete or invalid
+  customerConfirmationRate: number; // confirmed recap
+};
+
+function computeDataCaptureMetrics(calls: CallItem[]): DataCaptureMetrics {
+  if (!calls?.length) {
+    return {
+      completionRate: 0,
+      fieldCaptureAccuracy: 0,
+      errorRetryRate: 0,
+      abandonmentRate: 0,
+      recontactRequiredRate: 0,
+      customerConfirmationRate: 0,
+    };
+  }
+
+  const EMAIL = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i;
+  const PHONE = /(?:\+?91[-\s]?)?[6-9]\d{9}\b/; // basic India phone
+  const PAN = /\b[A-Z]{5}\d{4}[A-Z]\b/i; // Indian PAN
+  const NAME_PATTERNS = [
+    /\bmy name is\s+([A-Za-z][A-Za-z\s.'-]{1,40})/i,
+    /\bi am\s+([A-Za-z][A-Za-z\s.'-]{1,40})/i,
+    /\bthis is\s+([A-Za-z][A-Za-z\s.'-]{1,40})/i,
+  ];
+  const FAN_PATTERNS = [/\bfan\s*(id|number|details|model)\b[:\-]?\s*([A-Za-z0-9\-]{3,})/i];
+  const RETRY_PHRASES = /(could you repeat|say again|didn'?t catch|pardon|invalid|not clear|unclear|silence|sorry[, ]? i|please repeat|repeat that|again please|can you repeat)/i;
+  const CONFIRM_ASK = /(please confirm|can you confirm|is this correct|does this look correct|kindly confirm|confirm the details)/i;
+  const CONFIRM_POSITIVE = /\b(yes|yeah|yep|correct|that'?s right|confirm|ok|okay|haan|ha|theek|bilkul)\b/i;
+
+  const clampPct = (n: number) => Math.max(0, Math.min(100, Math.round(n)));
+
+  let callsAllRequired = 0;
+  let callsWithRetry = 0;
+  let callsAbandoned = 0;
+  let callsRecontactReq = 0;
+  let callsConfirmed = 0;
+  let capturedFields = 0;
+  let validCapturedFields = 0;
+
+  for (const call of calls) {
+    const convo = call.conversation || [];
+    let name: string | null = null;
+    let email: string | null = null;
+    let phone: string | null = null;
+    let pan: string | null = null;
+    let fan: string | null = null;
+    let hasRetry = false;
+    let hasConfirmation = false;
+
+    for (let i = 0; i < convo.length; i++) {
+      const m = convo[i];
+      const t = m.text || '';
+      // Capture fields
+      if (!email) {
+        const em = t.match(EMAIL);
+        if (em) { email = em[0]; }
+      }
+      if (!phone) {
+        const ph = t.match(PHONE);
+        if (ph) { phone = ph[0]; }
+      }
+      if (!pan) {
+        const pn = t.match(PAN);
+        if (pn) { pan = pn[0].toUpperCase(); }
+      }
+      if (!name) {
+        for (const pat of NAME_PATTERNS) {
+          const nm = t.match(pat);
+          if (nm && nm[1]) { name = nm[1].trim(); break; }
+        }
+      }
+      if (!fan) {
+        for (const pat of FAN_PATTERNS) {
+          const fm = t.match(pat);
+          if (fm && fm[2]) { fan = fm[2].trim(); break; }
+        }
+      }
+      // Retry detection (mostly AI, but consider any)
+  if (!hasRetry && RETRY_PHRASES.test(t)) { hasRetry = true; }
+
+      // Confirmation detection: AI asks, next user agrees
+      if (!hasConfirmation && m.speaker === 'ai' && CONFIRM_ASK.test(t)) {
+        const next = convo[i + 1];
+        if (next && next.speaker === 'user' && CONFIRM_POSITIVE.test(next.text || '')) {
+          hasConfirmation = true;
+        }
+      }
+    }
+
+    const requiredPresent = Boolean(name && email && phone && pan && fan);
+  if (requiredPresent) { callsAllRequired += 1; }
+
+    // Validate captured fields for accuracy (regex/heuristic)
+    const nameValid = Boolean(name && /[A-Za-z]{2,}/.test(name));
+    const emailValid = Boolean(email && EMAIL.test(email));
+    const phoneDigits = (phone || '').replace(/\D/g, '');
+    const phoneValid = Boolean(phone && (phoneDigits.length === 10 || (phoneDigits.length === 12 && phoneDigits.startsWith('91'))));
+    const panValid = Boolean(pan && PAN.test(pan));
+    const fanValid = Boolean(fan && fan.length >= 3);
+
+    const fields = [name, email, phone, pan, fan];
+    const validFlags = [nameValid, emailValid, phoneValid, panValid, fanValid];
+    capturedFields += fields.filter(Boolean).length;
+    validCapturedFields += validFlags.filter(Boolean).length;
+
+  if (hasRetry) { callsWithRetry += 1; }
+  if (hasConfirmation) { callsConfirmed += 1; }
+
+    const duration = call.summary?.duration_seconds ?? 0;
+    const shortCall = duration > 0 ? duration < 30 : convo.length < 6;
+    const anyInvalid = !nameValid || !emailValid || !phoneValid || !panValid || !fanValid;
+    const incomplete = !requiredPresent;
+  if ((shortCall && incomplete) || (incomplete && anyInvalid)) { callsAbandoned += 1; }
+  if (incomplete || anyInvalid) { callsRecontactReq += 1; }
+  }
+
+  const total = calls.length;
+  const completionRate = clampPct((callsAllRequired / total) * 100);
+  const fieldCaptureAccuracy = capturedFields > 0 ? clampPct((validCapturedFields / capturedFields) * 100) : 0;
+  const errorRetryRate = clampPct((callsWithRetry / total) * 100);
+  const abandonmentRate = clampPct((callsAbandoned / total) * 100);
+  const recontactRequiredRate = clampPct((callsRecontactReq / total) * 100);
+  const customerConfirmationRate = clampPct((callsConfirmed / total) * 100);
+
+  return { completionRate, fieldCaptureAccuracy, errorRetryRate, abandonmentRate, recontactRequiredRate, customerConfirmationRate };
+}
+
 export const Dashboard = () => {
   const [dashboardData, setDashboardData] = useState<any>(null);
   const [displayedMessages, setDisplayedMessages] = useState([]);
+  const [calls, setCalls] = useState<CallItem[] | null>(null);
+  const [dataCaptureMetrics, setDataCaptureMetrics] = useState<DataCaptureMetrics | null>(null);
 
   useEffect(() => {
+    // Load primary dashboard data
     fetchDashboardData().then((data) => {
       if (data) {
         setDashboardData(data);
@@ -34,11 +194,30 @@ export const Dashboard = () => {
         }
       }
     });
+    // Load calls for frontend-only metrics
+    apiJson<CallItem[]>('/logs')
+      .then((list) => {
+        setCalls(list);
+        const computed = computeDataCaptureMetrics(list || []);
+        setDataCaptureMetrics(computed);
+      })
+      .catch((err) => {
+        console.warn('Failed to fetch /logs for data capture metrics (frontend-only):', err);
+        setCalls([]);
+        setDataCaptureMetrics({
+          completionRate: 0,
+          fieldCaptureAccuracy: 0,
+          errorRetryRate: 0,
+          abandonmentRate: 0,
+          recontactRequiredRate: 0,
+          customerConfirmationRate: 0,
+        });
+      });
   }, []);
 
   // Simulate real-time data updates for transcript
   useEffect(() => {
-    if (!dashboardData) return;
+  if (!dashboardData) { return; }
 
     const messageInterval = setInterval(() => {
       setDisplayedMessages(prev => {
@@ -143,6 +322,70 @@ export const Dashboard = () => {
               color="orange"
               delay={0.4}
             />
+          </div>
+
+          {/* Data Capture Metrics (frontend-derived) */}
+          <div className="mt-2">
+            <h2 className="text-base font-semibold mb-3 text-muted-foreground">Data Capture Metrics</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <MetricsCard
+                title="Completion Rate"
+                value={`${dataCaptureMetrics ? dataCaptureMetrics.completionRate : 0}%`}
+                subtitle="All required fields collected"
+                icon={CheckCircle2}
+                trend="up"
+                color="green"
+                delay={0.1}
+              />
+              <MetricsCard
+                title="Field Capture Accuracy"
+                value={`${dataCaptureMetrics ? dataCaptureMetrics.fieldCaptureAccuracy : 0}%`}
+                subtitle="Validation via regex & heuristics"
+                icon={Percent}
+                trend="neutral"
+                color="cyan"
+                delay={0.15}
+              />
+              <MetricsCard
+                title="Error / Retry Rate"
+                value={`${dataCaptureMetrics ? dataCaptureMetrics.errorRetryRate : 0}%`}
+                subtitle="Calls with repeat/invalid prompts"
+                icon={RotateCcw}
+                trend="down"
+                color="orange"
+                delay={0.2}
+              />
+              <MetricsCard
+                title="Abandonment Rate"
+                value={`${dataCaptureMetrics ? dataCaptureMetrics.abandonmentRate : 0}%`}
+                subtitle="Dropped before completion"
+                icon={PhoneOff}
+                trend="down"
+                color="red"
+                delay={0.25}
+              />
+              <MetricsCard
+                title="Re-contact Required"
+                value={`${dataCaptureMetrics ? dataCaptureMetrics.recontactRequiredRate : 0}%`}
+                subtitle="Incomplete or invalid details"
+                icon={RefreshCw}
+                trend="down"
+                color="purple"
+                delay={0.3}
+              />
+              <MetricsCard
+                title="Customer Confirmation"
+                value={`${dataCaptureMetrics ? dataCaptureMetrics.customerConfirmationRate : 0}%`}
+                subtitle="Confirmed recap without changes"
+                icon={BadgeCheck}
+                trend="up"
+                color="green"
+                delay={0.35}
+              />
+            </div>
+            {!calls && (
+              <p className="text-xs text-muted-foreground mt-2">Loading call logs to derive metrics…</p>
+            )}
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 h-[calc(100vh-250px)]">
