@@ -306,9 +306,10 @@ export default function IndiaMap() {
       });
   }, [selectedState]);
 
-
   function renderDistrictTooltip() {
-    if (!stateHoverInfo) return null;
+    if (!stateHoverInfo) {
+      return null;
+    }
     const stats = districtStats[stateHoverInfo.name];
     const offset = 16;
     const rect = containerRef.current?.getBoundingClientRect();
@@ -353,7 +354,9 @@ export default function IndiaMap() {
   }
 
   function renderStateTooltip() {
-    if (!hoverInfo) return null;
+    if (!hoverInfo) {
+      return null;
+    }
     const normalizedStateName = stateNameMapping[hoverInfo.name];
     const stats = normalizedStateName ? stateStats[normalizedStateName] : null;
     const offset = 16;
@@ -436,12 +439,16 @@ export default function IndiaMap() {
                     geography={geo}
                     onMouseEnter={(e) => {
                       const rect = mainMapRef.current?.getBoundingClientRect();
-                      if (!rect) return;
+                      if (!rect) {
+                        return;
+                      }
                       setHoverInfo({ name, x: e.clientX - rect.left, y: e.clientY - rect.top });
                     }}
                     onMouseMove={(e) => {
                       const rect = mainMapRef.current?.getBoundingClientRect();
-                      if (!rect) return;
+                      if (!rect) {
+                        return;
+                      }
                       setHoverInfo((prev) => (prev ? { ...prev, x: e.clientX - rect.left, y: e.clientY - rect.top } : prev));
                     }}
                     onMouseLeave={() => setHoverInfo(null)}
@@ -501,12 +508,16 @@ export default function IndiaMap() {
                           geography={geo}
                           onMouseEnter={(e) => {
                             const rect = containerRef.current?.getBoundingClientRect();
-                            if (!rect) return;
+                            if (!rect) {
+                              return;
+                            }
                             setStateHoverInfo({ name, x: e.clientX - rect.left, y: e.clientY - rect.top });
                           }}
                           onMouseMove={(e) => {
                             const rect = containerRef.current?.getBoundingClientRect();
-                            if (!rect) return;
+                            if (!rect) {
+                              return;
+                            }
                             setStateHoverInfo(prev => prev ? { ...prev, x: e.clientX - rect.left, y: e.clientY - rect.top } : prev);
                           }}
                           onMouseLeave={() => setStateHoverInfo(null)}
