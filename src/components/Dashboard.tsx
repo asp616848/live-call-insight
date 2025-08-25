@@ -392,15 +392,15 @@ export const Dashboard = () => {
               )}
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <MetricsCard
+              {/* <MetricsCard
                 title="Completion Rate"
                 value={`${dataCaptureMetrics ? dataCaptureMetrics.completionRate : 79}%`}
-                // subtitle={(() => {
-                //   const total = calls?.length || dashboardData?.metrics?.total_calls || 50;
-                //   if (!dataCaptureMetrics) { return 'All required fields collected'; }
-                //   const count = Math.round((dataCaptureMetrics.completionRate/100) * total);
-                //   return `All required fields collected • ${count}/${total} calls`;
-                // })()}
+                subtitle={(() => {
+                  const total = calls?.length || dashboardData?.metrics?.total_calls || 50;
+                  if (!dataCaptureMetrics) { return 'All required fields collected'; }
+                  const count = Math.round((dataCaptureMetrics.completionRate/100) * total);
+                  return `All required fields collected • ${count}/${total} calls`;
+                })()}
                 icon={CheckCircle2}
                 trend="up"
                 color="green"
@@ -428,16 +428,16 @@ export const Dashboard = () => {
                 trend="down"
                 color="orange"
                 delay={0.2}
-              />
+              /> */}
               <MetricsCard
                 title="Abandonment Rate"
                 value={`${dataCaptureMetrics ? dataCaptureMetrics.abandonmentRate : 7}%`}
-                subtitle={(() => {
-                  const total = calls?.length || dashboardData?.metrics?.total_calls || 50;
-                  if (!dataCaptureMetrics) { return 'Dropped before completion'; }
-                  const count = Math.round((dataCaptureMetrics.abandonmentRate/100) * total);
-                  return `Dropped before completion • ${count}/${total} calls`;
-                })()}
+                // subtitle={(() => {
+                //   const total = calls?.length || dashboardData?.metrics?.total_calls || 50;
+                //   if (!dataCaptureMetrics) { return 'Dropped before completion'; }
+                //   const count = Math.round((dataCaptureMetrics.abandonmentRate/100) * total);
+                //   return `Dropped before completion • ${count}/${total} calls`;
+                // })()}
                 icon={PhoneOff}
                 trend="down"
                 color="red"
@@ -446,12 +446,12 @@ export const Dashboard = () => {
               <MetricsCard
                 title="Re-contact Required"
                 value={`${dataCaptureMetrics ? dataCaptureMetrics.recontactRequiredRate : 23}%`}
-                subtitle={(() => {
-                  const total = calls?.length || dashboardData?.metrics?.total_calls || 50;
-                  if (!dataCaptureMetrics) { return 'Incomplete or invalid details'; }
-                  const count = Math.round((dataCaptureMetrics.recontactRequiredRate/100) * total);
-                  return `Incomplete or invalid details • ${count}/${total} calls`;
-                })()}
+                // subtitle={(() => {
+                //   const total = calls?.length || dashboardData?.metrics?.total_calls || 50;
+                //   if (!dataCaptureMetrics) { return 'Incomplete or invalid details'; }
+                //   const count = Math.round((dataCaptureMetrics.recontactRequiredRate/100) * total);
+                //   return `Incomplete or invalid details • ${count}/${total} calls`;
+                // })()}
                 icon={RefreshCw}
                 trend="down"
                 color="purple"
@@ -460,12 +460,12 @@ export const Dashboard = () => {
               <MetricsCard
                 title="Customer Confirmation"
                 value={`${dataCaptureMetrics ? dataCaptureMetrics.customerConfirmationRate : 64}%`}
-                subtitle={(() => {
-                  const total = calls?.length || dashboardData?.metrics?.total_calls || 50;
-                  if (!dataCaptureMetrics) { return 'Confirmed recap without changes'; }
-                  const count = Math.round((dataCaptureMetrics.customerConfirmationRate/100) * total);
-                  return `Confirmed recap without changes • ${count}/${total} calls`;
-                })()}
+                // subtitle={(() => {
+                //   const total = calls?.length || dashboardData?.metrics?.total_calls || 50;
+                //   if (!dataCaptureMetrics) { return 'Confirmed recap without changes'; }
+                //   const count = Math.round((dataCaptureMetrics.customerConfirmationRate/100) * total);
+                //   return `Confirmed recap without changes • ${count}/${total} calls`;
+                // })()}
                 icon={BadgeCheck}
                 trend="up"
                 color="green"
