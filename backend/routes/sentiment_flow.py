@@ -29,8 +29,12 @@ def _cached_sentiment_analysis(filename: str):
     except Exception:
         pass
 
-    # existing disk cache lookup remains unchanged
-    # ...existing code...
+    # Prepare disk cache path (fix: was previously undefined)
+    # Keep cache file name simple and safe
+    safe_name = re.sub(r"[^a-zA-Z0-9_.-]", "_", filename)
+    disk_cache_path = os.path.join(CACHE_DIR, f"{safe_name}.sentiment.json")
+
+    # Resolve transcript path and validate
     filepath = os.path.join(CONVO_DIR, filename)
     if not os.path.exists(filepath):
         return {"error": "File not found"}
@@ -122,9 +126,6 @@ def _cached_sentiment_analysis(filename: str):
         except Exception:
             pass  # fall through to regeneration
 
-    filepath = os.path.join(CONVO_DIR, filename)
-    if not os.path.exists(filepath):
-        return {"error": "File not found"}
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
             data = json.load(f)
@@ -171,6 +172,30 @@ def _cached_sentiment_analysis(filename: str):
 
     user_block = build_numbered(user_sentences)
     ai_block = build_numbered(ai_sentences)
+
+    # Helper: build full heuristic fallback object
+    def build_full_heuristic():
+        return {
+            "user": [
+                {"index": i + 1, "score": round(heuristic_score(s.get("text", "")), 2)}
+                for i, s in enumerate(user_sentences)
+            ],
+            "ai": [
+                {"index": i + 1, "score": round(heuristic_score(s.get("text", "")), 2)}
+                for i, s in enumerate(ai_sentences)
+            ],
+            "meta": {"heuristic_only": True},
+        }
+
+    # If API key is missing, skip model and return heuristic-only
+    if not os.getenv("GEMINI_API_KEY"):
+        parsed = robustify(build_full_heuristic(), user_sentences, ai_sentences)
+        try:
+            with open(disk_cache_path, 'w', encoding='utf-8') as f:
+                json.dump(parsed, f, ensure_ascii=False, indent=2)
+        except Exception:
+            pass
+        return parsed
 
     model = genai.GenerativeModel(SENTIMENT_MODEL_NAME)
 
@@ -250,8 +275,15 @@ Return ONLY JSON. No markdown.
         except Exception:
             pass
         return parsed
-    except Exception as e:
-        return {"error": str(e)}
+    except Exception:
+        # Any model error -> return heuristic-only fallback
+        parsed = robustify(build_full_heuristic(), user_sentences, ai_sentences)
+        try:
+            with open(disk_cache_path, 'w', encoding='utf-8') as f:
+                json.dump(parsed, f, ensure_ascii=False, indent=2)
+        except Exception:
+            pass
+        return parsed
 
 
 def get_sentiment_flow(filename: str):

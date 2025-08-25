@@ -1,0 +1,65 @@
+{
+  "user": [
+    {
+      "index": 1,
+      "score": 2.5
+    },
+    {
+      "index": 2,
+      "score": 2.5
+    },
+    {
+      "index": 3,
+      "score": 2.5
+    },
+    {
+      "index": 4,
+      "score": 2.5
+    },
+    {
+      "index": 5,
+      "score": 2.5
+    },
+    {
+      "index": 6,
+      "score": 2.5
+    },
+    {
+      "index": 7,
+      "score": 2.5
+    }
+  ],
+  "ai": [
+    {
+      "index": 1,
+      "score": 7.5
+    },
+    {
+      "index": 2,
+      "score": 5.5
+    },
+    {
+      "index": 3,
+      "score": 8.5
+    },
+    {
+      "index": 4,
+      "score": 9.0
+    },
+    {
+      "index": 5,
+      "score": 8.0
+    },
+    {
+      "index": 6,
+      "score": 8.5
+    },
+    {
+      "index": 7,
+      "score": 9.5
+    }
+  ],
+  "meta": {
+    "user_padded": true
+  }
+}

@@ -308,10 +308,10 @@ export default function CallAnalytics() {
 									</div>
 
 									<Tabs defaultValue="conversation" className="h-[calc(100%-100px)]">
-										<TabsList className="grid w-full grid-cols-4">
+										<TabsList className="grid w-full grid-cols-3">
 											<TabsTrigger value="conversation">Conversation</TabsTrigger>
 											<TabsTrigger value="metrics">Metrics</TabsTrigger>
-											<TabsTrigger value="waveform">Audio</TabsTrigger>
+											{/* <TabsTrigger value="waveform">Audio</TabsTrigger> */}
 											<TabsTrigger value="sentiment">Sentiment Flow</TabsTrigger>
 										</TabsList>
 
