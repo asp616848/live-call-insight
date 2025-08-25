@@ -2,7 +2,7 @@
   "summary": {
     "filename": "call_transcript_1",
     "stream_sid": "eb4349819c5079c4dc265495b0bf1983",
-    "call_started": "2025-08-03T00:00:00.000",
+    "call_started": "2025-08-03T01:20:09.342",
     "call_ended": null,
     "duration_seconds": null,
     "average_ai_response_latency": 2.54,
@@ -11,118 +11,95 @@
     "total_ai_responses": 12,
     "sentiment": "neutral",
     "concerns": [
-      "impatience with process speed"
+      "embankment seepage",
+      "cattle disease",
+      "input subsidy"
     ],
-    "overview": "The conversation is a loan application verification call where the AI asks the user to confirm personal details. The user complies with all requests, having initially asked the AI to speak quickly.",
-    "user_tone": "Initially urgent and direct, then cooperative and straightforward.",
-    "emotion": "impatient",
-    "sentiment_score": 5
+    "overview": "The conversation is a persuasive outreach call from Rajesh Verma’s office, where Sumitra Devi empathetically listens to the villager’s problems in Khagaria and highlights Rajesh Verma’s interventions on embankment seepage, cattle disease, and subsidies.",
+    "user_tone": "Initially cautious, then cooperative and supportive.",
+    "emotion": "concerned",
+    "sentiment_score": 6
   },
   "conversation": [
     {
       "speaker": "ai",
-      "text": "आपका लोन अप्लिकेशन पेंडिंग है, क्या हम जल्दी वेरिफिकेशन कर लेते हैं?",
+      "text": "Namaskar bhaiya, pranam. Hum Sumitra Devi bol rahi hoon, Rajesh Verma ji ke office se. Rajesh ji chahte hain ki hum aapke jaise logon se baat karein aur unki samasya samjhein. Thoda samay de sakte hain?",
       "timestamp": "2025-08-03T00:00:00"
     },
     {
       "speaker": "user",
-      "text": "Ekdam tezī se bolie, jo bhī āp boleṁ, pās-pās bolie.",
-      "timestamp": "2025-08-03T00:00:11"
+      "text": "Haan ji, kahiye. Kaha se bol rahi hain aap?",
+      "timestamp": "2025-08-03T00:00:15"
     },
     {
       "speaker": "ai",
-      "text": "जी, बिल्कुल. आप अपना पूरा नाम कन्फ़र्म कर सकते हैं?",
-      "timestamp": "2025-08-03T00:00:16"
+      "text": "Main Rajesh Verma ji ke karyalay se bol rahi hoon, didi. Unhone hi kaha hai ki hum gaon gaon phone karke asli dikkaton ko samjhein. Abhi hum Khagaria ke logon se sun rahe hain ki sabse bada mudda yahan Embarkment seepage, Cattle disease aur Input subsidy hai. Aapke hisaab se sabse bada dikkat ka hai?",
+      "timestamp": "2025-08-03T00:00:30"
     },
     {
       "speaker": "user",
-      "text": "Rachit Gupta.",
-      "timestamp": "2025-08-03T00:00:21"
+      "text": "Ji, sabse bada dikkat hai Embarkment seepage. Har saal ee problem hota hai. Jab paani aawat hai toh sab duba dewat hai, khet kharab ho jaat hai, ghar-duar me paani ghus jaat hai. Sarkari aalok bhi nai aawat hain.",
+      "timestamp": "2025-08-03T00:00:55"
     },
     {
       "speaker": "ai",
-      "text": "मैं स्पेल करती हूँ, R-A-C-H-I-T, G-U-P-T-A, सही है?",
-      "timestamp": "2025-08-03T00:00:22"
+      "text": "Ji haan, sahi kaha aapne. Hum aapka dukh samajh sakte hain. Yeh samasya itni purani hai aur is par kisi ne dhyan nahi diya. Lekin Rajesh ji ne Sansad me ise uthaya hai. Unka kehna hai ki bina Embarkment seepage ke hal ke, log bahut pareshaan rahenge. Unhone toh department se kaha hai ki iska turant hal nikala jaye.",
+      "timestamp": "2025-08-03T00:01:20"
     },
     {
       "speaker": "user",
-      "text": "Bilkul sahi hai.",
-      "timestamp": "2025-08-03T00:00:32"
+      "text": "Lekin abhi tak to kuch hua nai hai didi. Bas baatein hi hoti hain. Kheti ka nuksaan har saal jhelna padta hai. Bahut tension rehta hai.",
+      "timestamp": "2025-08-03T00:01:50"
     },
     {
       "speaker": "ai",
-      "text": "ठीक है. आपकी डेट ऑफ बर्थ क्या है?",
-      "timestamp": "2025-08-03T00:00:33"
+      "text": "Haan, aap sahi bol rahe hain. Hum aapka gussa samajh rahe hain, aur aapka pareshaani bhi. Lekin abhi file department me hai aur Rajesh ji khud monitoring kar rahe hain. Jaise abhi unhone Cattle disease ka issue bhi uthaya – kyunki yeh gaon ke liye bahut zaruri hai. Pshu dhan hi toh kisan ki sabse badi sampatti hoti hai.",
+      "timestamp": "2025-08-03T00:02:10"
     },
     {
       "speaker": "user",
-      "text": "Date of birth hai 20 December 2004.",
-      "timestamp": "2025-08-03T00:00:40"
+      "text": "Haan, Cattle disease ka bhi dikkat hai. Har ghar me baat hota hai iske upar. Hamari ek gaay mar gayi pichle mahine. Ilaaj ka paisa bhi nai milta.",
+      "timestamp": "2025-08-03T00:02:30"
     },
     {
       "speaker": "ai",
-      "text": "2-0-1-2-2004,",
-      "timestamp": "2025-08-03T00:00:44"
-    },
-    {
-      "speaker": "ai",
-      "text": "सही है?",
-      "timestamp": "2025-08-03T00:00:47"
-    },
-    {
-      "speaker": "ai",
-      "text": "जी, आपका एप्लिकेशन नंबर क्या है?",
-      "timestamp": "2025-08-03T00:00:52"
+      "text": "Bilkul, bilkul. Rajesh ji isi liye toh veterinary camps aur vaccination drives ke liye sarkar se request kar rahe hain. Aur woh yeh bhi chahte hain ki Input subsidy par kisan ko turant fayda mile. Aapke jaise kisanon ko beej, khaad, aur anya cheezon par madad milni chahiye.",
+      "timestamp": "2025-08-03T00:02:50"
     },
     {
       "speaker": "user",
-      "text": "A-B-1-2-3-4-C-D",
-      "timestamp": "2025-08-03T00:00:58"
+      "text": "Ee ta bahut accha baat hai. Par Rajesh ji gaon kab aawat hain? Hume unse milna hai aur apni baat rakhni hai.",
+      "timestamp": "2025-08-03T00:03:20"
     },
     {
       "speaker": "ai",
-      "text": "ठीक है.",
-      "timestamp": "2025-08-03T00:01:06"
-    },
-    {
-      "speaker": "ai",
-      "text": "आपका जेंडर क्या है?",
-      "timestamp": "2025-08-03T00:01:22"
+      "text": "Ji, agle hafte unka karyakram hai Baheri market me. Aap wahan par aayiye, unse milne ka mauka milega. Aap apna sujhav bhi khud unko bata sakte hain. Woh aapke liye hi kaam kar rahe hain.",
+      "timestamp": "2025-08-03T00:03:40"
     },
     {
       "speaker": "user",
-      "text": "mel",
-      "timestamp": "2025-08-03T00:01:26"
+      "text": "Theek hai didi. Hum milenge. Hum apne padosiyon ko bhi bata denge. Sabhi aayenge.",
+      "timestamp": "2025-08-03T00:04:00"
     },
     {
       "speaker": "ai",
-      "text": "ठीक है. मोबाइल नंबर कन्फ़र्म करें?",
-      "timestamp": "2025-08-03T00:01:30"
+      "text": "Bahut accha. Humne likh liya – Khagaria me sabse bada mudda hai Embarkment seepage, Cattle disease aur Input subsidy. Rajesh ji tak hum turant pahuncha denge. Aapke jaise logon ka sahyog unke liye bahut mahatvapurn hai.",
+      "timestamp": "2025-08-03T00:04:20"
     },
     {
       "speaker": "user",
-      "text": "nau aath nau teen ek aath chaar saat chaar do",
-      "timestamp": "2025-08-03T00:02:02"
+      "text": "Dhanyawaad didi.",
+      "timestamp": "2025-08-03T00:04:35"
     },
     {
       "speaker": "ai",
-      "text": "ठीक है?",
-      "timestamp": "2025-08-03T00:02:34"
+      "text": "Ji, namaskar bhaiya. Aapke baat Rajesh ji ko batayenge.",
+      "timestamp": "2025-08-03T00:04:50"
     },
     {
       "speaker": "user",
-      "text": "ṭhīk hai.",
-      "timestamp": "2025-08-03T00:02:36"
-    },
-    {
-      "speaker": "ai",
-      "text": "आपकी ईमेल आईडी?",
-      "timestamp": "2025-08-03T00:02:38"
-    },
-    {
-      "speaker": "user",
-      "text": "2004.racgit.gupta@gmail.com",
-      "timestamp": "2025-08-03T00:02:42"
+      "text": "Namaskar.",
+      "timestamp": "2025-08-03T00:05:00"
     }
   ]
 }
