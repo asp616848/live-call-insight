@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { LucideIcon } from 'lucide-react';
+import { TrendIndicator } from './TrendIndicator';
 
 interface MetricsCardProps {
   title: string;
@@ -30,11 +31,7 @@ export const MetricsCard = ({
     red: 'from-red-danger/20 to-red-danger/5 border-red-danger/30 text-red-danger',
   };
 
-  const trendColors = {
-    up: 'text-green-success',
-    down: 'text-red-danger',
-    neutral: 'text-muted-foreground',
-  };
+  // Removed emoji bubble; use shadcn-like TrendIndicator
 
   return (
     <motion.div
@@ -44,8 +41,8 @@ export const MetricsCard = ({
       transition={{ duration: 0.5, delay }}
       whileHover={{ y: -5 }}
     >
-      {/* Background gradient */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${colorClasses[color]} opacity-50 group-hover:opacity-70 transition-opacity duration-300`} />
+  {/* Background gradient */}
+  <div className={`absolute inset-0 bg-gradient-to-br ${colorClasses[color]} opacity-40 group-hover:opacity-60 transition-opacity duration-300`} />
       
       {/* Content */}
       <div className="relative z-10">
@@ -69,30 +66,15 @@ export const MetricsCard = ({
           )}
 
           {trendValue && (
-            <motion.div
-              className={`text-xs ${trendColors[trend]} flex items-center gap-1`}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: delay + 0.4 }}
-            >
-              <span className="inline-block">
-                {trend === 'up' && '↗️'}
-                {trend === 'down' && '↘️'}
-                {trend === 'neutral' && '➡️'}
-              </span>
-              {trendValue}
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: delay + 0.4 }}>
+              <TrendIndicator direction={trend} value={trendValue} />
             </motion.div>
           )}
         </div>
       </div>
 
       {/* Hover glow effect */}
-      <motion.div
-        className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300"
-        style={{
-          background: `radial-gradient(circle at center, hsl(var(--${color === 'purple' ? 'purple-glow' : color === 'cyan' ? 'cyan-accent' : 'green-success'})) 0%, transparent 70%)`
-        }}
-      />
+  <motion.div className="absolute inset-0 opacity-0 group-hover:opacity-15 transition-opacity duration-300" />
     </motion.div>
   );
 };
