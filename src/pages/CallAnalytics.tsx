@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ChevronDown, Filter, Download, Play, Pause, Phone, User, Clock, BarChart3, Terminal } from "lucide-react";
+import { ChevronDown, Filter, Download, Play, Pause, Phone, User, Clock, BarChart3, Terminal, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -44,7 +44,9 @@ interface SentimentPoint { index: number; score: number }
 interface SentimentFlow { user: SentimentPoint[]; ai: SentimentPoint[]; }
 
 const formatDuration = (seconds: number) => {
-    if (seconds === null || seconds === undefined) return "N/A";
+	if (seconds === null || seconds === undefined) {
+		return "N/A";
+	}
     const m = Math.floor(seconds / 60);
     const s = Math.floor(seconds % 60);
     return `${m}m ${s}s`;
@@ -81,7 +83,9 @@ export default function CallAnalytics() {
 
 	useEffect(() => {
 		async function fetchSentiment() {
-			if(!selectedCall) return;
+			if(!selectedCall) {
+				return;
+			}
 			setSentimentLoading(true);
 			setSentimentError(null);
 			setSentimentFlow(null);
@@ -96,9 +100,13 @@ export default function CallAnalytics() {
 						: `${base}.json`;
 
 				const res = await apiFetch(`/sentiment_flow/${encodeURIComponent(jsonName)}`);
-				if(!res.ok) throw new Error('Failed to fetch sentiment flow');
+				if(!res.ok) {
+					throw new Error('Failed to fetch sentiment flow');
+				}
 				const data = await res.json();
-				if(data.error) throw new Error(data.error);
+				if(data.error) {
+					throw new Error(data.error);
+				}
 				setSentimentFlow(data);
 			} catch(e:any){
 				setSentimentError(e.message || 'Failed to load sentiment flow');
@@ -138,7 +146,9 @@ export default function CallAnalytics() {
 	const avgAI = aiSeries.length? (aiSeries.reduce((s,x)=>s+x.score,0)/aiSeries.length).toFixed(2):'–';
 
 	const customTooltip = ({active, payload, label}: any) => {
-		if(!active || !payload?.length) return null;
+		if(!active || !payload?.length) {
+			return null;
+		}
 		const u = payload.find((p:any)=>p.dataKey==='user');
 		const ua = payload.find((p:any)=>p.dataKey==='userAvg');
 		const a = payload.find((p:any)=>p.dataKey==='ai');
@@ -320,6 +330,12 @@ export default function CallAnalytics() {
 											className="mt-4 h-[calc(100%-50px)]"
 										>
 											<div className="space-y-4 overflow-y-auto h-full">
+												{/* Privacy indicator */}
+												<div className="flex items-center gap-2 text-xs text-muted-foreground">
+													<Lock className="h-3.5 w-3.5" />
+													<span>Private conversation</span>
+												</div>
+
 												{selectedCall.conversation.map((msg, index) => (
 													<motion.div
 														key={index}

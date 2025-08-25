@@ -106,7 +106,7 @@ function normalizeDistrictName(name: string | undefined | null) {
   return (name ?? '').toString().trim().toLowerCase();
 }
 
-const StatCard = ({ title, value, icon: Icon, color }) => (
+const StatCard = ({ title, value, icon: Icon, color, caption }: { title: string; value: string; icon: any; color: string; caption?: string }) => (
   <motion.div
     className="glass rounded-2xl p-6 flex items-center gap-6"
     whileHover={{ scale: 1.03 }}
@@ -120,6 +120,9 @@ const StatCard = ({ title, value, icon: Icon, color }) => (
     <div>
       <p className="text-muted-foreground text-lg">{title}</p>
       <h3 className="text-4xl font-bold">{value}</h3>
+      {caption ? (
+        <p className="text-sm text-muted-foreground mt-1">{caption}</p>
+      ) : null}
     </div>
   </motion.div>
 );
@@ -429,9 +432,9 @@ export default function GeoAnalytics() {
 
       {/* Top Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <StatCard title="High Concern Districts" value={highCount.toString()} icon={AlertTriangle} color="bg-red-500" />
-        <StatCard title="Avg. Sentiment Trend" value="+1.2%" icon={TrendingUp} color="bg-green-500" />
-        <StatCard title="Total Calls Analyzed" value={totalCalls.toLocaleString()} icon={Users} color="bg-blue-500" />
+  <StatCard title="High Concern Districts" value={highCount.toString()} icon={AlertTriangle} color="bg-red-500" />
+  <StatCard title="Avg. Sentiment Trend" value="+1.2%" icon={TrendingUp} color="bg-green-400" caption="up from today" />
+  <StatCard title="Total Calls Analyzed" value={totalCalls.toLocaleString()} icon={Users} color="bg-blue-500" />
       </div>
 
       {/* Main Content */}
