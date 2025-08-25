@@ -52,6 +52,14 @@ const formatDuration = (seconds: number) => {
     return `${m}m ${s}s`;
 };
 
+// Truncate helper
+const truncate = (text: string, length: number) => {
+	if (!text) {
+		return '';
+	}
+	return text.length > length ? `${text.slice(0, length)}...` : text;
+};
+
 export default function CallAnalytics() {
 	const [calls, setCalls] = useState<Call[]>([]);
 	const [selectedCall, setSelectedCall] = useState<Call | null>(null);
@@ -255,7 +263,7 @@ export default function CallAnalytics() {
 														<User className="h-4 w-4 text-primary-foreground" />
 													</div>
 													<div className="min-w-0">
-														<p className="font-medium text-sm truncate" title={call.summary.overview}>{call.summary.overview}</p>
+														<p className="font-medium text-sm truncate" title={call.summary.overview}>{truncate(call.summary.overview, 20)}</p>
 														<p className="text-xs text-muted-foreground truncate" title={call.summary.stream_sid}>
 															{call.summary.stream_sid}
 														</p>
@@ -336,35 +344,38 @@ export default function CallAnalytics() {
 													<span>Private conversation</span>
 												</div>
 
-												{selectedCall.conversation.map((msg, index) => (
-													<motion.div
-														key={index}
-														initial={{ opacity: 0, y: 10 }}
-														animate={{ opacity: 1, y: 0 }}
-														transition={{ delay: index * 0.1 }}
-														className={`flex gap-3 ${
-															msg.speaker === "user"
-																? "justify-start"
-																: "justify-start"
-														}`}
-													>
-														<div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-primary flex items-center justify-center">
-															{msg.speaker === "user" ? "🗣️" : "🤖"}
-														</div>
-														<div
-															className={`max-w-[80%] p-3 rounded-lg ${
+												{/* Blurred conversation content */}
+												<div className="space-y-4 pointer-events-none select-none blur-md" aria-hidden="true">
+													{selectedCall.conversation.map((msg, index) => (
+														<motion.div
+															key={index}
+															initial={{ opacity: 0, y: 10 }}
+															animate={{ opacity: 1, y: 0 }}
+															transition={{ delay: index * 0.1 }}
+															className={`flex gap-3 ${
 																msg.speaker === "user"
-																	? "bg-muted/50 text-foreground"
-																	: "bg-primary/10 text-foreground border border-primary/20"
+																	? "justify-start"
+																	: "justify-start"
 															}`}
 														>
-															<p className="text-sm mb-1">{msg.text}</p>
-															<p className="text-xs text-muted-foreground">
-																{new Date(msg.timestamp).toLocaleTimeString()}
-															</p>
-														</div>
-													</motion.div>
-												))}
+															<div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-primary flex items-center justify-center">
+																{msg.speaker === "user" ? "🗣️" : "🤖"}
+															</div>
+															<div
+																className={`max-w-[80%] p-3 rounded-lg ${
+																	msg.speaker === "user"
+																		? "bg-muted/50 text-foreground"
+																		: "bg-primary/10 text-foreground border border-primary/20"
+																}`}
+															>
+																<p className="text-sm mb-1">{msg.text}</p>
+																<p className="text-xs text-muted-foreground">
+																	{new Date(msg.timestamp).toLocaleTimeString()}
+																</p>
+															</div>
+														</motion.div>
+													))}
+												</div>
 											</div>
 										</TabsContent>
 
