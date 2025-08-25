@@ -202,7 +202,7 @@ export default function CallAnalytics() {
 
 				<div className="grid grid-cols-1 lg:grid-cols-5 gap-6 h-[calc(100vh-200px)]">
 					{/* Call List Panel */}
-					{/* <motion.div
+					<motion.div
 						initial={{ opacity: 0, x: -20 }}
 						animate={{ opacity: 1, x: 0 }}
 						className="lg:col-span-2"
@@ -271,7 +271,7 @@ export default function CallAnalytics() {
 								)}
 							</div>
 						</Card>
-					</motion.div> */}
+					</motion.div>
 
 					{/* Call Detail Panel */}
 					<motion.div
