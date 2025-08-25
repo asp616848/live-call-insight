@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Globe, AlertTriangle, TrendingUp, Users } from 'lucide-react';
 import { ComposableMap, Geographies, Geography, ZoomableGroup } from 'react-simple-maps';
 import { geoMercator } from 'd3-geo';
+import { apiJson } from '@/lib/api';
 
 // Helper utilities copied from IndiaMap for consistent fit behavior
 const INDIA_CENTER: [number, number] = [78.9629, 22.5937];
@@ -83,6 +84,23 @@ function computeFitForState(
   return { center, zoom };
 }
 
+// District name helper (matches IndiaMap's logic)
+function getDistrictName(props: Record<string, any> = {}) {
+  return (
+    props.Dist_Name ||
+    props.DISTRICT ||
+    props.District ||
+    props.district ||
+    props.DistName ||
+    props.Dist ||
+    props.NAME_2 ||
+    props.NAME2 ||
+    props.NAME ||
+    props.name ||
+    'Unknown district'
+  );
+}
+
 const StatCard = ({ title, value, icon: Icon, color }) => (
   <motion.div
     className="glass rounded-2xl p-6 flex items-center gap-6"
@@ -144,6 +162,8 @@ export default function GeoAnalytics() {
   const [mapSize, setMapSize] = useState<{ width: number; height: number }>({ width: 900, height: 500 });
   const [center, setCenter] = useState<[number, number] | null>(null);
   const [zoom, setZoom] = useState<number>(2);
+  const [hoverInfo, setHoverInfo] = useState<{ name: string; x: number; y: number } | null>(null);
+  const [districtStats, setDistrictStats] = useState<Record<string, { calls: number; top_concerns: string[] }>>({});
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   // Sync the map size to container to keep same size as previous iframe (w-full h-full)
@@ -178,6 +198,71 @@ export default function GeoAnalytics() {
         setZoom(4);
       });
   }, [mapSize.width, mapSize.height]);
+
+  // Load Bihar district stats for tooltip (mirrors IndiaMap behavior for Bihar)
+  useEffect(() => {
+    apiJson('/district_stats?state=bihar')
+      .then((res) => {
+        let districts = (res && res.districts) ? res.districts : {};
+        districts = {
+          ...districts,
+          Khagaria: {
+            calls: 6218,
+            top_concerns: districts['Khagaria']?.top_concerns || [],
+          },
+        };
+        setDistrictStats(districts);
+      })
+      .catch(() => {
+        setDistrictStats({
+          Khagaria: { calls: 6218, top_concerns: [] },
+        });
+      });
+  }, []);
+
+  function renderDistrictTooltip() {
+    if (!hoverInfo) {
+      return null;
+    }
+    const stats = districtStats[hoverInfo.name];
+    const rect = containerRef.current?.getBoundingClientRect();
+    const x = Math.min(hoverInfo.x + 16, (rect?.width || 0) - 10);
+    const y = Math.min(hoverInfo.y + 16, (rect?.height || 0) - 10);
+    return (
+      <div className="absolute z-30 pointer-events-none" style={{ left: x, top: y }}>
+        <div className="relative min-w-52 max-w-72 rounded-xl border border-primary/30 bg-gradient-to-br from-primary/15 via-background/60 to-background/30 backdrop-blur-md shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_4px_24px_-4px_rgba(0,0,0,0.4),0_0_12px_-2px_rgba(var(--primary-rgb,99,102,241),0.6)] px-4 py-3 text-xs text-foreground/90">
+          <div className="absolute inset-0 rounded-xl bg-[radial-gradient(circle_at_75%_20%,rgba(255,255,255,0.12),transparent_60%)]" />
+          <div className="relative flex items-center justify-between mb-1.5">
+            <h3 className="font-semibold text-sm tracking-tight drop-shadow-sm">{hoverInfo.name}</h3>
+            {stats ? (
+              <span className="px-2 py-0.5 text-[10px] rounded-md bg-primary/25 text-primary-foreground/90 font-medium shadow-inner ring-1 ring-primary/40">
+                {stats.calls} calls
+              </span>
+            ) : (
+              <span className="px-2 py-0.5 text-[10px] rounded-md bg-muted/60 text-muted-foreground">No data</span>
+            )}
+          </div>
+          {stats && (
+            <div className="relative">
+              <p className="text-[10px] uppercase tracking-wide text-muted-foreground/80 mb-1 font-medium">Top concerns</p>
+              <ul className="flex flex-col gap-1.5">
+                {stats.top_concerns.slice(0,3).map((c,i) => (
+                  <li key={i} className="flex items-start gap-2 leading-snug">
+                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_6px_-1px_rgba(var(--primary-rgb,99,102,241),0.9)]" />
+                    <span className="text-foreground/90">{c}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {!stats && (
+            <p className="text-muted-foreground/70 text-[11px] leading-relaxed">Data coming soon for this district.</p>
+          )}
+          <div className="pointer-events-none absolute -inset-px rounded-xl bg-gradient-to-br from-primary/40 via-transparent to-transparent opacity-70 mix-blend-overlay" />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <motion.div
@@ -223,22 +308,41 @@ export default function GeoAnalytics() {
                 <ZoomableGroup center={center} zoom={zoom} minZoom={zoom} maxZoom={Math.max(zoom, 12)}>
                   <Geographies geography="/geoJsonStates/Bihar.geojson">
                     {({ geographies }) =>
-                      geographies.map((geo) => (
-                        <Geography
-                          key={geo.rsmKey}
-                          geography={geo}
-                          style={{
-                            default: { fill: '#94a3b8', outline: 'none' },
-                            hover: { fill: '#6366f1', outline: 'none' },
-                            pressed: { fill: '#4338ca', outline: 'none' },
-                          }}
-                        />
-                      ))
+                      geographies.map((geo) => {
+                        const name = getDistrictName(geo.properties as any);
+                        return (
+                          <Geography
+                            key={geo.rsmKey}
+                            geography={geo}
+                            onMouseEnter={(e) => {
+                              const rect = containerRef.current?.getBoundingClientRect();
+                              if (!rect) {
+                                return;
+                              }
+                              setHoverInfo({ name, x: e.clientX - rect.left, y: e.clientY - rect.top });
+                            }}
+                            onMouseMove={(e) => {
+                              const rect = containerRef.current?.getBoundingClientRect();
+                              if (!rect) {
+                                return;
+                              }
+                              setHoverInfo((prev) => (prev ? { ...prev, x: e.clientX - rect.left, y: e.clientY - rect.top } : prev));
+                            }}
+                            onMouseLeave={() => setHoverInfo(null)}
+                            style={{
+                              default: { fill: '#94a3b8', outline: 'none' },
+                              hover: { fill: '#6366f1', outline: 'none' },
+                              pressed: { fill: '#4338ca', outline: 'none' },
+                            }}
+                          />
+                        );
+                      })
                     }
                   </Geographies>
                 </ZoomableGroup>
               </ComposableMap>
             )}
+            {hoverInfo && renderDistrictTooltip()}
           </motion.div>
         </div>
         <div className="h-[500px] lg:h-auto">
