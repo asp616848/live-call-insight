@@ -1,0 +1,13 @@
+Parameter,Value,Status,Timestamp,AgentID
+"Sentiment Score",0.85,"Normal","2025-08-26T10:00:00Z","AI-01"
+"AI Response Latency (ms)",250,"Normal","2025-08-26T10:00:05Z","AI-01"
+"User Silence Ratio",0.12,"Warning","2025-08-26T10:00:10Z","AI-01"
+"Interruption Rate",0.05,"Normal","2025-08-26T10:00:15Z","AI-01"
+"Concern Keyword Hits",3,"Elevated","2025-08-26T10:00:20Z","AI-01"
+"Task Completion",0.92,"Normal","2025-08-26T10:00:25Z","AI-01"
+"Sentiment Score",0.78,"Normal","2025-08-26T10:01:00Z","AI-02"
+"AI Response Latency (ms)",310,"Warning","2025-08-26T10:01:05Z","AI-02"
+"User Silence Ratio",0.08,"Normal","2025-08-26T10:01:10Z","AI-02"
+"Interruption Rate",0.07,"Normal","2025-08-26T10:01:15Z","AI-02"
+"Concern Keyword Hits",1,"Normal","2025-08-26T10:01:20Z","AI-02"
+"Task Completion",0.95,"Normal","2025-08-26T10:01:25Z","AI-02"
