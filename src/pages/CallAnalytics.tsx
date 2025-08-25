@@ -207,7 +207,7 @@ export default function CallAnalytics() {
 						animate={{ opacity: 1, x: 0 }}
 						className="lg:col-span-2"
 					>
-						<Card className="h-full p-6">
+						{/* <Card className="h-full p-6">
 							<div className="flex items-center justify-between mb-4">
 								<h2 className="text-xl font-semibold">Recent Calls</h2>
 								{ !loading && <Badge variant="outline">{calls.length} calls</Badge> }
@@ -270,7 +270,7 @@ export default function CallAnalytics() {
 									))
 								)}
 							</div>
-						</Card>
+						</Card> */}
 					</motion.div>
 
 					{/* Call Detail Panel */}
