@@ -219,7 +219,7 @@ const LangExtractPage = () => {
                       </Table>
                     </ScrollArea>
                   </div>
-                  <div>
+                  {/* <div>
                     <h3 className="font-semibold mb-2">
                       Transcript Visualization
                     </h3>
@@ -235,7 +235,7 @@ const LangExtractPage = () => {
                         <p>No visualization available.</p>
                       )}
                     </ScrollArea>
-                  </div>
+                  </div> */}
                 </div>
               )}
             </CardContent>
