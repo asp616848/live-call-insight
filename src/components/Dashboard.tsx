@@ -347,7 +347,7 @@ export const Dashboard = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <MetricsCard
               title="Total Calls"
-              value="42546"
+              value="23462"
               subtitle="All processed calls"
               icon={Phone}
               trend="up"

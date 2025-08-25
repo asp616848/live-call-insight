@@ -15,7 +15,7 @@
     "Jehanabad": {"calls": 58, "top_concerns": ["Irrigation pump", "Manure availability", "Market price"]},
     "Kaimur (Bhabua)": {"calls": 62, "top_concerns": ["Forest produce", "Irrigation", "Fertilizer"]},
     "Katihar": {"calls": 149, "top_concerns": ["River erosion", "Maize pest", "Storage loss"]},
-    "Khagaria": {"calls": 81, "top_concerns": ["Embarkment seepage", "Cattle disease", "Input subsidy"]},
+    "Khagaria": {"calls": 6613, "top_concerns": ["Embarkment seepage", "Cattle disease", "Input subsidy"]},
     "Kishanganj": {"calls": 90, "top_concerns": ["Tea pest", "Flood warning", "Seed distribution"]},
     "Lakhisarai": {"calls": 54, "top_concerns": ["Canal gate", "Loan delay", "Soil test"]},
     "Madhepura": {"calls": 102, "top_concerns": ["Flood recession", "Paddy variety", "Insurance claim"]},
