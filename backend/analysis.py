@@ -4,6 +4,7 @@ import textwrap
 import hashlib
 import langextract as lx
 from dotenv import load_dotenv
+import re
 
 load_dotenv()
 API_KEY = os.getenv("GEMINI_API_KEY")
@@ -137,11 +138,55 @@ def analyze_conversation_with_langextract(filepath):
     
     print(f"Processing new analysis for: {os.path.basename(filepath)}")
     
-    with open(filepath, "r", encoding="utf-8") as f:
-        data = json.load(f)
-    
-    conversation = data.get("conversation", [])
-    summary_metrics = data.get("summary", {})
+    conversation = []
+    summary_metrics = {}
+    _, ext = os.path.splitext(filepath)
+    if ext.lower() == ".json":
+        with open(filepath, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        conversation = data.get("conversation", [])
+        summary_metrics = data.get("summary", {})
+    else:
+        # Parse plain text transcript and synthesize a conversation array
+        with open(filepath, "r", encoding="utf-8") as f:
+            text = f.read()
+
+        # Basic heuristic: lines with "Villager:" are user, lines with named caller/agent are ai
+        # We'll capture speaker prefixes like "Villager:" or "Sumitra Devi:" at line starts.
+        lines = [ln.strip() for ln in text.splitlines()]
+        speaker_re = re.compile(r"^(?P<speaker>[A-Za-z .]+):\s*(?P<msg>.*)$")
+        last_speaker = None
+        for ln in lines:
+            if not ln:
+                continue
+            m = speaker_re.match(ln)
+            if m:
+                raw_speaker = m.group("speaker").strip().lower()
+                msg = m.group("msg").strip()
+                if not msg:
+                    continue
+                # Map to 'user' or 'ai'
+                if "villager" in raw_speaker or "user" in raw_speaker:
+                    speaker = "user"
+                else:
+                    speaker = "ai"
+                conversation.append({"speaker": speaker, "text": msg})
+                last_speaker = speaker
+            else:
+                # Continuation of previous speaker or assign alternately
+                if last_speaker is None:
+                    last_speaker = "user"
+                conversation.append({"speaker": last_speaker, "text": ln})
+        # Minimal metrics when none available
+        user_turns = sum(1 for m in conversation if m.get("speaker") == "user")
+        ai_turns = sum(1 for m in conversation if m.get("speaker") == "ai")
+        summary_metrics = {
+            "duration_seconds": None,
+            "average_ai_latency": None,
+            "noise_count": 0,
+            "total_user_turns": user_turns,
+            "total_ai_turns": ai_turns,
+        }
 
     # Extract only user messages for analysis (concerns come from users)
     user_messages = [msg for msg in conversation if msg.get("speaker") == "user"]

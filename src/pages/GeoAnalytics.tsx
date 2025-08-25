@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Globe, AlertTriangle, TrendingUp, Users } from 'lucide-react';
 import { ComposableMap, Geographies, Geography, ZoomableGroup } from 'react-simple-maps';
@@ -101,6 +101,11 @@ function getDistrictName(props: Record<string, any> = {}) {
   );
 }
 
+// Normalize district names for reliable lookups
+function normalizeDistrictName(name: string | undefined | null) {
+  return (name ?? '').toString().trim().toLowerCase();
+}
+
 const StatCard = ({ title, value, icon: Icon, color }) => (
   <motion.div
     className="glass rounded-2xl p-6 flex items-center gap-6"
@@ -120,16 +125,42 @@ const StatCard = ({ title, value, icon: Icon, color }) => (
 );
 
 const ConcernHotspotList = () => {
+  // Updated hotspots from user-provided data
   const hotspots = [
-    { district: 'Patna', concern: 'Loan Repayment', level: 'High' },
-    { district: 'Muzaffarpur', concern: 'Irrigation', level: 'High' },
-    { district: 'Gaya', concern: 'Crop Prices', level: 'Medium' },
-    { district: 'Darbhanga', concern: 'Electricity', level: 'Medium' },
-    { district: 'Bhagalpur', concern: 'Fertilizer Costs', level: 'Low' },
+    {
+      district: 'Khagaria',
+      concerns: ['Embankment seepage', 'Cattle disease', 'Input subsidy'],
+      level: 'High' as const,
+      calls: 6218,
+    },
+    {
+      district: 'Madhepura',
+      concerns: ['Flood recession', 'Paddy variety', 'Insurance claim'],
+      level: 'High' as const,
+      calls: 1258,
+    },
+    {
+      district: 'Darbhanga',
+      concerns: ['Flood relief', 'School infrastructure', 'Health staff shortage'],
+      level: 'Medium' as const,
+      calls: 501,
+    },
+    {
+      district: 'Muzaffarpur',
+      concerns: ['Litchi disease', 'Irrigation diesel', 'Health outbreak'],
+      level: 'Medium' as const,
+      calls: 501,
+    },
+    {
+      district: 'Patna',
+      concerns: ['Urban flooding', 'Seed scam', 'Land record'],
+      level: 'Low' as const,
+      calls: 50,
+    },
   ];
 
   return (
-    <motion.div 
+    <motion.div
       className="glass rounded-2xl p-6 h-full"
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
@@ -137,19 +168,26 @@ const ConcernHotspotList = () => {
     >
       <h3 className="text-xl font-bold mb-4 gradient-text">Top Concern Hotspots</h3>
       <div className="space-y-4">
-        {hotspots.map(spot => (
-          <div key={spot.district} className="flex justify-between items-center bg-muted/30 p-3 rounded-lg">
-            <div>
-              <p className="font-semibold">{spot.district}</p>
-              <p className="text-sm text-muted-foreground">{spot.concern}</p>
+        {hotspots.map((spot) => (
+          <div key={spot.district} className="bg-muted/30 p-4 rounded-lg">
+            <div className="flex items-center justify-between mb-1.5">
+              <div className="flex items-center gap-2">
+                <p className="font-semibold">{spot.district}</p>
+                <span className="text-xs text-muted-foreground">📞 {spot.calls.toLocaleString()} calls</span>
+              </div>
+              <div
+                className={`px-3 py-1 text-xs rounded-full ${
+                  spot.level === 'High'
+                    ? 'bg-red-500/20 text-red-400'
+                    : spot.level === 'Medium'
+                    ? 'bg-yellow-500/20 text-yellow-400'
+                    : 'bg-green-500/20 text-green-400'
+                }`}
+              >
+                {spot.level}
+              </div>
             </div>
-            <div className={`px-3 py-1 text-sm rounded-full ${
-              spot.level === 'High' ? 'bg-red-500/20 text-red-400' :
-              spot.level === 'Medium' ? 'bg-yellow-500/20 text-yellow-400' :
-              'bg-green-500/20 text-green-400'
-            }`}>
-              {spot.level}
-            </div>
+            <p className="text-sm text-muted-foreground">{spot.concerns.join(', ')}</p>
           </div>
         ))}
       </div>
@@ -163,8 +201,66 @@ export default function GeoAnalytics() {
   const [center, setCenter] = useState<[number, number] | null>(null);
   const [zoom, setZoom] = useState<number>(2);
   const [hoverInfo, setHoverInfo] = useState<{ name: string; x: number; y: number } | null>(null);
-  const [districtStats, setDistrictStats] = useState<Record<string, { calls: number; top_concerns: string[] }>>({});
+  const [districtStats, setDistrictStats] = useState<Record<string, { calls: number; top_concerns: string[]; level?: 'High' | 'Medium' | 'Low' }>>({});
+  const [highCount, setHighCount] = useState<number>(0);
+  const [totalCalls, setTotalCalls] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement | null>(null);
+
+  // Percentile-based heatmap scale (green -> red), use 95th percentile as the effective max
+  const [callsP0, callsP95] = useMemo(() => {
+    const values = Object.values(districtStats).map((d) => d.calls || 0).filter((v) => v > 0);
+    if (values.length === 0) {
+      return [0, 1] as [number, number];
+    }
+    const sorted = [...values].sort((a, b) => a - b);
+    const p0 = sorted[0];
+    const p = 0.95;
+    const rank = (sorted.length - 1) * p;
+    const lowIdx = Math.floor(rank);
+    const highIdx = Math.min(sorted.length - 1, Math.ceil(rank));
+    const weight = rank - lowIdx;
+    const p95 = (1 - weight) * sorted[lowIdx] + weight * sorted[highIdx];
+    return [p0, p95 > 0 ? p95 : sorted[sorted.length - 1]] as [number, number];
+  }, [districtStats]);
+
+  function lerp(a: number, b: number, t: number) {
+    return a + (b - a) * t;
+  }
+
+  function hexToRgb(hex: string): [number, number, number] {
+    const m = hex.replace('#', '');
+    const full = m.length === 3 ? m.split('').map((c) => c + c).join('') : m;
+    const bigint = parseInt(full, 16);
+    const r = (bigint >> 16) & 255;
+    const g = (bigint >> 8) & 255;
+    const b = bigint & 255;
+    return [r, g, b];
+  }
+
+  function rgbToHex(r: number, g: number, b: number) {
+    const toHex = (v: number) => Math.max(0, Math.min(255, Math.round(v))).toString(16).padStart(2, '0');
+    return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+  }
+
+  // Map calls to a green->red gradient using percentile scale; zero/no data uses slate
+  function callsToColor(calls?: number) {
+    if (!Number.isFinite(calls) || !calls) {
+      return '#94a3b8';
+    }
+    const min = callsP0;
+    const max = callsP95;
+    if (max <= min) {
+      return '#ef4444';
+    }
+    const t = Math.max(0, Math.min(1, ((calls as number) - min) / (max - min)));
+  // Softer palette: emerald-100 -> red-300
+  const low = hexToRgb('#d1fae5'); // emerald-100
+  const high = hexToRgb('#fca5a5'); // red-300
+    const r = lerp(low[0], high[0], t);
+    const g = lerp(low[1], high[1], t);
+    const b = lerp(low[2], high[2], t);
+    return rgbToHex(r, g, b);
+  }
 
   // Sync the map size to container to keep same size as previous iframe (w-full h-full)
   useEffect(() => {
@@ -203,20 +299,71 @@ export default function GeoAnalytics() {
   useEffect(() => {
     apiJson('/district_stats?state=bihar')
       .then((res) => {
-        let districts = (res && res.districts) ? res.districts : {};
-        districts = {
-          ...districts,
-          Khagaria: {
+        const apiDistricts: Record<string, { calls?: number; top_concerns?: string[] }> = (res && res.districts) ? res.districts : {};
+        // Normalize keys from API
+        const normalized: Record<string, { calls: number; top_concerns: string[]; level?: 'High' | 'Medium' | 'Low' }> = {};
+        Object.entries(apiDistricts).forEach(([k, v]) => {
+          const key = normalizeDistrictName(k);
+          if (!key) {
+            return;
+          }
+          normalized[key] = {
+            calls: v?.calls ?? 0,
+            top_concerns: v?.top_concerns ?? [],
+          };
+        });
+
+        // Overlay with provided data (authoritative for these districts)
+        const provided: Record<string, { calls: number; top_concerns: string[]; level: 'High' | 'Medium' | 'Low' }> = {
+          [normalizeDistrictName('Khagaria')]: {
             calls: 6218,
-            top_concerns: districts['Khagaria']?.top_concerns || [],
+            top_concerns: normalized[normalizeDistrictName('Khagaria')]?.top_concerns?.length
+              ? normalized[normalizeDistrictName('Khagaria')].top_concerns
+              : ['Embankment seepage', 'Cattle disease', 'Input subsidy'],
+            level: 'High',
+          },
+          [normalizeDistrictName('Madhepura')]: {
+            calls: 1258,
+            top_concerns: ['Flood recession', 'Paddy variety', 'Insurance claim'],
+            level: 'High',
+          },
+          [normalizeDistrictName('Darbhanga')]: {
+            calls: 501,
+            top_concerns: ['Flood relief', 'School infrastructure', 'Health staff shortage'],
+            level: 'Medium',
+          },
+          [normalizeDistrictName('Muzaffarpur')]: {
+            calls: 501,
+            top_concerns: ['Litchi disease', 'Irrigation diesel', 'Health outbreak'],
+            level: 'Medium',
+          },
+          [normalizeDistrictName('Patna')]: {
+            calls: 50,
+            top_concerns: ['Urban flooding', 'Seed scam', 'Land record'],
+            level: 'Low',
           },
         };
-        setDistrictStats(districts);
+
+        const merged = { ...normalized, ...provided };
+        setDistrictStats(merged);
+
+        // Update top metrics
+        const high = Object.values(merged).filter((d) => d.level === 'High').length;
+        const sum = Object.values(merged).reduce((acc, d) => acc + (d.calls || 0), 0);
+        setHighCount(high);
+        setTotalCalls(sum);
       })
       .catch(() => {
-        setDistrictStats({
-          Khagaria: { calls: 6218, top_concerns: [] },
-        });
+        const fallback: Record<string, { calls: number; top_concerns: string[]; level: 'High' | 'Medium' | 'Low' }> = {
+          [normalizeDistrictName('Khagaria')]: { calls: 6218, top_concerns: ['Embankment seepage', 'Cattle disease', 'Input subsidy'], level: 'High' },
+          [normalizeDistrictName('Madhepura')]: { calls: 1258, top_concerns: ['Flood recession', 'Paddy variety', 'Insurance claim'], level: 'High' },
+          [normalizeDistrictName('Darbhanga')]: { calls: 501, top_concerns: ['Flood relief', 'School infrastructure', 'Health staff shortage'], level: 'Medium' },
+          [normalizeDistrictName('Muzaffarpur')]: { calls: 501, top_concerns: ['Litchi disease', 'Irrigation diesel', 'Health outbreak'], level: 'Medium' },
+          [normalizeDistrictName('Patna')]: { calls: 50, top_concerns: ['Urban flooding', 'Seed scam', 'Land record'], level: 'Low' },
+        };
+        setDistrictStats(fallback);
+        setHighCount(2);
+        setTotalCalls(6218 + 1258 + 501 + 501 + 50);
       });
   }, []);
 
@@ -224,7 +371,7 @@ export default function GeoAnalytics() {
     if (!hoverInfo) {
       return null;
     }
-    const stats = districtStats[hoverInfo.name];
+    const stats = districtStats[normalizeDistrictName(hoverInfo.name)];
     const rect = containerRef.current?.getBoundingClientRect();
     const x = Math.min(hoverInfo.x + 16, (rect?.width || 0) - 10);
     const y = Math.min(hoverInfo.y + 16, (rect?.height || 0) - 10);
@@ -246,7 +393,7 @@ export default function GeoAnalytics() {
             <div className="relative">
               <p className="text-[10px] uppercase tracking-wide text-muted-foreground/80 mb-1 font-medium">Top concerns</p>
               <ul className="flex flex-col gap-1.5">
-                {stats.top_concerns.slice(0,3).map((c,i) => (
+                {stats.top_concerns.slice(0, 3).map((c, i) => (
                   <li key={i} className="flex items-start gap-2 leading-snug">
                     <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_6px_-1px_rgba(var(--primary-rgb,99,102,241),0.9)]" />
                     <span className="text-foreground/90">{c}</span>
@@ -282,9 +429,9 @@ export default function GeoAnalytics() {
 
       {/* Top Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <StatCard title="High Concern Districts" value="3" icon={AlertTriangle} color="bg-red-500" />
+        <StatCard title="High Concern Districts" value={highCount.toString()} icon={AlertTriangle} color="bg-red-500" />
         <StatCard title="Avg. Sentiment Trend" value="+1.2%" icon={TrendingUp} color="bg-green-500" />
-        <StatCard title="Total Calls Analyzed" value="1,482" icon={Users} color="bg-blue-500" />
+        <StatCard title="Total Calls Analyzed" value={totalCalls.toLocaleString()} icon={Users} color="bg-blue-500" />
       </div>
 
       {/* Main Content */}
@@ -297,7 +444,7 @@ export default function GeoAnalytics() {
             transition={{ duration: 0.5, delay: 0.1 }}
             ref={containerRef}
           >
-            {center && (
+      {center && (
               <ComposableMap
                 projection="geoMercator"
                 projectionConfig={{ scale: BASE_SCALE, center: INDIA_CENTER }}
@@ -305,11 +452,14 @@ export default function GeoAnalytics() {
                 height={mapSize.height}
                 style={{ width: '100%', height: '100%' }}
               >
-                <ZoomableGroup center={center} zoom={zoom} minZoom={zoom} maxZoom={Math.max(zoom, 12)}>
+        <ZoomableGroup center={center} zoom={zoom} minZoom={zoom} maxZoom={Math.max(zoom, 12)}>
                   <Geographies geography="/geoJsonStates/Bihar.geojson">
                     {({ geographies }) =>
                       geographies.map((geo) => {
-                        const name = getDistrictName(geo.properties as any);
+            const name = getDistrictName(geo.properties as any);
+            const norm = normalizeDistrictName(name);
+            const calls = districtStats[norm]?.calls ?? 0;
+            const fillByCalls = callsToColor(calls);
                         return (
                           <Geography
                             key={geo.rsmKey}
@@ -330,8 +480,8 @@ export default function GeoAnalytics() {
                             }}
                             onMouseLeave={() => setHoverInfo(null)}
                             style={{
-                              default: { fill: '#94a3b8', outline: 'none' },
-                              hover: { fill: '#6366f1', outline: 'none' },
+                default: { fill: fillByCalls, outline: 'none', fillOpacity: 0.6 },
+                              hover: { fill: '#6366f1', outline: 'none', fillOpacity: 0.8 },
                               pressed: { fill: '#4338ca', outline: 'none' },
                             }}
                           />
@@ -342,6 +492,18 @@ export default function GeoAnalytics() {
                 </ZoomableGroup>
               </ComposableMap>
             )}
+            {/* Heatmap legend (0th -> 95th percentile) */}
+            <div className="absolute bottom-3 right-3 z-20 px-3 py-2 rounded-md border bg-background/80 backdrop-blur-md text-xs text-foreground/80">
+              <div className="mb-1 font-medium">Calls Heatmap</div>
+              <div className="flex items-center gap-2">
+                <span>{callsP0.toLocaleString()}</span>
+                <div
+                  className="h-2 w-24 rounded"
+                  style={{ background: 'linear-gradient(90deg, rgba(209,250,229,0.6) 0%, rgba(252,165,165,0.6) 100%)' }}
+                />
+                <span>{callsP95.toLocaleString()} (P95)</span>
+              </div>
+            </div>
             {hoverInfo && renderDistrictTooltip()}
           </motion.div>
         </div>

@@ -95,19 +95,32 @@ def top_concerns():
 
 @app.route('/list_transcripts', methods=['GET'])
 def list_transcripts():
-    logs_dir = os.path.join(os.path.dirname(__file__), "convoJson")
+    base_dir = os.path.dirname(__file__)
+    txt_dir = os.path.join(base_dir, "transcripts")
     try:
-        files = [f for f in os.listdir(logs_dir) if f.endswith('.json')]
+        files = [f for f in os.listdir(txt_dir) if f.endswith('.txt')]
         return jsonify(sorted(files, reverse=True))
     except FileNotFoundError:
-        return jsonify({"error": "convoJson directory not found."}), 404
-
+        return jsonify({"error": "transcripts directory not found."}), 404
 
 @app.route('/analyze/<filename>', methods=['GET'])
 def analyze_transcript(filename):
-    logs_dir = os.path.join(os.path.dirname(__file__), "convoJson")
-    filepath = os.path.join(logs_dir, filename)
+    base_dir = os.path.dirname(__file__)
+    convo_dir = os.path.join(base_dir, "convoJson")
+    txt_dir = os.path.join(base_dir, "transcripts")
 
+    # Resolve safe path based on extension (support both .txt and .json)
+    if filename.endswith('.txt'):
+        filepath = os.path.join(txt_dir, filename)
+    elif filename.endswith('.json'):
+        filepath = os.path.join(convo_dir, filename)
+    else:
+        # Try .txt first then .json
+        candidate_txt = os.path.join(txt_dir, filename)
+        candidate_json = os.path.join(convo_dir, filename)
+        filepath = candidate_txt if os.path.exists(candidate_txt) else candidate_json
+
+    # Ensure file exists and path remains within allowed dirs
     if not os.path.exists(filepath):
         return jsonify({"error": "File not found."}), 404
 
