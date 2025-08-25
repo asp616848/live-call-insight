@@ -442,7 +442,7 @@ export default function CallAnalytics() {
 														<div className="flex flex-col gap-4">
 															<Card className="p-4 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
 																<p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Avg User Sentiment</p>
-																<p className="text-3xl font-semibold bg-gradient-primary bg-clip-text text-transparent">{avgUser}</p>
+																<p className="text-3xl font-semibold bg-gradient-primary bg-clip-text">{avgUser}</p>
 															</Card>
 															<Card className="p-4 bg-gradient-to-br from-destructive/10 to-destructive/5 border-destructive/20">
 																<p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Avg AI Sentiment</p>
