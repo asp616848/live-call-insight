@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { apiFetch, apiJson } from '@/lib/api';
+import { apiJson } from '@/lib/api';
 import {
   Card,
   CardContent,
@@ -117,55 +117,7 @@ const LangExtractPage = () => {
             </CardContent>
           </Card>
 
-          {loading && (
-            <Card className="mt-4">
-              <CardHeader>
-                <CardTitle>Metrics</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <Skeleton className="h-4 w-3/4" />
-                <Skeleton className="h-4 w-1/2" />
-                <Skeleton className="h-4 w-2/3" />
-                <Skeleton className="h-4 w-3/4" />
-              </CardContent>
-            </Card>
-          )}
-
-          {analysis?.metrics && !loading && (
-            <Card className="mt-4">
-              <CardHeader>
-                <CardTitle>Call Metrics</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex justify-between">
-                    <span>Duration:</span>
-                    <strong>
-                      {analysis.metrics.duration_seconds?.toFixed(2)}s
-                    </strong>
-                  </li>
-                  <li className="flex justify-between">
-                    <span>Avg. AI Latency:</span>
-                    <strong>
-                      {analysis.metrics.average_ai_latency?.toFixed(2)}s
-                    </strong>
-                  </li>
-                  <li className="flex justify-between">
-                    <span>Noise Events:</span>
-                    <strong>{analysis.metrics.noise_count}</strong>
-                  </li>
-                  <li className="flex justify-between">
-                    <span>User Turns:</span>
-                    <strong>{analysis.metrics.total_user_turns}</strong>
-                  </li>
-                  <li className="flex justify-between">
-                    <span>AI Turns:</span>
-                    <strong>{analysis.metrics.total_ai_turns}</strong>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-          )}
+          {/* Metrics intentionally hidden in redesigned UI */}
         </div>
 
         <div className="md:w-2/3 w-full h-full overflow-auto">
