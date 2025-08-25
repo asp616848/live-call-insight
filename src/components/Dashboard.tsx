@@ -431,7 +431,7 @@ export const Dashboard = () => {
               /> */}
               <MetricsCard
                 title="Abandonment Rate"
-                value={`${dataCaptureMetrics ? dataCaptureMetrics.abandonmentRate : 27}%`}
+                value="27%"
                 // subtitle={(() => {
                 //   const total = calls?.length || dashboardData?.metrics?.total_calls || 50;
                 //   if (!dataCaptureMetrics) { return 'Dropped before completion'; }
