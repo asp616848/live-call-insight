@@ -65,11 +65,9 @@ export const MetricsCard = ({
             <p className="text-xs text-muted-foreground">{subtitle}</p>
           )}
 
-          {trendValue && (
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: delay + 0.4 }}>
-              <TrendIndicator direction={trend} value={trendValue} />
-            </motion.div>
-          )}
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: delay + 0.4 }}>
+            <TrendIndicator direction={trend} value={trendValue} />
+          </motion.div>
         </div>
       </div>
 
