@@ -1,13 +1,7 @@
-Parameter,Value,Status,Timestamp,AgentID
-"Sentiment Score",0.85,"Normal","2025-08-26T10:00:00Z","AI-01"
-"AI Response Latency (ms)",250,"Normal","2025-08-26T10:00:05Z","AI-01"
-"User Silence Ratio",0.12,"Warning","2025-08-26T10:00:10Z","AI-01"
-"Interruption Rate",0.05,"Normal","2025-08-26T10:00:15Z","AI-01"
-"Concern Keyword Hits",3,"Elevated","2025-08-26T10:00:20Z","AI-01"
-"Task Completion",0.92,"Normal","2025-08-26T10:00:25Z","AI-01"
-"Sentiment Score",0.78,"Normal","2025-08-26T10:01:00Z","AI-02"
-"AI Response Latency (ms)",310,"Warning","2025-08-26T10:01:05Z","AI-02"
-"User Silence Ratio",0.08,"Normal","2025-08-26T10:01:10Z","AI-02"
-"Interruption Rate",0.07,"Normal","2025-08-26T10:01:15Z","AI-02"
-"Concern Keyword Hits",1,"Normal","2025-08-26T10:01:20Z","AI-02"
-"Task Completion",0.95,"Normal","2025-08-26T10:01:25Z","AI-02"
+Demographic Group,Approval Rating,Pressing Concerns,Avg Call Length,Persuasion Shift,Swing Potential,Trend
+White College-Educated,68%,"Economy, Healthcare, +1",12:34,+5.2%,High,📈 
+Hispanic Working Class,45%,"Immigration, Jobs, +1",8:45,-2.1%,Medium,📉
+Black Urban Voters,72%,"Criminal Justice, Education, +1",15:22,+3.8%,Low,📈 
+Rural White Non-College,38%,"Economy, Immigration, +1",6:12,-4.3%,High,📉
+Suburban Women,55%,"Healthcare, Education, +1",11:08,+1.7%,High,Stable
+Young Voters (18–29),62%,"Climate, Student Debt, +1",9:33,+2.9%,Medium,📈 

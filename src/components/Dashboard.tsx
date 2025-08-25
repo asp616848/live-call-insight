@@ -8,6 +8,7 @@ import { TranscriptFeed } from './TranscriptFeed';
 import { MetricsCard } from './MetricsCard';
 import { RecentConversations } from './RecentConversations';
 import { ConcernsPieChart } from './ConcernsPieChart';
+import { RealTimePivotTable } from './RealTimePivotTable';
 import { apiJson } from '@/lib/api';
 
 async function fetchDashboardData() {
@@ -480,11 +481,14 @@ export const Dashboard = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 h-[calc(100vh-250px)]">
             {/* Left Column */}
             <div className="lg:col-span-2 flex flex-col gap-6">
-              <div className="flex-grow-[3] h-0">
+              <div className="h-[40rem] min-h-0 glass rounded-2xl p-4">
                 <TranscriptFeed messages={displayedMessages} isLive={true} />
               </div>
-              <div className="flex-grow-[2] h-0">
+              <div className="h-80 md:h-96 flex-shrink-0">
                 <ConcernsPieChart />
+              </div>
+              <div className="flex-grow min-h-0">
+                <RealTimePivotTable />
               </div>
             </div>
             
@@ -494,7 +498,7 @@ export const Dashboard = () => {
                 <LatencyGauge latency={currentLatency} />
               </div>
               <motion.div
-                className="glass rounded-2xl p-6 flex-grow"
+                className="glass rounded-2xl p-6 flex-none"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
