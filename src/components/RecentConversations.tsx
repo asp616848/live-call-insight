@@ -98,8 +98,8 @@ export const RecentConversations = () => {
       <h3 className="text-lg font-semibold gradient-text px-6">Recent Conversations</h3>
       <ScrollArea className="flex-grow pr-6 pl-6">
         <div className="space-y-4">
-          {conversations.map((convo) => (
-            <div key={convo.summary.stream_sid} className="glass p-4 rounded-lg border border-border/20">
+          {conversations.map((convo, idx) => (
+            <div key={`${convo.summary.stream_sid || convo.summary.filename || 'convo'}-${idx}`} className="glass p-4 rounded-lg border border-border/20">
               <div className="flex justify-between items-start gap-2">
                 <p className="text-sm text-muted-foreground flex-grow">{convo.summary.overview}</p>
                 <Badge variant={getSentimentBadgeVariant(convo.summary.sentiment)} className="capitalize">
@@ -124,7 +124,7 @@ export const RecentConversations = () => {
                 <h4 className="text-xs font-semibold mb-2">Transcript Snippet:</h4>
                 <div className="text-xs space-y-1.5 text-muted-foreground">
                   {convo.conversation.slice(-5).map((msg, index) => (
-                    <p key={index} className="truncate">
+                    <p key={`${msg.speaker}-${index}-${(msg.text || '').slice(0, 16)}`} className="truncate">
                       <span className={`font-semibold capitalize ${msg.speaker === 'user' ? 'text-blue-400' : 'text-purple-400'}`}>{msg.speaker}: </span>
                       {msg.text}
                     </p>

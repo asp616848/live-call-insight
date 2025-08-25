@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { motion, Variants } from 'framer-motion';
 import Papa from 'papaparse';
 import { apiFetch } from '@/lib/api';
+import { TrendIndicator } from './TrendIndicator';
 import { cn } from '@/lib/utils';
 
 interface PivotData {
@@ -27,7 +28,9 @@ async function fetchPivotData(): Promise<PivotData> {
     const rows = parsed.data.filter(r => Object.keys(r || {}).length);
 
     // If API returns nothing useful, fall back to the baked CSV
-    if (!headers.length || !rows.length) throw new Error('Empty CSV from API');
+    if (!headers.length || !rows.length) {
+      throw new Error('Empty CSV from API');
+    }
 
     return { headers, rows };
   } catch (error) {
@@ -51,13 +54,17 @@ const cellVariants: Variants = {
 };
 
 function pctToNum(pct: string | undefined): number {
-  if (!pct) return 0;
+  if (!pct) {
+    return 0;
+  }
   const n = parseFloat(pct.toString().replace('%', ''));
   return isNaN(n) ? 0 : n;
 }
 
 function timeToSeconds(t: string | undefined): number {
-  if (!t) return 0;
+  if (!t) {
+    return 0;
+  }
   const [m, s] = t.split(':').map(Number);
   return (m || 0) * 60 + (s || 0);
 }
@@ -80,7 +87,9 @@ function deriveStatus(row: Record<string, string>): { label: string; classes: st
 }
 
 function splitConcerns(val: string | undefined): string[] {
-  if (!val) return [];
+  if (!val) {
+    return [];
+  }
   return val
     .split(',')
     .map(x => x.trim())
@@ -100,11 +109,26 @@ function swingClasses(swing: string | undefined): string {
   }
 }
 
-function trendChip(trend: string | undefined): { text: string; classes: string } {
-  const t = (trend || '').trim();
-  if (t.includes('📈')) return { text: '📈', classes: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30' };
-  if (t.includes('📉')) return { text: '📉', classes: 'bg-rose-500/15 text-rose-300 border-rose-500/30' };
-  return { text: 'Stable', classes: 'bg-slate-500/15 text-slate-300 border-slate-500/30' };
+function parseTrendDirection(trend: string | undefined, fallbackShift?: number): 'up' | 'down' | 'neutral' {
+  const t = (trend || '').trim().toLowerCase();
+  if (!t && typeof fallbackShift === 'number') {
+    if (fallbackShift > 0) {
+      return 'up';
+    }
+    if (fallbackShift < 0) {
+      return 'down';
+    }
+  }
+  if (t.includes('📈') || t.includes('up')) {
+    return 'up';
+  }
+  if (t.includes('📉') || t.includes('down')) {
+    return 'down';
+  }
+  if (t.includes('stable')) {
+    return 'neutral';
+  }
+  return 'neutral';
 }
 
 export default function RealTimePivotTable() {
@@ -136,7 +160,9 @@ export default function RealTimePivotTable() {
 
   // Quick KPI tiles
   const kpis = useMemo(() => {
-    if (!rows.length) return { avgApproval: 0, avgCall: 0, positives: 0, negatives: 0 };
+    if (!rows.length) {
+      return { avgApproval: 0, avgCall: 0, positives: 0, negatives: 0 };
+    }
     const avgApproval = Math.round((rows.reduce((s, r) => s + pctToNum(r['Approval Rating']), 0) / rows.length) * 10) / 10;
     const avgCall = Math.round((rows.reduce((s, r) => s + timeToSeconds(r['Avg Call Length']), 0) / rows.length));
     const pos = rows.filter(r => parseFloat((r['Persuasion Shift'] || '0').replace('%', '')) >= 0).length;
@@ -226,8 +252,8 @@ export default function RealTimePivotTable() {
             )}
             {!isLoading && rows.map((row, rowIndex) => {
               const status = deriveStatus(row);
-              const trend = trendChip(row['Trend']);
               const shiftVal = parseFloat((row['Persuasion Shift'] || '0').replace('%', ''));
+              const trendDir = parseTrendDirection(row['Trend'], shiftVal);
               const shiftPct = Math.min(Math.abs(shiftVal) * 3, 100); // map ± to width with cap
 
               return (
@@ -305,9 +331,7 @@ export default function RealTimePivotTable() {
 
                   {/* Trend */}
                   <td className="p-3 text-slate-200">
-                    <span className={cn('px-2.5 py-1 rounded-full text-xs font-medium border inline-block backdrop-blur-sm', trend.classes)}>
-                      {trend.text}
-                    </span>
+                    <TrendIndicator direction={trendDir} />
                   </td>
 
                   {/* Derived Status */}
