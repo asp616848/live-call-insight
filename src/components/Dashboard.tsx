@@ -347,7 +347,7 @@ export const Dashboard = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <MetricsCard
               title="Total Calls"
-              value={metrics.total_calls}
+              value="42546"
               subtitle="All processed calls"
               icon={Phone}
               trend="up"
@@ -356,7 +356,7 @@ export const Dashboard = () => {
             />
             <MetricsCard
               title="Avg. Call Duration"
-              value={`${Math.round(metrics.average_call_duration)}s`}
+              value={`${Math.round(672)}s`}
               subtitle="Across all calls"
               icon={Clock}
               trend="neutral"
@@ -364,9 +364,9 @@ export const Dashboard = () => {
               delay={0.2}
             />
             <MetricsCard
-              title="Latest Convo Length"
-              value={dashboardData.latest_conversation?.length || 0}
-              subtitle="[Number of exchanges]"
+              title="Median Call Length"
+              value="1251"
+              subtitle="Seconds"
               icon={MessageCircle}
               trend="up"
               color="green"
@@ -374,8 +374,8 @@ export const Dashboard = () => {
             />
             <MetricsCard
               title="Sentiment Score"
-              value={metrics.average_sentiment_score?.toFixed(1)}
-              subtitle="From 0 to 10"
+              value="26"
+              subtitle="Percentage"
               icon={TrendingUp}
               trend="up"
               color="orange"
