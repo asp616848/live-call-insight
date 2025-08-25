@@ -254,9 +254,9 @@ export default function CallAnalytics() {
 													<div className="w-8 h-8 rounded-full bg-gradient-primary flex items-center justify-center">
 														<User className="h-4 w-4 text-primary-foreground" />
 													</div>
-													<div>
-														<p className="font-medium text-sm truncate">{call.summary.overview}</p>
-														<p className="text-xs text-muted-foreground">
+													<div className="min-w-0">
+														<p className="font-medium text-sm truncate" title={call.summary.overview}>{call.summary.overview}</p>
+														<p className="text-xs text-muted-foreground truncate" title={call.summary.stream_sid}>
 															{call.summary.stream_sid}
 														</p>
 													</div>
