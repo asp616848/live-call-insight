@@ -395,12 +395,12 @@ export const Dashboard = () => {
               <MetricsCard
                 title="Completion Rate"
                 value={`${dataCaptureMetrics ? dataCaptureMetrics.completionRate : 79}%`}
-                subtitle={(() => {
-                  const total = calls?.length || dashboardData?.metrics?.total_calls || 50;
-                  if (!dataCaptureMetrics) { return 'All required fields collected'; }
-                  const count = Math.round((dataCaptureMetrics.completionRate/100) * total);
-                  return `All required fields collected • ${count}/${total} calls`;
-                })()}
+                // subtitle={(() => {
+                //   const total = calls?.length || dashboardData?.metrics?.total_calls || 50;
+                //   if (!dataCaptureMetrics) { return 'All required fields collected'; }
+                //   const count = Math.round((dataCaptureMetrics.completionRate/100) * total);
+                //   return `All required fields collected • ${count}/${total} calls`;
+                // })()}
                 icon={CheckCircle2}
                 trend="up"
                 color="green"
