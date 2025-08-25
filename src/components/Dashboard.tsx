@@ -8,7 +8,7 @@ import { TranscriptFeed } from './TranscriptFeed';
 import { MetricsCard } from './MetricsCard';
 import { RecentConversations } from './RecentConversations';
 import { ConcernsPieChart } from './ConcernsPieChart';
-import { RealTimePivotTable } from './RealTimePivotTable';
+import RealTimePivotTable from './RealTimePivotTable';
 import { apiJson } from '@/lib/api';
 
 async function fetchDashboardData() {
