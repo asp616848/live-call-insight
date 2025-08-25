@@ -102,8 +102,8 @@ function swingClasses(swing: string | undefined): string {
 
 function trendChip(trend: string | undefined): { text: string; classes: string } {
   const t = (trend || '').trim();
-  if (t.includes('📈')) return { text: 'Uptrend 📈', classes: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30' };
-  if (t.includes('📉')) return { text: 'Downtrend 📉', classes: 'bg-rose-500/15 text-rose-300 border-rose-500/30' };
+  if (t.includes('📈')) return { text: '📈', classes: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30' };
+  if (t.includes('📉')) return { text: '📉', classes: 'bg-rose-500/15 text-rose-300 border-rose-500/30' };
   return { text: 'Stable', classes: 'bg-slate-500/15 text-slate-300 border-slate-500/30' };
 }
 
