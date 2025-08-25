@@ -373,8 +373,8 @@ export const Dashboard = () => {
               delay={0.3}
             />
             <MetricsCard
-              title="Sentiment Score"
-              value="26"
+              title="Sentiment Delta"
+              value="+26"
               subtitle="Percentage"
               icon={TrendingUp}
               trend="up"
@@ -431,7 +431,7 @@ export const Dashboard = () => {
               /> */}
               <MetricsCard
                 title="Abandonment Rate"
-                value={`${dataCaptureMetrics ? dataCaptureMetrics.abandonmentRate : 7}%`}
+                value={`${dataCaptureMetrics ? dataCaptureMetrics.abandonmentRate : 27}%`}
                 // subtitle={(() => {
                 //   const total = calls?.length || dashboardData?.metrics?.total_calls || 50;
                 //   if (!dataCaptureMetrics) { return 'Dropped before completion'; }
