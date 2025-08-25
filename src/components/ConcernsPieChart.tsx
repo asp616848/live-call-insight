@@ -104,7 +104,7 @@ export const ConcernsPieChart = () => {
       <div className="absolute -top-1/2 -left-1/2 w-[200%] h-[200%] bg-gradient-radial from-purple-glow/10 to-transparent animate-spin-slow pointer-events-none" />
       <h3 className="text-lg font-semibold mb-2 gradient-text text-center z-10">Top 3 Concerns</h3>
       <div className="flex-grow flex flex-col md:flex-row items-center">
-        <div className="w-full md:w-2/3 h-64 md:h-full">
+  <div className="w-full md:w-2/3 h-full min-h-[16rem]">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
@@ -113,8 +113,8 @@ export const ConcernsPieChart = () => {
                 data={concerns}
                 cx="50%"
                 cy="50%"
-                innerRadius={150}
-                outerRadius={180}
+    innerRadius={110}
+    outerRadius={150}
                 fill="#8884d8"
                 dataKey="value"
                 onMouseEnter={onPieEnter}
@@ -128,7 +128,7 @@ export const ConcernsPieChart = () => {
             </PieChart>
           </ResponsiveContainer>
         </div>
-        <div className="w-full md:w-1/3 flex flex-col justify-center space-y-2 z-10 p-4">
+  <div className="w-full md:w-1/3 flex flex-col justify-center space-y-2 z-10 p-4">
           {concerns.map((entry, index) => (
             <motion.div
               key={`legend-${index}`}

@@ -1,8 +1,9 @@
 # app.py
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, Response
 from flask_cors import CORS
 import os
 import json
+import pandas as pd
 from datetime import datetime
 
 from routes.s3_downloader import download_logs
@@ -185,6 +186,16 @@ def sentiment_flow(filename):
     """Return per-sentence sentiment scores for user and AI sentences (0-10)."""
     return jsonify(get_sentiment_flow(filename))
 
+@app.route('/pivot_data', methods=['GET'])
+def get_pivot_data():
+    """Serve the pivot data CSV file."""
+    pivot_path = os.path.join(os.path.dirname(__file__), 'pivot_data.csv')
+    try:
+        with open(pivot_path, 'r') as f:
+            csv_data = f.read()
+        return Response(csv_data, mimetype='text/csv')
+    except FileNotFoundError:
+        return jsonify({"error": "pivot_data.csv not found."}), 404
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
