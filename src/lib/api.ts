@@ -23,7 +23,7 @@ export const API_BASE = (() => {
     }
   }
   // Default for local dev
-  return 'http://15.206.28.101:5000';
+  return 'http://127.0.0.1:5000';
 })();
 
 export function apiUrl(path: string) {
@@ -36,7 +36,9 @@ export function apiFetch(input: string, init?: RequestInit) {
   // Prevent ngrok browser warning page (which is HTML) from being returned
   headers.set('ngrok-skip-browser-warning', 'true');
   // Prefer JSON responses
-  if (!headers.has('Accept')) headers.set('Accept', 'application/json');
+  if (!headers.has('Accept')) {
+    headers.set('Accept', 'application/json');
+  }
   return fetch(apiUrl(input), { ...init, headers });
 }
 
