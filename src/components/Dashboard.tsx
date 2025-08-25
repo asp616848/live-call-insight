@@ -487,9 +487,6 @@ export const Dashboard = () => {
               <div className="h-80 md:h-96 flex-shrink-0">
                 <ConcernsPieChart />
               </div>
-              <div className="flex-grow min-h-0">
-                <RealTimePivotTable />
-              </div>
             </div>
             
             {/* Right Column */}
@@ -513,15 +510,21 @@ export const Dashboard = () => {
                     <span className="text-muted-foreground">Agent:</span>
                     <span>AI Assistant</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex justify-between items-start gap-3">
                     <span className="text-muted-foreground">Purpose:</span>
-                    <span className="text-right">{metrics.latest_call_summary?.overview}</span>
+                    <span className="text-right whitespace-pre-wrap break-words max-h-40 overflow-auto">{metrics.latest_call_summary?.overview}</span>
                   </div>
                 </div>
               </motion.div>
-              <div className="flex-shrink-0 h-1/3">
+              <div className="flex-shrink-0 h-72 overflow-auto">
                 <RecentConversations />
               </div>
+            </div>
+          </div>
+          {/* Pivot Table - Full width at the bottom */}
+          <div className="mt-6 w-full">
+            <div className="glass rounded-2xl p-4">
+              <RealTimePivotTable />
             </div>
           </div>
         </motion.main>

@@ -1,7 +1,11 @@
 Demographic Group,Approval Rating,Pressing Concerns,Avg Call Length,Persuasion Shift,Swing Potential,Trend
-White College-Educated,68%,"Economy, Healthcare, +1",12:34,+5.2%,High,📈 
-Hispanic Working Class,45%,"Immigration, Jobs, +1",8:45,-2.1%,Medium,📉
-Black Urban Voters,72%,"Criminal Justice, Education, +1",15:22,+3.8%,Low,📈 
-Rural White Non-College,38%,"Economy, Immigration, +1",6:12,-4.3%,High,📉
-Suburban Women,55%,"Healthcare, Education, +1",11:08,+1.7%,High,Stable
-Young Voters (18–29),62%,"Climate, Student Debt, +1",9:33,+2.9%,Medium,📈 
+Aspirational EBC Youth,52%,"Jobs, Education Quality, Migration",9:45,+3.2%,High,UP
+OBC Small Farmers,58%,"MSP, Irrigation, Fertilizer Costs",14:20,+1.8%,Medium,Stable
+Rural Labharthi Women,65%,"Welfare Schemes, PDS, Safety",11:30,+4.5%,Low,UP
+Mahadalit Landless Laborers,48%,"MGNREGA, Housing, Dignity",7:15,-1.2%,High,DOWN
+Urban Informal Workers,42%,"Inflation, Cash Relief, Amenities",8:20,-2.8%,Medium,DOWN
+Traditional Upper Caste Elders,71%,"Social Order, Pensions, Ideology",22:45,+0.5%,Low,Stable
+Urban Professionals/Students,56%,"Infrastructure, Governance, Growth",13:10,+2.1%,Medium,UP
+Pasmanda Muslim Artisans,45%,"Minority Welfare, Economic Security",10:40,+3.7%,High,UP
+Semi-Urban Traders,49%,"GST, Electricity, Law & Order",12:50,-0.8%,Medium,Stable
+Migrant Workers (Out of State),38%,"Portability Benefits, Family Welfare",6:30,+5.1%,High,UP
