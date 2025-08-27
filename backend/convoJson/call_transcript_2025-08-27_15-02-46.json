@@ -1,0 +1,51 @@
+{
+  "summary": {
+    "filename": "call_transcript_2025-08-27_15-02-46.txt",
+    "stream_sid": "6a65e9725642cf1fea3d1dcfc82e198r",
+    "call_started": "2025-08-27T15:02:46.702107",
+    "call_ended": "2025-08-27T15:03:12.214945",
+    "duration_seconds": 25.512838,
+    "average_ai_response_latency": 0.39,
+    "noise_count": 1,
+    "total_user_messages": 3,
+    "total_ai_responses": 3,
+    "sentiment": "neutral",
+    "concerns": [],
+    "overview": "The AI introduced itself and repeatedly asked the user about their biggest problem, such as employment or floods. The user responded with brief greetings and a neutral confirmation of their well-being, but did not specify any concerns.",
+    "user_tone": "neutral and brief",
+    "emotion": "neutral",
+    "sentiment_score": 5.0
+  },
+  "conversation": [
+    {
+      "speaker": "user",
+      "text": "shor",
+      "timestamp": "2025-08-27T15:02:48"
+    },
+    {
+      "speaker": "ai",
+      "text": "Namaskar Bhaiya, hum",
+      "timestamp": "2025-08-27T15:02:49"
+    },
+    {
+      "speaker": "user",
+      "text": "Hello!",
+      "timestamp": "2025-08-27T15:02:51"
+    },
+    {
+      "speaker": "ai",
+      "text": "Haan, hum Sunita Devi bol rahni, Rajesh Verma ji ke taraf se. Kaise hain aap? Aapke yahan kaun sabse badi problem ba? Rozgar, baadh, ya kuchh aur? Hum sunat hain.",
+      "timestamp": "2025-08-27T15:02:51"
+    },
+    {
+      "speaker": "user",
+      "text": "Haan, theek hai.",
+      "timestamp": "2025-08-27T15:03:00"
+    },
+    {
+      "speaker": "ai",
+      "text": "Achha theek ba. Aapke yahan kaun si samasya sabse badi ba? Rozgar ya kuch aur?",
+      "timestamp": "2025-08-27T15:03:01"
+    }
+  ]
+}

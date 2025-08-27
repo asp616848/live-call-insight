@@ -1,0 +1,36 @@
+Call started at: 2025-08-27T14:50:36.990712
+Stream SID: 19979f0adf7b8e955ea036ce1519198r
+
+[14:50:39] User: <noise>
+[14:50:39] AI (chunk): Namaskar Bhaiya,
+[14:50:40] AI (chunk):  hum
+[14:50:40] AI (chunk):  Sunita
+[14:50:40] AI (chunk):  Devi
+[14:50:40] AI (chunk):  bolat
+[14:50:42] AI (chunk):  hain,
+[14:50:42] AI (chunk):  Rajesh
+[14:50:42] AI (chunk):  Verma
+[14:50:42] AI (chunk):  ji ke
+[14:50:42] AI (chunk):  taraf
+[14:50:42] AI (chunk):  se.
+[14:50:42] AI (chunk):  Kaise
+[14:50:45] AI (chunk):  hain
+[14:50:45] AI (chunk):  aap?
+[14:50:45] AI (chunk):  Aapke
+[14:50:46] AI (chunk):  yahan
+[14:50:46] AI (chunk):  kaun
+[14:50:46] AI (chunk):  si
+[14:50:46] AI (chunk):  problem
+[14:50:47] AI (chunk):  sabse
+[14:50:47] AI (chunk):  badi
+[14:50:47] AI (chunk):  ba
+[14:50:47] AI (chunk):  - rozgar,
+[14:50:49] AI (chunk):  baadh,
+[14:50:49] AI (chunk):  ya
+[14:50:49] AI (chunk):  kuchh
+[14:50:49] AI (chunk):  aur?
+[14:50:49] AI (chunk):  Hum
+[14:50:50] AI (chunk):  sunat
+[14:50:50] AI (chunk):  hain.
+
+Call ended at: 2025-08-27T14:51:25.404224

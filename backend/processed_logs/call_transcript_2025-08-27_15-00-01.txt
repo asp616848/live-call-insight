@@ -1,0 +1,7 @@
+Call started at: 2025-08-27T15:00:01.744150
+Stream SID: 2b5876867b14dcccb1df495572d3198r
+
+[15:00:03] User: Hello.
+[15:00:04] AI (chunk): [Current Mode:
+
+Call ended at: 2025-08-27T15:00:09.096854

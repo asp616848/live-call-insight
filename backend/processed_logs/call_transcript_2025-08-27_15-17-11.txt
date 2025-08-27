@@ -1,0 +1,62 @@
+Call started at: 2025-08-27T15:17:11.614889
+Stream SID: 7f8fa01e533d094cc0bca1ec0c5e198r
+
+[15:17:13] User: <noise>
+[15:17:15] AI (chunk):  hum
+[15:17:15] AI (chunk):  Sunita
+[15:17:15] AI (chunk):  Devi
+[15:17:15] AI (chunk):  bolat
+[15:17:15] AI (chunk):  hain,
+[15:17:16] AI (chunk):  Shri
+[15:17:16] AI (chunk):  Rajesh
+[15:17:16] AI (chunk):  Verma
+[15:17:16] AI (chunk):  ji
+[15:17:17] AI (chunk):  ke
+[15:17:17] AI (chunk):  taraf
+[15:17:17] AI (chunk):  se.
+[15:17:17] AI (chunk):  Aapke
+[15:17:17] AI (chunk):  yahan
+[15:17:17] AI (chunk):  sabse
+[15:17:18] AI (chunk):  badi
+[15:17:18] AI (chunk):  chinta
+[15:17:18] AI (chunk):  ka
+[15:17:18] AI (chunk):  ba—rozgar,
+[15:17:19] AI (chunk):  baadh,
+[15:17:19] AI (chunk):  ya
+[15:17:19] AI (chunk):  kuchh
+[15:17:19] AI (chunk):  aur?
+[15:17:19] AI (chunk):  Hum
+[15:17:19] AI (chunk):  sunat
+[15:17:19] AI (chunk):  hain.
+[15:17:30] User: เออ
+[15:17:31] AI (chunk):  nai,
+[15:17:31] AI (chunk):  Bhaiya.
+[15:17:31] AI (chunk):  Aapke
+[15:17:32] AI (chunk):  ghar
+[15:17:32] AI (chunk):  mein
+[15:17:32] AI (chunk):  kaun
+[15:17:32] AI (chunk):  sabse
+[15:17:32] AI (chunk):  zyada
+[15:17:32] AI (chunk):  pareshan
+[15:17:33] AI (chunk):  hain?
+[15:17:33] AI (chunk):  Rozgar
+[15:17:33] AI (chunk):  ya
+[15:17:34] AI (chunk):  kuchh
+[15:17:34] AI (chunk):  aur
+[15:17:34] AI (chunk):  musibat?
+[15:17:34] AI (chunk):  Hum
+[15:17:34] AI (chunk):  samajh
+[15:17:35] AI (chunk):  sakat
+[15:17:35] AI (chunk):  hain.
+[15:17:45] User: .
+[15:17:46] AI (chunk):  aapke
+[15:17:46] AI (chunk):  chinta
+[15:17:47] AI (chunk):  bilkul
+[15:17:47] AI (chunk):  sahi
+[15:17:47] AI (chunk):  ba.
+[15:17:47] AI (chunk):  Rajesh
+[15:17:49] User: .
+[15:17:50] AI (chunk):  boliye,
+[15:17:50] AI (chunk):  Bhaiya—sahi
+
+Call ended at: 2025-08-27T15:17:50.540911

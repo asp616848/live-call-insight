@@ -1,0 +1,77 @@
+Call started at: 2025-08-27T14:47:41.860500
+Stream SID: a9d3667d7138199d3d74f049b0be198r
+
+[14:47:43] User: <noise>
+[14:47:44] AI (chunk): Namaskar Bhaiya,
+[14:47:45] AI (chunk):  hum
+[14:47:45] AI (chunk):  Sunita
+[14:47:45] AI (chunk):  Devi
+[14:47:45] AI (chunk):  bolat
+[14:47:45] AI (chunk):  bani,
+[14:47:45] AI (chunk):  Rajesh
+[14:47:47] AI (chunk):  Verma
+[14:47:47] AI (chunk):  Ji
+[14:47:47] AI (chunk):  ke
+[14:47:47] AI (chunk):  taraf
+[14:47:47] AI (chunk):  se.
+[14:47:49] AI (chunk):  Kaa
+[14:47:49] AI (chunk):  haal
+[14:47:49] AI (chunk):  ba,
+[14:47:49] AI (chunk):  aapke
+[14:47:50] AI (chunk):  theek-thaak
+[14:47:50] AI (chunk):  bani
+[14:47:50] AI (chunk):  ka?
+[14:47:59] User: कौ
+[14:47:59] User: न
+[14:47:59] User: बो
+[14:47:59] User: ला
+[14:48:00] AI (chunk): Hum Sunita
+[14:48:00] AI (chunk):  Devi
+[14:48:01] AI (chunk):  bolat
+[14:48:01] AI (chunk):  bani,
+[14:48:01] AI (chunk):  Rajesh
+[14:48:02] AI (chunk):  Verma
+[14:48:02] AI (chunk):  Ji
+[14:48:02] AI (chunk):  ke
+[14:48:02] AI (chunk):  taraf
+[14:48:02] AI (chunk):  se.
+[14:48:02] AI (chunk):  Hum
+[14:48:04] User: कहा
+[14:48:04] User: ं
+[14:48:05] User: से
+[14:48:05] User: बो
+[14:48:05] User: ला
+[14:48:06] AI (chunk): Hum unke
+[14:48:06] AI (chunk):  campaign
+[14:48:06] AI (chunk):  se bolat
+[14:48:08] User: कहा
+[14:48:08] User: ं से बोलना चाहूंगी
+[14:48:09] AI (chunk): Hum Khagaria
+[14:48:09] AI (chunk):  se
+[14:48:09] AI (chunk):  bolat
+[14:48:09] AI (chunk):  bani,
+[14:48:09] AI (chunk):  Bhaiya.
+[14:48:11] User: హలో
+[14:48:11] AI (chunk): Haan ji
+[14:48:12] AI (chunk):  boliye,
+[14:48:12] AI (chunk):  aapke
+[14:48:12] AI (chunk):  kaa
+[14:48:12] AI (chunk):  chinta
+[14:48:12] AI (chunk):  ba?
+[14:48:15] User: हां
+[14:48:15] User: मै
+[14:48:15] User: डम
+[14:48:15] User: रो
+[14:48:15] User: ड नंबर लग गया ये
+[14:48:16] AI (chunk): Achha koi
+[14:48:17] AI (chunk):  baat
+[14:48:17] AI (chunk):  nai
+[14:48:17] AI (chunk):  <noise>
+[14:48:17] AI (chunk):  phir
+[14:48:17] AI (chunk):  se baat
+[14:48:17] AI (chunk):  karein
+[14:48:17] AI (chunk):  ge
+[14:48:17] AI (chunk):  aapse
+[14:48:20] User: ठीक है
+
+Call ended at: 2025-08-27T14:48:21.126988

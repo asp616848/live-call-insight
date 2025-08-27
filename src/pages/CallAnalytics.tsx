@@ -17,16 +17,16 @@ import { apiFetch, apiJson } from '@/lib/api';
 
 // Types based on the API response
 interface Summary {
-  filename: string;
-  stream_sid: string;
-  call_started: string;
-  call_ended: string;
-  duration_seconds: number;
-  average_ai_response_latency: number;
-  sentiment: 'positive' | 'neutral' | 'negative';
-  concerns: string[];
-  overview: string;
-  user_tone: string;
+	filename: string;
+	stream_sid: string;
+	call_started: string;
+	call_ended: string;
+	duration_seconds?: number | null;
+	average_ai_response_latency?: number | null;
+	sentiment?: 'positive' | 'neutral' | 'negative';
+	concerns?: string[];
+	overview: string;
+	user_tone?: string | null;
 }
 
 interface ConversationMessage {
@@ -245,7 +245,7 @@ export default function CallAnalytics() {
 								) : (
 									calls.map((call, index) => (
 										<motion.div
-											key={call.summary.stream_sid}
+											key={(call as any)?.id ?? index}
 											initial={{ opacity: 0, y: 20 }}
 											animate={{ opacity: 1, y: 0 }}
 											transition={{ delay: index * 0.1 }}
@@ -269,8 +269,8 @@ export default function CallAnalytics() {
 														</p>
 													</div>
 												</div>
-												<Badge className={getSentimentBadgeClass(call.summary.sentiment)}>
-													{call.summary.sentiment}
+												<Badge className={getSentimentBadgeClass(call.summary.sentiment ?? 'neutral')}>
+													{call.summary.sentiment ?? 'neutral'}
 												</Badge>
 											</div>
 
@@ -281,7 +281,9 @@ export default function CallAnalytics() {
 												</div>
 												<div className="flex items-center gap-1">
 													<BarChart3 className="h-3 w-3" />
-													{Math.round(call.summary.average_ai_response_latency * 1000)}ms
+													{call.summary.average_ai_response_latency != null
+														? `${Math.round(call.summary.average_ai_response_latency * 1000)}ms`
+														: 'N/A'}
 												</div>
 											</div>
 										</motion.div>
@@ -345,10 +347,10 @@ export default function CallAnalytics() {
 												</div>
 
 												{/* Blurred conversation content */}
-												<div className="space-y-4 pointer-events-none select-none blur-md" aria-hidden="true">
-													{selectedCall.conversation.map((msg, index) => (
+												<div className="space-y-4 pointer-events-none select-none" aria-hidden="true">
+						    {selectedCall.conversation.map((msg, index) => (
 														<motion.div
-															key={index}
+							    key={(msg as any)?.id ?? index}
 															initial={{ opacity: 0, y: 10 }}
 															animate={{ opacity: 1, y: 0 }}
 															transition={{ delay: index * 0.1 }}
@@ -391,28 +393,30 @@ export default function CallAnalytics() {
 													<div className="flex justify-between">
 														<span className="text-muted-foreground">User Tone:</span>
 														<span className="font-medium capitalize">
-															{selectedCall.summary.user_tone}
+															{selectedCall.summary.user_tone || '—'}
 														</span>
 													</div>
 													<div className="flex justify-between">
 														<span className="text-muted-foreground">Concerns:</span>
 														<span className="font-medium capitalize">
-															{selectedCall.summary.concerns.join(', ')}
+															{(Array.isArray(selectedCall.summary.concerns) && selectedCall.summary.concerns.length > 0)
+																? selectedCall.summary.concerns.join(', ')
+																: '—'}
 														</span>
 													</div>
 													<div className="flex justify-between">
 														<span className="text-muted-foreground">Sentiment:</span>
 														<Badge
-															className={getSentimentBadgeClass(selectedCall.summary.sentiment)}
+															className={getSentimentBadgeClass(selectedCall.summary.sentiment ?? 'neutral')}
 														>
-															{selectedCall.summary.sentiment}
+															{selectedCall.summary.sentiment ?? 'neutral'}
 														</Badge>
 													</div>
 												</div>
 
 												<div className="flex flex-col items-center">
 													<h3 className="text-sm font-medium mb-4">Avg. Latency</h3>
-													<LatencyGauge latency={Math.round(selectedCall.summary.average_ai_response_latency * 1000)} />
+													<LatencyGauge latency={Math.round(((selectedCall.summary.average_ai_response_latency ?? 0) * 1000))} />
 												</div>
 											</div>
 										</TabsContent>

@@ -1,0 +1,31 @@
+{
+  "summary": {
+    "filename": "call_transcript_2025-08-27_15-03-40.txt",
+    "stream_sid": "0adcbcf90d56424dccf3caa0f2c0198r",
+    "call_started": "2025-08-27T15:03:40.723217",
+    "call_ended": "2025-08-27T15:04:11.575510",
+    "duration_seconds": 30.852293,
+    "average_ai_response_latency": 0.21,
+    "noise_count": 0,
+    "total_user_messages": 1,
+    "total_ai_responses": 1,
+    "sentiment": "neutral",
+    "concerns": [],
+    "overview": "The user initiated the call with a greeting. The AI responded by introducing itself, acknowledging the user's potential sorrows and concerns about local development, and then prompted the user to share specific issues like employment or roads.",
+    "user_tone": "neutral and polite",
+    "emotion": "neutral",
+    "sentiment_score": 5.0
+  },
+  "conversation": [
+    {
+      "speaker": "user",
+      "text": "Namaste.",
+      "timestamp": "2025-08-27T15:03:43"
+    },
+    {
+      "speaker": "ai",
+      "text": "Namaskar Bhaiya, hum Sunita Devi bol raha bani, Rajesh Verma ji ke taraf se. Kaaise hain aap? Hum jaanat hain aapke dukh-dard aur aapke Khagaria ke Vikas ke chinta ke baare mein. Aapke khaas chinta ka baa? Rozgar, sadak, ya kuch aur? Hum sun raha bani.",
+      "timestamp": "2025-08-27T15:03:43"
+    }
+  ]
+}

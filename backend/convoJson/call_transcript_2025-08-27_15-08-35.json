@@ -1,0 +1,31 @@
+{
+  "summary": {
+    "filename": "call_transcript_2025-08-27_15-08-35.txt",
+    "stream_sid": "1dc2484e50ace9521579c5f55aba198r",
+    "call_started": "2025-08-27T15:08:35.889589",
+    "call_ended": "2025-08-27T15:09:13.314610",
+    "duration_seconds": 37.425021,
+    "average_ai_response_latency": 0.25,
+    "noise_count": 0,
+    "total_user_messages": 1,
+    "total_ai_responses": 1,
+    "sentiment": "neutral",
+    "concerns": [],
+    "overview": "The conversation starts with a greeting from the user. The AI introduces itself and asks the user about the biggest problems in their area, such as employment or floods, to gather information.",
+    "user_tone": "polite and neutral",
+    "emotion": "neutral",
+    "sentiment_score": 5
+  },
+  "conversation": [
+    {
+      "speaker": "user",
+      "text": "Namaste.",
+      "timestamp": "2025-08-27T15:08:38"
+    },
+    {
+      "speaker": "ai",
+      "text": "Namaskar Bhaiya, hum Sunita Devi bol tani Rajesh Verma ji ke taraf se. Kaisan baani? Hum aapse thoda samay mangat hain. Aapke yahan kaun si sabse badi samasya ba? Rozgar, baadh, ya kuchh aur? Hum sun rahal hain.",
+      "timestamp": "2025-08-27T15:08:38"
+    }
+  ]
+}
