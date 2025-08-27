@@ -1,0 +1,31 @@
+{
+  "summary": {
+    "filename": "call_transcript_2025-08-27_14-57-33.txt",
+    "stream_sid": "3609d7f582516bbe62a45fdcc4cb198r",
+    "call_started": "2025-08-27T14:57:33.454674",
+    "call_ended": "2025-08-27T14:57:44.781759",
+    "duration_seconds": 11.327085,
+    "average_ai_response_latency": 0.4,
+    "noise_count": 1,
+    "total_user_messages": 1,
+    "total_ai_responses": 1,
+    "sentiment": "neutral",
+    "concerns": [],
+    "overview": "The user initiated the call with a simple greeting. The AI responded by asking about the user's problem, specifically inquiring if it was related to employment or something else.",
+    "user_tone": "polite and neutral",
+    "emotion": "neutral",
+    "sentiment_score": 5.0
+  },
+  "conversation": [
+    {
+      "speaker": "user",
+      "text": "Hello",
+      "timestamp": "2025-08-27T14:57:35"
+    },
+    {
+      "speaker": "ai",
+      "text": "bolat hain. Aapke yahan kaun si problem ba? Rozgar ya kuchh aur?",
+      "timestamp": "2025-08-27T14:57:38"
+    }
+  ]
+}
