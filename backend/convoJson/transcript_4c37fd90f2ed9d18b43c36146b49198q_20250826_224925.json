@@ -1,0 +1,20 @@
+{
+  "summary": {
+    "filename": "transcript_4c37fd90f2ed9d18b43c36146b49198q_20250826_224925.txt",
+    "stream_sid": null,
+    "call_started": null,
+    "call_ended": null,
+    "duration_seconds": null,
+    "average_ai_response_latency": null,
+    "noise_count": 0,
+    "total_user_messages": 0,
+    "total_ai_responses": 0,
+    "sentiment": "neutral",
+    "concerns": [],
+    "overview": "No conversation was provided for analysis.",
+    "user_tone": "N/A",
+    "emotion": "N/A",
+    "sentiment_score": 5
+  },
+  "conversation": []
+}

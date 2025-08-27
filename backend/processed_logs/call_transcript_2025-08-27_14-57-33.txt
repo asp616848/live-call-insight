@@ -1,0 +1,18 @@
+Call started at: 2025-08-27T14:57:33.454674
+Stream SID: 3609d7f582516bbe62a45fdcc4cb198r
+
+[14:57:35] User: <noise>
+[14:57:37] User: हेलो
+[14:57:38] AI (chunk):  bolat
+[14:57:38] AI (chunk):  hain.
+[14:57:39] AI (chunk):  Aapke
+[14:57:39] AI (chunk):  yahan
+[14:57:39] AI (chunk):  kaun
+[14:57:39] AI (chunk):  si problem
+[14:57:40] AI (chunk):  ba?
+[14:57:41] AI (chunk):  Rozgar
+[14:57:41] AI (chunk):  ya
+[14:57:41] AI (chunk):  kuchh
+[14:57:42] AI (chunk):  aur?
+
+Call ended at: 2025-08-27T14:57:44.781759

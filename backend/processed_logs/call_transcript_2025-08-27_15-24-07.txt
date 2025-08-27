@@ -1,0 +1,39 @@
+Call started at: 2025-08-27T15:24:07.550145
+Stream SID: a9acfd70520b138dfa90a4ffb432198r
+
+[15:24:09] User: Hello.
+[15:24:11] User: person
+[15:24:11] User: you
+[15:24:11] User: 're
+[15:24:11] User: trying
+[15:24:11] User: to
+[15:24:11] User: reach
+[15:24:11] User: is
+[15:24:11] User: not
+[15:24:11] User: availa
+[15:24:12] User: ble
+[15:24:12] User: at
+[15:24:12] User: the
+[15:24:12] User: to
+[15:24:12] User: ne
+[15:24:12] User: , ple
+[15:24:12] User: ase
+[15:24:13] User: re
+[15:24:13] User: cord
+[15:24:13] User: your
+[15:24:13] User: me
+[15:24:13] User: ssage
+[15:24:13] User: .
+[15:24:14] User: When
+[15:24:14] User: you
+[15:24:14] User: have
+[15:24:14] User: fi
+[15:24:14] User: nished
+[15:24:14] User: re
+[15:24:15] User: cord
+[15:24:15] User: ing
+[15:24:15] User: you
+[15:24:15] User: may
+[15:24:15] User: hang up.
+
+Call ended at: 2025-08-27T15:26:07.606721

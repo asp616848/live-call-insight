@@ -1,0 +1,222 @@
+Call started at: 2025-08-27T14:48:53.854329
+Stream SID: cacd93534f293089010422fea0c4198r
+
+[14:48:56] User: Hello.
+[14:48:56] AI (chunk): Namaskar Bhaiya,
+[14:48:57] AI (chunk):  hum
+[14:48:58] User: హలో హలో
+[14:48:59] AI (chunk): Haan, boliye.
+[14:48:59] AI (chunk):  Rajesh
+[14:49:00] AI (chunk):  Verma
+[14:49:00] AI (chunk):  Ji
+[14:49:00] AI (chunk):  ke
+[14:49:01] AI (chunk):  taraf
+[14:49:01] AI (chunk):  se
+[14:49:01] AI (chunk):  Sunita
+[14:49:01] AI (chunk):  Devi
+[14:49:01] AI (chunk):  bol
+[14:49:01] AI (chunk):  rahat
+[14:49:01] AI (chunk):  hain.
+[14:49:01] AI (chunk):  Kaise
+[14:49:03] AI (chunk):  hain
+[14:49:03] AI (chunk):  aap?
+[14:49:03] AI (chunk):  Aapke
+[14:49:03] AI (chunk):  yahan
+[14:49:04] AI (chunk):  kaun
+[14:49:05] AI (chunk):  si
+[14:49:05] AI (chunk):  samasya
+[14:49:06] AI (chunk):  sabse
+[14:49:06] AI (chunk):  badi
+[14:49:06] AI (chunk):  ba?
+[14:49:06] AI (chunk):  Rojgar,
+[14:49:06] AI (chunk):  baadh,
+[14:49:07] AI (chunk):  ya
+[14:49:07] AI (chunk):  kuch
+[14:49:07] AI (chunk):  aur?
+[14:49:07] AI (chunk):  Hum
+[14:49:13] User: อ
+[14:49:14] User: Mere, ja.
+[14:49:15] AI (chunk): Boliye, Bhaiya.
+[14:49:16] AI (chunk):  Hum
+[14:49:16] AI (chunk):  sun
+[14:49:17] AI (chunk):  rahat
+[14:49:17] AI (chunk):  hain.
+[14:49:17] AI (chunk):  Aapke
+[14:49:17] AI (chunk):  dil
+[14:49:18] AI (chunk):  ke
+[14:49:18] AI (chunk):  baat
+[14:49:18] AI (chunk):  hum
+[14:49:18] AI (chunk):  samajhna
+[14:49:19] AI (chunk):  chaahat
+[14:49:19] AI (chunk):  hain.
+[14:49:19] AI (chunk):  Aap
+[14:49:19] AI (chunk):  ke
+[14:49:19] AI (chunk):  yahan
+[14:49:19] AI (chunk):  paani
+[14:49:21] AI (chunk):  ke
+[14:49:21] AI (chunk):  problem
+[14:49:21] AI (chunk):  ya
+[14:49:21] AI (chunk):  koi
+[14:49:21] AI (chunk):  dusra
+[14:49:21] AI (chunk):  samasya
+[14:49:21] AI (chunk):  ba?
+[14:49:30] User: जी
+[14:49:30] User: प
+[14:49:30] User: ने
+[14:49:30] User: का समस्या है
+[14:49:31] AI (chunk): Haan ji,
+[14:49:31] AI (chunk):  hum
+[14:49:31] AI (chunk):  samajh
+[14:49:32] AI (chunk):  rahat
+[14:49:32] AI (chunk):  hain.
+[14:49:32] AI (chunk):  Paani
+[14:49:33] AI (chunk):  ke
+[14:49:33] AI (chunk):  samasya
+[14:49:33] AI (chunk):  bahut
+[14:49:33] AI (chunk):  badi
+[14:49:33] AI (chunk):  baat
+[14:49:33] AI (chunk):  ba.
+[14:49:35] AI (chunk):  Aapke
+[14:49:35] AI (chunk):  parivaar
+[14:49:35] AI (chunk):  ko
+[14:49:35] AI (chunk):  bahut
+[14:49:36] AI (chunk):  pareshaani
+[14:49:36] AI (chunk):  hot
+[14:49:38] AI (chunk):  hoi.
+[14:49:38] AI (chunk):  Hum
+[14:49:38] AI (chunk):  samajh
+[14:49:38] AI (chunk):  sakat
+[14:49:38] AI (chunk):  hain.
+[14:49:38] AI (chunk):  Chaliye,
+[14:49:38] AI (chunk):  ee
+[14:49:39] AI (chunk):  problem
+[14:49:39] AI (chunk):  ke baare
+[14:49:39] AI (chunk):  mein
+[14:49:39] AI (chunk):  aur
+[14:49:39] AI (chunk):  baat
+[14:49:39] AI (chunk):  karain.
+[14:49:50] User: इ
+[14:49:50] User: धर
+[14:49:50] User: सुनिए हेलो
+[14:49:51] AI (chunk): Haan ji,
+[14:49:51] AI (chunk):  boliye.
+[14:49:52] AI (chunk):  Hum
+[14:49:52] AI (chunk):  sun
+[14:49:52] AI (chunk):  rahat
+[14:49:52] AI (chunk):  hain.
+[14:49:54] AI (chunk):  Kripya
+[14:49:54] AI (chunk):  apni
+[14:49:54] AI (chunk):  baat
+[14:49:54] AI (chunk):  poori
+[14:49:54] AI (chunk):  kariye.
+[14:49:55] User: आप
+[14:49:56] User: को
+[14:49:56] User: बात
+[14:49:56] User: की
+[14:49:56] User: जिए
+[14:49:57] AI (chunk): Haan, hum
+[14:49:58] AI (chunk):  baat
+[14:49:59] User: <noise>
+[14:50:00] AI (chunk): Hum bilkul
+[14:50:00] AI (chunk):  baat
+[14:50:00] AI (chunk):  karat
+[14:50:00] AI (chunk):  hain.
+[14:50:00] AI (chunk):  Aapke
+[14:50:01] AI (chunk):  jo
+[14:50:01] AI (chunk):  bhi
+[14:50:01] AI (chunk):  chinta
+[14:50:02] AI (chunk):  ba,
+[14:50:02] AI (chunk):  hum
+[14:50:02] AI (chunk):  sab
+[14:50:02] AI (chunk):  sunna
+[14:50:02] AI (chunk):  chaahat
+[14:50:02] AI (chunk):  hain.
+[14:50:02] AI (chunk):  Aap
+[14:50:03] AI (chunk):  humke
+[14:50:03] AI (chunk):  bataiye
+[14:50:04] AI (chunk):  ki
+[14:50:05] AI (chunk):  kaun
+[14:50:05] AI (chunk):  sa
+[14:50:05] AI (chunk):  problem
+[14:50:05] AI (chunk):  aapko
+[14:50:05] AI (chunk):  sabse
+[14:50:06] AI (chunk):  zyada
+[14:50:06] AI (chunk):  pareshaan
+[14:50:06] AI (chunk):  karat
+[14:50:06] AI (chunk):  ba?
+[14:50:23] User: फॉर्म ए प्रॉब्लम
+[14:50:24] AI (chunk): Paani ke
+[14:50:24] AI (chunk):  problem
+[14:50:24] AI (chunk):  ke
+[14:50:24] AI (chunk):  baare
+[14:50:24] AI (chunk):  mein
+[14:50:27] User: . Ya.
+[14:50:28] AI (chunk): Haan, samajh
+[14:50:29] User: <noise>
+[14:50:29] AI (chunk): Haan, samajh
+[14:50:30] AI (chunk):  rahat
+[14:50:30] AI (chunk):  hain.
+[14:50:30] AI (chunk):  Hum aapke
+[14:50:31] AI (chunk):  problem
+[14:50:31] AI (chunk):  ke baare
+[14:50:31] AI (chunk):  mein
+[14:50:31] AI (chunk):  sun
+[14:50:31] AI (chunk):  rahat
+[14:50:33] AI (chunk):  hain.
+[14:50:33] AI (chunk):  Rajesh
+[14:50:33] AI (chunk):  Verma
+[14:50:34] AI (chunk):  Ji
+[14:50:34] AI (chunk):  ee
+[14:50:34] AI (chunk):  sab
+[14:50:35] AI (chunk):  samasya
+[14:50:35] AI (chunk):  ke liye
+[14:50:36] AI (chunk):  bahut
+[14:50:36] AI (chunk):  kaam
+[14:50:36] AI (chunk):  karat
+[14:50:36] AI (chunk):  hain.
+[14:50:36] AI (chunk):  Hum
+[14:50:36] AI (chunk):  aapko
+[14:50:36] AI (chunk):  bataawenge
+[14:50:37] AI (chunk):  ki
+[14:50:37] AI (chunk):  kaise
+[14:50:37] AI (chunk):  unhone
+[14:50:40] AI (chunk):  paani
+[14:50:40] AI (chunk):  ke problem
+[14:50:40] AI (chunk):  ko
+[14:50:40] AI (chunk):  solve
+[14:50:40] AI (chunk):  kare
+[14:50:40] AI (chunk):  ke
+[14:50:40] AI (chunk):  liye
+[14:50:40] AI (chunk):  kaam
+[14:50:40] AI (chunk):  kail
+[14:50:40] AI (chunk):  ba.
+[14:50:40] AI (chunk):  Aap
+[14:50:40] AI (chunk):  batayiye,
+[14:50:42] AI (chunk):  aap
+[14:50:42] AI (chunk):  Khagaria
+[14:50:42] AI (chunk):  se
+[14:50:42] AI (chunk):  hain
+[14:50:42] AI (chunk):  ka?
+[14:50:53] User: नाही
+[14:50:54] AI (chunk): Achha, koi
+[14:50:54] AI (chunk):  baat
+[14:50:55] AI (chunk):  nai.
+[14:50:56] User: <noise>
+[14:50:57] AI (chunk): Achha, koi
+[14:50:57] AI (chunk):  baat
+[14:50:57] AI (chunk):  nai.
+[14:50:57] AI (chunk):  Aap
+[14:50:58] AI (chunk):  kahan
+[14:50:58] AI (chunk):  se
+[14:50:58] AI (chunk):  hain?
+[14:50:58] AI (chunk):  Bas
+[14:51:01] AI (chunk):  ee
+[14:51:01] AI (chunk):  bata
+[14:51:01] AI (chunk):  dijiye.
+[14:51:01] AI (chunk):  Hum aapke
+[14:51:03] AI (chunk):  hisaab
+[14:51:03] AI (chunk):  se
+[14:51:03] AI (chunk):  baat
+[14:51:03] AI (chunk):  karainge.
+
+Call ended at: 2025-08-27T14:51:31.309342

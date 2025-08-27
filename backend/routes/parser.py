@@ -18,7 +18,7 @@ def strip_basic_markdown(text):
         text = re.sub(r'\*([^*]+)\*', r'\1', text)  # Remove italic
         text = re.sub(r'^[#>]+\s*', '', text, flags=re.MULTILINE)  # Remove headers/quotes
         return text.strip()
-    
+
 def parse_log_file(filepath):
     gemini_model = genai.GenerativeModel("gemini-2.5-flash")
     
@@ -213,13 +213,43 @@ def parse_all_logs():
                 print(f"Parsing {fname}...")
                 try:
                     parsed_json = parse_log_file(full_path)
+                    # If parsed output contains an error (e.g., Gemini quota), skip saving
+                    has_error = False
+                    if isinstance(parsed_json, dict):
+                        if parsed_json.get("error"):
+                            has_error = True
+                        summary = parsed_json.get("summary")
+                        if isinstance(summary, dict) and summary.get("error"):
+                            has_error = True
+
+                    if has_error:
+                        print(f"Skipping save for {fname} due to error in analysis")
+                        continue
+
                     with open(json_path, "w", encoding="utf-8") as f:
                         json.dump(parsed_json, f, indent=2, ensure_ascii=False)
                     print(f"Successfully parsed {fname} -> {json_fname}")
                 except Exception as e:
                     print(f"Error parsing {fname}: {e}")
             else:
-                print(f"Skipping {fname}, JSON already exists.")
+                # If JSON already exists but contains an error, remove it so it doesn't pollute results
+                try:
+                    with open(json_path, "r", encoding="utf-8") as f:
+                        existing = json.load(f)
+                    has_error = False
+                    if isinstance(existing, dict):
+                        if existing.get("error"):
+                            has_error = True
+                        summary = existing.get("summary")
+                        if isinstance(summary, dict) and summary.get("error"):
+                            has_error = True
+                    if has_error:
+                        os.remove(json_path)
+                        print(f"Removed existing error JSON for {fname}: {os.path.basename(json_path)}")
+                    else:
+                        print(f"Skipping {fname}, JSON already exists.")
+                except Exception as e:
+                    print(f"Could not inspect existing JSON for {fname}: {e}")
 
 if __name__ == "__main__":
     parse_all_logs()

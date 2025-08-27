@@ -1,0 +1,87 @@
+Call started at: 2025-08-27T14:49:56.462594
+Stream SID: 2bd0ac5fe37bc3a21ab85cec2734198r
+
+[14:49:58] User: <noise>
+[14:49:59] AI (chunk): Namaskar Bhaiya,
+[14:49:59] AI (chunk):  hum
+[14:50:00] AI (chunk):  Sunita
+[14:50:00] AI (chunk):  Devi
+[14:50:00] AI (chunk):  bol
+[14:50:00] AI (chunk):  rahal
+[14:50:01] AI (chunk):  bani,
+[14:50:01] AI (chunk):  Rajesh
+[14:50:01] AI (chunk):  Verma
+[14:50:01] AI (chunk):  ji
+[14:50:02] AI (chunk):  ke taraf
+[14:50:02] AI (chunk):  se.
+[14:50:02] AI (chunk):  Kaise
+[14:50:04] AI (chunk):  hain
+[14:50:04] AI (chunk):  aap?
+[14:50:04] AI (chunk):  Aapke
+[14:50:04] AI (chunk):  yahan
+[14:50:04] AI (chunk):  kaun
+[14:50:04] AI (chunk):  si
+[14:50:04] AI (chunk):  problem
+[14:50:08] AI (chunk):  sabse
+[14:50:08] AI (chunk):  badi
+[14:50:08] AI (chunk):  baa
+[14:50:08] AI (chunk):  - rozgar,
+[14:50:08] AI (chunk):  baadh,
+[14:50:08] AI (chunk):  ya
+[14:50:08] AI (chunk):  kuchh
+[14:50:08] AI (chunk):  aur?
+[14:50:08] AI (chunk):  Hum
+[14:50:08] AI (chunk):  sun
+[14:50:08] AI (chunk):  rahal
+[14:50:08] AI (chunk):  hain.
+[14:50:12] User: हेलो
+[14:50:15] User: अबे बेवरी फोन बाय
+[14:50:17] User: गा
+[14:50:17] User: ली
+[14:50:17] User: सुन
+[14:50:17] User: ना
+[14:50:17] User: ते
+[14:50:18] User: री
+[14:50:18] User: तो
+[14:50:18] User: अभी
+[14:50:18] User: हम
+[14:50:18] User: गाली
+[14:50:18] User: दे
+[14:50:19] User: देंगे
+[14:50:19] User: फो
+[14:50:19] User: न
+[14:50:19] User: चिप
+[14:50:19] User: चिपचापरी वाली
+[14:50:22] User: भ
+[14:50:22] User: ैया
+[14:50:22] User: लग रहा है बहन जो फोन करा
+[14:50:24] User: Ya karena yelah.
+[14:50:25] AI (chunk): Maaf kariye,
+[14:50:25] AI (chunk):  Bhaiya.
+[14:50:25] AI (chunk):  Hum
+[14:50:26] AI (chunk):  bas
+[14:50:26] AI (chunk):  ee puchhawa
+[14:50:26] AI (chunk):  chaahat
+[14:50:26] AI (chunk):  rahali
+[14:50:31] User: फोन
+[14:50:31] User: कर
+[14:50:31] User: जब
+[14:50:31] User: बोल
+[14:50:32] User: अभी
+[14:50:32] User: बि
+[14:50:32] User: जी
+[14:50:32] User: है
+[14:50:32] User: तो
+[14:50:32] User: फोन कर रहा है
+[14:50:34] User: את גודל.
+[14:50:35] AI (chunk): Theek ba,
+[14:50:35] AI (chunk):  Bhaiya.
+[14:50:35] AI (chunk):  Hum
+[14:50:36] AI (chunk):  baad
+[14:50:36] AI (chunk):  mein
+[14:50:36] AI (chunk):  call
+[14:50:36] AI (chunk):  karat
+[14:50:36] AI (chunk):  bani.
+[14:50:36] AI (chunk):  Dhanyavaad.
+
+Call ended at: 2025-08-27T14:50:38.507848

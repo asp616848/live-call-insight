@@ -1,0 +1,6 @@
+Call Transcript — saved 2025-08-27 01:49:10
+-------------------------------------------
+[2025-08-27 01:48:52] User: Hello
+[2025-08-27 01:48:54] Assistant: Hello, I’m calling from Indifi about your loan application. It takes 2 minutes—may we proceed?
+[2025-08-27 01:49:07] User: السلام عليكم.
+[2025-08-27 01:49:10] Assistant: नमस्ते, मैं सिर्फ सत्यापन के कुछ विवरण लूँगी। आप कोई भी प्रश्न छोड़ सकते हैं। आपका

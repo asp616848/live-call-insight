@@ -1,0 +1,185 @@
+Call started at: 2025-08-27T14:30:24.031493
+Stream SID: ed669f4648b27dc1e88f3bac6a85198r
+
+[14:30:26] User: Hello.
+[14:30:26] AI (chunk): Namaskar Bhaiya,
+[14:30:27] AI (chunk):  hum
+[14:30:28] AI (chunk):  Sunita
+[14:30:28] AI (chunk):  Devi
+[14:30:28] AI (chunk):  bolat
+[14:30:28] AI (chunk):  hain,
+[14:30:28] AI (chunk):  Rajesh
+[14:30:30] AI (chunk):  Verma
+[14:30:30] AI (chunk):  ji
+[14:30:30] AI (chunk):  ke
+[14:30:30] AI (chunk):  taraf
+[14:30:30] AI (chunk):  se.
+[14:30:30] AI (chunk):  Kaise
+[14:30:32] AI (chunk):  hain
+[14:30:32] AI (chunk):  aap?
+[14:30:32] AI (chunk):  Aapke
+[14:30:32] AI (chunk):  yahan
+[14:30:32] AI (chunk):  kaun
+[14:30:33] AI (chunk):  si
+[14:30:33] AI (chunk):  samasya
+[14:30:33] AI (chunk):  sabse
+[14:30:33] AI (chunk):  badi
+[14:30:36] AI (chunk):  ba—rozgar,
+[14:30:36] AI (chunk):  ya
+[14:30:36] AI (chunk):  kuchh
+[14:30:36] AI (chunk):  aur?
+[14:30:36] AI (chunk):  Hum
+[14:30:36] AI (chunk):  sunat
+[14:30:36] AI (chunk):  hain.
+[14:30:38] User: आप
+[14:30:38] User: जिस
+[14:30:38] User: व्य
+[14:30:39] User: क्ति
+[14:30:39] User: से
+[14:30:39] User: बात
+[14:30:39] User: कर
+[14:30:39] User: रहे
+[14:30:39] User: हैं
+[14:30:40] User: उन्हों
+[14:30:40] User: ने
+[14:30:40] User: आप
+[14:30:40] User: के
+[14:30:41] User: कॉ
+[14:30:41] User: ल
+[14:30:41] User: को
+[14:30:41] User: हो
+[14:30:41] User: ल्
+[14:30:42] User: ड
+[14:30:42] User: पर
+[14:30:42] User: र
+[14:30:42] User: खा
+[14:30:42] User: है
+[14:30:43] User: कृ
+[14:30:43] User: पया
+[14:30:43] User: लाइन
+[14:30:44] User: पर
+[14:30:44] User: ब
+[14:30:44] User: ने
+[14:30:44] User: रहे
+[14:30:45] User: द
+[14:30:45] User: पर्
+[14:30:46] User: सन
+[14:30:46] User: ल
+[14:30:46] User: ॉस
+[14:30:46] User: स्पीक
+[14:30:46] User: िंग
+[14:30:46] User: वि
+[14:30:47] User: द
+[14:30:47] User: है
+[14:30:47] User: ज
+[14:30:47] User: पुट
+[14:30:47] User: योर क
+[14:30:48] User: ॉ
+[14:30:48] User: ल
+[14:30:48] User: ऑन
+[14:30:48] User: होल्ड
+[14:30:50] User: Please stay on the line.
+[14:30:52] User: आप
+[14:30:52] User: जिस
+[14:30:52] User: व्य
+[14:30:52] User: क्ति
+[14:30:52] User: से
+[14:30:53] User: बात
+[14:30:53] User: कर
+[14:30:53] User: रहे
+[14:30:53] User: हैं
+[14:30:53] User: उन्हों
+[14:30:54] User: ने
+[14:30:54] User: आप
+[14:30:54] User: के
+[14:30:54] User: कॉ
+[14:30:54] User: ल
+[14:30:55] User: को
+[14:30:55] User: हो
+[14:30:55] User: ल्ड
+[14:30:55] User: पर
+[14:30:55] User: रखा है
+[14:30:58] User: क्या
+[14:30:58] User: लाइन पर बने रहें
+[14:31:00] User: The
+[14:31:00] User: person
+[14:31:00] User: you
+[14:31:00] User: are
+[14:31:01] User: spe
+[14:31:01] User: aking
+[14:31:01] User: with
+[14:31:01] User: has
+[14:31:01] User: put
+[14:31:02] User: your call on hold.
+[14:31:03] User: Please stay on the line.
+[14:31:05] User: आप
+[14:31:06] User: जिस
+[14:31:06] User: व्य
+[14:31:06] User: क्ति
+[14:31:06] User: से
+[14:31:06] User: बात
+[14:31:07] User: कर
+[14:31:07] User: रहे
+[14:31:07] User: हैं
+[14:31:07] User: उ
+[14:31:07] User: न्होंने
+[14:31:07] User: आप
+[14:31:08] User: के
+[14:31:08] User: कॉ
+[14:31:08] User: ल
+[14:31:08] User: को
+[14:31:09] User: हो
+[14:31:09] User: ल्ड
+[14:31:09] User: पर
+[14:31:09] User: र
+[14:31:09] User: खा
+[14:31:10] User: है
+[14:31:10] User: कृ
+[14:31:10] User: पया
+[14:31:11] User: लाइन
+[14:31:11] User: पर
+[14:31:11] User: ब
+[14:31:11] User: ने रहे
+[14:31:13] User: The
+[14:31:13] User: person
+[14:31:14] User: you
+[14:31:14] User: are
+[14:31:14] User: spe
+[14:31:14] User: aking
+[14:31:15] User: with
+[14:31:15] User: has
+[14:31:15] User: put
+[14:31:15] User: your call on hold.
+[14:31:17] User: Please stay on the line.
+[14:31:19] User: आप
+[14:31:19] User: जिस
+[14:31:19] User: व्य
+[14:31:20] User: क्ति
+[14:31:20] User: से
+[14:31:20] User: बात
+[14:31:20] User: कर
+[14:31:20] User: रहे
+[14:31:21] User: हैं
+[14:31:21] User: उ
+[14:31:21] User: न्होंने
+[14:31:21] User: आप
+[14:31:21] User: के
+[14:31:21] User: कॉ
+[14:31:22] User: ल
+[14:31:22] User: को
+[14:31:22] User: हो
+[14:31:23] User: ल्ड
+[14:31:23] User: पर
+[14:31:23] User: र
+[14:31:23] User: खा
+[14:31:23] User: है
+[14:31:24] User: कृ
+[14:31:24] User: पया
+[14:31:24] User: लाइन
+[14:31:25] User: पर
+[14:31:25] User: ब
+[14:31:25] User: ने रहे
+[14:31:27] User: The
+[14:31:27] User: person you are speaking
+
+Call ended at: 2025-08-27T14:31:30.560073

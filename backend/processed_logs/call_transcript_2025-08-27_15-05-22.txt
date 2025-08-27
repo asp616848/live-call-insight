@@ -1,0 +1,18 @@
+Call started at: 2025-08-27T15:05:22.643615
+Stream SID: d31d185c9d57cc695d95f1735977198r
+
+[15:05:24] User: <noise>
+[15:05:25] AI (chunk): Namaskar Bhaiya,
+[15:05:26] AI (chunk):  hum
+[15:05:26] AI (chunk):  Sunita
+[15:05:26] AI (chunk):  Devi
+[15:05:26] AI (chunk):  bolat
+[15:05:26] AI (chunk):  hain,
+[15:05:26] AI (chunk):  Shri
+[15:05:27] AI (chunk):  Rajesh
+[15:05:27] AI (chunk):  Verma
+[15:05:27] AI (chunk):  ji
+[15:05:27] AI (chunk):  ke
+[15:05:27] AI (chunk):  taraf
+
+Call ended at: 2025-08-27T15:05:35.681846

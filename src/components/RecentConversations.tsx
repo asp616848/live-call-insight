@@ -15,12 +15,12 @@ interface Conversation {
     stream_sid: string;
     call_started: string;
     call_ended: string;
-    duration_seconds: number;
-    average_ai_response_latency: number;
-    sentiment: 'positive' | 'neutral' | 'negative';
-    concerns: string[];
-    overview: string;
-    user_tone: string;
+  duration_seconds?: number | null;
+  average_ai_response_latency?: number | null;
+  sentiment?: 'positive' | 'neutral' | 'negative';
+  concerns?: string[];
+  overview: string;
+  user_tone?: string | null;
   };
   conversation: {
     speaker: 'user' | 'ai';
@@ -98,25 +98,31 @@ export const RecentConversations = () => {
       <h3 className="text-lg font-semibold gradient-text px-6">Recent Conversations</h3>
       <ScrollArea className="flex-grow pr-6 pl-6">
         <div className="space-y-4">
-          {conversations.map((convo, idx) => (
+          {conversations.map((convo, idx) => {
+            const sentiment = (convo.summary.sentiment ?? 'neutral') as 'positive' | 'neutral' | 'negative';
+            const concerns = Array.isArray(convo.summary.concerns) ? convo.summary.concerns : [];
+            const duration = typeof convo.summary.duration_seconds === 'number' ? Math.round(convo.summary.duration_seconds) : null;
+            const latency = typeof convo.summary.average_ai_response_latency === 'number' ? Math.round(convo.summary.average_ai_response_latency * 1000) : null;
+            const tone = (convo.summary.user_tone ?? '').toString();
+            return (
             <div key={`${convo.summary.stream_sid || convo.summary.filename || 'convo'}-${idx}`} className="glass p-4 rounded-lg border border-border/20">
               <div className="flex justify-between items-start gap-2">
                 <p className="text-sm text-muted-foreground flex-grow">{convo.summary.overview}</p>
-                <Badge variant={getSentimentBadgeVariant(convo.summary.sentiment)} className="capitalize">
-                  {convo.summary.sentiment}
+                <Badge variant={getSentimentBadgeVariant(sentiment)} className="capitalize">
+                  {sentiment}
                 </Badge>
               </div>
               <div className="mt-3 text-xs text-muted-foreground space-y-1">
                 <div className="flex justify-between">
-                  <span>Duration: <strong>{Math.round(convo.summary.duration_seconds)}s</strong></span>
-                  <span>Latency: <strong>{Math.round(convo.summary.average_ai_response_latency * 1000)}ms</strong></span>
+                  <span>Duration: <strong>{duration !== null ? `${duration}s` : 'N/A'}</strong></span>
+                  <span>Latency: <strong>{latency !== null ? `${latency}ms` : 'N/A'}</strong></span>
                 </div>
                 <div>
-                  <span>Tone: <strong className="capitalize">{convo.summary.user_tone}</strong></span>
+                  <span>Tone: <strong className="capitalize">{tone || '—'}</strong></span>
                 </div>
-                {convo.summary.concerns.length > 0 && (
+                {concerns.length > 0 && (
                   <div>
-                    <span>Concerns: <strong className="capitalize">{convo.summary.concerns.join(', ')}</strong></span>
+                    <span>Concerns: <strong className="capitalize">{concerns.join(', ')}</strong></span>
                   </div>
                 )}
               </div>
@@ -132,7 +138,8 @@ export const RecentConversations = () => {
                 </div>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </ScrollArea>
     </motion.div>

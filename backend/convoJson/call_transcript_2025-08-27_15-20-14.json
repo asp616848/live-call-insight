@@ -1,0 +1,31 @@
+{
+  "summary": {
+    "filename": "call_transcript_2025-08-27_15-20-14.txt",
+    "stream_sid": "faf6ea8250cd590d41ab728990b6198r",
+    "call_started": "2025-08-27T15:20:14.097685",
+    "call_ended": "2025-08-27T15:20:31.011745",
+    "duration_seconds": 16.91406,
+    "average_ai_response_latency": 0.28,
+    "noise_count": 0,
+    "total_user_messages": 1,
+    "total_ai_responses": 1,
+    "sentiment": "neutral",
+    "concerns": [],
+    "overview": "The user initiated the call with a greeting. The AI introduced itself and immediately asked about the user's well-being and major problems in their area, such as employment or floods, to understand their needs.",
+    "user_tone": "polite and neutral",
+    "emotion": "neutral",
+    "sentiment_score": 5.0
+  },
+  "conversation": [
+    {
+      "speaker": "user",
+      "text": "Namaste",
+      "timestamp": "2025-08-27T15:20:16"
+    },
+    {
+      "speaker": "ai",
+      "text": "Namaskar Bhaiya, hum Sunita Devi bol rahat hain, Rajesh Verma ji ke taraf se. Kaise hain aap? Aapke yahan kaun si sabse badi problem baa - rozgar, baadh, ya kuchh aur? Hum sunat hain.",
+      "timestamp": "2025-08-27T15:20:17"
+    }
+  ]
+}
