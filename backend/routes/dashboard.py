@@ -38,14 +38,25 @@ def get_dashboard_with_latest_convo():
     # Calculate aggregate metrics
     total_calls = len(all_summaries)
     
-    durations = [s.get("duration_seconds") for s in all_summaries if s.get("duration_seconds") is not None]
+    # Safely extract durations, sentiments and latencies while guarding against None summaries
+    durations = [s.get("duration_seconds") for s in all_summaries if isinstance(s, dict) and s.get("duration_seconds") is not None]
     average_call_duration = mean(durations) if durations else 0
 
     sentiment_map = {"positive": 1, "neutral": 0, "negative": -1}
-    sentiments = [sentiment_map.get(s.get("sentiment", "neutral").lower()) for s in all_summaries]
+    sentiments = []
+    for s in all_summaries:
+        if not isinstance(s, dict):
+            continue
+        raw = s.get("sentiment")
+        if raw is None:
+            raw = "neutral"
+        try:
+            sentiments.append(sentiment_map.get(str(raw).lower(), 0))
+        except Exception:
+            sentiments.append(0)
     average_sentiment_score = mean(sentiments) if sentiments else 0
 
-    latencies = [s.get("average_ai_response_latency") for s in all_summaries if s.get("average_ai_response_latency") is not None]
+    latencies = [s.get("average_ai_response_latency") for s in all_summaries if isinstance(s, dict) and s.get("average_ai_response_latency") is not None]
     average_ai_response_latency = mean(latencies) if latencies else 0
 
     # Load latest conversation details

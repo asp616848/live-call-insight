@@ -65,6 +65,8 @@ export default function CallAnalytics() {
 	const [selectedCall, setSelectedCall] = useState<Call | null>(null);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState<string | null>(null);
+	const [metrics, setMetrics] = useState<any>(null);
+	const [pageSize, setPageSize] = useState<number>(10);
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [sentimentFlow, setSentimentFlow] = useState<SentimentFlow | null>(null);
 	const [sentimentLoading, setSentimentLoading] = useState(false);
@@ -73,21 +75,73 @@ export default function CallAnalytics() {
 	const [rollingWindow, setRollingWindow] = useState(3);
 
 	useEffect(() => {
-		async function fetchCalls() {
+		let mounted = true;
+		async function fetchData() {
+			setLoading(true);
+			setError(null);
 			try {
-				const data: Call[] = await apiJson('/logs');
-				setCalls(data);
-				if (data.length > 0) {
-					setSelectedCall(data[0]);
+				// Fetch logs (with pageSize) and lightweight dashboard metrics in parallel for speed
+				const [logsRes, dashRes] = await Promise.all([
+					apiFetch(`/logs?n=${encodeURIComponent(String(pageSize))}`),
+					apiFetch('/dashboard')
+				]);
+
+				if (!logsRes.ok) { throw new Error('Failed to fetch logs'); }
+				if (!dashRes.ok) { throw new Error('Failed to fetch dashboard metrics'); }
+
+				const logsData: Call[] = await logsRes.json();
+				const dashData = await dashRes.json();
+
+				if (!mounted) { return; }
+				setCalls(logsData || []);
+				setMetrics(dashData?.metrics ?? dashData ?? null);
+
+				if ((logsData || []).length > 0) {
+					setSelectedCall(logsData[0]);
+				} else if (dashData?.metrics?.latest_call_summary) {
+					// Construct a minimal Call object from dashboard data when parsed logs are missing
+					setSelectedCall({
+						summary: dashData.metrics.latest_call_summary,
+						conversation: dashData.latest_conversation || []
+					});
 				}
-			} catch (e) {
-				setError('Failed to fetch call data. Is the backend running?');
+			} catch (e:any) {
+				if (!mounted) { return; }
+				setError(e.message || 'Failed to fetch data from backend');
 			} finally {
-				setLoading(false);
+				if (mounted) { setLoading(false); }
 			}
 		}
-		fetchCalls();
-	}, []);
+		fetchData();
+
+		return () => { mounted = false; };
+	}, [pageSize]);
+
+	// Manual refresh that triggers backend to re-download and re-parse logs (slow operation)
+	const handleRefresh = async () => {
+		setLoading(true);
+		try {
+			const res = await apiFetch('/refresh', { method: 'POST' });
+				if (!res.ok) { throw new Error('Refresh failed'); }
+			// refetch lightweight data
+			const dash = await apiFetch('/dashboard');
+			if (dash.ok) {
+				const dashData = await dash.json();
+				setMetrics(dashData.metrics ?? dashData ?? null);
+			}
+			// refresh logs as well
+			const logs = await apiFetch('/logs');
+			if (logs.ok) {
+				const logsData = await logs.json();
+				setCalls(logsData || []);
+				if ((logsData || []).length > 0) { setSelectedCall(logsData[0]); }
+			}
+		} catch (e:any) {
+			setError(e.message || 'Refresh failed');
+		} finally {
+			setLoading(false);
+		}
+	};
 
 	useEffect(() => {
 		async function fetchSentiment() {
@@ -171,9 +225,9 @@ export default function CallAnalytics() {
 	};
 
 	return (
-		<div className="flex min-h-screen bg-background">
+		<div className="flex h-screen bg-background">
         <CustomCursor/>
-			<main className="flex-1 p-6 space-y-6 overflow-y-auto">
+					<main className="flex-1 p-6 space-y-6 overflow-hidden flex flex-col min-h-0">
 				{/* Header with Filters */}
 				<motion.div
 					initial={{ opacity: 0, y: -20 }}
@@ -201,6 +255,19 @@ export default function CallAnalytics() {
 							</SelectContent>
 						</Select>
 
+						{/* Page size selector for last N calls */}
+						<select
+							value={pageSize}
+							onChange={(e) => setPageSize(parseInt(e.target.value, 10))}
+							className="px-2 py-1 rounded border bg-background text-sm"
+						>
+							<option value={10}>10</option>
+							<option value={25}>25</option>
+							<option value={50}>50</option>
+							<option value={75}>75</option>
+							<option value={100}>100</option>
+						</select>
+
 						<Select defaultValue="all-agents">
 							<SelectTrigger className="w-40">
 								<SelectValue />
@@ -215,23 +282,28 @@ export default function CallAnalytics() {
 						<Button variant="outline" size="icon">
 							<Filter className="h-4 w-4" />
 						</Button>
+
+						{/* Manual refresh: triggers backend re-download & parse (slow). Use sparingly. */}
+						<Button variant="ghost" size="sm" onClick={handleRefresh}>
+							Refresh
+						</Button>
 					</div>
 				</motion.div>
 
-				<div className="grid grid-cols-1 lg:grid-cols-5 gap-6 h-[calc(100vh-200px)]">
+				<div className="grid grid-cols-1 lg:grid-cols-5 gap-6 flex-1 overflow-hidden min-h-0 h-full">
 					{/* Call List Panel */}
 					<motion.div
 						initial={{ opacity: 0, x: -20 }}
 						animate={{ opacity: 1, x: 0 }}
-						className="lg:col-span-2"
+						className="lg:col-span-2 h-full min-h-0 flex flex-col"
 					>
-						<Card className="h-full p-6">
+						<Card className="h-full p-6 flex flex-col min-h-0">
 							<div className="flex items-center justify-between mb-4">
 								<h2 className="text-xl font-semibold">Recent Calls</h2>
 								{ !loading && <Badge variant="outline">{calls.length} calls</Badge> }
 							</div>
 
-							<div className="space-y-3 overflow-y-auto max-h-[calc(100%-80px)]">
+							<div className="space-y-3 overflow-y-auto flex-1 min-h-0">
 								{loading ? (
 									<div className="space-y-4">
 										{[...Array(5)].map((_, i) => <Skeleton key={i} className="h-20 w-full" />)}
@@ -297,9 +369,9 @@ export default function CallAnalytics() {
 					<motion.div
 						initial={{ opacity: 0, x: 20 }}
 						animate={{ opacity: 1, x: 0 }}
-						className="lg:col-span-3"
+						className="lg:col-span-3 h-full min-h-0 flex flex-col"
 					>
-						<Card className="h-full p-6">
+						<Card className="h-full p-6 flex flex-col min-h-0">
 							{selectedCall ? (
 								<>
 									<div className="flex items-center justify-between mb-6">
@@ -327,7 +399,7 @@ export default function CallAnalytics() {
 										</div>
 									</div>
 
-									<Tabs defaultValue="conversation" className="h-[calc(100%-100px)]">
+									<Tabs defaultValue="conversation" className="flex-1 h-full overflow-hidden min-h-0 flex flex-col">
 										<TabsList className="grid w-full grid-cols-3">
 											<TabsTrigger value="conversation">Conversation</TabsTrigger>
 											<TabsTrigger value="metrics">Metrics</TabsTrigger>
@@ -337,17 +409,16 @@ export default function CallAnalytics() {
 
 										<TabsContent
 											value="conversation"
-											className="mt-4 h-[calc(100%-50px)]"
+											className="mt-4 h-full overflow-hidden flex flex-col min-h-0"
 										>
-											<div className="space-y-4 overflow-y-auto h-full">
+											<div className="space-y-4 overflow-y-auto flex-2 min-h-0">
 												{/* Privacy indicator */}
 												<div className="flex items-center gap-2 text-xs text-muted-foreground">
 													<Lock className="h-3.5 w-3.5" />
 													<span>Private conversation</span>
 												</div>
 
-												{/* Blurred conversation content */}
-												<div className="space-y-4 pointer-events-none select-none" aria-hidden="true">
+												<div className="space-y-4 pointer-events-none select-none blur" aria-hidden="true">
 						    {selectedCall.conversation.map((msg, index) => (
 														<motion.div
 							    key={(msg as any)?.id ?? index}
@@ -381,8 +452,8 @@ export default function CallAnalytics() {
 											</div>
 										</TabsContent>
 
-										<TabsContent value="metrics" className="mt-4">
-											<div className="grid grid-cols-2 gap-6">
+										<TabsContent value="metrics" className="mt-4 h-full overflow-hidden flex flex-col min-h-0">
+											<div className="grid grid-cols-2 gap-6 overflow-y-auto flex-1 min-h-0">
 												<div className="space-y-4">
 													<div className="flex justify-between">
 														<span className="text-muted-foreground">Duration:</span>
@@ -421,8 +492,8 @@ export default function CallAnalytics() {
 											</div>
 										</TabsContent>
 
-										<TabsContent value="waveform" className="mt-4">
-											<div className="flex items-center justify-center h-full">
+										<TabsContent value="waveform" className="mt-4 h-full overflow-hidden flex flex-col min-h-0">
+											<div className="flex items-center justify-center flex-1 overflow-y-auto min-h-0">
 												<div className="text-center">
 													<p className="text-muted-foreground">
 														Audio waveform not available
@@ -431,8 +502,8 @@ export default function CallAnalytics() {
 											</div>
 										</TabsContent>
 
-										<TabsContent value="sentiment" className="mt-4 h-[calc(100%-50px)]">
-											<div className="flex flex-col h-full gap-4">
+										<TabsContent value="sentiment" className="mt-4 h-full overflow-hidden flex flex-col min-h-0">
+											<div className="flex flex-col flex-1 gap-4 overflow-y-auto min-h-0">
 												{sentimentLoading && <div className="flex-1 flex items-center justify-center"><Skeleton className="w-full h-64"/></div>}
 												{sentimentError && !sentimentLoading && <Alert variant="destructive"><Terminal className='h-4 w-4'/><AlertTitle>Error</AlertTitle><AlertDescription>{sentimentError}</AlertDescription></Alert>}
 												{!sentimentLoading && !sentimentError && sentimentFlow && (
