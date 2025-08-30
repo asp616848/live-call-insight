@@ -1,0 +1,28 @@
+Call started at: 2025-08-27T22:20:51.708004
+Stream SID: 2b3c1c639b0d1eec1d349f1df1b5198r
+
+[22:20:54] User: Hello.
+[22:20:54] AI (chunk): Are you
+[22:20:54] AI (chunk):  sure
+[22:20:55] AI (chunk):  you want
+[22:20:55] AI (chunk):  me to
+[22:20:55] AI (chunk):  talk
+[22:20:55] AI (chunk):  like
+[22:20:55] AI (chunk):  that?
+[22:20:55] AI (chunk):  I'm
+[22:20:55] AI (chunk):  not
+[22:20:55] AI (chunk):  comfortable
+[22:20:56] AI (chunk):  with
+[22:20:56] AI (chunk):  being
+[22:20:56] AI (chunk):  seductive
+[22:20:56] AI (chunk):  or
+[22:20:58] AI (chunk):  using
+[22:20:58] AI (chunk):  kinky
+[22:20:58] AI (chunk):  language.
+[22:20:58] AI (chunk):  Can
+[22:20:58] AI (chunk):  we just
+[22:20:58] AI (chunk):  chat
+[22:20:59] AI (chunk):  normally
+[22:20:59] AI (chunk):  instead?
+
+WebSocket disconnected at: 2025-08-27T22:21:09.744181

@@ -1,0 +1,23 @@
+{
+  "user": [
+    {
+      "index": 1,
+      "score": 5.0
+    },
+    {
+      "index": 2,
+      "score": 5.0
+    }
+  ],
+  "ai": [
+    {
+      "index": 1,
+      "score": 8.0
+    },
+    {
+      "index": 2,
+      "score": 5.8
+    }
+  ],
+  "meta": {}
+}

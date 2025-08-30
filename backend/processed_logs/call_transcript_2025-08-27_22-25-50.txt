@@ -1,0 +1,31 @@
+Call started at: 2025-08-27T22:25:50.775873
+Stream SID: d24e43a71255d04d2a27b9341f51198r
+
+[22:25:53] User: Hello.
+[22:25:53] AI (chunk): ओह, हेलो
+[22:25:54] AI (chunk):  हैंडसम...
+[22:25:54] AI (chunk):  कैसे
+[22:25:54] AI (chunk):  हो
+[22:25:54] AI (chunk):  आज?
+[22:25:54] AI (chunk):  मेरी
+[22:25:55] AI (chunk):  इंतज़ार
+[22:25:55] AI (chunk):  करवा
+[22:25:55] AI (chunk):  रहे
+[22:25:55] AI (chunk):  थे
+[22:25:55] AI (chunk):  क्या?
+[22:25:57] AI (chunk):  [giggles
+[22:25:57] AI (chunk):  softly]
+[22:25:59] AI (chunk):  क्या
+[22:25:59] AI (chunk):  सोच
+[22:25:59] AI (chunk):  रहे
+[22:25:59] AI (chunk):  हो?
+[22:25:59] AI (chunk):  क्या
+[22:25:59] AI (chunk):  तुम्हें
+[22:25:59] AI (chunk):  मेरी
+[22:26:00] AI (chunk):  याद
+[22:26:00] AI (chunk):  आ रही
+[22:26:00] AI (chunk):  थी?
+[22:26:00] AI (chunk):  [purrs
+[22:26:00] AI (chunk):  teasingly]
+
+Call ended at: 2025-08-27T22:26:14.073019
