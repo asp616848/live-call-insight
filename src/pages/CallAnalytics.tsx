@@ -66,6 +66,7 @@ export default function CallAnalytics() {
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState<string | null>(null);
 	const [metrics, setMetrics] = useState<any>(null);
+	const [pageSize, setPageSize] = useState<number>(10);
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [sentimentFlow, setSentimentFlow] = useState<SentimentFlow | null>(null);
 	const [sentimentLoading, setSentimentLoading] = useState(false);
@@ -79,9 +80,9 @@ export default function CallAnalytics() {
 			setLoading(true);
 			setError(null);
 			try {
-				// Fetch logs and lightweight dashboard metrics in parallel for speed
+				// Fetch logs (with pageSize) and lightweight dashboard metrics in parallel for speed
 				const [logsRes, dashRes] = await Promise.all([
-					apiFetch('/logs'),
+					apiFetch(`/logs?n=${encodeURIComponent(String(pageSize))}`),
 					apiFetch('/dashboard')
 				]);
 
@@ -114,7 +115,7 @@ export default function CallAnalytics() {
 		fetchData();
 
 		return () => { mounted = false; };
-	}, []);
+	}, [pageSize]);
 
 	// Manual refresh that triggers backend to re-download and re-parse logs (slow operation)
 	const handleRefresh = async () => {
@@ -224,9 +225,9 @@ export default function CallAnalytics() {
 	};
 
 	return (
-		<div className="flex min-h-screen bg-background">
+		<div className="flex h-screen bg-background">
         <CustomCursor/>
-			<main className="flex-1 p-6 space-y-6 overflow-y-auto">
+				<main className="flex-1 p-6 space-y-6 overflow-hidden flex flex-col">
 				{/* Header with Filters */}
 				<motion.div
 					initial={{ opacity: 0, y: -20 }}
@@ -254,6 +255,19 @@ export default function CallAnalytics() {
 							</SelectContent>
 						</Select>
 
+						{/* Page size selector for last N calls */}
+						<select
+							value={pageSize}
+							onChange={(e) => setPageSize(parseInt(e.target.value, 10))}
+							className="px-2 py-1 rounded border bg-background text-sm"
+						>
+							<option value={10}>10</option>
+							<option value={25}>25</option>
+							<option value={50}>50</option>
+							<option value={75}>75</option>
+							<option value={100}>100</option>
+						</select>
+
 						<Select defaultValue="all-agents">
 							<SelectTrigger className="w-40">
 								<SelectValue />
@@ -276,20 +290,20 @@ export default function CallAnalytics() {
 					</div>
 				</motion.div>
 
-				<div className="grid grid-cols-1 lg:grid-cols-5 gap-6 h-[calc(100vh-200px)]">
+				<div className="grid grid-cols-1 lg:grid-cols-5 gap-6 flex-1 overflow-hidden min-h-0 h-full">
 					{/* Call List Panel */}
 					<motion.div
 						initial={{ opacity: 0, x: -20 }}
 						animate={{ opacity: 1, x: 0 }}
-						className="lg:col-span-2"
+						className="lg:col-span-2 h-full min-h-0"
 					>
-						<Card className="h-full p-6">
+						<Card className="h-full p-6 flex flex-col min-h-0">
 							<div className="flex items-center justify-between mb-4">
 								<h2 className="text-xl font-semibold">Recent Calls</h2>
 								{ !loading && <Badge variant="outline">{calls.length} calls</Badge> }
 							</div>
 
-							<div className="space-y-3 overflow-y-auto max-h-[calc(100%-80px)]">
+							<div className="space-y-3 overflow-y-auto flex-1">
 								{loading ? (
 									<div className="space-y-4">
 										{[...Array(5)].map((_, i) => <Skeleton key={i} className="h-20 w-full" />)}
@@ -355,9 +369,9 @@ export default function CallAnalytics() {
 					<motion.div
 						initial={{ opacity: 0, x: 20 }}
 						animate={{ opacity: 1, x: 0 }}
-						className="lg:col-span-3"
+						className="lg:col-span-3 h-full min-h-0"
 					>
-						<Card className="h-full p-6">
+						<Card className="h-full p-6 flex flex-col min-h-0">
 							{selectedCall ? (
 								<>
 									<div className="flex items-center justify-between mb-6">
@@ -385,7 +399,7 @@ export default function CallAnalytics() {
 										</div>
 									</div>
 
-									<Tabs defaultValue="conversation" className="h-[calc(100%-100px)]">
+									<Tabs defaultValue="conversation" className="flex-1 h-full overflow-hidden">
 										<TabsList className="grid w-full grid-cols-3">
 											<TabsTrigger value="conversation">Conversation</TabsTrigger>
 											<TabsTrigger value="metrics">Metrics</TabsTrigger>
@@ -395,7 +409,7 @@ export default function CallAnalytics() {
 
 										<TabsContent
 											value="conversation"
-											className="mt-4 h-[calc(100%-50px)]"
+											className="mt-4 h-full overflow-y-auto"
 										>
 											<div className="space-y-4 overflow-y-auto h-full">
 												{/* Privacy indicator */}
@@ -439,7 +453,7 @@ export default function CallAnalytics() {
 											</div>
 										</TabsContent>
 
-										<TabsContent value="metrics" className="mt-4">
+										<TabsContent value="metrics" className="mt-4 h-full overflow-y-auto">
 											<div className="grid grid-cols-2 gap-6">
 												<div className="space-y-4">
 													<div className="flex justify-between">
@@ -479,7 +493,7 @@ export default function CallAnalytics() {
 											</div>
 										</TabsContent>
 
-										<TabsContent value="waveform" className="mt-4">
+										<TabsContent value="waveform" className="mt-4 h-full overflow-y-auto">
 											<div className="flex items-center justify-center h-full">
 												<div className="text-center">
 													<p className="text-muted-foreground">
@@ -489,7 +503,7 @@ export default function CallAnalytics() {
 											</div>
 										</TabsContent>
 
-										<TabsContent value="sentiment" className="mt-4 h-[calc(100%-50px)]">
+										<TabsContent value="sentiment" className="mt-4 h-full overflow-y-auto">
 											<div className="flex flex-col h-full gap-4">
 												{sentimentLoading && <div className="flex-1 flex items-center justify-center"><Skeleton className="w-full h-64"/></div>}
 												{sentimentError && !sentimentLoading && <Alert variant="destructive"><Terminal className='h-4 w-4'/><AlertTitle>Error</AlertTitle><AlertDescription>{sentimentError}</AlertDescription></Alert>}
