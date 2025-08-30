@@ -225,9 +225,9 @@ export default function CallAnalytics() {
 	};
 
 	return (
-		<div className="flex h-screen bg-background">
+		<div className="flex min-h-screen bg-background">
         <CustomCursor/>
-					<main className="flex-1 p-6 space-y-6 overflow-hidden flex flex-col min-h-0">
+					<main className="flex-1 p-6 space-y-6 flex flex-col">
 				{/* Header with Filters */}
 				<motion.div
 					initial={{ opacity: 0, y: -20 }}
@@ -290,20 +290,20 @@ export default function CallAnalytics() {
 					</div>
 				</motion.div>
 
-				<div className="grid grid-cols-1 lg:grid-cols-5 gap-6 flex-1 overflow-hidden min-h-0 h-full">
+				<div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
 					{/* Call List Panel */}
 					<motion.div
 						initial={{ opacity: 0, x: -20 }}
 						animate={{ opacity: 1, x: 0 }}
-						className="lg:col-span-2 h-full min-h-0 flex flex-col"
+						className="lg:col-span-2 flex flex-col"
 					>
-						<Card className="h-full p-6 flex flex-col min-h-0">
+						<Card className="p-6 flex flex-col">
 							<div className="flex items-center justify-between mb-4">
 								<h2 className="text-xl font-semibold">Recent Calls</h2>
 								{ !loading && <Badge variant="outline">{calls.length} calls</Badge> }
 							</div>
 
-							<div className="space-y-3 overflow-y-auto flex-1 min-h-0">
+							<div className="space-y-3 overflow-y-auto max-h-[70vh]">
 								{loading ? (
 									<div className="space-y-4">
 										{[...Array(5)].map((_, i) => <Skeleton key={i} className="h-20 w-full" />)}
@@ -369,9 +369,9 @@ export default function CallAnalytics() {
 					<motion.div
 						initial={{ opacity: 0, x: 20 }}
 						animate={{ opacity: 1, x: 0 }}
-						className="lg:col-span-3 h-full min-h-0 flex flex-col"
+						className="lg:col-span-3 flex flex-col"
 					>
-						<Card className="h-full p-6 flex flex-col min-h-0">
+						<Card className="p-6 flex flex-col">
 							{selectedCall ? (
 								<>
 									<div className="flex items-center justify-between mb-6">
@@ -399,7 +399,7 @@ export default function CallAnalytics() {
 										</div>
 									</div>
 
-									<Tabs defaultValue="conversation" className="flex-1 h-full overflow-hidden min-h-0 flex flex-col">
+									<Tabs defaultValue="conversation" className="flex flex-col">
 										<TabsList className="grid w-full grid-cols-3">
 											<TabsTrigger value="conversation">Conversation</TabsTrigger>
 											<TabsTrigger value="metrics">Metrics</TabsTrigger>
@@ -409,9 +409,9 @@ export default function CallAnalytics() {
 
 										<TabsContent
 											value="conversation"
-											className="mt-4 h-full overflow-hidden flex flex-col min-h-0"
+											className="mt-4 flex flex-col"
 										>
-											<div className="space-y-4 overflow-y-auto flex-2 min-h-0">
+											<div className="space-y-4">
 												{/* Privacy indicator */}
 												<div className="flex items-center gap-2 text-xs text-muted-foreground">
 													<Lock className="h-3.5 w-3.5" />
@@ -452,8 +452,8 @@ export default function CallAnalytics() {
 											</div>
 										</TabsContent>
 
-										<TabsContent value="metrics" className="mt-4 h-full overflow-hidden flex flex-col min-h-0">
-											<div className="grid grid-cols-2 gap-6 overflow-y-auto flex-1 min-h-0">
+										<TabsContent value="metrics" className="mt-4 flex flex-col">
+											<div className="grid grid-cols-2 gap-6">
 												<div className="space-y-4">
 													<div className="flex justify-between">
 														<span className="text-muted-foreground">Duration:</span>
@@ -492,7 +492,7 @@ export default function CallAnalytics() {
 											</div>
 										</TabsContent>
 
-										<TabsContent value="waveform" className="mt-4 h-full overflow-hidden flex flex-col min-h-0">
+										<TabsContent value="waveform" className="mt-4 flex flex-col">
 											<div className="flex items-center justify-center flex-1 overflow-y-auto min-h-0">
 												<div className="text-center">
 													<p className="text-muted-foreground">
@@ -502,8 +502,8 @@ export default function CallAnalytics() {
 											</div>
 										</TabsContent>
 
-										<TabsContent value="sentiment" className="mt-4 h-full overflow-hidden flex flex-col min-h-0">
-											<div className="flex flex-col flex-1 gap-4 overflow-y-auto min-h-0">
+										<TabsContent value="sentiment" className="mt-4 flex flex-col">
+											<div className="flex flex-col gap-4">
 												{sentimentLoading && <div className="flex-1 flex items-center justify-center"><Skeleton className="w-full h-64"/></div>}
 												{sentimentError && !sentimentLoading && <Alert variant="destructive"><Terminal className='h-4 w-4'/><AlertTitle>Error</AlertTitle><AlertDescription>{sentimentError}</AlertDescription></Alert>}
 												{!sentimentLoading && !sentimentError && sentimentFlow && (
@@ -524,7 +524,7 @@ export default function CallAnalytics() {
 																	</select>
 																</div>
 															</div>
-															<div className="flex-1 min-h-[240px]">
+															<div className="h-[320px] md:h-[380px]">
 																<ResponsiveContainer width="100%" height="100%">
 																	<LineChart data={chartData} margin={{left:0,right:12,top:10,bottom:4}}>
 																			<CartesianGrid strokeDasharray="3 3" strokeOpacity={0.2} />
