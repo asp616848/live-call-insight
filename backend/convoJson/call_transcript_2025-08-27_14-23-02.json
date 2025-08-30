@@ -1,0 +1,41 @@
+{
+  "summary": {
+    "filename": "call_transcript_2025-08-27_14-23-02.txt",
+    "stream_sid": "e6750890556d22cfc7e568eeb22d198r",
+    "call_started": "2025-08-27T14:23:02.481683",
+    "call_ended": "2025-08-27T14:23:12.825396",
+    "duration_seconds": 10.343713,
+    "average_ai_response_latency": 0.5,
+    "noise_count": 1,
+    "total_user_messages": 2,
+    "total_ai_responses": 2,
+    "sentiment": "neutral",
+    "concerns": [],
+    "overview": "The conversation has just initiated with the AI greeting the user on behalf of Shri Rajesh Verma ji, and the user is responding to establish communication.",
+    "user_tone": "attentive, possibly slightly uncertain or trying to ensure connection after noise",
+    "emotion": "neutral",
+    "sentiment_score": 5.0
+  },
+  "conversation": [
+    {
+      "speaker": "user",
+      "text": "<noise>",
+      "timestamp": "2025-08-27T14:23:04"
+    },
+    {
+      "speaker": "ai",
+      "text": "Namaskar Bhaiya, hum Sunita Devi bol tani, Shri Rajesh Verma ji ke taraf se. Kaise",
+      "timestamp": "2025-08-27T14:23:05"
+    },
+    {
+      "speaker": "user",
+      "text": "Helo. Helo.",
+      "timestamp": "2025-08-27T14:23:11"
+    },
+    {
+      "speaker": "ai",
+      "text": "Haan, boliye hum",
+      "timestamp": "2025-08-27T14:23:12"
+    }
+  ]
+}
