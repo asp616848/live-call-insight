@@ -78,16 +78,35 @@ def get_state_stats():
 
 @app.route('/logs', methods=['GET'])
 def get_logs():
-    download_logs()           # Step 1: fetch from S3
-    parse_all_logs()          # Step 2: process into convoJson
-    recent = get_last_n_conversations(10)  # Step 3: get last 10 summaries + snippets
+    # Return cached parsed conversations. Avoid re-downloading/parsing on every request
+    # which can be very slow. Use the separate /refresh endpoint to force a re-sync.
+    recent = get_last_n_conversations(10)  # get last 10 summaries + snippets from convoJson
     return jsonify(recent)
 
 @app.route('/dashboard_with_convo', methods=['GET'])
 def dashboard_and_transcript():
-    download_logs()          # incase it ain't cached
-    parse_all_logs()         
+    # Return dashboard data computed from existing parsed JSON files.
+    # Heavy operations (download/parse) should be triggered explicitly via /refresh.
     return jsonify(get_dashboard_with_latest_convo())
+
+
+@app.route('/dashboard', methods=['GET'])
+def dashboard_only():
+    """Fast endpoint returning aggregated metrics and latest conversation without forcing a re-sync."""
+    return jsonify(get_dashboard_with_latest_convo())
+
+
+@app.route('/refresh', methods=['POST'])
+def refresh_data():
+    """Trigger a background refresh: download logs from S3 and re-parse them.
+    This endpoint is intentionally explicit so the frontend doesn't trigger heavy work on every page load.
+    """
+    try:
+        download_logs()
+        parse_all_logs()
+        return jsonify({"success": True, "message": "Refresh completed"}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 @app.route('/top_concerns', methods=['GET'])
 def top_concerns():

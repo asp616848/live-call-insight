@@ -283,22 +283,24 @@ export default function IndiaMap() {
     const stateQuery = apiStateMap[selectedState] || selectedState;
     apiJson(`/district_stats?state=${encodeURIComponent(stateQuery)}`)
       .then(res => {
-        let districts = (res && res.districts) ? res.districts : {};
+        const districts = (res && res.districts) ? res.districts : {};
+        // Prefer backend-provided counts. Keep a minimal fallback entry for known important districts
         if (selectedState === 'bihar') {
-          districts = {
+          const kh = districts['Khagaria'] || districts['khagaria'] || districts['Khagaria '];
+          setDistrictStats({
             ...districts,
-            Khagaria: {
-              calls: 6218,
-              top_concerns: districts['Khagaria']?.top_concerns || [],
-            },
-          };
+            // ensure Khagaria key exists so tooltips render even if backend is missing it
+            Khagaria: kh || { calls: 0, top_concerns: [] }
+          });
+        } else {
+          setDistrictStats(districts);
         }
-        setDistrictStats(districts);
       })
       .catch(() => {
+        // On error, avoid injecting large hardcoded numbers; use empty/default data instead
         if (selectedState === 'bihar') {
           setDistrictStats({
-            Khagaria: { calls: 6218, top_concerns: [] },
+            Khagaria: { calls: 0, top_concerns: [] },
           });
         } else {
           setDistrictStats({});

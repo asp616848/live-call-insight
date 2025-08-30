@@ -127,41 +127,7 @@ const StatCard = ({ title, value, icon: Icon, color, caption }: { title: string;
   </motion.div>
 );
 
-const ConcernHotspotList = () => {
-  // Updated hotspots from user-provided data
-  const hotspots = [
-    {
-      district: 'Khagaria',
-      concerns: ['Embankment seepage', 'Cattle disease', 'Input subsidy'],
-      level: 'High' as const,
-      calls: 6218,
-    },
-    {
-      district: 'Madhepura',
-      concerns: ['Flood recession', 'Paddy variety', 'Insurance claim'],
-      level: 'High' as const,
-      calls: 1258,
-    },
-    {
-      district: 'Darbhanga',
-      concerns: ['Flood relief', 'School infrastructure', 'Health staff shortage'],
-      level: 'Medium' as const,
-      calls: 501,
-    },
-    {
-      district: 'Muzaffarpur',
-      concerns: ['Litchi disease', 'Irrigation diesel', 'Health outbreak'],
-      level: 'Medium' as const,
-      calls: 501,
-    },
-    {
-      district: 'Patna',
-      concerns: ['Urban flooding', 'Seed scam', 'Land record'],
-      level: 'Low' as const,
-      calls: 50,
-    },
-  ];
-
+const ConcernHotspotList = ({ hotspots }: { hotspots: Array<{ district: string; concerns: string[]; level: string; calls: number }> }) => {
   return (
     <motion.div
       className="glass rounded-2xl p-6 h-full"
@@ -190,7 +156,7 @@ const ConcernHotspotList = () => {
                 {spot.level}
               </div>
             </div>
-            <p className="text-sm text-muted-foreground">{spot.concerns.join(', ')}</p>
+            <p className="text-sm text-muted-foreground">{(spot.concerns || []).slice(0,3).join(', ')}</p>
           </div>
         ))}
       </div>
@@ -298,6 +264,17 @@ export default function GeoAnalytics() {
       });
   }, [mapSize.width, mapSize.height]);
 
+  // Build hotspots derived from districtStats
+  const hotspots = Object.entries(districtStats)
+    .map(([district, info]) => ({
+      district,
+      concerns: info.top_concerns || [],
+      level: info.level || (info.calls && info.calls > 1000 ? 'High' : info.calls && info.calls > 300 ? 'Medium' : 'Low'),
+      calls: info.calls || 0,
+    }))
+    .sort((a, b) => b.calls - a.calls)
+    .slice(0, 5);
+
   // Load Bihar district stats for tooltip (mirrors IndiaMap behavior for Bihar)
   useEffect(() => {
     apiJson('/district_stats?state=bihar')
@@ -317,56 +294,21 @@ export default function GeoAnalytics() {
         });
 
         // Overlay with provided data (authoritative for these districts)
-        const provided: Record<string, { calls: number; top_concerns: string[]; level: 'High' | 'Medium' | 'Low' }> = {
-          [normalizeDistrictName('Khagaria')]: {
-            calls: 6218,
-            top_concerns: normalized[normalizeDistrictName('Khagaria')]?.top_concerns?.length
-              ? normalized[normalizeDistrictName('Khagaria')].top_concerns
-              : ['Embankment seepage', 'Cattle disease', 'Input subsidy'],
-            level: 'High',
-          },
-          [normalizeDistrictName('Madhepura')]: {
-            calls: 1258,
-            top_concerns: ['Flood recession', 'Paddy variety', 'Insurance claim'],
-            level: 'High',
-          },
-          [normalizeDistrictName('Darbhanga')]: {
-            calls: 501,
-            top_concerns: ['Flood relief', 'School infrastructure', 'Health staff shortage'],
-            level: 'Medium',
-          },
-          [normalizeDistrictName('Muzaffarpur')]: {
-            calls: 501,
-            top_concerns: ['Litchi disease', 'Irrigation diesel', 'Health outbreak'],
-            level: 'Medium',
-          },
-          [normalizeDistrictName('Patna')]: {
-            calls: 50,
-            top_concerns: ['Urban flooding', 'Seed scam', 'Land record'],
-            level: 'Low',
-          },
-        };
+  // merge normalized api data with any seeded defaults (prefer API values)
+  const merged = { ...normalized };
+  setDistrictStats(merged);
 
-        const merged = { ...normalized, ...provided };
-        setDistrictStats(merged);
-
-        // Update top metrics
-        const high = Object.values(merged).filter((d) => d.level === 'High').length;
-        const sum = Object.values(merged).reduce((acc, d) => acc + (d.calls || 0), 0);
-        setHighCount(high);
-        setTotalCalls(sum);
+  // Update top metrics
+  const high = Object.values(merged).filter((d) => d.level === 'High').length;
+  const sum = Object.values(merged).reduce((acc, d) => acc + (d.calls || 0), 0);
+  setHighCount(high);
+  setTotalCalls(sum);
       })
       .catch(() => {
-        const fallback: Record<string, { calls: number; top_concerns: string[]; level: 'High' | 'Medium' | 'Low' }> = {
-          [normalizeDistrictName('Khagaria')]: { calls: 6218, top_concerns: ['Embankment seepage', 'Cattle disease', 'Input subsidy'], level: 'High' },
-          [normalizeDistrictName('Madhepura')]: { calls: 1258, top_concerns: ['Flood recession', 'Paddy variety', 'Insurance claim'], level: 'High' },
-          [normalizeDistrictName('Darbhanga')]: { calls: 501, top_concerns: ['Flood relief', 'School infrastructure', 'Health staff shortage'], level: 'Medium' },
-          [normalizeDistrictName('Muzaffarpur')]: { calls: 501, top_concerns: ['Litchi disease', 'Irrigation diesel', 'Health outbreak'], level: 'Medium' },
-          [normalizeDistrictName('Patna')]: { calls: 50, top_concerns: ['Urban flooding', 'Seed scam', 'Land record'], level: 'Low' },
-        };
-        setDistrictStats(fallback);
-        setHighCount(2);
-        setTotalCalls(6218 + 1258 + 501 + 501 + 50);
+  // On error, set empty data rather than spraying large hardcoded counts
+  setDistrictStats({});
+  setHighCount(0);
+  setTotalCalls(0);
       });
   }, []);
 
@@ -511,7 +453,7 @@ export default function GeoAnalytics() {
           </motion.div>
         </div>
         <div className="h-[500px] lg:h-auto">
-          <ConcernHotspotList />
+          <ConcernHotspotList hotspots={hotspots} />
         </div>
       </div>
     </motion.div>
