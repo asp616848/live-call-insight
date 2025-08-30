@@ -1,0 +1,33 @@
+{
+  "summary": {
+    "filename": "call_transcript_2025-08-27_14-55-39.txt",
+    "stream_sid": "d5adbe826ad4d122cea596953bb6198r",
+    "call_started": "2025-08-27T14:55:39.815462",
+    "call_ended": "2025-08-27T14:56:21.333117",
+    "duration_seconds": 41.517655,
+    "average_ai_response_latency": 0.21,
+    "noise_count": 1,
+    "total_user_messages": 1,
+    "total_ai_responses": 1,
+    "sentiment": "negative",
+    "concerns": [
+      "ambient noise interfering with communication"
+    ],
+    "overview": "The AI initiated a conversation about development concerns in Khagaria, asking the user about major issues like employment or floods. The user's only response was 'Noise,' indicating an immediate environmental or call quality problem hindering the discussion.",
+    "user_tone": "abrupt and signaling an impediment",
+    "emotion": "frustrated",
+    "sentiment_score": 3.0
+  },
+  "conversation": [
+    {
+      "speaker": "user",
+      "text": "Noise",
+      "timestamp": "2025-08-27T14:55:41"
+    },
+    {
+      "speaker": "ai",
+      "text": "Namaskar Bhaiya, hum Sunita Devi bol rahal bani, Rajesh Verma ji ke taraf se. Kaise hain aap? Hum aapke Khagaria ke vikas ke baare mein baat kare khatir call kail hain. Aapke yahan kaun sabse bada chinta ba? Rozgar, baadh, ya kuchh aur?",
+      "timestamp": "2025-08-27T14:55:42"
+    }
+  ]
+}
