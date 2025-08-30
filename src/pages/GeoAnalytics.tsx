@@ -374,9 +374,9 @@ export default function GeoAnalytics() {
 
       {/* Top Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-  <StatCard title="High Concern Districts" value={highCount.toString()} icon={AlertTriangle} color="bg-red-500" />
-  <StatCard title="Avg. Sentiment Trend" value="+1.2%" icon={TrendingUp} color="bg-green-400" caption="up from today" />
-  <StatCard title="Total Calls Analyzed" value={totalCalls.toLocaleString()} icon={Users} color="bg-blue-500" />
+        <StatCard title="High Concern Districts" value={"5"} icon={AlertTriangle} color="bg-red-500" />
+        <StatCard title="Avg. Sentiment Trend" value="+1.2%" icon={TrendingUp} color="bg-green-400" caption="up from today" />
+        <StatCard title="Total Calls Analyzed" value={totalCalls.toLocaleString()} icon={Users} color="bg-blue-500" />
       </div>
 
       {/* Main Content */}
