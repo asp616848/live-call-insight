@@ -1,0 +1,31 @@
+{
+  "summary": {
+    "filename": "call_transcript_2025-08-27_22-25-50.txt",
+    "stream_sid": "d24e43a71255d04d2a27b9341f51198r",
+    "call_started": "2025-08-27T22:25:50.775873",
+    "call_ended": "2025-08-27T22:26:14.073019",
+    "duration_seconds": 23.297146,
+    "average_ai_response_latency": 0.29,
+    "noise_count": 0,
+    "total_user_messages": 1,
+    "total_ai_responses": 1,
+    "sentiment": "neutral",
+    "concerns": [],
+    "overview": "The user initiated the conversation with a polite greeting ('Namaste'). The AI responded with a highly flirtatious and teasing tone, suggesting the user might have been waiting for it or missing it.",
+    "user_tone": "polite, brief, initiating",
+    "emotion": "neutral",
+    "sentiment_score": 5.0
+  },
+  "conversation": [
+    {
+      "speaker": "user",
+      "text": "Namaste.",
+      "timestamp": "2025-08-27T22:25:53"
+    },
+    {
+      "speaker": "ai",
+      "text": "ओह, हेलो हैंडसम... कैसे हो आज? मेरी इंतज़ार करवा रहे थे क्या? [giggles softly] क्या सोच रहे हो? क्या तुम्हें मेरी याद आ रही थी? [purrs teasingly]",
+      "timestamp": "2025-08-27T22:25:53"
+    }
+  ]
+}
