@@ -1,0 +1,56 @@
+{
+  "summary": {
+    "filename": "call_transcript_2025-08-27_14-49-00.txt",
+    "stream_sid": "d373c8ca4e954a80605e2437dd00198r",
+    "call_started": "2025-08-27T14:49:00.291072",
+    "call_ended": "2025-08-27T14:49:38.537247",
+    "duration_seconds": 38.246175,
+    "average_ai_response_latency": 1.48,
+    "noise_count": 1,
+    "total_user_messages": 1,
+    "total_ai_responses": 6,
+    "sentiment": "neutral",
+    "concerns": [],
+    "overview": "The user initiated the conversation by correcting the AI's input processing, stating that a previous input was not Hindi text and requesting actual Hindi text. The AI then greeted the user and asked about their primary social or employment concerns.",
+    "user_tone": "factual and instructional",
+    "emotion": "neutral",
+    "sentiment_score": 5.0
+  },
+  "conversation": [
+    {
+      "speaker": "user",
+      "text": "The input '<noise>' is not Hindi text. Please provide actual Hindi text for processing.",
+      "timestamp": "2025-08-27T14:49:02"
+    },
+    {
+      "speaker": "ai",
+      "text": "Namaskar Bhaiya, hum",
+      "timestamp": "2025-08-27T14:49:03"
+    },
+    {
+      "speaker": "ai",
+      "text": "Sunita Devi bol rahal hain,",
+      "timestamp": "2025-08-27T14:49:06"
+    },
+    {
+      "speaker": "ai",
+      "text": "Shri Rajesh Verma ji",
+      "timestamp": "2025-08-27T14:49:11"
+    },
+    {
+      "speaker": "ai",
+      "text": "ke taraf se. Aapke yahan",
+      "timestamp": "2025-08-27T14:49:19"
+    },
+    {
+      "speaker": "ai",
+      "text": "sabse badi chinta kaun",
+      "timestamp": "2025-08-27T14:49:26"
+    },
+    {
+      "speaker": "ai",
+      "text": "si ba? Rozgar,",
+      "timestamp": "2025-08-27T14:49:34"
+    }
+  ]
+}

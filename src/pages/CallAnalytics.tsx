@@ -65,6 +65,7 @@ export default function CallAnalytics() {
 	const [selectedCall, setSelectedCall] = useState<Call | null>(null);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState<string | null>(null);
+	const [metrics, setMetrics] = useState<any>(null);
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [sentimentFlow, setSentimentFlow] = useState<SentimentFlow | null>(null);
 	const [sentimentLoading, setSentimentLoading] = useState(false);
@@ -73,21 +74,73 @@ export default function CallAnalytics() {
 	const [rollingWindow, setRollingWindow] = useState(3);
 
 	useEffect(() => {
-		async function fetchCalls() {
+		let mounted = true;
+		async function fetchData() {
+			setLoading(true);
+			setError(null);
 			try {
-				const data: Call[] = await apiJson('/logs');
-				setCalls(data);
-				if (data.length > 0) {
-					setSelectedCall(data[0]);
+				// Fetch logs and lightweight dashboard metrics in parallel for speed
+				const [logsRes, dashRes] = await Promise.all([
+					apiFetch('/logs'),
+					apiFetch('/dashboard')
+				]);
+
+				if (!logsRes.ok) { throw new Error('Failed to fetch logs'); }
+				if (!dashRes.ok) { throw new Error('Failed to fetch dashboard metrics'); }
+
+				const logsData: Call[] = await logsRes.json();
+				const dashData = await dashRes.json();
+
+				if (!mounted) { return; }
+				setCalls(logsData || []);
+				setMetrics(dashData?.metrics ?? dashData ?? null);
+
+				if ((logsData || []).length > 0) {
+					setSelectedCall(logsData[0]);
+				} else if (dashData?.metrics?.latest_call_summary) {
+					// Construct a minimal Call object from dashboard data when parsed logs are missing
+					setSelectedCall({
+						summary: dashData.metrics.latest_call_summary,
+						conversation: dashData.latest_conversation || []
+					});
 				}
-			} catch (e) {
-				setError('Failed to fetch call data. Is the backend running?');
+			} catch (e:any) {
+				if (!mounted) { return; }
+				setError(e.message || 'Failed to fetch data from backend');
 			} finally {
-				setLoading(false);
+				if (mounted) { setLoading(false); }
 			}
 		}
-		fetchCalls();
+		fetchData();
+
+		return () => { mounted = false; };
 	}, []);
+
+	// Manual refresh that triggers backend to re-download and re-parse logs (slow operation)
+	const handleRefresh = async () => {
+		setLoading(true);
+		try {
+			const res = await apiFetch('/refresh', { method: 'POST' });
+				if (!res.ok) { throw new Error('Refresh failed'); }
+			// refetch lightweight data
+			const dash = await apiFetch('/dashboard');
+			if (dash.ok) {
+				const dashData = await dash.json();
+				setMetrics(dashData.metrics ?? dashData ?? null);
+			}
+			// refresh logs as well
+			const logs = await apiFetch('/logs');
+			if (logs.ok) {
+				const logsData = await logs.json();
+				setCalls(logsData || []);
+				if ((logsData || []).length > 0) { setSelectedCall(logsData[0]); }
+			}
+		} catch (e:any) {
+			setError(e.message || 'Refresh failed');
+		} finally {
+			setLoading(false);
+		}
+	};
 
 	useEffect(() => {
 		async function fetchSentiment() {
@@ -214,6 +267,11 @@ export default function CallAnalytics() {
 
 						<Button variant="outline" size="icon">
 							<Filter className="h-4 w-4" />
+						</Button>
+
+						{/* Manual refresh: triggers backend re-download & parse (slow). Use sparingly. */}
+						<Button variant="ghost" size="sm" onClick={handleRefresh}>
+							Refresh
 						</Button>
 					</div>
 				</motion.div>

@@ -1,0 +1,26 @@
+{
+  "summary": {
+    "filename": "call_transcript_2025-08-27_15-24-07.txt",
+    "stream_sid": "a9acfd70520b138dfa90a4ffb432198r",
+    "call_started": "2025-08-27T15:24:07.550145",
+    "call_ended": "2025-08-27T15:26:07.606721",
+    "duration_seconds": 120.056576,
+    "average_ai_response_latency": null,
+    "noise_count": 0,
+    "total_user_messages": 1,
+    "total_ai_responses": 0,
+    "sentiment": "neutral",
+    "concerns": [],
+    "overview": "This is an automated message informing the caller that the person they wish to contact is currently unavailable. It instructs the caller to record their message after a beep and states they can hang up once the recording is finished.",
+    "user_tone": "Automated, calm, and purely instructional, with no sense of urgency.",
+    "emotion": "neutral",
+    "sentiment_score": 5.0
+  },
+  "conversation": [
+    {
+      "speaker": "user",
+      "text": "नमस्ते। जिस व्यक्ति से आप संपर्क करना चाहते हैं, वह उपलब्ध नहीं है। बीप की आवाज़ के बाद, कृपया अपना संदेश रिकॉर्ड करें। रिकॉर्डिंग पूरी होने पर आप फ़ोन रख सकते हैं।",
+      "timestamp": "2025-08-27T15:24:09"
+    }
+  ]
+}

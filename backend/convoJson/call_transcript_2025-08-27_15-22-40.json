@@ -1,0 +1,150 @@
+{
+  "summary": {
+    "filename": "call_transcript_2025-08-27_15-22-40.txt",
+    "stream_sid": "1936b6f29cb62da1b4796596e058198r",
+    "call_started": "2025-08-27T15:22:40.072057",
+    "call_ended": null,
+    "duration_seconds": null,
+    "average_ai_response_latency": 0.71,
+    "noise_count": 2,
+    "total_user_messages": 11,
+    "total_ai_responses": 14,
+    "sentiment": "positive",
+    "concerns": [
+      "unemployment",
+      "finding meaningful employment",
+      "opportunity to serve the nation"
+    ],
+    "overview": "The user initially struggled to articulate their problem but then clearly expressed a strong desire for employment, specifically in the Indian Army. They passionately conveyed their deep patriotism and commitment to serving the nation, highlighting their readiness to protect the country.",
+    "user_tone": "initially hesitant, transitioning to assertive, passionate, and deeply patriotic",
+    "emotion": "Determined",
+    "sentiment_score": 9.0
+  },
+  "conversation": [
+    {
+      "speaker": "user",
+      "text": "No Hindi text provided.",
+      "timestamp": "2025-08-27T15:22:42"
+    },
+    {
+      "speaker": "ai",
+      "text": "नमस्कार Bhaiya, hum Rajesh Verma ji ke taraf se baat karat bani. Kaise hain aap? Hum sunawat chahani, aapke yahan kaun si problem ba, jiske baare mein aap baat karal chahani?",
+      "timestamp": "2025-08-27T15:22:42"
+    },
+    {
+      "speaker": "user",
+      "text": "Paulo.",
+      "timestamp": "2025-08-27T15:23:07"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी? Hum sun nai payani. Thoda 清楚 boliye ki aapke yahan kaun si problem ba? Rozgar ya kuchh aur?",
+      "timestamp": "2025-08-27T15:23:08"
+    },
+    {
+      "speaker": "user",
+      "text": "Meri problema.",
+      "timestamp": "2025-08-27T15:23:19"
+    },
+    {
+      "speaker": "ai",
+      "text": "Mera problem? Aap कृपया batayenge ki aapke problem ka ba? Taki hum aapke madad kar saki.",
+      "timestamp": "2025-08-27T15:23:20"
+    },
+    {
+      "speaker": "user",
+      "text": "Kuchh nahin bas",
+      "timestamp": "2025-08-27T15:23:32"
+    },
+    {
+      "speaker": "ai",
+      "text": "Achha theek ba Bhaiya. Toh aapke yahan rozgar, baadh, ya aur kaun si cheez ke wajah se aap pareshan hain? Kripya batayenge",
+      "timestamp": "2025-08-27T15:23:33"
+    },
+    {
+      "speaker": "user",
+      "text": "Kya bataenge, Madam? Hum toh rozgaar se bhi matlab rakhte hain, padhe-likhe hain. Nauveen kaksha tak padhe hain. Teen vishayon mein 'Arts' se 227 number se paas kiye hain.",
+      "timestamp": "2025-08-27T15:23:48"
+    },
+    {
+      "speaker": "ai",
+      "text": "Hum samajh sakat hain ki aapko rozgar ke liye pareshaani hot hoyi. Aur aap padhai bhi jaada nai kar payani, ee hum samajh",
+      "timestamp": "2025-08-27T15:24:02"
+    },
+    {
+      "speaker": "ai",
+      "text": "sakat hain. Rajesh Verma ji aap jaisan naujawan ke baare mein bahut sochat hain. Unka koshish ee ba ki aap jaisan yuwa ke yahan rozgar mile aur unko bahar nai jaay ke pade. Aap kaun se gaanv se baat karat hain?",
+      "timestamp": "2025-08-27T15:24:10"
+    },
+    {
+      "speaker": "ai",
+      "text": "haan mat",
+      "timestamp": "2025-08-27T15:24:28"
+    },
+    {
+      "speaker": "user",
+      "text": "Hum kya bataen? Sab kuchh theek hai, lekin hamara kahne ka matlab yah hai ki agar aap rozgar dena chahte hain, to Indian Army mein deejiye. Jai Bhola.",
+      "timestamp": "2025-08-27T15:24:29"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी हाँ, hum samajh gayni. Aap Indian Army mein rozgar chahat hain. E bahut achha vichaar",
+      "timestamp": "2025-08-27T15:24:42"
+    },
+    {
+      "speaker": "user",
+      "text": "Haan, banaaiye. To hisaab banaaiyega. Army banaaiye. Indian Army banenge ya nahin banenge, Border pe to nahin boliyega.",
+      "timestamp": "2025-08-27T15:24:52"
+    },
+    {
+      "speaker": "ai",
+      "text": "haan, bilkul sahi baat bol rahat hain aap. Desh ke seva kare ke bhavna bahut achha ba. Rajesh Verma ji bhi yuwa ke army mein bharti hoke",
+      "timestamp": "2025-08-27T15:24:58"
+    },
+    {
+      "speaker": "user",
+      "text": "Desh ke lie, Madam jaan bhi de sakti hain, aur bacha bhi sakti hain. Yah Bhagwan ki daya hai.",
+      "timestamp": "2025-08-27T15:25:07"
+    },
+    {
+      "speaker": "ai",
+      "text": "Aapke deshbhakti",
+      "timestamp": "2025-08-27T15:25:17"
+    },
+    {
+      "speaker": "user",
+      "text": "Lekin, jaan le bhi sakte hain. Madam, jab koi doosra, zone lene aayega, apna aadmi chhodkar, toh uska jeevan bhi le sakte hain.",
+      "timestamp": "2025-08-27T15:25:19"
+    },
+    {
+      "speaker": "ai",
+      "text": "Bilkul sahi baat bol rahat hain aap. Desh ke raksha karna toh bahut zaroori baat ba. Rajesh Verma ji ee baat ke mahatva samajhat hain. Unka koshish ee ki",
+      "timestamp": "2025-08-27T15:25:28"
+    },
+    {
+      "speaker": "user",
+      "text": "Madam, yah hamaara farz hai ki ham Hindustaani hain. Hindustaan mera watan hai. Hindustaan mera har cheez hai.",
+      "timestamp": "2025-08-27T15:25:35"
+    },
+    {
+      "speaker": "ai",
+      "text": "Wah, aapke deshbhakti ke jazba dekh ke bahut khushi hot hoyi. Hamahu sab samajhat hain ki desh ke seva karna kitna zaroori ba. Rajesh Verma ji bhi yuwa log ke desh ke seva mein joote dekh ke bahut khush hot hoyi. Hum aapke jazba ke bahut samaan karat hain.",
+      "timestamp": "2025-08-27T15:25:43"
+    },
+    {
+      "speaker": "user",
+      "text": "ba <noise>",
+      "timestamp": "2025-08-27T15:25:54"
+    },
+    {
+      "speaker": "ai",
+      "text": "bhi desh ke seva khatir bahut kaam karat hain. Unkar prayas ba ki aap jaisan yuwa ke Indian Army jaisan jagah pe avsar mile. Hum unse ee baat bolab ki",
+      "timestamp": "2025-08-27T15:25:55"
+    },
+    {
+      "speaker": "ai",
+      "text": "aap Indian Army mein rozgar chahat hain. Aap bharosa rakhi, ee baat unka tak pahunchi.",
+      "timestamp": "2025-08-27T15:26:05"
+    }
+  ]
+}

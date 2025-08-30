@@ -1,0 +1,31 @@
+{
+  "summary": {
+    "filename": "call_transcript_2025-08-27_15-05-22.txt",
+    "stream_sid": "d31d185c9d57cc695d95f1735977198r",
+    "call_started": "2025-08-27T15:05:22.643615",
+    "call_ended": "2025-08-27T15:05:35.681846",
+    "duration_seconds": 13.038231,
+    "average_ai_response_latency": 0.18,
+    "noise_count": 1,
+    "total_user_messages": 1,
+    "total_ai_responses": 1,
+    "sentiment": "neutral",
+    "concerns": [],
+    "overview": "The user informed the AI that no Hindi text was provided. The AI responded with a polite greeting, introducing itself and its affiliation.",
+    "user_tone": "factual and direct",
+    "emotion": "confused",
+    "sentiment_score": 5.0
+  },
+  "conversation": [
+    {
+      "speaker": "user",
+      "text": "Koi Hindi paath pradaan nahin kiya gaya.",
+      "timestamp": "2025-08-27T15:05:24"
+    },
+    {
+      "speaker": "ai",
+      "text": "Namaskar Bhaiya, hum Sunita Devi bolat hain, Shri Rajesh Verma ji ke taraf",
+      "timestamp": "2025-08-27T15:05:25"
+    }
+  ]
+}
