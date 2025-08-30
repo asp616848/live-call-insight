@@ -80,7 +80,11 @@ def get_state_stats():
 def get_logs():
     # Return cached parsed conversations. Avoid re-downloading/parsing on every request
     # which can be very slow. Use the separate /refresh endpoint to force a re-sync.
-    recent = get_last_n_conversations(10)  # get last 10 summaries + snippets from convoJson
+    try:
+        n = int(request.args.get('n', 10))
+    except (TypeError, ValueError):
+        n = 10
+    recent = get_last_n_conversations(n)
     return jsonify(recent)
 
 @app.route('/dashboard_with_convo', methods=['GET'])
