@@ -99,12 +99,33 @@ const LangExtractPage = () => {
     }
   };
 
-  const getCategoryColor = (category: string) => {
+  // Map extraction category to theme-consistent tones (works in light and dark)
+  const getCategoryTone = (category: string) => {
     switch (category) {
-      case "concern": return "from-red-500/30 to-red-600/30 border-red-400/50 shadow-red-500/20";
-      case "action_item": return "from-purple-500/30 to-violet-500/30 border-purple-400/50 shadow-purple-500/20";
-      case "emotion": return "from-pink-500/30 to-purple-500/30 border-pink-400/50 shadow-pink-500/20";
-      default: return "from-slate-500/30 to-gray-600/30 border-slate-400/50 shadow-slate-500/20";
+      case "concern":
+        return {
+          container: "bg-destructive/10 border-destructive/40",
+          chip: "bg-destructive/20 text-destructive-foreground/90 border-destructive/30",
+          icon: "text-destructive",
+        };
+      case "action_item":
+        return {
+          container: "bg-primary/10 border-primary/40",
+          chip: "bg-primary/15 text-primary border-primary/30",
+          icon: "text-primary",
+        };
+      case "emotion":
+        return {
+          container: "bg-accent/10 border-accent/40",
+          chip: "bg-accent/20 text-accent-foreground/90 border-accent/30",
+          icon: "text-accent-foreground",
+        };
+      default:
+        return {
+          container: "bg-muted/30 border-border",
+          chip: "bg-muted text-muted-foreground border-border/50",
+          icon: "text-muted-foreground",
+        };
     }
   };
 
@@ -127,25 +148,25 @@ const LangExtractPage = () => {
   const categories = [...new Set(analysis?.extractions?.map((ext: any) => ext.extraction_class) || [])];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-950 via-purple-950 to-violet-950">
+    <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="sticky top-0 z-50 backdrop-blur-xl bg-gray-950/95 border-b border-purple-800/30">
+      <div className="sticky top-0 z-50 backdrop-blur-xl bg-background/80 border-b border-border">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="p-2 rounded-xl bg-gradient-to-r from-purple-700 to-violet-700 shadow-lg shadow-purple-900/50">
+              <div className="p-2 rounded-xl glow-primary glass">
                 <Brain className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-300 to-violet-300 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-bold gradient-text">
                   ConvoInsight
                 </h1>
-                <p className="text-sm text-gray-400">AI-Powered Conversation Analysis</p>
+                <p className="text-sm text-muted-foreground">AI-Powered Conversation Analysis</p>
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-purple-300" />
-              <span className="text-sm font-medium text-purple-300">Live Analysis</span>
+              <Sparkles className="w-5 h-5 text-primary" />
+              <span className="text-sm font-medium text-primary">Live Analysis</span>
             </div>
           </div>
         </div>
@@ -156,21 +177,21 @@ const LangExtractPage = () => {
           {/* Sidebar */}
           <div className="lg:col-span-1 space-y-6">
             {/* Transcript Selector */}
-            <Card className="overflow-hidden border border-slate-700/50 shadow-xl bg-slate-800/70 backdrop-blur-sm">
+            <Card className="overflow-hidden glass shadow-xl">
               <CardHeader className="pb-3">
-                <CardTitle className="flex items-center gap-2 text-lg text-white">
-                  <Eye className="w-5 h-5 text-purple-400" />
+                <CardTitle className="flex items-center gap-2 text-lg">
+                  <Eye className="w-5 h-5 text-primary" />
                   Select Transcript
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <Select onValueChange={setSelectedTranscript} value={selectedTranscript || ""}>
-                  <SelectTrigger className="border border-slate-600 bg-slate-700/50 text-white">
+                  <SelectTrigger className="border border-input bg-background/50 text-foreground backdrop-blur-sm">
                     <SelectValue placeholder="Choose a conversation..." />
                   </SelectTrigger>
-                  <SelectContent className="bg-slate-800 border-slate-600">
+                  <SelectContent className="bg-popover border-border text-foreground backdrop-blur-md">
                     {transcripts.map((t) => (
-                      <SelectItem key={t} value={t} className="text-white hover:bg-slate-700">
+                      <SelectItem key={t} value={t} className="hover:bg-muted">
                         {t.replace(/^call_transcript_/, '').replace(/\.json$/, '')}
                       </SelectItem>
                     ))}
@@ -180,31 +201,31 @@ const LangExtractPage = () => {
             </Card>
 
             {/* Filters */}
-            <Card className="overflow-hidden border border-slate-700/50 shadow-xl bg-slate-800/70 backdrop-blur-sm">
+            <Card className="overflow-hidden glass shadow-xl">
               <CardHeader className="pb-3">
-                <CardTitle className="flex items-center gap-2 text-lg text-white">
-                  <Filter className="w-5 h-5 text-purple-400" />
+                <CardTitle className="flex items-center gap-2 text-lg">
+                  <Filter className="w-5 h-5 text-primary" />
                   Filters
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-slate-400" />
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                   <Input
                     placeholder="Search entities..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-10 border border-slate-600 bg-slate-700/50 text-white placeholder-slate-400"
+                    className="pl-10 border border-input bg-background/50 text-foreground placeholder-muted-foreground backdrop-blur-sm"
                   />
                 </div>
                 <Select onValueChange={setFilterCategory} value={filterCategory}>
-                  <SelectTrigger className="border border-slate-600 bg-slate-700/50 text-white">
+                  <SelectTrigger className="border border-input bg-background/50 text-foreground backdrop-blur-sm">
                     <SelectValue />
                   </SelectTrigger>
-                  <SelectContent className="bg-slate-800 border-slate-600">
-                    <SelectItem value="all" className="text-white hover:bg-slate-700">All Categories</SelectItem>
+                  <SelectContent className="bg-popover border-border backdrop-blur-md">
+                    <SelectItem value="all" className="hover:bg-muted">All Categories</SelectItem>
                     {categories.map((cat: string) => (
-                      <SelectItem key={cat} value={cat} className="text-white hover:bg-slate-700">
+                      <SelectItem key={cat} value={cat} className="hover:bg-muted">
                         {cat.replace('_', ' ').toUpperCase()}
                       </SelectItem>
                     ))}
@@ -215,19 +236,19 @@ const LangExtractPage = () => {
 
             {/* Stats */}
             {analysis && (
-              <Card className="overflow-hidden border border-slate-700/50 shadow-xl bg-slate-800/70 backdrop-blur-sm">
+              <Card className="overflow-hidden glass shadow-xl">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-lg text-white">Analysis Summary</CardTitle>
+                  <CardTitle className="text-lg">Analysis Summary</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="text-center p-3 rounded-lg bg-purple-500/20 border border-purple-500/30">
-                      <div className="text-2xl font-bold text-purple-400">{analysis.extractions?.length || 0}</div>
-                      <div className="text-xs text-slate-400">Total Entities</div>
+                    <div className="text-center p-3 rounded-lg bg-primary/10 border border-primary/30 backdrop-blur-sm">
+                      <div className="text-2xl font-bold text-primary">{analysis.extractions?.length || 0}</div>
+                      <div className="text-xs text-muted-foreground">Total Entities</div>
                     </div>
-                    <div className="text-center p-3 rounded-lg bg-violet-500/20 border border-violet-500/30">
-                      <div className="text-2xl font-bold text-violet-400">{categories.length}</div>
-                      <div className="text-xs text-slate-400">Categories</div>
+                    <div className="text-center p-3 rounded-lg bg-accent/10 border border-accent/30 backdrop-blur-sm">
+                      <div className="text-2xl font-bold text-accent-foreground">{categories.length}</div>
+                      <div className="text-xs text-muted-foreground">Categories</div>
                     </div>
                   </div>
                 </CardContent>
@@ -238,9 +259,9 @@ const LangExtractPage = () => {
           {/* Main Content */}
           <div className="lg:col-span-3">
             {error && (
-              <Card className="border border-red-500/50 bg-red-900/30 mb-6">
+              <Card className="border border-destructive/40 bg-destructive/10 mb-6 backdrop-blur-md">
                 <CardContent className="pt-6">
-                  <p className="text-red-400 flex items-center gap-2">
+                  <p className="text-destructive flex items-center gap-2">
                     <AlertTriangle className="w-4 h-4" />
                     {error}
                   </p>
@@ -251,13 +272,13 @@ const LangExtractPage = () => {
             {loading && (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[...Array(6)].map((_, i) => (
-                  <Card key={i} className="overflow-hidden border border-slate-700/50 shadow-xl bg-slate-800/70">
+                  <Card key={i} className="overflow-hidden glass shadow-xl">
                     <CardHeader>
-                      <Skeleton className="h-6 w-24 bg-slate-700" />
-                      <Skeleton className="h-4 w-32 bg-slate-700" />
+                      <Skeleton className="h-6 w-24" />
+                      <Skeleton className="h-4 w-32" />
                     </CardHeader>
                     <CardContent>
-                      <Skeleton className="h-20 w-full bg-slate-700" />
+                      <Skeleton className="h-20 w-full" />
                     </CardContent>
                   </Card>
                 ))}
@@ -267,8 +288,8 @@ const LangExtractPage = () => {
             {analysis && !loading && (
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
-                  <h2 className="text-2xl font-bold text-white">Conversation Entities</h2>
-                  <Badge variant="outline" className="text-sm border-purple-500/50 text-purple-400">
+                  <h2 className="text-2xl font-bold">Conversation Entities</h2>
+                  <Badge variant="outline" className="text-sm border-primary/40 text-primary backdrop-blur-sm">
                     {filteredExtractions.length} results
                   </Badge>
                 </div>
@@ -280,33 +301,35 @@ const LangExtractPage = () => {
                       // initial={{ opacity: 0, y: 20 }}
                       // animate={{ opacity: 1, y: 0 }}
                       // transition={{ delay: i * 0.1 }}
-                      className={`group relative overflow-hidden rounded-2xl border bg-gradient-to-br ${getCategoryColor(ext.extraction_class)} backdrop-blur-sm hover:shadow-2xl transition-all duration-300 cursor-pointer shadow-lg`}
+                      className={`group relative overflow-hidden rounded-2xl border ${getCategoryTone(ext.extraction_class).container} glass hover:shadow-2xl transition-all duration-300 cursor-pointer shadow-lg`}
                       onClick={() => setSelectedEntity(selectedEntity === i ? null : i)}
                     >
                       <Card className="border-0 bg-transparent shadow-none">
                         <CardHeader className="pb-3">
                           <div className="flex items-start justify-between">
                             <div className="flex items-center gap-3">
-                              <div className={`p-2 rounded-lg ${ext.extraction_class === 'concern' ? 'bg-red-500/40 border border-red-400/50' : ext.extraction_class === 'action_item' ? 'bg-purple-500/40 border border-purple-400/50' : 'bg-pink-500/40 border border-pink-400/50'}`}>
-                                {getCategoryIcon(ext.extraction_class)}
+                              <div className={`p-2 rounded-lg backdrop-blur-sm border ${getCategoryTone(ext.extraction_class).container}`}>
+                                <span className={getCategoryTone(ext.extraction_class).icon}>
+                                  {getCategoryIcon(ext.extraction_class)}
+                                </span>
                               </div>
                               <div>
-                                <Badge variant="secondary" className={`mb-2 ${ext.extraction_class === 'concern' ? 'bg-red-500/20 text-red-300 border-red-400/50' : ext.extraction_class === 'action_item' ? 'bg-purple-500/20 text-purple-300 border-purple-400/50' : 'bg-pink-500/20 text-pink-300 border-pink-400/50'}`}>
+                                <Badge variant="secondary" className={`mb-2 backdrop-blur-sm border ${getCategoryTone(ext.extraction_class).chip}`}>
                                   {ext.extraction_class.replace('_', ' ').toUpperCase()}
                                 </Badge>
-                                <CardDescription className="text-xs text-slate-400">
+                                <CardDescription className="text-xs text-muted-foreground">
                                   Entity #{i + 1}
                                 </CardDescription>
                               </div>
                             </div>
                             <ChevronRight 
-                              className={`w-5 h-5 transition-transform duration-200 text-white ${selectedEntity === i ? 'rotate-90' : ''}`}
+                              className={`w-5 h-5 transition-transform duration-200 text-foreground ${selectedEntity === i ? 'rotate-90' : ''}`}
                             />
                           </div>
                         </CardHeader>
                         <CardContent className="space-y-4">
-                          <div className="p-4 rounded-xl bg-slate-800/60 border border-slate-600/50">
-                            <p className="text-sm font-medium leading-relaxed text-white">
+                          <div className="p-4 rounded-xl bg-card/80 border border-border backdrop-blur-sm">
+                            <p className="text-sm font-medium leading-relaxed text-foreground">
                               {ext.extraction_text}
                             </p>
                           </div>
@@ -320,7 +343,7 @@ const LangExtractPage = () => {
                                 className="space-y-3"
                               >
                                 <div className="flex items-center justify-between">
-                                  <h4 className="text-sm font-semibold text-slate-300">Attributes</h4>
+                                  <h4 className="text-sm font-semibold text-foreground">Attributes</h4>
                                   <TooltipProvider>
                                     <Tooltip>
                                       <TooltipTrigger asChild>
@@ -331,12 +354,12 @@ const LangExtractPage = () => {
                                             e.stopPropagation();
                                             copyToClipboard(JSON.stringify(ext.attributes, null, 2));
                                           }}
-                                          className="h-7 w-7 p-0 hover:bg-slate-700/50 text-purple-400"
+                                          className="h-7 w-7 p-0 hover:bg-muted/50 text-primary backdrop-blur-sm"
                                         >
                                           <Copy className="w-3 h-3" />
                                         </Button>
                                       </TooltipTrigger>
-                                      <TooltipContent className="bg-slate-800 border-slate-600 text-white">
+                                      <TooltipContent className="bg-popover border-border text-foreground backdrop-blur-md">
                                         <p>Copy attributes</p>
                                       </TooltipContent>
                                     </Tooltip>
@@ -345,17 +368,17 @@ const LangExtractPage = () => {
                                 
                                 <div className="grid gap-3">
                                   {Object.entries(ext.attributes || {}).map(([key, value]: [string, any]) => (
-                                    <div key={key} className="flex items-start gap-3 p-3 rounded-lg bg-slate-800/80 border border-slate-600/50">
-                                      <div className="p-1.5 rounded-md bg-gradient-to-r from-purple-500/30 to-violet-500/30 border border-purple-500/30">
+                                    <div key={key} className="flex items-start gap-3 p-3 rounded-lg bg-card/90 border border-border backdrop-blur-sm">
+                                      <div className="p-1.5 rounded-md bg-primary/10 border border-primary/30 backdrop-blur-sm">
                                         {getAttributeIcon(key)}
                                       </div>
                                       <div className="flex-1 min-w-0">
                                         <div className="flex items-center gap-2 mb-1">
-                                          <span className="text-xs font-medium text-purple-300 uppercase tracking-wide">
+                                          <span className="text-xs font-medium text-primary uppercase tracking-wide">
                                             {key}
                                           </span>
                                         </div>
-                                        <p className="text-sm font-medium text-white break-words">
+                                        <p className="text-sm font-medium text-foreground break-words">
                                           {typeof value === 'string' ? value : JSON.stringify(value)}
                                         </p>
                                       </div>
@@ -372,11 +395,11 @@ const LangExtractPage = () => {
                 </div>
 
                 {filteredExtractions.length === 0 && (
-                  <Card className="border border-slate-700/50 shadow-xl bg-slate-800/70 backdrop-blur-sm">
+                  <Card className="glass shadow-xl">
                     <CardContent className="pt-6 text-center py-12">
-                      <Search className="w-12 h-12 text-slate-400 mx-auto mb-4" />
-                      <h3 className="text-lg font-semibold mb-2 text-white">No entities found</h3>
-                      <p className="text-slate-400">Try adjusting your search or filter criteria.</p>
+                      <Search className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+                      <h3 className="text-lg font-semibold mb-2">No entities found</h3>
+                      <p className="text-muted-foreground">Try adjusting your search or filter criteria.</p>
                     </CardContent>
                   </Card>
                 )}

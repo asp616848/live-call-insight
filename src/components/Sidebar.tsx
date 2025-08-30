@@ -24,7 +24,7 @@ const navItems = [
   { icon: BarChart3, label: 'Call Analytics', path: '/call-analytics' },
   { icon: Globe, label: 'Geo-Analytics', path: '/geo-analytics' },
   { icon: Map, label: 'India Map', path: '/india-map' },
-  { icon: FileText, label: 'LangExtract (EXP)', path: '/lang-extract' },
+  { icon: FileText, label: 'Insights (EXP)', path: '/lang-extract' },
   // { icon: Settings, label: 'Settings', path: '/settings' },
 ];
 
