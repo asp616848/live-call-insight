@@ -227,7 +227,7 @@ export default function CallAnalytics() {
 	return (
 		<div className="flex h-screen bg-background">
         <CustomCursor/>
-				<main className="flex-1 p-6 space-y-6 overflow-hidden flex flex-col">
+					<main className="flex-1 p-6 space-y-6 overflow-hidden flex flex-col min-h-0">
 				{/* Header with Filters */}
 				<motion.div
 					initial={{ opacity: 0, y: -20 }}
@@ -295,7 +295,7 @@ export default function CallAnalytics() {
 					<motion.div
 						initial={{ opacity: 0, x: -20 }}
 						animate={{ opacity: 1, x: 0 }}
-						className="lg:col-span-2 h-full min-h-0"
+						className="lg:col-span-2 h-full min-h-0 flex flex-col"
 					>
 						<Card className="h-full p-6 flex flex-col min-h-0">
 							<div className="flex items-center justify-between mb-4">
@@ -303,7 +303,7 @@ export default function CallAnalytics() {
 								{ !loading && <Badge variant="outline">{calls.length} calls</Badge> }
 							</div>
 
-							<div className="space-y-3 overflow-y-auto flex-1">
+							<div className="space-y-3 overflow-y-auto flex-1 min-h-0">
 								{loading ? (
 									<div className="space-y-4">
 										{[...Array(5)].map((_, i) => <Skeleton key={i} className="h-20 w-full" />)}
@@ -369,7 +369,7 @@ export default function CallAnalytics() {
 					<motion.div
 						initial={{ opacity: 0, x: 20 }}
 						animate={{ opacity: 1, x: 0 }}
-						className="lg:col-span-3 h-full min-h-0"
+						className="lg:col-span-3 h-full min-h-0 flex flex-col"
 					>
 						<Card className="h-full p-6 flex flex-col min-h-0">
 							{selectedCall ? (
@@ -399,7 +399,7 @@ export default function CallAnalytics() {
 										</div>
 									</div>
 
-									<Tabs defaultValue="conversation" className="flex-1 h-full overflow-hidden">
+									<Tabs defaultValue="conversation" className="flex-1 h-full overflow-hidden min-h-0 flex flex-col">
 										<TabsList className="grid w-full grid-cols-3">
 											<TabsTrigger value="conversation">Conversation</TabsTrigger>
 											<TabsTrigger value="metrics">Metrics</TabsTrigger>
@@ -409,17 +409,16 @@ export default function CallAnalytics() {
 
 										<TabsContent
 											value="conversation"
-											className="mt-4 h-full overflow-y-auto"
+											className="mt-4 h-full overflow-hidden flex flex-col min-h-0"
 										>
-											<div className="space-y-4 overflow-y-auto h-full">
+											<div className="space-y-4 overflow-y-auto flex-2 min-h-0">
 												{/* Privacy indicator */}
 												<div className="flex items-center gap-2 text-xs text-muted-foreground">
 													<Lock className="h-3.5 w-3.5" />
 													<span>Private conversation</span>
 												</div>
 
-												{/* Blurred conversation content */}
-												<div className="space-y-4 pointer-events-none select-none" aria-hidden="true">
+												<div className="space-y-4 pointer-events-none select-none blur" aria-hidden="true">
 						    {selectedCall.conversation.map((msg, index) => (
 														<motion.div
 							    key={(msg as any)?.id ?? index}
@@ -453,8 +452,8 @@ export default function CallAnalytics() {
 											</div>
 										</TabsContent>
 
-										<TabsContent value="metrics" className="mt-4 h-full overflow-y-auto">
-											<div className="grid grid-cols-2 gap-6">
+										<TabsContent value="metrics" className="mt-4 h-full overflow-hidden flex flex-col min-h-0">
+											<div className="grid grid-cols-2 gap-6 overflow-y-auto flex-1 min-h-0">
 												<div className="space-y-4">
 													<div className="flex justify-between">
 														<span className="text-muted-foreground">Duration:</span>
@@ -493,8 +492,8 @@ export default function CallAnalytics() {
 											</div>
 										</TabsContent>
 
-										<TabsContent value="waveform" className="mt-4 h-full overflow-y-auto">
-											<div className="flex items-center justify-center h-full">
+										<TabsContent value="waveform" className="mt-4 h-full overflow-hidden flex flex-col min-h-0">
+											<div className="flex items-center justify-center flex-1 overflow-y-auto min-h-0">
 												<div className="text-center">
 													<p className="text-muted-foreground">
 														Audio waveform not available
@@ -503,8 +502,8 @@ export default function CallAnalytics() {
 											</div>
 										</TabsContent>
 
-										<TabsContent value="sentiment" className="mt-4 h-full overflow-y-auto">
-											<div className="flex flex-col h-full gap-4">
+										<TabsContent value="sentiment" className="mt-4 h-full overflow-hidden flex flex-col min-h-0">
+											<div className="flex flex-col flex-1 gap-4 overflow-y-auto min-h-0">
 												{sentimentLoading && <div className="flex-1 flex items-center justify-center"><Skeleton className="w-full h-64"/></div>}
 												{sentimentError && !sentimentLoading && <Alert variant="destructive"><Terminal className='h-4 w-4'/><AlertTitle>Error</AlertTitle><AlertDescription>{sentimentError}</AlertDescription></Alert>}
 												{!sentimentLoading && !sentimentError && sentimentFlow && (
