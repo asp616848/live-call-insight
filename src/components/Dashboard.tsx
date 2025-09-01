@@ -344,20 +344,20 @@ export const Dashboard = () => {
             </motion.div>
           </motion.div>
 
-          {/* Metrics Grid */}
+          {/* Metrics Grid (from backend metrics) */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <MetricsCard
               title="Total Calls"
-              value="23462"
+              value={`${metrics?.total_calls ?? 0}`}
               subtitle="All processed calls"
               icon={Phone}
-              trend="up"
+              trend={(metrics?.total_calls ?? 0) > 0 ? 'up' : 'neutral'}
               color="purple"
               delay={0.1}
             />
             <MetricsCard
               title="Avg. Call Duration"
-              value={`${Math.round(672)}s`}
+              value={`${Math.round(metrics?.average_call_duration ?? 0)}s`}
               subtitle="Across all calls"
               icon={Clock}
               trend="neutral"
@@ -365,20 +365,20 @@ export const Dashboard = () => {
               delay={0.2}
             />
             <MetricsCard
-              title="Median Call Length"
-              value="1251"
-              subtitle="Seconds"
+              title="Avg. Sentiment"
+              value={`${(metrics?.average_sentiment_score ?? 0).toFixed(2)}`}
+              subtitle="-1 (neg) to +1 (pos)"
               icon={MessageCircle}
-              trend="up"
+              trend={(metrics?.average_sentiment_score ?? 0) > 0.05 ? 'up' : (metrics?.average_sentiment_score ?? 0) < -0.05 ? 'down' : 'neutral'}
               color="green"
               delay={0.3}
             />
             <MetricsCard
-              title="Sentiment Delta"
-              value="+26"
-              subtitle="Percentage"
+              title="Avg. AI Latency"
+              value={`${Math.max(0, Math.round((metrics?.average_ai_response_latency ?? 0) * 1000))}ms`}
+              subtitle="Mean response time"
               icon={TrendingUp}
-              trend="up"
+              trend={(metrics?.average_ai_response_latency ?? 0) > 0 ? 'neutral' : 'down'}
               color="orange"
               delay={0.4}
             />
@@ -432,7 +432,7 @@ export const Dashboard = () => {
               /> */}
               <MetricsCard
                 title="Abandonment Rate"
-                value="27%"
+                value={`${dataCaptureMetrics ? dataCaptureMetrics.abandonmentRate : 27}%`}
                 // subtitle={(() => {
                 //   const total = calls?.length || dashboardData?.metrics?.total_calls || 50;
                 //   if (!dataCaptureMetrics) { return 'Dropped before completion'; }
@@ -504,16 +504,28 @@ export const Dashboard = () => {
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Duration:</span>
-                    <span>{metrics.average_call_duration ? `${Math.round(metrics.latest_call_summary.duration_seconds)}s` : 'N/A'}</span>
+                    <span>{metrics?.latest_call_summary?.duration_seconds != null ? `${Math.round(metrics.latest_call_summary.duration_seconds)}s` : 'N/A'}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Agent:</span>
                     <span>AI Assistant</span>
                   </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Sentiment:</span>
+                    <span className="capitalize">{metrics?.latest_call_summary?.sentiment ?? 'neutral'}</span>
+                  </div>
                   <div className="flex justify-between items-start gap-3">
                     <span className="text-muted-foreground">Purpose:</span>
-                    <span className="text-right whitespace-pre-wrap break-words max-h-40 overflow-auto">{metrics.latest_call_summary?.overview}</span>
+                    <span className="text-right whitespace-pre-wrap break-words max-h-40 overflow-auto">{metrics?.latest_call_summary?.overview ?? '—'}</span>
                   </div>
+                  {!!(metrics?.latest_call_summary?.concerns?.length) && (
+                    <div className="flex justify-between items-start gap-3">
+                      <span className="text-muted-foreground">Concerns:</span>
+                      <span className="text-right whitespace-pre-wrap break-words max-h-40 overflow-auto">
+                        {metrics.latest_call_summary.concerns.slice(0, 3).join(', ')}
+                      </span>
+                    </div>
+                  )}
                 </div>
               </motion.div>
               <div className="flex-shrink-0 h-72 overflow-auto">
