@@ -7,6 +7,7 @@ interface User {
   id: string;
   name: string;
   email: string;
+  role?: 'developer' | 'user';
   picture?: string;
 }
 
@@ -61,7 +62,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         const response = await fetch('/allowed-users.json');
         const allowedUsersData = await response.json();
         
-        if (!allowedUsersData.users.includes(email)) {
+        // allowed-users.json now contains objects with email and role
+        const found = allowedUsersData.users.find((u: any) => u.email === email);
+        if (!found) {
           logout();
           toast({
             variant: "destructive",
@@ -76,6 +79,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           name: payload.name,
           email: payload.email,
           picture: payload.picture,
+          role: found.role || 'user',
         };
 
         setUser(userData);

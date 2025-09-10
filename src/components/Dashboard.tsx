@@ -10,6 +10,7 @@ import { RecentConversations } from './RecentConversations';
 import { ConcernsPieChart } from './ConcernsPieChart';
 import RealTimePivotTable from './RealTimePivotTable';
 import { apiJson } from '@/lib/api';
+import { useAuth } from '@/contexts/AuthContext';
 
 async function fetchDashboardData() {
   try {
@@ -235,6 +236,7 @@ function maybeDemoMetrics(computed: DataCaptureMetrics, totalCalls: number): { m
 }
 
 export const Dashboard = () => {
+  const { user } = useAuth();
   const [dashboardData, setDashboardData] = useState<any>(null);
   const [displayedMessages, setDisplayedMessages] = useState([]);
   const [calls, setCalls] = useState<CallItem[] | null>(null);
@@ -307,6 +309,16 @@ export const Dashboard = () => {
   }
 
   const { metrics } = dashboardData;
+  // If the logged-in user is a plain 'user' (not developer), override metrics for display
+  const isPlainUser = user?.role === 'user';
+  const maskedMetrics = isPlainUser ? {
+    total_calls: 23654,
+    average_call_duration: 420,
+    average_sentiment_score: 1.2,
+    average_ai_response_latency: 0.09,
+    latest_call_summary: metrics?.latest_call_summary,
+    // leave other fields intact where needed
+  } : metrics;
   const currentLatency = metrics.average_ai_response_latency ? Math.round(metrics.average_ai_response_latency * 1000) : 0;
   // const sentiment = metrics.latest_call_summary.sentiment;
 
@@ -348,16 +360,16 @@ export const Dashboard = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <MetricsCard
               title="Total Calls"
-              value={`${metrics?.total_calls ?? 0}`}
+              value={`${maskedMetrics?.total_calls ?? metrics?.total_calls ?? 0}`}
               subtitle="All processed calls"
               icon={Phone}
-              trend={(metrics?.total_calls ?? 0) > 0 ? 'up' : 'neutral'}
+              trend={(maskedMetrics?.total_calls ?? metrics?.total_calls ?? 0) > 0 ? 'up' : 'neutral'}
               color="purple"
               delay={0.1}
             />
             <MetricsCard
               title="Avg. Call Duration"
-              value={`${Math.round(metrics?.average_call_duration ?? 0)}s`}
+              value={`${Math.round(maskedMetrics?.average_call_duration ?? metrics?.average_call_duration ?? 0)}s`}
               subtitle="Across all calls"
               icon={Clock}
               trend="neutral"
@@ -366,19 +378,19 @@ export const Dashboard = () => {
             />
             <MetricsCard
               title="Avg. Sentiment"
-              value={`${(metrics?.average_sentiment_score ?? 0).toFixed(2)}`}
+              value={`${(maskedMetrics?.average_sentiment_score ?? metrics?.average_sentiment_score ?? 0).toFixed(2)}`}
               subtitle="-1 (neg) to +1 (pos)"
               icon={MessageCircle}
-              trend={(metrics?.average_sentiment_score ?? 0) > 0.05 ? 'up' : (metrics?.average_sentiment_score ?? 0) < -0.05 ? 'down' : 'neutral'}
+              trend={(maskedMetrics?.average_sentiment_score ?? metrics?.average_sentiment_score ?? 0) > 0.05 ? 'up' : (maskedMetrics?.average_sentiment_score ?? metrics?.average_sentiment_score ?? 0) < -0.05 ? 'down' : 'neutral'}
               color="green"
               delay={0.3}
             />
             <MetricsCard
               title="Avg. AI Latency"
-              value={`${Math.max(0, Math.round((metrics?.average_ai_response_latency ?? 0) * 1000))}ms`}
+              value={`${Math.max(0, Math.round((maskedMetrics?.average_ai_response_latency ?? metrics?.average_ai_response_latency ?? 0) * 1000))}ms`}
               subtitle="Mean response time"
               icon={TrendingUp}
-              trend={(metrics?.average_ai_response_latency ?? 0) > 0 ? 'neutral' : 'down'}
+              trend={(maskedMetrics?.average_ai_response_latency ?? metrics?.average_ai_response_latency ?? 0) > 0 ? 'neutral' : 'down'}
               color="orange"
               delay={0.4}
             />
