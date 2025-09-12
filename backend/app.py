@@ -120,11 +120,30 @@ def top_concerns():
 def list_transcripts():
     base_dir = os.path.dirname(__file__)
     txt_dir = os.path.join(base_dir, "transcripts")
-    try:
-        files = [f for f in os.listdir(txt_dir) if f.endswith('.txt')]
-        return jsonify(sorted(files, reverse=True))
-    except FileNotFoundError:
-        return jsonify({"error": "transcripts directory not found."}), 404
+    convo_dir = os.path.join(base_dir, "convoJson")
+
+    candidates = []
+
+    # gather .txt from transcripts/
+    if os.path.isdir(txt_dir):
+        try:
+            candidates.extend([f for f in os.listdir(txt_dir) if f.endswith('.txt')])
+        except Exception:
+            pass
+
+    # gather .json from convoJson/
+    if os.path.isdir(convo_dir):
+        try:
+            candidates.extend([f for f in os.listdir(convo_dir) if f.endswith('.json')])
+        except Exception:
+            pass
+
+    if not candidates:
+        return jsonify({"error": "No transcripts found in transcripts/ or convoJson/."}), 404
+
+    # dedupe and sort for stable ordering (newest first by name)
+    unique = sorted(set(candidates), reverse=True)
+    return jsonify(unique)
 
 @app.route('/analyze/<filename>', methods=['GET'])
 def analyze_transcript(filename):

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useAuth } from '@/contexts/AuthContext';
 import { motion } from "framer-motion";
 import { ChevronDown, Filter, Download, Play, Pause, Phone, User, Clock, BarChart3, Terminal, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -62,6 +63,7 @@ const truncate = (text: string, length: number) => {
 
 export default function CallAnalytics() {
 	const [calls, setCalls] = useState<Call[]>([]);
+	const { user } = useAuth();
 	const [selectedCall, setSelectedCall] = useState<Call | null>(null);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState<string | null>(null);
@@ -73,6 +75,9 @@ export default function CallAnalytics() {
 	const [sentimentError, setSentimentError] = useState<string | null>(null);
 	const [sentimentView, setSentimentView] = useState<'both' | 'user' | 'ai'>('both');
 	const [rollingWindow, setRollingWindow] = useState(3);
+
+	// show private conversation unblurred for developer role
+	const isDeveloper = user?.role === 'developer';
 
 	useEffect(() => {
 		let mounted = true;
@@ -227,7 +232,7 @@ export default function CallAnalytics() {
 	return (
 		<div className="flex min-h-screen bg-background">
         <CustomCursor/>
-					<main className="flex-1 p-6 space-y-6 flex flex-col">
+				<main className="flex-1 p-6 space-y-6 flex flex-col">
 				{/* Header with Filters */}
 				<motion.div
 					initial={{ opacity: 0, y: -20 }}
@@ -418,10 +423,10 @@ export default function CallAnalytics() {
 													<span>Private conversation</span>
 												</div>
 
-												<div className="space-y-4 pointer-events-none select-none blur" aria-hidden="true">
-						    {selectedCall.conversation.map((msg, index) => (
+												<div className={`space-y-4 ${isDeveloper ? '' : 'pointer-events-none select-none blur'}`} aria-hidden={!isDeveloper}>
+													{selectedCall.conversation.map((msg, index) => (
 														<motion.div
-							    key={(msg as any)?.id ?? index}
+															key={(msg as any)?.id ?? index}
 															initial={{ opacity: 0, y: 10 }}
 															animate={{ opacity: 1, y: 0 }}
 															transition={{ delay: index * 0.1 }}
