@@ -1,0 +1,12 @@
+Call Transcript — saved 2025-09-03 16:35:46
+-------------------------------------------
+[2025-09-03 16:35:36] User: Hello
+[2025-09-03 16:35:36] User: no.
+[2025-09-03 16:35:36] Assistant: Namaste! Main
+[2025-09-03 16:35:37] User: Amen.
+[2025-09-03 16:35:39] User: Anyway
+[2025-09-03 16:35:40] User: Hello.
+[2025-09-03 16:35:40] Assistant: Hello! How can I
+[2025-09-03 16:35:42] User: 기분에?
+[2025-09-03 16:35:44] User: Hello.
+[2025-09-03 16:35:46] Assistant: Hello! How can I

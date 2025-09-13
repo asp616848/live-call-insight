@@ -1,0 +1,37 @@
+Call started at: 2025-09-04T02:26:21.193714
+Stream SID: 2e86d8382af343ef31c0cb25ea901994
+
+[02:26:26] User: حلو
+[02:26:27] AI (chunk): Haan ji,
+[02:26:27] AI (chunk):  boliye?
+[02:26:33] User: हां जी हां बोलिए
+[02:26:34] AI (chunk): Kya aap
+[02:26:34] AI (chunk):  Bihar
+[02:26:34] AI (chunk):  se
+[02:26:34] AI (chunk):  hi bol
+[02:26:34] AI (chunk):  rahe
+[02:26:34] AI (chunk):  hain na?
+[02:26:40] User: हां
+[02:26:41] User: जी
+[02:26:41] User: बोल
+[02:26:41] User: रहा
+[02:26:41] User: हूं बिहार से
+[02:26:42] AI (chunk): Aap chahenge
+[02:26:42] AI (chunk):  ki aapke
+[02:26:42] AI (chunk):  ilake
+[02:26:52] User: Hello
+[02:26:53] AI (chunk): Aap chahenge
+[02:26:54] AI (chunk):  ki aapke
+[02:26:54] AI (chunk):  ilake
+[02:26:56] User: Hello.
+[02:26:57] AI (chunk): Aap chahenge
+[02:26:57] AI (chunk):  ki aapke
+[02:26:57] AI (chunk):  ilake
+[02:27:07] User: کیا
+[02:27:07] User: علاقے میں کیا
+[02:27:08] AI (chunk): Aapke ilake
+[02:27:08] AI (chunk):  ki
+[02:27:08] AI (chunk):  samasyaon
+[02:27:08] AI (chunk):  ka
+
+Call ended at: 2025-09-04T02:27:12.233572

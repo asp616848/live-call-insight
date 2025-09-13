@@ -1,0 +1,43 @@
+Call Transcript — saved 2025-09-04 16:44:05
+-------------------------------------------
+[2025-09-04 16:40:57] User: Yes I do.
+[2025-09-04 16:40:57] Assistant: Great! Just to confirm, you're a student or staff at Plaksha, right? And have you visited our Blue Tokai Café at least once?
+[2025-09-04 16:41:03] User: Students
+[2025-09-04 16:41:04] Assistant: Perfect! You're actually one of the select few we've chosen for this exclusive feedback program—your opinions
+[2025-09-04 16:41:05] User: Yeah.
+[2025-09-04 16:41:06] Assistant: Before we start, would you prefer to continue in English or Hindi? Whatever is more comfortable for you.
+[2025-09-04 16:41:12] User: Thank you
+[2025-09-04 16:41:13] Assistant: Alright! Let's begin. Have you visited Blue Tokai at Plaksha in the past 30 days?
+[2025-09-04 16:41:21] User: Yes, I have.
+[2025-09-04 16:41:21] Assistant: That's wonderful! About how many times did you visit in the past month?
+[2025-09-04 16:41:29] User: About ten times.
+[2025-09-04 16:41:30] Assistant: Wow, that's quite a few visits! And when do you usually drop by—morning, afternoon, or evening?
+[2025-09-04 16:41:33] User: Yeah.
+[2025-09-04 16:41:34] Assistant: Got it! Let me ask about your most recent visit to the café—this helps us understand specific experiences. Roughly when was that?
+[2025-09-04 16:41:48] User: It was about two days ago.
+[2025-09-04 16:41:48] Assistant: Thanks for sharing that. What did you have that day? Was it coffee, tea, or maybe you grabbed a bite to eat as well?
+[2025-09-04 16:42:00] User: I've had a brownie flavored cookie from there.
+[2025-09-04 16:42:00] Assistant: That sounds delicious! And about how much did you spend on that visit?
+[2025-09-04 16:42:07] User: Fifty rupees.
+[2025-09-04 16:42:09] Assistant: Got it. Now, let's talk about different aspects of that visit. On a scale of 1 to 5, where 1 is very dissatisfied and 5 is very satisfied, how would you rate the taste and flavor quality of the cookie?
+[2025-09-04 16:42:24] Assistant: That's fantastic! What made it so good?
+[2025-09-04 16:42:24] User: file
+[2025-09-04 16:42:34] User: I just love the texture and the taste, to be honest, and the little sprinkle of salt on top.
+[2025-09-04 16:42:35] Assistant: That's great to hear! The combination of textures and flavors can really make a difference. Moving on, how would you rate the cleanliness of the café on the same 1 to 5 scale?
+[2025-09-04 16:42:49] User: Five
+[2025-09-04 16:42:50] Assistant: That's wonderful! Cleanliness is so important. Now, thinking about your overall experience, on a scale of 0 to 10, how likely are you to recommend Blue Tokai to a friend?
+[2025-09-04 16:43:07] User: 1 to 10 or 1 to 5?
+[2025-09-04 16:43:09] Assistant: For this, please use a scale of 0 to 10, where 0 means you would not recommend it at all, and 10 means you absolutely would.
+[2025-09-04 16:43:13] User: Indeed
+[2025-09-04 16:43:14] User: Hello
+[2025-09-04 16:43:17] User: I would say mine.
+[2025-09-04 16:43:18] Assistant: That's great to know! Thanks for the positive rating. What could make your experience even better and possibly bring that rating closer to a 10?
+[2025-09-04 16:43:30] User: Maybe the
+[2025-09-04 16:43:33] User: Shiney takes for the staff to prepare stuff.
+[2025-09-04 16:43:38] User: The pharmacist is waiting a bit longer than I would expect to.
+[2025-09-04 16:43:39] User: Sure.
+[2025-09-04 16:43:41] Assistant: I appreciate you sharing that. Improving the speed of service is definitely something we can look into. Thank you for the suggestion! Lastly, could you tell us if you're a student, faculty, or staff member at Plaksha?
+[2025-09-04 16:43:47] User: Yeah.
+[2025-09-04 16:43:49] Assistant: Thank you for confirming that! Your feedback is incredibly valuable to us. We'll be sure to take it into account. Thanks for participating in the survey, and you'll receive your ₹150 coupon within 24 hours. Have a wonderful day!
+[2025-09-04 16:43:59] User: Yeah.
+[2025-09-04 16:43:59] Assistant: You're welcome! Take care and have a great day!

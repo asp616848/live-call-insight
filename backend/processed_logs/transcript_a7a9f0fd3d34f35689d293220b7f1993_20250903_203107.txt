@@ -1,0 +1,6 @@
+Call Transcript — saved 2025-09-03 20:31:07
+-------------------------------------------
+[2025-09-03 20:30:47] User: Hello
+[2025-09-03 20:30:48] Assistant: Hello! How can I assist you today?
+[2025-09-03 20:30:56] User: Where are you calling from?
+[2025-09-03 20:30:57] Assistant: I'm calling on behalf of Blue Tokai Café at Plaksha to gather some feedback. Would you have about 4 minutes to share your thoughts?

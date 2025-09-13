@@ -1,0 +1,39 @@
+Call Transcript — saved 2025-09-04 15:37:47
+-------------------------------------------
+[2025-09-04 15:33:38] User: Ja.
+[2025-09-04 15:33:39] Assistant: Hello! Thank you for joining the call. As I mentioned, we're from Blue Tokai Café at Plaksha, and we have a quick feedback survey that takes about 4 minutes. Are you ready to share your thoughts with us?
+[2025-09-04 15:33:52] User: He is.
+[2025-09-04 15:33:53] User: yeah.
+[2025-09-04 15:33:54] Assistant: Great! Just to confirm, you're either a student or staff at Plaksha, right? And you've visited our café at least once?
+[2025-09-04 15:34:05] User: My student.
+[2025-09-04 15:34:06] Assistant: Perfect! And you've been to our café at least once, right? Just to make sure we focus on your recent experiences.
+[2025-09-04 15:34:15] User: Guiding.
+[2025-09-04 15:34:17] User: It was excellent.
+[2025-09-04 15:34:18] Assistant: That's wonderful to hear! Thanks for sharing that. Your feedback is really valuable. Before we dive into the details, would you prefer to continue in English or switch to Hindi?
+[2025-09-04 15:34:30] User: Crossword
+[2025-09-04 15:34:31] User: That's Hindi.
+[2025-09-04 15:34:33] Assistant: Bilkul, Hindi mein baat kar lete hain. Aapne pichle 30 dinon mein Blue Tokai Café, Plaksha visit kiya hai na?
+[2025-09-04 15:34:42] User: Rina.
+[2025-09-04 15:34:43] Assistant: Koi baat nahi! Toh aap Blue Tokai ke baare mein kya jaante hain? Aapka kya impression hai hamare café ke baare mein?
+[2025-09-04 15:34:51] User: William Penn
+[2025-09-04 15:34:53] Assistant: Samajh gaya. Agar aap Blue Tokai ko zyada explore karne ka sochenge, toh aapko kaunse cheezein sabse attractive lagti hain? Kya aapko hamara coffee variety pasand hai, ya seating aur ambience?
+[2025-09-04 15:35:08] User: Coffee variety?
+[2025-09-04 15:35:09] Assistant: Achha! Coffee variety toh waqai mein interesting hai. Aapko Blue Tokai ki coffee ka taste kaisa laga? Aur kya aapko coffee ka temperature aur consistency bhi accha laga?
+[2025-09-04 15:35:24] User: It was delicious.
+[2025-09-04 15:35:25] Assistant: Bahut accha! Taste aur flavor ka quality toh zaroori hai. Aapko staff ki friendliness aur service speed kaisi lagi? Kya aapko staff se baat karne mein aaram mila aur service timely thi?
+[2025-09-04 15:35:41] User: Yeah, everything was okay.
+[2025-09-04 15:35:43] Assistant: Achha suna! Aapke experience se khush ho kar acha laga. Aapke hisaab se Blue Tokai ko aur behtar banane ke liye aapko kaunsi ek cheez sabse important lagti hai? Kya aap speed of service, ya phir coffee ki strength, ya aur kuch chahenge?
+[2025-09-04 15:36:02] User: Speed of service
+[2025-09-04 15:36:04] Assistant: Speed of service bilkul zaroori hai. Aapka yeh feedback humare liye bahut maayne rakhta hai. Aapke liye ek aur sawal: Aapko ₹180 ka ek quick latte lena pasand aayega ya ₹160 ka latte jisme thoda wait karna pade?
+[2025-09-04 15:36:23] User: Det var det forbi.
+[2025-09-04 15:36:32] User: The photosys quick letter.
+[2025-09-04 15:36:50] User: کر سکتے ہیں.
+[2025-09-04 15:36:53] Assistant: Aapka jawab samajh aaya. ₹180 ka quick latte aapke liye behtar hai. Yeh preference hum zaroor dhyan mein rakhenge. Aapke suggestions humare service ko aur behtar banane mein madad karenge. Thank you for your valuable feedback! Aapka ₹150 ka coupon aapko 24 ghanton mein mil jayega. Aapka din shubh ho!
+[2025-09-04 15:37:17] User: Thank you.
+[2025-09-04 15:37:18] User: Can I get?
+[2025-09-04 15:37:20] Assistant: Aapka swagat hai! Aapka din accha rahe. Namaste!
+[2025-09-04 15:37:20] User: Yeah.
+[2025-09-04 15:37:22] User: What
+[2025-09-04 15:37:25] User: Thank you.
+[2025-09-04 15:37:31] User: کام کر سکتے ہیں?
+[2025-09-04 15:37:33] Assistant: Aap humare customer care number par kabhi bhi call kar sakte hain agar aapko kisi bhi tarah ki madad chahiye ho. Aap hamesha hamare website ya app ke through bhi sampark kar sakte hain. Dhanyavaad!

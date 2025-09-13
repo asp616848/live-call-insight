@@ -1,0 +1,70 @@
+Call Transcript — saved 2025-09-04 15:39:00
+-------------------------------------------
+[2025-09-04 15:33:41] User: Yes
+[2025-09-04 15:33:42] Assistant: Great! Just to confirm, you're a student or staff at Plaksha, right? And you've been to our Blue Tokai Café at least once?
+[2025-09-04 15:33:43] User: Yes
+[2025-09-04 15:33:45] Assistant: Perfect! You're among the select few we've chosen for this exclusive feedback program—your opinions will directly shape our menu and service improvements. Before we start, would you prefer continuing in English or Hindi?
+[2025-09-04 15:34:01] User: Make south boat
+[2025-09-04 15:34:02] Assistant: Bilkul, thik hai! Let's start with a quick question then. Have you visited Blue Tokai at Plaksha in the past 30 days?
+[2025-09-04 15:34:12] User: Not yet.
+[2025-09-04 15:34:13] Assistant: No problem! How familiar are you with Blue Tokai at Plaksha? And is there any specific reason you've not visited recently?
+[2025-09-04 15:34:25] User: I think it's a price.
+[2025-09-04 15:34:25] Assistant: I see, price
+[2025-09-04 15:34:28] User: That is some main issue.
+[2025-09-04 15:34:28] Assistant: Understood. Price can definitely be an important factor. What kind of pricing would you find more
+[2025-09-04 15:34:30] Assistant: What kind of pricing would you find
+[2025-09-04 15:34:31] User: The
+[2025-09-04 15:34:42] User: Basically, you know, like, it is more expensive
+[2025-09-04 15:34:43] Assistant: Got it, you feel Blue Tokai is a bit on the premium side compared
+[2025-09-04 15:34:45] User: Starbucks. That's why I didn't able to visit.
+[2025-09-04 15:34:46] User: Yeah.
+[2025-09-04 15:34:47] Assistant: That’s understandable. Everyone has different preferences and budgets. If Blue Tokai offered more affordable options or special discounts, would that encourage you to visit more often?
+[2025-09-04 15:35:01] User: Yeah yeah, why not.
+[2025-09-04 15:35:02] Assistant: That's good to hear! Your feedback is really valuable. Now, let me ask about your most recent visit—roughly when was that? And what did you have that day?
+[2025-09-04 15:35:16] User: Sorry, can you repeat it?
+[2025-09-04 15:35:17] Assistant: No worries! I wanted to ask about your most recent visit to Blue Tokai. Could you tell me when it was and what you had that day?
+[2025-09-04 15:35:34] User: Basically I didn't go into it because I just heard the name of Lupin in the blockchain itself.
+[2025-09-04 15:35:41] User: I just know the name of Starbucks already.
+[2025-09-04 15:35:44] User: From podcast also
+[2025-09-04 15:35:50] User: Super luxury kind of hotel.
+[2025-09-04 15:35:55] User: And so I didn't able to visit it because of my busy schedule.
+[2025-09-04 15:35:56] Assistant: I understand. Blue Tokai does have a premium reputation, and it’s not always easy on the budget. Thanks for sharing your thoughts. If we introduced more affordable options or promotions, would that make it easier for you to consider visiting us in the future?
+[2025-09-04 15:36:03] User: Bhatia, if you will provide me coupons then I would like to taste it.
+[2025-09-04 15:36:04] User: I said
+[2025-09-04 15:36:14] User: Hello.
+[2025-09-04 15:36:16] Assistant: Hello! Thank you for sharing your thoughts. We truly appreciate your interest in trying out Blue Tokai. As a thank you for your feedback, we'll send you a ₹150 coupon within 24 hours.
+[2025-09-04 15:36:17] User: of
+[2025-09-04 15:36:18] User: Yes
+[2025-09-04 15:36:22] User: Writing
+[2025-09-04 15:36:31] User: Arian hey.
+[2025-09-04 15:36:32] Assistant: Thank you for your time! Your feedback is greatly appreciated and will help us improve our services. Have a great day!
+[2025-09-04 15:36:41] User: Vadapad me coupons.
+[2025-09-04 15:36:42] Assistant: Your ₹150 coupon will be sent to your registered email within the next 24 hours. Keep an eye on your inbox, and if you have any more questions, feel
+[2025-09-04 15:36:44] User: Melebormak po panch
+[2025-09-04 15:36:52] User: Little beef
+[2025-09-04 15:36:54] User: Where I will get it?
+[2025-09-04 15:37:02] User: Hello.
+[2025-09-04 15:37:04] Assistant: You should receive the ₹150 coupon within the next 24 hours. Please check your registered email, including the spam or promotions folder, just in case. If you have any more questions or need further assistance, feel free to ask.
+[2025-09-04 15:37:16] User: Okay, so should I?
+[2025-09-04 15:37:22] User: Should I check on my university mail or just my personal?
+[2025-09-04 15:37:28] User: Yeah.
+[2025-09-04 15:37:45] User: Tell me one thing, what could I buy in just 150 rupees?
+[2025-09-04 15:37:47] Assistant: With ₹150 at Blue Tokai, you could enjoy a good coffee like a regular brewed coffee or a small espresso. It's a nice way to experience their coffee and see what you think. Enjoy your visit!
+[2025-09-04 15:37:59] User: Oh.
+[2025-09-04 15:38:00] Assistant: If you have any more questions or need further help, feel free to ask. Have a great day!
+[2025-09-04 15:38:05] User: Okay, I will keep checking. Don't worry.
+[2025-09-04 15:38:08] Assistant: Sounds good! If you need any more help or have more questions in the future, just let me know. Have a wonderful day!
+[2025-09-04 15:38:16] User: Are you agentetic?
+[2025-09-04 15:38:20] User: Hello.
+[2025-09-04 15:38:21] Assistant: Hello! How can I assist you today?
+[2025-09-04 15:38:22] User: You are not human na?
+[2025-09-04 15:38:24] User: You are not humans.
+[2025-09-04 15:38:29] User: Hello.
+[2025-09-04 15:38:34] User: I know.
+[2025-09-04 15:38:36] User: Eluaizestem.
+[2025-09-04 15:38:39] User: Hello
+[2025-09-04 15:38:45] User: Have a great day.
+[2025-09-04 15:38:47] Assistant: Thank you! Have a great day too! If you have any more questions in the future, feel free to reach out. Take care!
+[2025-09-04 15:38:49] User: Hello.
+[2025-09-04 15:38:52] User: Yeah.
+[2025-09-04 15:38:54] User: Have a great day.

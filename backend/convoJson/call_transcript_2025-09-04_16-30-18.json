@@ -1,0 +1,41 @@
+{
+  "summary": {
+    "filename": "call_transcript_2025-09-04_16-30-18.txt",
+    "stream_sid": "12baa0579a1b339f43c21ac21fdf1994",
+    "call_started": "2025-09-04T16:30:18.217495",
+    "call_ended": "2025-09-04T16:32:16.351345",
+    "duration_seconds": 118.13385,
+    "average_ai_response_latency": null,
+    "noise_count": 0,
+    "total_user_messages": 0,
+    "total_ai_responses": 4,
+    "sentiment": "neutral",
+    "concerns": [],
+    "overview": "The provided conversation indicates no actual dialogue or interaction between the user and AI. The AI messages suggest that a voicemail played and the user ended the conversation without speaking.",
+    "user_tone": "N/A - no user interaction observed",
+    "emotion": "None",
+    "sentiment_score": 5.0
+  },
+  "conversation": [
+    {
+      "speaker": "ai",
+      "text": "(No response needed as the voicemail is playing.)",
+      "timestamp": "2025-09-04T16:30:30"
+    },
+    {
+      "speaker": "ai",
+      "text": "(No response needed as the user has ended the conversation.)",
+      "timestamp": "2025-09-04T16:30:38"
+    },
+    {
+      "speaker": "ai",
+      "text": "(No response needed as the user has ended the conversation.)",
+      "timestamp": "2025-09-04T16:30:45"
+    },
+    {
+      "speaker": "ai",
+      "text": "(No response needed as the user has ended the conversation.)",
+      "timestamp": "2025-09-04T16:30:53"
+    }
+  ]
+}

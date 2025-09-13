@@ -1,0 +1,46 @@
+Call started at: 2025-09-04T03:50:59.126956
+Stream SID: 054060896f8691bcb735439ce48c1994
+
+[03:51:11] User: ਬੱਬੇ
+[03:51:12] AI (chunk): Bahut achha.
+[03:51:13] AI (chunk):  Aapka
+[03:51:13] AI (chunk):  naam
+[03:51:14] AI (chunk):  jaan
+[03:51:14] AI (chunk):  lun
+[03:51:14] AI (chunk):  taaki
+[03:51:14] AI (chunk):  aapki
+[03:51:14] AI (chunk):  rai
+[03:51:14] AI (chunk):  ko
+[03:51:15] AI (chunk):  sahi
+[03:51:15] AI (chunk):  se
+[03:51:15] AI (chunk):  record
+[03:51:15] AI (chunk):  kar
+[03:51:15] AI (chunk):  sakun?
+[03:51:22] User: बोलिए
+[03:51:23] AI (chunk): Ji, aapka
+[03:51:23] AI (chunk):  naam
+[03:51:23] AI (chunk):  kya
+[03:51:23] AI (chunk):  hai,
+[03:51:23] AI (chunk):  कृपया
+[03:51:24] AI (chunk):  bataiye?
+[03:51:29] User: సమ
+[03:51:30] AI (chunk): Ankit Kumar
+[03:51:30] AI (chunk):  ji,
+[03:51:30] AI (chunk):  bahut
+[03:51:30] AI (chunk):  dhanyavad.
+[03:51:31] AI (chunk):  Aap
+[03:51:31] AI (chunk):  kis
+[03:51:31] AI (chunk):  district
+[03:51:33] AI (chunk):  aur
+[03:51:33] AI (chunk):  block
+[03:51:33] AI (chunk):  se
+[03:51:33] AI (chunk):  hain?
+[03:51:33] AI (chunk):  Wahan
+[03:51:33] AI (chunk):  ke
+[03:51:33] AI (chunk):  liye
+[03:51:34] AI (chunk):  khaas
+[03:51:35] AI (chunk):  policy
+[03:51:35] AI (chunk):  suggestions
+[03:51:35] AI (chunk):  chahiye.
+
+Call ended at: 2025-09-04T03:51:44.542216

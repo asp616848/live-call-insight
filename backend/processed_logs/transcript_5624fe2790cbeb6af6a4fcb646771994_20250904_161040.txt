@@ -1,0 +1,27 @@
+Call Transcript — saved 2025-09-04 16:10:40
+-------------------------------------------
+[2025-09-04 16:09:53] User: I'm
+[2025-09-04 16:09:54] User: I'm sorry.
+[2025-09-04 16:09:54] Assistant: Hi! I'm calling from Blue Tokai Café at
+[2025-09-04 16:09:56] User: is known
+[2025-09-04 16:09:57] Assistant: Aap kaafi badiya! Aap Plaksha mein student ya staff hain, sahi? Aur aap Blue Tokai Café mein kam se kam ek baar gaye hain?
+[2025-09-04 16:09:59] User: Nice job.
+[2025-09-04 16:10:00] Assistant: Badhiya! Aapko yeh jaankar kehna hai ki aapne pichhle 30 dinon mein Blue Tokai mein visit kiya hai?
+[2025-09-04 16:10:01] User: I'm sorry.
+[2025-09-04 16:10:02] Assistant: Koi baat nahi. Aap Blue Tokai Café ke baare mein kya jaante hain? Aap kaise sochte hain hamare café ke baare mein, aur kya cheezein aapko pasand ya na pasand aayi hain jab aapne hamare café ke baare mein suna ya dekha?
+[2025-09-04 16:10:08] User: Hello
+[2025-09-04 16:10:09] User: Ah.
+[2025-09-04 16:10:11] User: The town was.
+[2025-09-04 16:10:13] Assistant: Samajh gaya. Aap Blue Tokai Café mein kis cheez ko sabse zyada pasand karenge? Kya woh humari coffee ki quality hai, ya hamare staff ki friendliness, ya phir café ka ambience? Aapke liye kya sabse important hai?
+[2025-09-04 16:10:16] User: home.
+[2025-09-04 16:10:16] Assistant: Samajh gaya.
+[2025-09-04 16:10:19] User: also worked to support.
+[2025-09-04 16:10:20] Assistant: Wah, yeh bahut accha hai! Aapko hamara staff kitna friendly laga, uske baare mein thoda aur bata sakte
+[2025-09-04 16:10:21] User: Hello.
+[2025-09-04 16:10:21] Assistant: Samajh gaya. Aapke liye staff ki friendliness it
+[2025-09-04 16:10:24] User: office
+[2025-09-04 16:10:25] User: Welcome to the club.
+[2025-09-04 16:10:29] User: I'm gonna be fine.
+[2025-09-04 16:10:30] Assistant: I see. Aapka kehna hai ki aapko hamare café ka ambience kaafi pasand aaya. Aapke hisaab se, kya kuch aur hai jo hum aur behtar kar sakte hain café ke ambience ko aur bhi accha banane ke liye?
+[2025-09-04 16:10:37] User: I am
+[2025-09-04 16:10:40] Assistant: Acha, toh aapko hamare café ke packaging quality bhi achhi lagi. Agar aapko koi ek cheez badalni ho café mein, toh woh kya hoti? Aapko kya lagta hai ki hum sabse pehle

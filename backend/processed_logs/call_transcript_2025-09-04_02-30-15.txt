@@ -1,0 +1,127 @@
+Call started at: 2025-09-04T02:30:15.413127
+Stream SID: 3b09c3d12e4a31f61ce1463fbc331994
+
+[02:30:27] User: ने बोलिए
+[02:30:27] AI (chunk): Pranam, hum
+[02:30:28] AI (chunk):  Sumitra
+[02:30:29] AI (chunk):  Devi
+[02:30:29] AI (chunk):  sarkar
+[02:30:29] AI (chunk):  se
+[02:30:29] AI (chunk):  boli.
+[02:30:29] AI (chunk):  30
+[02:30:35] AI (chunk): Rauwa Bihar
+[02:30:36] AI (chunk):  se
+[02:30:36] AI (chunk):  hi boli
+[02:30:36] AI (chunk):  na?
+[02:30:43] User: <noise>
+[02:30:43] AI (chunk): Rauwa chahbi
+[02:30:44] AI (chunk):  ki
+[02:30:44] AI (chunk):  aapke
+[02:30:50] AI (chunk): ilaaka ke
+[02:30:51] AI (chunk):  samasya
+[02:30:51] AI (chunk):  ke
+[02:30:51] AI (chunk):  samadhan
+[02:30:57] AI (chunk): hoi, theek
+[02:30:57] AI (chunk):  ba?
+[02:31:04] User: ठीक है
+[02:31:05] AI (chunk): [NAME] ji,
+[02:31:05] AI (chunk):  rauwa
+[02:31:05] AI (chunk):  un
+[02:31:06] AI (chunk):  500
+[02:31:06] AI (chunk):  chune
+[02:31:06] AI (chunk):  log
+[02:31:06] AI (chunk):  me se
+[02:31:06] AI (chunk):  bani
+[02:31:08] AI (chunk):  jinke
+[02:31:08] AI (chunk):  rai
+[02:31:08] AI (chunk):  se
+[02:31:08] AI (chunk):  Bihar
+[02:31:11] AI (chunk):  ke
+[02:31:11] AI (chunk):  naya
+[02:31:11] AI (chunk):  niti
+[02:31:11] AI (chunk):  banai.
+[02:31:14] AI (chunk): Bas 2-3
+[02:31:15] AI (chunk):  minute.
+[02:31:15] AI (chunk):  Ka
+[02:31:16] AI (chunk):  hum
+[02:31:16] AI (chunk):  rauwa
+[02:31:16] AI (chunk):  ke vichar
+[02:31:16] AI (chunk):  jaan
+[02:31:19] AI (chunk):  saki?
+[02:31:22] AI (chunk): Ee mauka
+[02:31:22] AI (chunk):  khali
+[02:31:23] AI (chunk):  aaj-kal
+[02:31:25] User: .
+[02:31:26] AI (chunk): ke ba.
+[02:31:26] AI (chunk):  Rauwa
+[02:31:26] AI (chunk):  jaise
+[02:31:27] AI (chunk):  [OCCUPATION/AREA]
+[02:31:28] AI (chunk):  ke
+[02:31:28] AI (chunk):  khali
+[02:31:28] AI (chunk):  10-15
+[02:31:28] AI (chunk):  log
+[02:31:30] AI (chunk):  ba
+[02:31:30] AI (chunk):  jinse
+[02:31:30] AI (chunk):  baat
+[02:31:31] AI (chunk):  hoi.
+[02:31:31] AI (chunk):  Zaroor
+[02:31:32] AI (chunk):  batai?
+[02:31:43] User: 吧。
+[02:31:43] AI (chunk): Pehle aapka
+[02:31:45] User: Hi, ba,
+[02:31:46] AI (chunk): naam jaan
+[02:31:46] AI (chunk):  lun
+[02:31:46] AI (chunk):  taaki
+[02:31:46] AI (chunk):  aapki
+[02:31:47] AI (chunk):  rai
+[02:31:47] AI (chunk):  ko
+[02:31:47] AI (chunk):  sahi
+[02:31:47] AI (chunk):  se
+[02:31:47] AI (chunk):  record
+[02:31:47] AI (chunk):  kar
+[02:31:47] AI (chunk):  sakun?
+[02:31:56] User: య యా యా
+[02:31:57] AI (chunk): Aapka naam
+[02:31:57] AI (chunk):  kya
+[02:31:57] AI (chunk):  hai
+[02:32:04] User: అ
+[02:32:04] User: మ్
+[02:32:04] User: రా
+[02:32:04] User: లా
+[02:32:04] User: భ
+[02:32:05] User: ు
+[02:32:05] User: కుమార్ యాదవ
+[02:32:05] AI (chunk): Pappu Kumar
+[02:32:06] AI (chunk):  Yadav
+[02:32:06] AI (chunk):  ji,
+[02:32:06] AI (chunk):  aap
+[02:32:12] AI (chunk): kis district/block
+[02:32:13] AI (chunk):  se hain?
+[02:32:14] AI (chunk):  Wahan
+[02:32:14] AI (chunk):  ke liye
+[02:32:14] AI (chunk):  khaas
+[02:32:16] AI (chunk):  policy
+[02:32:16] AI (chunk):  suggestions
+[02:32:16] AI (chunk):  chahiye.
+[02:32:21] AI (chunk): Pappu ji,
+[02:32:21] AI (chunk):  aapne
+[02:32:22] AI (chunk):  jo
+[02:32:23] AI (chunk):  [ISSUE]
+[02:32:23] AI (chunk):  bataya,
+[02:32:23] AI (chunk):  woh
+[02:32:23] AI (chunk):  top
+[02:32:25] AI (chunk):  3
+[02:32:25] AI (chunk):  issues
+[02:32:25] AI (chunk):  mein
+[02:32:25] AI (chunk):  hai.
+[02:32:25] AI (chunk):  Sirf
+[02:32:28] AI (chunk):  2
+[02:32:28] AI (chunk):  aur
+[02:32:29] AI (chunk):  sawal,
+[02:32:29] AI (chunk):  phir
+[02:32:32] AI (chunk): aapki puri
+[02:32:32] AI (chunk):  baat
+[02:32:32] AI (chunk):  policy
+[02:32:38] AI (chunk): mein jayegi.
+
+WebSocket disconnected at: 2025-09-04T02:32:45.665829

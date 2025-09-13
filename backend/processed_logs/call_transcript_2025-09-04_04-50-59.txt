@@ -1,0 +1,80 @@
+Call started at: 2025-09-04T04:50:59.603321
+Stream SID: 4a0e303807f0645c349bbf8691231994
+
+Call started at: 2025-09-04T04:50:59.988755
+Stream SID: d55051f90d4f42262bbfcec1817b1994
+
+[04:51:02] User: हेलो
+[04:51:03] User: Hello.
+[04:51:04] AI (chunk):  Kya
+[04:51:04] AI (chunk): Ji, namaste.
+[04:51:05] AI (chunk):  aapke
+[04:51:05] AI (chunk):  paas
+[04:51:05] AI (chunk):  30
+[04:51:05] AI (chunk):  second
+[04:51:05] AI (chunk):  hain?
+[04:51:05] AI (chunk):  Kya
+[04:51:05] AI (chunk):  aapke
+[04:51:05] AI (chunk):  paas
+[04:51:05] AI (chunk):  30
+[04:51:06] AI (chunk):  second
+[04:51:06] AI (chunk):  hain
+[04:51:15] User: హలో
+[04:51:16] AI (chunk): Haan ji,
+[04:51:16] AI (chunk):  aap
+[04:51:16] AI (chunk):  Bihar
+[04:51:17] AI (chunk):  se
+[04:51:17] AI (chunk):  hi bol
+[04:51:17] AI (chunk):  rahe
+[04:51:17] AI (chunk):  hain na?
+[04:51:19] User: कौन
+[04:51:20] AI (chunk): Main Sumitra
+[04:51:20] AI (chunk):  Devi
+[04:51:21] AI (chunk):  sarkar
+[04:51:22] AI (chunk):  se
+[04:51:22] AI (chunk):  bol
+[04:51:22] AI (chunk):  rahi
+[04:51:22] AI (chunk):  hun.
+[04:51:22] AI (chunk):  Kya
+[04:51:23] User: [noise]
+
+WebSocket disconnected at: 2025-09-04T04:51:24.315810
+[04:51:24] AI (chunk): Ji, main
+[04:51:24] AI (chunk):  sarkar
+[04:51:26] AI (chunk):  se
+[04:51:26] AI (chunk):  baat
+[04:51:26] AI (chunk):  kar
+[04:51:26] AI (chunk):  rahi
+[04:51:26] AI (chunk):  hu.
+[04:51:26] AI (chunk):  Aap
+[04:51:28] AI (chunk):  Bihar
+[04:51:28] AI (chunk):  se
+[04:51:28] AI (chunk):  hi
+[04:51:28] AI (chunk):  bol
+[04:51:28] AI (chunk):  rahe
+[04:51:28] AI (chunk):  hain
+[04:51:28] AI (chunk):  na?
+[04:51:30] User: तो हम क्या करें
+[04:51:30] AI (chunk): Hum ek
+[04:51:31] AI (chunk):  survey
+[04:51:31] AI (chunk):  kar
+[04:51:31] AI (chunk):  rahe
+[04:51:31] AI (chunk):  hain
+[04:51:36] User: Đấy.
+[04:51:36] AI (chunk): Aapke ilake
+[04:51:38] User: हेलो
+[04:51:39] AI (chunk): Haan ji,
+[04:51:39] AI (chunk):  main
+[04:51:41] AI (chunk):  Sumitra
+[04:51:41] AI (chunk):  Devi
+[04:51:42] AI (chunk):  sarkar
+[04:51:42] AI (chunk):  se
+[04:51:42] AI (chunk):  bol
+[04:51:42] AI (chunk):  rahi
+[04:51:45] AI (chunk):  hu.
+[04:51:45] AI (chunk):  Aap
+[04:51:45] AI (chunk):  thoda
+[04:51:45] AI (chunk):  dhyaan
+[04:51:45] AI (chunk):  se sunenge?
+
+Call ended at: 2025-09-04T04:51:48.883204

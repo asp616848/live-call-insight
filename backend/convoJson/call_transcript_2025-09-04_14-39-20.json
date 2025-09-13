@@ -1,0 +1,36 @@
+{
+  "summary": {
+    "filename": "call_transcript_2025-09-04_14-39-20.txt",
+    "stream_sid": "0b22b840439838186b879560035f1994",
+    "call_started": "2025-09-04T14:39:20.348875",
+    "call_ended": "2025-09-04T14:39:49.493723",
+    "duration_seconds": 29.144848,
+    "average_ai_response_latency": 4.5,
+    "noise_count": 0,
+    "total_user_messages": 1,
+    "total_ai_responses": 2,
+    "sentiment": "neutral",
+    "concerns": [],
+    "overview": "The user initiates the conversation with a short, non-specific utterance. The AI responds by confirming something and then asks about the user's geographical location.",
+    "user_tone": "non-expressive",
+    "emotion": "neutral",
+    "sentiment_score": 5.0
+  },
+  "conversation": [
+    {
+      "speaker": "user",
+      "text": "mī",
+      "timestamp": "2025-09-04T14:39:32"
+    },
+    {
+      "speaker": "ai",
+      "text": "Haan, bilkul. Aap",
+      "timestamp": "2025-09-04T14:39:33"
+    },
+    {
+      "speaker": "ai",
+      "text": "Bihar se hi bol rahe hain na?",
+      "timestamp": "2025-09-04T14:39:40"
+    }
+  ]
+}

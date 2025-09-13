@@ -1,10 +1,10 @@
 {
   "users": [
-    { "email": "asp616848@gmail.com", "role": "user" },
+    { "email": "asp616848@gmail.com", "role": "developer" },
     { "email": "abhijeet.shash@gmail.com", "role": "user" },
     { "email": "agaazsinghal@gmail.com", "role": "user" },
     { "email": "2004.rachitgupta@gmail.com", "role": "user" },
-    { "email": "23f2004604@ds.study.iitm.ac.in", "role": "user" },
+    { "email": "23f2004604@ds.study.iitm.ac.in", "role": "developer" },
     { "email": "dev958851@gmail.com", "role": "developer" }
   ]
 }

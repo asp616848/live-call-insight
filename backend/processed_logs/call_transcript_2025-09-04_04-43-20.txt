@@ -1,0 +1,11 @@
+Call started at: 2025-09-04T04:43:20.090462
+Stream SID: 0d68969eb469f7d2cb6e90fce6f91994
+
+[04:43:26] User: <noise>
+[04:43:27] AI (chunk): Haan, bilkul.
+[04:43:28] AI (chunk):  Bataiye,
+[04:43:29] AI (chunk):  kya
+[04:43:29] AI (chunk):  puchhna
+[04:43:29] AI (chunk):  chahte
+
+WebSocket disconnected at: 2025-09-04T04:43:33.674021

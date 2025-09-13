@@ -1,0 +1,10 @@
+Call Transcript — saved 2025-09-05 09:40:36
+-------------------------------------------
+[2025-09-05 09:40:02] User: Yeah.
+[2025-09-05 09:40:04] Assistant: Hello! I’m calling on behalf of Blue Tokai Café at Plaksha to gather your feedback. We’re inviting a few students and staff members to share quick feedback, which will take about 4 minutes. As a thank-you, you'll receive a ₹150 coupon. Is now a good time for you?
+[2025-09-05 09:40:13] User: Ja ja ja.
+[2025-09-05 09:40:14] Assistant: Great! This is voluntary and confidential. Can I confirm a couple of quick
+[2025-09-05 09:40:15] User: London
+[2025-09-05 09:40:16] Assistant: Thank you! Could you please confirm if you are a student, faculty, or staff member at Plaksha? And have you visited the Blue Tokai café at Plaksha at least once?
+[2025-09-05 09:40:28] User: as
+[2025-09-05 09:40:30] Assistant: Thank you for confirming! Since you've visited the café in the past 30 days, could you share how many times you've visited in the last month?

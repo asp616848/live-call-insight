@@ -1,0 +1,12 @@
+Call Transcript — saved 2025-09-04 02:40:22
+-------------------------------------------
+[2025-09-04 02:39:19] User: Hello
+[2025-09-04 02:39:20] Assistant: Hello! I'm calling from Blue Tokai Café at Plaksha. We’re offering a ₹150 coupon for a quick feedback survey. Do you have about 4 minutes to spare?
+[2025-09-04 02:39:32] User: I think so, shall we?
+[2025-09-04 02:39:34] Assistant: Bahut accha! Bas confirm kar dijiye—aap Plaksha ke student ya staff hai, sahi? Aur aap Blue Tokai Café mein kam se kam ek baar to gaye hain na?
+[2025-09-04 02:39:46] User: Yeah been to Bluetooth ai once.
+[2025-09-04 02:39:48] Assistant: Great! Aap actually un select feedback partners mein se ek hain. Aapke vichaar hamare menu aur service improvements mein seedha asar karenge. Before we start, would you prefer we continue in English or Hindi?
+[2025-09-04 02:40:04] User: English is fine
+[2025-09-04 02:40:05] Assistant: Perfect! Let's get started. Have you visited Blue Tokai at Plaksha in the past 30 days?
+[2025-09-04 02:40:14] User: I have
+[2025-09-04 02:40:15] Assistant: That's great! About how many times did you visit in the past month?

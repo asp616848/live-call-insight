@@ -1,0 +1,213 @@
+Call started at: 2025-09-04T02:27:44.846394
+Stream SID: da38f1cac4b9570eee8501e73eca1994
+
+[02:27:49] User: जी सुमित्रा जी
+[02:27:50] AI (chunk): Bahut badhiya.
+[02:27:50] AI (chunk):  Aap
+[02:27:51] AI (chunk):  Bihar
+[02:27:51] AI (chunk):  se
+[02:27:51] AI (chunk):  hi bol
+[02:27:51] AI (chunk):  rahe
+[02:27:51] AI (chunk):  hain
+[02:27:58] User: हां जी है बोलिए
+[02:27:59] AI (chunk): Aap chahenge
+[02:27:59] AI (chunk):  ki
+[02:27:59] AI (chunk):  aapke
+[02:28:00] AI (chunk):  ilake
+[02:28:00] AI (chunk):  ki samasyaon
+[02:28:00] AI (chunk):  ka samadhan
+[02:28:00] AI (chunk):  ho,
+[02:28:00] AI (chunk):  sahi?
+[02:28:07] User: हां
+[02:28:07] User: जी
+[02:28:08] User: मैं
+[02:28:08] User: यही चाहूंगा
+[02:28:08] AI (chunk): [NAME] ji,
+[02:28:09] User: Correct.
+[02:28:10] AI (chunk): aap un
+[02:28:10] AI (chunk):  kuch
+[02:28:10] AI (chunk):  chune
+[02:28:11] AI (chunk):  hue
+[02:28:11] AI (chunk):  500
+[02:28:11] AI (chunk):  logon
+[02:28:11] AI (chunk):  mein se
+[02:28:11] AI (chunk):  hain
+[02:28:11] AI (chunk):  jinki
+[02:28:11] AI (chunk):  rai
+[02:28:12] AI (chunk):  se
+[02:28:12] AI (chunk):  Bihar
+[02:28:12] AI (chunk):  ki
+[02:28:12] AI (chunk):  nai
+[02:28:12] AI (chunk):  policy
+[02:28:12] AI (chunk):  banegi.
+[02:28:13] AI (chunk):  Sirf
+[02:28:13] AI (chunk):  2-3
+[02:28:13] AI (chunk):  minute.
+[02:28:15] AI (chunk):  Kya main
+[02:28:15] AI (chunk):  aapke
+[02:28:15] AI (chunk):  important
+[02:28:15] AI (chunk):  vichar
+[02:28:17] AI (chunk):  jaan
+[02:28:17] AI (chunk):  sakti
+[02:28:17] AI (chunk):  hun?
+[02:28:18] User: अरे
+[02:28:18] AI (chunk): 2-3 minute.
+[02:28:20] User: وا
+[02:28:20] User: ہ
+[02:28:21] User: یہ
+[02:28:21] User: تو
+[02:28:21] User: کر
+[02:28:21] User: یزی
+[02:28:21] User: ہے
+[02:28:21] User: بہت
+[02:28:21] User: ہی بڑی بات ہے۔
+[02:28:22] AI (chunk): Kya main
+[02:28:22] AI (chunk):  aapke
+[02:28:23] AI (chunk):  important
+[02:28:23] AI (chunk):  vichaar
+[02:28:23] AI (chunk):  jaan
+[02:28:23] AI (chunk):  sakti
+[02:28:23] AI (chunk):  hun?
+[02:28:28] User: मेरे
+[02:28:28] User: जा
+[02:28:28] User: नो
+[02:28:29] User: इं
+[02:28:29] User: पॉ
+[02:28:29] User: र्टेंट
+[02:28:29] User: वि
+[02:28:29] User: चार
+[02:28:30] User: तो
+[02:28:30] User: आप
+[02:28:30] User: के
+[02:28:30] User: लिए
+[02:28:30] User: ही
+[02:28:30] User: है जानो जानो प्लीज
+[02:28:32] User: be my guest.
+[02:28:33] AI (chunk): Pehle aapka
+[02:28:33] AI (chunk):  naam
+[02:28:33] AI (chunk):  jaan
+[02:28:33] AI (chunk):  lun
+[02:28:33] AI (chunk):  taaki
+[02:28:34] AI (chunk):  aapki
+[02:28:34] AI (chunk):  rai
+[02:28:34] AI (chunk):  ko sahi
+[02:28:34] AI (chunk):  se
+[02:28:34] AI (chunk):  record
+[02:28:35] AI (chunk):  kar sakun?
+[02:28:40] User: मे
+[02:28:40] User: रा
+[02:28:40] User: नाम
+[02:28:40] User: है
+[02:28:41] User: आ
+[02:28:41] User: युष गुप्ता
+[02:28:41] AI (chunk): Dhanyavaad, Ayush
+[02:28:42] AI (chunk):  ji.
+[02:28:42] AI (chunk):  Aap
+[02:28:42] AI (chunk):  kis
+[02:28:42] AI (chunk):  district/block
+[02:28:43] AI (chunk):  se
+[02:28:43] AI (chunk):  hain?
+[02:28:43] AI (chunk):  Wahan
+[02:28:43] AI (chunk):  ke
+[02:28:44] AI (chunk):  liye
+[02:28:44] AI (chunk):  khaas
+[02:28:45] AI (chunk):  policy
+[02:28:45] AI (chunk):  suggestions
+[02:28:45] AI (chunk):  chahiye.
+[02:28:50] User: मैं
+[02:28:50] User: हूं
+[02:28:51] User: ख
+[02:28:51] User: ग
+[02:28:51] User: ड़
+[02:28:51] User: िया
+[02:28:51] User: से
+[02:28:51] User: बात
+[02:28:52] User: कर
+[02:28:52] User: रहा
+[02:28:52] User: हूं
+[02:28:53] AI (chunk): Thik hai,
+[02:28:53] AI (chunk):  Khagaria.
+[02:28:53] AI (chunk):  Aapka
+[02:28:53] AI (chunk):  feedback
+[02:28:54] AI (chunk):  bahut
+[02:28:54] AI (chunk):  mahatvapurna
+[02:28:54] AI (chunk):  hai.
+[02:28:54] AI (chunk):  Bas
+[02:28:54] AI (chunk):  do
+[02:28:54] AI (chunk):  teen
+[02:28:54] AI (chunk):  sawal
+[02:28:55] AI (chunk):  aur
+[02:28:55] AI (chunk):  aapki
+[02:28:55] AI (chunk):  baat
+[02:28:55] AI (chunk):  seedhe
+[02:28:55] AI (chunk):  policy
+[02:28:56] AI (chunk):  makers
+[02:28:56] AI (chunk):  tak
+[02:28:56] AI (chunk):  jayegi.
+[02:28:56] AI (chunk):  Aage
+[02:28:56] AI (chunk):  badhein?
+[02:29:07] User: हां
+[02:29:07] User: जी
+[02:29:08] User: बो
+[02:29:08] User: लो
+[02:29:08] User: बो
+[02:29:08] User: लो
+[02:29:08] User: जरूर
+[02:29:09] User: भ
+[02:29:09] User: र्ते
+[02:29:09] User: आए
+[02:29:09] User: गी
+[02:29:09] User: तब
+[02:29:10] User: एंड
+[02:29:10] User: तक चलो
+[02:29:10] AI (chunk): Bahut shukriya.
+[02:29:11] AI (chunk):  Aapne
+[02:29:12] AI (chunk):  jo
+[02:29:12] AI (chunk):  yeh
+[02:29:12] AI (chunk):  mahatvapurna
+[02:29:12] AI (chunk):  baat
+[02:29:12] AI (chunk):  batai
+[02:29:13] AI (chunk):  ise hum
+[02:29:13] AI (chunk):  record
+[02:29:13] AI (chunk):  kar rahe
+[02:29:13] AI (chunk):  hain.
+[02:29:15] AI (chunk):  Aapke
+[02:29:15] AI (chunk):  vichaar
+[02:29:15] AI (chunk):  bahut
+[02:29:15] AI (chunk):  maayne
+[02:29:17] AI (chunk):  rakhte
+[02:29:17] AI (chunk):  hain.
+[02:29:17] AI (chunk):  Ab
+[02:29:17] AI (chunk):  mai
+[02:29:17] AI (chunk):  aapse
+[02:29:17] AI (chunk):  kuch
+[02:29:20] AI (chunk):  aur
+[02:29:20] AI (chunk):  sawal
+[02:29:20] AI (chunk):  poochungi,
+[02:29:20] AI (chunk):  bas
+[02:29:24] AI (chunk): thoda sa
+[02:29:25] AI (chunk):  aur.
+[02:29:25] AI (chunk):  Kya
+[02:29:26] AI (chunk):  aap tayyar
+[02:29:26] AI (chunk):  hain?
+[02:29:31] User: Yes BB
+[02:29:31] AI (chunk): Dhanyavaad. Hum
+[02:29:32] AI (chunk):  aage
+[02:29:33] AI (chunk):  badhte
+[02:29:33] AI (chunk):  hain.
+[02:29:39] User: हां जी
+[02:29:41] User: बढ़ते हैं।
+[02:29:42] AI (chunk): Aapke ilake
+[02:29:42] AI (chunk):  mein
+[02:29:42] AI (chunk):  sabse
+[02:29:42] AI (chunk):  badi
+[02:29:42] AI (chunk):  samasya
+[02:29:44] AI (chunk):  kya
+[02:29:44] AI (chunk):  hai?
+[02:29:44] AI (chunk):  Sadak,
+[02:29:44] AI (chunk):  paani,
+[02:29:46] AI (chunk):  ya
+[02:29:46] AI (chunk):  koi
+[02:29:46] AI (chunk):  aur cheez?
+
+Call ended at: 2025-09-04T02:29:51.107736

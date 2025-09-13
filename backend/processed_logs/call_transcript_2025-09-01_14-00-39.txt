@@ -1,0 +1,8 @@
+Call started at: 2025-09-01T14:00:39.228722
+Stream SID: 26158e60b1b4d8bac550fd86e7a31991
+
+[14:00:41] User: <noise>
+[14:00:42] AI (chunk): नमस्ते, मैं
+[14:00:43] User: เอา
+
+Call ended at: 2025-09-01T14:00:44.012820

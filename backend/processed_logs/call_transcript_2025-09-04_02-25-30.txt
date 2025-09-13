@@ -1,0 +1,75 @@
+Call started at: 2025-09-04T02:25:30.785126
+Stream SID: 3b6e32fe7bfedf8d93a7fe9a75e61994
+
+[02:25:41] User: ഹലോ
+[02:25:41] User: ഹജ്ജി
+[02:25:42] AI (chunk): Namaste, hum
+[02:25:44] User: हां
+[02:25:44] User: जी
+[02:25:44] User: हां
+[02:25:44] User: मेरे पास 30 सेकंड बोलिए
+[02:25:45] AI (chunk): Dhanyavaad. Aap
+[02:25:46] AI (chunk):  Bihar
+[02:25:46] AI (chunk):  se
+[02:25:46] AI (chunk):  hi bol
+[02:25:46] AI (chunk):  rahe
+[02:25:46] AI (chunk):  hain
+[02:25:51] User: हां
+[02:25:52] User: जी
+[02:25:52] User: बि
+[02:25:52] User: हार
+[02:25:52] User: से
+[02:25:52] User: बोल रहे हैं बताइए
+[02:25:53] AI (chunk): Bahut achha.
+[02:25:53] AI (chunk):  Aap
+[02:25:53] AI (chunk):  chahenge
+[02:25:54] AI (chunk):  ki
+[02:25:54] AI (chunk):  aapke
+[02:25:54] AI (chunk):  ilake
+[02:25:54] AI (chunk):  ki samasyaon
+[02:25:54] AI (chunk):  ka samadhan
+[02:25:54] AI (chunk):  ho,
+[02:25:54] AI (chunk):  sahi
+[02:25:54] AI (chunk):  na?
+[02:26:01] User: मैं
+[02:26:01] User: चाह
+[02:26:01] User: ूं
+[02:26:01] User: गा
+[02:26:02] User: मैं
+[02:26:02] User: चाह
+[02:26:02] User: ूंगा
+[02:26:02] User: सही
+[02:26:03] User: कह
+[02:26:03] User: रहे
+[02:26:03] User: हो हां जी
+[02:26:03] AI (chunk): [NAME] ji,
+[02:26:04] AI (chunk):  aap
+[02:26:04] AI (chunk):  un
+[02:26:04] AI (chunk):  kuch
+[02:26:04] AI (chunk):  chune
+[02:26:04] AI (chunk):  hue
+[02:26:04] AI (chunk):  500
+[02:26:04] AI (chunk):  logon
+[02:26:04] AI (chunk):  mein se
+[02:26:05] AI (chunk):  hain,
+[02:26:05] AI (chunk):  jinki
+[02:26:05] AI (chunk):  rai
+[02:26:05] AI (chunk):  se
+[02:26:05] AI (chunk):  Bihar
+[02:26:05] AI (chunk):  ki
+[02:26:06] AI (chunk):  nai
+[02:26:06] AI (chunk):  niti
+[02:26:06] AI (chunk):  banegi.
+[02:26:06] AI (chunk):  Sirf
+[02:26:06] AI (chunk):  2-3
+[02:26:07] AI (chunk):  minute.
+[02:26:07] AI (chunk):  Kya
+[02:26:07] AI (chunk):  main
+[02:26:07] AI (chunk):  aapke
+[02:26:07] AI (chunk):  important
+[02:26:07] AI (chunk):  vichar
+[02:26:07] AI (chunk):  jaan
+[02:26:07] AI (chunk):  sakti
+[02:26:07] AI (chunk):  hun?
+
+Call ended at: 2025-09-04T02:26:10.868553

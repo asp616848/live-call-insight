@@ -1,0 +1,52 @@
+Call started at: 2025-09-04T14:17:46.399639
+Stream SID: a72d9855627f39c23ee276e95c521994
+
+[14:17:50] User: Yeah.
+[14:17:52] User: धन्यवाद मित्रों अभी
+[14:17:56] User: हां
+[14:17:56] User: जी जी है
+[14:17:57] AI (chunk): Bahut badhiya.
+[14:17:57] AI (chunk):  Aap
+[14:17:58] AI (chunk):  Bihar
+[14:17:59] AI (chunk):  se
+[14:17:59] AI (chunk):  hi bol
+[14:17:59] AI (chunk):  rahe
+[14:17:59] AI (chunk):  hain
+[14:17:59] AI (chunk):  na?
+[14:18:03] User: ਜੀ ਕੜੀ ਹਾਰ ਸੀ
+[14:18:04] AI (chunk): Katihar se.
+[14:18:04] AI (chunk):  Theek
+[14:18:06] AI (chunk):  hai.
+[14:18:06] AI (chunk):  Aap
+[14:18:06] AI (chunk):  chahenge
+[14:18:07] AI (chunk):  ki
+[14:18:07] AI (chunk):  aapke
+[14:18:11] AI (chunk): ilake ki
+[14:18:11] AI (chunk):  samasyaon
+[14:18:11] AI (chunk):  ka
+[14:18:11] AI (chunk):  samadhan
+[14:18:13] AI (chunk):  ho, sahi?
+[14:18:17] AI (chunk): Haan, bilkul.
+[14:18:17] AI (chunk):  Aap
+[14:18:19] User: सम
+[14:18:19] User: स्या
+[14:18:20] User: ओं का
+[14:18:20] User: समाधान आप कर दीजिए
+[14:18:20] AI (chunk): Ji bilkul.
+[14:18:21] AI (chunk):  Aap
+[14:18:24] AI (chunk):  un
+[14:18:24] AI (chunk):  kuch
+[14:18:24] AI (chunk):  chune
+[14:18:24] AI (chunk):  hue
+[14:18:24] AI (chunk):  500
+[14:18:24] AI (chunk):  logon
+[14:18:24] AI (chunk):  mein
+[14:18:24] AI (chunk):  se
+[14:18:24] AI (chunk):  hain
+[14:18:31] AI (chunk): jinki rai
+[14:18:31] AI (chunk):  se
+[14:18:31] AI (chunk):  Bihar
+[14:18:31] AI (chunk):  ki nayi
+[14:18:32] AI (chunk):  niti
+
+Call ended at: 2025-09-04T14:18:33.209009

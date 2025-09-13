@@ -1,0 +1,8 @@
+Call started at: 2025-09-04T04:56:02.724561
+Stream SID: 2944258c26a70ef6ee4328ac947f1994
+
+[04:56:04] User: हेलो
+[04:56:05] AI (chunk): हाँ जी,
+[04:56:05] AI (chunk):  बोलिए।
+
+WebSocket disconnected at: 2025-09-04T04:56:27.385284

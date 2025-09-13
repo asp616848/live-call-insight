@@ -1,0 +1,68 @@
+Call started at: 2025-09-04T14:30:10.134266
+Stream SID: f5a728afdd67a64977a7a3d120701994
+
+[14:30:16] User: Alors
+[14:30:16] AI (chunk): Haan, aapki
+[14:30:17] AI (chunk):  jagah
+[14:30:23] User: Hi.
+[14:30:24] AI (chunk): Haan, main
+[14:30:25] User: రాకోవద్దు
+[14:30:26] AI (chunk): Ji, main
+[14:30:26] AI (chunk):  Sarkar
+[14:30:28] AI (chunk):  se
+[14:30:28] AI (chunk):  baat
+[14:30:28] AI (chunk):  kar
+[14:30:28] AI (chunk):  rahi
+[14:30:28] AI (chunk):  hoon.
+[14:30:28] AI (chunk):  Kya
+[14:30:34] AI (chunk): aap Bihar
+[14:30:35] AI (chunk):  se
+[14:30:35] AI (chunk):  hi
+[14:30:35] AI (chunk):  bol
+[14:30:35] AI (chunk):  rahe
+[14:30:36] AI (chunk):  hain
+[14:30:42] User: อ
+[14:30:43] AI (chunk): Ji, theek
+[14:30:43] AI (chunk):  hai.
+[14:30:43] AI (chunk):  Aap
+[14:30:44] AI (chunk):  chahenge
+[14:30:44] AI (chunk):  ki aapke
+[14:30:44] AI (chunk):  ilake
+[14:30:48] AI (chunk):  ki
+[14:30:48] AI (chunk):  samasyaon
+[14:30:48] AI (chunk):  ka
+[14:30:48] AI (chunk):  samadhan
+[14:30:48] AI (chunk):  ho,
+[14:30:48] AI (chunk):  sahi?
+[14:30:58] User: .
+[14:30:59] AI (chunk): Achha, toh
+[14:30:59] AI (chunk):  aap
+[14:31:00] AI (chunk):  un
+[14:31:00] AI (chunk):  chune
+[14:31:01] AI (chunk):  hue
+[14:31:01] AI (chunk):  500
+[14:31:01] AI (chunk):  logon
+[14:31:01] AI (chunk):  mein
+[14:31:08] AI (chunk): se hain,
+[14:31:08] AI (chunk):  jinki
+[14:31:08] AI (chunk):  raay
+[14:31:11] AI (chunk):  se
+[14:31:11] AI (chunk):  Bihar
+[14:31:11] AI (chunk):  ki
+[14:31:11] AI (chunk):  nai
+[14:31:11] AI (chunk):  niti
+[14:31:11] AI (chunk):  banegi.
+[14:31:13] AI (chunk):  Sirf
+[14:31:13] AI (chunk):  2-3
+[14:31:14] AI (chunk): Sirf do-teen
+[14:31:14] AI (chunk):  minute.
+[14:31:14] AI (chunk):  Kya
+[14:31:15] AI (chunk):  main
+[14:31:15] AI (chunk):  aapke
+[14:31:15] AI (chunk):  important
+[14:31:15] AI (chunk):  vichar
+[14:31:15] AI (chunk):  jaan
+[14:31:16] AI (chunk):  sakti
+[14:31:16] AI (chunk):  hoon?
+
+Call ended at: 2025-09-04T14:31:32.091653

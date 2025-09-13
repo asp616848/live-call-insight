@@ -1,0 +1,18 @@
+Call started at: 2025-09-04T04:25:57.852901
+Stream SID: edb6ccc14f643f587a14887da99c1994
+
+[04:26:01] User: Hello.
+[04:26:02] AI (chunk): Ji, aapke
+[04:26:03] AI (chunk):  paas
+[04:26:03] AI (chunk):  30
+[04:26:03] AI (chunk):  second
+[04:26:08] AI (chunk):  hain
+[04:26:08] AI (chunk):  meri
+[04:26:09] AI (chunk):  ek
+[04:26:09] AI (chunk):  choti
+[04:26:09] AI (chunk):  si baat
+[04:26:09] AI (chunk):  sunne
+[04:26:19] AI (chunk):  ke
+[04:26:19] AI (chunk):  liye?
+
+WebSocket disconnected at: 2025-09-04T04:26:22.537973

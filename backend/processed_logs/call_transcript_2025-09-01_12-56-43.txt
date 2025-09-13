@@ -1,0 +1,36 @@
+Call started at: 2025-09-01T12:56:43.158508
+Stream SID: b889e76cee04cb0e6852d431727e1991
+
+[12:56:45] User: Hello. Hello.
+[12:56:46] AI (chunk): Namaste, main
+[12:56:47] AI (chunk):  Sumitra
+[12:56:50] User: ला
+[12:56:51] AI (chunk): Haan ji,
+[12:56:51] AI (chunk):  boliye.
+[12:57:01] User: வரையறாக போதும் இல்லை
+[12:57:01] AI (chunk): Haan, boliye.
+[12:57:03] User: <noise>
+[12:57:04] AI (chunk): Main Sumitra
+[12:57:04] AI (chunk):  Devi
+[12:57:04] AI (chunk):  bol
+[12:57:04] AI (chunk):  rahi
+[12:57:04] AI (chunk):  hoon,
+[12:57:09] AI (chunk):  sarkar
+[12:57:09] AI (chunk):  ki
+[12:57:09] AI (chunk):  taraf
+[12:57:09] AI (chunk):  se
+[12:57:09] AI (chunk):  kuch
+[12:57:09] AI (chunk):  sawaal
+[12:57:20] User: कहां से बोल रहे हैं
+[12:57:22] User: Hello. Hello.
+[12:57:23] AI (chunk): Main Patna
+[12:57:23] AI (chunk):  se
+[12:57:23] AI (chunk):  bol
+[12:57:23] AI (chunk):  rahi
+[12:57:24] AI (chunk):  hoon.
+[12:57:24] AI (chunk):  Kya
+[12:57:30] User: <noise>
+[12:57:31] AI (chunk): Ji, aapke
+[12:57:31] AI (chunk):  ilaake
+
+Call ended at: 2025-09-01T12:57:37.218767

@@ -1,0 +1,45 @@
+Call started at: 2025-09-04T04:35:56.268635
+Stream SID: 4d45dfee5d6a3a3ecd868e9c6d581994
+
+[04:36:04] User: अच्छा
+[04:36:05] AI (chunk): Aap chahenge
+[04:36:06] AI (chunk):  ki aapke
+[04:36:06] AI (chunk):  ilake
+[04:36:06] AI (chunk):  ki samasyaon
+[04:36:07] User: जी हां 30 टक्के
+[04:36:08] AI (chunk): Theek hai.
+[04:36:08] AI (chunk):  Kya
+[04:36:09] AI (chunk):  aap
+[04:36:10] AI (chunk):  Bihar
+[04:36:10] AI (chunk):  se
+[04:36:10] AI (chunk):  hi bol
+[04:36:10] AI (chunk):  rahe
+[04:36:10] AI (chunk):  hain
+[04:36:14] User: ?
+[04:36:14] AI (chunk): Theek hai.
+[04:36:15] AI (chunk):  Aur
+[04:36:15] AI (chunk):  aap
+[04:36:16] User: ليه هو الدوره؟
+[04:36:17] AI (chunk): Aap chahenge
+[04:36:17] AI (chunk):  ki
+[04:36:17] AI (chunk):  aapke
+[04:36:17] AI (chunk):  ilake
+[04:36:21] User: อ
+[04:36:22] AI (chunk): Aap chahenge
+[04:36:23] AI (chunk): ...ki aapke
+[04:36:23] AI (chunk):  ilake
+[04:36:24] AI (chunk):  ki samasyaon
+[04:36:25] User: Halo.
+[04:36:26] AI (chunk): Haan ji,
+[04:36:26] AI (chunk):  aap
+[04:36:26] AI (chunk):  chahenge
+[04:36:28] AI (chunk):  ki
+[04:36:28] AI (chunk):  aapke
+[04:36:28] AI (chunk):  ilake
+[04:36:28] AI (chunk):  ki
+[04:36:28] AI (chunk):  samasyaon
+[04:36:32] AI (chunk): ...ka samadhan
+[04:36:32] AI (chunk):  ho,
+[04:36:32] AI (chunk):  sahi?
+
+Call ended at: 2025-09-04T04:36:38.698523

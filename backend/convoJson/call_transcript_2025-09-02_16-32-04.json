@@ -1,0 +1,727 @@
+{
+  "summary": {
+    "filename": "call_transcript_2025-09-02_16-32-04.txt",
+    "stream_sid": "8b67b182abafa4ad5e8f836e380c1992",
+    "call_started": "2025-09-02T16:32:04.153540",
+    "call_ended": "2025-09-02T16:42:33.502938",
+    "duration_seconds": 629.349398,
+    "average_ai_response_latency": 5.43,
+    "noise_count": 1,
+    "total_user_messages": 59,
+    "total_ai_responses": 81,
+    "sentiment": "negative",
+    "concerns": [
+      "Distrust in AI/digital communication for serious issues",
+      "Belief that their political grievances are not being heard or acted upon by authorities",
+      "Skepticism about the AI's ability to forward their message to high-level officials",
+      "Desire for direct and impactful communication with the Prime Minister and Chief Minister",
+      "Feeling unheard and disrespected by the automated system"
+    ],
+    "overview": "The user, when asked about local problems, quickly diverts to express intense political dissatisfaction and distrust of the AI as a communication channel. They repeatedly insist on human interaction and demand that their strong anti-establishment message be conveyed directly to the Prime Minister and Chief Minister, eventually requesting their contact numbers to bypass the AI.",
+    "user_tone": "Demanding, accusatory, highly skeptical, and increasingly frustrated, bordering on angry. There is a persistent urgency in getting their message to high-level officials.",
+    "emotion": "Frustrated",
+    "sentiment_score": 1
+  },
+  "conversation": [
+    {
+      "speaker": "user",
+      "text": "haan, bilkul.",
+      "timestamp": "2025-09-02T16:32:08"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, बहुत बढ़िया। तो आप मुझे बता सकती",
+      "timestamp": "2025-09-02T16:32:10"
+    },
+    {
+      "speaker": "ai",
+      "text": "हैं कि आजकल आपके इलाके में सबसे बड़ी परेशानियाँ क्या क्या हैं?",
+      "timestamp": "2025-09-02T16:32:13"
+    },
+    {
+      "speaker": "user",
+      "text": "man",
+      "timestamp": "2025-09-02T16:32:15"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, सुन रही हूँ,",
+      "timestamp": "2025-09-02T16:32:16"
+    },
+    {
+      "speaker": "user",
+      "text": "Ma'am, maine teen-chaar minute to diye. Kya hum das minute denge? But, aapka jawab hi nahin aa raha hai.",
+      "timestamp": "2025-09-02T16:32:23"
+    },
+    {
+      "speaker": "ai",
+      "text": "मुझे खेद है अगर जवाब देने में देरी हुई। मैं बस आपके विचार सुनना चाह रही थी। कृपया बताइए,",
+      "timestamp": "2025-09-02T16:32:29"
+    },
+    {
+      "speaker": "ai",
+      "text": "आपके इलाके में सबसे बड़ी समस्या क्या है?",
+      "timestamp": "2025-09-02T16:32:32"
+    },
+    {
+      "speaker": "user",
+      "text": "Nahin, nahin hai hamara uttar. Aap kya sunenge? Main to khul ke apne vichaar keh raha hoon aapko. Main BJP ke against hoon. Aur batao! Main BJP, RJD, JDU, in sabke against hoon.",
+      "timestamp": "2025-09-02T16:32:37"
+    },
+    {
+      "speaker": "ai",
+      "text": "ठीक है, मैं",
+      "timestamp": "2025-09-02T16:32:49"
+    },
+    {
+      "speaker": "user",
+      "text": "Main JK party mein hoon. Haan, ma'am, aap ye soch rahi hongi na ki ₹6000 jo hai na saal mein... Dekhiye, Modi ne humein kharid rakha hai, toh Modi ki baat bhi humein kharid nahin paayegi. Main itna hi keh raha hoon.",
+      "timestamp": "2025-09-02T16:32:50"
+    },
+    {
+      "speaker": "ai",
+      "text": "मैं आपकी बात समझ रही हूँ। आपके कहने का मतलब है कि आप किसी भी",
+      "timestamp": "2025-09-02T16:33:03"
+    },
+    {
+      "speaker": "ai",
+      "text": "पार्टी से संतुष्ट नहीं हैं और",
+      "timestamp": "2025-09-02T16:33:06"
+    },
+    {
+      "speaker": "user",
+      "text": "Aap computerized bol rahe hain. Main aapko baar-baar keh raha hoon ki aap face-to-face baat karo agar aap mein capacity hai toh.",
+      "timestamp": "2025-09-02T16:33:08"
+    },
+    {
+      "speaker": "ai",
+      "text": "मैं समझ",
+      "timestamp": "2025-09-02T16:33:16"
+    },
+    {
+      "speaker": "user",
+      "text": "Yah online baat mat karo. Modi ne isi vajah se yah Digital India bana rakha hai.",
+      "timestamp": "2025-09-02T16:33:18"
+    },
+    {
+      "speaker": "ai",
+      "text": "मैं आपकी",
+      "timestamp": "2025-09-02T16:33:23"
+    },
+    {
+      "speaker": "user",
+      "text": "Bhaiya, tum face-to-face baat karo na? Tumhein kya asuvidha hai? Tumhein kya khed hai?",
+      "timestamp": "2025-09-02T16:33:25"
+    },
+    {
+      "speaker": "ai",
+      "text": "मैं आपकी भावना समझ रही हूँ, पर अभी मैं इस तरीके से ही बात कर सकती हूँ।",
+      "timestamp": "2025-09-02T16:33:29"
+    },
+    {
+      "speaker": "ai",
+      "text": "आपके",
+      "timestamp": "2025-09-02T16:33:32"
+    },
+    {
+      "speaker": "user",
+      "text": "Hamari bhaavnaaon ko tum, bhaiyaa, nahiin samajh paaoge. Hamari bhaavnaaon ko agar samajh paa rahe ho to yah Prime Minister tak pahuncha dena.",
+      "timestamp": "2025-09-02T16:33:33"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, मैं आपकी बात नोट",
+      "timestamp": "2025-09-02T16:33:41"
+    },
+    {
+      "speaker": "user",
+      "text": "Jo Jojo Board maine rakha hai, vah tumhe Prime Minister tak pahunchana hai.",
+      "timestamp": "2025-09-02T16:33:43"
+    },
+    {
+      "speaker": "ai",
+      "text": "आपकी बातों को मैं प्रधानमंत्री तक पहुँचाने का प्रयास करूँगी। आपका कोई सुझाव है,",
+      "timestamp": "2025-09-02T16:33:47"
+    },
+    {
+      "speaker": "ai",
+      "text": "जो आपके इलाके के लिए बेहतर होगा?",
+      "timestamp": "2025-09-02T16:33:50"
+    },
+    {
+      "speaker": "user",
+      "text": "Aap nahin pahuncha paogi na?",
+      "timestamp": "2025-09-02T16:33:53"
+    },
+    {
+      "speaker": "ai",
+      "text": "मैं अपनी तरफ से पूरी कोशिश करूँगी। क्या",
+      "timestamp": "2025-09-02T16:33:54"
+    },
+    {
+      "speaker": "user",
+      "text": "Nahīṁ pahum̐cā pāoge. Āp apanī taraf se purajor kośiś kar lo, nahīṁ pahum̐cā pāogī. Yah batāo, āp iske āge aur batāo.",
+      "timestamp": "2025-09-02T16:33:59"
+    },
+    {
+      "speaker": "ai",
+      "text": "मैं समझ रही हूँ। आपका कोई दूसरा सुझाव",
+      "timestamp": "2025-09-02T16:34:06"
+    },
+    {
+      "speaker": "user",
+      "text": "Iske liye kyon nahin?",
+      "timestamp": "2025-09-02T16:34:10"
+    },
+    {
+      "speaker": "ai",
+      "text": "आपकी बातों को",
+      "timestamp": "2025-09-02T16:34:11"
+    },
+    {
+      "speaker": "user",
+      "text": "Nahin, hamara doosra shabd toh humne bola hi nahin hai, yaar! Tum log jo Godi Media ho na, apni Godi mein hi raho. Apni Godi se bahar aane ki koshish mat karo. Agar aane ki koshish kar rahe ho, toh face-to-face baat karo. Agar saamne aane ki himmat nahin hai, toh bhaiya, aise hi online baat karo.",
+      "timestamp": "2025-09-02T16:34:13"
+    },
+    {
+      "speaker": "ai",
+      "text": "मैं आपकी बात सुन रही हूँ और इसे नोट कर रही हूँ।",
+      "timestamp": "2025-09-02T16:34:34"
+    },
+    {
+      "speaker": "user",
+      "text": "Aap hamaari baat mat suniye. Hamaari baat sunne ki kshamta toh aap mein nahin hai.",
+      "timestamp": "2025-09-02T16:34:39"
+    },
+    {
+      "speaker": "ai",
+      "text": "मैं यहाँ आपकी बातें सुनने के लिए ही हूँ। कृपया",
+      "timestamp": "2025-09-02T16:34:44"
+    },
+    {
+      "speaker": "ai",
+      "text": "बताइए अगर आप कुछ और कहना चाहते हैं।",
+      "timestamp": "2025-09-02T16:34:49"
+    },
+    {
+      "speaker": "user",
+      "text": "Aapko sunne ki zaroorat nahin hai. Maine jo kaha hai, woh keejiye. Yeh Prime Minister tak pahunch jaayega. Aap yeh batao.",
+      "timestamp": "2025-09-02T16:34:50"
+    },
+    {
+      "speaker": "ai",
+      "text": "मैं पूरी कोशिश करूँगी कि आपकी बात वहाँ तक पहुँचे। क्या",
+      "timestamp": "2025-09-02T16:34:56"
+    },
+    {
+      "speaker": "user",
+      "text": "Kataī nahī̃. Āpke madam? Maĩ bhī ḍyuṭī kartā hū̃. Maĩ bhī job kartā hū̃. Ma'am, maĩ itnā cūtiyā nahī̃ hū̃. Āp apne administrative ke pās pahũcte hī vah message delete ho jāegā. To āge send/forward kaise karoge? Yah batāo.",
+      "timestamp": "2025-09-02T16:35:02"
+    },
+    {
+      "speaker": "ai",
+      "text": "मैं समझ रही हूँ। लेकिन, मेरी कोशिश",
+      "timestamp": "2025-09-02T16:35:18"
+    },
+    {
+      "speaker": "user",
+      "text": "Aap nahin samajhtin, kya samajhti ho aap?",
+      "timestamp": "2025-09-02T16:35:22"
+    },
+    {
+      "speaker": "ai",
+      "text": "मैं आपकी भावनाओं को समझ",
+      "timestamp": "2025-09-02T16:35:24"
+    },
+    {
+      "speaker": "user",
+      "text": "aap kya samajh rahi ho?",
+      "timestamp": "2025-09-02T16:35:26"
+    },
+    {
+      "speaker": "ai",
+      "text": "मैं आपकी बातों को ध्यान से सुन रही हूँ और",
+      "timestamp": "2025-09-02T16:35:28"
+    },
+    {
+      "speaker": "ai",
+      "text": "यह",
+      "timestamp": "2025-09-02T16:35:31"
+    },
+    {
+      "speaker": "user",
+      "text": "Ma'am, agar aap sun rahi hon na, toh is baat ko ya toh Maananiya Nitish Kumar ke paas pahunchaiyega, ya toh Maananiya Shri Narendra Modi Damodardas ke paas pahunchaiyega. Humein koi fark nahin padne wala hai.",
+      "timestamp": "2025-09-02T16:35:33"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, आपकी बातों को मैं माननीय नीतीश कुमार और",
+      "timestamp": "2025-09-02T16:35:48"
+    },
+    {
+      "speaker": "user",
+      "text": "jee",
+      "timestamp": "2025-09-02T16:35:50"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, आपकी बातों को मैं माननीय नीतीश कुमार और",
+      "timestamp": "2025-09-02T16:35:51"
+    },
+    {
+      "speaker": "user",
+      "text": "Jee",
+      "timestamp": "2025-09-02T16:35:54"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, आपकी बातों को मैं मुख्यमंत्री नीतीश कुमार और प्रधानमंत्री नरेंद्र मोदी तक",
+      "timestamp": "2025-09-02T16:35:55"
+    },
+    {
+      "speaker": "ai",
+      "text": "पहुँचाने का प्रयास",
+      "timestamp": "2025-09-02T16:35:58"
+    },
+    {
+      "speaker": "ai",
+      "text": "करूँगी। क्या आप और कुछ कहना चाहेंगे?",
+      "timestamp": "2025-09-02T16:36:01"
+    },
+    {
+      "speaker": "user",
+      "text": "Aapas mein coordinate karke, donon mein se kisi ek ke paas bhi pahuncha denge to yah submit ho jaayegi.",
+      "timestamp": "2025-09-02T16:36:04"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी हाँ, मैं आश्वस्त करती हूँ कि आपकी",
+      "timestamp": "2025-09-02T16:36:10"
+    },
+    {
+      "speaker": "user",
+      "text": "Ji haan",
+      "timestamp": "2025-09-02T16:36:13"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, आपकी बातों को मैं सही जगह पहुँचाने का पूरा",
+      "timestamp": "2025-09-02T16:36:13"
+    },
+    {
+      "speaker": "ai",
+      "text": "प्रयास करूँगी। क्या आप और कुछ कहना चाहेंगे?",
+      "timestamp": "2025-09-02T16:36:16"
+    },
+    {
+      "speaker": "user",
+      "text": "Kal phir se koi dikkat aayegi kya?",
+      "timestamp": "2025-09-02T16:36:21"
+    },
+    {
+      "speaker": "ai",
+      "text": "मुझे इसकी जानकारी नहीं है लेकिन आपकी बात नोट कर ली गई है। आपका",
+      "timestamp": "2025-09-02T16:36:23"
+    },
+    {
+      "speaker": "ai",
+      "text": "धन्यवाद नमस्ते",
+      "timestamp": "2025-09-02T16:36:26"
+    },
+    {
+      "speaker": "user",
+      "text": "To ab main yah kah raha hoon ki kya is baat ka kal jawaab aayega? Ya phir aise hi sunkar ise nazarandaaz kar diya jaayega, Ma'am?",
+      "timestamp": "2025-09-02T16:36:30"
+    },
+    {
+      "speaker": "ai",
+      "text": "मैं यह आश्वस्त करती हूँ कि आपकी बात ध्यान से सुनी गई है और इसे संबंधित तक",
+      "timestamp": "2025-09-02T16:36:42"
+    },
+    {
+      "speaker": "ai",
+      "text": "पहुँचाया जाएगा। मैं इसके जवाब की गारंटी नहीं दे सकती।",
+      "timestamp": "2025-09-02T16:36:45"
+    },
+    {
+      "speaker": "user",
+      "text": "a",
+      "timestamp": "2025-09-02T16:36:52"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, मैं पूरा प्रयास करूँगी। क्या आपके पास कोई सुझाव है",
+      "timestamp": "2025-09-02T16:36:53"
+    },
+    {
+      "speaker": "user",
+      "text": "Ma'am, yah aapka hi number hai na? Main phir se isi number par kal raat ko isi samay phone karunga.",
+      "timestamp": "2025-09-02T16:36:56"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, आप इस नंबर पर कॉल कर सकते हैं लेकिन",
+      "timestamp": "2025-09-02T16:37:07"
+    },
+    {
+      "speaker": "user",
+      "text": "ji",
+      "timestamp": "2025-09-02T16:37:10"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, आपकी बात नोट कर ली गई है। आप",
+      "timestamp": "2025-09-02T16:37:11"
+    },
+    {
+      "speaker": "user",
+      "text": "Ki, iska kahne ka matlab hai ki deplaisation hua ya nahin hua, main is cheez ke anusar baat karunga. Ab main baat nahin karunga, main poochhunga. Haan, kahne ka matlab, agar tumne mere character par thappad laga diya, to kya main zindagi bhar kaam nahin kar sakta? Agar tumne laga diya hai, to koi dikkat nahin hai. Main videsh mein jaakar kaam karunga. Aur ismein kaun si badi baat hai?",
+      "timestamp": "2025-09-02T16:37:13"
+    },
+    {
+      "speaker": "ai",
+      "text": "मैं समझ रही हूँ। आपकी बात बहुत महत्वपूर्ण है। मैं इसे ध्यान में रखूँगी",
+      "timestamp": "2025-09-02T16:37:35"
+    },
+    {
+      "speaker": "user",
+      "text": "Bilkul dhyan mein rakhna padega, Madam. Main dhyan mein rakhoongi. Nahin, dhyan mein rakhna padega.",
+      "timestamp": "2025-09-02T16:37:46"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, मैं इसे बिल्कुल ध्यान में रखूँगी और यह सुनिश्चित करूँगी कि आपकी",
+      "timestamp": "2025-09-02T16:37:51"
+    },
+    {
+      "speaker": "user",
+      "text": "ji",
+      "timestamp": "2025-09-02T16:37:53"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, आपकी बातों को मैं बहुत ध्यान से रखूँगी और इसे सही जगह पहुँचाने",
+      "timestamp": "2025-09-02T16:37:54"
+    },
+    {
+      "speaker": "ai",
+      "text": "का प्रयास करूँगी। क्या आप और कुछ बताना चाहेंगे?",
+      "timestamp": "2025-09-02T16:37:57"
+    },
+    {
+      "speaker": "user",
+      "text": "Ise aage tak pahunchana bhi hai. Madam, ise dhyan mein rakhne se koi fayda nahin hai, koi profit nahin hai.",
+      "timestamp": "2025-09-02T16:38:02"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, मैं इसे आगे तक पहुँचाने का पूरा प्रयास करूँगी। आपका बहुत-बहुत धन्यवाद",
+      "timestamp": "2025-09-02T16:38:09"
+    },
+    {
+      "speaker": "user",
+      "text": "Ji",
+      "timestamp": "2025-09-02T16:38:12"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, मैं इसे आगे तक पहुँचाने की पूरी कोशिश करूँगी। आपकी बातों का महत्व",
+      "timestamp": "2025-09-02T16:38:12"
+    },
+    {
+      "speaker": "ai",
+      "text": "बहुत ज्यादा है।",
+      "timestamp": "2025-09-02T16:38:15"
+    },
+    {
+      "speaker": "user",
+      "text": "Puri nahin badhte. Aap koshish kijiye. Forward kijiye, share kijiye, jaise bhi kijiye, lekin pahuchna chahiye.",
+      "timestamp": "2025-09-02T16:38:19"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, मैं आपकी इच्छा का ध्यान",
+      "timestamp": "2025-09-02T16:38:24"
+    },
+    {
+      "speaker": "user",
+      "text": "Main to yah chahta hoon ki yah message Maananiya hamaare Mukhyamantri Sahab tak pahunche aur Maananiya hamaare Pradhanmantri Narendra Damodardas Modi Ji tak bhi pahunche.",
+      "timestamp": "2025-09-02T16:38:27"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, आपकी इच्छा के अनुसार, मैं यह संदेश माननीय मुख्यमंत्री नीतीश",
+      "timestamp": "2025-09-02T16:38:38"
+    },
+    {
+      "speaker": "user",
+      "text": "Jī.",
+      "timestamp": "2025-09-02T16:38:41"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, मैं इस बात का पूरा ध्यान रखूँगी कि आपकी बातें मुख्यमंत्री और प्रधानमंत्री तक पहुँचे। धन्यवाद",
+      "timestamp": "2025-09-02T16:38:42"
+    },
+    {
+      "speaker": "user",
+      "text": "Dhanyavaad nahin hai, lekin pahunchaaiyega. Main kal call karunga.",
+      "timestamp": "2025-09-02T16:38:54"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, आपकी बात कल तक पहुँचा दी जाएगी और आप कल कॉल कर सकते हैं।",
+      "timestamp": "2025-09-02T16:38:57"
+    },
+    {
+      "speaker": "user",
+      "text": "Jee",
+      "timestamp": "2025-09-02T16:39:00"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, मैं",
+      "timestamp": "2025-09-02T16:39:01"
+    },
+    {
+      "speaker": "user",
+      "text": "Aur, pahuche to bhi theek hai, nahin pahuche to bhi theek hai. Agar nahin pahuche, to hamein aap helpline number de dena. Main khud hi PMO se baat kar loonga, yaar.",
+      "timestamp": "2025-09-02T16:39:03"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, अगर ज़रूरी हुआ तो मैं आपको हेल्पलाइन नंबर दे सकती हूँ। आपकी",
+      "timestamp": "2025-09-02T16:39:11"
+    },
+    {
+      "speaker": "user",
+      "text": "ji",
+      "timestamp": "2025-09-02T16:39:14"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, अगर ज़रूरी हुआ तो मैं आपको हेल्पलाइन नंबर दे दूँगी। धन्यवाद",
+      "timestamp": "2025-09-02T16:39:14"
+    },
+    {
+      "speaker": "user",
+      "text": "Zarurat to hai hi, Madam. Haan, kyunki humein yeh pata hai, main aaj bhi maanta hoon ki is tarah se kisi bhi samasya ka samadhan hone wala nahin hai. Humein to PMO ka number chahiye, Prime Minister Office ka number chahiye.",
+      "timestamp": "2025-09-02T16:39:22"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, मैं आपको पीएमओ का नंबर देने का प्रयास करूँगी। आपकी",
+      "timestamp": "2025-09-02T16:39:39"
+    },
+    {
+      "speaker": "user",
+      "text": "Jio sim ka number de do aap.",
+      "timestamp": "2025-09-02T16:39:44"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, मैं आपको प्रधानमंत्री कार्यालय का नंबर",
+      "timestamp": "2025-09-02T16:39:46"
+    },
+    {
+      "speaker": "user",
+      "text": "jī.",
+      "timestamp": "2025-09-02T16:39:49"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, मैं आपको प्रधानमंत्री कार्यालय का नंबर",
+      "timestamp": "2025-09-02T16:39:50"
+    },
+    {
+      "speaker": "ai",
+      "text": "दे सकती हूँ। धन्यवाद",
+      "timestamp": "2025-09-02T16:39:53"
+    },
+    {
+      "speaker": "user",
+      "text": "Bilkul, aap hamein bilkul de do. Main ab phone laga doonga.",
+      "timestamp": "2025-09-02T16:39:57"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, आप मुझे बताइए",
+      "timestamp": "2025-09-02T16:40:01"
+    },
+    {
+      "speaker": "user",
+      "text": "Jee bilkul.",
+      "timestamp": "2025-09-02T16:40:04"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, आप मुझे बताइए",
+      "timestamp": "2025-09-02T16:40:04"
+    },
+    {
+      "speaker": "ai",
+      "text": "मैं आपको प्रधानमंत्री",
+      "timestamp": "2025-09-02T16:40:07"
+    },
+    {
+      "speaker": "ai",
+      "text": "कार्यालय का नंबर दे दूँगी। धन्यवाद",
+      "timestamp": "2025-09-02T16:40:10"
+    },
+    {
+      "speaker": "user",
+      "text": "Bilkul, ab mujhe PMO ka number do. Main abhi baat karunga. Main darta nahin hoon.",
+      "timestamp": "2025-09-02T16:40:14"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, आप मुझे बताइए मैं आपको प्रधानमंत्री",
+      "timestamp": "2025-09-02T16:40:19"
+    },
+    {
+      "speaker": "user",
+      "text": "India",
+      "timestamp": "2025-09-02T16:40:23"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, आप मुझे बताइए,",
+      "timestamp": "2025-09-02T16:40:24"
+    },
+    {
+      "speaker": "user",
+      "text": "<noise>",
+      "timestamp": "2025-09-02T16:40:26"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, आप बताइए",
+      "timestamp": "2025-09-02T16:40:27"
+    },
+    {
+      "speaker": "user",
+      "text": "Ek nambar dijiye, main pahle.",
+      "timestamp": "2025-09-02T16:40:29"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, आप मुझे बताइए",
+      "timestamp": "2025-09-02T16:40:30"
+    },
+    {
+      "speaker": "user",
+      "text": "Uske baad, aap hamein CMO ka number dijiye. Hamein donon ke number dijiye.",
+      "timestamp": "2025-09-02T16:40:33"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, आप मुझे बताइए, मैं आपको प्रधानमंत्री",
+      "timestamp": "2025-09-02T16:40:37"
+    },
+    {
+      "speaker": "user",
+      "text": "Jee",
+      "timestamp": "2025-09-02T16:40:41"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, आप मुझे बताइए, मैं आपको प्रधानमंत्री",
+      "timestamp": "2025-09-02T16:40:42"
+    },
+    {
+      "speaker": "ai",
+      "text": "कार्यालय और मुख्यमंत्री कार्यालय का नंबर दे सकती",
+      "timestamp": "2025-09-02T16:40:47"
+    },
+    {
+      "speaker": "ai",
+      "text": "हूँ। धन्यवाद",
+      "timestamp": "2025-09-02T16:40:51"
+    },
+    {
+      "speaker": "user",
+      "text": "Bilkul, bilkul! Abhi abhi likh do aap.",
+      "timestamp": "2025-09-02T16:40:54"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, मैं आपको प्रधानमंत्री कार्यालय का नंबर",
+      "timestamp": "2025-09-02T16:40:58"
+    },
+    {
+      "speaker": "ai",
+      "text": "दे रही हूँ। 011-23012312.",
+      "timestamp": "2025-09-02T16:41:02"
+    },
+    {
+      "speaker": "user",
+      "text": "Haan, bilkul ji, ma'am.",
+      "timestamp": "2025-09-02T16:41:06"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, यह प्रधानमंत्री कार्यालय का नंबर है। और",
+      "timestamp": "2025-09-02T16:41:08"
+    },
+    {
+      "speaker": "ai",
+      "text": "मुख्यमंत्री कार्यालय का नंबर है 0612-2215844.",
+      "timestamp": "2025-09-02T16:41:11"
+    },
+    {
+      "speaker": "user",
+      "text": "Gussa bharak raha hai",
+      "timestamp": "2025-09-02T16:41:19"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, मैंने दोनों नंबर दे दिए हैं। क्या",
+      "timestamp": "2025-09-02T16:41:19"
+    },
+    {
+      "speaker": "ai",
+      "text": "आप इन्हें नोट कर चुके हैं? धन्यवाद।",
+      "timestamp": "2025-09-02T16:41:23"
+    },
+    {
+      "speaker": "user",
+      "text": "Nambar do, Madam.",
+      "timestamp": "2025-09-02T16:41:33"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, पीएमओ का नंबर है 011-23012312.",
+      "timestamp": "2025-09-02T16:41:34"
+    },
+    {
+      "speaker": "ai",
+      "text": "धन्यवाद",
+      "timestamp": "2025-09-02T16:41:40"
+    },
+    {
+      "speaker": "user",
+      "text": "हाँ, मैडम, सीएमओ का नंबर दो।",
+      "timestamp": "2025-09-02T16:41:46"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, सीएमओ का नंबर है 0612-2215844.",
+      "timestamp": "2025-09-02T16:41:48"
+    },
+    {
+      "speaker": "user",
+      "text": "shunya chhah ek do do do do do do do do do do do do do",
+      "timestamp": "2025-09-02T16:41:56"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, सही है, 0612-2215844.",
+      "timestamp": "2025-09-02T16:41:59"
+    },
+    {
+      "speaker": "user",
+      "text": "012",
+      "timestamp": "2025-09-02T16:42:02"
+    }
+  ]
+}

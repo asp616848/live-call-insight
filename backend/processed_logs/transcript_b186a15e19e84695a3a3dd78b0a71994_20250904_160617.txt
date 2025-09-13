@@ -1,0 +1,40 @@
+Call Transcript — saved 2025-09-04 16:06:17
+-------------------------------------------
+[2025-09-04 16:01:44] User: Yes
+[2025-09-04 16:01:44] Assistant: Thank you! Just to confirm— you're a student or staff at Plaksha, right? And you've been to our café at least once?
+[2025-09-04 16:01:54] User: Yes
+[2025-09-04 16:01:56] Assistant: Great! You're actually one of the select few we've chosen for this exclusive feedback program—your opinions will directly shape our menu and service improvements. Before we start, would you prefer to continue in English or Hindi?
+[2025-09-04 16:02:11] User: English
+[2025-09-04 16:02:12] Assistant: Perfect! Let's get started. Have you visited Blue Tokai at Plaksha in the past 30 days?
+[2025-09-04 16:02:22] User: Yes
+[2025-09-04 16:02:23] Assistant: That's wonderful! About how many times did you visit in the past month?
+[2025-09-04 16:02:31] User: Once
+[2025-09-04 16:02:32] Assistant: Got it. And when do you usually drop by—is it during mornings, afternoons, or evenings?
+[2025-09-04 16:02:40] User: afternoons
+[2025-09-04 16:02:42] Assistant: Nice! Let me ask about your most recent visit—this helps us understand specific experiences. Roughly when was that? And what did you have that day—coffee, tea, or maybe you grabbed a bite too?
+[2025-09-04 16:02:58] User: I don't remember.
+[2025-09-04 16:02:58] Assistant: No worries! If it's okay, let's move on to how much you spent during that visit. Any rough idea?
+[2025-09-04 16:03:08] User: I don't remember.
+[2025-09-04 16:03:09] Assistant: It's alright! Let's talk about your overall experience. On a scale of 1 to 5, where 1 is very dissatisfied and 5 is very satisfied, how would you rate the taste and flavor quality of our offerings?
+[2025-09-04 16:03:27] Assistant: Thanks for sharing that. A rating of 3 means there's room for improvement. What do you think could have been better about the taste and flavor?
+[2025-09-04 16:03:27] User: tree
+[2025-09-04 16:03:40] User: There could be more keys.
+[2025-09-04 16:03:41] Assistant: Got it, more cheese would definitely enhance the flavor. Thanks for that suggestion! Moving on, how about the coffee temperature and consistency—how would you rate that on the same 1 to 5 scale?
+[2025-09-04 16:03:55] User: Bye
+[2025-09-04 16:03:56] Assistant: That's fantastic! A rating of 5 on coffee temperature and consistency means we're getting it right. What do you particularly like about it?
+[2025-09-04 16:04:09] User: Perfect.
+[2025-09-04 16:04:10] Assistant: So glad to hear that! Moving on, comparing Blue Tokai to other places on campus where you go for coffee or snacks, would you say we offer better, similar, or worse value for money?
+[2025-09-04 16:04:23] User: Better.
+[2025-09-04 16:04:24] Assistant: That's great to hear! What makes you feel that Blue Tokai offers better value for money compared to the other options?
+[2025-09-04 16:04:35] User: They are good Indians.
+[2025-09-04 16:04:37] Assistant: Absolutely, a good ambience can really enhance the experience. Thanks for sharing that! Now, I have a few possible improvements for you to consider: Faster service, lower prices, and more seating. Which one would be most important to you, and which one least important?
+[2025-09-04 16:04:55] User: Lower prices
+[2025-09-04 16:04:57] User: would be most important
+[2025-09-04 16:05:01] User: And foster services will be least important.
+[2025-09-04 16:05:02] Assistant: Noted! Lower prices are most important for you. Thanks for that insight. Lastly, if you could change one thing about Blue Tokai tomorrow, what would it be? And what should we definitely not change?
+[2025-09-04 16:05:20] User: The prices should be reduced.
+[2025-09-04 16:05:22] Assistant: Got it, reducing prices is a key change you'd like to see. And we definitely want to keep the good ambience as it is. Thank you for your valuable input! One last question: on a scale of 0 to 10, how likely are you to recommend Blue Tokai to a friend?
+[2025-09-04 16:05:40] User: Helen
+[2025-09-04 16:05:42] Assistant: Thank you! A 7 is a good score. If there's anything we can do to make your experience even better, please do let us know. Thank you so much for your time and feedback! Your ₹150 coupon will be sent to you within 24 hours. Have a great day!
+[2025-09-04 16:05:53] User: Thank you.
+[2025-09-04 16:05:54] Assistant: You're welcome! Have a wonderful day!

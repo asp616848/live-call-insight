@@ -1,0 +1,41 @@
+Call started at: 2025-09-04T16:01:57.830463
+Stream SID: 256b2e37642511e3d3eb378907811994
+
+[16:02:01] User: الو
+[16:02:02] AI (chunk): Ji, aapke
+[16:02:02] AI (chunk):  paas
+[16:02:02] AI (chunk):  30
+[16:02:02] AI (chunk):  second
+[16:02:03] AI (chunk):  hain?
+[16:02:03] User: Halo.
+[16:02:04] AI (chunk): Ji, aapke
+[16:02:04] AI (chunk):  paas
+[16:02:04] AI (chunk):  30
+[16:02:05] User: الو
+[16:02:05] AI (chunk): Haan, main
+[16:02:06] AI (chunk):  sun
+[16:02:06] AI (chunk):  sakti
+[16:02:07] User: ഹലോ
+[16:02:07] AI (chunk): Haan ji,
+[16:02:08] AI (chunk):  aapko
+[16:02:08] AI (chunk):  meri
+[16:02:08] AI (chunk):  awaaz
+[16:02:08] AI (chunk):  aa rahi
+[16:02:08] AI (chunk):  hai?
+[16:02:10] User: ഹലോ
+[16:02:10] AI (chunk): Haan, main
+[16:02:11] AI (chunk):  Sunita
+[16:02:11] AI (chunk):  Devi
+[16:02:12] User: ஹலோ
+[16:02:12] AI (chunk): Haan, main
+[16:02:13] AI (chunk):  sun
+[16:02:13] AI (chunk):  pa
+[16:02:13] AI (chunk):  rahi
+[16:02:13] AI (chunk):  hoon.
+[16:02:13] AI (chunk):  Kya
+[16:02:13] AI (chunk):  aapko
+[16:02:14] AI (chunk):  meri
+[16:02:15] AI (chunk):  awaaz
+[16:02:15] AI (chunk):  aa rahi
+
+WebSocket disconnected at: 2025-09-04T16:02:22.499372

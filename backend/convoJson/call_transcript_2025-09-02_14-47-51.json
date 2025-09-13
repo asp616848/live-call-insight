@@ -1,0 +1,59 @@
+{
+  "summary": {
+    "filename": "call_transcript_2025-09-02_14-47-51.txt",
+    "stream_sid": "a57644bd1fe99d4c71550a6ac8c01992",
+    "call_started": "2025-09-02T14:47:51.131815",
+    "call_ended": "2025-09-02T14:48:08.631000",
+    "duration_seconds": 17.499185,
+    "average_ai_response_latency": 1.5,
+    "noise_count": 0,
+    "total_user_messages": 3,
+    "total_ai_responses": 4,
+    "sentiment": "negative",
+    "concerns": [
+      "profound personal distress",
+      "feelings of tragedy or immense suffering"
+    ],
+    "overview": "The AI initiated a call to conduct a survey. However, the user immediately responded with an intensely emotional and metaphorical statement, expressing a state of profound distress or tragedy, after which the conversation was cut off.",
+    "user_tone": "lamenting and distressed",
+    "emotion": "despair",
+    "sentiment_score": 1.0
+  },
+  "conversation": [
+    {
+      "speaker": "user",
+      "text": "Namaste.",
+      "timestamp": "2025-09-02T14:47:53"
+    },
+    {
+      "speaker": "ai",
+      "text": "नमस्ते जी, मैं",
+      "timestamp": "2025-09-02T14:47:53"
+    },
+    {
+      "speaker": "user",
+      "text": "Hello.",
+      "timestamp": "2025-09-02T14:47:55"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी बोलिए, मैं सुमित्रा देवी हूँ सरकार की ओर से एक छोटा सर्वे कर",
+      "timestamp": "2025-09-02T14:47:56"
+    },
+    {
+      "speaker": "ai",
+      "text": "रही हूँ। क्या आप अभी बात कर सकती हैं",
+      "timestamp": "2025-09-02T14:47:59"
+    },
+    {
+      "speaker": "user",
+      "text": "Haaye, main Karbala hoon.",
+      "timestamp": "2025-09-02T14:48:07"
+    },
+    {
+      "speaker": "ai",
+      "text": "आपके इलाके में",
+      "timestamp": "2025-09-02T14:48:08"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+Call Transcript — saved 2025-09-03 16:11:59
+-------------------------------------------
+[2025-09-03 16:11:49] Assistant: Hi! I’m calling from Blue Tokai Café at Plaksha. We’re offering a 150 rupees coupon for a quick feedback survey. Do you have ~4 minutes?
+[2025-09-03 16:11:50] User: Hello
+[2025-09-03 16:11:55] User: Hello.
+[2025-09-03 16:11:56] User: Hello
+[2025-09-03 16:11:57] Assistant: Hello! If you have a few minutes, we’d love to hear your thoughts about your experience at Blue Tokai Café. Would you like to participate in a quick survey?

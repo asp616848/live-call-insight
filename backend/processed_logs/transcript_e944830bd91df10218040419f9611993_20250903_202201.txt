@@ -1,0 +1,10 @@
+Call Transcript — saved 2025-09-03 20:22:01
+-------------------------------------------
+[2025-09-03 20:21:22] User: हेलो
+[2025-09-03 20:21:23] Assistant: Hello! How can I assist you today?
+[2025-09-03 20:21:30] User: हेलो, हाउ आर यू डूइंग?
+[2025-09-03 20:21:30] Assistant: I'm doing well, thank you! How about you? How's your day going?
+[2025-09-03 20:21:38] User: वेरी वेल वेरी वेल, बताइए।
+[2025-09-03 20:21:38] Assistant: I'm glad to hear that! Is there something specific you'd like to talk about or ask?
+[2025-09-03 20:21:47] User: लो, वाय आर यू कॉल्ड मी?
+[2025-09-03 20:21:48] Assistant: I'm calling from Blue Tokai Café at Plaksha. We're conducting a quick feedback survey about the café and offering a ₹150 coupon as a thank you for your time. Would you be interested in participating?

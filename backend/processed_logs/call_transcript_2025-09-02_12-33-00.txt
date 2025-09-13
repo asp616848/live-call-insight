@@ -1,0 +1,29 @@
+Call started at: 2025-09-02T12:33:00.631053
+Stream SID: ec09bd275d6b7e3c9fa1796b99581992
+
+[12:33:23] User: เพื่อ
+[12:33:25] AI (chunk):  naam
+[12:33:25] AI (chunk):  aur
+[12:33:25] AI (chunk):  jila
+[12:33:25] AI (chunk):  bata
+[12:33:25] AI (chunk):  sakte
+[12:33:25] AI (chunk):  hain?
+[12:34:49] User: यो
+[12:34:51] User: ఆ వర్తమానం చెప్పు
+[12:34:54] User: .
+[12:34:57] User: <noise>
+[12:34:58] AI (chunk):  aapne
+[12:34:59] AI (chunk):  sadkon
+[12:34:59] AI (chunk):  aur
+[12:34:59] AI (chunk):  bijli
+[12:34:59] AI (chunk):  ki samasya
+[12:35:01] AI (chunk):  ka zikr
+[12:35:01] AI (chunk):  kiya
+[12:35:01] AI (chunk):  koi
+[12:35:03] AI (chunk):  khaas
+[12:35:03] AI (chunk):  udharan
+[12:35:03] AI (chunk):  bata
+[12:35:03] AI (chunk):  sakte
+[12:35:04] AI (chunk):  hain?
+
+Call ended at: 2025-09-02T12:35:08.840988

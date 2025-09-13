@@ -1,0 +1,66 @@
+Call started at: 2025-09-01T19:45:43.919355
+Stream SID: df1cab7a9e56609fcc0d3331b3901991
+
+[19:45:46] User: <noise>
+[19:45:47] AI (chunk): नमस
+[19:45:48] AI (chunk): ्ते
+[19:45:48] AI (chunk):  मै
+[19:45:48] AI (chunk): ं स
+[19:45:48] AI (chunk): ुमि
+[19:45:48] AI (chunk): त्र
+[19:45:48] AI (chunk): ा द
+[19:45:48] AI (chunk): ेवी
+[19:45:48] AI (chunk):  सर
+[19:45:48] AI (chunk): कार
+[19:45:48] AI (chunk):  की
+[19:45:48] AI (chunk):  ओर
+[19:45:48] AI (chunk):  से
+[19:45:48] AI (chunk):  कु
+[19:45:48] AI (chunk): छ प
+[19:45:48] AI (chunk): ्रश
+[19:45:48] AI (chunk): ्न 
+[19:45:48] AI (chunk): के 
+[19:45:49] AI (chunk): लिए
+[19:45:49] AI (chunk):  क्
+[19:45:49] AI (chunk): या 
+[19:45:49] AI (chunk): अभी
+[19:45:49] AI (chunk):  ती
+[19:45:49] AI (chunk): न-च
+[19:45:49] AI (chunk): ार 
+[19:45:49] AI (chunk): मिन
+[19:45:49] AI (chunk): ट
+[19:45:49] AI (chunk):  देंगे
+[19:45:58] User: हां जी बोलिए
+[19:45:58] AI (chunk): ठीक
+[19:45:58] AI (chunk):  है
+[19:45:58] AI (chunk):  आप
+[19:45:58] AI (chunk):  बि
+[19:45:58] AI (chunk): हार
+[19:45:58] AI (chunk):  के
+[19:45:58] AI (chunk):  कि
+[19:45:58] AI (chunk): स ज
+[19:45:58] AI (chunk): िले
+[19:45:58] AI (chunk):  से
+[19:45:58] AI (chunk):  बो
+[19:45:59] AI (chunk): ल र
+[19:45:59] AI (chunk): हे 
+[19:45:59] AI (chunk): हैं
+[19:45:59] AI (chunk):  जी
+[19:46:08] User: .
+[19:46:09] AI (chunk): पटन
+[19:46:09] AI (chunk): ा अ
+[19:46:09] AI (chunk): च्छ
+[19:46:09] AI (chunk): ा क
+[19:46:09] AI (chunk): ्या
+[19:46:09] AI (chunk):  आप
+[19:46:09] AI (chunk): का 
+[19:46:09] AI (chunk): काम
+[19:46:09] AI (chunk):  या
+[19:46:09] AI (chunk):  पे
+[19:46:09] AI (chunk): शा 
+[19:46:09] AI (chunk): बता
+[19:46:09] AI (chunk):  सक
+[19:46:09] AI (chunk): ते 
+[19:46:09] AI (chunk): हैं
+
+Call ended at: 2025-09-01T19:46:16.930583

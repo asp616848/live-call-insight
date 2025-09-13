@@ -1,0 +1,78 @@
+Call started at: 2025-09-03T14:19:22.417589
+Stream SID: 046872e47d4a27e995895ef90a851993
+
+[14:19:32] User: Hello.
+[14:19:33] AI (chunk): Haan, aap
+[14:19:34] AI (chunk):  Bihar
+[14:19:34] AI (chunk):  se hi
+[14:19:35] User: Hello
+[14:19:36] AI (chunk): Haan, aap
+[14:19:36] AI (chunk):  Bihar
+[14:19:37] AI (chunk):  se
+[14:19:37] AI (chunk):  hi
+[14:19:37] AI (chunk):  bol
+[14:19:37] AI (chunk):  rahe
+[14:19:37] AI (chunk):  hain na?
+[14:19:41] User: हां
+[14:19:41] User: जी बोलिए
+[14:19:42] AI (chunk): Aap chahenge
+[14:19:42] AI (chunk):  ki
+[14:19:42] AI (chunk):  aapke
+[14:19:45] AI (chunk): ilake ki
+[14:19:45] AI (chunk):  samasyaon
+[14:19:46] AI (chunk):  ka
+[14:19:46] AI (chunk):  samadhan
+[14:19:46] AI (chunk):  ho,
+[14:19:46] AI (chunk):  sahi?
+[14:19:52] User: हां जी
+[14:19:52] AI (chunk): [NAME] ji,
+[14:19:53] AI (chunk):  aap
+[14:19:53] AI (chunk):  un kuch
+[14:19:54] AI (chunk):  chune
+[14:19:54] AI (chunk):  hue
+[14:19:54] AI (chunk):  500
+[14:19:54] AI (chunk):  logon
+[14:19:54] AI (chunk):  mein se
+[14:19:54] AI (chunk):  hain
+[14:19:57] AI (chunk): jinki rai
+[14:19:58] AI (chunk):  se
+[14:19:58] AI (chunk):  Bihar
+[14:19:58] AI (chunk):  ki
+[14:19:58] AI (chunk):  nai
+[14:20:00] AI (chunk): policy banegi.
+[14:20:00] AI (chunk):  Sirf
+[14:20:02] AI (chunk):  2-3
+[14:20:02] AI (chunk):  minute.
+[14:20:02] AI (chunk):  Kya
+[14:20:05] AI (chunk): main aapke
+[14:20:06] AI (chunk):  important
+[14:20:06] AI (chunk):  vichar
+[14:20:06] AI (chunk):  jaan
+[14:20:06] AI (chunk):  sakti
+[14:20:06] AI (chunk):  hoon?
+[14:20:12] User: हां जी बोलो
+[14:20:13] AI (chunk): Pehle aapka
+[14:20:13] AI (chunk):  naam
+[14:20:13] AI (chunk):  jaan
+[14:20:13] AI (chunk):  loon,
+[14:20:15] AI (chunk): taaki aapki
+[14:20:15] AI (chunk):  rai
+[14:20:15] AI (chunk):  ko
+[14:20:15] AI (chunk):  sahi
+[14:20:16] AI (chunk):  se record
+[14:20:18] AI (chunk): kar sakun?
+[14:20:24] User: ጋኑ
+[14:20:24] AI (chunk): Ghanshyam ji,
+[14:20:25] AI (chunk):  aap
+[14:20:27] AI (chunk): kis district/block
+[14:20:28] AI (chunk): se hain?
+[14:20:32] User: Yeah
+[14:20:33] AI (chunk): Aap kis
+[14:20:34] AI (chunk):  district
+[14:20:34] AI (chunk):  ya
+[14:20:34] AI (chunk):  block
+[14:20:35] AI (chunk):  se bol
+[14:20:36] AI (chunk):  rahe
+[14:20:36] AI (chunk):  hain?
+
+Call ended at: 2025-09-03T14:20:39.332588

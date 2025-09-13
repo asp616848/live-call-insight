@@ -1,0 +1,17 @@
+Call started at: 2025-09-08T06:43:00.931389
+Stream SID: 16cd3c9e2fa57751a34c8211a1661998
+
+[06:43:13] User: যেদিন কইরা দাও।
+[06:43:13] AI (chunk): Haan, aapne
+[06:43:14] AI (chunk):  theek
+[06:43:14] AI (chunk):  suna.
+[06:43:16] AI (chunk):  Kya
+[06:43:16] AI (chunk):  aap Bihar
+[06:43:16] AI (chunk):  se hi
+[06:43:16] AI (chunk):  bol
+[06:43:16] AI (chunk):  rahe
+[06:43:20] AI (chunk): Haan. Aap
+[06:43:21] AI (chunk):  chahenge
+[06:43:21] AI (chunk):  ki aapke
+
+Call ended at: 2025-09-08T06:43:23.135301

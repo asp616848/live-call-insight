@@ -1,0 +1,46 @@
+Call started at: 2025-09-04T03:49:13.469248
+Stream SID: 7a6f917790cdb9a0778d62e447f01994
+
+[03:49:23] User: क्या
+[03:49:24] AI (chunk): Ji, aapka
+[03:49:25] AI (chunk):  pura
+[03:49:25] AI (chunk):  naam
+[03:49:26] AI (chunk):  jaan
+[03:49:27] User: นี่
+[03:49:28] AI (chunk): Kripya spell
+[03:49:28] AI (chunk):  kar
+[03:49:28] AI (chunk):  dijiye
+[03:49:33] AI (chunk): Theek hai
+[03:49:33] AI (chunk):  [NAME]
+[03:49:34] AI (chunk):  ji,
+[03:49:35] AI (chunk):  aap Bihar
+[03:49:35] AI (chunk):  se
+[03:49:35] AI (chunk):  hi
+[03:49:35] AI (chunk):  bol
+[03:49:35] AI (chunk):  rahe
+[03:49:35] AI (chunk):  hain
+[03:49:35] AI (chunk):  na?
+[03:49:45] User: हां
+[03:49:45] User: क्या हुआ
+[03:49:46] AI (chunk): Ji, aapka
+[03:49:46] AI (chunk):  pura
+[03:49:46] AI (chunk):  naam
+[03:49:47] AI (chunk):  record
+[03:49:47] AI (chunk):  karne
+[03:49:47] AI (chunk):  ke liye
+[03:49:52] AI (chunk): Aap chahenge
+[03:49:52] AI (chunk):  ki aapke
+[03:49:52] AI (chunk):  ilake
+[03:49:57] AI (chunk): samasyaon ka
+[03:49:59] User: आ
+[03:49:59] User: वा
+[03:49:59] User: ज
+[03:50:00] User: आवाज नहीं आ रहा है सही से
+[03:50:01] AI (chunk): Maaf kijiye,
+[03:50:01] AI (chunk):  kya
+[03:50:01] AI (chunk):  aap
+[03:50:01] AI (chunk):  ab mujhe
+[03:50:06] AI (chunk): sun sakte
+[03:50:06] AI (chunk):  hain?
+
+Call ended at: 2025-09-04T03:50:11.248943

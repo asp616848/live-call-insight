@@ -1,0 +1,84 @@
+Call started at: 2025-09-03T15:02:59.836440
+Stream SID: 2fca85dbae40d6931ce2782c6ddf1993
+
+[15:03:18] User: Hallo.
+[15:03:18] AI (chunk): Haan, boliye.
+[15:03:19] AI (chunk):  Aapko
+[15:03:19] AI (chunk):  kaun
+[15:03:19] AI (chunk):  bol
+[15:03:19] AI (chunk):  rahe
+[15:03:19] AI (chunk):  the?
+[15:03:28] User: हेलो
+[15:03:29] AI (chunk): Ji, main
+[15:03:29] AI (chunk):  Sumitra
+[15:03:30] User: Hello
+[15:03:32] User: बोलिए
+[15:03:33] AI (chunk): Haan, boliye.
+[15:03:33] AI (chunk):  Aapko
+[15:03:33] AI (chunk):  kaun
+[15:03:33] AI (chunk):  bol
+[15:03:33] AI (chunk):  rahe
+[15:03:33] AI (chunk):  the?
+[15:03:40] User: अब कौन बोल रहा है
+[15:03:41] AI (chunk): Main Sumitra
+[15:03:41] AI (chunk):  Devi
+[15:03:41] AI (chunk):  sarkar
+[15:03:41] AI (chunk):  se
+[15:03:43] AI (chunk): bol rahi
+[15:03:43] AI (chunk):  hun.
+[15:03:44] AI (chunk):  Kya
+[15:03:44] AI (chunk):  aapke
+[15:03:44] AI (chunk):  paas
+[15:03:46] AI (chunk): 30 second
+[15:03:46] AI (chunk):  hain?
+[15:03:51] User: और
+[15:03:51] User: है
+[15:03:51] User: बोल
+[15:03:51] User: िए
+[15:03:52] User: क्या
+[15:03:52] User: हुआ
+[15:03:57] AI (chunk): Aap Bihar
+[15:03:57] AI (chunk):  se
+[15:03:57] AI (chunk):  hi bol
+[15:03:57] AI (chunk):  rahe
+[15:03:58] User: क्या हुआ बोलिए
+[15:03:59] AI (chunk): se hi
+[15:03:59] AI (chunk):  bol
+[15:03:59] AI (chunk):  rahe
+[15:03:59] AI (chunk):  hain na?
+[15:04:04] User: अ
+[15:04:04] User: रे
+[15:04:04] User: आप
+[15:04:05] User: हैं
+[15:04:05] User: कौन
+[15:04:05] User: कौन स
+[15:04:05] User: मित्रा देवी
+[15:04:06] AI (chunk): Main sarkar
+[15:04:06] AI (chunk):  se
+[15:04:06] AI (chunk):  bol
+[15:04:07] AI (chunk):  rahi
+[15:04:07] AI (chunk):  hun
+[15:04:07] AI (chunk):  aur
+[15:04:07] AI (chunk):  aapki
+[15:04:07] AI (chunk):  rai
+[15:04:07] AI (chunk):  janna
+[15:04:07] AI (chunk):  chahti
+[15:04:08] AI (chunk):  hun
+[15:04:08] AI (chunk):  kuch
+[15:04:08] AI (chunk):  sarkari
+[15:04:08] AI (chunk):  yojanaon
+[15:04:08] AI (chunk):  ke
+[15:04:08] AI (chunk):  baare
+[15:04:08] AI (chunk):  mein.
+[15:04:08] AI (chunk):  Kya
+[15:04:09] AI (chunk):  aap Bihar
+[15:04:09] AI (chunk):  se
+[15:04:09] AI (chunk):  hain?
+[15:04:15] User: फो
+[15:04:15] User: न नहीं
+[15:04:15] User: कीजिएगा ठीक है
+[15:04:17] User: फाल
+[15:04:17] User: तू
+[15:04:17] User: सब्रयां नहीं देते हैं।
+
+Call ended at: 2025-09-03T15:04:18.009689

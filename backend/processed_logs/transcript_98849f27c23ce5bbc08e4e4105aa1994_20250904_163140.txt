@@ -1,0 +1,44 @@
+Call Transcript — saved 2025-09-04 16:31:40
+-------------------------------------------
+[2025-09-04 16:27:01] User: Yes
+[2025-09-04 16:27:03] Assistant: Great! Just to confirm, you're a student or staff at Plaksha, right? And you've visited our Blue Tokai Café at least once before?
+[2025-09-04 16:27:10] User: .
+[2025-09-04 16:27:11] Assistant: Perfect! You're actually one of the select few we've chosen for this exclusive feedback program—your opinions will directly shape our menu and service improvements. Before we start, would you prefer to continue in English or Hindi?
+[2025-09-04 16:27:26] User: English
+[2025-09-04 16:27:28] Assistant: Great, we'll continue in English. Have you visited Blue Tokai at Plaksha in the past 30 days?
+[2025-09-04 16:27:36] User: Yeah
+[2025-09-04 16:27:41] Assistant: That's wonderful! About how many times did you visit in the past month? And when do you usually drop by—like mornings, afternoons, or evenings?
+[2025-09-04 16:27:52] User: Evenings
+[2025-09-04 16:27:56] User: Around five times.
+[2025-09-04 16:27:57] Assistant: Got it, around five times and mostly in the evenings. Let me ask about your most recent visit—roughly when was that? And what did you have that day—coffee, tea, or maybe you grabbed a bite too?
+[2025-09-04 16:28:12] Assistant: No worries! If you can recall, about how much did you spend during that visit?
+[2025-09-04 16:28:12] User: Um
+[2025-09-04 16:28:13] User: But I
+[2025-09-04 16:28:15] Assistant: Thanks for sharing that. Now, let's talk about different aspects of your visit. On a scale of 1 to 5, where 1 is very dissatisfied and 5 is very satisfied, how would you rate the taste and flavor quality of what you had?
+[2025-09-04 16:28:30] User: Hi
+[2025-09-04 16:28:32] Assistant: That's fantastic! So glad to hear that! Moving on, how about the coffee temperature and consistency—how would you rate that?
+[2025-09-04 16:28:42] User: Hi
+[2025-09-04 16:28:43] Assistant: Great! It seems the coffee temperature and consistency were also to your liking. Now, thinking about the speed of service—how would you rate that?
+[2025-09-04 16:28:54] User: Hi
+[2025-09-04 16:28:55] Assistant: Good to know! It sounds like the service speed was quite satisfactory. Let's shift focus a bit—on campus, where else do you go for coffee or snacks besides Blue Tokai?
+[2025-09-04 16:29:08] User: That's all.
+[2025-09-04 16:29:10] Assistant: Interesting choice! Compared to that place, would you say Blue Tokai offers better, similar, or worse value for money?
+[2025-09-04 16:29:21] User: 10 minutos.
+[2025-09-04 16:29:24] Assistant: Got it, you find it similar. What makes you feel that way? Is it the pricing, quality, or something else?
+[2025-09-04 16:29:31] User: Let us see.
+[2025-09-04 16:29:33] Assistant: Understood. Pricing definitely plays a role. Now, let's think about possible improvements. Among these options—faster service, lower prices, or more seating—which would be most important to you, and which least important?
+[2025-09-04 16:29:55] User: Least important is faster service, most important is
+[2025-09-04 16:29:59] User: More variety of food.
+[2025-09-04 16:30:00] Assistant: Got it, more variety of food is important to you, and faster service is least important. Thanks for sharing that! Now, for a quick preference question—would you choose a ₹180 latte ready in 2 minutes, or a ₹160 latte with a 7-minute wait?
+[2025-09-04 16:30:18] User: born 15.
+[2025-09-04 16:30:20] Assistant: A ₹160 latte with a 7-minute wait—understood. Some people prefer better value over convenience. Lastly, if you could change one thing about Blue Tokai, what would it be? And what should we definitely not change?
+[2025-09-04 16:30:35] User: Um
+[2025-09-04 16:30:42] User: Bring in more variety of food and don't change the desserts just add them as you normally.
+[2025-09-04 16:30:43] Assistant: Got it, you'd like to see more variety in the food, and you definitely want to keep the desserts as they are. Thanks for sharing your thoughts! Just a couple more quick questions: on a scale from 0 to 10, how likely are you to recommend Blue Tokai to a friend?
+[2025-09-04 16:30:59] User: them
+[2025-09-04 16:31:00] Assistant: That's wonderful! A 10 is a fantastic rating. What could make your experience even better?
+[2025-09-04 16:31:11] User: Can you hear me
+[2025-09-04 16:31:13] Assistant: Thanks for sharing that! Improved seating is a great suggestion. We're always looking to enhance the experience for our customers. Thank you so much for your valuable feedback! Your ₹150 coupon will be sent to you within 24 hours. Have a wonderful day!
+[2025-09-04 16:31:29] User: Bye bye.
+[2025-09-04 16:31:30] User: The.
+[2025-09-04 16:31:31] Assistant: Goodbye! Have a great day!

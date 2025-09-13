@@ -1,0 +1,54 @@
+Call started at: 2025-09-04T14:19:26.286632
+Stream SID: cbd35192d67d5e172c5c2f5a90511994
+
+[14:19:27] User: ನಮ್ಮ
+[14:19:28] AI (chunk): Haan ji,
+[14:19:29] AI (chunk):  aap
+[14:19:29] AI (chunk):  Bihar
+[14:19:29] AI (chunk):  se hi
+[14:19:29] AI (chunk):  bol
+[14:19:29] AI (chunk):  rahe
+[14:19:30] AI (chunk):  hain
+[14:19:30] AI (chunk):  na?
+[14:19:36] User: किया
+[14:19:37] AI (chunk): Aap chahenge
+[14:19:37] AI (chunk):  ki
+[14:19:37] AI (chunk):  aapke
+[14:19:38] AI (chunk):  ilake
+[14:19:44] AI (chunk): ki samasyaon
+[14:19:45] AI (chunk):  ka
+[14:19:45] AI (chunk):  samadhan
+[14:19:45] AI (chunk):  ho, sahi?
+[14:19:59] User: हां चाहेंगे
+[14:19:59] AI (chunk): [NAME] ji,
+[14:20:00] AI (chunk):  aap
+[14:20:00] AI (chunk):  un
+[14:20:00] AI (chunk):  kuch
+[14:20:00] AI (chunk):  chune
+[14:20:01] AI (chunk):  hue
+[14:20:01] AI (chunk):  500
+[14:20:01] AI (chunk):  logon
+[14:20:01] AI (chunk):  mein
+[14:20:01] AI (chunk):  se
+[14:20:01] AI (chunk):  hain
+[14:20:01] AI (chunk):  jinki
+[14:20:02] AI (chunk):  raay
+[14:20:02] AI (chunk):  se
+[14:20:02] AI (chunk):  Bihar
+[14:20:02] AI (chunk):  ki
+[14:20:02] AI (chunk):  nai
+[14:20:02] AI (chunk):  policy
+[14:20:03] AI (chunk):  banegi.
+[14:20:03] AI (chunk):  Sirf
+[14:20:04] AI (chunk):  2-3
+[14:20:05] AI (chunk):  minute.
+[14:20:05] AI (chunk):  Kya
+[14:20:05] AI (chunk):  main
+[14:20:05] AI (chunk):  aapke
+[14:20:05] AI (chunk):  important
+[14:20:06] AI (chunk):  vichaar
+[14:20:06] AI (chunk):  jaan
+[14:20:06] AI (chunk):  sakti
+[14:20:06] AI (chunk):  hun?
+
+Call ended at: 2025-09-04T14:20:20.653336

@@ -1,0 +1,265 @@
+{
+  "summary": {
+    "filename": "call_transcript_2025-09-04_15-14-51.txt",
+    "stream_sid": "1972342a3779261a0bd08d28ce651994",
+    "call_started": "2025-09-04T15:14:51.926247",
+    "call_ended": "2025-09-04T15:19:05.759706",
+    "duration_seconds": 253.833459,
+    "average_ai_response_latency": 8.11,
+    "noise_count": 0,
+    "total_user_messages": 13,
+    "total_ai_responses": 35,
+    "sentiment": "positive",
+    "concerns": [
+      "poor quality of education",
+      "children finding studies boring",
+      "low school attendance due to lack of engagement"
+    ],
+    "overview": "Megha Krishna was contacted to provide feedback for Bihar's new policies. She highlighted issues with the education system in her area, specifically that children find studies uninteresting and are not attending school regularly. She suggested making learning more engaging.",
+    "user_tone": "cooperative and thoughtful",
+    "emotion": "concerned",
+    "sentiment_score": 8
+  },
+  "conversation": [
+    {
+      "speaker": "user",
+      "text": "haan.",
+      "timestamp": "2025-09-04T15:15:06"
+    },
+    {
+      "speaker": "ai",
+      "text": "Pranam, hum",
+      "timestamp": "2025-09-04T15:15:07"
+    },
+    {
+      "speaker": "user",
+      "text": "Hello",
+      "timestamp": "2025-09-04T15:15:08"
+    },
+    {
+      "speaker": "ai",
+      "text": "Pranam, hum Sumitra Devi sarkar se boli. 30 second",
+      "timestamp": "2025-09-04T15:15:08"
+    },
+    {
+      "speaker": "ai",
+      "text": "ba?",
+      "timestamp": "2025-09-04T15:15:12"
+    },
+    {
+      "speaker": "user",
+      "text": "हाँ, बा।",
+      "timestamp": "2025-09-04T15:15:16"
+    },
+    {
+      "speaker": "ai",
+      "text": "Rauwa Bihar se hi boli na?",
+      "timestamp": "2025-09-04T15:15:17"
+    },
+    {
+      "speaker": "user",
+      "text": "Yah call ab record kee ja rahee hai.",
+      "timestamp": "2025-09-04T15:15:45"
+    },
+    {
+      "speaker": "ai",
+      "text": "Rauwa chaahbi ki aapke",
+      "timestamp": "2025-09-04T15:15:46"
+    },
+    {
+      "speaker": "ai",
+      "text": "Haan, theek ba. Aap chaahbi ki aapke ilaaka",
+      "timestamp": "2025-09-04T15:15:52"
+    },
+    {
+      "speaker": "ai",
+      "text": "ke samasya ke samadhan hoi, theek ba?",
+      "timestamp": "2025-09-04T15:15:55"
+    },
+    {
+      "speaker": "user",
+      "text": "Ha ha!",
+      "timestamp": "2025-09-04T15:16:05"
+    },
+    {
+      "speaker": "ai",
+      "text": "[NAME] ji, rauwa un 500 chune log mein se baani jinke",
+      "timestamp": "2025-09-04T15:16:05"
+    },
+    {
+      "speaker": "ai",
+      "text": "raai se Bihar ke naya niti banai. Bas 2-3 minute. Ka hum rauwa ke",
+      "timestamp": "2025-09-04T15:16:08"
+    },
+    {
+      "speaker": "ai",
+      "text": "vichaar jaan saki?",
+      "timestamp": "2025-09-04T15:16:11"
+    },
+    {
+      "speaker": "user",
+      "text": "Haan, bilkul.",
+      "timestamp": "2025-09-04T15:16:20"
+    },
+    {
+      "speaker": "ai",
+      "text": "Pehle aapka naam jaan lun taaki aapki raai ko sahi se record kar sakun?",
+      "timestamp": "2025-09-04T15:16:21"
+    },
+    {
+      "speaker": "user",
+      "text": "Mera naam Megha Krishna hai.",
+      "timestamp": "2025-09-04T15:16:31"
+    },
+    {
+      "speaker": "ai",
+      "text": "Dhanyawaad, Megha ji. Aap kis district/block se hain? Wahan ke liye khaas policy",
+      "timestamp": "2025-09-04T15:16:32"
+    },
+    {
+      "speaker": "ai",
+      "text": "suggestions chahiye.",
+      "timestamp": "2025-09-04T15:16:36"
+    },
+    {
+      "speaker": "user",
+      "text": "Filhaal to mere dimaag mein kuchh nahin aa raha hai.",
+      "timestamp": "2025-09-04T15:16:50"
+    },
+    {
+      "speaker": "ai",
+      "text": "Koi baat nahi. Aap bas yeh bata dijiye ki aapke ilake",
+      "timestamp": "2025-09-04T15:16:50"
+    },
+    {
+      "speaker": "ai",
+      "text": "mein sabse zaroori badlaav kya hona chahiye? Jaise sadak,",
+      "timestamp": "2025-09-04T15:16:53"
+    },
+    {
+      "speaker": "ai",
+      "text": "Sadak, bijli, paani",
+      "timestamp": "2025-09-04T15:16:58"
+    },
+    {
+      "speaker": "user",
+      "text": "Aur bijli tumhari theek hai, par padhai ki vyavastha thodi theek nahin hai.",
+      "timestamp": "2025-09-04T15:17:10"
+    },
+    {
+      "speaker": "ai",
+      "text": "Haan, main samajh sakti hun. Shiksha ki vyavastha theek",
+      "timestamp": "2025-09-04T15:17:11"
+    },
+    {
+      "speaker": "ai",
+      "text": "nahi hai. Kya aap",
+      "timestamp": "2025-09-04T15:17:17"
+    },
+    {
+      "speaker": "ai",
+      "text": "Kuch aur details bata sakti",
+      "timestamp": "2025-09-04T15:17:21"
+    },
+    {
+      "speaker": "ai",
+      "text": "hain ki kya theek nahi hai?",
+      "timestamp": "2025-09-04T15:17:24"
+    },
+    {
+      "speaker": "user",
+      "text": "School to hai, par bacchi achche se school nahin aa pa rahi hai. Shaayad yah isliye hai kyunki uske abhibhaavak vidhaayak hain.",
+      "timestamp": "2025-09-04T15:17:37"
+    },
+    {
+      "speaker": "ai",
+      "text": "Theek hai, bachhe acche",
+      "timestamp": "2025-09-04T15:17:38"
+    },
+    {
+      "speaker": "ai",
+      "text": "se school nahi aa pa rahe hain. Iske",
+      "timestamp": "2025-09-04T15:17:41"
+    },
+    {
+      "speaker": "ai",
+      "text": "liye kuch suvidha chahiye?",
+      "timestamp": "2025-09-04T15:17:44"
+    },
+    {
+      "speaker": "user",
+      "text": "Bhai, Teacher padha rahe hain. Ho sakta hai bachchon ko interesting nahin lag raha ho. Bachche baar-baar school se bhag ja rahe hain.",
+      "timestamp": "2025-09-04T15:17:56"
+    },
+    {
+      "speaker": "ai",
+      "text": "Achha, teachers jo padha",
+      "timestamp": "2025-09-04T15:17:57"
+    },
+    {
+      "speaker": "ai",
+      "text": "rahe hain woh bacchon ko interesting",
+      "timestamp": "2025-09-04T15:18:00"
+    },
+    {
+      "speaker": "user",
+      "text": "Padhai boring lag rahi hai, to isilie padhai ko interesting banane ke lie kuch to karna hoga.",
+      "timestamp": "2025-09-04T15:18:10"
+    },
+    {
+      "speaker": "ai",
+      "text": "Theek hai, padhaai ko aur",
+      "timestamp": "2025-09-04T15:18:11"
+    },
+    {
+      "speaker": "ai",
+      "text": "interesting banane ke liye kadam",
+      "timestamp": "2025-09-04T15:18:15"
+    },
+    {
+      "speaker": "ai",
+      "text": "uthane ki zaroorat hai. Hum is baat ko note kar lenge. Aapke",
+      "timestamp": "2025-09-04T15:18:21"
+    },
+    {
+      "speaker": "ai",
+      "text": "Vichaaron ke liye dhanyawaad.",
+      "timestamp": "2025-09-04T15:18:29"
+    },
+    {
+      "speaker": "ai",
+      "text": "Aapki raai hamare liye",
+      "timestamp": "2025-09-04T15:18:32"
+    },
+    {
+      "speaker": "ai",
+      "text": "bahut important hai.",
+      "timestamp": "2025-09-04T15:18:35"
+    },
+    {
+      "speaker": "ai",
+      "text": "Haan, bilkul. Hum is jaankaari ka istemaal karenge",
+      "timestamp": "2025-09-04T15:18:38"
+    },
+    {
+      "speaker": "ai",
+      "text": "taaki Bihar ki policy",
+      "timestamp": "2025-09-04T15:18:43"
+    },
+    {
+      "speaker": "ai",
+      "text": "ko behtar bana sakein. Aapke",
+      "timestamp": "2025-09-04T15:18:48"
+    },
+    {
+      "speaker": "user",
+      "text": "Dhanyavaad Ma'am.",
+      "timestamp": "2025-09-04T15:18:58"
+    },
+    {
+      "speaker": "ai",
+      "text": "Dhanyawaad, aapke samay ke liye aabhar.",
+      "timestamp": "2025-09-04T15:18:59"
+    }
+  ]
+}

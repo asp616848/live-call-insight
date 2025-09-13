@@ -5,6 +5,8 @@ import hashlib
 import langextract as lx
 from dotenv import load_dotenv
 import re
+from datetime import datetime
+from statistics import mean
 
 load_dotenv()
 API_KEY = os.getenv("GEMINI_API_KEY")
@@ -189,8 +191,39 @@ def analyze_conversation_with_langextract(filepath):
         }
 
     # Extract only user messages for analysis (concerns come from users)
+    # Compute average AI response latency from conversation timestamps (user end -> AI start)
+    def compute_avg_ai_latency(conv):
+        deltas = []
+        for i, msg in enumerate(conv):
+            if msg.get("speaker") != "user":
+                continue
+            user_ts = msg.get("timestamp")
+            # find next AI message
+            for j in range(i + 1, len(conv)):
+                if conv[j].get("speaker") == "ai":
+                    ai_ts = conv[j].get("timestamp")
+                    try:
+                        if user_ts and ai_ts:
+                            user_dt = datetime.fromisoformat(user_ts)
+                            ai_dt = datetime.fromisoformat(ai_ts)
+                            delta = (ai_dt - user_dt).total_seconds()
+                            if delta >= 0:
+                                deltas.append(delta)
+                    except Exception:
+                        # ignore malformed timestamps
+                        pass
+                    break
+        return round(mean(deltas), 2) if deltas else None
+
+    avg_latency = compute_avg_ai_latency(conversation)
+
     user_messages = [msg for msg in conversation if msg.get("speaker") == "user"]
     ai_messages = [msg for msg in conversation if msg.get("speaker") == "ai"]
+
+    # write latency into summary_metrics (preserve existing structure)
+    summary_metrics["average_ai_latency"] = avg_latency
+    # frontend expects average_ai_response_latency in some places — keep both keys
+    summary_metrics["average_ai_response_latency"] = avg_latency
     
     # Combine all conversation text for context
     full_transcript = "\n".join(

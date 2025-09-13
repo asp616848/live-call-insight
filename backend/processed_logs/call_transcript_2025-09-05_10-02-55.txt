@@ -1,0 +1,235 @@
+Call started at: 2025-09-05T10:02:55.416342
+Stream SID: 9ab0614a1351252cf060741f7c841995
+
+[10:03:07] User: सर
+[10:03:08] AI (chunk): Haan, aapko
+[10:03:09] AI (chunk):  Bihar
+[10:03:09] AI (chunk):  se hi
+[10:03:09] AI (chunk):  bula
+[10:03:09] AI (chunk):  rahe
+[10:03:09] AI (chunk):  hain.
+[10:03:09] AI (chunk):  Aap Bihar
+[10:03:09] AI (chunk):  mein
+[10:03:09] AI (chunk):  kahan
+[10:03:09] AI (chunk):  rehte
+[10:03:09] AI (chunk):  hain?
+[10:03:28] User: But
+[10:03:28] User: yeah
+[10:03:28] User: , yeah
+[10:03:28] User: , you
+[10:03:28] User: are
+[10:03:28] User: havi
+[10:03:29] User: ng
+[10:03:29] User: cold on. Oh.
+[10:03:29] AI (chunk): Ji, main
+[10:03:31] User: तो आपकी प्लेट लेना है।
+[10:03:32] AI (chunk): Ji, main
+[10:03:32] AI (chunk):  Bihar
+[10:03:33] User: هي بعرف ليش؟
+[10:03:34] AI (chunk): Ji, aapko
+[10:03:35] AI (chunk):  Bihar
+[10:03:35] AI (chunk):  se
+[10:03:35] AI (chunk):  hi bula
+[10:03:36] User: <noise>
+[10:03:37] AI (chunk): Ji, main
+[10:03:37] AI (chunk):  Bihar
+[10:03:37] AI (chunk):  sarkar
+[10:03:38] AI (chunk):  se
+[10:03:38] AI (chunk):  bol
+[10:03:38] AI (chunk):  rahi
+[10:03:38] AI (chunk):  hun.
+[10:03:38] AI (chunk):  Aapko
+[10:03:38] AI (chunk):  Bihar
+[10:03:38] AI (chunk):  se
+[10:03:38] AI (chunk):  hi bula
+[10:03:41] AI (chunk):  rahe
+[10:03:41] AI (chunk):  hain.
+[10:03:41] AI (chunk):  Aap
+[10:03:41] AI (chunk):  Bihar
+[10:03:41] AI (chunk):  mein
+[10:03:41] AI (chunk):  kahan
+[10:03:46] AI (chunk): Aapke ilake
+[10:03:47] AI (chunk):  ki
+[10:03:47] AI (chunk):  samasyaon
+[10:03:47] AI (chunk):  ka
+[10:03:47] AI (chunk):  samadhan
+[10:03:50] User: हां
+[10:03:50] AI (chunk): Aap chahenge
+[10:03:51] AI (chunk):  ki
+[10:03:51] AI (chunk):  aapke
+[10:03:51] AI (chunk):  ilake
+[10:03:55] AI (chunk): Aap chahenge
+[10:03:55] AI (chunk):  ki
+[10:03:55] AI (chunk):  aapke
+[10:03:55] AI (chunk):  ilake
+[10:04:00] AI (chunk): Ji, aapko
+[10:04:00] AI (chunk):  Bihar
+[10:04:00] AI (chunk):  se hi
+[10:04:01] AI (chunk):  bula
+[10:04:01] AI (chunk):  rahe
+[10:04:01] AI (chunk):  hain.
+[10:04:01] AI (chunk):  Aap
+[10:04:01] AI (chunk):  Bihar
+[10:04:01] AI (chunk):  mein
+[10:04:01] AI (chunk):  kahan
+[10:04:01] AI (chunk):  rehte
+[10:04:02] AI (chunk):  hain?
+[10:04:08] User: పట్టినా
+[10:04:08] AI (chunk): Patna se.
+[10:04:09] AI (chunk):  Theek
+[10:04:09] AI (chunk):  hai.
+[10:04:09] AI (chunk):  Aap
+[10:04:09] AI (chunk):  chahenge
+[10:04:10] AI (chunk):  ki
+[10:04:10] AI (chunk):  aapke
+[10:04:12] User: อ
+[10:04:13] AI (chunk): Aap chahenge
+[10:04:13] AI (chunk):  ki
+[10:04:14] AI (chunk):  aapke
+[10:04:14] AI (chunk):  ilake
+[10:04:18] AI (chunk): Aap chahenge
+[10:04:18] AI (chunk):  ki
+[10:04:18] AI (chunk):  aapke
+[10:04:18] AI (chunk):  ilake
+[10:04:21] AI (chunk): Aap chahenge
+[10:04:21] AI (chunk):  ki
+[10:04:21] AI (chunk):  aapke
+[10:04:22] AI (chunk):  ilake
+[10:04:24] AI (chunk): Aap chahenge
+[10:04:24] AI (chunk):  ki
+[10:04:25] AI (chunk):  aapke
+[10:04:25] AI (chunk):  ilake
+[10:04:29] User: Why she hangi?
+[10:04:30] AI (chunk): Ji, main
+[10:04:30] AI (chunk):  Bihar
+[10:04:31] AI (chunk):  sarkar
+[10:04:31] AI (chunk):  se
+[10:04:31] AI (chunk):  bol
+[10:04:31] AI (chunk):  rahi
+[10:04:31] AI (chunk):  hun.
+[10:04:31] AI (chunk):  Aap
+[10:04:31] AI (chunk):  chahenge
+[10:04:32] AI (chunk):  ki
+[10:04:32] AI (chunk):  aapke
+[10:04:33] AI (chunk):  ilake
+[10:04:33] AI (chunk):  ki
+[10:04:33] AI (chunk):  samasyaon
+[10:04:33] AI (chunk):  ka
+[10:04:33] AI (chunk):  samadhan
+[10:04:35] AI (chunk):  ho, sahi?
+[10:04:42] User: जी
+[10:04:42] User: हम चाहते हैं।
+[10:04:42] AI (chunk): Theek hai.
+[10:04:43] AI (chunk):  Aap
+[10:04:43] AI (chunk):  un
+[10:04:43] AI (chunk):  kuch
+[10:04:43] AI (chunk):  chune
+[10:04:43] AI (chunk):  hue
+[10:04:44] AI (chunk):  500
+[10:04:44] AI (chunk):  logon
+[10:04:44] AI (chunk):  mein
+[10:04:44] AI (chunk):  se
+[10:04:44] AI (chunk):  hain
+[10:04:44] AI (chunk):  jinki
+[10:04:45] AI (chunk):  rai
+[10:04:45] AI (chunk):  se
+[10:04:45] AI (chunk):  Bihar
+[10:04:49] AI (chunk):  ki nai
+[10:04:49] AI (chunk):  policy
+[10:04:49] AI (chunk):  banegi.
+[10:04:49] AI (chunk):  Sirf
+[10:04:49] AI (chunk):  2-3
+[10:04:49] AI (chunk):  minute.
+[10:04:49] AI (chunk):  Kya
+[10:04:49] AI (chunk):  main
+[10:04:49] AI (chunk):  aapke
+[10:04:49] AI (chunk):  important
+[10:04:49] AI (chunk):  vichar
+[10:04:49] AI (chunk):  jaan
+[10:04:49] AI (chunk):  sakti
+[10:04:49] AI (chunk):  hun?
+[10:05:01] User: जी
+[10:05:02] AI (chunk): Bahut badhiya.
+[10:05:02] AI (chunk):  Pehle
+[10:05:02] AI (chunk):  aapka
+[10:05:03] AI (chunk):  naam
+[10:05:03] AI (chunk):  jaan
+[10:05:03] AI (chunk):  lun
+[10:05:03] AI (chunk):  taaki
+[10:05:03] AI (chunk):  aapki
+[10:05:03] AI (chunk):  rai
+[10:05:03] AI (chunk):  ko sahi
+[10:05:05] AI (chunk):  se record
+[10:05:05] AI (chunk):  kar sakun?
+[10:05:11] User: सुमित्रा देवी
+[10:05:12] AI (chunk): Theek hai
+[10:05:12] AI (chunk):  Sumitra
+[10:05:12] AI (chunk):  Devi
+[10:05:13] AI (chunk):  ji.
+[10:05:13] AI (chunk):  Aap
+[10:05:13] AI (chunk):  kis
+[10:05:13] AI (chunk):  district
+[10:05:17] User: อ
+[10:05:17] AI (chunk): Theek hai
+[10:05:18] AI (chunk):  Sumitra
+[10:05:18] AI (chunk):  Devi
+[10:05:18] AI (chunk):  ji.
+[10:05:18] AI (chunk):  Aap
+[10:05:19] AI (chunk):  kis
+[10:05:19] AI (chunk):  district
+[10:05:19] AI (chunk):  ya
+[10:05:21] AI (chunk):  block
+[10:05:21] AI (chunk):  se
+[10:05:21] AI (chunk):  hain?
+[10:05:21] AI (chunk):  Wahan
+[10:05:21] AI (chunk):  ke liye
+[10:05:24] AI (chunk): Aap kis
+[10:05:24] AI (chunk):  district
+[10:05:25] AI (chunk):  ya
+[10:05:25] AI (chunk):  block
+[10:05:29] AI (chunk): Aap kis
+[10:05:29] AI (chunk):  district
+[10:05:29] AI (chunk):  ya
+[10:05:29] AI (chunk):  block
+[10:05:35] User: .
+[10:05:36] AI (chunk): Aap kis
+[10:05:36] AI (chunk):  district
+[10:05:36] AI (chunk):  ya
+[10:05:36] AI (chunk):  block
+[10:05:39] AI (chunk): Aap kis
+[10:05:39] AI (chunk):  district
+[10:05:39] AI (chunk):  ya
+[10:05:39] AI (chunk):  block
+[10:05:43] AI (chunk): Aap kis
+[10:05:43] AI (chunk):  district
+[10:05:43] AI (chunk):  ya
+[10:05:44] AI (chunk):  block
+[10:05:48] User: うん 。
+[10:05:49] AI (chunk): Patna se.
+[10:05:49] AI (chunk):  Theek
+[10:05:52] User: हेलो
+[10:05:53] AI (chunk): Ji, aap
+[10:05:53] AI (chunk):  chahenge
+[10:05:57] AI (chunk):  ki
+[10:05:57] AI (chunk):  aapke
+[10:05:57] AI (chunk):  ilake
+[10:05:57] AI (chunk):  ki samasyaon
+[10:05:57] AI (chunk):  ka samadhan
+[10:06:05] AI (chunk): Aap chahenge
+[10:06:05] AI (chunk):  ki
+[10:06:05] AI (chunk):  aapke
+[10:06:05] AI (chunk):  ilake
+[10:06:08] AI (chunk):  ki samasyaon
+[10:06:08] AI (chunk):  ka samadhan
+[10:06:08] AI (chunk):  ho, sahi?
+[10:06:15] AI (chunk): Theek hai.
+[10:06:15] AI (chunk):  Aap un
+[10:06:16] AI (chunk):  kuch
+[10:06:19] AI (chunk):  chune
+[10:06:19] AI (chunk):  hue
+[10:06:19] AI (chunk):  500
+[10:06:19] AI (chunk):  logon
+[10:06:19] AI (chunk):  mein se
+[10:06:19] AI (chunk):  hain
+
+Call ended at: 2025-09-05T10:06:23.400647

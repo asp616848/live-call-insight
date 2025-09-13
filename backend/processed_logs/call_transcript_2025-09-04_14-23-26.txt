@@ -1,0 +1,46 @@
+Call started at: 2025-09-04T14:23:26.173579
+Stream SID: 14e141512e705d10c11cf9cfb8df1994
+
+[14:23:49] User: Hello.
+[14:23:50] AI (chunk): Haanji, main
+[14:23:51] AI (chunk):  Sumitra
+[14:23:51] AI (chunk):  Devi
+[14:23:51] AI (chunk):  sarkar
+[14:23:51] AI (chunk):  se
+[14:23:51] AI (chunk):  bol
+[14:23:51] AI (chunk):  rahi
+[14:23:51] AI (chunk):  hoon.
+[14:23:51] AI (chunk):  Aapke
+[14:23:53] AI (chunk):  paas
+[14:23:53] AI (chunk):  30
+[14:23:53] AI (chunk):  second
+[14:23:53] AI (chunk):  hain?
+[14:24:06] User: Hallo. Hallo.
+[14:24:07] AI (chunk): Haanji, boliye.
+[14:24:07] AI (chunk):  Kya
+[14:24:14] AI (chunk): main aage
+[14:24:14] AI (chunk):  badhun?
+[14:24:20] User: हेलो
+[14:24:21] AI (chunk): Haanji, aap
+[14:24:21] AI (chunk):  theek
+[14:24:21] AI (chunk):  se sun
+[14:24:22] AI (chunk):  pa
+[14:24:22] AI (chunk):  rahe
+[14:24:22] AI (chunk):  hain?
+[14:27:15] User: bir
+[14:27:15] AI (chunk): Aap Bihar
+[14:27:16] AI (chunk):  se hi
+[14:27:16] AI (chunk):  bol
+[14:27:16] AI (chunk):  rahe
+[14:27:16] AI (chunk):  hain na?
+[14:33:06] User: బాబా
+[14:33:07] AI (chunk): Aap chahenge
+[14:33:07] AI (chunk):  ki
+[14:33:07] AI (chunk):  aapke
+[14:33:09] AI (chunk):  ilake
+[14:33:09] AI (chunk):  ki samasyaon
+[14:33:09] AI (chunk):  ka samadhan
+[14:33:11] AI (chunk):  ho,
+[14:33:11] AI (chunk):  sahi?
+
+Call ended at: 2025-09-04T14:33:48.805358

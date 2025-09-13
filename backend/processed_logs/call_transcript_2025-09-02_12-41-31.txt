@@ -1,0 +1,64 @@
+Call started at: 2025-09-02T12:41:31.602247
+Stream SID: 21a2753d93f5bc866c788abf99f91992
+
+[12:41:33] User: voi
+[12:41:33] User: ce
+[12:41:33] User: ma
+[12:41:33] User: il
+[12:41:33] User: .
+[12:41:33] User: The
+[12:41:33] User: person
+[12:41:33] User: you're
+[12:41:33] User: trying
+[12:41:34] User: to
+[12:41:34] User: reach
+[12:41:34] User: is
+[12:41:34] User: not
+[12:41:34] User: availa
+[12:41:34] User: ble
+[12:41:34] User: .
+[12:41:34] User: At
+[12:41:34] User: the
+[12:41:35] User: to
+[12:41:35] User: ne
+[12:41:35] User: ,
+[12:41:35] User: ple
+[12:41:35] User: ase
+[12:41:35] User: re
+[12:41:35] User: cord
+[12:41:35] User: your
+[12:41:35] User: me
+[12:41:35] User: ssage
+[12:41:36] User: .
+[12:41:36] User: When
+[12:41:36] User: you
+[12:41:36] User: have
+[12:41:36] User: fi
+[12:41:36] User: nished
+[12:41:36] User: re
+[12:41:36] User: cord
+[12:41:37] User: ing
+[12:41:37] User: , you
+[12:41:37] User: may
+[12:41:37] User: hang
+[12:41:37] User: up.
+[12:41:38] AI (chunk):  मैं
+[12:41:39] AI (chunk):  सुमित्रा
+[12:41:39] AI (chunk):  देवी
+[12:41:39] AI (chunk):  हूँ,
+[12:41:39] AI (chunk):  सरकार
+[12:41:41] AI (chunk):  की ओर
+[12:41:41] AI (chunk):  से
+[12:41:41] AI (chunk):  आपसे
+[12:41:41] AI (chunk):  बात
+[12:41:41] AI (chunk):  कर
+[12:41:41] AI (chunk):  रही
+[12:41:43] AI (chunk):  हूँ।
+[12:41:43] AI (chunk):  क्या
+[12:41:43] AI (chunk):  अभी
+[12:41:43] AI (chunk):  आप
+[12:41:44] AI (chunk):  3-4
+[12:41:44] AI (chunk):  मिनट
+[12:41:44] AI (chunk):  दे सकेंगे?
+
+Call ended at: 2025-09-02T12:43:28.552747

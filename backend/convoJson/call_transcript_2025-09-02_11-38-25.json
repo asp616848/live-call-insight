@@ -1,0 +1,36 @@
+{
+  "summary": {
+    "filename": "call_transcript_2025-09-02_11-38-25.txt",
+    "stream_sid": "d66c6fbe420b9d339b55e56dd2d01992",
+    "call_started": "2025-09-02T11:38:25.197442",
+    "call_ended": "2025-09-02T11:38:56.716682",
+    "duration_seconds": 31.51924,
+    "average_ai_response_latency": 1.5,
+    "noise_count": 0,
+    "total_user_messages": 1,
+    "total_ai_responses": 2,
+    "sentiment": "negative",
+    "concerns": [],
+    "overview": "The AI observes that the user appears nervous and their voice is trembling. It invites the user to share the reason for their distress.",
+    "user_tone": "nervous and distressed, as indicated by their trembling voice",
+    "emotion": "anxious",
+    "sentiment_score": 2.0
+  },
+  "conversation": [
+    {
+      "speaker": "user",
+      "text": ".",
+      "timestamp": "2025-09-02T11:38:29"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, आप थोड़ा घबराए हुए लग रहे हैं। कृपया बताइए क्या बात है? आपकी आवाज़",
+      "timestamp": "2025-09-02T11:38:29"
+    },
+    {
+      "speaker": "ai",
+      "text": "थोड़ी कांप रही है।",
+      "timestamp": "2025-09-02T11:38:32"
+    }
+  ]
+}

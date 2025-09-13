@@ -1,0 +1,73 @@
+{
+  "summary": {
+    "filename": "call_transcript_2025-09-04_03-50-19.txt",
+    "stream_sid": "74ddb4866fac9a90536cbe8ed93d1994",
+    "call_started": "2025-09-04T03:50:19.393878",
+    "call_ended": "2025-09-04T03:51:24.819005",
+    "duration_seconds": 65.425127,
+    "average_ai_response_latency": 7.86,
+    "noise_count": 0,
+    "total_user_messages": 3,
+    "total_ai_responses": 7,
+    "sentiment": "positive",
+    "concerns": [
+      "solutions to local community problems"
+    ],
+    "overview": "The AI confirms the user's location in Bihar and their interest in solving local issues. The AI then informs the user they are among a select group whose opinions will help formulate new policies for Bihar, requesting their valuable input.",
+    "user_tone": "agreeable and cooperative",
+    "emotion": "receptive",
+    "sentiment_score": 7.5
+  },
+  "conversation": [
+    {
+      "speaker": "user",
+      "text": "ham",
+      "timestamp": "2025-09-04T03:50:29"
+    },
+    {
+      "speaker": "ai",
+      "text": "Haan, bilkul. Aap Bihar se hi bol rahe hain na?",
+      "timestamp": "2025-09-04T03:50:30"
+    },
+    {
+      "speaker": "user",
+      "text": "हाँ, हम बिहार से बोल रहे हैं।\nHaan, hum Bihar se bol rahe hain.",
+      "timestamp": "2025-09-04T03:50:37"
+    },
+    {
+      "speaker": "ai",
+      "text": "Achha, aap chahenge ki aapke ilake ki samasyaon ka samadhan ho, sahi?",
+      "timestamp": "2025-09-04T03:50:38"
+    },
+    {
+      "speaker": "user",
+      "text": "Haan chahte hain.",
+      "timestamp": "2025-09-04T03:50:47"
+    },
+    {
+      "speaker": "ai",
+      "text": "Bilkul. [NAME] ji, aap",
+      "timestamp": "2025-09-04T03:50:48"
+    },
+    {
+      "speaker": "ai",
+      "text": "un kuch chune hue 500 logon",
+      "timestamp": "2025-09-04T03:50:53"
+    },
+    {
+      "speaker": "ai",
+      "text": "mein se hain jinki rai se",
+      "timestamp": "2025-09-04T03:50:58"
+    },
+    {
+      "speaker": "ai",
+      "text": "Bihar ki nai policy banegi. Sirf 2-3 minute. Kya main aapke important",
+      "timestamp": "2025-09-04T03:51:03"
+    },
+    {
+      "speaker": "ai",
+      "text": "vichar jaan sakti hoon?",
+      "timestamp": "2025-09-04T03:51:06"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+Call Transcript — saved 2025-09-04 02:43:32
+-------------------------------------------
+[2025-09-04 02:41:47] User: Hello
+[2025-09-04 02:41:48] Assistant: Hi! I’m calling from Blue Tokai Café at Plaksha. We’re offering a ₹150 coupon for a quick feedback survey. Do you have ~4 minutes?
+[2025-09-04 02:41:59] User: Yeah I do, tell me?
+[2025-09-04 02:42:00] Assistant: Perfect! Just to confirm—you're a student or staff at Plaksha, right? And you've been to our café at least once?
+[2025-09-04 02:42:10] User: I have
+[2025-09-04 02:42:11] Assistant: Great! You're one of the select few we've chosen for this exclusive feedback program—your opinions will directly shape our menu and service improvements. Before we start, would you prefer English or Hindi?
+[2025-09-04 02:42:24] User: Hindi
+[2025-09-04 02:42:25] Assistant: Bilkul! Aapne pichle 30 dinon mein Blue Tokai, Plaksha ka visit kiya tha?
+[2025-09-04 02:42:32] User: 한 얘기였다.
+[2025-09-04 02:42:34] Assistant: Koi baat nahi! Toh chaliye, ab aapke experience ke baare mein baat karte hain. Aapne Blue Tokai ko pichle mahine mein kitni baar visit kiya?
+[2025-09-04 02:42:44] User: کافی بار بیس تیس بار.
+[2025-09-04 02:42:45] Assistant: Wah, kaafi accha! Aap usually kab café aate hain? Din mein ya shaam ko?
+[2025-09-04 02:42:55] User: शाम को
+[2025-09-04 02:42:56] Assistant: Samajh gaya. Aapke last visit ke baare mein thoda aur jaan lein. Aapne us din kya liya tha? Coffee, chai, ya kuch khane ke items?
+[2025-09-04 02:43:06] User: coffee
+[2025-09-04 02:43:07] Assistant: Accha! Aapne us din kitna kharcha kiya?
+[2025-09-04 02:43:12] User: Can we switch to English?
+[2025-09-04 02:43:15] Assistant: Sure, we can continue in English. So, how much did you spend on that visit?
+[2025-09-04 02:43:21] User: I don't know yar.
+[2025-09-04 02:43:23] Assistant: No worries! Let me ask about your overall experience. On a scale from 1 to 5, where 1 is very dissatisfied and 5 is very satisfied, how would you rate the taste and flavor quality of your coffee?

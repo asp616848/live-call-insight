@@ -1,0 +1,24 @@
+Call started at: 2025-09-04T00:51:32.047194
+Stream SID: 65383f112b5835aea4a3b737e9201994
+
+[00:51:45] User: जी
+[00:51:45] User: बोलिए
+[00:51:46] AI (chunk): Pranam, hum
+[00:51:47] AI (chunk):  Sumitra
+[00:51:47] AI (chunk):  Devi
+[00:51:47] AI (chunk):  sarkar
+[00:51:47] AI (chunk):  se boli.
+[00:51:47] AI (chunk):  30
+[00:51:47] AI (chunk):  second
+[00:51:48] AI (chunk):  ba?
+[00:51:55] User: बोलिए
+[00:51:56] AI (chunk): Rauwa Bihar
+[00:51:56] AI (chunk):  se hi
+[00:51:56] AI (chunk):  boli
+[00:51:56] AI (chunk):  na?
+[00:52:01] User: हां जी
+[00:52:02] AI (chunk): Rauwa chahbi
+[00:52:03] AI (chunk):  ki
+[00:52:03] AI (chunk):  aapke
+
+Call ended at: 2025-09-04T00:52:14.894187

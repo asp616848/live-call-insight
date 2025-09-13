@@ -1,0 +1,39 @@
+Call Transcript — saved 2025-09-03 16:16:50
+-------------------------------------------
+[2025-09-03 16:13:33] User: Hello
+[2025-09-03 16:13:34] Assistant: Hi! I’m calling from Blue Tokai Café at Plaksha. We’re offering a 150 rupees coupon for a quick feedback survey. Do you have around 4 minutes?
+[2025-09-03 16:13:47] User: Yes.
+[2025-09-03 16:13:48] Assistant: Perfect! Just to confirm, you're a student or staff at Plaksha, right?
+[2025-09-03 16:13:56] Assistant: And you've been to our café at least once, correct?
+[2025-09-03 16:13:57] User: Yeah.
+[2025-09-03 16:14:02] User: Yeah.
+[2025-09-03 16:14:03] Assistant: Great! You're actually one of the select few we've chosen for this exclusive feedback program—your opinions will directly shape our menu and service improvements. Before we start, would you prefer to continue in English or in Hindi?
+[2025-09-03 16:14:19] User: English
+[2025-09-03 16:14:20] Assistant: Great! Let's start with your recent visit. Have you been to Blue Tokai at Plaksha in the past 30 days?
+[2025-09-03 16:14:29] User: Yes
+[2025-09-03 16:14:30] Assistant: That's wonderful! About how many times did you visit in the past month?
+[2025-09-03 16:14:36] User: Once
+[2025-09-03 16:14:37] Assistant: Got it. And when was your most recent visit? Can you tell me what you had that day?
+[2025-09-03 16:14:46] User: had a cappuccino.
+[2025-09-03 16:14:47] Assistant: Sounds delicious! About how much did you spend on your cappuccino?
+[2025-09-03 16:14:57] Assistant: No worries!
+[2025-09-03 16:14:57] User: I don't remember below 300.
+[2025-09-03 16:14:58] User: Sie haben gute Vorarbeit.
+[2025-09-03 16:15:00] Assistant: Sure thing! We'll continue with a quick question about your experience. On a scale of 1 to 5, where 1 is very dissatisfied and 5 is very satisfied, how would you rate the taste and flavor quality of your cappuccino?
+[2025-09-03 16:15:14] User: five
+[2025-09-03 16:15:15] Assistant: That's fantastic! What made the taste and flavor so satisfying for you?
+[2025-09-03 16:15:25] User: Nothing special I mean.
+[2025-09-03 16:15:26] Assistant: I see, it's great when a simple cup of coffee hits
+[2025-09-03 16:15:27] User: double cappuccino
+[2025-09-03 16:15:29] Assistant: Absolutely, a consistently good cappuccino can make a difference! Moving on, how did you find the speed of service that day? Would you rate it as 1 for very slow and 5 for very quick?
+[2025-09-03 16:15:41] User: Hi.
+[2025-09-03 16:15:43] Assistant: Great to hear the service was quick! That definitely helps when you're in a hurry. Compared to other places on campus where you get coffee or snacks, do you think Blue Tokai offers better, similar, or worse value for money?
+[2025-09-03 16:15:57] User: Better.
+[2025-09-03 16:15:58] Assistant: That's good to know! What makes you feel that Blue Tokai offers better value for money?
+[2025-09-03 16:16:05] User: Xis
+[2025-09-03 16:16:09] User: Good coffee, you don't get it anywhere else.
+[2025-09-03 16:16:10] Assistant: Thank you for sharing that! It's great that the quality stands out. Lastly, if you could change one thing about Blue Tokai, what would it be?
+[2025-09-03 16:16:21] User: Nothing.
+[2025-09-03 16:16:22] Assistant: That's wonderful to hear! We're glad you enjoy your visits. One final question: on a scale from 0 to 10, how likely are you to recommend Blue Tokai to a friend?
+[2025-09-03 16:16:34] User: Ten
+[2025-09-03 16:16:36] Assistant: That's fantastic! Thank you so much for your high rating and for your valuable feedback. Your ₹150 coupon will be sent to you within 24 hours. Have a wonderful day!

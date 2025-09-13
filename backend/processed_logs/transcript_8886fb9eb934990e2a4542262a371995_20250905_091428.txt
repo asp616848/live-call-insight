@@ -1,0 +1,5 @@
+Call Transcript — saved 2025-09-05 09:14:28
+-------------------------------------------
+[2025-09-05 09:14:16] User: Hello
+[2025-09-05 09:14:17] User: Hello, yes.
+[2025-09-05 09:14:21] Assistant: Hello! Thank you for agreeing to share your feedback. This call is on behalf of Blue Tokai Café at Plaksha. Your input will help us improve the café, and as a thank-you, you will receive a ₹150 coupon within 24 hours. Shall we start by confirming a few details? Are you a student, faculty, or staff member at Plaksha?

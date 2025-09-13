@@ -1,0 +1,89 @@
+Call started at: 2025-09-03T19:15:46.246533
+Stream SID: 77c281d6972530ea9411bc574d251993
+
+[19:15:59] User: हां जी
+[19:16:00] AI (chunk): Pranam, hum
+[19:16:00] AI (chunk):  Sumitra
+[19:16:01] AI (chunk):  Devi
+[19:16:01] AI (chunk):  sarkar
+[19:16:01] AI (chunk):  se
+[19:16:01] AI (chunk):  boli.
+[19:16:01] AI (chunk):  30
+[19:16:03] AI (chunk): Rauwa Bihar
+[19:16:04] AI (chunk):  se
+[19:16:04] AI (chunk):  hi boli
+[19:16:04] AI (chunk):  na?
+[19:16:10] User: 안녕.
+[19:16:11] AI (chunk): Rauwa chahbi
+[19:16:11] AI (chunk):  ki
+[19:16:11] AI (chunk):  aapke
+[19:16:11] AI (chunk):  ilaka
+[19:16:13] AI (chunk): [NAME] ji, rauwa
+[19:16:14] AI (chunk): Ee mauka
+[19:16:15] AI (chunk):  khaali
+[19:16:15] AI (chunk):  aaj-kal
+[19:16:15] AI (chunk):  ke ba.
+[19:16:16] AI (chunk):  Rauwa
+[19:16:16] AI (chunk):  jaise
+[19:16:16] AI (chunk):  [OCCUPATION/AREA] ke
+[19:16:17] AI (chunk):  khali
+[19:16:17] AI (chunk):  10-15
+[19:16:17] AI (chunk):  log
+[19:16:17] AI (chunk):  ba
+[19:16:17] AI (chunk):  jinse
+[19:16:19] AI (chunk):  baat
+[19:16:19] AI (chunk):  hoi.
+[19:16:19] AI (chunk):  Zaroor
+[19:16:19] AI (chunk):  batai?
+[19:16:27] User: क्या
+[19:16:27] User: बोल रहे हो आप
+[19:16:27] AI (chunk): Hum keh
+[19:16:28] AI (chunk):  rahe
+[19:16:28] AI (chunk):  hain
+[19:16:28] AI (chunk):  ki
+[19:16:28] AI (chunk):  ee
+[19:16:31] AI (chunk): Pehle aapka
+[19:16:31] AI (chunk):  naam
+[19:16:31] AI (chunk):  jaan
+[19:16:31] AI (chunk):  lun
+[19:16:31] AI (chunk):  taaki
+[19:16:34] AI (chunk): [NAME] ji,
+[19:16:34] AI (chunk):  aap
+[19:16:34] AI (chunk):  kis
+[19:16:34] AI (chunk):  district/block
+[19:16:37] AI (chunk): [NAME] ji, yeh
+[19:16:37] AI (chunk):  bahut
+[19:16:37] AI (chunk):  important
+[19:16:40] AI (chunk):  hai.
+[19:16:40] AI (chunk):  Aapki
+[19:16:40] AI (chunk):  yeh baat
+[19:16:40] AI (chunk):  seedhe
+[19:16:42] AI (chunk): Bus utna
+[19:16:43] AI (chunk):  time
+[19:16:43] AI (chunk):  jitna
+[19:16:44] AI (chunk):  chai
+[19:16:44] AI (chunk):  peene
+[19:16:44] AI (chunk):  mein
+[19:16:44] AI (chunk):  lagta
+[19:16:44] AI (chunk):  hai.
+[19:16:44] AI (chunk):  Shuru
+[19:16:48] AI (chunk): [NAME] ji, aapne
+[19:16:48] AI (chunk):  itni
+[19:16:49] AI (chunk):  achhi
+[19:16:50] AI (chunk):  jankari
+[19:16:50] AI (chunk):  di hai,
+[19:16:50] AI (chunk):  bas
+[19:16:53] AI (chunk): [NAME] ji, kal
+[19:16:53] AI (chunk):  [NEARBY_AREA]
+[19:16:56] AI (chunk): Ee survey
+[19:16:56] AI (chunk): [NAME] ji,
+[19:16:57] AI (chunk):  phir
+[19:16:57] AI (chunk):  aapke
+[19:16:57] AI (chunk):  area
+[19:16:59] AI (chunk): Aapke padosi
+[19:17:00] AI (chunk):  [NEIGHBOR_AREA]
+[19:17:00] AI (chunk):  wale
+[19:17:03] AI (chunk): Main aapko
+[19:17:03] AI (chunk): Ab aap
+
+Call ended at: 2025-09-03T19:17:04.016209

@@ -1,0 +1,10 @@
+Call Transcript — saved 2025-09-03 16:19:57
+-------------------------------------------
+[2025-09-03 16:19:25] User: Hello
+[2025-09-03 16:19:25] Assistant: Hello! How can I
+[2025-09-03 16:19:26] Assistant: Namaste! Main Blue Tokai Café, Plaksha
+[2025-09-03 16:19:31] User: Isla Bakker
+[2025-09-03 16:19:31] User: Goodbye.
+[2025-09-03 16:19:34] Assistant: Aap se baat karke accha laga! Kya aapke paas thoda samay hai ek chhoti si feedback survey ke liye? Aapko ₹150 ka coupon milega.
+[2025-09-03 16:19:47] User: Hello.
+[2025-09-03 16:19:50] Assistant: Hello! Kya main aapki madad kar sakta hoon? Aap Blue Tokai Café ke baare mein kuch feedback dena chahenge? Aapko ek chhoti si survey ke liye ₹150 ka coupon milega.

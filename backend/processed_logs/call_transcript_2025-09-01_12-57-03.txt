@@ -1,0 +1,13 @@
+Call started at: 2025-09-01T12:57:03.275291
+Stream SID: d4633c66bcea3081edf8074322f31991
+
+[12:57:05] User: Hello
+[12:57:06] AI (chunk): Namaste, main
+[12:57:07] AI (chunk):  Sumitra
+[12:57:12] User: हेलो
+[12:57:12] AI (chunk): Ji, main
+[12:57:13] AI (chunk):  Sumitra
+[12:57:18] AI (chunk):  Devi,
+[12:57:19] AI (chunk):  sarkar
+
+Call ended at: 2025-09-01T12:57:20.233007

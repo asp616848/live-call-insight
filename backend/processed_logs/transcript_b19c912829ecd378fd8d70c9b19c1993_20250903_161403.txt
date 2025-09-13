@@ -1,0 +1,7 @@
+Call Transcript — saved 2025-09-03 16:14:03
+-------------------------------------------
+[2025-09-03 16:11:57] User: The person
+[2025-09-03 16:11:57] User: Hello
+[2025-09-03 16:11:58] Assistant: Hello! How can I help you today?
+[2025-09-03 16:12:04] User: you're trying to reach is not available. At the tone, please record your message. When you have finished recording you may hang up.
+[2025-09-03 16:12:05] Assistant: It seems like you're looking to leave a voicemail. If you have a message, please go ahead and record your message after the tone. Thank you!

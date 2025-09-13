@@ -1,0 +1,14 @@
+Call started at: 2025-09-04T04:46:27.102136
+Stream SID: f497457eae62b11a90a872e09efc1994
+
+[04:46:29] User: Hello.
+[04:46:29] AI (chunk): Ji, aapne
+[04:46:30] AI (chunk):  kaha
+[04:46:30] AI (chunk):  tha
+[04:46:30] AI (chunk):  ki
+[04:46:31] AI (chunk):  aapke
+[04:46:31] AI (chunk):  ilaake
+[04:46:31] AI (chunk):  ki
+[04:46:31] AI (chunk):  samasyaon
+
+WebSocket disconnected at: 2025-09-04T04:46:51.810746

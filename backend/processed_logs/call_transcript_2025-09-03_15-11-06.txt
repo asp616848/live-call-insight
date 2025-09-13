@@ -1,0 +1,138 @@
+Call started at: 2025-09-03T15:11:06.330481
+Stream SID: 0b75ef00b6732fb1d6afd693c5691993
+
+[15:11:21] User: Hello.
+[15:11:22] AI (chunk): Haan ji,
+[15:11:22] AI (chunk):  main
+[15:11:22] AI (chunk):  Sumitra
+[15:11:23] AI (chunk):  Devi
+[15:11:23] AI (chunk):  sarkar
+[15:11:23] AI (chunk):  se
+[15:11:23] AI (chunk):  bol
+[15:11:23] AI (chunk):  rahi
+[15:11:23] AI (chunk):  hun.
+[15:11:23] AI (chunk):  Kya
+[15:11:23] AI (chunk):  aapke
+[15:11:23] AI (chunk):  paas
+[15:11:23] AI (chunk):  30
+[15:11:23] AI (chunk):  second
+[15:11:23] AI (chunk):  hain?
+[15:11:41] User: बोल
+[15:11:41] User: िए
+[15:11:44] AI (chunk): Aap Bihar
+[15:11:45] AI (chunk):  se
+[15:11:45] AI (chunk):  hi
+[15:11:45] AI (chunk):  bol
+[15:11:45] AI (chunk):  rahe
+[15:11:45] AI (chunk):  hain
+[15:11:45] AI (chunk):  na?
+[15:11:57] User: यार से ही बोलना
+[15:11:57] AI (chunk): Aap chahenge
+[15:11:58] AI (chunk):  ki
+[15:11:58] AI (chunk):  aapke
+[15:11:58] AI (chunk):  ilake
+[15:11:58] AI (chunk):  ki samasyaon
+[15:11:58] AI (chunk):  ka
+[15:11:58] AI (chunk):  samadhan
+[15:11:59] AI (chunk):  ho,
+[15:11:59] AI (chunk):  sahi?
+[15:12:22] User: Hallo.
+[15:12:23] AI (chunk): Haan ji.
+[15:12:23] AI (chunk):  Aap
+[15:12:24] AI (chunk):  chahenge
+[15:12:24] AI (chunk):  ki
+[15:12:24] AI (chunk):  aapke
+[15:12:24] AI (chunk):  ilake
+[15:12:24] AI (chunk):  ki samasyaon
+[15:12:26] AI (chunk):  ka
+[15:12:26] AI (chunk):  samadhan
+[15:12:26] AI (chunk):  ho,
+[15:12:26] AI (chunk):  theek
+[15:12:26] AI (chunk):  hai?
+[15:12:31] User: ආ
+[15:12:32] User: ඔ
+[15:12:32] User: න්න
+[15:12:32] User: ඔය වචී වන චීය
+[15:12:33] AI (chunk): Achha, theek
+[15:12:33] AI (chunk):  hai.
+[15:12:33] AI (chunk):  Aap
+[15:12:34] AI (chunk):  un
+[15:12:34] AI (chunk):  kuch
+[15:12:34] AI (chunk):  chune
+[15:12:34] AI (chunk):  hue 500
+[15:12:35] AI (chunk):  logon
+[15:12:35] AI (chunk):  mein
+[15:12:35] AI (chunk):  se
+[15:12:35] AI (chunk):  hain
+[15:12:35] AI (chunk):  jinki
+[15:12:35] AI (chunk):  rai
+[15:12:35] AI (chunk):  se
+[15:12:36] AI (chunk):  Bihar
+[15:12:36] AI (chunk):  ki nai
+[15:12:36] AI (chunk):  policy
+[15:12:36] AI (chunk):  banegi.
+[15:12:36] AI (chunk):  Sirf
+[15:12:37] AI (chunk):  2-3
+[15:12:37] AI (chunk):  minute.
+[15:12:37] AI (chunk):  Kya
+[15:12:39] AI (chunk): Bihar ki
+[15:12:39] AI (chunk):  nai
+[15:12:39] AI (chunk):  policy
+[15:12:39] AI (chunk):  banegi.
+[15:12:40] AI (chunk):  Sirf
+[15:12:40] AI (chunk):  2-3
+[15:12:40] AI (chunk):  minute.
+[15:12:40] AI (chunk):  Kya
+[15:12:41] AI (chunk):  main
+[15:12:41] AI (chunk):  aapke
+[15:12:41] AI (chunk):  important
+[15:12:42] AI (chunk):  vichar
+[15:12:42] AI (chunk):  jaan
+[15:12:42] AI (chunk):  sakti
+[15:12:42] AI (chunk):  hun?
+[15:12:43] AI (chunk): Kya main
+[15:12:43] AI (chunk):  aapke
+[15:12:43] AI (chunk):  important
+[15:12:43] AI (chunk):  vichaar
+[15:12:44] AI (chunk):  jaan
+[15:12:44] AI (chunk):  sakti
+[15:12:44] AI (chunk):  hun?
+[15:12:48] User: हां हां बोलिए
+[15:12:49] AI (chunk): Pehle aapka
+[15:12:50] AI (chunk):  naam
+[15:12:50] AI (chunk):  jaan
+[15:12:50] AI (chunk):  lun
+[15:12:50] AI (chunk):  taaki
+[15:12:50] AI (chunk):  aapki
+[15:12:50] AI (chunk):  rai
+[15:12:50] AI (chunk):  ko
+[15:12:51] AI (chunk):  sahi
+[15:12:51] AI (chunk):  se record
+[15:12:51] AI (chunk):  kar sakun?
+[15:12:58] User: चंदन कुमार
+[15:12:59] AI (chunk): Chandan ji,
+[15:12:59] AI (chunk):  aap
+[15:13:00] AI (chunk):  kis
+[15:13:00] AI (chunk):  district/block
+[15:13:00] AI (chunk):  se hain?
+[15:13:00] AI (chunk):  Wahan
+[15:13:00] AI (chunk):  ke liye
+[15:13:00] AI (chunk):  khaas
+[15:13:00] AI (chunk):  policy
+[15:13:01] AI (chunk):  suggestions
+[15:13:01] AI (chunk):  chahiye.
+[15:13:12] User: Hello.
+[15:13:12] AI (chunk): Chandan ji,
+[15:13:13] AI (chunk):  aap
+[15:13:13] AI (chunk):  kis
+[15:13:13] AI (chunk):  district/block
+[15:13:13] AI (chunk):  se
+[15:13:13] AI (chunk):  hain?
+[15:13:13] AI (chunk):  Wahan
+[15:13:13] AI (chunk):  ke liye
+[15:13:14] AI (chunk):  khaas
+[15:13:14] AI (chunk):  policy
+[15:13:14] AI (chunk):  suggestions
+[15:13:14] AI (chunk):  chahiye.
+
+Call ended at: 2025-09-03T15:13:22.823440

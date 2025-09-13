@@ -1,0 +1,75 @@
+Call started at: 2025-09-03T14:38:40.681284
+Stream SID: 0444ba1ddb40393e5803dedd81191993
+
+[14:38:48] User: जी
+[14:38:48] AI (chunk): Aap Bihar
+[14:38:49] AI (chunk):  se
+[14:38:49] AI (chunk):  hi bol
+[14:38:49] AI (chunk):  rahe
+[14:38:49] AI (chunk):  hain
+[14:38:49] AI (chunk):  na?
+[14:38:52] User: हां
+[14:38:52] User: जी
+[14:38:52] User: है
+[14:38:52] User: हां
+[14:38:53] User: बि
+[14:38:53] User: हार
+[14:38:53] User: से बोल रहे हैं बोलिए
+[14:38:53] AI (chunk): Aap chahenge
+[14:38:54] AI (chunk):  ki
+[14:38:54] AI (chunk):  aapke
+[14:38:54] AI (chunk):  ilake
+[14:38:56] AI (chunk): ki samasyaon
+[14:38:56] AI (chunk):  ka
+[14:38:56] AI (chunk):  samadhan
+[14:38:56] AI (chunk):  ho,
+[14:38:57] AI (chunk):  sahi?
+[14:39:02] User: हां जी
+[14:39:03] AI (chunk): [NAME] ji,
+[14:39:03] AI (chunk):  aap
+[14:39:03] AI (chunk):  un
+[14:39:03] AI (chunk):  kuch
+[14:39:04] AI (chunk):  chune
+[14:39:04] AI (chunk):  hue
+[14:39:04] AI (chunk):  500
+[14:39:04] AI (chunk):  logon
+[14:39:04] AI (chunk):  mein
+[14:39:04] AI (chunk):  se
+[14:39:04] AI (chunk):  hain
+[14:39:05] AI (chunk):  jinki
+[14:39:05] AI (chunk):  rai
+[14:39:05] AI (chunk):  se
+[14:39:05] AI (chunk):  Bihar
+[14:39:07] AI (chunk): rai se
+[14:39:08] AI (chunk):  Bihar
+[14:39:08] AI (chunk):  ki
+[14:39:08] AI (chunk):  nai
+[14:39:10] AI (chunk): policy banegi.
+[14:39:10] AI (chunk):  Sirf
+[14:39:11] AI (chunk):  2-3
+[14:39:11] AI (chunk):  minute.
+[14:39:11] AI (chunk):  Kya
+[14:39:12] AI (chunk):  main
+[14:39:12] AI (chunk):  aapke
+[14:39:12] AI (chunk):  important
+[14:39:12] AI (chunk):  vichar
+[14:39:12] AI (chunk):  jaan
+[14:39:13] AI (chunk):  sakti
+[14:39:13] AI (chunk):  hoon?
+[14:39:21] User: ہاں
+[14:39:22] User: جی
+[14:39:22] User: جان
+[14:39:22] User: سکتے ہیں بتائیے۔
+[14:39:23] AI (chunk): Pehle aapka
+[14:39:23] AI (chunk):  naam
+[14:39:23] AI (chunk):  jaan
+[14:39:23] AI (chunk):  lun
+[14:39:24] AI (chunk):  taaki
+[14:39:24] AI (chunk):  aapki
+[14:39:24] AI (chunk):  rai
+[14:39:24] AI (chunk):  ko sahi
+[14:39:25] AI (chunk):  se
+[14:39:25] AI (chunk):  record
+[14:39:25] AI (chunk):  kar sakun?
+
+Call ended at: 2025-09-03T14:39:31.160817

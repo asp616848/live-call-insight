@@ -1,0 +1,124 @@
+{
+  "summary": {
+    "filename": "call_transcript_2025-09-03_15-11-06.txt",
+    "stream_sid": "0b75ef00b6732fb1d6afd693c5691993",
+    "call_started": "2025-09-03T15:11:06.330481",
+    "call_ended": "2025-09-03T15:13:22.823440",
+    "duration_seconds": 136.492959,
+    "average_ai_response_latency": 2.75,
+    "noise_count": 0,
+    "total_user_messages": 8,
+    "total_ai_responses": 12,
+    "sentiment": "neutral",
+    "concerns": [
+      "difficulty understanding the AI's script or purpose",
+      "AI's repetitive communication style"
+    ],
+    "overview": "The AI, claiming to be a government representative, initiates a call to gather policy suggestions for Bihar. The user is initially cooperative but expresses confusion at a specific phrase used by the AI. The conversation ends with the AI repeating a question, suggesting a communication barrier or lack of progress.",
+    "user_tone": "polite, but at times confused or uncertain",
+    "emotion": "confused",
+    "sentiment_score": 4.5
+  },
+  "conversation": [
+    {
+      "speaker": "user",
+      "text": "Namaste.",
+      "timestamp": "2025-09-03T15:11:21"
+    },
+    {
+      "speaker": "ai",
+      "text": "Haan ji, main Sumitra Devi sarkar se bol rahi hun. Kya aapke paas 30 second hain?",
+      "timestamp": "2025-09-03T15:11:22"
+    },
+    {
+      "speaker": "user",
+      "text": "Bolie",
+      "timestamp": "2025-09-03T15:11:41"
+    },
+    {
+      "speaker": "ai",
+      "text": "Aap Bihar se hi bol rahe hain na?",
+      "timestamp": "2025-09-03T15:11:44"
+    },
+    {
+      "speaker": "user",
+      "text": "Yaar se hi bolna.",
+      "timestamp": "2025-09-03T15:11:57"
+    },
+    {
+      "speaker": "ai",
+      "text": "Aap chahenge ki aapke ilake ki samasyaon ka samadhan ho, sahi?",
+      "timestamp": "2025-09-03T15:11:57"
+    },
+    {
+      "speaker": "user",
+      "text": "Namaste.",
+      "timestamp": "2025-09-03T15:12:22"
+    },
+    {
+      "speaker": "ai",
+      "text": "Haan ji. Aap chahenge ki aapke ilake ki samasyaon",
+      "timestamp": "2025-09-03T15:12:23"
+    },
+    {
+      "speaker": "ai",
+      "text": "ka samadhan ho, theek hai?",
+      "timestamp": "2025-09-03T15:12:26"
+    },
+    {
+      "speaker": "user",
+      "text": "यह शब्द क्या है?",
+      "timestamp": "2025-09-03T15:12:32"
+    },
+    {
+      "speaker": "ai",
+      "text": "Achha, theek hai. Aap un kuch chune hue 500 logon mein se hain jinki rai se",
+      "timestamp": "2025-09-03T15:12:33"
+    },
+    {
+      "speaker": "ai",
+      "text": "Bihar ki nai policy banegi. Sirf 2-3 minute. Kya",
+      "timestamp": "2025-09-03T15:12:36"
+    },
+    {
+      "speaker": "ai",
+      "text": "Bihar ki nai policy banegi. Sirf 2-3 minute. Kya main aapke important",
+      "timestamp": "2025-09-03T15:12:39"
+    },
+    {
+      "speaker": "ai",
+      "text": "vichar jaan sakti hun? Kya main aapke important vichaar jaan sakti hun?",
+      "timestamp": "2025-09-03T15:12:42"
+    },
+    {
+      "speaker": "user",
+      "text": "Haan haan boliye.",
+      "timestamp": "2025-09-03T15:12:48"
+    },
+    {
+      "speaker": "ai",
+      "text": "Pehle aapka naam jaan lun taaki aapki rai ko sahi se record kar sakun?",
+      "timestamp": "2025-09-03T15:12:49"
+    },
+    {
+      "speaker": "user",
+      "text": "Chandan Kumar",
+      "timestamp": "2025-09-03T15:12:58"
+    },
+    {
+      "speaker": "ai",
+      "text": "Chandan ji, aap kis district/block se hain? Wahan ke liye khaas policy suggestions chahiye.",
+      "timestamp": "2025-09-03T15:12:59"
+    },
+    {
+      "speaker": "user",
+      "text": "Hello",
+      "timestamp": "2025-09-03T15:13:12"
+    },
+    {
+      "speaker": "ai",
+      "text": "Chandan ji, aap kis district/block se hain? Wahan ke liye khaas policy suggestions chahiye.",
+      "timestamp": "2025-09-03T15:13:12"
+    }
+  ]
+}

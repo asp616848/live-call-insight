@@ -1,0 +1,134 @@
+Call started at: 2025-09-04T00:11:07.779064
+Stream SID: 591d652990a2afb28e279ed3ceb11994
+
+[00:11:21] User: ठक जी है बोलिए
+[00:11:22] AI (chunk): Pranam. Main
+[00:11:22] AI (chunk):  Sumitra
+[00:11:25] AI (chunk): Devi sarkar
+[00:11:26] AI (chunk): se bol
+[00:11:26] AI (chunk):  rahi
+[00:11:27] AI (chunk):  hoon.
+[00:11:27] AI (chunk):  Kya
+[00:11:27] AI (chunk):  aapke
+[00:11:27] AI (chunk):  paas
+[00:11:27] AI (chunk):  30
+[00:11:27] AI (chunk):  second
+[00:11:27] AI (chunk):  hain?
+[00:11:34] User: ਹਾਂਜੀ ਮੈਂ ਬੋਲੋ ਬੋਲੋ
+[00:11:35] AI (chunk): Aap Bihar
+[00:11:35] AI (chunk):  se
+[00:11:35] AI (chunk):  hi
+[00:11:35] AI (chunk):  bol
+[00:11:35] AI (chunk):  rahe
+[00:11:36] AI (chunk):  hain
+[00:11:36] AI (chunk):  na?
+[00:11:44] User: हां जी
+[00:11:45] AI (chunk): Aap chahenge
+[00:11:45] AI (chunk):  ki
+[00:11:45] AI (chunk):  aapke
+[00:11:46] AI (chunk):  ilake
+[00:11:46] AI (chunk):  ki
+[00:11:46] AI (chunk):  samasyaon
+[00:11:46] AI (chunk):  ka
+[00:11:46] AI (chunk):  samadhan
+[00:11:47] AI (chunk):  ho,
+[00:11:47] AI (chunk):  sahi?
+[00:11:55] User: अगदी
+[00:11:56] AI (chunk): Thak ji,
+[00:11:56] AI (chunk):  aap
+[00:11:57] AI (chunk):  un
+[00:11:57] AI (chunk):  kuch
+[00:11:57] AI (chunk):  chune
+[00:11:57] AI (chunk):  hue
+[00:11:57] AI (chunk):  500
+[00:11:59] User: अब यही था
+[00:11:59] AI (chunk): chune hue
+[00:12:00] AI (chunk):  500
+[00:12:00] AI (chunk):  logon
+[00:12:00] AI (chunk):  mein
+[00:12:00] AI (chunk):  se
+[00:12:00] AI (chunk):  hain,
+[00:12:00] AI (chunk):  jinki
+[00:12:00] AI (chunk):  rai
+[00:12:00] AI (chunk):  se
+[00:12:01] AI (chunk):  Bihar
+[00:12:01] AI (chunk):  ki
+[00:12:01] AI (chunk):  nai
+[00:12:01] AI (chunk):  policy
+[00:12:01] AI (chunk):  banegi.
+[00:12:03] AI (chunk): rai se
+[00:12:04] AI (chunk):  Bihar
+[00:12:04] AI (chunk):  ki
+[00:12:06] AI (chunk): nai policy
+[00:12:07] AI (chunk): banegi. Sirf
+[00:12:08] AI (chunk):  2-3
+[00:12:08] AI (chunk):  minute.
+[00:12:08] AI (chunk):  Kya
+[00:12:08] AI (chunk):  main
+[00:12:08] AI (chunk):  aapke
+[00:12:09] AI (chunk):  important
+[00:12:09] AI (chunk):  vichar
+[00:12:09] AI (chunk):  jaan
+[00:12:09] AI (chunk):  sakti
+[00:12:09] AI (chunk):  hoon?
+[00:12:11] AI (chunk): important vichar
+[00:12:12] AI (chunk):  jaan
+[00:12:12] AI (chunk):  sakti
+[00:12:12] AI (chunk):  hoon?
+[00:12:20] User: जान
+[00:12:20] User: सकते हो बताओ
+[00:12:21] AI (chunk): Pehle aapka
+[00:12:21] AI (chunk):  naam
+[00:12:21] AI (chunk):  jaan
+[00:12:21] AI (chunk):  lun
+[00:12:22] AI (chunk):  taaki
+[00:12:22] AI (chunk):  aapki
+[00:12:22] AI (chunk):  rai
+[00:12:22] AI (chunk):  ko
+[00:12:23] AI (chunk):  sahi
+[00:12:23] AI (chunk):  se
+[00:12:23] AI (chunk):  record
+[00:12:23] AI (chunk):  kar
+[00:12:23] AI (chunk):  sakun?
+[00:12:32] User: gel.
+[00:12:33] AI (chunk): Thak ji.
+[00:12:33] AI (chunk):  Aap
+[00:12:35] User: मे
+[00:12:35] User: रा
+[00:12:35] User: नाम
+[00:12:35] User: है पप्पू
+[00:12:36] AI (chunk): Pappu ji,
+[00:12:36] AI (chunk):  aap
+[00:12:37] AI (chunk):  kis
+[00:12:37] AI (chunk):  district/block
+[00:12:38] AI (chunk):  se
+[00:12:38] AI (chunk):  hain?
+[00:12:38] AI (chunk):  Vahan
+[00:12:38] AI (chunk):  ke liye
+[00:12:38] AI (chunk):  khaas
+[00:12:40] AI (chunk):  policy
+[00:12:40] AI (chunk):  suggestions
+[00:12:40] AI (chunk):  chahiye.
+[00:12:42] AI (chunk): khaas policy
+[00:12:42] AI (chunk):  suggestions
+[00:12:43] AI (chunk):  chahiye.
+[00:12:50] User: मैं
+[00:12:50] User: हूं खगड़िया
+[00:12:51] AI (chunk): Khagaria se.
+[00:12:51] AI (chunk):  Achha,
+[00:12:53] AI (chunk): Khagaria mein
+[00:12:54] AI (chunk):  aapko
+[00:12:54] AI (chunk):  kis
+[00:12:56] AI (chunk): cheez
+[00:12:57] AI (chunk):  ki
+[00:12:57] AI (chunk): mein sabse
+[00:12:58] AI (chunk):  zyada
+[00:12:58] AI (chunk):  dikkat
+[00:13:00] AI (chunk): aati
+[00:13:00] AI (chunk):  hai?
+[00:13:00] AI (chunk):  Koi
+[00:13:01] AI (chunk):  khaas
+[00:13:01] AI (chunk):  samasya
+[00:13:01] AI (chunk):  hai?
+
+Call ended at: 2025-09-04T00:13:11.472168

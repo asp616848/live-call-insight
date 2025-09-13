@@ -1,0 +1,12 @@
+Call started at: 2025-09-04T15:07:28.428362
+Stream SID: 3cc74cb65c490f216ab576f27d421994
+
+[15:07:31] User: Hello.
+[15:07:32] AI (chunk): Haan, boliye.
+[15:07:34] User: Hello.
+[15:07:35] AI (chunk): Haan ji,
+[15:07:35] AI (chunk):  sun
+[15:07:35] AI (chunk):  raha
+[15:07:35] AI (chunk):  hoon.
+
+Call ended at: 2025-09-04T15:07:52.356299

@@ -1,0 +1,24 @@
+Call Transcript — saved 2025-09-04 15:31:39
+-------------------------------------------
+[2025-09-04 15:29:40] User: Ah, yeah
+[2025-09-04 15:29:41] Assistant: Great! Just to confirm, you're a student or staff at Plaksha, right? And you've been to our café at least once?
+[2025-09-04 15:29:46] User: one
+[2025-09-04 15:29:49] User: I am a student of Akshar.
+[2025-09-04 15:29:50] Assistant: Perfect! You're actually one of the select few we've chosen for this exclusive feedback program—your opinions will directly shape our menu and service improvements. Before we start, would you prefer to continue in English or Hindi?
+[2025-09-04 15:30:09] User: I'm comfortable in both the languages.
+[2025-09-04 15:30:11] User: You can take whatever.
+[2025-09-04 15:30:12] Assistant: Alright, we'll continue in English then. Let me ask, have you visited Blue Tokai at Plaksha in the past 30 days?
+[2025-09-04 15:30:16] User: Okay.
+[2025-09-04 15:30:17] Assistant: No worries! If you haven't visited recently, how familiar are you with Blue Tokai at Plaksha? What has kept you from visiting recently?
+[2025-09-04 15:30:34] User: I've been there only one time with my friends, so not much bad experience.
+[2025-09-04 15:30:36] Assistant: Got it. Since you've been there once, what could make you more likely to visit Blue Tokai again? Is there something specific you'd be looking forward to at our café?
+[2025-09-04 15:31:04] User: I found the things very attractive there.
+[2025-09-04 15:31:07] Assistant: No problem at all! It's good to know that you found the ambience and the overall setup attractive. Perhaps next time you can try some of our food items as well. If you don't mind me asking, what kind of coffee or snacks do you usually prefer? This would help us understand your preferences better.
+[2025-09-04 15:31:20] User: Surely I will do that.
+[2025-09-04 15:31:21] Assistant: That sounds great! We look forward to having you back. Your feedback is really valuable, and we hope your next visit will be even better. Thanks for sharing your thoughts with us! Have a wonderful day.
+[2025-09-04 15:31:31] User: Okay.
+[2025-09-04 15:31:31] Assistant: Take care! If you have any more questions
+[2025-09-04 15:31:32] User: Thank you.
+[2025-09-04 15:31:33] Assistant: You're welcome! Have a great day ahead!
+[2025-09-04 15:31:37] User: Thank you.
+[2025-09-04 15:31:38] Assistant: You're welcome! Take care!

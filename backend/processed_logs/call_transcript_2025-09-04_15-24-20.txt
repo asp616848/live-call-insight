@@ -1,0 +1,14 @@
+Call started at: 2025-09-04T15:24:20.356012
+Stream SID: c5928fa969ea2f92cc5b2b26b94e1994
+
+[15:24:22] User: ก็ ก็
+[15:24:23] AI (chunk): Haan, bilkul.
+[15:24:24] User: <noise>
+[15:24:25] AI (chunk): Aap Bihar
+[15:24:25] AI (chunk):  se
+[15:24:25] AI (chunk):  hi bol
+[15:24:25] AI (chunk):  rahe
+[15:24:25] AI (chunk):  hain
+[15:24:25] AI (chunk):  na?
+
+WebSocket disconnected at: 2025-09-04T15:24:45.031922

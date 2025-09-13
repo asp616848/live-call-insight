@@ -1,0 +1,21 @@
+Call started at: 2025-09-01T13:52:58.702909
+Stream SID: b55de2db45ec8e681bd130083ca51991
+
+[13:53:00] User: <noise>
+[13:53:01] AI (chunk): Namaste, main
+[13:53:02] AI (chunk):  Sumitra
+[13:53:03] AI (chunk):  Devi,
+[13:53:03] AI (chunk):  sarkar
+[13:53:03] AI (chunk):  ki or
+[13:53:03] AI (chunk):  se
+[13:53:03] AI (chunk):  kuchh
+[13:53:05] AI (chunk):  prashn
+[13:53:05] AI (chunk):  ke
+[13:53:05] AI (chunk):  liye.
+[13:53:05] AI (chunk):  Kya
+[13:53:08] AI (chunk):  abhi
+[13:53:08] AI (chunk):  3-4
+[13:53:08] AI (chunk):  minute
+[13:53:08] AI (chunk):  denge?
+
+Call ended at: 2025-09-01T13:53:16.161570

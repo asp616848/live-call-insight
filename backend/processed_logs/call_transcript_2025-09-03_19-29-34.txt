@@ -1,0 +1,103 @@
+Call started at: 2025-09-03T19:29:34.566660
+Stream SID: 27603c5200e51d37e5a97118bc631993
+
+[19:29:46] User: हां जी
+[19:29:47] AI (chunk): Aap Bihar
+[19:29:48] AI (chunk):  se hi
+[19:29:48] AI (chunk):  bol
+[19:29:48] AI (chunk):  rahe
+[19:29:48] AI (chunk):  hain
+[19:29:48] AI (chunk):  na?
+[19:29:53] User: हां जी
+[19:29:54] AI (chunk): Aap chahenge
+[19:29:54] AI (chunk):  ki
+[19:29:54] AI (chunk):  aapke
+[19:29:54] AI (chunk):  ilake
+[19:29:57] AI (chunk): ki samasyaon
+[19:29:57] AI (chunk):  ka
+[19:29:57] AI (chunk):  samadhan
+[19:30:00] AI (chunk): ho, sahi?
+[19:30:05] User: ਹਾਂ ਜੀ।
+[19:30:06] AI (chunk): [NAME] ji,
+[19:30:06] AI (chunk):  aap
+[19:30:06] AI (chunk):  un
+[19:30:07] AI (chunk):  kuch
+[19:30:07] AI (chunk):  chune
+[19:30:07] AI (chunk):  hue
+[19:30:07] AI (chunk):  500
+[19:30:07] AI (chunk):  logon
+[19:30:07] AI (chunk):  mein se
+[19:30:08] AI (chunk):  hain
+[19:30:08] AI (chunk):  jinki
+[19:30:09] AI (chunk):  rai
+[19:30:09] AI (chunk):  se
+[19:30:09] AI (chunk):  Bihar
+[19:30:11] AI (chunk):  ki
+[19:30:11] AI (chunk):  nayi
+[19:30:11] AI (chunk):  policy
+[19:30:11] AI (chunk):  banegi.
+[19:30:11] AI (chunk):  Sirf
+[19:30:12] AI (chunk):  2-3
+[19:30:12] AI (chunk):  minute.
+[19:30:12] AI (chunk):  Kya
+[19:30:13] AI (chunk):  main
+[19:30:13] AI (chunk):  aapke
+[19:30:13] AI (chunk):  important
+[19:30:13] AI (chunk):  vichar
+[19:30:14] AI (chunk):  jaan
+[19:30:14] AI (chunk):  sakti
+[19:30:14] AI (chunk):  hun?
+[19:30:22] User: हां जी बताइए
+[19:30:23] AI (chunk): Pehle aapka
+[19:30:23] AI (chunk):  naam
+[19:30:23] AI (chunk):  jaan
+[19:30:23] AI (chunk):  lun
+[19:30:24] AI (chunk):  taaki
+[19:30:24] AI (chunk):  aapki
+[19:30:24] AI (chunk):  rai
+[19:30:24] AI (chunk):  ko sahi
+[19:30:25] AI (chunk):  se
+[19:30:25] AI (chunk):  record
+[19:30:25] AI (chunk):  kar sakun?
+[19:30:30] User: रजत गुप्ता
+[19:30:31] AI (chunk): Dhanyawad, Rajat
+[19:30:32] AI (chunk):  ji.
+[19:30:32] AI (chunk):  Aap
+[19:30:32] AI (chunk):  kis
+[19:30:33] AI (chunk):  district/block
+[19:30:33] AI (chunk):  se
+[19:30:34] AI (chunk):  hain?
+[19:30:34] AI (chunk):  Wahan
+[19:30:34] AI (chunk):  ke liye
+[19:30:34] AI (chunk):  khaas
+[19:30:37] AI (chunk): khaas policy
+[19:30:38] AI (chunk):  suggestions
+[19:30:38] AI (chunk):  chahiye.
+[19:30:43] User: कड़िया में
+[19:30:44] AI (chunk): Theek hai,
+[19:30:44] AI (chunk):  Rajat
+[19:30:44] AI (chunk):  ji.
+[19:30:44] AI (chunk):  Aapke
+[19:30:45] AI (chunk):  ilake
+[19:30:45] AI (chunk):  mein
+[19:30:45] AI (chunk):  jo
+[19:30:45] AI (chunk):  sabse
+[19:30:48] AI (chunk): badi
+[19:30:48] AI (chunk):  samasya
+[19:30:48] AI (chunk):  hai,
+[19:30:48] AI (chunk):  woh
+[19:30:50] AI (chunk):  kya
+[19:30:50] AI (chunk):  hai?
+[19:30:50] AI (chunk):  Aur
+[19:30:53] AI (chunk): sarkar
+[19:30:54] AI (chunk):  ko
+[19:30:54] AI (chunk):  uske
+[19:30:54] AI (chunk):  liye
+[19:30:56] AI (chunk):  kya
+[19:30:56] AI (chunk):  karna
+[19:30:56] AI (chunk):  chahiye,
+[19:30:56] AI (chunk):  thoda
+[19:30:56] AI (chunk):  vistar
+[19:31:02] AI (chunk): se batayenge?
+
+Call ended at: 2025-09-03T19:31:08.875649

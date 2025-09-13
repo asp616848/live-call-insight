@@ -19,8 +19,14 @@ def strip_basic_markdown(text):
         text = re.sub(r'^[#>]+\s*', '', text, flags=re.MULTILINE)  # Remove headers/quotes
         return text.strip()
 
-def parse_log_file(filepath):
-    gemini_model = genai.GenerativeModel("gemini-2.5-flash")
+def parse_log_file(filepath, skip_gemini: bool = False):
+    # Lazily create model client only when needed
+    gemini_model = None
+    if not skip_gemini:
+        try:
+            gemini_model = genai.GenerativeModel("gemini-2.5-flash")
+        except Exception:
+            gemini_model = None
     
     with open(filepath, "r", encoding="utf-8") as f:
         lines = f.readlines()
@@ -28,7 +34,12 @@ def parse_log_file(filepath):
     call_start, call_end, stream_sid = None, None, None
     sentences = []
     current_ai_sentence, current_user_sentence = [], []
-    last_timestamp, latencies = None, []
+    # We'll compute AI response latency as the delta between when the user finished
+    # speaking (last_user_dt) and when the AI starts responding (ai_start_dt).
+    last_user_dt = None
+    last_user_timestamp = None
+    last_ai_timestamp = None
+    latencies = []
     noise_count = 0
 
     for line in lines:
@@ -44,50 +55,94 @@ def parse_log_file(filepath):
             stream_sid = line.replace("Stream SID:", "").strip()
             continue
 
-        match = re.match(r"\[(\d{2}:\d{2}:\d{2})\] (.+?): (.+)", line)
+        match = re.match(r"\[(?P<ts>[\d\-: ]+)\]\s*(.+?):\s*(.+)", line)
         if match:
-            timestamp_str, speaker_type, text = match.groups()
-            # Combine with call_start date to form a full timestamp
-            full_timestamp_str = f"{call_start.split('T')[0]}T{timestamp_str}"
+            ts_raw, speaker_type, text = match.group(1), match.group(2), match.group(3)
+            # ts_raw may be either 'HH:MM:SS' or 'YYYY-MM-DD HH:MM:SS'
+            ts_raw = ts_raw.strip()
+            if re.match(r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}", ts_raw):
+                # full timestamp present (common in transcript_ files)
+                full_timestamp_str = ts_raw.replace(' ', 'T')
+                try:
+                    timestamp_dt = datetime.fromisoformat(full_timestamp_str)
+                except Exception:
+                    # fallback: parse with datetime.strptime
+                    timestamp_dt = datetime.strptime(ts_raw, "%Y-%m-%d %H:%M:%S")
+            else:
+                # only time provided; combine with call_start date if available
+                if call_start:
+                    date_part = call_start.split('T')[0]
+                else:
+                    # fallback to today
+                    date_part = datetime.now().date().isoformat()
+                full_timestamp_str = f"{date_part}T{ts_raw}"
+                try:
+                    timestamp_dt = datetime.fromisoformat(full_timestamp_str)
+                except Exception:
+                    timestamp_dt = datetime.strptime(ts_raw, "%H:%M:%S")
 
-            timestamp = datetime.strptime(timestamp_str, "%H:%M:%S")
+            # Normalize speaker labels: various logs may use 'Assistant', 'Assistant (chunk)', 'AI (chunk)', etc.
+            s_low = speaker_type.lower()
+            is_ai = any(k in s_low for k in ("ai", "assistant", "ai (chunk)", "assistant (chunk)"))
+            is_user = any(k in s_low for k in ("user", "villager", "caller"))
 
-            if "AI (chunk)" in speaker_type:
+            if is_ai:
                 if current_user_sentence:
                     # Apply grammar correction to every user message before appending
                     user_text_raw = "".join(current_user_sentence)
-                    user_text_response = gemini_model.generate_content(f"Fix grammar and punctuations in the hindi text and then convert it to latin hindi, and then return just the text without any formatting or explanation: {user_text_raw}")
-                    cleaned_user_text = strip_basic_markdown(user_text_response.text)
+                    if gemini_model and not skip_gemini:
+                        user_text_response = gemini_model.generate_content(f"Fix grammar and punctuations in the hindi text and then convert it to latin hindi, and then return just the text without any formatting or explanation: {user_text_raw}")
+                        cleaned_user_text = strip_basic_markdown(user_text_response.text)
+                    else:
+                        # fallback: basic cleanup only
+                        cleaned_user_text = strip_basic_markdown(user_text_raw)
                     print(cleaned_user_text)
+                    # record the user end timestamp (string) used in the JSON
                     sentences.append({"speaker": "user", "text": cleaned_user_text, "timestamp": last_user_timestamp})
+                    # also set the last_user_dt so we can compute AI latency when AI starts
+                    try:
+                        last_user_dt = datetime.fromisoformat(last_user_timestamp)
+                    except Exception:
+                        last_user_dt = None
                     current_user_sentence = []
 
-                if last_timestamp and (timestamp - last_timestamp).seconds > 2:
+                # If there's a gap >2s and we have an ongoing AI sentence, close it
+                if last_ai_timestamp and (timestamp_dt - datetime.fromisoformat(last_ai_timestamp)).seconds > 2:
                     if current_ai_sentence:
                         sentences.append({"speaker": "ai", "text": " ".join(current_ai_sentence), "timestamp": last_ai_timestamp})
                         current_ai_sentence = []
 
+
+                # If starting a new AI sentence, capture its start timestamp and compute latency
                 if not current_ai_sentence:
-                    last_ai_timestamp = full_timestamp_str
+                    last_ai_timestamp = timestamp_dt.isoformat()
+                    ai_start_dt = timestamp_dt
+                    if last_user_dt:
+                        try:
+                            delta = (ai_start_dt - last_user_dt).total_seconds()
+                            # only record non-negative latencies
+                            if delta >= 0:
+                                latencies.append(delta)
+                        except Exception:
+                            pass
 
                 current_ai_sentence.append(text.strip())
-                if last_timestamp:
-                    latencies.append((timestamp - last_timestamp).total_seconds())
-                last_timestamp = timestamp
-
-            elif "User" in speaker_type:
+            elif is_user:
                 if current_ai_sentence:
                     sentences.append({"speaker": "ai", "text": " ".join(current_ai_sentence), "timestamp": last_ai_timestamp})
                     current_ai_sentence = []
-
                 user_text = text.strip()
                 if "<noise>" in user_text.lower():
                     noise_count += 1
 
-                if not current_user_sentence:
-                    last_user_timestamp = full_timestamp_str
+                # Always update last_user_timestamp to the latest seen user line
+                last_user_timestamp = timestamp_dt.isoformat()
 
-                current_user_sentence.append(user_text)
+                if not current_user_sentence:
+                    # start a new grouped user sentence
+                    current_user_sentence = [user_text]
+                else:
+                    current_user_sentence.append(user_text)
     
     
     
@@ -97,15 +152,24 @@ def parse_log_file(filepath):
 
     if current_user_sentence:
         user_text_raw = "".join(current_user_sentence)
-        user_text_response = gemini_model.generate_content(f"fix grammar and punctuations in the hindi text and return just the text without any formatting or explanation: {user_text_raw}")
-        cleaned_user_text = strip_basic_markdown(user_text_response.text)
+        if gemini_model and not skip_gemini:
+            user_text_response = gemini_model.generate_content(f"fix grammar and punctuations in the hindi text and return just the text without any formatting or explanation: {user_text_raw}")
+            cleaned_user_text = strip_basic_markdown(user_text_response.text)
+        else:
+            cleaned_user_text = strip_basic_markdown(user_text_raw)
         print(cleaned_user_text)
+        # finalize the last user sentence and ensure last_user_dt is set
+        try:
+            last_user_dt = datetime.fromisoformat(last_user_timestamp)
+        except Exception:
+            last_user_dt = None
         sentences.append({"speaker": "user", "text": cleaned_user_text, "timestamp": last_user_timestamp})
 
     # Metrics
     start_dt = datetime.fromisoformat(call_start) if call_start else None
     end_dt = datetime.fromisoformat(call_end) if call_end else None
     duration = (end_dt - start_dt).total_seconds() if start_dt and end_dt else None
+    # Average AI response latency in seconds (from user end -> AI start)
     avg_latency = round(mean(latencies), 2) if latencies else None
 
     conversation_text = "\n".join(f"{s['speaker']}: {s['text']}" for s in sentences)
@@ -140,17 +204,20 @@ def parse_log_file(filepath):
     """
 
     try:
-        response = gemini_model.generate_content(prompt)
-        # print(response.text)
+        if gemini_model and not skip_gemini:
+            response = gemini_model.generate_content(prompt)
+            # print(response.text)
 
-        # Extract JSON from inside the ```json ... ``` block
-        match = re.search(r"```json\s*(\{.*?\})\s*```", response.text, re.DOTALL)
-        if match:
-            json_str = match.group(1)
-            gemini_analysis = json.loads(json_str)
+            # Extract JSON from inside the ```json ... ``` block
+            match = re.search(r"```json\s*(\{.*?\})\s*```", response.text, re.DOTALL)
+            if match:
+                json_str = match.group(1)
+                gemini_analysis = json.loads(json_str)
+            else:
+                # fallback if model didn’t wrap in ```json
+                gemini_analysis = json.loads(response.text.strip())
         else:
-            # fallback if model didn’t wrap in ```json
-            gemini_analysis = json.loads(response.text.strip())
+            gemini_analysis = {}
     except Exception as e:
         gemini_analysis = {"error": str(e)}
 
@@ -184,12 +251,23 @@ def get_last_n_conversations(n=10):
 
     recent_logs = []
     for file_path in files:
-        with open(file_path, "r", encoding="utf-8") as f:
-            data = json.load(f)
+        try:
+            with open(file_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+
+            convo = data.get("conversation") or []
+            # Only include conversations with more than 2 turns
+            if len(convo) <= 2:
+                # skip tiny/empty conversations
+                continue
+
             recent_logs.append({
                 "summary": data.get("summary"),
-                "conversation": data.get("conversation")[-6:]  # optional: last 6 turns
+                "conversation": convo[-6:]  # optional: last 6 turns
             })
+        except Exception:
+            # If a file can't be read or parsed, skip it
+            continue
     return recent_logs
 
 
@@ -206,7 +284,7 @@ def parse_all_logs():
             if fname.endswith(".txt"):
                 json_fname = fname.replace(".txt", ".json")
             else:
-                json_fname = fname + ".json"
+                json_fname = f"{fname}.json"
             
             json_path = os.path.join(output_folder, json_fname)
             if not os.path.exists(json_path):
@@ -226,6 +304,12 @@ def parse_all_logs():
                         print(f"Skipping save for {fname} due to error in analysis")
                         continue
 
+                    # Ensure parsed conversation is sufficiently long (>2 turns)
+                    convo = parsed_json.get("conversation") or []
+                    if len(convo) <= 2:
+                        print(f"Skipping save for {fname} because conversation is too short ({len(convo)} turns)")
+                        continue
+
                     with open(json_path, "w", encoding="utf-8") as f:
                         json.dump(parsed_json, f, indent=2, ensure_ascii=False)
                     print(f"Successfully parsed {fname} -> {json_fname}")
@@ -243,9 +327,15 @@ def parse_all_logs():
                         summary = existing.get("summary")
                         if isinstance(summary, dict) and summary.get("error"):
                             has_error = True
-                    if has_error:
-                        os.remove(json_path)
-                        print(f"Removed existing error JSON for {fname}: {os.path.basename(json_path)}")
+                    # Also remove already-saved tiny convos since they shouldn't exist
+                    convo = existing.get("conversation") or []
+                    if has_error or len(convo) <= 2:
+                        try:
+                            os.remove(json_path)
+                            reason = ("error in analysis" if has_error else f"too short ({len(convo)} turns)")
+                            print(f"Removed existing JSON for {fname} due to {reason}: {os.path.basename(json_path)}")
+                        except Exception as e:
+                            print(f"Failed to remove {json_path}: {e}")
                     else:
                         print(f"Skipping {fname}, JSON already exists.")
                 except Exception as e:

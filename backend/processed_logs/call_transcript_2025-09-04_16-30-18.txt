@@ -1,0 +1,33 @@
+Call started at: 2025-09-04T16:30:18.217495
+Stream SID: 12baa0579a1b339f43c21ac21fdf1994
+
+[16:30:30] AI (chunk): (No response
+[16:30:31] AI (chunk):  needed
+[16:30:31] AI (chunk):  as
+[16:30:31] AI (chunk):  the
+[16:30:31] AI (chunk):  voicemail
+[16:30:31] AI (chunk):  is
+[16:30:31] AI (chunk):  playing.)
+[16:30:38] AI (chunk): (No response
+[16:30:38] AI (chunk):  needed
+[16:30:38] AI (chunk):  as
+[16:30:38] AI (chunk):  the user
+[16:30:39] AI (chunk):  has
+[16:30:39] AI (chunk):  ended
+[16:30:39] AI (chunk):  the conversation.)
+[16:30:45] AI (chunk): (No response
+[16:30:46] AI (chunk):  needed
+[16:30:46] AI (chunk):  as
+[16:30:46] AI (chunk):  the user
+[16:30:46] AI (chunk):  has
+[16:30:46] AI (chunk):  ended
+[16:30:46] AI (chunk):  the conversation.)
+[16:30:53] AI (chunk): (No response
+[16:30:53] AI (chunk):  needed
+[16:30:53] AI (chunk):  as
+[16:30:54] AI (chunk):  the user
+[16:30:54] AI (chunk):  has
+[16:30:54] AI (chunk):  ended
+[16:30:54] AI (chunk):  the conversation.)
+
+Call ended at: 2025-09-04T16:32:16.351345

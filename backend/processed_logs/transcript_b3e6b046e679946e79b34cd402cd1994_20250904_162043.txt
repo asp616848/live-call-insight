@@ -1,0 +1,15 @@
+Call Transcript — saved 2025-09-04 16:20:43
+-------------------------------------------
+[2025-09-04 16:19:57] User: Okay.
+[2025-09-04 16:19:59] Assistant: Thank you for taking the time to chat with us! Just to confirm, you're a student or staff at Plaksha, correct? And you've been to our Blue Tokai Café at least once?
+[2025-09-04 16:20:10] User: Yes
+[2025-09-04 16:20:12] Assistant: Great! You're actually one of the select few we've chosen for this exclusive feedback program—your opinions will directly shape our menu and service improvements. Just so you know, we can continue in English or Hindi—whatever you prefer.
+[2025-09-04 16:20:19] User: यह पास में जो आ रहा है?
+[2025-09-04 16:20:20] Assistant: Aap sahi keh rahe hain, connection thoda weak lag raha hai. Kya aap main aapko baad mein phir se call karoon? Waise, main aapke feedback ko
+[2025-09-04 16:20:23] User: وہاں پڑھائی ہے.
+[2025-09-04 16:20:24] Assistant: Samajh gaya, koi baat nahi. Chaliye, main thoda aasan aur saaf bolne ki koshish karta hoon. Aap Blue Tokai Café Plaksha mein pichle 30 dinon mein aaye the?
+[2025-09-04 16:20:32] User: You know what?
+[2025-09-04 16:20:33] Assistant: Koi baat nahi, shayad aapne ab tak Blue Tokai Café ko visit nahi kiya hai. Aapko Blue Tokai ke baare mein kya pata hai ya aapka kya perception hai? Kya kisi friend ya colleague ne aapko is café ke baare mein bataya hai?
+[2025-09-04 16:20:38] User: मेरा फोन कहाँ है?
+[2025-09-04 16:20:40] User: ठीक छ।
+[2025-09-04 16:20:43] Assistant: Aapka response

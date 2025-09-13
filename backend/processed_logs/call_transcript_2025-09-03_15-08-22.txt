@@ -1,0 +1,53 @@
+Call started at: 2025-09-03T15:08:22.868780
+Stream SID: 20735eaa19756d310ea4775fa5611993
+
+[15:08:39] User: อื
+[15:08:40] AI (chunk): Aap Bihar
+[15:08:40] AI (chunk):  se
+[15:08:40] AI (chunk):  hi
+[15:08:40] AI (chunk):  bol
+[15:08:40] AI (chunk):  rahe
+[15:08:40] AI (chunk):  hain
+[15:08:42] AI (chunk): Aap chahenge
+[15:08:44] AI (chunk): ki aapke
+[15:08:44] AI (chunk):  ilake
+[15:08:44] AI (chunk):  ki samasyaon
+[15:08:44] AI (chunk):  ka samadhan
+[15:08:44] AI (chunk):  ho,
+[15:08:45] AI (chunk):  sahi
+[15:08:47] AI (chunk): sahi?
+[15:08:51] User: హు
+[15:08:52] AI (chunk): Aap un
+[15:08:52] AI (chunk):  kuch
+[15:08:52] AI (chunk):  chune
+[15:08:52] AI (chunk):  hue
+[15:08:52] AI (chunk):  500
+[15:08:53] AI (chunk):  logon
+[15:08:53] AI (chunk):  mein
+[15:08:53] AI (chunk):  se
+[15:08:53] AI (chunk):  ek
+[15:08:53] AI (chunk):  hain
+[15:08:53] AI (chunk):  jinki
+[15:08:54] AI (chunk):  rai
+[15:08:54] AI (chunk):  se
+[15:08:54] AI (chunk):  Bihar
+[15:08:54] AI (chunk):  ki nai
+[15:08:54] AI (chunk):  policy
+[15:08:54] AI (chunk):  banegi.
+[15:08:55] AI (chunk):  Sirf
+[15:08:55] AI (chunk):  2-3
+[15:08:56] AI (chunk):  minute.
+[15:08:56] AI (chunk):  Kya
+[15:08:56] AI (chunk):  main
+[15:08:56] AI (chunk):  aapke
+[15:08:56] AI (chunk):  important
+[15:08:56] AI (chunk):  vichar
+[15:08:56] AI (chunk):  jaan
+[15:08:56] AI (chunk):  sakti
+[15:08:56] AI (chunk):  hun?
+[15:09:09] User: .
+[15:09:10] AI (chunk): Yeh mauka
+[15:09:10] AI (chunk):  sirf
+[15:09:10] AI (chunk):  aaj-kal
+
+Call ended at: 2025-09-03T15:09:11.836861

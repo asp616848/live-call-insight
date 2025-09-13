@@ -1,0 +1,560 @@
+Call started at: 2025-09-01T13:36:52.629399
+Stream SID: 3a2bb06f976dc3b9215f72b65abe1991
+
+[13:36:54] User: Hello.
+[13:36:55] AI (chunk): Namaste, main
+[13:36:56] AI (chunk):  Sumitra
+[13:36:57] AI (chunk):  Devi,
+[13:36:57] AI (chunk):  sarkar
+[13:36:57] AI (chunk):  ki
+[13:36:57] AI (chunk):  or
+[13:36:57] AI (chunk):  se
+[13:36:59] AI (chunk):  kuch
+[13:36:59] AI (chunk):  prashn
+[13:36:59] AI (chunk):  ke
+[13:36:59] AI (chunk):  liye.
+[13:36:59] AI (chunk):  Kya
+[13:37:01] AI (chunk):  abhi
+[13:37:01] AI (chunk):  teen-chaar
+[13:37:01] AI (chunk):  minute
+[13:37:01] AI (chunk):  denge?
+[13:37:07] User: हेलो जी
+[13:37:08] AI (chunk): Ji, boliye.
+[13:37:13] User: आप
+[13:37:13] User: दे सकते हैं
+[13:37:13] AI (chunk): Theek hai
+[13:37:14] AI (chunk):  aap
+[13:37:14] AI (chunk):  kis
+[13:37:14] AI (chunk):  bhasha
+[13:37:15] AI (chunk):  mein
+[13:37:15] AI (chunk):  baat
+[13:37:15] AI (chunk):  karna
+[13:37:15] AI (chunk):  pasand
+[13:37:15] AI (chunk):  karenge?
+[13:37:21] User: हिंदी
+[13:37:21] AI (chunk): Hindi mein
+[13:37:22] AI (chunk):  baat
+[13:37:22] AI (chunk):  karte
+[13:37:22] AI (chunk):  hain
+[13:37:22] AI (chunk):  aap
+[13:37:23] AI (chunk):  Bihar
+[13:37:23] AI (chunk):  ke
+[13:37:23] AI (chunk):  kis
+[13:37:23] AI (chunk):  district
+[13:37:26] AI (chunk):  se
+[13:37:26] AI (chunk):  bol
+[13:37:26] AI (chunk):  rahe
+[13:37:26] AI (chunk):  hain?
+[13:37:29] User: भागलपुर
+[13:37:30] AI (chunk): Bhagalpur se
+[13:37:30] AI (chunk):  bol
+[13:37:30] AI (chunk):  rahe
+[13:37:30] AI (chunk):  hain
+[13:37:30] AI (chunk):  gaon
+[13:37:31] AI (chunk):  ya
+[13:37:31] AI (chunk):  shehar?
+[13:37:37] User: जी
+[13:37:37] User: गांव
+[13:37:37] User: से
+[13:37:38] AI (chunk): Gaanv se
+[13:37:38] AI (chunk):  hain
+[13:37:39] AI (chunk):  theek
+[13:37:39] AI (chunk):  hai
+[13:37:39] AI (chunk):  aapka
+[13:37:39] AI (chunk):  kaam
+[13:37:40] AI (chunk):  ya pesha
+[13:37:41] AI (chunk):  kya
+[13:37:41] AI (chunk):  hai?
+[13:37:52] User: आनंद कुमार
+[13:37:52] AI (chunk): Ji, aapka
+[13:37:53] AI (chunk):  pesha
+[13:37:53] AI (chunk):  kya
+[13:37:53] AI (chunk):  hai?
+[13:37:53] AI (chunk):  Kya
+[13:37:53] AI (chunk):  kaam
+[13:37:53] AI (chunk):  karte
+[13:37:53] AI (chunk):  hain
+[13:37:53] AI (chunk):  aap?
+[13:37:59] User: ඇති කර ස්කේ.
+[13:37:59] AI (chunk): Theek hai
+[13:38:00] AI (chunk):  aajkal
+[13:38:12] User: बोलिए
+[13:38:12] AI (chunk): Ji, aapka
+[13:38:13] AI (chunk):  pesha
+[13:38:13] AI (chunk):  kya
+[13:38:13] AI (chunk):  hai?
+[13:38:13] AI (chunk):  Kya
+[13:38:13] AI (chunk):  kaam
+[13:38:13] AI (chunk):  karte
+[13:38:14] AI (chunk):  hain
+[13:38:14] AI (chunk):  aap?
+[13:38:18] User: खे
+[13:38:18] User: ती
+[13:38:18] User: खे
+[13:38:18] User: ती
+[13:38:19] User: गृ
+[13:38:19] User: हस्थी
+[13:38:19] User: कि
+[13:38:19] User: सान का काम करते हैं
+[13:38:20] AI (chunk): Kisaan hain
+[13:38:20] AI (chunk):  aap
+[13:38:20] AI (chunk):  theek
+[13:38:21] AI (chunk):  hai
+[13:38:21] AI (chunk):  aapke
+[13:38:21] AI (chunk):  ilaake
+[13:38:23] User: जी
+[13:38:24] AI (chunk): Aajkal aapke
+[13:38:24] AI (chunk):  ilaake
+[13:38:25] AI (chunk):  mein
+[13:38:25] AI (chunk):  sabse
+[13:38:44] User: बोलिए
+[13:38:45] AI (chunk): Ji aapke
+[13:38:45] AI (chunk):  ilaake
+[13:38:45] AI (chunk):  mein
+[13:38:46] AI (chunk):  aajkal
+[13:38:46] AI (chunk):  sabse
+[13:38:46] AI (chunk):  bade
+[13:38:46] AI (chunk):  do-teen
+[13:38:46] AI (chunk):  mudde
+[13:38:47] AI (chunk):  kaun
+[13:38:47] AI (chunk):  se
+[13:38:47] AI (chunk):  hain?
+[13:38:55] User: अ
+[13:38:55] User: भी
+[13:38:56] User: तो
+[13:38:56] User: मु
+[13:38:56] User: द्दा
+[13:38:56] User: यह
+[13:38:56] User: ी
+[13:38:57] User: है
+[13:38:57] User: कि
+[13:38:59] User: ग
+[13:38:59] User: री
+[13:38:59] User: बी
+[13:38:59] User: है
+[13:39:01] AI (chunk): Garibi hai
+[13:39:01] AI (chunk):  aapka
+[13:39:01] AI (chunk):  kehna
+[13:39:02] AI (chunk):  hai
+[13:39:02] AI (chunk):  iska
+[13:39:02] AI (chunk):  sabse
+[13:39:02] AI (chunk):  zyada
+[13:39:03] AI (chunk):  asar
+[13:39:03] AI (chunk):  aapke
+[13:39:03] AI (chunk):  gaon
+[13:39:03] AI (chunk):  mein
+[13:39:03] AI (chunk):  kahan
+[13:39:03] AI (chunk):  pad
+[13:39:03] AI (chunk):  raha
+[13:39:03] AI (chunk):  hai?
+[13:39:12] User: श
+[13:39:12] User: ंकरपुर दिया रहा
+[13:39:13] AI (chunk): Shankarpur Diyara
+[13:39:13] AI (chunk):  mein
+[13:39:13] AI (chunk):  pad
+[13:39:13] AI (chunk):  raha
+[13:39:14] AI (chunk):  hai
+[13:39:14] AI (chunk):  theek
+[13:39:14] AI (chunk):  hai
+[13:39:14] AI (chunk):  is
+[13:39:15] AI (chunk):  garibi
+[13:39:15] AI (chunk):  ki vajah
+[13:39:15] AI (chunk):  se
+[13:39:15] AI (chunk):  ghar
+[13:39:15] AI (chunk):  par
+[13:39:19] User: जी
+[13:39:20] AI (chunk): Is garibi
+[13:39:20] AI (chunk):  ka
+[13:39:20] AI (chunk):  sabse
+[13:39:20] AI (chunk):  mushkil
+[13:39:21] AI (chunk):  hissa
+[13:39:21] AI (chunk):  aap
+[13:39:21] AI (chunk):  kya
+[13:39:21] AI (chunk):  samajhte
+[13:39:21] AI (chunk):  hain?
+[13:39:21] AI (chunk):  Koi
+[13:39:23] AI (chunk):  misaal
+[13:39:23] AI (chunk):  de sakte
+[13:39:23] AI (chunk):  hain?
+[13:39:29] User: जी
+[13:39:30] User: इस
+[13:39:30] User: में
+[13:39:30] User: है
+[13:39:30] User: कि
+[13:39:30] User: बि
+[13:39:30] User: हार
+[13:39:31] User: में
+[13:39:31] User: कोई
+[13:39:31] User: कं
+[13:39:31] User: पनी
+[13:39:31] User: ना
+[13:39:32] User: है
+[13:39:32] User: आ
+[13:39:32] User: द
+[13:39:33] User: मी
+[13:39:33] User: को
+[13:39:33] User: रोज
+[13:39:33] User: गार
+[13:39:33] User: नहीं
+[13:39:34] User: है
+[13:39:35] User: आ
+[13:39:35] User: दमी
+[13:39:36] User: क
+[13:39:36] User: मा
+[13:39:36] User: नहीं
+[13:39:36] User: सक
+[13:39:36] User: ता है
+[13:39:37] User: इस
+[13:39:37] User: ी
+[13:39:37] User: लिए
+[13:39:37] User: ग
+[13:39:37] User: री
+[13:39:37] User: बी है
+[13:39:38] AI (chunk): Yahan Bihar
+[13:39:38] AI (chunk):  mein
+[13:39:38] AI (chunk):  companies
+[13:39:39] AI (chunk):  nahi
+[13:39:39] AI (chunk):  hain
+[13:39:39] AI (chunk):  aur
+[13:39:39] AI (chunk):  rozgaar
+[13:39:41] AI (chunk):  ki
+[13:39:41] AI (chunk):  kami
+[13:39:41] AI (chunk):  ki
+[13:39:41] AI (chunk):  vajah
+[13:39:41] AI (chunk):  se
+[13:39:41] AI (chunk):  garibi
+[13:39:41] AI (chunk):  hai
+[13:39:41] AI (chunk):  aap
+[13:39:44] User: जी
+[13:39:45] AI (chunk): Is samasya
+[13:39:45] AI (chunk):  ko
+[13:39:47] User: जी
+[13:39:48] AI (chunk): Is samasya
+[13:39:48] AI (chunk):  ko
+[13:39:48] AI (chunk):  kab
+[13:39:48] AI (chunk):  se
+[13:39:48] AI (chunk):  mehsoos
+[13:39:49] AI (chunk):  kar
+[13:39:49] AI (chunk):  rahe
+[13:39:49] AI (chunk):  hain
+[13:39:49] AI (chunk):  aap?
+[13:39:49] AI (chunk):  Pichhle
+[13:39:50] AI (chunk):  tees
+[13:39:50] AI (chunk):  dinon
+[13:39:50] AI (chunk):  mein
+[13:39:50] AI (chunk):  kitni
+[13:39:50] AI (chunk):  baar
+[13:39:50] AI (chunk):  hui
+[13:39:50] AI (chunk):  yeh dikkat?
+[13:40:00] User: ये
+[13:40:00] User: दि
+[13:40:00] User: क्कत
+[13:40:00] User: तो
+[13:40:00] User: हो
+[13:40:01] User: ही
+[13:40:01] User: जाता है करीब-करीब।
+[13:40:01] AI (chunk): Yeh dikkat
+[13:40:02] AI (chunk):  hamesha
+[13:40:02] AI (chunk):  se
+[13:40:02] AI (chunk):  rehti
+[13:40:02] AI (chunk):  hai
+[13:40:03] AI (chunk):  theek
+[13:40:03] AI (chunk):  hai
+[13:40:03] AI (chunk):  iska
+[13:40:04] AI (chunk):  sabse
+[13:40:04] AI (chunk):  zyada
+[13:40:04] AI (chunk):  asar
+[13:40:04] AI (chunk):  aapke
+[13:40:04] AI (chunk):  parivaar
+[13:40:04] AI (chunk):  mein
+[13:40:04] AI (chunk):  kin
+[13:40:04] AI (chunk):  par
+[13:40:04] AI (chunk):  padta
+[13:40:04] AI (chunk):  hai?
+[13:40:15] User: सर
+[13:40:15] User: तो
+[13:40:16] User: हम
+[13:40:16] User: ही
+[13:40:16] User: को
+[13:40:16] User: पढ़
+[13:40:16] User: ता है
+[13:40:16] User: हम
+[13:40:17] User: ही
+[13:40:17] User: में
+[13:40:17] User: टे
+[13:40:17] User: ने
+[13:40:17] User: ंस
+[13:40:17] User: करते हैं
+[13:40:18] AI (chunk): Aapko iska
+[13:40:18] AI (chunk):  asar
+[13:40:18] AI (chunk):  sabse
+[13:40:18] AI (chunk):  zyada
+[13:40:19] AI (chunk):  padta
+[13:40:19] AI (chunk):  hai
+[13:40:19] AI (chunk):  aur
+[13:40:19] AI (chunk):  aap
+[13:40:19] AI (chunk):  hi ghar
+[13:40:20] AI (chunk):  ka
+[13:40:20] AI (chunk):  kharcha
+[13:40:20] AI (chunk):  sambhaalte
+[13:40:20] AI (chunk):  hain
+[13:40:20] AI (chunk):  theek
+[13:40:38] User: बोलिए
+[13:40:39] AI (chunk): Ji main
+[13:40:39] AI (chunk):  samajh
+[13:40:39] AI (chunk):  rahi
+[13:40:39] AI (chunk):  hoon
+[13:40:40] AI (chunk):  is
+[13:40:40] AI (chunk):  garibi
+[13:40:40] AI (chunk):  ki
+[13:40:40] AI (chunk):  vajah
+[13:40:40] AI (chunk):  se
+[13:40:41] AI (chunk):  aapko
+[13:40:41] AI (chunk):  aur
+[13:40:41] AI (chunk):  kya
+[13:40:41] AI (chunk):  dikkat
+[13:40:41] AI (chunk):  aati
+[13:40:41] AI (chunk):  hai?
+[13:40:48] User: और
+[13:40:49] User: तो
+[13:40:49] User: कोई
+[13:40:49] User: नहीं
+[13:40:49] User: व
+[13:40:49] User: ही
+[13:40:49] User: थो
+[13:40:50] User: ड़ा
+[13:40:51] User: पै
+[13:40:51] User: से
+[13:40:51] User: का
+[13:40:51] User: दि
+[13:40:52] User: क्कत
+[13:40:52] User: आ
+[13:40:52] User: ता है
+[13:40:52] User: तो
+[13:40:53] User: फिर
+[13:40:53] User: कि
+[13:40:53] User: सी
+[13:40:53] User: तरह
+[13:40:53] User: से
+[13:40:54] User: मै
+[13:40:54] User: नेज
+[13:40:54] User: हो
+[13:40:54] User: जाता है
+[13:40:55] User: खे
+[13:40:55] User: ती
+[13:40:55] User: गृ
+[13:40:55] User: हस्ती
+[13:40:58] User: रूप
+[13:40:58] User: ज
+[13:40:58] User: ता है
+[13:40:59] User: अ
+[13:40:59] User: ना
+[13:40:59] User: ज
+[13:40:59] User: तो
+[13:41:00] User: में
+[13:41:00] User: टे
+[13:41:00] User: नेंस
+[13:41:00] User: हो
+[13:41:00] User: जाता है
+[13:41:01] User: उसके लिए
+[13:41:01] AI (chunk): Paise ki
+[13:41:01] AI (chunk):  dikkat
+[13:41:02] AI (chunk):  aati
+[13:41:02] AI (chunk):  hai
+[13:41:02] AI (chunk):  par
+[13:41:02] AI (chunk):  kheti
+[13:41:02] AI (chunk):  ki vajah
+[13:41:02] AI (chunk):  se
+[13:41:02] AI (chunk):  thoda
+[13:41:02] AI (chunk):  bahut
+[13:41:03] AI (chunk):  manage
+[13:41:03] AI (chunk):  ho
+[13:41:03] AI (chunk):  jaata
+[13:41:03] AI (chunk):  hai
+[13:41:03] AI (chunk):  aap
+[13:41:03] AI (chunk):  kisan
+[13:41:05] User: Yeah.
+[13:41:06] AI (chunk): manage ho
+[13:41:06] AI (chunk):  jaata
+[13:41:06] AI (chunk):  hai
+[13:41:06] AI (chunk):  theek
+[13:41:07] AI (chunk):  hai
+[13:41:07] AI (chunk):  is
+[13:41:07] AI (chunk):  samasya
+[13:41:08] AI (chunk):  ko
+[13:41:08] AI (chunk):  dur
+[13:41:08] AI (chunk):  karne
+[13:41:08] AI (chunk):  ke liye
+[13:41:08] AI (chunk):  aapke
+[13:41:08] AI (chunk):  gaon
+[13:41:08] AI (chunk):  mein
+[13:41:08] AI (chunk):  kya
+[13:41:09] AI (chunk):  kadam
+[13:41:09] AI (chunk):  uthaye
+[13:41:09] AI (chunk):  gaye
+[13:41:09] AI (chunk):  ya
+[13:41:09] AI (chunk):  aapne
+[13:41:09] AI (chunk):  khud
+[13:41:09] AI (chunk):  kya
+[13:41:09] AI (chunk):  koshish
+[13:41:09] AI (chunk):  ki?
+[13:41:22] User: या
+[13:41:22] User: को
+[13:41:22] User: शिश
+[13:41:23] User: करे
+[13:41:23] User: ंगे
+[13:41:23] User: व
+[13:41:23] User: ही
+[13:41:23] User: काम
+[13:41:23] User: करने
+[13:41:24] User: का
+[13:41:25] User: प्र
+[13:41:25] User: या
+[13:41:25] User: स
+[13:41:25] AI (chunk): Aap kaam
+[13:41:26] AI (chunk):  khojne
+[13:41:26] AI (chunk):  ki
+[13:41:26] AI (chunk):  koshish
+[13:41:26] AI (chunk):  karte
+[13:41:26] AI (chunk):  hain
+[13:41:26] AI (chunk):  theek
+[13:41:27] AI (chunk):  hai
+[13:41:27] AI (chunk):  sarkaar
+[13:41:27] AI (chunk):  ki taraf
+[13:41:27] AI (chunk):  se
+[13:41:27] AI (chunk):  koi
+[13:41:27] AI (chunk):  madad
+[13:41:28] AI (chunk):  mili
+[13:41:28] AI (chunk):  aapko?
+[13:41:30] User: जी
+[13:41:30] AI (chunk): emotion_content
+calmness
+[13:41:31] AI (chunk): Sarkari yojanaon
+[13:41:31] AI (chunk):  ka
+[13:41:31] AI (chunk):  koi
+[13:41:31] AI (chunk):  sahayta
+[13:41:31] AI (chunk):  aapko
+[13:41:32] AI (chunk):  milti
+[13:41:32] AI (chunk):  hai?
+[13:41:32] AI (chunk):  Jaise
+[13:41:32] AI (chunk):  ration
+[13:41:33] AI (chunk):  ya
+[13:41:33] AI (chunk):  kisi
+[13:41:33] AI (chunk):  aur
+[13:41:33] AI (chunk):  yojana
+[13:41:33] AI (chunk):  ka labh?
+[13:41:41] User: जी
+[13:41:41] User: रा
+[13:41:41] User: शन
+[13:41:41] User: तो
+[13:41:42] User: मिल
+[13:41:42] User: ता है
+[13:41:42] AI (chunk): Ration milta
+[13:41:43] AI (chunk):  hai
+[13:41:43] AI (chunk):  aapko
+[13:41:43] AI (chunk):  usmein
+[13:41:43] AI (chunk):  koi
+[13:41:43] AI (chunk):  dikkat
+[13:41:43] AI (chunk):  toh
+[13:41:43] AI (chunk):  nahi
+[13:41:44] AI (chunk):  aati?
+[13:41:51] User: जी
+[13:41:52] AI (chunk): Koi dikkat
+[13:41:52] AI (chunk):  toh nahi
+[13:41:52] AI (chunk):  hai ration
+[13:41:52] AI (chunk):  mein?
+[13:41:53] AI (chunk):  Sahi
+[13:41:53] AI (chunk):  se milta
+[13:41:53] AI (chunk):  hai?
+[13:41:56] User: नहीं नहीं सर
+[13:41:58] User: हां
+[13:41:58] User: सही से मिलता है।
+[13:41:59] AI (chunk): Theek hai
+[13:41:59] AI (chunk):  agar
+[13:42:00] AI (chunk):  aap
+[13:42:00] AI (chunk):  kisi
+[13:42:00] AI (chunk):  nirdharak
+[13:42:00] AI (chunk):  ko
+[13:42:00] AI (chunk):  koi
+[13:42:00] AI (chunk):  sandesh
+[13:42:00] AI (chunk):  dena
+[13:42:01] AI (chunk):  chahein
+[13:42:02] AI (chunk):  toh
+[13:42:02] AI (chunk):  woh
+[13:42:02] AI (chunk):  kya
+[13:42:02] AI (chunk):  hoga?
+[13:42:11] User: निर्
+[13:42:11] User: धार
+[13:42:11] User: क
+[13:42:13] User: नहीं समझ पाए
+[13:42:14] AI (chunk): Matlab, agar
+[13:42:14] AI (chunk):  aap
+[13:42:16] AI (chunk):  sarkaar
+[13:42:16] AI (chunk):  ke kisi
+[13:42:16] AI (chunk):  aadhikari
+[13:42:16] AI (chunk):  tak
+[13:42:18] AI (chunk):  apni
+[13:42:19] AI (chunk):  baat
+[13:42:19] AI (chunk):  pahunchana
+[13:42:19] AI (chunk):  chahein
+[13:42:19] AI (chunk):  toh
+[13:42:22] AI (chunk):  aap
+[13:42:22] AI (chunk):  kya
+[13:42:22] AI (chunk):  kahenge?
+[13:42:23] User: ओ
+[13:42:24] User: ही
+[13:42:24] User: की
+[13:42:24] User: कं
+[13:42:24] User: पनी
+[13:42:24] User: खो
+[13:42:24] User: लि
+[13:42:25] User: ए
+[13:42:25] User: रो
+[13:42:26] User: जगार
+[13:42:26] User: दी
+[13:42:26] User: जिए
+[13:42:27] AI (chunk): Aap chahte
+[13:42:27] AI (chunk):  hain
+[13:42:27] AI (chunk):  ki
+[13:42:27] AI (chunk):  yahan
+[13:42:27] AI (chunk):  companies
+[13:42:28] AI (chunk):  kholen
+[13:42:29] AI (chunk):  aur
+[13:42:29] AI (chunk):  rozgaar
+[13:42:29] AI (chunk):  mile
+[13:42:31] AI (chunk):  theek
+[13:42:31] AI (chunk):  hai
+[13:42:31] AI (chunk):  kya
+[13:42:35] User: อื
+[13:42:36] AI (chunk): kya baad
+[13:42:36] AI (chunk):  mein chhota
+[13:42:36] AI (chunk):  follow
+[13:42:36] AI (chunk):  up
+[13:42:37] AI (chunk):  theek
+[13:42:37] AI (chunk):  rahega?
+[13:42:43] User: क्या
+[13:42:43] User: बोले
+[13:42:44] AI (chunk): Kya hum
+[13:42:44] AI (chunk):  baad
+[13:42:44] AI (chunk):  mein
+[13:42:44] AI (chunk):  thodi
+[13:42:44] AI (chunk):  der
+[13:42:44] AI (chunk):  mein
+[13:42:46] AI (chunk):  phir
+[13:42:46] AI (chunk):  se baat
+[13:42:46] AI (chunk):  kar
+[13:42:46] AI (chunk):  sakte
+[13:42:46] AI (chunk):  hain?
+[13:42:50] User: जी
+[13:42:50] User: कर सकते हैं
+[13:42:51] AI (chunk): Theek hai
+[13:42:51] AI (chunk):  bahut
+[13:42:52] AI (chunk):  dhanyavaad
+[13:42:53] AI (chunk):  aapne
+[13:42:53] AI (chunk):  apni
+[13:42:53] AI (chunk):  baat
+[13:42:53] AI (chunk):  bataayi
+[13:42:55] AI (chunk):  Namaste
+[13:42:59] User: ನಮಸ್ತೆ
+
+Call ended at: 2025-09-01T13:43:02.754462

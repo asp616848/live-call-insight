@@ -1,0 +1,16 @@
+Call started at: 2025-09-02T11:56:20.412203
+Stream SID: 9f0f4bac48fa201fe7d62c86bd1b1992
+
+[11:56:21] User: ஹலோ
+[11:56:22] AI (chunk): जी, नमस्ते।
+[11:56:23] AI (chunk):  क्या
+[11:56:23] AI (chunk):  आप
+[11:56:23] AI (chunk):  अभी
+[11:56:23] AI (chunk):  थोड़ी
+[11:56:23] AI (chunk):  देर
+[11:56:23] AI (chunk):  बात
+[11:56:23] AI (chunk):  कर
+[11:56:25] AI (chunk):  सकते
+[11:56:25] AI (chunk):  हैं?
+
+Call ended at: 2025-09-02T11:56:30.205368

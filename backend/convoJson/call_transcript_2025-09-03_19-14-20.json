@@ -1,0 +1,86 @@
+{
+  "summary": {
+    "filename": "call_transcript_2025-09-03_19-14-20.txt",
+    "stream_sid": "08940227a9d4709f90ecc9627f681993",
+    "call_started": "2025-09-03T19:14:20.550816",
+    "call_ended": "2025-09-03T19:15:05.756191",
+    "duration_seconds": 45.205375,
+    "average_ai_response_latency": 13.09,
+    "noise_count": 0,
+    "total_user_messages": 2,
+    "total_ai_responses": 11,
+    "sentiment": "neutral",
+    "concerns": [],
+    "overview": "The AI is attempting to recruit the user for a survey to gather opinions for Bihar's new policy, stating the user is among 500 chosen individuals. The user only confirms their location at the beginning of the call.",
+    "user_tone": "neutral and cooperative",
+    "emotion": "neutral",
+    "sentiment_score": 5.0
+  },
+  "conversation": [
+    {
+      "speaker": "user",
+      "text": "Namaste.",
+      "timestamp": "2025-09-03T19:14:24"
+    },
+    {
+      "speaker": "ai",
+      "text": "Namaste. Kya",
+      "timestamp": "2025-09-03T19:14:25"
+    },
+    {
+      "speaker": "ai",
+      "text": "Aap Bihar se hi bol rahe hain na?",
+      "timestamp": "2025-09-03T19:14:28"
+    },
+    {
+      "speaker": "user",
+      "text": "Haan ji",
+      "timestamp": "2025-09-03T19:14:34"
+    },
+    {
+      "speaker": "ai",
+      "text": "Aap chahenge ki aapke",
+      "timestamp": "2025-09-03T19:14:35"
+    },
+    {
+      "speaker": "ai",
+      "text": "Aap chahenge [NAME] ji, aap un kuch",
+      "timestamp": "2025-09-03T19:14:38"
+    },
+    {
+      "speaker": "ai",
+      "text": "[NAME] ji, aap [NAME] ji, aap un kuch",
+      "timestamp": "2025-09-03T19:14:42"
+    },
+    {
+      "speaker": "ai",
+      "text": "[NAME] ji, [NAME] ji, aap un kuch chune hue 500 logon mein se hain",
+      "timestamp": "2025-09-03T19:14:46"
+    },
+    {
+      "speaker": "ai",
+      "text": "jinki raay se Bihar ki nai policy banegi. Sirf 2-3 minute. Kya main aapke",
+      "timestamp": "2025-09-03T19:14:49"
+    },
+    {
+      "speaker": "ai",
+      "text": "[NAME] ji, aap un kuch chune hue 500 logon mein se hain, jinki raay se Bihar ki",
+      "timestamp": "2025-09-03T19:14:53"
+    },
+    {
+      "speaker": "ai",
+      "text": "[NAME] ji, aap un kuch chune hue 500 logon mein se hain jinki",
+      "timestamp": "2025-09-03T19:14:57"
+    },
+    {
+      "speaker": "ai",
+      "text": "[NAME] ji, aap un kuch",
+      "timestamp": "2025-09-03T19:15:01"
+    },
+    {
+      "speaker": "ai",
+      "text": "[NAME] ji, aap un kuch",
+      "timestamp": "2025-09-03T19:15:04"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+Call started at: 2025-09-03T18:57:01.236291
+Stream SID: 0048efd15df5b293c9946689d0e71993
+
+[18:57:15] User: हां जी हैं बोलिए
+[18:57:16] AI (chunk): Bahut dhanyawaad.
+[18:57:16] AI (chunk):  Aap
+[18:57:20] AI (chunk): Aap chahenge
+[18:57:20] AI (chunk):  ki
+[18:57:20] AI (chunk):  aapke
+[18:57:20] AI (chunk):  ilake
+[18:57:21] AI (chunk):  ki samasyaon
+[18:57:21] AI (chunk):  ka
+[18:57:21] AI (chunk):  samadhan
+[18:57:21] AI (chunk):  ho,
+[18:57:21] AI (chunk):  sahi?
+[18:57:29] User: हां
+[18:57:29] User: जी
+[18:57:29] User: क्या होगा
+[18:57:30] AI (chunk): [NAME] ji,
+[18:57:30] AI (chunk):  aap
+[18:57:30] AI (chunk):  un
+[18:57:31] AI (chunk):  kuch
+[18:57:31] AI (chunk):  chune
+[18:57:31] AI (chunk):  hue
+[18:57:31] AI (chunk):  500
+[18:57:31] AI (chunk):  logon
+[18:57:31] AI (chunk):  mein
+[18:57:31] AI (chunk):  se
+[18:57:31] AI (chunk):  hain
+[18:57:32] AI (chunk):  jinki
+[18:57:32] AI (chunk):  rai
+[18:57:32] AI (chunk):  se
+[18:57:32] AI (chunk):  Bihar
+[18:57:32] AI (chunk):  ki
+[18:57:34] AI (chunk):  nai
+[18:57:34] AI (chunk):  policy
+[18:57:34] AI (chunk):  banegi.
+[18:57:34] AI (chunk):  Sirf
+[18:57:36] AI (chunk):  2-3
+[18:57:36] AI (chunk):  minute.
+[18:57:36] AI (chunk):  Kya
+[18:57:36] AI (chunk):  main
+[18:57:36] AI (chunk):  aapke
+[18:57:36] AI (chunk):  important
+[18:57:37] AI (chunk):  vichar
+[18:57:37] AI (chunk):  jaan
+[18:57:37] AI (chunk):  sakti
+[18:57:37] AI (chunk):  hun?
+[18:57:46] User: हां
+[18:57:47] User: जान
+[18:57:47] User: सकते हो बताओ
+[18:57:47] AI (chunk): Bahut dhanyawaad.
+[18:57:48] AI (chunk):  Pehle
+[18:57:51] AI (chunk): [NAME] ji,
+[18:57:51] AI (chunk):  aap
+[18:57:51] AI (chunk):  kis
+[18:57:51] AI (chunk):  district/block
+[18:57:52] AI (chunk):  se hain?
+[18:57:52] AI (chunk):  Wahan
+[18:57:52] AI (chunk):  ke liye
+[18:57:52] AI (chunk):  khaas
+[18:57:53] AI (chunk):  policy
+[18:57:53] AI (chunk):  suggestions
+[18:57:53] AI (chunk):  chahiye.
+[18:58:02] User: भागलपुर
+[18:58:02] AI (chunk): Theek hai
+[18:58:03] AI (chunk):  Bhagalpur.
+[18:58:08] User: आप
+[18:58:08] User: भो
+[18:58:08] User: ज
+[18:58:09] User: पुरी
+[18:58:09] User: में बात करिए मुझसे
+[18:58:09] AI (chunk): Haan zaroor.
+[18:58:10] AI (chunk):  Bataaiye
+[18:58:17] User: बोलिए
+[18:58:18] AI (chunk): Rauwa ke
+[18:58:18] AI (chunk):  ilaaka
+[18:58:18] AI (chunk):  mein
+[18:58:18] AI (chunk):  sabse
+[18:58:28] User: बोलिए
+[18:58:29] AI (chunk): [NAME] ji,
+[18:58:29] AI (chunk):  ii
+[18:58:29] AI (chunk):  bahut
+[18:58:29] AI (chunk):  important
+
+Call ended at: 2025-09-03T18:58:34.722921

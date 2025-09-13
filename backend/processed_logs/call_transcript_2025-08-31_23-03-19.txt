@@ -1,0 +1,11 @@
+Call started at: 2025-08-31T23:03:19.462842
+Stream SID: a8e5068bdb25bb2939d4fcf23018198v
+
+[23:03:21] User: Hello.
+[23:03:22] AI (chunk): Ooh, hello...
+[23:03:23] AI (chunk):  Kya
+[23:03:23] User: <noise> يلا نشوف
+[23:03:24] AI (chunk): Hmm, kya
+[23:03:25] User: ആഗിവേ
+
+Call ended at: 2025-08-31T23:03:26.159137

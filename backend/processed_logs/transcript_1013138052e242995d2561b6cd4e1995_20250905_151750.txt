@@ -1,0 +1,8 @@
+Call Transcript — saved 2025-09-05 15:17:50
+-------------------------------------------
+[2025-09-05 15:17:30] User: Yes
+[2025-09-05 15:17:31] Assistant: Thank you for confirming. To get started, can you tell me if you're a student, faculty, or staff member at Plaksha University?
+[2025-09-05 15:17:36] User: Kimballian
+[2025-09-05 15:17:37] Assistant: Great! Have you visited the Blue Tokai café at Plaksha at least once?
+[2025-09-05 15:17:43] User: Yes
+[2025-09-05 15:17:44] Assistant: That's good to hear! Could you tell me how recently you visited Blue Tokai at Plaksha? Was it within the past 30 days?

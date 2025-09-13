@@ -1,0 +1,186 @@
+{
+  "summary": {
+    "filename": "call_transcript_2025-09-04_14-20-33.txt",
+    "stream_sid": "5ac093d53f5119d50238d98abe921994",
+    "call_started": "2025-09-04T14:20:33.941525",
+    "call_ended": "2025-09-04T14:23:45.065811",
+    "duration_seconds": 191.124286,
+    "average_ai_response_latency": 7.04,
+    "noise_count": 0,
+    "total_user_messages": 8,
+    "total_ai_responses": 25,
+    "sentiment": "neutral",
+    "concerns": [],
+    "overview": "An AI representing the Bihar government is conducting a survey to gather public opinion on local problems for policy development. The user is trying to understand the purpose of the call and what is being asked of them, but does not yet share any specific opinions.",
+    "user_tone": "questioning and direct, then becoming passive and slightly hesitant",
+    "emotion": "confused",
+    "sentiment_score": 5.0
+  },
+  "conversation": [
+    {
+      "speaker": "user",
+      "text": "helo",
+      "timestamp": "2025-09-04T14:20:53"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, बोलिए।",
+      "timestamp": "2025-09-04T14:20:54"
+    },
+    {
+      "speaker": "user",
+      "text": "Haan, bolie, kya karenge?",
+      "timestamp": "2025-09-04T14:20:59"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, हम बिहार सरकार से बोल रहे हैं। आपके इलाके",
+      "timestamp": "2025-09-04T14:21:00"
+    },
+    {
+      "speaker": "ai",
+      "text": "की समस्याओं के बारे लिए",
+      "timestamp": "2025-09-04T14:21:03"
+    },
+    {
+      "speaker": "ai",
+      "text": "एक सर्वे कर रहे हैं। आपके",
+      "timestamp": "2025-09-04T14:21:06"
+    },
+    {
+      "speaker": "ai",
+      "text": "आपके पास थोड़ा समय",
+      "timestamp": "2025-09-04T14:21:10"
+    },
+    {
+      "speaker": "ai",
+      "text": "समय है ताकि हम आपकी बातें सुन सकें?",
+      "timestamp": "2025-09-04T14:21:16"
+    },
+    {
+      "speaker": "user",
+      "text": "aa",
+      "timestamp": "2025-09-04T14:21:24"
+    },
+    {
+      "speaker": "ai",
+      "text": "ठीक है, धन्यवाद। तो क्या आप बिहार से",
+      "timestamp": "2025-09-04T14:21:25"
+    },
+    {
+      "speaker": "ai",
+      "text": "ही बोल रहे हैं ना?",
+      "timestamp": "2025-09-04T14:21:29"
+    },
+    {
+      "speaker": "ai",
+      "text": "ना? यह हमारे सर्वे के लिए ज़रूरी है कि आप बिहार से हों।",
+      "timestamp": "2025-09-04T14:21:33"
+    },
+    {
+      "speaker": "user",
+      "text": "Bihari se hai.",
+      "timestamp": "2025-09-04T14:21:44"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, बिल्कुल। आप चाहेंगे कि आपके",
+      "timestamp": "2025-09-04T14:21:44"
+    },
+    {
+      "speaker": "ai",
+      "text": "इलाके की समस्याओं का समाधान हो,",
+      "timestamp": "2025-09-04T14:21:50"
+    },
+    {
+      "speaker": "ai",
+      "text": "हो, सही ताकि",
+      "timestamp": "2025-09-04T14:21:53"
+    },
+    {
+      "speaker": "ai",
+      "text": "ताकि आपके इलाके का विकास",
+      "timestamp": "2025-09-04T14:21:59"
+    },
+    {
+      "speaker": "ai",
+      "text": "विकास हो सके?",
+      "timestamp": "2025-09-04T14:22:05"
+    },
+    {
+      "speaker": "user",
+      "text": "Hello",
+      "timestamp": "2025-09-04T14:22:20"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, बोलिए। मैं आपकी बात सुन रही हूँ।",
+      "timestamp": "2025-09-04T14:22:21"
+    },
+    {
+      "speaker": "user",
+      "text": "Kya puchhna hai?",
+      "timestamp": "2025-09-04T14:22:34"
+    },
+    {
+      "speaker": "ai",
+      "text": "हम जानना चाहते हैं कि आपके इलाके में क्या दिक्कतें",
+      "timestamp": "2025-09-04T14:22:35"
+    },
+    {
+      "speaker": "ai",
+      "text": "हैं। आपकी राय बहुत",
+      "timestamp": "2025-09-04T14:22:40"
+    },
+    {
+      "speaker": "ai",
+      "text": "बहुत ज़रूरी है, क्योंकि इससे हमारी नीतियाँ बेहतर",
+      "timestamp": "2025-09-04T14:22:43"
+    },
+    {
+      "speaker": "ai",
+      "text": "बनेंगी।",
+      "timestamp": "2025-09-04T14:22:47"
+    },
+    {
+      "speaker": "ai",
+      "text": "आप उन कुछ चुने हुए 500",
+      "timestamp": "2025-09-04T14:22:51"
+    },
+    {
+      "speaker": "user",
+      "text": ".",
+      "timestamp": "2025-09-04T14:22:58"
+    },
+    {
+      "speaker": "ai",
+      "text": "लोगों में से हैं जिनकी",
+      "timestamp": "2025-09-04T14:22:59"
+    },
+    {
+      "speaker": "ai",
+      "text": "राय से बिहार की नई नीतियाँ बनेंगी। सिर्फ 2-3 मिनट लगेंगे। क्या",
+      "timestamp": "2025-09-04T14:23:03"
+    },
+    {
+      "speaker": "ai",
+      "text": "मैं आपके विचार जान सकती हूँ?",
+      "timestamp": "2025-09-04T14:23:07"
+    },
+    {
+      "speaker": "user",
+      "text": "Chitra vichaar",
+      "timestamp": "2025-09-04T14:23:14"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, आपके विचार बहुत महत्वपूर्ण हैं। उनसे नीतियाँ बेहतर बनेंगी और",
+      "timestamp": "2025-09-04T14:23:15"
+    },
+    {
+      "speaker": "ai",
+      "text": "आपके इलाके का विकास होगा। क्या आप अपनी राय बताना चाहेंगे?",
+      "timestamp": "2025-09-04T14:23:20"
+    }
+  ]
+}

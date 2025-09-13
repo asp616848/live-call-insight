@@ -1,0 +1,16 @@
+Call started at: 2025-09-03T15:09:05.321981
+Stream SID: e6472bb339bcdf9555e3c7babd081993
+
+[15:09:13] User: lagi.
+[15:09:14] AI (chunk): Haan, aapki
+[15:09:14] AI (chunk):  baat
+[15:09:14] AI (chunk):  bahut
+[15:09:14] AI (chunk):  important
+[15:09:17] User: อ
+[15:09:17] AI (chunk): Aap Bihar
+[15:09:18] AI (chunk):  se hi
+[15:09:18] AI (chunk):  bol
+[15:09:18] AI (chunk):  rahe
+[15:09:18] AI (chunk):  hain na?
+
+Call ended at: 2025-09-03T15:09:18.878378

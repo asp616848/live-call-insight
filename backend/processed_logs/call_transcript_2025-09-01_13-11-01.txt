@@ -1,0 +1,65 @@
+Call started at: 2025-09-01T13:11:01.419839
+Stream SID: 1fe1911adc4579b320bd60fe318f1991
+
+[13:11:03] User: <noise>
+[13:11:04] AI (chunk): Namaste, main
+[13:11:05] AI (chunk):  Sumitra
+[13:11:05] AI (chunk):  Devi,
+[13:11:05] AI (chunk):  sarkar
+[13:11:05] AI (chunk):  ki or
+[13:11:06] AI (chunk):  se
+[13:11:06] AI (chunk):  kuchh
+[13:11:06] AI (chunk):  prashn
+[13:11:06] AI (chunk):  ke liye.
+[13:11:06] AI (chunk):  Kya
+[13:11:06] User: هلا
+[13:11:07] AI (chunk): Haan ji,
+[13:11:07] AI (chunk):  main
+[13:11:07] AI (chunk):  Sumitra
+[13:11:08] AI (chunk):  Devi.
+[13:11:08] AI (chunk):  Sarkar
+[13:11:08] AI (chunk):  ki
+[13:11:08] AI (chunk):  aur
+[13:11:09] AI (chunk):  se
+[13:11:09] AI (chunk):  kuchh
+[13:11:09] AI (chunk):  prashn
+[13:11:09] AI (chunk):  karne
+[13:11:09] AI (chunk):  ke
+[13:11:09] AI (chunk):  liye
+[13:11:09] AI (chunk):  aapko
+[13:11:09] AI (chunk):  phone
+[13:11:11] AI (chunk):  kiya
+[13:11:11] AI (chunk):  hai.
+[13:11:11] AI (chunk):  Kya
+[13:11:11] AI (chunk):  aap
+[13:11:11] AI (chunk):  abhi
+[13:11:11] AI (chunk):  3-4
+[13:11:11] AI (chunk):  minute
+[13:11:11] AI (chunk):  de
+[13:11:11] AI (chunk):  sakte
+[13:11:11] AI (chunk):  hain?
+[13:11:30] User: .
+[13:11:31] AI (chunk): Ji? Kya
+[13:11:31] AI (chunk):  aapne
+[13:11:32] AI (chunk):  kuchh
+[13:11:32] AI (chunk):  kaha?
+[13:11:34] User: हां
+[13:11:35] AI (chunk): Theek hai
+[13:11:35] AI (chunk):  ji.
+[13:11:35] AI (chunk):  Aap
+[13:11:35] AI (chunk):  kis
+[13:11:36] AI (chunk):  bhasha
+[13:11:36] AI (chunk):  mein baat
+[13:11:36] AI (chunk):  karna
+[13:11:36] AI (chunk):  pasand
+[13:11:36] AI (chunk):  karenge?
+[13:11:37] User: 好了。
+[13:11:38] AI (chunk): Aap kis
+[13:11:38] AI (chunk):  bhasha
+[13:11:38] AI (chunk):  mein
+[13:11:38] AI (chunk):  baat
+[13:11:38] AI (chunk):  karna
+[13:11:38] AI (chunk):  pasand
+[13:11:38] AI (chunk):  karenge?
+
+Call ended at: 2025-09-01T13:11:55.746420

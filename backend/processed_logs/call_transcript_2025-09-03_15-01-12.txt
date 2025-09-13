@@ -1,0 +1,8 @@
+Call started at: 2025-09-03T15:01:12.954013
+Stream SID: d27b150d7981eb6055dee983ebcd1993
+
+[15:01:28] User: ఓ
+[15:01:29] AI (chunk): Ji, bilkul.
+[15:01:29] AI (chunk):  Main
+
+Call ended at: 2025-09-03T15:01:30.458288

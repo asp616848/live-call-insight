@@ -1,0 +1,72 @@
+Call started at: 2025-09-03T15:15:53.491082
+Stream SID: 0c94ad3c6bc6c9092abcee6554991993
+
+[15:16:03] User: बोलिए
+[15:16:04] AI (chunk): Aap Bihar
+[15:16:04] AI (chunk):  se hi
+[15:16:05] AI (chunk):  bol
+[15:16:05] AI (chunk):  rahe
+[15:16:05] AI (chunk):  hain
+[15:16:07] AI (chunk): na?
+[15:16:10] User: बिहार से
+[15:16:11] AI (chunk): Bahut accha.
+[15:16:11] AI (chunk):  Aap
+[15:16:11] AI (chunk):  chahenge
+[15:16:11] AI (chunk):  ki
+[15:16:11] AI (chunk):  aapke
+[15:16:12] AI (chunk):  ilake
+[15:16:12] AI (chunk):  ki samasyaon
+[15:16:12] AI (chunk):  ka
+[15:16:12] AI (chunk):  samadhan
+[15:16:12] AI (chunk):  ho,
+[15:16:12] AI (chunk):  sahi
+[15:16:15] AI (chunk): ka
+[15:16:15] AI (chunk):  samadhan
+[15:16:16] AI (chunk):  ho,
+[15:16:16] AI (chunk):  sahi
+[15:16:19] AI (chunk): na?
+[15:16:22] User: Hello.
+[15:16:23] AI (chunk): Ji, main
+[15:16:23] AI (chunk):  Sumitra
+[15:16:23] AI (chunk):  Devi
+[15:16:24] AI (chunk):  sarkar
+[15:16:24] AI (chunk):  se bol
+[15:16:24] AI (chunk):  rahi
+[15:16:24] AI (chunk):  hu.
+[15:16:24] AI (chunk):  Aap
+[15:16:26] AI (chunk): se baat
+[15:16:26] AI (chunk):  kar
+[15:16:26] AI (chunk):  rahi
+[15:16:28] User: 來
+[15:16:28] AI (chunk): kar rahi
+[15:16:29] AI (chunk):  hoon.
+[15:16:29] AI (chunk):  Aapki
+[15:16:29] AI (chunk):  ilake
+[15:16:29] AI (chunk):  ki
+[15:16:29] AI (chunk):  samasyaon
+[15:16:30] AI (chunk):  ke
+[15:16:30] AI (chunk):  samadhan
+[15:16:30] AI (chunk):  ke
+[15:16:30] AI (chunk):  liye
+[15:16:30] AI (chunk):  aapki
+[15:16:30] AI (chunk):  rai
+[15:16:32] AI (chunk):  jaan
+[15:16:32] AI (chunk):  raha
+[15:16:32] AI (chunk):  tha.
+[15:16:32] AI (chunk):  Kya
+[15:16:32] AI (chunk):  aap
+[15:16:32] AI (chunk):  सहमत
+[15:16:32] AI (chunk):  hain
+[15:16:34] AI (chunk): raai
+[15:16:34] AI (chunk):  jaanna
+[15:16:34] AI (chunk):  chahti
+[15:16:34] AI (chunk):  hoon.
+[15:16:34] AI (chunk):  Kya
+[15:16:35] AI (chunk):  aap
+[15:16:35] AI (chunk):  thoda
+[15:16:35] AI (chunk):  samay
+[15:16:35] AI (chunk):  de
+[15:16:36] AI (chunk):  sakte
+[15:16:36] AI (chunk):  hain?
+
+Call ended at: 2025-09-03T15:16:43.343113

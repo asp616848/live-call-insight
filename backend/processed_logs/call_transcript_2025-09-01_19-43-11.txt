@@ -1,0 +1,31 @@
+Call started at: 2025-09-01T19:43:11.002243
+Stream SID: e1e8c185cb55f1c3c03836bfa2971991
+
+[19:43:13] User: Hello.
+[19:43:15] AI (chunk): नमस
+[19:43:15] AI (chunk): ्ते
+[19:43:15] AI (chunk):  मै
+[19:43:15] AI (chunk): ं स
+[19:43:15] AI (chunk): ुमि
+[19:43:15] AI (chunk): त्र
+[19:43:16] AI (chunk): ा द
+[19:43:16] AI (chunk): ेवी
+[19:43:16] AI (chunk):  सर
+[19:43:16] AI (chunk): कार
+[19:43:16] AI (chunk):  की
+[19:43:16] AI (chunk):  ओर
+[19:43:16] AI (chunk):  से
+[19:43:16] AI (chunk):  कु
+[19:43:16] AI (chunk): छ प
+[19:43:16] AI (chunk): ्रश
+[19:43:16] AI (chunk): ्न 
+[19:43:16] AI (chunk): के 
+[19:43:16] AI (chunk): लिए
+[19:43:16] AI (chunk):  क्
+[19:43:16] AI (chunk): या 
+[19:43:16] AI (chunk): आप 
+[19:43:16] AI (chunk): अभी
+[19:43:16] AI (chunk):  3
+[19:43:16] AI (chunk): -4 मिनट देंगे
+
+Call ended at: 2025-09-01T19:43:27.219390

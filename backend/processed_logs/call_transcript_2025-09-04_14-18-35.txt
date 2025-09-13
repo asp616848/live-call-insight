@@ -1,0 +1,20 @@
+Call started at: 2025-09-04T14:18:35.083731
+Stream SID: 7d4ae41b2158e89b7ecebfe67e391994
+
+[14:18:38] User: अब
+[14:18:38] User: जिस
+[14:18:38] User: व्य
+[14:18:39] User: क्ति
+[14:18:39] User: से
+[14:18:39] User: बात
+[14:18:39] User: कर
+[14:18:39] User: रहे
+[14:18:39] User: हैं उन्होंने
+[14:18:40] AI (chunk): Haan, bilkul.
+[14:18:41] AI (chunk):  Unka
+[14:18:47] AI (chunk): Sawaal sunne
+[14:18:47] AI (chunk):  ke
+[14:18:47] AI (chunk):  baad
+[14:18:47] AI (chunk):  unhone
+
+Call ended at: 2025-09-04T14:18:51.076674

@@ -1,0 +1,56 @@
+Call started at: 2025-09-03T20:16:24.206310
+Stream SID: c2fdf1a3451d3131a89cdd4c7f561993
+
+[20:16:32] User: ครับ
+[20:16:32] AI (chunk): Hi! I'm
+[20:16:33] AI (chunk):  calling
+[20:16:33] AI (chunk):  from
+[20:16:36] AI (chunk): Blue Tokai
+[20:16:36] AI (chunk):  Café
+[20:16:36] AI (chunk):  at
+[20:16:36] AI (chunk):  Plaksha.
+[20:16:38] User: Hello.
+[20:16:39] AI (chunk): Hi! I'm
+[20:16:39] AI (chunk):  calling
+[20:16:39] AI (chunk):  from
+[20:16:39] AI (chunk):  Blue
+[20:16:43] AI (chunk): Tokai Café
+[20:16:44] AI (chunk):  at
+[20:16:44] AI (chunk):  Plaksha.
+[20:16:47] AI (chunk):  We're
+[20:16:47] AI (chunk):  offering
+[20:16:47] AI (chunk):  ₹150
+[20:16:52] User: Okay.
+[20:16:53] AI (chunk): coupons for
+[20:16:54] AI (chunk):  a quick
+[20:16:54] AI (chunk):  feedback
+[20:16:54] AI (chunk):  survey.
+[20:16:56] User: What are you saying?
+[20:16:57] AI (chunk): We're offering
+[20:16:57] AI (chunk):  ₹150
+[20:17:00] User: What are you saying?
+[20:17:00] AI (chunk): coupons for
+[20:17:01] AI (chunk):  a quick
+[20:17:01] AI (chunk):  feedback
+[20:17:01] AI (chunk):  survey.
+[20:17:04] AI (chunk):  Do you
+[20:17:04] AI (chunk):  have
+[20:17:04] AI (chunk):  four
+[20:17:04] AI (chunk):  minutes?
+[20:17:09] User: Okay.
+[20:17:09] AI (chunk): Perfect! Just
+[20:17:10] AI (chunk):  to confirm
+[20:17:12] AI (chunk): you're a
+[20:17:13] AI (chunk):  student
+[20:17:13] AI (chunk):  or
+[20:17:13] AI (chunk):  staff
+[20:17:16] AI (chunk): at Plaksha,
+[20:17:16] AI (chunk):  right?
+[20:17:19] User: I
+[20:17:19] AI (chunk): And you've
+[20:17:19] AI (chunk):  been
+[20:17:20] AI (chunk):  to
+[20:17:20] AI (chunk):  our café
+[20:17:20] AI (chunk):  at least
+
+Call ended at: 2025-09-03T20:17:20.506455

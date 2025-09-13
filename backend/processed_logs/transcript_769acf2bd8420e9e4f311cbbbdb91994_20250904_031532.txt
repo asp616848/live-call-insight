@@ -1,0 +1,6 @@
+Call Transcript — saved 2025-09-04 03:15:32
+-------------------------------------------
+[2025-09-04 03:15:10] User: Yes
+[2025-09-04 03:15:12] Assistant: Bohot achha! Aap Plaksha mein student ya staff hain, sahi? Aur aapne hamare café mein kam se kam ek baar zaroor visit kiya hai?
+[2025-09-04 03:15:22] User: Can you talk in English?
+[2025-09-04 03:15:23] Assistant: Bilkul, we can continue in English. You've visited our café recently, right? Could you tell me about your last visit and what brought you to Blue Tokai at Plaksha?

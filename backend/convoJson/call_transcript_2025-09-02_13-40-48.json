@@ -1,0 +1,185 @@
+{
+  "summary": {
+    "filename": "call_transcript_2025-09-02_13-40-48.txt",
+    "stream_sid": "d01a319d9200d7966295f0d05a791992",
+    "call_started": "2025-09-02T13:40:48.776209",
+    "call_ended": "2025-09-02T13:43:23.665024",
+    "duration_seconds": 154.888815,
+    "average_ai_response_latency": 1.39,
+    "noise_count": 0,
+    "total_user_messages": 14,
+    "total_ai_responses": 18,
+    "sentiment": "neutral",
+    "concerns": [
+      "difficulty articulating local issues",
+      "water scarcity",
+      "irregular water supply"
+    ],
+    "overview": "The user was initially hesitant and struggled to identify local issues. After the AI provided examples, the user eventually identified water scarcity as a problem, clarifying that it is not a regular issue.",
+    "user_tone": "hesitant, seeking guidance, and clarifying",
+    "emotion": "confused",
+    "sentiment_score": 5.5
+  },
+  "conversation": [
+    {
+      "speaker": "user",
+      "text": "helo",
+      "timestamp": "2025-09-02T13:40:58"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, बताइये",
+      "timestamp": "2025-09-02T13:40:59"
+    },
+    {
+      "speaker": "user",
+      "text": "Haan ji, achha.",
+      "timestamp": "2025-09-02T13:41:01"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, आप क्या कहना चाहते हैं?",
+      "timestamp": "2025-09-02T13:41:02"
+    },
+    {
+      "speaker": "user",
+      "text": "Boliye, Sar.",
+      "timestamp": "2025-09-02T13:41:04"
+    },
+    {
+      "speaker": "ai",
+      "text": "मैं आपसे बिहार के कुछ मुद्दों पर बात करना चाहती थी। आपके",
+      "timestamp": "2025-09-02T13:41:05"
+    },
+    {
+      "speaker": "ai",
+      "text": "इलाके के सबसे बड़े मुद्दे कौन से हैं?",
+      "timestamp": "2025-09-02T13:41:08"
+    },
+    {
+      "speaker": "user",
+      "text": "lā.",
+      "timestamp": "2025-09-02T13:41:18"
+    },
+    {
+      "speaker": "ai",
+      "text": "ठीक है, आप किस मुद्दे पर बात करना चाहेंगे?",
+      "timestamp": "2025-09-02T13:41:18"
+    },
+    {
+      "speaker": "user",
+      "text": "Maine aisa kiya.",
+      "timestamp": "2025-09-02T13:41:30"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, बताईये",
+      "timestamp": "2025-09-02T13:41:31"
+    },
+    {
+      "speaker": "user",
+      "text": "Kya bataaen, Madam!",
+      "timestamp": "2025-09-02T13:41:37"
+    },
+    {
+      "speaker": "ai",
+      "text": "आपके क्षेत्र में जो सबसे",
+      "timestamp": "2025-09-02T13:41:37"
+    },
+    {
+      "speaker": "user",
+      "text": "Hello",
+      "timestamp": "2025-09-02T13:41:49"
+    },
+    {
+      "speaker": "ai",
+      "text": "हाँ, सुन रही हूँ। बताइये जी।",
+      "timestamp": "2025-09-02T13:41:50"
+    },
+    {
+      "speaker": "user",
+      "text": "bal",
+      "timestamp": "2025-09-02T13:41:55"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, आप किस मुद्दे पर बात करना चाहते हैं?",
+      "timestamp": "2025-09-02T13:41:56"
+    },
+    {
+      "speaker": "user",
+      "text": "Aap mudde par baat kar rahe hain. Kuchh bataiye naa. Tab us mudde ka naam kya hai?",
+      "timestamp": "2025-09-02T13:42:09"
+    },
+    {
+      "speaker": "ai",
+      "text": "जैसे कि रोज़गार, शिक्षा, स्वास्थ्य या सड़कें जैसी समस्याएँ।",
+      "timestamp": "2025-09-02T13:42:09"
+    },
+    {
+      "speaker": "ai",
+      "text": "इनमें से कोई मुद्दा?",
+      "timestamp": "2025-09-02T13:42:12"
+    },
+    {
+      "speaker": "user",
+      "text": "vajad",
+      "timestamp": "2025-09-02T13:42:21"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, सड़कें क्या आपके इलाके की सड़कें ठीक",
+      "timestamp": "2025-09-02T13:42:21"
+    },
+    {
+      "speaker": "ai",
+      "text": "हैं?",
+      "timestamp": "2025-09-02T13:42:24"
+    },
+    {
+      "speaker": "user",
+      "text": "Abhitak to theek hai, matlab...",
+      "timestamp": "2025-09-02T13:42:29"
+    },
+    {
+      "speaker": "ai",
+      "text": "ठीक है और कोई मुद्दा है?",
+      "timestamp": "2025-09-02T13:42:30"
+    },
+    {
+      "speaker": "user",
+      "text": "Paani ka mudda hai. Paani ki vyavastha kam hai.",
+      "timestamp": "2025-09-02T13:42:40"
+    },
+    {
+      "speaker": "ai",
+      "text": "पानी की व्यवस्था कम है, ठीक है। क्या ये पानी की दिक्कत नियमित है?",
+      "timestamp": "2025-09-02T13:42:41"
+    },
+    {
+      "speaker": "user",
+      "text": "aa",
+      "timestamp": "2025-09-02T13:42:51"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, समझ गई। और कोई मुख्य मुद्दा है?",
+      "timestamp": "2025-09-02T13:42:52"
+    },
+    {
+      "speaker": "user",
+      "text": "niyamat nahin hai",
+      "timestamp": "2025-09-02T13:42:59"
+    },
+    {
+      "speaker": "ai",
+      "text": "ठीक है आपने सड़कों और पानी की व्यवस्था के बारे में बताया, धन्यवाद",
+      "timestamp": "2025-09-02T13:43:00"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी।",
+      "timestamp": "2025-09-02T13:43:04"
+    }
+  ]
+}

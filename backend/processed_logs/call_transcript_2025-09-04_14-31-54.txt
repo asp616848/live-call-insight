@@ -1,0 +1,57 @@
+Call started at: 2025-09-04T14:31:54.846740
+Stream SID: 29c14e5907919e7faafa0ba2bc921994
+
+[14:31:57] User: হ্যাঁ হ্যালো
+[14:31:58] AI (chunk): Namaste, main
+[14:31:59] AI (chunk):  Sumitra
+[14:32:00] AI (chunk):  Devi
+[14:32:00] AI (chunk):  sarkar
+[14:32:00] AI (chunk):  se
+[14:32:00] AI (chunk):  bol
+[14:32:00] AI (chunk):  rahi
+[14:32:00] AI (chunk):  hun.
+[14:32:02] AI (chunk):  Kya
+[14:32:02] AI (chunk):  aapke
+[14:32:02] AI (chunk):  paas
+[14:32:02] AI (chunk):  30
+[14:32:02] AI (chunk):  second
+[14:32:02] AI (chunk):  hain?
+[14:32:06] User: हां
+[14:32:06] User: है
+[14:32:07] User: बोल
+[14:32:07] User: िए
+[14:32:08] AI (chunk): Aap Bihar
+[14:32:08] AI (chunk):  se
+[14:32:08] AI (chunk):  hi bol
+[14:32:09] AI (chunk):  rahe
+[14:32:09] AI (chunk):  hain
+[14:32:09] AI (chunk):  na?
+[14:32:12] User: <noise>
+[14:32:13] AI (chunk): Achha, aap
+[14:32:13] AI (chunk):  Jharkhand
+[14:32:14] AI (chunk):  se
+[14:32:14] AI (chunk):  bol
+[14:32:14] AI (chunk):  rahe
+[14:32:14] AI (chunk):  hain?
+[14:32:14] AI (chunk):  Maine
+[14:32:15] AI (chunk):  galat
+[14:32:18] AI (chunk):  jagah
+[14:32:18] AI (chunk):  phone
+[14:32:18] AI (chunk):  kar
+[14:32:18] AI (chunk):  diya.
+[14:32:18] AI (chunk):  Maaf
+[14:32:18] AI (chunk):  kijiye.
+[14:32:18] AI (chunk):  Dhanyawad
+[14:32:18] AI (chunk):  aapke
+[14:32:18] AI (chunk):  samay
+[14:32:18] AI (chunk):  ke liye.
+[14:32:21] AI (chunk): Koi baat
+[14:32:22] AI (chunk):  nahi.
+[14:32:22] AI (chunk):  Dhanyawad
+[14:32:23] User: Okay.
+[14:32:24] AI (chunk): Dhanyawad aapke
+[14:32:25] AI (chunk):  samay
+[14:32:25] AI (chunk):  ke
+[14:32:25] AI (chunk):  liye.
+
+Call ended at: 2025-09-04T14:32:25.830289

@@ -1,0 +1,23 @@
+Call Transcript — saved 2025-09-04 16:54:12
+-------------------------------------------
+[2025-09-04 16:52:38] User: Yes.
+[2025-09-04 16:52:39] Assistant: Great! Just to confirm—are you a student or staff at Plaksha?
+[2025-09-04 16:52:46] User: Must drink.
+[2025-09-04 16:52:47] Assistant: Perfect! And you've been to our café at least once, right?
+[2025-09-04 16:52:53] User: Okay.
+[2025-09-04 16:52:54] Assistant: That's great! You're actually one of the select few we've chosen for this exclusive feedback program—your opinions will directly shape our menu and service improvements. Before we start, would you prefer to continue in English or Hindi?
+[2025-09-04 16:53:05] User: Hello?
+[2025-09-04 16:53:06] Assistant: Achha, we will continue in English. Let's start with a quick question: have you visited Blue Tokai at Plaksha in the past 30 days?
+[2025-09-04 16:53:16] User: No.
+[2025-09-04 16:53:17] Assistant: No problem! How familiar are you with Blue Tokai at Plaksha? Have you heard about it from friends or seen it around?
+[2025-09-04 16:53:28] User: I heard about some seniors.
+[2025-09-04 16:53:30] Assistant: Good to know! So, what would make you more likely to try Blue Tokai? Is it something like the menu options, the café's ambience, or maybe the convenience on campus?
+[2025-09-04 16:53:43] User: Maintenant, qui savez-vous?
+[2025-09-04 16:53:45] Assistant: Understood! If you do decide to visit in the future, what would you be looking forward to the most? For example, would it be the coffee quality, the variety of snacks, or maybe the peaceful place to study?
+[2025-09-04 16:53:50] User: Ok
+[2025-09-04 16:53:51] Assistant: Got it! Thanks for sharing that. Your inputs are really valuable. Have a great day, and hopefully, you get to experience Blue Tokai soon!
+[2025-09-04 16:54:01] User: He
+[2025-09-04 16:54:02] User: Thank you.
+[2025-09-04 16:54:02] Assistant: You're welcome! Have a wonderful day!
+[2025-09-04 16:54:06] User: plain.
+[2025-09-04 16:54:07] Assistant: You're welcome! Take care!

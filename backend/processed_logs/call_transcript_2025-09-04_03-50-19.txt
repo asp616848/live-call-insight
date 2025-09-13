@@ -1,0 +1,59 @@
+Call started at: 2025-09-04T03:50:19.393878
+Stream SID: 74ddb4866fac9a90536cbe8ed93d1994
+
+[03:50:29] User: మేము
+[03:50:30] AI (chunk): Haan, bilkul.
+[03:50:31] AI (chunk):  Aap
+[03:50:32] AI (chunk):  Bihar
+[03:50:32] AI (chunk):  se
+[03:50:32] AI (chunk):  hi
+[03:50:32] AI (chunk):  bol
+[03:50:32] AI (chunk):  rahe
+[03:50:32] AI (chunk):  hain
+[03:50:32] AI (chunk):  na?
+[03:50:37] User: हां
+[03:50:37] User: हम
+[03:50:37] User: बिहार से बोल रहे हैं
+[03:50:38] AI (chunk): Achha, aap
+[03:50:38] AI (chunk):  chahenge
+[03:50:39] AI (chunk):  ki
+[03:50:39] AI (chunk):  aapke
+[03:50:39] AI (chunk):  ilake
+[03:50:39] AI (chunk):  ki
+[03:50:39] AI (chunk):  samasyaon
+[03:50:40] AI (chunk):  ka
+[03:50:40] AI (chunk):  samadhan
+[03:50:40] AI (chunk):  ho,
+[03:50:40] AI (chunk):  sahi?
+[03:50:47] User: हां
+[03:50:47] User: चाह
+[03:50:47] User: ते हैं
+[03:50:48] AI (chunk): Bilkul. [NAME]
+[03:50:48] AI (chunk):  ji,
+[03:50:48] AI (chunk):  aap
+[03:50:53] AI (chunk): un kuch
+[03:50:53] AI (chunk):  chune
+[03:50:53] AI (chunk):  hue 500
+[03:50:53] AI (chunk):  logon
+[03:50:58] AI (chunk): mein se
+[03:50:58] AI (chunk):  hain
+[03:50:58] AI (chunk):  jinki
+[03:50:58] AI (chunk):  rai
+[03:50:58] AI (chunk):  se
+[03:51:03] AI (chunk): Bihar ki
+[03:51:03] AI (chunk):  nai
+[03:51:03] AI (chunk):  policy
+[03:51:03] AI (chunk):  banegi.
+[03:51:04] AI (chunk):  Sirf
+[03:51:04] AI (chunk):  2-3
+[03:51:04] AI (chunk):  minute.
+[03:51:05] AI (chunk):  Kya
+[03:51:05] AI (chunk):  main
+[03:51:05] AI (chunk):  aapke
+[03:51:05] AI (chunk):  important
+[03:51:06] AI (chunk):  vichar
+[03:51:06] AI (chunk):  jaan
+[03:51:06] AI (chunk):  sakti
+[03:51:06] AI (chunk):  hoon?
+
+Call ended at: 2025-09-04T03:51:24.819005

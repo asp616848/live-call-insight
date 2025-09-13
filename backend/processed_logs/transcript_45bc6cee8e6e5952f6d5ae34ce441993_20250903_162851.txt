@@ -1,0 +1,16 @@
+Call Transcript — saved 2025-09-03 16:28:51
+-------------------------------------------
+[2025-09-03 16:27:21] User: Hello
+[2025-09-03 16:27:21] Assistant: Hello! How can I assist you today?
+[2025-09-03 16:27:29] User: Hello
+[2025-09-03 16:27:30] Assistant: Hello! How's your day going?
+[2025-09-03 16:27:36] User: Tell me about Agha Singhal.
+[2025-09-03 16:27:37] Assistant: Of course! Which language or dialect are you looking for information about?
+[2025-09-03 16:27:44] User: English
+[2025-09-03 16:27:47] Assistant: Great! English is a widely spoken language around the world and is the primary language in many countries, including the United States, the United Kingdom, Canada, Australia, and New Zealand. It’s also used as a global lingua franca for international communication in business, science, technology, and many other fields. If you have specific questions about English or anything in particular you're curious about, feel free to ask!
+[2025-09-03 16:28:00] User: What was the purpose of this call?
+[2025-09-03 16:28:02] Assistant: The purpose of this call is to collect feedback about Blue Tokai Café at Plaksha University. Your insights will help us understand your experiences and preferences, allowing us to improve our menu and services. By participating, you can also earn a ₹150 coupon as a token of our appreciation.
+[2025-09-03 16:28:18] User: Um
+[2025-09-03 16:28:18] Assistant: No worries! If you have any questions or
+[2025-09-03 16:28:23] User: I'm really annoyed by the services of Dhritakaya at Lakshya. Can I get a promo code?
+[2025-09-03 16:28:25] Assistant: I'm sorry to hear that your experience wasn’t up to expectations. Your feedback is important, and I'll make sure it's noted for our management team. If you have any specific concerns about the service, I'd be happy to pass them along. As for a promo code, you might want to check directly with Blue Tokai Café or their official communication channels for any available offers or discounts.

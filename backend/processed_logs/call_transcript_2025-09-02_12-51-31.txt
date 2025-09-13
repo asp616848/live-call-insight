@@ -1,0 +1,6 @@
+Call started at: 2025-09-02T12:51:31.566839
+Stream SID: 74620dda4db968572455ae93cf5a1992
+
+[12:52:09] User: Hello.
+
+Call ended at: 2025-09-02T12:52:09.483292

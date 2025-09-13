@@ -1,0 +1,25 @@
+Call started at: 2025-09-04T03:54:01.301877
+Stream SID: 860d046eeae0854cd2395b51c3391994
+
+[03:54:02] User: is now being recorded.
+[03:54:03] AI (chunk): Haan, bilkul.
+[03:54:04] AI (chunk):  Aap
+[03:54:04] AI (chunk):  kahan
+[03:54:04] AI (chunk):  se baat
+[03:54:04] AI (chunk):  kar
+[03:54:05] AI (chunk):  rahe
+[03:54:05] AI (chunk):  hain Bihar
+[03:54:05] AI (chunk):  se?
+[03:54:17] User: हां
+[03:54:17] AI (chunk): Ji, theek
+[03:54:18] AI (chunk):  hai.
+[03:54:18] AI (chunk):  Aap
+[03:54:18] AI (chunk):  chahenge
+[03:54:18] AI (chunk):  ki aapke
+[03:54:18] AI (chunk):  ilaake
+[03:54:18] AI (chunk):  ki samasyaon
+[03:54:19] AI (chunk):  ka samadhan
+[03:54:19] AI (chunk):  ho,
+[03:54:19] AI (chunk):  sahi?
+
+Call ended at: 2025-09-04T03:54:30.258049

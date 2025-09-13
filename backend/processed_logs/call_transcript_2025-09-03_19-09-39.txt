@@ -1,0 +1,58 @@
+Call started at: 2025-09-03T19:09:39.328453
+Stream SID: 3a70429eabf62ccfdbfeeaa930e51993
+
+[19:09:45] User: Hello.
+[19:09:45] AI (chunk): Pranam, hum
+[19:09:46] AI (chunk):  Sumitra
+[19:09:46] AI (chunk):  Devi
+[19:09:48] AI (chunk):  sarkar
+[19:09:48] AI (chunk):  se
+[19:09:48] AI (chunk):  boli.
+[19:09:48] AI (chunk):  30
+[19:09:52] User: हां जी बोलिए
+[19:09:53] AI (chunk): Aap Bihar
+[19:09:53] AI (chunk):  se hi
+[19:09:53] AI (chunk):  boli
+[19:09:53] AI (chunk):  na?
+[19:09:59] User: हां जी
+[19:10:00] AI (chunk): Rauwa chahbi
+[19:10:00] AI (chunk):  ki
+[19:10:00] AI (chunk):  aapke
+[19:10:00] AI (chunk):  ilaka
+[19:10:01] AI (chunk):  ke samasya
+[19:10:02] AI (chunk):  ke
+[19:10:02] AI (chunk):  samadhan
+[19:10:02] AI (chunk):  hoi,
+[19:10:02] AI (chunk):  theek
+[19:10:05] AI (chunk): [NAME] ji,
+[19:10:05] AI (chunk):  rauwa
+[19:10:05] AI (chunk):  un
+[19:10:05] AI (chunk):  500
+[19:10:09] AI (chunk): [NAME] ji,
+[19:10:09] AI (chunk):  aapke
+[19:10:09] AI (chunk):  jaise
+[19:10:11] AI (chunk):  kuch
+[19:10:12] AI (chunk): [NAME] ji,
+[19:10:12] AI (chunk):  aap
+[19:10:12] AI (chunk):  itni
+[19:10:15] AI (chunk): [NAME] ji,
+[19:10:15] AI (chunk):  kal
+[19:10:15] AI (chunk):  [NEARBY_AREA]
+[19:10:18] AI (chunk): [NAME] ji,
+[19:10:18] AI (chunk):  yeh bahut
+[19:10:19] AI (chunk):  important
+[19:10:21] AI (chunk): [NAME] ji,
+[19:10:21] AI (chunk):  phir
+[19:10:22] AI (chunk):  aapke
+[19:10:22] AI (chunk):  area
+[19:10:24] AI (chunk): [NAME] ji,
+[19:10:24] AI (chunk):  aapne
+[19:10:25] AI (chunk):  itni
+[19:10:25] AI (chunk):  achhi
+[19:10:26] AI (chunk):  jankari
+[19:10:26] AI (chunk):  di
+[19:10:26] AI (chunk):  hai,
+[19:10:26] AI (chunk):  bas
+[19:10:26] AI (chunk):  thoda
+
+Call ended at: 2025-09-03T19:10:29.498873

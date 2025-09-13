@@ -1,0 +1,10 @@
+Call Transcript — saved 2025-09-04 02:44:40
+-------------------------------------------
+[2025-09-04 02:44:08] User: Hello.
+[2025-09-04 02:44:09] Assistant: Namaste! Main Blue Tokai Café, Plaksha se baat kar raha hoon. Hum ₹150 ke coupon de rahe hain ek chhoti si feedback survey ke liye. Kya aapke paas 4 minute hain?
+[2025-09-04 02:44:21] User: I am alloy.
+[2025-09-04 02:44:22] Assistant: Badhiya! Aap Plaksha mein student ya staff hain, sahi? Aur apne Blue Tokai Café ko kam se kam ek baar
+[2025-09-04 02:44:23] User: Hello
+[2025-09-04 02:44:24] Assistant: Hello! Aap Plaksha mein student ya staff hain, sahi? Aur aapne Blue Tokai Café ko kam se kam ek baar zarur visit kiya hoga?
+[2025-09-04 02:44:36] User: Hey, Ana.
+[2025-09-04 02:44:37] Assistant: Acha, samajh gaya. Aapne pichle 30 din mein Blue Tokai Café ko visit nahi kiya, sahi? Aap thoda bata sakte hain, aap is café ko lekar kitne familiar hain? Aur kya

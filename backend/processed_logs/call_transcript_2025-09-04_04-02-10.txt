@@ -1,0 +1,26 @@
+Call started at: 2025-09-04T04:02:10.563818
+Stream SID: f0229fc40d098e49e3c5f631df531994
+
+[04:02:12] User: [noise]
+[04:02:13] AI (chunk): Pranam, hum
+[04:02:14] AI (chunk):  Sumitra
+[04:02:14] AI (chunk):  Devi
+[04:02:14] AI (chunk):  sarkar
+[04:02:14] AI (chunk):  se
+[04:02:14] AI (chunk):  boli.
+[04:02:14] AI (chunk):  30
+[04:02:15] AI (chunk):  second
+[04:02:15] AI (chunk):  ba?
+[04:02:22] User: تمام؟ يعني
+[04:02:23] AI (chunk): Haan, 30
+[04:02:23] AI (chunk):  second
+[04:02:24] AI (chunk):  ma
+[04:02:24] AI (chunk):  hum
+[04:02:25] User: त्यातील
+[04:02:26] AI (chunk): Haan, bas
+[04:02:26] AI (chunk):  30
+[04:02:26] AI (chunk):  second
+[04:02:26] AI (chunk):  chahiye
+[04:02:31] AI (chunk): Aap Bihar
+
+Call ended at: 2025-09-04T04:02:31.576476

@@ -1,0 +1,11 @@
+Call started at: 2025-09-04T14:20:23.074133
+Stream SID: 836f55cc25f42330be11483c45781994
+
+[14:20:37] User: हां बोलिए
+[14:20:38] AI (chunk): Pranam, hum
+[14:20:39] AI (chunk):  Sumitra
+[14:20:39] AI (chunk):  Devi
+[14:20:39] AI (chunk):  sarkar
+[14:20:39] AI (chunk):  se boli.
+
+Call ended at: 2025-09-04T14:20:47.010362

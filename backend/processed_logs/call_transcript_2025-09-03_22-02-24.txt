@@ -1,0 +1,13 @@
+Call started at: 2025-09-03T22:02:24.308607
+Stream SID: d389fd72e20f2613dc2d3fcd0aa01994
+
+[22:02:35] User: อ
+[22:02:36] AI (chunk): Haan, bilkul.
+[22:02:36] AI (chunk):  Aap
+[22:02:37] AI (chunk):  Bihar
+[22:02:37] AI (chunk):  se hi
+[22:02:37] AI (chunk):  bol
+[22:02:37] AI (chunk):  rahe
+[22:02:37] AI (chunk):  hain na?
+
+Call ended at: 2025-09-03T22:02:42.099561

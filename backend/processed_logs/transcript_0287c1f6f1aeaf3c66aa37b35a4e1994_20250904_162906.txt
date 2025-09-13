@@ -1,0 +1,23 @@
+Call Transcript — saved 2025-09-04 16:29:06
+-------------------------------------------
+[2025-09-04 16:26:34] Assistant: Sure,
+[2025-09-04 16:26:35] User: Give me four minutes.
+[2025-09-04 16:26:37] User: We have four minutes.
+[2025-09-04 16:26:39] Assistant: Thank you so much! Just to confirm, you're a student or staff at Plaksha, right? And have you visited our Blue Tokai Café at least once?
+[2025-09-04 16:26:49] User: Yes.
+[2025-09-04 16:26:50] Assistant: Great! You're actually one of the select few we've chosen for this exclusive feedback program—your opinions will directly shape our menu and service improvements. Before we proceed, would you prefer to continue the survey in English or Hindi?
+[2025-09-04 16:27:06] User: English
+[2025-09-04 16:27:07] Assistant: Perfect! Let's start with a quick question. Have you visited Blue Tokai at Plaksha in the past 30 days?
+[2025-09-04 16:27:16] User: No.
+[2025-09-04 16:27:17] Assistant: No problem! How familiar are you with Blue Tokai at Plaksha? Have you heard about our café before?
+[2025-09-04 16:27:25] User: It's just.
+[2025-09-04 16:27:27] Assistant: That's good to know! What has kept you from visiting our café recently? Is there anything in particular that stopped you from trying it out?
+[2025-09-04 16:27:38] User: Hello
+[2025-09-04 16:27:39] Assistant: Got it. If you were to visit us, what would make you more likely to try our café?
+[2025-09-04 16:27:41] User: No, not in particular.
+[2025-09-04 16:27:44] Assistant: Alright! Thanks for sharing that. Just one last thing—how likely are you to recommend Blue Tokai to a friend or colleague if you had the chance?
+[2025-09-04 16:27:59] User: Six out of ten.
+[2025-09-04 16:27:59] Assistant: Thank you for that rating. A 6 means there's room for improvement. What do you think we could do to make your experience even better?
+[2025-09-04 16:28:12] User: Maybe
+[2025-09-04 16:28:16] User: An offer for a day in a week
+[2025-09-04 16:28:17] Assistant: That's a thoughtful suggestion! A special offer for a day could definitely attract more visitors. I'll make sure to pass this idea along. Thank you for sharing! If you have any more thoughts, feel free to let me know. Have a great day!

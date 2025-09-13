@@ -1,0 +1,33 @@
+Call Transcript — saved 2025-09-03 17:02:15
+-------------------------------------------
+[2025-09-03 16:59:19] User: Hello
+[2025-09-03 16:59:20] Assistant: Hi! I’m calling from Blue Tokai Café at Plaksha. We’re offering a 150 rupees coupon for a quick feedback survey. Do you have around 4 minutes to spare?
+[2025-09-03 16:59:33] User: Yes, I do
+[2025-09-03 16:59:33] Assistant: Perfect! Just to confirm, you're a student or staff at Plaksha, right?
+[2025-09-03 16:59:41] Assistant: Great! And you've visited our café at least once, correct?
+[2025-09-03 16:59:41] User: I am a student yes.
+[2025-09-03 16:59:48] User: Yes, I have.
+[2025-09-03 16:59:50] Assistant: Fantastic! You're actually one of the select few we've chosen for this exclusive feedback program—your opinions will directly shape our menu and service improvements. Before we start, would you prefer English or Hindi?
+[2025-09-03 17:00:07] Assistant: Great, we'll continue in English. To start off, have you visited Blue Tokai at Plaksha in the past 30 days?
+[2025-09-03 17:00:07] User: I will prefer English.
+[2025-09-03 17:00:16] User: I did visit it today.
+[2025-09-03 17:00:16] Assistant: That's wonderful! About how many times have you visited in the past month?
+[2025-09-03 17:00:24] User: about thrice
+[2025-09-03 17:00:24] Assistant: Got it. And when do you usually drop by—morning, afternoon, or evening?
+[2025-09-03 17:00:32] User: It
+[2025-09-03 17:00:38] User: Actually, depends on the days, there's not really a fixed pattern around it.
+[2025-09-03 17:00:39] Assistant: Understood, a flexible schedule then! Let me ask about your most recent visit—what did you have that day? Was it coffee, tea, or did you grab a bite to eat as well?
+[2025-09-03 17:00:55] User: So I had a coffee and a bite to grab as well.
+[2025-09-03 17:00:56] Assistant: Sounds delightful! About how much did you spend on that visit?
+[2025-09-03 17:01:03] User: I spend about
+[2025-09-03 17:01:06] User: 500 rupees because I bought coffee for a friend as well.
+[2025-09-03 17:01:08] Assistant: Thanks for sharing that! Now, let's talk about different aspects of your visit. On a scale of 1 to 5, where 1 is very dissatisfied and 5 is very satisfied, how would you rate the taste and flavor quality of your coffee?
+[2025-09-03 17:01:27] User: I would say the coffee was about four.
+[2025-09-03 17:01:28] User: Yeah.
+[2025-09-03 17:01:29] Assistant: Great, a 4 it is! And how about the coffee's temperature and consistency? Would you rate that similarly, or is it different?
+[2025-09-03 17:01:41] User: The temperature would be at
+[2025-09-03 17:01:45] User: And I guess so would be the consistency.
+[2025-09-03 17:01:46] Assistant: Perfect, a 4 for both temperature and consistency. Moving on, how satisfied were you with the freshness of the food items you had?
+[2025-09-03 17:02:01] User: The freshness was not actually great. I was expecting the croissant to be heated up but it was not.
+[2025-09-03 17:02:02] Assistant: I'm sorry to hear that. It sounds like the freshness wasn't up to your expectations this time. Thank you for sharing that feedback. On a scale from 1 to 5, how would you rate the speed of service during your visit?
+[2025-09-03 17:02:14] User: Can I talk?

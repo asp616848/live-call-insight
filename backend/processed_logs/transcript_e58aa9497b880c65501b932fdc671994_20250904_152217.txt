@@ -1,0 +1,19 @@
+Call Transcript — saved 2025-09-04 15:22:17
+-------------------------------------------
+[2025-09-04 15:21:16] User: Yes.
+[2025-09-04 15:21:17] Assistant: Great! Just to confirm, you're a student or staff at Plaksha, right? And you've visited our café at least once?
+[2025-09-04 15:21:23] User: Yeah.
+[2025-09-04 15:21:24] User: Hello
+[2025-09-04 15:21:24] Assistant: Awesome! You're actually one of the select few we've chosen for this exclusive
+[2025-09-04 15:21:26] User: Yeah.
+[2025-09-04 15:21:26] Assistant: Before we start, would you prefer to continue in English or Hindi? Whatever you're comfortable with.
+[2025-09-04 15:21:35] User: Okay
+[2025-09-04 15:21:35] Assistant: Chaliye, English mein continue karte hain. Aapne kya recently Blue Tokai mein visit kiya tha? Pichhle 30 dinon mein?
+[2025-09-04 15:21:44] User: Wow.
+[2025-09-04 15:21:44] Assistant: Koi baat nahi. Toh aap Blue Tokai ke baare mein thoda sa suna hai na? Aapko kya lagta hai, Blue Tokai se aap kya umeed
+[2025-09-04 15:21:45] User: Main.
+[2025-09-04 15:21:47] Assistant: Samajh gaya. Kya aapko Blue Tokai ki coffee ya food items ke baare mein kuch jaankari hai? Jaise ki, aapko lagta hai ki unka taste kaisa hai ya service ka experience kaisa raha?
+[2025-09-04 15:21:54] User: Ah
+[2025-09-04 15:21:55] Assistant: Acha, toh agar aap apni recent visit ke baare mein sochen, toh aapne wahan kya order kiya tha? Coffee, chai, ya kuch snacks? Aur aapne us visit pe lagbhag kitna kharcha kiya?
+[2025-09-04 15:22:11] User: According by the time.
+[2025-09-04 15:22:13] Assistant: Wah, aapne wahan coffee aur bakery items try kiye. Coffee ka taste kaisa laga aapko? 1 se 5 tak ke scale pe, jahan 1 matlab bilkul asantusht aur 5 matlab bahut santusht, aap kitne number denge?

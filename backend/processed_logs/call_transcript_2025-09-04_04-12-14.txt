@@ -1,0 +1,13 @@
+Call started at: 2025-09-04T04:12:14.546546
+Stream SID: b75c1ee0a491397863f9bce4ff131994
+
+[04:12:27] User: बोले ना
+[04:12:27] AI (chunk): Aap Bihar
+[04:12:28] AI (chunk):  se
+[04:12:28] AI (chunk):  hi
+[04:12:28] AI (chunk):  bol
+[04:12:28] AI (chunk):  rahe
+[04:12:28] AI (chunk):  hain
+[04:12:28] AI (chunk):  na?
+
+Call ended at: 2025-09-04T04:12:44.858691

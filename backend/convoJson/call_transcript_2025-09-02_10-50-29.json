@@ -1,0 +1,63 @@
+{
+  "summary": {
+    "filename": "call_transcript_2025-09-02_10-50-29.txt",
+    "stream_sid": "54babd5fcd48346048c621ab41f31992",
+    "call_started": "2025-09-02T10:50:29.048446",
+    "call_ended": "2025-09-02T10:51:25.033499",
+    "duration_seconds": 55.985053,
+    "average_ai_response_latency": 1.0,
+    "noise_count": 0,
+    "total_user_messages": 4,
+    "total_ai_responses": 4,
+    "sentiment": "neutral",
+    "concerns": [
+      "flood"
+    ],
+    "overview": "The AI is gathering demographic information (district, rural/urban status) and identifying significant local challenges from the user. The user concisely responds by stating their district is Bhagalpur, they live in a village, and the main problem is floods.",
+    "user_tone": "Direct and concise, providing factual answers to the AI's questions.",
+    "emotion": "Neutral",
+    "sentiment_score": 5.0
+  },
+  "conversation": [
+    {
+      "speaker": "user",
+      "text": "a",
+      "timestamp": "2025-09-02T10:50:45"
+    },
+    {
+      "speaker": "ai",
+      "text": "जी, आप बिहार के किस जिले से बात कर रही हैं?",
+      "timestamp": "2025-09-02T10:50:46"
+    },
+    {
+      "speaker": "user",
+      "text": "Bhagalpur",
+      "timestamp": "2025-09-02T10:50:53"
+    },
+    {
+      "speaker": "ai",
+      "text": "भागलपुर से, ठीक है और आप गाँव में रहती हैं या शहर में?",
+      "timestamp": "2025-09-02T10:50:54"
+    },
+    {
+      "speaker": "user",
+      "text": "gaaon mein",
+      "timestamp": "2025-09-02T10:51:02"
+    },
+    {
+      "speaker": "ai",
+      "text": "गाँव में और आजकल आपके इलाके में सबसे बड़ी दो-तीन मुश्किलें कौन सी हैं?",
+      "timestamp": "2025-09-02T10:51:03"
+    },
+    {
+      "speaker": "user",
+      "text": "baar",
+      "timestamp": "2025-09-02T10:51:12"
+    },
+    {
+      "speaker": "ai",
+      "text": "बाढ़ की समस्या, जी और कोई मुश्किल है?",
+      "timestamp": "2025-09-02T10:51:13"
+    }
+  ]
+}

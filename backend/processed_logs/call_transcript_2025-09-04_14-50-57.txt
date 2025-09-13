@@ -1,0 +1,58 @@
+Call started at: 2025-09-04T14:50:57.435452
+Stream SID: b29b515d50b2c8bff8c89cedd4df1994
+
+[14:51:07] User: बोल
+[14:51:07] User: िए 30 सेकंड है।
+[14:51:08] AI (chunk): Haan, aapka
+[14:51:09] AI (chunk):  samay
+[14:51:09] AI (chunk):  bahut
+[14:51:09] AI (chunk):  keemti
+[14:51:10] AI (chunk):  hai.
+[14:51:10] AI (chunk):  Kya
+[14:51:11] AI (chunk):  aap
+[14:51:11] AI (chunk):  Bihar
+[14:51:11] AI (chunk):  se
+[14:51:11] AI (chunk):  hi bol
+[14:51:11] AI (chunk):  rahe
+[14:51:11] AI (chunk):  hain
+[14:51:17] User: <noise>
+[14:51:17] AI (chunk): Theek hai.
+[14:51:17] AI (chunk):  Aap
+[14:51:18] AI (chunk):  chahenge
+[14:51:19] AI (chunk):  ki
+[14:51:19] AI (chunk):  aapke
+[14:51:19] AI (chunk):  ilake
+[14:51:19] AI (chunk):  ki samasyaon
+[14:51:21] AI (chunk):  ka samadhan
+[14:51:21] AI (chunk):  ho,
+[14:51:21] AI (chunk):  sahi?
+[14:51:39] User: الو
+[14:51:40] AI (chunk): Ji, main
+[14:51:40] AI (chunk):  Sumitra
+[14:51:41] AI (chunk):  Devi
+[14:51:42] AI (chunk):  sarkar
+[14:51:42] AI (chunk):  se bol
+[14:51:42] AI (chunk):  rahi
+[14:51:42] AI (chunk):  hun.
+[14:51:42] AI (chunk):  Aapki
+[14:51:44] AI (chunk):  rai
+[14:51:44] AI (chunk):  bahut
+[14:51:44] AI (chunk):  zaroori
+[14:51:44] AI (chunk):  hai.
+[14:51:44] AI (chunk):  Kya
+[14:51:46] AI (chunk):  aap
+[14:51:46] AI (chunk):  mujhe
+[14:51:46] AI (chunk):  do
+[14:51:46] AI (chunk):  teen
+[14:51:46] AI (chunk):  minute
+[14:51:46] AI (chunk):  de sakte
+[14:51:49] AI (chunk): Ji, main
+[14:51:49] AI (chunk):  Sumitra
+[14:51:49] AI (chunk):  Devi
+[14:51:50] AI (chunk):  sarkar
+[14:51:50] AI (chunk):  se bol
+[14:51:50] AI (chunk):  rahi
+[14:51:50] AI (chunk):  hun.
+[14:51:50] AI (chunk):  Aapki
+
+Call ended at: 2025-09-04T14:51:51.339216

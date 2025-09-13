@@ -1,0 +1,7 @@
+Call started at: 2025-09-04T15:06:19.874966
+Stream SID: e82c2c7baa618989048868a41bcf1994
+
+[15:06:21] User: <noise>
+[15:06:22] AI (chunk): Haan, boliye.
+
+Call ended at: 2025-09-04T15:06:43.792266

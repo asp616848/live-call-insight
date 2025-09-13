@@ -1,0 +1,7 @@
+Call Transcript — saved 2025-09-05 15:19:08
+-------------------------------------------
+[2025-09-05 15:18:56] User: Hi.
+[2025-09-05 15:18:57] User: Yeah
+[2025-09-05 15:18:57] Assistant: Hello! How can I assist you today?
+[2025-09-05 15:19:04] User: Hello
+[2025-09-05 15:19:05] Assistant: Hello! How are you doing today?

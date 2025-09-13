@@ -1,0 +1,165 @@
+Call started at: 2025-09-01T13:49:46.625544
+Stream SID: e92b10c45c8eaff9e474058ceb471991
+
+[13:49:48] User: Hello.
+[13:49:49] AI (chunk): Namaste, main
+[13:49:50] AI (chunk):  Sumitra
+[13:49:50] AI (chunk):  Devi,
+[13:49:50] AI (chunk):  sarkar
+[13:49:50] AI (chunk):  ki
+[13:49:50] AI (chunk):  or se
+[13:49:51] AI (chunk):  kuchh
+[13:49:51] AI (chunk):  prashn
+[13:49:51] AI (chunk):  poochhne
+[13:49:51] AI (chunk):  ke liye.
+[13:49:51] AI (chunk):  Kya
+[13:49:52] AI (chunk):  abhi
+[13:49:52] AI (chunk):  3-4
+[13:49:52] AI (chunk):  minute
+[13:49:52] AI (chunk):  de
+[13:49:52] AI (chunk):  sakte
+[13:49:52] AI (chunk):  hain?
+[13:50:06] User: जी
+[13:50:06] User: बोलिए
+[13:50:06] AI (chunk): Aap kis
+[13:50:07] AI (chunk):  bhasha
+[13:50:07] AI (chunk):  mein
+[13:50:07] AI (chunk):  baat
+[13:50:07] AI (chunk):  karna
+[13:50:08] AI (chunk):  pasand
+[13:50:08] AI (chunk):  karenge?
+[13:50:12] User: എന്ത്
+[13:50:13] AI (chunk): Theek hai
+[13:50:13] AI (chunk):  ji,
+[13:50:14] AI (chunk):  toh
+[13:50:14] AI (chunk):  chaliye
+[13:50:14] AI (chunk):  shuru
+[13:50:14] AI (chunk):  karte
+[13:50:14] AI (chunk):  hain.
+[13:50:15] AI (chunk):  Aap
+[13:50:15] AI (chunk):  Bihar
+[13:50:15] AI (chunk):  ke
+[13:50:15] AI (chunk):  kis
+[13:50:17] AI (chunk):  district
+[13:50:17] AI (chunk):  se bol
+[13:50:17] AI (chunk):  rahe
+[13:50:17] AI (chunk):  hain?
+[13:50:25] User: भागलपुर
+[13:50:26] AI (chunk): Bhagalpur se,
+[13:50:26] AI (chunk):  theek
+[13:50:26] AI (chunk):  hai.
+[13:50:27] AI (chunk):  Gaon
+[13:50:27] AI (chunk):  ya
+[13:50:27] AI (chunk):  shehar?
+[13:50:32] User: गांव
+[13:50:33] AI (chunk): Aapka kaam
+[13:50:33] AI (chunk):  kya
+[13:50:33] AI (chunk):  hai ji?
+[13:50:39] User: टी
+[13:50:39] User: चिंग
+[13:50:39] User: ब
+[13:50:39] User: च्चे
+[13:50:40] User: को
+[13:50:40] User: पढ़
+[13:50:40] User: ा
+[13:50:40] User: ना
+[13:50:41] AI (chunk): Theek hai,
+[13:50:41] AI (chunk):  toh
+[13:50:41] AI (chunk):  aajkal
+[13:50:41] AI (chunk):  aapke
+[13:50:42] AI (chunk):  ilaake
+[13:50:42] AI (chunk):  mein
+[13:50:42] AI (chunk):  sabse
+[13:50:42] AI (chunk):  bade
+[13:50:42] AI (chunk):  2-3
+[13:50:42] AI (chunk):  mudde
+[13:50:42] AI (chunk):  kaun
+[13:50:42] AI (chunk):  se
+[13:50:42] AI (chunk):  hain?
+[13:50:53] User: इ
+[13:50:53] User: ला
+[13:50:53] User: के
+[13:50:53] User: में
+[13:50:53] User: जो
+[13:50:54] User: तीन
+[13:50:54] User: ब
+[13:50:54] User: ड़े
+[13:50:54] User: मु
+[13:50:54] User: द्दे
+[13:50:54] User: हैं
+[13:50:55] AI (chunk): Haan ji,
+[13:50:57] User: एक
+[13:50:57] User: तो
+[13:50:57] User: हो
+[13:50:57] User: गया
+[13:50:58] User: कि
+[13:50:58] User: लोग
+[13:50:58] User: ों को
+[13:50:58] User: स्व
+[13:50:59] User: रो
+[13:50:59] User: जगार
+[13:50:59] User: नहीं
+[13:50:59] User: है
+[13:50:59] User: बा
+[13:50:59] User: हर
+[13:51:00] User: जा
+[13:51:00] User: ते हैं
+[13:51:01] AI (chunk): Haan, swarozgar
+[13:51:01] AI (chunk):  ki kami
+[13:51:01] AI (chunk):  ek
+[13:51:01] AI (chunk):  badi
+[13:51:01] AI (chunk):  baat
+[13:51:02] AI (chunk):  hai.
+[13:51:02] AI (chunk):  Aur
+[13:51:02] AI (chunk):  kaun
+[13:51:02] AI (chunk):  se mudde
+[13:51:02] AI (chunk):  hain?
+[13:51:10] User: दू
+[13:51:10] User: सरा
+[13:51:10] User: है
+[13:51:10] User: कि
+[13:51:10] User: सान
+[13:51:11] User: हर
+[13:51:11] User: साल
+[13:51:12] User: यहां
+[13:51:12] User: फ
+[13:51:12] User: सल
+[13:51:13] User: लगा
+[13:51:13] User: ते हैं
+[13:51:14] User: फ
+[13:51:14] User: ड़
+[13:51:14] User: क्का
+[13:51:14] User: ब्रि
+[13:51:14] User: ज
+[13:51:15] User: ब
+[13:51:15] User: ंद
+[13:51:15] User: रह
+[13:51:15] User: ता है
+[13:51:16] User: हर
+[13:51:16] User: साल
+[13:51:16] User: बा
+[13:51:17] User: ढ़
+[13:51:17] User: आ
+[13:51:17] User: ता है
+[13:51:17] User: डू
+[13:51:17] User: ब
+[13:51:18] User: ता है
+[13:51:18] User: अभी
+[13:51:18] User: दो
+[13:51:18] User: बारा बाड़ा गया
+[13:51:19] AI (chunk): Baadh ki
+[13:51:21] User: ती
+[13:51:21] User: सरा
+[13:51:21] User: है
+[13:51:22] User: या
+[13:51:22] User: ता
+[13:51:22] User: यात
+[13:51:23] User: का
+[13:51:23] User: सा
+[13:51:23] User: धन
+[13:51:23] User: सही से नहीं है
+[13:51:24] AI (chunk): Yataayat ki
+[13:51:24] AI (chunk):  samasya
+[13:51:24] AI (chunk):  aur
+
+Call ended at: 2025-09-01T13:52:03.321075

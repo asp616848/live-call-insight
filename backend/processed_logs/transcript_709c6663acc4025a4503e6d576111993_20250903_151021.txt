@@ -1,0 +1,19 @@
+Call Transcript — saved 2025-09-03 15:10:21
+-------------------------------------------
+[2025-09-03 15:09:13] User: Hello.
+[2025-09-03 15:09:15] Assistant: Hi! I’m calling from Blue Tokai Café at Plaksha. We’re offering a ₹150 coupon for a quick feedback survey. Do you have around 4 minutes to spare?
+[2025-09-03 15:09:26] User: Yes
+[2025-09-03 15:09:27] Assistant: Great, thank you! Just to confirm, are you a student or staff at Plaksha? And have you visited our café at least once?
+[2025-09-03 15:09:33] User: children
+[2025-09-03 15:09:34] Assistant: Got it! And have you visited Blue Tokai at Plaksha within
+[2025-09-03 15:09:35] User: I get it.
+[2025-09-03 15:09:36] User: is
+[2025-09-03 15:09:38] Assistant: No worries! If you haven't visited recently, could you tell me what keeps you from trying out our café? Your feedback helps us a lot!
+[2025-09-03 15:09:50] User: Prices are sky high.
+[2025-09-03 15:09:51] Assistant: Thanks for sharing your thoughts. I understand that pricing is important. We aim to provide good value along with quality. Is there anything else that might encourage you to visit us, or any features you'd like to see?
+[2025-09-03 15:09:57] User: Ibu.
+[2025-09-03 15:09:58] Assistant: That's a thoughtful suggestion. We'll definitely consider it! Thank you for your input. If we could improve one thing about our café, what would it be?
+[2025-09-03 15:10:05] User: Awesome English.
+[2025-09-03 15:10:06] Assistant: Got it! We'll keep that in mind. Thanks for the suggestion! One last question: On a scale from 0 to 10, how likely are you to recommend
+[2025-09-03 15:10:08] User: When do I get my reward?
+[2025-09-03 15:10:09] Assistant: Thank you for participating! Your ₹150 coupon will be sent to you within 24 hours. Your feedback is valuable and will help us improve. Thanks again!

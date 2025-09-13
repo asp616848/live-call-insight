@@ -1,0 +1,76 @@
+Call started at: 2025-09-04T04:11:09.515817
+Stream SID: fdc549474d51dfbba23c233b65fa1994
+
+[04:11:11] User: Hello.
+[04:11:12] AI (chunk): Ji, aap
+[04:11:13] User: హలో
+[04:11:14] User: ಒಂದು ವರ್ಷ
+[04:11:15] AI (chunk): Haan ji,
+[04:11:20] AI (chunk): kya aapke
+[04:11:20] AI (chunk):  paas
+[04:11:20] AI (chunk):  30
+[04:11:21] AI (chunk):  second
+[04:11:21] AI (chunk):  hain?
+[04:11:26] User: कहां से बोला था
+[04:11:26] AI (chunk): Ji, main
+[04:11:27] AI (chunk):  Sarkar
+[04:11:27] AI (chunk):  se
+[04:11:27] AI (chunk):  bol
+[04:11:27] AI (chunk):  rahi
+[04:11:27] AI (chunk):  hoon.
+[04:11:27] AI (chunk):  Kya aapke
+[04:11:27] AI (chunk):  paas
+[04:11:28] AI (chunk):  30
+[04:11:28] AI (chunk):  second
+[04:11:28] AI (chunk):  hain?
+[04:11:47] User: హలో హలో
+[04:11:48] AI (chunk): Ji, boliye.
+[04:11:51] User: हेलो
+[04:11:53] User: हमार
+[04:11:54] User: ा
+[04:11:54] User: नहीं
+[04:11:54] User: बु
+[04:11:54] User: झा
+[04:11:56] User: ता
+[04:11:57] AI (chunk): Main samajh
+[04:11:57] AI (chunk):  sakti
+[04:11:57] AI (chunk):  hoon
+[04:11:57] AI (chunk):  aapko
+[04:12:02] AI (chunk): pareshani
+[04:12:02] AI (chunk):  ho
+[04:12:02] AI (chunk):  rahi
+[04:12:02] AI (chunk):  hai.
+[04:12:02] AI (chunk):  Main
+[04:12:03] AI (chunk):  Sumitra
+[04:12:03] AI (chunk):  Devi
+[04:12:03] AI (chunk):  sarkar
+[04:12:03] AI (chunk):  se
+[04:12:03] AI (chunk):  bol
+[04:12:04] AI (chunk):  rahi
+[04:12:04] AI (chunk):  hoon.
+[04:12:04] AI (chunk):  Kya aapke
+[04:12:04] AI (chunk):  paas
+[04:12:04] AI (chunk):  30
+[04:12:04] AI (chunk):  second
+[04:12:04] AI (chunk):  hain?
+[04:12:09] User: <noise>
+[04:12:10] AI (chunk): hain baat
+[04:12:10] AI (chunk):  karne
+[04:12:10] AI (chunk):  ke
+[04:12:10] AI (chunk):  liye?
+[04:12:17] User: अ
+[04:12:17] User: च्छा
+[04:12:17] User: थो हम बात करवा दे
+[04:12:18] AI (chunk): Zaroor. Kya
+[04:12:18] AI (chunk):  aap
+[04:12:19] AI (chunk):  mujhe
+[04:12:19] AI (chunk):  apna
+[04:12:19] AI (chunk):  naam
+[04:12:19] AI (chunk):  bata
+[04:12:19] AI (chunk):  sakte
+[04:12:19] AI (chunk):  hain?
+[04:12:22] User: .
+[04:12:22] AI (chunk): bata sakte
+[04:12:23] AI (chunk):  hain?
+
+Call ended at: 2025-09-04T04:12:30.789975

@@ -1,0 +1,38 @@
+Call Transcript — saved 2025-09-04 15:43:54
+-------------------------------------------
+[2025-09-04 15:41:41] User: Yes,
+[2025-09-04 15:41:43] User: Yes.
+[2025-09-04 15:41:44] Assistant: Great! Just to confirm, you're a student
+[2025-09-04 15:41:45] User: Hello
+[2025-09-04 15:41:46] User: to living.
+[2025-09-04 15:41:47] Assistant: Acha! And you've visited our Blue Tokai Café at Plaksha at least once, right?
+[2025-09-04 15:41:50] User: 아비빨리.
+[2025-09-04 15:41:51] Assistant: No problem!
+[2025-09-04 15:41:52] User: Tamañito le gabaima.
+[2025-09-04 15:41:55] User: Hello
+[2025-09-04 15:41:56] Assistant: Sure! How familiar are you with Blue Tokai at Plaksha? Have you heard about our café from friends or seen it on campus?
+[2025-09-04 15:41:58] User: Thank you
+[2025-09-04 15:41:59] Assistant: Understood! What might encourage you to visit us? Are there certain coffee or snack options, or maybe the ambience that you're looking forward to?
+[2025-09-04 15:42:01] User: I go there all the time.
+[2025-09-04 15:42:02] Assistant: That's wonderful! Since you've been a regular visitor, could you share what you like most about the café? Maybe the taste of the coffee, the service, or the atmosphere?
+[2025-09-04 15:42:06] Assistant: Good to know! On a scale of 1 to 5, how satisfied are you with the coffee's taste and flavour at our café? Where 1 is very dissatisfied and 5 is very satisfied.
+[2025-09-04 15:42:10] User: supermarket
+[2025-09-04 15:42:16] User: I love the coffee.
+[2025-09-04 15:42:17] Assistant: That's fantastic! A 5 means you truly enjoy it. What specifically do you think makes the coffee stand out for you? Is it the flavour, the freshness, or something else?
+[2025-09-04 15:42:30] User: The balance
+[2025-09-04 15:42:31] Assistant: That makes sense! A perfect balance can really elevate the experience. Moving on, how would you rate the speed of service at Blue Tokai on a scale of 1 to 5?
+[2025-09-04 15:42:44] User: Um
+[2025-09-04 15:42:44] User: Pen
+[2025-09-04 15:42:46] Assistant: A 5 for speed of service—that's great to hear! Quick service definitely enhances the visit. Speaking of which, how does Blue Tokai compare to other cafés on campus in terms of value for money? Would you say we offer better, similar, or worse value?
+[2025-09-04 15:42:59] User: Hello.
+[2025-09-04 15:43:00] Assistant: Interesting! What makes you feel that Blue Tokai offers better value? Is it
+[2025-09-04 15:43:02] User: little bit more.
+[2025-09-04 15:43:04] Assistant: I see. So, while the prices might be slightly higher, you feel the quality or experience justifies it. That’s valuable feedback! If you could change one thing about Blue Tokai to make it even better, what would it be?
+[2025-09-04 15:43:21] User: The menu should be more expensive.
+[2025-09-04 15:43:23] Assistant: That's a thoughtful suggestion. Adding more options could definitely enhance the variety and appeal. Thanks for sharing that! Before we finish, on a scale of 0 to 10, how likely are you to recommend Blue Tokai to a friend?
+[2025-09-04 15:43:37] User: Ben.
+[2025-09-04 15:43:39] Assistant: A 10—that's wonderful to hear! Thank you for your positive support. Your feedback is incredibly valuable and will help us improve. Have a great day!
+[2025-09-04 15:43:41] User: کرنے کو۔
+[2025-09-04 15:43:42] Assistant: Thank you for your time and feedback! Your ₹150 coupon will be sent to you within 24 hours. Have a wonderful day!
+[2025-09-04 15:43:49] User: All
+[2025-09-04 15:43:50] Assistant: Take care! If you ever have more feedback or need assistance, feel free to reach out. Have a great day!

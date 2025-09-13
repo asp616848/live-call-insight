@@ -1,0 +1,164 @@
+{
+  "summary": {
+    "filename": "transcript_3fee076ef8fbc4d00fff64cd41a91994_20250904_153747.txt",
+    "stream_sid": null,
+    "call_started": null,
+    "call_ended": null,
+    "duration_seconds": null,
+    "average_ai_response_latency": 1.57,
+    "noise_count": 0,
+    "total_user_messages": 14,
+    "total_ai_responses": 14,
+    "sentiment": "positive",
+    "concerns": [
+      "coupon delivery",
+      "customer support access"
+    ],
+    "overview": "The AI conducted a customer feedback survey for Blue Tokai Café. The user provided positive feedback on the coffee taste and staff, and suggested improving service speed, indicating a preference for faster service. Towards the end, the user inquired about receiving the promised coupon and how to access customer support.",
+    "user_tone": "cooperative and inquisitive",
+    "emotion": "cooperative",
+    "sentiment_score": 7.5
+  },
+  "conversation": [
+    {
+      "speaker": "user",
+      "text": "jaa.",
+      "timestamp": "2025-09-04T15:33:38"
+    },
+    {
+      "speaker": "ai",
+      "text": "Hello! Thank you for joining the call. As I mentioned, we're from Blue Tokai Café at Plaksha, and we have a quick feedback survey that takes about 4 minutes. Are you ready to share your thoughts with us?",
+      "timestamp": "2025-09-04T15:33:39"
+    },
+    {
+      "speaker": "user",
+      "text": "Vah hai. Haan.",
+      "timestamp": "2025-09-04T15:33:53"
+    },
+    {
+      "speaker": "ai",
+      "text": "Great! Just to confirm, you're either a student or staff at Plaksha, right? And you've visited our café at least once?",
+      "timestamp": "2025-09-04T15:33:54"
+    },
+    {
+      "speaker": "user",
+      "text": "mera chhaatr",
+      "timestamp": "2025-09-04T15:34:05"
+    },
+    {
+      "speaker": "ai",
+      "text": "Perfect! And you've been to our café at least once, right? Just to make sure we focus on your recent experiences.",
+      "timestamp": "2025-09-04T15:34:06"
+    },
+    {
+      "speaker": "user",
+      "text": "मार्गदर्शन उत्कृष्ट था।",
+      "timestamp": "2025-09-04T15:34:17"
+    },
+    {
+      "speaker": "ai",
+      "text": "That's wonderful to hear! Thanks for sharing that. Your feedback is really valuable. Before we dive into the details, would you prefer to continue in English or switch to Hindi?",
+      "timestamp": "2025-09-04T15:34:18"
+    },
+    {
+      "speaker": "user",
+      "text": "Yah ek Hindi varg paheli hai.",
+      "timestamp": "2025-09-04T15:34:31"
+    },
+    {
+      "speaker": "ai",
+      "text": "Bilkul, Hindi mein baat kar lete hain. Aapne pichle 30 dinon mein Blue Tokai Café, Plaksha visit kiya hai na?",
+      "timestamp": "2025-09-04T15:34:33"
+    },
+    {
+      "speaker": "user",
+      "text": "Rina.",
+      "timestamp": "2025-09-04T15:34:42"
+    },
+    {
+      "speaker": "ai",
+      "text": "Koi baat nahi! Toh aap Blue Tokai ke baare mein kya jaante hain? Aapka kya impression hai hamare café ke baare mein?",
+      "timestamp": "2025-09-04T15:34:43"
+    },
+    {
+      "speaker": "user",
+      "text": "Viliam Pen",
+      "timestamp": "2025-09-04T15:34:51"
+    },
+    {
+      "speaker": "ai",
+      "text": "Samajh gaya. Agar aap Blue Tokai ko zyada explore karne ka sochenge, toh aapko kaunse cheezein sabse attractive lagti hain? Kya aapko hamara coffee variety pasand hai, ya seating aur ambience?",
+      "timestamp": "2025-09-04T15:34:53"
+    },
+    {
+      "speaker": "user",
+      "text": "Coffee ki qism?",
+      "timestamp": "2025-09-04T15:35:08"
+    },
+    {
+      "speaker": "ai",
+      "text": "Achha! Coffee variety toh waqai mein interesting hai. Aapko Blue Tokai ki coffee ka taste kaisa laga? Aur kya aapko coffee ka temperature aur consistency bhi accha laga?",
+      "timestamp": "2025-09-04T15:35:09"
+    },
+    {
+      "speaker": "user",
+      "text": "Yah bahut swaadishṭ thaa.",
+      "timestamp": "2025-09-04T15:35:24"
+    },
+    {
+      "speaker": "ai",
+      "text": "Bahut accha! Taste aur flavor ka quality toh zaroori hai. Aapko staff ki friendliness aur service speed kaisi lagi? Kya aapko staff se baat karne mein aaram mila aur service timely thi?",
+      "timestamp": "2025-09-04T15:35:25"
+    },
+    {
+      "speaker": "user",
+      "text": "हाँ, सब ठीक था।\nHaan, sab theek tha.",
+      "timestamp": "2025-09-04T15:35:41"
+    },
+    {
+      "speaker": "ai",
+      "text": "Achha suna! Aapke experience se khush ho kar acha laga. Aapke hisaab se Blue Tokai ko aur behtar banane ke liye aapko kaunsi ek cheez sabse important lagti hai? Kya aap speed of service, ya phir coffee ki strength, ya aur kuch chahenge?",
+      "timestamp": "2025-09-04T15:35:43"
+    },
+    {
+      "speaker": "user",
+      "text": "Seva ki gati",
+      "timestamp": "2025-09-04T15:36:02"
+    },
+    {
+      "speaker": "ai",
+      "text": "Speed of service bilkul zaroori hai. Aapka yeh feedback humare liye bahut maayne rakhta hai. Aapke liye ek aur sawal: Aapko ₹180 ka ek quick latte lena pasand aayega ya ₹160 ka latte jisme thoda wait karna pade?",
+      "timestamp": "2025-09-04T15:36:04"
+    },
+    {
+      "speaker": "user",
+      "text": "Det var det forbi. The photosys quick letter. kar sakte hain.",
+      "timestamp": "2025-09-04T15:36:50"
+    },
+    {
+      "speaker": "ai",
+      "text": "Aapka jawab samajh aaya. ₹180 ka quick latte aapke liye behtar hai. Yeh preference hum zaroor dhyan mein rakhenge. Aapke suggestions humare service ko aur behtar banane mein madad karenge. Thank you for your valuable feedback! Aapka ₹150 ka coupon aapko 24 ghanton mein mil jayega. Aapka din shubh ho!",
+      "timestamp": "2025-09-04T15:36:53"
+    },
+    {
+      "speaker": "user",
+      "text": "Dhanyavaad. Kya mujhe mil sakta hai?",
+      "timestamp": "2025-09-04T15:37:18"
+    },
+    {
+      "speaker": "ai",
+      "text": "Aapka swagat hai! Aapka din accha rahe. Namaste!",
+      "timestamp": "2025-09-04T15:37:20"
+    },
+    {
+      "speaker": "user",
+      "text": "Yeah. What? Thank you. Kaam kar sakte hain?",
+      "timestamp": "2025-09-04T15:37:31"
+    },
+    {
+      "speaker": "ai",
+      "text": "Aap humare customer care number par kabhi bhi call kar sakte hain agar aapko kisi bhi tarah ki madad chahiye ho. Aap hamesha hamare website ya app ke through bhi sampark kar sakte hain. Dhanyavaad!",
+      "timestamp": "2025-09-04T15:37:33"
+    }
+  ]
+}

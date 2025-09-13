@@ -1,0 +1,42 @@
+Call started at: 2025-09-01T13:29:22.544850
+Stream SID: e64889d66a2c4c8b2e1321f755261991
+
+[13:29:24] User: Hello.
+[13:29:25] AI (chunk): Namaste, main
+[13:29:26] AI (chunk):  Sumitra
+[13:29:26] AI (chunk):  Devi,
+[13:29:26] AI (chunk):  sarkaar
+[13:29:26] AI (chunk):  ki
+[13:29:26] AI (chunk):  aur
+[13:29:28] AI (chunk):  se
+[13:29:28] AI (chunk):  kuchh
+[13:29:28] AI (chunk):  prashn
+[13:29:28] AI (chunk):  ke
+[13:29:28] AI (chunk):  liye.
+[13:29:28] AI (chunk):  Kya
+[13:29:30] AI (chunk):  abhi
+[13:29:30] AI (chunk):  teen-chaar
+[13:29:30] AI (chunk):  minute
+[13:29:30] AI (chunk):  denge?
+[13:29:37] User: हां बोलिए बोलिए
+[13:29:37] AI (chunk): Theek hai
+[13:29:38] AI (chunk):  ji.
+[13:29:38] AI (chunk):  Aap
+[13:29:39] AI (chunk):  Bihar
+[13:29:39] AI (chunk):  ke
+[13:29:39] AI (chunk):  kis
+[13:29:39] AI (chunk):  district
+[13:29:40] AI (chunk):  se bol
+[13:29:40] AI (chunk):  rahe
+[13:29:40] AI (chunk):  hain?
+[13:30:02] User: Hello.
+[13:30:03] AI (chunk): Ji, main
+[13:30:03] AI (chunk):  sun
+[13:30:03] AI (chunk):  rahi
+[13:30:03] AI (chunk):  hoon.
+[13:30:03] AI (chunk):  Aap
+[13:30:03] AI (chunk):  Bihar
+[13:30:03] AI (chunk):  ke
+[13:30:04] AI (chunk):  kaun
+
+Call ended at: 2025-09-01T13:30:04.808030

@@ -1,0 +1,91 @@
+Call started at: 2025-09-03T19:14:20.550816
+Stream SID: 08940227a9d4709f90ecc9627f681993
+
+[19:14:24] User: Hello.
+[19:14:25] AI (chunk): Namaste. Kya
+[19:14:28] AI (chunk): Aap Bihar
+[19:14:28] AI (chunk):  se
+[19:14:28] AI (chunk):  hi
+[19:14:28] AI (chunk):  bol
+[19:14:28] AI (chunk):  rahe
+[19:14:28] AI (chunk):  hain
+[19:14:29] AI (chunk):  na?
+[19:14:34] User: हां जी
+[19:14:35] AI (chunk): Aap chahenge
+[19:14:36] AI (chunk):  ki
+[19:14:36] AI (chunk):  aapke
+[19:14:38] AI (chunk): Aap chahenge
+[19:14:39] AI (chunk): [NAME] ji,
+[19:14:39] AI (chunk):  aap
+[19:14:39] AI (chunk):  un
+[19:14:40] AI (chunk):  kuch
+[19:14:42] AI (chunk): [NAME] ji,
+[19:14:42] AI (chunk):  aap
+[19:14:43] AI (chunk): [NAME] ji,
+[19:14:43] AI (chunk):  aap
+[19:14:43] AI (chunk):  un
+[19:14:44] AI (chunk):  kuch
+[19:14:46] AI (chunk): [NAME] ji,
+[19:14:47] AI (chunk): [NAME] ji,
+[19:14:47] AI (chunk):  aap
+[19:14:48] AI (chunk):  un
+[19:14:48] AI (chunk):  kuch
+[19:14:48] AI (chunk):  chune
+[19:14:48] AI (chunk):  hue
+[19:14:48] AI (chunk):  500
+[19:14:48] AI (chunk):  logon
+[19:14:48] AI (chunk):  mein
+[19:14:48] AI (chunk):  se
+[19:14:48] AI (chunk):  hain
+[19:14:49] AI (chunk):  jinki
+[19:14:49] AI (chunk):  raay
+[19:14:49] AI (chunk):  se
+[19:14:49] AI (chunk):  Bihar
+[19:14:49] AI (chunk):  ki
+[19:14:49] AI (chunk):  nai
+[19:14:50] AI (chunk):  policy
+[19:14:50] AI (chunk):  banegi.
+[19:14:50] AI (chunk):  Sirf
+[19:14:51] AI (chunk):  2-3
+[19:14:51] AI (chunk):  minute.
+[19:14:51] AI (chunk):  Kya
+[19:14:51] AI (chunk):  main
+[19:14:51] AI (chunk):  aapke
+[19:14:53] AI (chunk): [NAME] ji,
+[19:14:53] AI (chunk):  aap
+[19:14:54] AI (chunk):  un
+[19:14:54] AI (chunk):  kuch
+[19:14:54] AI (chunk):  chune
+[19:14:54] AI (chunk):  hue
+[19:14:54] AI (chunk):  500
+[19:14:54] AI (chunk):  logon
+[19:14:54] AI (chunk):  mein
+[19:14:54] AI (chunk):  se
+[19:14:54] AI (chunk):  hain,
+[19:14:55] AI (chunk):  jinki
+[19:14:55] AI (chunk):  raay
+[19:14:55] AI (chunk):  se
+[19:14:55] AI (chunk):  Bihar
+[19:14:55] AI (chunk):  ki
+[19:14:57] AI (chunk): [NAME] ji,
+[19:14:58] AI (chunk):  aap
+[19:14:58] AI (chunk):  un
+[19:14:58] AI (chunk):  kuch
+[19:14:59] AI (chunk):  chune
+[19:14:59] AI (chunk):  hue
+[19:14:59] AI (chunk):  500
+[19:14:59] AI (chunk):  logon
+[19:14:59] AI (chunk):  mein
+[19:14:59] AI (chunk):  se
+[19:14:59] AI (chunk):  hain
+[19:14:59] AI (chunk):  jinki
+[19:15:01] AI (chunk): [NAME] ji,
+[19:15:01] AI (chunk):  aap
+[19:15:02] AI (chunk):  un
+[19:15:02] AI (chunk):  kuch
+[19:15:04] AI (chunk): [NAME] ji,
+[19:15:04] AI (chunk):  aap
+[19:15:05] AI (chunk):  un
+[19:15:05] AI (chunk):  kuch
+
+Call ended at: 2025-09-03T19:15:05.756191

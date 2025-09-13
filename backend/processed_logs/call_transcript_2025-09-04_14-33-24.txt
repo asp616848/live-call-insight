@@ -1,0 +1,16 @@
+Call started at: 2025-09-04T14:33:24.962227
+Stream SID: 876b4d4f7b7178822b5d06caae941994
+
+[14:33:34] User: <noise>
+[14:33:34] AI (chunk): Haan, main
+[14:33:35] AI (chunk):  Sumitra
+[14:33:36] User: क्या बात है
+[14:33:37] AI (chunk): Aap chahenge
+[14:33:37] AI (chunk):  ki
+[14:33:37] AI (chunk):  aapke
+[14:33:37] AI (chunk):  ilake
+[14:33:44] AI (chunk): ki samasyaon
+[14:33:44] AI (chunk):  ka samadhan
+[14:33:50] AI (chunk): ho, sahi?
+
+Call ended at: 2025-09-04T14:33:55.425311

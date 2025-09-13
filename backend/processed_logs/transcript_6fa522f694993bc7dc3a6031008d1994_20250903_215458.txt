@@ -1,0 +1,8 @@
+Call Transcript — saved 2025-09-03 21:54:58
+-------------------------------------------
+[2025-09-03 21:54:27] User: Yes I do.
+[2025-09-03 21:54:28] Assistant: Great, thank you! Just to confirm, you're a student or staff at Plaksha, right? And you've visited our Blue Tokai Café at least once?
+[2025-09-03 21:54:38] User: I have, I have
+[2025-09-03 21:54:40] Assistant: Perfect! You're actually one of the select few we've chosen for this exclusive feedback program—your opinions will directly shape our menu and service improvements. Before we start, would you prefer if we continue in English or Hindi?
+[2025-09-03 21:54:55] User: English is okay.
+[2025-09-03 21:54:57] Assistant: Wonderful! Let's get started. Have you visited Blue Tokai at Plaksha in the past 30 days?

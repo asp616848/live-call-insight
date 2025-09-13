@@ -1,0 +1,14 @@
+Call started at: 2025-09-04T03:57:50.686020
+Stream SID: 98577f3e0643fe9551c7d756285a1994
+
+[03:58:04] User: हेलो हां
+[03:58:05] AI (chunk): Ji, aapko
+[03:58:06] AI (chunk):  kuch
+[03:58:07] AI (chunk):  puchna
+[03:58:07] AI (chunk):  tha?
+[03:58:07] AI (chunk):  Kya
+[03:58:07] AI (chunk):  main
+[03:58:07] AI (chunk):  aapki
+[03:58:07] AI (chunk):  madad
+
+Call ended at: 2025-09-04T03:58:13.009902
